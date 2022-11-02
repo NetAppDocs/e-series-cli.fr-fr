@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/set-drivechannel.html 
+sidebar: sidebar 
+keywords: set, drive, channel, status 
+summary: La commande Set driveChannel définit le fonctionnement du canal du lecteur. 
+---
+= Définir l'état du canal d'entraînement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set driveChannel` commande définit le fonctionnement du canal de lecteur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
+status=(optimal | degraded)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveChannel`
+ a| 
+Numéro d'identification du canal de lecteur pour lequel vous souhaitez définir l'état. Les valeurs valides du canal d'entraînement sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`. Placez le numéro de canal du lecteur entre crochets ([ ]).
+
+
+
+ a| 
+`status`
+ a| 
+L'état du canal d'entraînement. Vous pouvez définir l'état du canal du lecteur sur `optimal` ou `degraded`.
+
+|===
+
+
+== Remarques
+
+Utilisez le `optimal` Permet de ramener un canal de disque dégradé à l'état optimal. Utilisez le `degraded` option lorsque le canal du lecteur rencontre des problèmes et que la matrice de stockage nécessite plus de temps pour le transfert de données.
+
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.15 ajoute la mise à jour à l'identificateur de canal de lecteur.

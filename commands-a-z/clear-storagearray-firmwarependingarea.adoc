@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/clear-storagearray-firmwarependingarea.html 
+sidebar: sidebar 
+keywords: clear, storage array, firmware, pending, area 
+summary: La commande Effacer storageArray firmawarePendingArea supprime une image de micrologiciel ou des valeurs NVSRAM que vous avez préalablement téléchargées à partir du tampon de zone en attente. 
+---
+= Effacez la zone en attente du micrologiciel de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear storageArray firmwarePendingArea` Commande supprime une image de micrologiciel ou des valeurs NVSRAM que vous avez déjà téléchargées depuis la mémoire tampon de la zone en attente.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- dès que vous exécutez cette commande, le contenu de la zone en attente existante de la matrice de stockage est supprimé.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+clear storageArray firmwarePendingArea
+----
+
+
+== Paramètres
+
+Aucune.

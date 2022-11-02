@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/set-target.html 
+sidebar: sidebar 
+keywords: set, target, properties 
+summary: 'La commande définir la cible modifie les propriétés d"une cible iSCSI/iser, y compris la méthode d"authentification et le nom d"alias.' 
+---
+= Définissez les propriétés de la cible
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set target` Commande modifie les propriétés d'une cible iSCSI/iser, y compris la méthode d'authentification et le nom d'alias.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande remplace le document obsolète xref:set-isertarget.adoc[Définir la cible iser] et xref:set-iscsitarget.adoc[Définissez les propriétés de la cible iSCSI] commandes.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod=(none | chap chapSecret="newSecurityKey") | targetAlias="newAliasName")
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`target`
+ a| 
+Permet de spécifier la cible que vous souhaitez définir. Vous pouvez spécifier le nom d'alias de la cible ou le nom qualifié (par exemple, iqn). Placez l'identificateur de cible entre guillemets (" "). Vous devez également inclure l'identificateur entre crochets ([ ]) s'il s'agit d'un alias ou de crochets d'angle ( ) s'il s'agit d'un nom qualifié.
+
+
+
+ a| 
+`authenticationMethod`
+ a| 
+Permet de définir les moyens d'authentification de votre session. Les choix valides sont les suivants : `none` ou `chap`.
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Vous permet de saisir la clé de sécurité pour authentifier une connexion homologue. Ceci n'est applicable que lorsque `authenticationMethod` est défini sur `chap`.
+
+
+
+ a| 
+`targetAlias`
+ a| 
+Permet de spécifier le nouveau nom d'alias de la cible. Placez le nom entre guillemets (" ").
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

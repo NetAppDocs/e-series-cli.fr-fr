@@ -1,0 +1,98 @@
+---
+permalink: commands-a-z/create-initiator.html 
+sidebar: sidebar 
+keywords: create, initiator 
+summary: 'La commande create initiator crée l"objet initiateur.' 
+---
+= Créer un initiateur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create initiator` la commande crée l'objet initiateur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande remplace le document obsolète xref:create-iscsiinitiator.adoc[Créer un initiateur iSCSI] commande.
+
+====
+[NOTE]
+====
+Cette commande s'applique uniquement aux technologies iSCSI, iser, NVMe over RoCE, NVMe over InfiniBand et NVMe over Fibre Channel.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+create initiator identifier="initiatorQualifiedName" userLabel="initiatorName" host="hostName"
+interfaceType=(iscsi | iser | nvmeof) [chapSecret="securityKey"]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`identifier`
+ a| 
+Permet de spécifier le nom qualifié de l'identificateur (par exemple iqn ou nqn) pour créer un initiateur . Placez l'identificateur entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Permet de spécifier un libellé utilisateur pour l'initiateur. Placez le nom entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Permet de spécifier le nom d'hôte sur lequel l'initiateur est installé. Placez le nom entre guillemets (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Permet de spécifier le type d'interface de l'initiateur. Les choix valides sont : iscsi, iser ou nvmeof.
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Vous permet de saisir la clé de sécurité que vous souhaitez utiliser pour authentifier une connexion homologue. Placez la clé de sécurité entre guillemets (" "). Ce paramètre s'applique uniquement aux types d'interface hôte iSCSI et iser.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

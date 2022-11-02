@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/save-storagearray-hostportstatistics.html 
+sidebar: sidebar 
+keywords: save, storage, array, host, port, statistics 
+summary: La commande Save storageArray hostPortStatistics enregistre les statistiques de port hôte de la matrice de stockage. 
+---
+= Enregistrer les statistiques de port hôte de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray hostPortStatistics` la commande enregistre les statistiques du port hôte de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de sécurité.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande remplace le document obsolète xref:save-storagearray-iscsistatistics.adoc[Enregistrer les statistiques iSCSI de la matrice de stockage], xref:save-storagearray-iserstatistics.adoc[Enregistrez les statistiques iser des baies de stockage], et xref:save-storagearray-ibstats.adoc[Enregistrer les statistiques InfiniBand de la baie de stockage] commandes.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+save storageArray hostPortStatistics [(raw | baseline)] type=(ISCSI| ISER | SRP | NVMEOF) file="filename"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`raw`
+ a| 
+Permet de récupérer les statistiques collectées depuis le début de la journée. Placez le paramètre entre crochets ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Vous permet d'extraire les statistiques collectées à partir du moment où les lignes de base des contrôleurs ont été remises à zéro. Placez le paramètre entre crochets ([ ]).
+
+
+
+ a| 
+`type`
+ a| 
+Permet d'indiquer le type de statistiques à collecter. Les choix valides sont les suivants : `ISCSI`, `ISER`, `SRP`, et `NVMEOF`.
+
+
+
+ a| 
+`file`
+ a| 
+Permet de spécifier le chemin d'accès au fichier et le nom du fichier pour enregistrer les statistiques. Placez le nom du fichier entre guillemets (" "). Utilisez n'importe quel nom de fichier avec le `.csv` extension.
+
+|===
+[cols="6*"]
+|===
+| Type | Ethernet MAC, Ethernet TCP/IP, local Initiator (protocole), DCBX Operational State, LLDP TLV, TLV DCBX | Cible (protocole) | Interface InfiniBand | Sous-système NVMe | Nom de fichier ASUP 
+
+
+ a| 
+`iscsi`
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+`iser`
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`srp`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`nvmeof`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

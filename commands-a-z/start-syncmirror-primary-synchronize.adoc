@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-syncmirror-primary-synchronize.html 
+sidebar: sidebar 
+keywords: start, synchronous, mirror, synchronization 
+summary: La commande START SyncMirror primary sync démarre la synchronisation synchrone de la mise en miroir. 
+---
+= Démarrez la synchronisation de la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start syncMirror primary synchronize` la commande démarre la synchronisation de la mise en miroir synchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start syncMirror primary ["_volumeName_"]] synchronize
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`primary`
+ a| 
+Nom du volume principal pour lequel vous souhaitez démarrer la synchronisation. Placez le nom du volume primaire entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

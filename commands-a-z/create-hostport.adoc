@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-hostport.html 
+sidebar: sidebar 
+keywords: create, host, port 
+summary: 'La commande create hostPort crée une nouvelle identification de port hôte sur un adaptateur de bus hôte (HBA) ou sur un adaptateur de canal hôte (HCA).' 
+---
+= Créer un port hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create hostPort` La commande crée une nouvelle identification de port hôte sur un adaptateur de bus hôte (HBA) ou sur un adaptateur de canal hôte (HCA).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+L'identification du port hôte est une valeur logicielle représentant le port hôte HBA ou HCA physique vers le contrôleur. Sans l'identification correcte du port hôte, le contrôleur ne peut pas recevoir d'instructions ou de données du port hôte.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create hostPort identifier=pass:quotes[_("wwID"_ | "_gid"_)
+userLabel="_portLabel"_]
+[host=pass:quotes[_"hostName"_]]
+[interfaceType=(FC | SAS | IB)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`identifier`
+ a| 
+Le WWID (World Wide identifier) de 8 octets ou l'identificateur de groupe de 16 octets (GID) du port hôte HBA ou HCA. Placez le WWID ou le GID entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau HBA ou au nouveau port hôte HCA. Placez l'étiquette du port hôte entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte pour lequel vous définissez un port hôte HBA ou HCA. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Identifiant du type d'interface du port hôte.
+
+Les choix pour les types d'interfaces de port hôte sont les suivants :
+
+* `FC` -- Fibre Channel
+* `SAS` -- SCSI connecté en série
+* `IB` -- InfiniBand
+
+
+Une sélection FC ou SAS nécessite un WWID de 8 octets. La sélection d'IB requiert un ID de groupe de 16 octets.
+
+Si vous ne spécifiez pas le type d'interface, `FC` est utilisée comme interface par défaut pour le port hôte.
+
+|===
+
+
+== Remarques
+
+Un port hôte HBA ou un port hôte HCA est une connexion physique sur un adaptateur de bus hôte ou sur un adaptateur de canal hôte résidant sur un ordinateur hôte. Un port hôte HBA ou un port hôte HCA fournit un accès hôte aux volumes d'une matrice de stockage. Si le HBA ou le HCA ne dispose que d'une seule connexion physique (un seul port hôte), les termes Port hôte et adaptateur de bus hôte ou adaptateur de canal hôte sont synonymes.
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+5.20
+
+7.10 dégénère le `hostType` paramètre. Le `hostType` le paramètre a été ajouté au `create host` commande.
+
+7.32 ajoute le `interfaceType` paramètre.

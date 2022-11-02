@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/show-controller-diagnostic-status.html 
+sidebar: sidebar 
+keywords: show, controller, diagnostic, status 
+summary: 'La commande show Controller renvoie l"état des diagnostics du contrôleur démarrés par la commande start Controller diagnostic.' 
+---
+= Affiche l'état de diagnostic du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show controller` la commande renvoie l'état des diagnostics du contrôleur démarrés par `start controller diagnostic` commande.
+
+Si les diagnostics ont terminé, les résultats complets des tests de diagnostic sont affichés. Si les tests de diagnostic ne sont pas terminés, seuls les résultats des tests terminés sont affichés. Les résultats du test sont affichés sur le terminal, ou vous pouvez écrire les résultats dans un fichier.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Paramètre permettant de renvoyer des informations sur un contrôleur spécifique de la matrice de stockage. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Nom du fichier contenant les résultats des tests de diagnostic. Cette commande n'ajoute pas automatiquement une extension de fichier au nom du fichier. Vous devez ajouter une extension lorsque vous entrez le nom du fichier.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.70 ajoute la fonction d'état de diagnostic du contrôleur.

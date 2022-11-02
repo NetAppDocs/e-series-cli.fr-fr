@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/show-volume-actionprogress.html 
+sidebar: sidebar 
+keywords: show, volume, action, progress 
+summary: 'La commande show volume actionProgress renvoie des informations sur l"action de volume et la quantité de l"opération longue durée qui est terminée pour une opération longue exécution sur un volume.' 
+---
+= Affiche la progression de l'action du volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volume actionProgress` la commande renvoie des informations sur l'action de volume et la quantité de l'opération longue durée qui est terminée pour une opération longue exécution sur un volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 7.77 du micrologiciel, le `show volume actionProgress` la commande est obsolète. Remplacez cette commande par `show storageArray longRunningOperations`.
+
+====
+Le pourcentage de l'opération longue durée terminée est indiqué en pourcentage (par exemple, 25 signifie que 25 % de l'opération longue durée est terminée).
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show volume pass:quotes[[_volumeName_]] actionProgress
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Le nom d'un volume pour lequel vous souhaitez récupérer des informations sur une opération longue. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+5.43

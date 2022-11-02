@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/clear-storagearray-recoverymode.html 
+sidebar: sidebar 
+keywords: clear, storage array, recovery, mode 
+summary: La commande Clear storageArray recoveryMode force une matrice de stockage à quitter le mode de récupération. 
+---
+= Effacer le mode de restauration de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear storageArray recoveryMode` la commande force une matrice de stockage à quitter le mode de restauration.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+clear storageArray recoveryMode
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+[NOTE]
+====
+Le mode de récupération est activé lors des opérations de début de journée lorsque la configuration du système est effacée et qu'une sauvegarde intégrée valide est disponible. Pour quitter ce mode, restaurez la configuration système à partir d'un emplacement de sauvegarde ou supprimez les sauvegardes intégrées existantes. Lorsque le mode de restauration est en vigueur, une condition d'attention requise est émise et le gourou de la restauration est disponible à partir de l'interface utilisateur. Toutefois, la configuration du système est vide pendant le mode de récupération.
+
+====
+[NOTE]
+====
+Si vous souhaitez restaurer la matrice de stockage dans une configuration précédente, vous devez restaurer la configuration à partir de la sauvegarde avant de désactiver le mode de récupération. Vous devez effectuer des vérifications de validation ou vérifier avec le support technique pour vous assurer que la restauration a réussi. Après avoir déterminé que la restauration a réussi, le mode de récupération peut être effacé.
+
+====
+
+
+== Niveau minimal de firmware
+
+7.83

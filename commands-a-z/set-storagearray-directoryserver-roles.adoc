@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/set-storagearray-directoryserver-roles.html 
+sidebar: sidebar 
+keywords: set, storage, array, directory, server, role, map 
+summary: 'La commande set storageArray directoryServer roles permet de définir des mappages de rôles pour un serveur d"annuaire spécifié. Ces mappages de rôles sont utilisés pour authentifier les utilisateurs qui tentent d"exécuter diverses commandes SMcli.' 
+---
+= Définir le mappage de rôle du serveur d'annuaire de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray directoryServer roles` la commande vous permet de définir des mappages de rôles pour un serveur d'annuaire spécifié. Ces mappages de rôles sont utilisés pour authentifier les utilisateurs qui tentent d'exécuter diverses commandes SMcli.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Ce dont vous aurez besoin
+
+Les rôles suivants peuvent être mappés :
+
+* *Storage admin* -- accès en lecture/écriture complet aux objets de stockage (par exemple, volumes et pools de disques), mais pas d'accès à la configuration de sécurité.
+* *Security admin* -- accès à la configuration de sécurité dans Access Management, gestion des certificats, gestion du journal d'audit et possibilité d'activer ou de désactiver l'interface de gestion héritée (symbole).
+* *Support admin* -- accès à toutes les ressources matérielles de la baie de stockage, aux données de panne, aux événements MEL et aux mises à niveau du micrologiciel du contrôleur. Aucun accès aux objets de stockage ou à la configuration de sécurité.
+* *Monitor* -- accès en lecture seule à tous les objets de stockage, mais pas d'accès à la configuration de sécurité.
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+set storageArray directoryServer pass:quotes[["_domainId_"]]
+    groupDN=pass:quotes["_groupDistinguishedName_"] roles=pass:quotes[("_role1_"..."_roleN_")]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`directoryServer`
+ a| 
+Vous permet de spécifier le domaine par son ID pour lequel vous souhaitez définir des mappages de rôles.
+
+
+
+ a| 
+`groupDN`
+ a| 
+Permet de spécifier le nom distinctif (DN) du groupe à ajouter à la liste de mappage.
+
+
+
+ a| 
+`roles`
+ a| 
+Permet de spécifier un ou plusieurs rôles pour les utilisateurs dans le groupe défini. Si vous saisissez plusieurs rôles, séparez les valeurs par un espace. Les choix valides sont les suivants :
+
+* `storage.monitor`
+* `storage.admin`
+* `security.admin`
+* `support.admin`
+
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    groupDN="CN=ng-hsg-bc-madridsecurity,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com"
+                    roles=("storage.monitor" "security.admin" "storage.admin");"
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    groupDN="CN=ng-epg-engr-manageability,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com"
+                    roles=("support.admin");"
+
+SMcli completed successfully.
+----

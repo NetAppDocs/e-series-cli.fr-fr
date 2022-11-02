@@ -1,0 +1,163 @@
+---
+permalink: commands-a-z/diagnose-controller-iscsihostport.html 
+sidebar: sidebar 
+keywords: diagnose, controller, hostport, command, diagnostic, tests, copper, cable, host, interface, cards, support, roles 
+summary: 'La commande Diagnose Controller iscsiHostPort exécute des tests de diagnostic sur les câbles en cuivre entre les cartes d"interface hôte iSCSI et un contrôleur.' 
+---
+= Diagnostiquer le câble hôte iSCSI du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `diagnose controller iscsiHostPort` La commande exécute des tests de diagnostic sur les câbles en cuivre entre les cartes d'interface hôte iSCSI et un contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez exécuter des diagnostics sur un port sélectionné ou sur tous les ports. Les ports doivent pouvoir prendre en charge le diagnostic des câbles. Si les ports ne prennent pas en charge le diagnostic des câbles, une erreur est renvoyée.
+
+
+
+== Syntaxe
+
+[listing]
+----
+diagnose controller [(a|b)]
+iscsiHostPort ([all] | [portLabel])
+testID=cableDiagnostics
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur sur lequel vous souhaitez effectuer le test de diagnostic du câble. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+
+
+ a| 
+`iscsiHostPort`
+ a| 
+Port hôte iSCSI sur lequel vous souhaitez exécuter les tests de diagnostic. Vous pouvez exécuter les tests de diagnostic sur tous les ports hôte iSCSI ou exécuter les tests de diagnostic sur un port hôte iSCSI spécifique.
+
+Pour plus d'informations, reportez-vous aux sections suivantes :
+
+ an iSCSI host port label,« Identification d'une étiquette de port hôte iSCSI »
+
+
+
+ a| 
+`testID`
+ a| 
+Identifiant du test de diagnostic à exécuter. Pour ce test de diagnostic, le seul choix est `cableDiagnostics`.
+
+|===
+
+
+== Identification d'une étiquette de port hôte iSCSI
+
+Vous devez spécifier une étiquette pour le port hôte. Procédez comme suit pour spécifier l'étiquette du port hôte :
+
+. Si vous ne connaissez pas l'étiquette de port du port hôte iSCSI, exécutez le `show controller` commande.
+. Dans la section interface hôte des résultats, recherchez le port hôte que vous souhaitez sélectionner.
++
+[NOTE]
+====
+L'étiquette de port est la valeur complète renvoyée pour le `Port` légale.
+
+====
+. Placez la valeur entière de l'étiquette de port entre guillemets et crochets : ["portLabel"]. Par exemple, si l'étiquette de port est `Ch 2`, Spécifiez le port hôte iSCSI comme suit :
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Si vous utilisez une ligne de commande Windows et que le libellé contient un canal (|), le caractère doit être échappé (en utilisant {caret}) ; sinon, il sera interprété comme une commande. Par exemple, si l'étiquette de port est `e0b|0b`, Spécifiez le port hôte iSCSI comme suit :
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Pour assurer la compatibilité ascendante, les numéros de port iscsiPortsNumber, entourés d'accolades [ ] plutôt que de devis et d'accolades [« »] peuvent toujours être utilisés pour les contrôleurs E2700, E5600 ou EF560 (et d'autres générations précédentes de contrôleurs E-Series ou EF-Series). Pour ces contrôleurs, les valeurs valides pour iscsiPortNumber sont les suivantes :
+
+* Pour les contrôleurs avec ports hôtes intégrés, la numérotation est 3, 4, 5 ou 6.
+* Pour les contrôleurs avec des ports hôtes sur une carte d'interface hôte uniquement, la numérotation est 1, 2, 3 ou 4.
+
+
+Voici un exemple de syntaxe précédente :
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Remarques
+
+Lorsque vous exécutez le test de diagnostic des câbles, le micrologiciel renvoie les informations suivantes :
+
+* *Port hôte* : port sur lequel le test de diagnostic a été exécuté.
+* *HIC* : la carte d'interface hôte associée à ce port.
+* Date et heure d'exécution du test.
+* *Statut* :
++
+** *OK*: Toutes les paires de câbles sont bonnes et n'ont pas de défauts.
+** *Open* : une ou plusieurs des quatre paires de câbles sont ouvertes.
+** *Court* : une ou plusieurs des quatre paires de câbles sont en court-circuit.
+** *Incomplet* : une ou plusieurs des quatre paires ont renvoyé des résultats de test incomplets ou non valides.
+
+
+* *Longueur* : la longueur des câbles est indiquée en mètres et les informations suivantes concernant les câbles sont renvoyées :
++
+** Lorsque l'état du câble est OK, les longueurs approximatives des paires de câbles sont renvoyées. Les longueurs des paires de câbles sont indiquées comme une plage (L1-L2), qui sont les longueurs les plus courtes et les plus longues des paires de câbles.
+** Si l'état du câble est ouvert ou court-circuité, la distance approximative par rapport à la défaillance dans les paires de câbles. En cas de panne, la longueur est signalée pour cette paire de câbles. En cas de panne, les informations renvoyées sont les longueurs les plus courtes et les plus longues. Les longueurs sont indiquées comme une plage (L1-L2) où L1L2.
+** Si l'état du câble est incomplet, les informations renvoyées sont les longueurs des paires de câbles les plus courtes et les plus longues que le micrologiciel peut tester. Les longueurs sont indiquées pour les paires de câbles valides comme une plage (L1-L2) où L1L2.
+
+
+* Enregistrer les valeurs des registres de diagnostic des câbles. Les valeurs sont au format hexadécimal :
++
+** Deux octets indiquent l'état du câble combiné (quatre bits par port).
+** Quatre numéros de deux octets indiquent la longueur de chaque canal.
+
+
+
+
+
+
+== Niveau minimal de firmware
+
+7.77
+
+8.10 révise le système de numérotation pour les ports hôtes iSCSI.

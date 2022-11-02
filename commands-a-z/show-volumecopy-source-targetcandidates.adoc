@@ -1,0 +1,50 @@
+---
+permalink: commands-a-z/show-volumecopy-source-targetcandidates.html 
+sidebar: sidebar 
+keywords: show, volume, copy, target, candidates 
+summary: La commande show VolumeCopy source targetCandidates renvoie des informations sur les volumes candidats que vous pouvez utiliser comme cible pour une opération de copie de volume. Cette commande est valide pour les paires de copies de volume de snapshot. 
+---
+= Afficher les candidats cibles de copie de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volumeCopy source targetCandidates` commande renvoie des informations sur les volumes candidats que vous pouvez utiliser comme cible pour une opération de copie de volume. Cette commande est valide pour les paires de copies de volume de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show volumeCopy source pass:quotes[["_sourceName_"]] targetCandidates
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`source`
+ a| 
+Nom du volume source pour lequel vous essayez de trouver un volume cible candidat. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+|===

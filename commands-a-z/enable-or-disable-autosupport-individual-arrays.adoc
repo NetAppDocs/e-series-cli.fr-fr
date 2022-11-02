@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/enable-or-disable-autosupport-individual-arrays.html 
+sidebar: sidebar 
+keywords: command, enable, disable, autosupport, feature, storage, array, possible, transit, messages, technical, support, site, capable, automatically, prepare, collect, data, remote, troubleshooting, problem, analysis 
+summary: 'Cette commande active ou désactive la fonction AutoSupport (ASUP) pour la baie de stockage et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, la baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l"analyse des problèmes.' 
+---
+= Activer ou désactiver AutoSupport (toutes les baies individuelles)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette commande active ou désactive la fonction AutoSupport (ASUP) pour la baie de stockage et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, la baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l'analyse des problèmes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Après avoir activé cette fonction, vous pouvez ensuite activer la fonction AutoSupport OnDemand (si vous le souhaitez), puis activer la fonction AutoSupport Remote Diagnostics (diagnostic à distance) (si vous le souhaitez).
+
+Vous devez activer les trois fonctions dans cet ordre :
+
+. *Activer AutoSupport*
+. *Activer AutoSupport OnDemand*
+. *Activer les diagnostics à distance AutoSupport*
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray autoSupport (enable | disable)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`enable | disable`
+ a| 
+Permet d'activer ou de désactiver AutoSupport. Si les fonctions OnDemand et Diagnostics à distance sont activées, l'action de désactivation désactive également les fonctions OnDemand et Diagnostics à distance.
+
+|===
+
+
+=== Exemples
+
+[listing]
+----
+
+   SMcli -n Array1 -c "set storageArray autoSupport enable;"
+
+   SMcli completed successfully.
+----
+
+
+== Vérification
+
+Utilisez le `show storageArray autoSupport` commande pour voir si vous avez activé la fonction. La ligne initiale de la sortie affichée indique l'état d'activation :
+
+[listing]
+----
+The AutoSupport feature is enabled on this storage array.
+----
+
+
+== Niveau minimal de micrologiciel
+
+7.86 - Ajout d'une commande pour toutes les baies de stockage jusqu'au modèle E2700 et E5600
+
+8.40 - prise en charge ajoutée des systèmes E2800 et E5700

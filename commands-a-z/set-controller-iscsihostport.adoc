@@ -1,0 +1,488 @@
+---
+permalink: commands-a-z/set-controller-iscsihostport.html 
+sidebar: sidebar 
+keywords: set, iscsi, host, port, network, properties 
+summary: 'La commande set Controller iscsiHostPort modifie les propriétés réseau d"un port hôte, y compris les propriétés IPv4 et IPv6, la vitesse du port et la charge utile de trame maximale.' 
+---
+= Définissez les propriétés de mise en réseau du port hôte iSCSI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set controller iscsiHostPort` Commande modifie les propriétés réseau d'un port hôte, y compris les propriétés IPv4 et IPv6, la vitesse du port et la charge de trame maximale.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:set-controller-hostport.adoc[Définissez les propriétés du port hôte du contrôleur] commande.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+set controller [(a|b)]
+iscsiHostPort [portLabel]
+----
+[listing]
+----
+([IPv4Address=(0-255).(0-255).(0-255).(0-255) ]|
+----
+[listing]
+----
+[IPv6LocalAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)] |
+----
+[listing]
+----
+[IPv6RoutableAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF) ]|
+----
+[listing]
+----
+[IPv6RouterAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF) ]|
+----
+[listing]
+----
+[enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE)] |
+----
+[listing]
+----
+[enableIPv4Vlan=(TRUE | FALSE) | enableIPv6Vlan=(TRUE | FALSE)] |
+----
+[listing]
+----
+[enableIPv4Priority=(TRUE | FALSE) | enableIPv6Priority=(TRUE | FALSE) ]|
+----
+[listing]
+----
+[IPv4ConfigurationMethod=(static | dhcp) ]|
+----
+[listing]
+----
+[IPv6ConfigurationMethod=(static | auto)] |
+----
+[listing]
+----
+[IPv4GatewayIP=(TRUE | FALSE)] |
+----
+[listing]
+----
+[IPv6HopLimit=[0-255] ]|
+----
+[listing]
+----
+[IPv6NdDetectDuplicateAddress=[0-256] ]|
+----
+[listing]
+----
+[IPv6NdReachableTime=[0-65535] ]|
+----
+[listing]
+----
+[IPv6NdRetransmitTime=[0-65535]] |
+----
+[listing]
+----
+[IPv6NdTimeOut=[0-65535] ]|
+----
+[listing]
+----
+[IPv4Priority=[0-7] | IPv6Priority=[0-7] ]|
+----
+[listing]
+----
+[IPv4SubnetMask=(0-255).(0-255).(0-255).(0-255)] |
+----
+[listing]
+----
+[IPv4VlanId=[1-4094] | IPv6VlanId=[1-4094]] |
+----
+[listing]
+----
+[maxFramePayload=[*frameSize*]] |
+----
+[listing]
+----
+[tcpListeningPort=[3260, 49152-65536] ]|
+----
+[listing]
+----
+[portSpeed=[(10 | 25)])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`enableIPV4`
+ a| 
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+
+
+ a| 
+`enableIPV4Priority`
+ a| 
+Sélectionnez cette option pour activer le paramètre qui détermine la priorité d'accès au réseau. Utilisez le curseur pour sélectionner une priorité entre 1 et 7.
+
+Dans un environnement de réseau local partagé (LAN), tel qu'Ethernet, de nombreuses stations peuvent se disputes l'accès au réseau. L'accès est le premier arrivé, premier servi. Deux stations peuvent essayer d'accéder au réseau en même temps, ce qui entraîne l'arrêt des deux stations et l'attente avant de réessayer. Ce processus est réduit pour l'Ethernet commuté, où une seule station est connectée à un port de commutateur.
+
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`enableIPV4Vlan`
+ a| 
+Un VLAN est un réseau logique qui se comporte comme il est physiquement séparé des autres réseaux locaux (LAN) physiques et virtuels pris en charge par les mêmes commutateurs, les mêmes routeurs, ou les deux. Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`enableIPV6`
+ a| 
+L'espace d'adresse IPv6 est de 128 bits. Il est représenté par huit blocs hexadécimaux de 16 bits séparés par deux-points.
+
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+
+
+ a| 
+`enableIPV6Priority`
+ a| 
+Sélectionnez cette option pour activer le paramètre qui détermine la priorité d'accès au réseau. Utilisez le curseur pour sélectionner une priorité entre 1 et 7.
+
+Dans un environnement de réseau local partagé (LAN), tel qu'Ethernet, de nombreuses stations peuvent se disputes l'accès au réseau. L'accès est le premier arrivé, premier servi. Deux stations peuvent essayer d'accéder au réseau en même temps, ce qui entraîne l'arrêt des deux stations et l'attente avant de réessayer. Ce processus est réduit pour l'Ethernet commuté, où une seule station est connectée à un port de commutateur.
+
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`enableIPV6Vlan`
+ a| 
+Un VLAN est un réseau logique qui se comporte comme il est physiquement séparé des autres réseaux locaux (LAN) physiques et virtuels pris en charge par les mêmes commutateurs, les mêmes routeurs, ou les deux.
+
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`IPV4Address`
+ a| 
+Entrez l'adresse au format suivant : (0-255).(0-255).(0-255).(0-255).
+
+
+
+ a| 
+`IPV4ConfigurationMethod`
+ a| 
+Les options disponibles sont les suivantes :
+
+* statique
+* dhcp
+
+
+
+
+ a| 
+`IPV4GatewayIP`
+ a| 
+Les options disponibles sont les suivantes :
+
+* VRAI
+* FAUX
+
+
+
+
+ a| 
+`IPV4Priority`
+ a| 
+Entrez une valeur comprise entre 0 et 7.
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`IPV4SubnetMask`
+ a| 
+Entrez le masque de sous-réseau au format suivant : (0-255).(0-255).(0-255).(0-255).
+
+
+
+ a| 
+`IPV4VlanId`
+ a| 
+Entrez une valeur comprise entre 1 et 4094.
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`IPV6ConfigurationMethod`
+ a| 
+Les options disponibles sont les suivantes :
+
+* statique
+* automatique
+
+
+
+
+ a| 
+`IPV6HopLimit`
+ a| 
+Cette option configure le nombre maximal de sauts qu'un paquet IPv6 peut parcourir.
+
+La valeur par défaut est `64`.
+
+
+
+ a| 
+`IPV6LocalAddress`
+ a| 
+Entrez l'adresse au format suivant : (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)
+
+
+
+ a| 
+`IPV6NdDetectDuplicateAddress`
+ a| 
+Entrez une valeur comprise entre 0 et 256.
+
+
+
+ a| 
+`IPV6NdReachableTime`
+ a| 
+Cette option configure la durée pendant laquelle un mode IPv6 distant est considéré comme accessible. Spécifiez une valeur, en millisecondes, comprise entre 0 et 65535.
+
+La valeur par défaut est `30000` millisecondes.
+
+
+
+ a| 
+`IPV6NdRetransmitTime`
+ a| 
+Cette option permet de configurer le temps nécessaire pour continuer à retransmettre un paquet à un nœud IPv6. Spécifiez une valeur, en millisecondes, comprise entre 0 et 65535.
+
+La valeur par défaut est `1000` millisecondes.
+
+
+
+ a| 
+`IPV6NdTimeOut`
+ a| 
+Cette option configure la valeur de temporisation pour un nœud IPv6. Spécifiez une valeur, en millisecondes, comprise entre 0 et 65535.
+
+La valeur par défaut est `30000` millisecondes.
+
+
+
+ a| 
+`IPV6Priority`
+ a| 
+Entrez une valeur comprise entre 0 et 7.
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`IPV6RoutableAddress`
+ a| 
+Entrez l'adresse au format suivant : (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)
+
+
+
+ a| 
+`IPV6RouterAddress`
+ a| 
+Entrez l'adresse au format suivant : (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)
+
+
+
+ a| 
+`IPV6VlanId`
+ a| 
+Entrez une valeur comprise entre 1 et 4094.
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en charge dans un environnement NVMe over RoCE.
+
+====
+
+
+ a| 
+`maxFramePayload`
+ a| 
+Le `maxFramePayload` Cette option est partagée entre IPv4 et IPv6 et constitue le plus grand paquet ou la plus grande trame pouvant être envoyé sur un réseau. La partie charge utile d'une trame Ethernet standard est définie sur `1500`, Et un cadre Ethernet jumbo est défini sur `9000`. Lorsque vous utilisez des trames Jumbo, tous les périphériques qui se trouvent dans le chemin réseau doivent être capables de gérer la plus grande taille de trame.
+
+La valeur par défaut est de 1500 octets par trame. Vous devez entrer une valeur comprise entre 1500 et 9000.
+
+
+
+ a| 
+`portSpeed`
+ a| 
+Les options disponibles sont les suivantes :
+
+* 10
+* 25
+
+
+[NOTE]
+====
+Cette option n'est valide que pour la carte d'interface hôte Ethernet 25 Gbit/s. La modification de la vitesse d'un port modifie la vitesse des quatre ports de la carte.
+
+====
+[NOTE]
+====
+Valeurs pour le `portSpeed` de la `iscsiHostPort` Les paramètres sont en mégabits par seconde (Mb/s).
+
+====
+
+
+ a| 
+`tcpListeningPort`
+ a| 
+Le port d'écoute est le numéro de port TCP utilisé par le contrôleur pour écouter les connexions iSCSI provenant d'initiateurs iSCSI hôtes. Le port d'écoute par défaut est 3260. Vous devez entrer 3260 ou une valeur comprise entre 49152 et 65535.
+
+|===
+
+
+== Identification d'une étiquette de port hôte iSCSI
+
+Vous devez spécifier une étiquette pour le port hôte. Procédez comme suit pour spécifier l'étiquette du port hôte :
+
+. Si vous ne connaissez pas l'étiquette de port du port hôte iSCSI, exécutez le `show controller` commande.
+. Dans la section interface hôte des résultats, recherchez le port hôte que vous souhaitez sélectionner.
++
+[NOTE]
+====
+L'étiquette de port est la valeur complète renvoyée pour le `Port` légale.
+
+====
+. Placez la valeur entière de l'étiquette de port entre guillemets et crochets : ["portLabel"]. Par exemple, si l'étiquette de port est `Ch 2`, Spécifiez le port hôte iSCSI comme suit :
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Si vous utilisez une ligne de commande Windows et que le libellé contient un canal (|), le caractère doit être échappé (en utilisant {caret}) ; sinon, il sera interprété comme une commande. Par exemple, si l'étiquette de port est `e0b|0b`, Spécifiez le port hôte iSCSI comme suit :
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Pour assurer la compatibilité ascendante, les numéros de port iscsiPortsNumber, entourés d'accolades [ ] plutôt que de devis et d'accolades [« »] peuvent toujours être utilisés pour les contrôleurs E2700, E5600 ou EF560 (et d'autres générations précédentes de contrôleurs E-Series ou EF-Series). Pour ces contrôleurs, les valeurs valides pour iscsiPortNumber sont les suivantes :
+
+* Pour les contrôleurs avec ports hôtes intégrés, la numérotation est 3, 4, 5 ou 6.
+* Pour les contrôleurs avec des ports hôtes sur une carte d'interface hôte uniquement, la numérotation est 1, 2, 3 ou 4.
+
+
+Voici un exemple de syntaxe précédente :
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Niveau minimal de firmware
+
+7.15 ajoute les nouvelles options de port hôte iSCSI.
+
+7.60 ajoute le `portSpeed` option.
+
+8.10 révise la méthode d'identification pour les ports hôtes iSCSI.
+
+8.40 révise le `portSpeed` de la `iscsiHostPort` Paramètre à noter qu'il n'est valide que pour la carte d'interface hôte Ethernet 25 Gbit/s et que la modification de la vitesse d'un port modifie la vitesse des quatre ports de la carte.
+
+8.41 cette commande est obsolète.

@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/delete-storagearray-directoryservers.html 
+sidebar: sidebar 
+keywords: delete, storage, array, directory, servers, command, allow, directory, role 
+summary: La commande delete storageArray directoryServers permet de supprimer un ou plusieurs serveurs de répertoires. 
+---
+= Supprimer le serveur de répertoire de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete storageArray directoryServers` permet de supprimer un ou plusieurs serveurs de répertoires.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete storageArray (allDirectoryServers |
+ directoryServers ["_domainId1_" ... "_domainIdN_"])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allDirectoryServers`
+ a| 
+Permet de supprimer tous les serveurs de répertoire.
+
+
+
+ a| 
+`directoryServers`
+ a| 
+Permet de spécifier un ou plusieurs serveurs de répertoires à supprimer, chacun identifié avec l'ID de domaine.
+
+[NOTE]
+====
+Placez les ID entre crochets ([ ]). Si vous avez fourni plusieurs, séparez-les par un espace.
+
+====
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete storageArray directoryServers ["domain1" "domain3"];"
+
+SMcli -n Array1 -c "delete storageArray allDirectoryServers;"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40 ajoute la commande.

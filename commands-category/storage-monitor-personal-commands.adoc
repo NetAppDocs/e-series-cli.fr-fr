@@ -1,0 +1,121 @@
+---
+permalink: commands-category/storage-monitor-personal-commands.html 
+sidebar: sidebar 
+keywords: storage, monitor, personnel, commands, asynchronous, autosupport, cache, array, synchronous 
+summary: Commandes du système de contrôle du stockage « personnel » 
+---
+= Commandes du système de contrôle du stockage « personnel »
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+link:../commands-a-z/show-storagearray-usersession.html["Affichez la session utilisateur de la baie de stockage"]
+
+link:../commands-a-z/save-storagearray-loginbanner.html["Enregistrez la bannière de connexion à la matrice de stockage"]
+
+link:../commands-a-z/set-session-erroraction.html["Configurez la session"]
+
+link:../commands-a-z/set-storagearray-localusername.html["Définissez le mot de passe ou le symbole de l'utilisateur local de la matrice de stockage"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Affiche la progression de la synchronisation des groupes de miroirs asynchrones"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Affiche les groupes de miroirs asynchrones"]
+
+link:../commands-a-z/show-storagearray-autosupport.html["Afficher la configuration AutoSupport (pour les systèmes de stockage E2800 ou E5700)"]
+
+link:../commands-a-z/show-consistencygroup.html["Affiche le groupe de cohérence"]
+
+link:../commands-a-z/show-cgsnapimage.html["Affiche l'image Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/show-controller.html["Affiche le contrôleur"]
+
+link:../commands-a-z/show-controller-nvsram.html["Afficher la NVSRAM du contrôleur"]
+
+link:../commands-a-z/show-iscsisessions.html["Affiche les sessions iSCSI en cours"]
+
+link:../commands-a-z/show-diskpool.html["Afficher le pool de disques"]
+
+link:../commands-a-z/show-alldrives.html["Afficher le lecteur"]
+
+link:../commands-a-z/show-drivechannel-stats.html["Affiche les statistiques des canaux de lecteur"]
+
+link:../commands-a-z/show-alldrives-downloadprogress.html["Affiche la progression du téléchargement du lecteur"]
+
+link:../commands-a-z/show-alldrives-performancestats.html["Affiche les statistiques de performances des disques"]
+
+link:../commands-a-z/show-emailalert-summary.html["Affiche la configuration des alertes par e-mail"]
+
+link:../commands-a-z/show-allhostports.html["Affiche les ports hôte"]
+
+link:../commands-a-z/show-replaceabledrives.html["Affiche les disques remplaçables"]
+
+link:../commands-a-z/show-snapgroup.html["Affiche le groupe de snapshots"]
+
+link:../commands-a-z/show-snapimage.html["Affiche l'image snapshot"]
+
+link:../commands-a-z/show-snapvolume.html["Affiche les volumes snapshot"]
+
+link:../commands-a-z/show-allsnmpcommunities.html["Afficher les communautés SNMP"]
+
+link:../commands-a-z/show-snmpsystemvariables.html["Afficher les variables du groupe système MIB II SNMP"]
+
+link:../commands-a-z/show-ssd-cache.html["Affiche le cache SSD"]
+
+link:../commands-a-z/show-ssd-cache-statistics.html["Affiche les statistiques du cache SSD"]
+
+link:../commands-a-z/show-storagearray.html["Afficher la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-autoconfiguration.html["Affiche la configuration automatique de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-controllerhealthimage.html["Affiche l'image d'état de santé du contrôleur de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Affiche la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-hostconnectivityreporting.html["Affiche les rapports sur la connectivité hôte de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Affiche la topologie hôte de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-lunmappings.html["Affiche les mappages de LUN de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Affiche les valeurs par défaut de négociation de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-odxsetting.html["Affiche le paramètre d'ODX de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-powerinfo.html["Affiche les informations d'alimentation de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Affiche les initiateurs iSCSI non configurés de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-unreadablesectors.html["Montrez les secteurs illisibles de la matrice de stockage"]
+
+link:../commands-a-z/show-textstring.html["Affiche la chaîne"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Affiche les candidats au volume de mise en miroir synchrone"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Affiche la progression de la synchronisation du volume de la mise en miroir synchrone"]
+
+link:../commands-a-z/show-syslog-summary.html["Affiche la configuration syslog"]
+
+link:../commands-a-z/show-volume.html["Afficher le volume fin"]
+
+link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Affiche les initiateurs non configurés"]
+
+link:../commands-a-z/show-volume-summary.html["Afficher le volume"]
+
+link:../commands-a-z/show-volume-actionprogress.html["Affiche la progression de l'action du volume"]
+
+link:../commands-a-z/show-volumecopy.html["Affiche la copie de volume"]
+
+link:../commands-a-z/show-volumecopy-sourcecandidates.html["Afficher les candidats source de copie de volume"]
+
+link:../commands-a-z/show-volumecopy-source-targetcandidates.html["Afficher les candidats cibles de copie de volume"]
+
+link:../commands-a-z/show-volumegroup.html["Afficher le groupe de volumes"]
+
+link:../commands-a-z/show-volumegroup-exportdependencies.html["Afficher les dépendances d'exportation de groupe de volumes"]
+
+link:../commands-a-z/show-volumegroup-importdependencies.html["Afficher les dépendances d'importation des groupes de volumes"]
+
+link:../commands-a-z/show-volume-performancestats.html["Affiche les statistiques de performances des volumes"]
+
+link:../commands-a-z/show-volume-reservations.html["Afficher les réservations de volume"]

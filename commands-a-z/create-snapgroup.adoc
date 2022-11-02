@@ -1,0 +1,1036 @@
+---
+permalink: commands-a-z/create-snapgroup.html 
+sidebar: sidebar 
+keywords: create, snapshot, group 
+summary: La commande create snapGroup crée un nouveau groupe de snapshots et le volume de référentiel associé. 
+---
+= Créer un groupe de snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create snapGroup` commande crée un nouveau groupe de snapshots et le volume de référentiel associé.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Un groupe d'instantanés contient une séquence d'instantanés d'un volume de base associé. Un groupe de snapshots possède un volume de référentiel utilisé pour enregistrer les données de toutes les images de snapshot faisant partie du groupe de snapshots.
+
+[NOTE]
+====
+Avant de créer un groupe de snapshots, assurez-vous qu'un groupe de volumes de capacité libre est disponible.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create snapGroup userLabel=pass:quotes[_"snapGroupName_" sourceVolume=_"volumeName"_]
+[(repositoryVolume="repos_xxxx" |
+repositoryVolume=(pass:quotes[_volumeGroupName_] [capacity=capacityValue]) |
+repositoryVolume=(pass:quotes[_diskPoolName_] [capacity=capacityValue]))]
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages)]
+[rollbackPriority=(highest | high | medium | low | lowest)]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]]|
+[enableSchedule=(TRUE | FALSE)]
+[schedule (immediate | pass:quotes[_snapshotSchedule_)]]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau groupe de snapshots. Placez l'identificateur du groupe de snapshots entre guillemets (" ").
+
+
+
+ a| 
+`sourceVolume`
+ a| 
+Nom du volume que vous souhaitez utiliser comme source pour vos images de snapshot. Placez le nom du volume source entre guillemets (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Nom du volume de référentiel qui contiendra les données modifiées du groupe de snapshots.
+
+Vous disposez de deux options pour définir le nom d'un volume de référentiel :
+
+* Utiliser un volume de référentiel existant : nom
+* Créez un nouveau volume de référentiel lorsque vous exécutez cette commande
+
+
+Le nom d'un volume de référentiel existant comprend deux parties :
+
+* Le terme « repos »
+* Un identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel
+
+
+Placez le nom du volume de référentiel existant entre guillemets (" ").
+
+Si vous souhaitez créer un nouveau volume de référentiel lorsque vous exécutez cette commande, vous devez entrer le nom d'un groupe de volumes ou d'un pool de disques dans lequel vous voulez que le volume de référentiel soit. Vous pouvez également définir la capacité du volume du référentiel. Si vous souhaitez définir la capacité, vous pouvez utiliser les valeurs suivantes :
+
+* Valeur entière représentant un pourcentage de la capacité du volume de base
+* Valeur décimale représentant un pourcentage de la capacité du volume de base
+* Taille spécifique du volume du référentiel. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+Si vous n'utilisez pas l'option Capacity, le logiciel de gestion du stockage définit la capacité sur 20 % de la capacité du volume de base.
+
+Lorsque vous exécutez cette commande, le logiciel de gestion du stockage crée le volume de référentiel du volume de snapshot.
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Définit la façon dont le traitement des images d'instantanés se poursuit si le volume de référentiel du groupe d'instantanés est plein. Vous pouvez choisir de basculer les écritures d'E/S vers le volume de base (`failBaseWrites`) ou supprimez (purgez) les images de snapshot  `purgeSnapImages`) dans le volume du référentiel. Le `purgeSnapImages` cette option supprime les images snapshot les plus anciennes pour libérer de l'espace. L'action par défaut est `purgeSnapImages`.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+Détermine si les ressources système doivent être allouées à l'opération de restauration, aux dépens des performances du système. Valeur de `high` Indique que l'opération de restauration est prioritaire sur toutes les autres E/S hôtes Valeur de `low` Indique que l'opération de restauration doit être effectuée avec un impact minimal sur les E/S de l'hôte La valeur par défaut est `medium`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Pourcentage de capacité de référentiel à laquelle vous recevez un avertissement indiquant que le volume de référentiel du groupe de snapshots est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. La valeur par défaut est 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Chaque groupe de snapshots peut être configuré de manière à effectuer une suppression automatique de ses images de snapshot afin de conserver le nombre total d'images de snapshot dans le groupe de snapshots au niveau ou en dessous d'un niveau désigné. Lorsque cette option est activée, chaque fois qu'une nouvelle image instantanée est créée dans le groupe de snapshots, le système supprime automatiquement l'image snapshot la plus ancienne du groupe pour qu'elle soit conforme à la valeur limite. Cette action libère de la capacité de l'espace de stockage afin de satisfaire les exigences de copie en écriture pour les images de snapshot restantes.
+
+
+
+ a| 
+`enableSchedule`
+ a| 
+Ce paramètre permet d'activer ou de désactiver la planification d'une opération d'instantané. Pour activer la planification des snapshots, définissez ce paramètre sur `TRUE`. Pour désactiver la planification des snapshots, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+Chaque nom de groupe de snapshots doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Pour créer un groupe de snapshots, vous devez avoir un volume de référentiel associé dans lequel vous stockez les images de snapshot. Vous pouvez utiliser un volume de référentiel existant ou créer un volume de référentiel. Vous pouvez créer le volume de référentiel lorsque vous créez le groupe de snapshots. Un volume de référentiel de groupe de snapshots est un volume extensible structuré comme une collection concaténée de 16 entités de volumes standard au maximum. Dans un premier temps, un volume de référentiel extensible ne comporte qu'un seul élément. La capacité du volume de référentiel extensible est exactement celle de l'élément unique. Vous pouvez augmenter la capacité d'un volume de référentiel extensible en y ajoutant des volumes standard. La capacité du volume de référentiel extensible composite devient alors la somme des capacités de tous les volumes standard concaténés.
+
+Un groupe d'instantanés a un ordre strict des images d'instantanés en fonction du moment où chaque image d'instantané est créée. Une image snapshot créée après une autre image snapshot est un _successeur_ par rapport à cette autre image snapshot. Une image d'instantané créée avant une autre image d'instantané est un _prédécesseur_ par rapport à cette autre image.
+
+Un volume de référentiel de groupe de snapshots doit répondre à une exigence de capacité minimale pouvant somme des éléments suivants :
+
+* 32 Mo pour la prise en charge de la surcharge fixe pour le groupe de snapshots et pour le traitement de la copie sur écriture.
+* Capacité pour le traitement de retour arrière, qui correspond à 1/5000e de la capacité du volume de base.
+
+
+La capacité minimale est respectée par le micrologiciel du contrôleur et le logiciel de gestion du stockage.
+
+Lorsque vous créez un groupe de snapshots pour la première fois, il ne contient aucune image instantanée. Lorsque vous créez des images de snapshot, vous ajoutez les images de snapshot à un groupe de snapshots. Utilisez le `create snapImage` commande pour créer des images de snapshot et ajouter les images de snapshot à un groupe de snapshots.
+
+Un groupe de snapshots peut avoir l'un des États suivants :
+
+* *Optimal* -- le groupe de snapshots fonctionne normalement.
+* *Full* -- le référentiel du groupe de snapshots est plein. Aucune autre opération de copie sur écriture ne peut être effectuée. Cet état n'est possible que pour les groupes de snapshots dont la stratégie de référentiel complet est définie sur échec des écritures de base. Tout groupe d'instantanés à l'état complet entraîne l'affichage d'une condition d'attention requise pour la matrice de stockage.
+* *Sur seuil* -- l'utilisation du volume du référentiel du groupe de snapshots est supérieure ou supérieure à son seuil d'alerte. Tout groupe d'instantanés dans cet état entraîne l'affichage d'une condition d'attention requise pour la matrice de stockage.
+* *FAILED* -- le groupe de snapshots a rencontré un problème qui a rendu toutes les images de snapshot du groupe de snapshots inutilisables. Par exemple, certains types de défaillances de volume de référentiel peuvent entraîner l'échec de l'état. Pour effectuer une restauration à partir d'un état défaillant, utilisez le `revive snapGroup` commande.
+
+
+Vous pouvez configurer chaque groupe de snapshots pour supprimer automatiquement les images de snapshot à l'aide de la `autoDeleteLimit` paramètre. La suppression automatique des images de snapshot vous permet d'éviter d'avoir à supprimer manuellement les images que vous ne voulez pas et cela pourrait empêcher la création de futures images de snapshot car le volume de référentiel est plein. Lorsque vous utilisez le `autoDeleteLimit` paramètre entraînant la suppression automatique des images snapshot par le logiciel de gestion du stockage, à partir du plus ancien. Le logiciel de gestion du stockage supprime les images instantanées jusqu'à ce qu'elles atteignent un nombre d'images instantanées égal au nombre que vous entrez `autoDeleteLimit` paramètre. Lorsque de nouvelles images de snapshot sont ajoutées au volume du référentiel, le logiciel de gestion du stockage supprime les images de snapshot les plus anciennes jusqu'à la `autoDeleteLimit` le numéro de paramètre est atteint.
+
+Le `enableSchedule` paramètre et le `schedule` paramètre vous permet de planifier la création d'images de snapshot pour un groupe de snapshots. Ces paramètres vous permettent de programmer des instantanés tous les jours, toutes les semaines ou tous les mois (par jour ou par date). Le `enableSchedule` paramètre active ou désactive la possibilité de planifier des snapshots. Lorsque vous activez la planification, vous utilisez le `schedule` paramètre pour définir l'heure à laquelle les snapshots doivent être effectués.
+
+Ce tableau explique comment utiliser les options de l' `schedule` paramètre :
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`schedule`
+ a| 
+Requis pour spécifier les paramètres de planification.
+
+
+
+ a| 
+`immediate`
+ a| 
+Démarrer immédiatement l'opération. Cet élément s'excluent mutuellement avec tous les autres paramètres de planification.
+
+
+
+ a| 
+`enableSchedule`
+ a| 
+Lorsqu'il est réglé sur `true`, la programmation est activée. Lorsqu'il est réglé sur `false`, la programmation est désactivée.
+
+[NOTE]
+====
+La valeur par défaut est `false`.
+
+====
+
+
+ a| 
+`startDate`
+ a| 
+Date précise de démarrage de l'opération. Le format de saisie de la date est MM:JJ:AA. La valeur par défaut est la date actuelle. Voici un exemple de cette option `startDate=06:27:11`.
+
+
+
+ a| 
+`scheduleDay`
+ a| 
+Un jour de la semaine où commencer l'opération. Peut être une ou plusieurs des valeurs suivantes :
+
+* `monday`
+* `tuesday`
+* `wednesday`
+* `thursday`
+* `friday`
+* `saturday`
+* `sunday`
+
+
+[NOTE]
+====
+Placez la valeur entre parenthèses. Par exemple : `scheduleDay=(wednesday)`.
+
+====
+Plus d'un jour peut être spécifié en enfermant les jours dans un ensemble unique de parenthèses et en séparant chaque jour avec un espace. Par exemple : `scheduleDay=(monday wednesday friday)`.
+
+[NOTE]
+====
+Ce paramètre n'est pas compatible avec un planning mensuel.
+
+====
+
+
+ a| 
+`startTime`
+ a| 
+L'heure du jour de démarrage de l'opération. Le format de saisie de l'heure est HH:MM, où HH est l'heure et MM est la minute au-delà de l'heure. Utilise une horloge de 24 heures. Par exemple, 2:00 dans l'après-midi est 14:00. Voici un exemple de cette option `startTime=14:27`.
+
+
+
+ a| 
+`scheduleInterval`
+ a| 
+Durée, en minutes, d'au moins entre les opérations.l'intervalle de planification ne doit pas être supérieur à 1440 (24 heures) et doit être un multiple de 30.
+
+Voici un exemple de cette option `scheduleInterval=180`.
+
+
+
+ a| 
+`endDate`
+ a| 
+Une date précise pour arrêter l'opération. Le format de saisie de la date est MM:JJ:AA. Si aucune date de fin n'est souhaitée, vous pouvez spécifier `noEndDate`. Voici un exemple de cette option `endDate=11:26:11`.
+
+
+
+ a| 
+`timesPerDay`
+ a| 
+Nombre de fois où effectuer l'opération dans un jour. Voici un exemple de cette option `timesPerDay=4`.
+
+
+
+ a| 
+`timezone`
+ a| 
+Spécifie le fuseau horaire à utiliser pour la planification. Peut être spécifié de deux manières :
+
+* *GMT±HH:MM*
++
+Décalage du fuseau horaire par rapport au GMT. Exemple : `timezone=GMT-06:00`.
+
+* *Chaîne de texte*
++
+Chaîne de texte de fuseau horaire standard, doit être entre guillemets. Exemple :``timezone="America/Chicago"``
+
+
+
+
+
+ a| 
+`scheduleDate`
+ a| 
+Un jour du mois où effectuer l'opération. Les valeurs des jours sont numériques et comprises dans la plage 1-31.
+
+[NOTE]
+====
+Ce paramètre n'est pas compatible avec un planning hebdomadaire.
+
+====
+Un exemple du `scheduleDate` l'option est `scheduleDate=("15")`.
+
+
+
+ a| 
+`month`
+ a| 
+Mois précis pour effectuer l'opération. Les valeurs pour les mois sont les suivantes :
+
+* `jan` - Janvier
+* `feb` - Février
+* `mar` - Mars
+* `apr` - Avril
+* `may` - Mai
+* `jun` - Juin
+* `jul` - Juillet
+* `aug` - Août
+* `sep` - Septembre
+* `oct` - Octobre
+* `nov` - Novembre
+* `dec` - Décembre
+
+
+[NOTE]
+====
+Placez la valeur entre parenthèses. Par exemple : `month=(jan)`.
+
+====
+Plus d'un mois peut être spécifié en enfermant les mois dans un ensemble unique de parenthèses et en séparant chaque mois par un espace. Par exemple : `month=(jan jul dec)`.
+
+Utilisez ce paramètre avec le `scheduleDate` paramètre pour effectuer l'opération sur un jour spécifique du mois.
+
+[NOTE]
+====
+Ce paramètre n'est pas compatible avec un planning hebdomadaire.
+
+====
+|===
+Ce tableau explique comment utiliser le `timeZone` paramètre :
+
+|===
+| Nom du fuseau horaire | Décalage GMT 
+
+
+ a| 
+`Etc/GMT+12`
+ a| 
+`GMT-12:00`
+
+
+
+ a| 
+`Etc/GMT+11`
+ a| 
+`GMT-11:00`
+
+
+
+ a| 
+`Pacific/Honolulu`
+ a| 
+`GMT-10:00`
+
+
+
+ a| 
+`America/Anchorage`
+ a| 
+`GMT-09:00`
+
+
+
+ a| 
+`America/Santa_Isabel`
+ a| 
+`GMT-08:00`
+
+
+
+ a| 
+`America/Los_Angeles`
+ a| 
+`GMT-08:00`
+
+
+
+ a| 
+`America/Phoenix`
+ a| 
+`GMT-07:00`
+
+
+
+ a| 
+`America/Chihuahua`
+ a| 
+`GMT-07:00`
+
+
+
+ a| 
+`America/Denver`
+ a| 
+`GMT-07:00`
+
+
+
+ a| 
+`America/Guatemala`
+ a| 
+`GMT-06:00`
+
+
+
+ a| 
+`America/Chicago`
+ a| 
+`GMT-06:00`
+
+
+
+ a| 
+`America/Mexico_City`
+ a| 
+`GMT-06:00`
+
+
+
+ a| 
+`America/Regina`
+ a| 
+`GMT-06:00`
+
+
+
+ a| 
+`America/Bogota`
+ a| 
+`GMT-05:00`
+
+
+
+ a| 
+`America/New_York`
+ a| 
+`GMT-05:00`
+
+
+
+ a| 
+`Etc/GMT+5`
+ a| 
+`GMT-05:00`
+
+
+
+ a| 
+`America/Caracas`
+ a| 
+`GMT-04:30`
+
+
+
+ a| 
+`America/Asuncion`
+ a| 
+`GMT-04:00`
+
+
+
+ a| 
+`America/Halifax`
+ a| 
+`GMT-04:00`
+
+
+
+ a| 
+`America/Cuiaba`
+ a| 
+`GMT-04:00`
+
+
+
+ a| 
+`America/La_Paz`
+ a| 
+`GMT-04:00`
+
+
+
+ a| 
+`America/Santiago`
+ a| 
+`GMT-04:00`
+
+
+
+ a| 
+`America/St_Johns`
+ a| 
+`GMT-03:30`
+
+
+
+ a| 
+`America/Sao_Paulo`
+ a| 
+`GMT-03:00`
+
+
+
+ a| 
+`America/Buenos_Aires`
+ a| 
+`GMT-03:00`
+
+
+
+ a| 
+`America/Cayenne`
+ a| 
+`GMT-03:00`
+
+
+
+ a| 
+`America/Godthab`
+ a| 
+`GMT-03:00`
+
+
+
+ a| 
+`America/Montevideo`
+ a| 
+`GMT-03:00`
+
+
+
+ a| 
+`Etc/GMT+2`
+ a| 
+`GMT-02:00`
+
+
+
+ a| 
+`Atlantic/Azores`
+ a| 
+`GMT-01:00`
+
+
+
+ a| 
+`Atlantic/Cape_Verde`
+ a| 
+`GMT-01:00`
+
+
+
+ a| 
+`Africa/Casablanca`
+ a| 
+`GMT`
+
+
+
+ a| 
+`Etc/GMT`
+ a| 
+`GMT`
+
+
+
+ a| 
+`Europe/London`
+ a| 
+`GMT`
+
+
+
+ a| 
+`Atlantic/Reykjavik`
+ a| 
+`GMT`
+
+
+
+ a| 
+`Europe/Berlin`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Europe/Budapest`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Europe/Paris`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Europe/Warsaw`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Africa/Lagos`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Africa/Windhoek`
+ a| 
+`GMT+01:00`
+
+
+
+ a| 
+`Asia/Anman`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Asia/Beirut`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Africa/Cairo`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Asia/Damascus`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Africa/Johannesburg`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Europe/Kiev`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Asia/Jerusalem`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Europe/Istanbul`
+ a| 
+`GMT+03:00`
+
+
+
+ a| 
+`Europe/Minsk`
+ a| 
+`GMT+02:00`
+
+
+
+ a| 
+`Asia/Baghdad`
+ a| 
+`GMT+03:00`
+
+
+
+ a| 
+`Asia/Riyadh`
+ a| 
+`GMT+03:00`
+
+
+
+ a| 
+`Africa/Nairobi`
+ a| 
+`GMT+03:00`
+
+
+
+ a| 
+`Asia/Tehran`
+ a| 
+`GMT+03:30`
+
+
+
+ a| 
+`Europe/Moscow`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Asia/Dubai`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Asia/Baku`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Indian/Mauritius`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Asia/Tbilisi`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Asia/Yerevan`
+ a| 
+`GMT+04:00`
+
+
+
+ a| 
+`Asia/Kabul`
+ a| 
+`GMT+04:30`
+
+
+
+ a| 
+`Asia/Karachi`
+ a| 
+`GMT+05:00`
+
+
+
+ a| 
+`Asia//Tashkent`
+ a| 
+`GMT+05:00`
+
+
+
+ a| 
+`Asia/Calcutta`
+ a| 
+`GMT+05:30`
+
+
+
+ a| 
+`Asia/Colombo`
+ a| 
+`GMT+05:30`
+
+
+
+ a| 
+`Asia/Katmandu`
+ a| 
+`GMT+05:45`
+
+
+
+ a| 
+`Asia/Yekaterinburg`
+ a| 
+`GMT+06:00`
+
+
+
+ a| 
+`Asia/Almaty`
+ a| 
+`GMT+06:00`
+
+
+
+ a| 
+`Asia/Dhaka`
+ a| 
+`GMT+06:00`
+
+
+
+ a| 
+`Asia/Rangoon`
+ a| 
+`GMT+06:30`
+
+
+
+ a| 
+`Asia/Novosibirsk`
+ a| 
+`GMT+07:00`
+
+
+
+ a| 
+`Asia/Bangkok`
+ a| 
+`GMT+07:00`
+
+
+
+ a| 
+`Asia/Krasnoyarsk`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Asia/Shanghai`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Asia/Singapore`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Australia/Perth`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Asia/Taipei`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Asia/Ulaanbaatar`
+ a| 
+`GMT+08:00`
+
+
+
+ a| 
+`Asia/Irkutsk`
+ a| 
+`GMT+09:00`
+
+
+
+ a| 
+`Asia/Tokyo`
+ a| 
+`GMT+09:00`
+
+
+
+ a| 
+`Asia/Seoul`
+ a| 
+`GMT+09:00`
+
+
+
+ a| 
+`Australia/Adelaide`
+ a| 
+`GMT+09:30`
+
+
+
+ a| 
+`Australia/Darwin`
+ a| 
+`GMT+09:30`
+
+
+
+ a| 
+`Asia/Yakutsk`
+ a| 
+`GMT+10:00`
+
+
+
+ a| 
+`Australia/Brisbane`
+ a| 
+`GMT+10:00`
+
+
+
+ a| 
+`Australia/Sydney`
+ a| 
+`GMT+10:00`
+
+
+
+ a| 
+`Pacific/Port Moresby`
+ a| 
+`GMT+10:00`
+
+
+
+ a| 
+`Australia/Hobart`
+ a| 
+`GMT+10:00`
+
+
+
+ a| 
+`Asia/Vladivostok`
+ a| 
+`GMT+11:00`
+
+
+
+ a| 
+`Pacific/Guadalcanal`
+ a| 
+`GMT+11:00`
+
+
+
+ a| 
+`Pacific/Auckland`
+ a| 
+`GMT+12:00`
+
+
+
+ a| 
+`Etc/GMT-12`
+ a| 
+`GMT+12:00`
+
+
+
+ a| 
+`Pacific/Fiji`
+ a| 
+`GMT+12:00`
+
+
+
+ a| 
+`Asia/Kamchatka`
+ a| 
+`GMT+12:00`
+
+
+
+ a| 
+`Pacific/Tongatapu`
+ a| 
+`GMT+13:00`
+
+|===
+La chaîne de code pour la définition d'un planning est similaire aux exemples suivants :
+
+[listing]
+----
+enableSchedule=true schedule startTime=14:27
+----
+[listing]
+----
+enableSchedule=true schedule scheduleInterval=180
+----
+[listing]
+----
+enableSchedule=true schedule timeZone=GMT-06:00
+----
+[listing]
+----
+enableSchedule=true schedule timeZone="America/Chicago"
+----
+Si vous utilisez également le `scheduleInterval` le micrologiciel sélectionne l'option `timesPerDay` et le `scheduleInterval` en sélectionnant la valeur la plus basse des deux options. Le micrologiciel calcule une valeur entière pour l' `scheduleInterval` option en divisant 1440 par le `scheduleInterval` valeur d'option que vous définissez. Par exemple, 1440/180 = 8. Le micrologiciel compare ensuite le `timesPerDay` valeur entière calculée `scheduleInterval` valeur entière et utilise la valeur la plus petite.
+
+Pour supprimer une planification, utilisez le `delete volume` commande avec `schedule` paramètre. Le `delete volume` commande avec `schedule` le paramètre supprime uniquement la planification, pas le volume snapshot.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+7.86 ajoute le `scheduleDate` et le `month` option.

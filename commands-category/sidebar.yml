@@ -1,0 +1,24 @@
+---
+section: commands-category
+title: Commandes par catégorie
+entries:
+- title: Commandes des administrateurs
+  url: "/commands-category/administrator-commands.html"
+- title: Commandes de configuration d'alertes
+  url: "/commands-category/alert-configuration-commands.html"
+- title: Commandes de configuration de la matrice
+  url: "/commands-category/array-configuration-commands.html"
+- title: Commandes de support automatique
+  url: "/commands-category/auto-support-commands.html"
+- title: Commandes de mise en miroir
+  url: "/commands-category/mirroring-commands.html"
+- title: Commandes d'ajustement des performances
+  url: "/commands-category/performance-tuning-commands.html"
+- title: Commandes de réplication
+  url: "/commands-category/replication-commands.html"
+- title: Commandes de sécurité
+  url: "/commands-category/security-commands.html"
+- title: Commandes du système de contrôle du stockage « personnel »
+  url: "/commands-category/storage-monitor-personal-commands.html"
+- title: Commandes de configuration de volume
+  url: "/commands-category/volume-configuration-commands.html"

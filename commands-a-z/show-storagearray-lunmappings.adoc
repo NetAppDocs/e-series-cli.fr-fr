@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/show-storagearray-lunmappings.html 
+sidebar: sidebar 
+keywords: show, storage, array, lun, map 
+summary: 'La commande show storageArray lunAdressages renvoie des informations du profil de la matrice de stockage concernant les mappages de numéro d"unité logique (LUN) ou d"ID d"espace de noms (NSID) dans la matrice de stockage.' 
+---
+= Affiche les mappages de LUN de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray lunMappings` La commande renvoie des informations du profil de la matrice de stockage concernant les mappages de numéro d'unité logique (LUN) ou d'ID d'espace de noms (NSID) dans la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+Les mappages de LUN ou de NSID par défaut sont toujours affichés. Si vous exécutez cette commande sans paramètre, cette commande renvoie tous les mappages de LUN ou de NSID.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show storageArray lunMappings (host pass:quotes[["_hostName_"]] |
+hostgroup pass:quotes[["_hostGroupName_"]])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`host`
+ a| 
+Nom d'un hôte spécifique pour lequel vous souhaitez afficher les mappages de LUN ou NSID. Placez le nom d'hôte entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom d'un groupe d'hôtes spécifique dont vous souhaitez afficher les mappages de LUN ou NSID. Placez le nom du groupe d'hôtes entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Cette commande renvoie des informations de topologie hôte similaires à cet exemple.
+
+[listing]
+----
+MAPPINGS (Storage Partitioning - Enabled (0 of 16 used))
+VOLUME NAME  LUN  CONTROLLER  ACCESSIBLE BY  VOLUME STATUS
+Access Volume 7   A,B         Default Group  Optimal
+21           21   B           Default Group  Optimal
+22           22   B           Default Group  Optimal
+----
+
+
+== Niveau minimal de firmware
+
+6.10

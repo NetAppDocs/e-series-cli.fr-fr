@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/save-storagearray-autoloadbalancestatistics-file.html 
+sidebar: sidebar 
+keywords: save, auto-load, balance, statistics 
+summary: 'La commande save storageArray autoLoadLoadStatistics file fournit un équilibrage automatique de la charge de travail d"E/S et assure que le trafic d"E/S entrant à partir des hôtes est géré et équilibré de manière dynamique entre les deux contrôleurs.' 
+---
+= Enregistrer les statistiques d'équilibrage de charge automatique
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray autoLoadBalanceStatistics file` La commande assure un équilibrage automatisé de la charge de travail d'E/S et garantit que le trafic d'E/S entrantes depuis les hôtes est géré et équilibré de manière dynamique entre les deux contrôleurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande enregistre les statistiques d'équilibrage automatique de la charge de la matrice de stockage dans un fichier. Ces statistiques montrent l'historique des modifications de propriété sur chaque volume de la baie.
+
+[NOTE]
+====
+Envoyez ce fichier au support technique pour interprétation.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+ save storageArray autoLoadBalanceStatistics file=pass:quotes["_filename_"]
+(numberOfDays=pass:quotes[_numberOfDays_]);
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`storageArray`
+ a| 
+Spécifie que cette commande fonctionne sur une matrice de stockage.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les statistiques d'équilibrage de charge automatique. Placez le nom du fichier entre guillemets (" ").
+
+
+
+ a| 
+`numberOfDays`
+ a| 
+Nombre de jours de statistiques à enregistrer. Ce paramètre est facultatif et la valeur par défaut est 0, ce qui indique toutes les données disponibles.
+
+|===
+
+
+== Exemple
+
+[listing]
+----
+SMcli -n Array1 -c "save storageArray autoLoadBalanceStatistics file="filename" numberOfDays=30;"
+----
+[NOTE]
+====
+Une condition active « Drive Lost Primary Path » entraînera un équilibrage automatique de la charge incapable d'équilibrer les charges de travail. Cette condition doit être inactive pour garantir l'équilibre des charges de travail via la fonction d'équilibrage automatique de la charge.
+
+====
+
+
+== Niveau minimal de firmware
+
+8.30

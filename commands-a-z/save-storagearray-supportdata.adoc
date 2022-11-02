@@ -1,0 +1,527 @@
+---
+permalink: commands-a-z/save-storagearray-supportdata.html 
+sidebar: sidebar 
+keywords: save, storage, array, support, data 
+summary: La commande save storageArray supportData enregistre les informations relatives au support de la baie de stockage dans un fichier. 
+---
+= Enregistrer les données de prise en charge de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray supportData` commande enregistre les informations relatives au support de la matrice de stockage dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Le tableau suivant répertorie les types de données de support que vous pouvez collecter.
+
+[cols="2*"]
+|===
+| Type de données | Nom et description du fichier 
+
+
+ a| 
+Statistiques d'équilibrage automatique de la charge
+ a| 
+`alb-statistics-A.txt`
+
+`alb-statistics-B.txt`
+
+Ce fichier, un par contrôleur, spécifie différentes statistiques liées à la fonction d'équilibrage automatique de la charge qui permet une analyse plus approfondie via l'outil d'analyse hors ligne.
+
+
+
+ a| 
+Métadonnées core dump
+ a| 
+`all-coredump.xml`
+
+Ce fichier contient les métadonnées du core dump pour la baie.
+
+[NOTE]
+====
+A partir de la version 8.25, core-dump-info.xml a été renommé all-coredump.xml.
+
+====
+
+
+ a| 
+Statut de la AutoSupport
+ a| 
+`autosupport.xml`
+
+Ce fichier spécifie l'état actuel d'ASUP pour la baie donnée.
+
+
+
+ a| 
+Fichier historique AutoSupport
+ a| 
+`autosupport-history.xml`
+
+Ce fichier indique tous les messages ASUP, standard et AutoSupport OnDemand, pour la baie donnée. Chaque entrée du tableau correspond à un message ASUP qui se trouve actuellement dans l'un des référentiels d'une baie donnée.
+
+
+
+ a| 
+Journaux AutoSupport
+ a| 
+`asup-transmission-logs.txt`
+
+Ce fichier contient tous les messages AutoSupport transmis.
+
+
+
+ a| 
+Informations sur le client du serveur Web
+ a| 
+`client-info.txt`
+
+Ce fichier spécifie diverses informations sur le client des services Web.
+
+[NOTE]
+====
+Ce paramètre ne s'applique pas aux baies E2700 et E5600.
+
+====
+
+
+ a| 
+Topologie des câbles du lecteur
+ a| 
+`connection.txt` Ce fichier contient des informations sur les connexions entre le module ESM (plateau de lecteur) et la paire de contrôleurs.
+
+
+
+ a| 
+Lots de statistiques cumulatifs
+ a| 
+`cumulative-drive-vol-stats.xml`
+
+Ce fichier contient des statistiques cumulatives pour les contrôleurs.
+
+
+
+ a| 
+Journal des disques défectueux
+ a| 
+`controller-drive-error-event-log.txt`
+
+Ce fichier contient les messages d'erreur et de journal d'événements relatifs au lecteur de la matrice de stockage.
+
+
+
+ a| 
+Métadonnées des images de santé du contrôleur
+ a| 
+`all-coredump.xml`
+
+Ce fichier contient des informations sur l'image d'intégrité du contrôleur DPL.
+
+[NOTE]
+====
+A partir de la version 8.25, core-dump-info.xml a été renommé all-coredump.xml.
+
+====
+
+
+ a| 
+Fichiers journaux DOM 0 pour le contrôleur A (E2800 ou E5700 uniquement)
+ a| 
+`dom0-complete-journal-A.7z`
+
+Ce fichier, un par contrôleur, contient des journaux système Linux détaillés. Cela inclut les journaux des packages Linux ainsi que des utilitaires et services Linux standard.
+
+
+
+ a| 
+Fichiers journaux DOM 0 pour le contrôleur B (E2800 ou E5700 uniquement)
+ a| 
+`dom0-complete-journal-B.7z`
+
+Ce fichier, un par contrôleur, contient des journaux système Linux détaillés. Cela inclut les journaux des packages Linux ainsi que des utilitaires et services Linux standard.
+
+
+
+ a| 
+Fichiers journaux DOM 0 divers pour le contrôleur A (E2800 ou E5700 uniquement)
+ a| 
+`dom0-misc-logs-A.7z`
+
+Ce fichier, un par contrôleur, contient des journaux système qui ne peuvent pas être contenus dans le journal. Cela inclut le journal série de l'application RAID et les journaux de débogage de l'hyperviseur.
+
+
+
+ a| 
+Fichiers journaux DOM 0 divers pour le contrôleur B (E2800 ou E5700 uniquement)
+ a| 
+`dom0-misc-logs-B.7z`
+
+Ce fichier, un par contrôleur, contient des journaux système qui ne peuvent pas être contenus dans le journal. Cela inclut le journal série de l'application RAID et les journaux de débogage de l'hyperviseur.
+
+
+
+ a| 
+Valeurs de délai d'expiration de la commande de lecteur
+ a| 
+`drive-command-aging-timeout.txt` Ce fichier contient les valeurs par défaut et les valeurs actuelles pour le champ délai d'expiration de la commande pour chaque lecteur.
+
+
+
+ a| 
+Journaux d'état du disque
+ a| 
+`drive-health-data.bin` Ce fichier contient diverses informations relatives à l'état du disque.
+
+[NOTE]
+====
+Ce fichier est un fichier binaire et nécessite un analyseur hors ligne pour le convertir au format lisible par l'utilisateur.
+
+====
+
+
+ a| 
+Données de l'analyseur de performances
+ a| 
+`drive-performance-log.txt`
+
+Ce fichier contient des données de performances des disques qui vous aident à identifier tous les lecteurs dont les performances sont inférieures aux attentes.
+
+
+
+ a| 
+Configuration de la fenêtre de gestion d'entreprise
+ a| 
+`emwdata_v04.bin`
+
+Ce fichier contient le fichier de stockage de données de configuration EMW.
+
+[NOTE]
+====
+Dans les bundles de support pour les systèmes E2800 et E5700, ce fichier n'est pas présent.
+
+====
+
+
+ a| 
+Journaux d'événements de bac
+ a| 
+`expansion-tray-log.txt`
+
+Journaux d'événements ESM.
+
+
+
+ a| 
+Échec de l'analyse du référentiel
+ a| 
+`failed-repository-analysis.txt`
+
+Ce fichier contient les informations d'analyse du référentiel ayant échoué.
+
+
+
+ a| 
+Fonctionnalités de la baie de stockage
+ a| 
+`feature-bundle.txt` Ce fichier contient une liste du nombre de volumes, de disques et de tiroirs de disques autorisés dans la matrice de stockage ainsi qu'une liste des fonctions disponibles et de leurs limites.
+
+
+
+ a| 
+L'inventaire des firmwares
+ a| 
+`firmware-inventory.txt` Ce fichier contient la liste de toutes les versions du micrologiciel de tous les composants de la matrice de stockage.
+
+
+
+ a| 
+Statistiques de l'interface InfiniBand (InfiniBand uniquement)
+ a| 
+`ib-statistics.csv`
+
+Ce fichier contient les statistiques de l'interface InfiniBand.
+
+
+
+ a| 
+Statistiques de chemin d'E/S.
+ a| 
+`io-path-statistics.7z` Ce fichier contient des données de performances brutes pour chaque contrôleur, qui peuvent être utilisées pour analyser les problèmes de performances des applications.
+
+
+
+ a| 
+Informations de vidage IOC pour la puce d'interface hôte
+ a| 
+`ioc-dump-info.txt` Ce fichier contient des informations de vidage IOC pour la puce de l'interface hôte.
+
+
+
+ a| 
+Les journaux de vidage IOC pour la puce de l'interface hôte
+ a| 
+`ioc-dump.gz` Ce fichier contient le vidage du journal de la puce de l'interface hôte sur le contrôleur. Le fichier est compressé au format gz. Le fichier zip est enregistré en tant que fichier dans le pack support client.
+
+
+
+ a| 
+Connexions iSCSI (iSCSI uniquement)
+ a| 
+`iscsi-session-connections.txt` Ce fichier contient la liste de toutes les sessions iSCSI en cours.
+
+
+
+ a| 
+Statistiques iSCSI (iSCSI uniquement)
+ a| 
+`iscsi-statistics.csv` Ce fichier contient des statistiques relatives au contrôle d'accès aux supports Ethernet (MAC), au protocole TCP (Ethernet transmission Control Protocol)/IP (Internet Protocol) et à la cible iSCSI.
+
+
+
+ a| 
+Statistiques d'interface iser (iser sur InfiniBand uniquement)
+ a| 
+`iser-statistics.csv` Ce fichier contient les statistiques de la carte d'interface hôte qui s'exécute iser sur InfiniBand.
+
+
+
+ a| 
+Journal des événements majeurs
+ a| 
+`major-event-log.txt` Ce fichier contient une liste détaillée des événements qui se produisent sur la matrice de stockage. La liste est stockée dans des zones réservées sur les disques de la matrice de stockage. La liste enregistre les événements de configuration et les défaillances de composant dans la matrice de stockage.
+
+
+
+ a| 
+Fichier de manifeste
+ a| 
+`manifest.xml`
+
+Ce fichier contient une table qui décrit les fichiers inclus dans le fichier d'archive et l'état collecté de chacun de ces fichiers.
+
+
+
+ a| 
+Informations d'exécution du logiciel de gestion du stockage
+ a| 
+`msw-runtime-info.txt`
+
+Ce fichier contient les informations d'exécution de l'application de gestion du stockage. Contient la version JRE actuellement utilisée par le logiciel de gestion du stockage.
+
+
+
+ a| 
+Statistiques NVMe-of
+ a| 
+`nvmeof-statistics.csv`
+
+Ce fichier contient une liste de statistiques, notamment des statistiques du contrôleur NVMe, des statistiques de file d'attente NVMe et des statistiques d'interface pour le protocole de transport (par exemple, InfiniBand).
+
+
+
+ a| 
+Données NVSRAM
+ a| 
+`nvsram-data.txt` Ce fichier de contrôleur spécifie les paramètres par défaut des contrôleurs.
+
+
+
+ a| 
+Ensemble d'objets
+ a| 
+`object-bundle`.bin`object-bundle`.json
+
+Ce pack contient une description détaillée de l'état de votre matrice de stockage et de ses composants, qui était valide au moment de la génération du fichier.
+
+
+
+ a| 
+Résumé des statistiques de performances
+ a| 
+`perf-stat-daily-summary-a.csv` `perf-stat-daily-summary-b.csv`
+
+Ce fichier contient plusieurs statistiques de performances du contrôleur, un fichier par contrôleur.
+
+
+
+ a| 
+Réservations et enregistrements persistants
+ a| 
+`persistent-reservations.txt` Ce fichier contient une liste détaillée des volumes de la baie de stockage avec des réservations et des enregistrements persistants.
+
+
+
+ a| 
+Préférences des utilisateurs pour les logiciels de gestion du stockage
+ a| 
+`pref-01.bin`
+
+Ce fichier contient le magasin de données persistant des préférences utilisateur.
+
+[NOTE]
+====
+Dans les packs de support pour E2800 ou E5700, ce fichier n'est pas présent.
+
+====
+
+
+ a| 
+Procédures de la fonctionnalité Recovery Guru
+ a| 
+`recovery-guru-procedures.html` Ce fichier contient une liste détaillée de tous les sujets du gourou de la récupération qui sont publiés en réponse aux problèmes détectés sur la matrice de stockage. Pour les baies E2800 et E5700, ce fichier ne contient que les détails du gourou de restauration, pas les fichiers HTML.
+
+
+
+ a| 
+Profil de récupération
+ a| 
+`recovery-profile.csv` Ce fichier contient une description détaillée de l'enregistrement de profil de récupération le plus récent et des données historiques.
+
+
+
+ a| 
+Journaux d'erreurs SAS PHY
+ a| 
+`sas-phy-error-logs.csv`
+
+Ce fichier contient les informations d'erreur relatives au SAS PHY.
+
+
+
+ a| 
+Données de capture d'état
+ a| 
+`state-capture-data.txt` Ce fichier contient une description détaillée de l'état actuel de votre matrice de stockage.
+
+
+
+ a| 
+Configuration de la baie de stockage
+ a| 
+`storage-array-configuration.cfg` Ce fichier contient une description détaillée de la configuration logique de votre matrice de stockage.
+
+
+
+ a| 
+Le profil de la baie de stockage
+ a| 
+`storage-array-profile.txt` Ce fichier contient une description de tous les composants et propriétés d'une matrice de stockage.
+
+
+
+ a| 
+Contenu du tampon de trace
+ a| 
+`trace-buffers.7z` Ce fichier contient le contenu des tampons de trace des contrôleurs utilisés pour enregistrer les informations de débogage.
+
+
+
+ a| 
+Données de capture du plateau
+ a| 
+`tray-component-state-capture.7z` Si votre tiroir contient des tiroirs, les données de diagnostic sont archivées dans ce fichier compressé. Le fichier Zip contient un fichier texte séparé pour chaque tiroir contenant des tiroirs. Le fichier Zip est enregistré sous forme de fichier dans le pack support client.
+
+
+
+ a| 
+Secteurs illisibles
+ a| 
+`unreadable-sectors.txt` Ce fichier contient une liste détaillée de tous les secteurs illisibles ayant été enregistrés dans la matrice de stockage.
+
+
+
+ a| 
+Journal de suivi des services Web (E2800 ou E5700 uniquement)
+ a| 
+`web-server-trace-log-A.7z`
+
+`web-server-trace-log-B.7z`
+
+Ce fichier, un par contrôleur, contient des tampons de trace des services Web utilisés pour enregistrer des informations de débogage.
+
+
+
+ a| 
+Fichier journal d'analytique de la capture des workloads
+ a| 
+`wlc-analytics-a.lz4` `wlc-analytics-b.lz4`
+
+Ce fichier, un par contrôleur, contient des caractéristiques de workload clés calculées telles que l'histogramme LBA, le taux de lecture/écriture et le débit d'E/S sur tous les volumes actifs.
+
+
+
+ a| 
+Fichier de données d'en-tête-X.
+ a| 
+`x-header-data.txt` Cet en-tête de message AutoSupport se compose de paires clé-valeur en texte brut, qui incluent des informations sur la matrice et le type de message.
+
+|===
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray supportData file=pass:quotes["_filename_"] [force=(TRUE | FALSE)]
+----
+[listing, subs="+macros"]
+----
+save storageArray supportData file=pass:quotes["_filename_"]
+[force=(TRUE | FALSE) |
+csbSubsetid=(basic | weekly | event | daily | complete) |
+csbTimeStamp=pass:quotes[_hh:mm_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les données relatives au support pour la matrice de stockage. Placez le chemin du fichier et le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\supdat.7z"`
+
+
+
+ a| 
+`force`
+ a| 
+Ce paramètre force la collecte des données de support en cas de défaillance lors de la sécurisation d'un verrouillage des opérations du contrôleur. Pour forcer la collecte des données de support, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+À partir du micrologiciel de niveau 7.86, l'extension du nom de fichier doit être de `.7z` Sur les systèmes exécutant Windows. Si vous exécutez une version de micrologiciel antérieure à 7.86 sur un système Windows, l'extension de fichiers doit être `.zip`. Sur les systèmes qui n'exécutent pas Windows, vous pouvez utiliser n'importe quelle extension de fichier qui fonctionne pour votre système.
+
+
+
+== Niveau minimal de firmware
+
+7.80 ajoute le `force` paramètre.
+
+8.30 ajoute des informations pour la baie de stockage E2800.

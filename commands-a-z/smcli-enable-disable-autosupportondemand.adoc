@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/smcli-enable-disable-autosupportondemand.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, ondemand, feature, emw, management, domain, level, smcli 
+summary: La commande SMcli enable|disable autoSupportOnDemand active ou désactive la fonction AutoSupport OnDemand. Cette fonction permet au support technique de coordonner la transmission des données AutoSupport et de demander la retransmission des données de support manquantes. 
+---
+= Activation ou désactivation de la fonctionnalité AutoSupport OnDemand au niveau du domaine de gestion EMW (SMcli uniquement).
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli enable|disable autoSupportOnDemand` La commande active ou désactive la fonction AutoSupport OnDemand. Cette fonction permet au support technique de coordonner la transmission des données AutoSupport et de demander la retransmission des données de support manquantes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+Avant d'activer cette fonctionnalité, vous devez d'abord activer la fonctionnalité AutoSupport sur le domaine de gestion. Après l'activation de cette fonction, vous pouvez ensuite activer la fonction de diagnostic à distance AutoSupport (si vous le souhaitez). Les fonctions de diagnostic à distance de AutoSupport sont activées par défaut lorsque la fonctionnalité AutoSupport OnDemand est activée.
+
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli enable|disable autoSupportOnDemand
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Vérification
+
+Utilisez le `SMcli -autoSupportConfig show` commande pour voir si vous avez activé la fonction. Les deux premières lignes de la sortie affichée indiquent l'état d'activation de la fonctionnalité AutoSupport, suivi de la fonction AutoSupport OnDemand :
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management
+station.
+The AutoSupport OnDemand feature is activated on this storage
+management station.
+----
+
+
+== Niveau minimal de micrologiciel
+
+8.25

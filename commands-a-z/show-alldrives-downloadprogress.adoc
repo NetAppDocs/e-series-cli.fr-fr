@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/show-alldrives-downloadprogress.html 
+sidebar: sidebar 
+keywords: show, drive, download, progress 
+summary: 'La commande show allDrives downloadProgress renvoie l"état des téléchargements de micrologiciel pour les lecteurs ciblés par la commande download drive firmware ou la commande download storageArray driveFirmware.' 
+---
+= Affiche la progression du téléchargement du lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show allDrives downloadProgress` commande renvoie l'état des téléchargements de micrologiciel pour les lecteurs qui sont ciblés par le `download drive firmware` commande ou le `download storageArray driveFirmware` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show allDrives downloadProgress
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Lorsque tous les téléchargements de micrologiciel ont réussi, cette commande renvoie un état correct. En cas d'échec du téléchargement du micrologiciel, cette commande affiche l'état de téléchargement du micrologiciel de chaque lecteur ciblé. Cette commande renvoie les États affichés dans ce tableau.
+
+[cols="2*"]
+|===
+| État | Définition 
+
+
+ a| 
+`Successful`
+ a| 
+Les téléchargements ont été terminés sans erreur.
+
+
+
+ a| 
+`Not Attempted`
+ a| 
+Les téléchargements n'ont pas démarré.
+
+
+
+ a| 
+`Partial Download`
+ a| 
+Les téléchargements sont en cours.
+
+
+
+ a| 
+`Failed`
+ a| 
+Les téléchargements sont terminés avec des erreurs.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

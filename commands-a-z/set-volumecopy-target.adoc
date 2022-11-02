@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/set-volumecopy-target.html 
+sidebar: sidebar 
+keywords: set, volume, copy 
+summary: 'La commande Set VolumeCopy target définit les propriétés d"une paire de copies de volume.' 
+---
+= Définissez la copie de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set volumeCopy target` commande définit les propriétés d'une paire de copies de volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 7.83 du micrologiciel `copyType=(online | offline)` paramètre n'est plus utilisé.
+
+====
+Cette commande est valide pour les paires de copies de volume de snapshot.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set volumeCopy target pass:quotes[[_targetName_]]
+source pass:quotes[[_sourceName_]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(online | offline)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`target`
+ a| 
+Nom du volume sur lequel les données seront copiées. Placez le nom du volume cible entre crochets ([ ]). Si le nom du volume cible contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du volume cible entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`source`
+ a| 
+Nom du volume à partir duquel les données seront copiées. Placez le nom du volume source entre crochets ([ ]). Si le nom du volume source contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume source entre guillemets (" ") à l'intérieur de crochets.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Priorité de la copie de volume relative aux activités d'E/S de l'hôte. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Paramètre permettant d'écrire sur le volume cible ou uniquement de le lire à partir du volume cible. Pour écrire dans le volume cible, définissez ce paramètre sur `FALSE`. Pour empêcher l'écriture sur le volume cible, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+[NOTE]
+====
+Ce paramètre a été obsolète.
+
+====
+|===
+
+
+== Remarques
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
+
+
+
+== Niveau minimal de firmware
+
+5.40
+
+7.83 supprime le `copyType=(online | offline)` paramètre.

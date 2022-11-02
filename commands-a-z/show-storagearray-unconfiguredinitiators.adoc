@@ -1,0 +1,48 @@
+---
+permalink: commands-a-z/show-storagearray-unconfiguredinitiators.html 
+sidebar: sidebar 
+keywords: show, unconfigured, initiators 
+summary: La commande show storageArray unconfigurerdInitiators renvoie une liste des initiateurs détectés par la matrice de stockage, mais qui ne sont pas encore configurés dans la topologie de la matrice de stockage. 
+---
+= Affiche les initiateurs non configurés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray unconfiguredInitiators` commande renvoie une liste d'initiateurs détectés par la matrice de stockage mais qui ne sont pas encore configurés dans la topologie de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+Cette commande remplace le link:show-storagearray-unconfigurediscsiinitiators.html["Affiche storageArray unconfigdIssiInitiators"] commande.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray unconfiguredInitiators
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+8.50

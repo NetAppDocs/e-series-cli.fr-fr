@@ -1,0 +1,32 @@
+---
+permalink: get-started/detailed-error-reporting.html 
+sidebar: sidebar 
+keywords: detailed, error, report 
+summary: 'Les données collectées suite à une erreur rencontrée par l"interface de ligne de commandes sont écrites dans un fichier.' 
+---
+= Rapports détaillés sur les erreurs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Les données collectées suite à une erreur rencontrée par l'interface de ligne de commandes sont écrites dans un fichier. La génération de rapports d'erreurs détaillés sous l'interface de ligne de commandes fonctionne comme suit :
+
+* Si l'interface de ligne de commande doit interrompre de manière anormale l'exécution des commandes CLI et des scripts, les données d'erreur sont collectées et enregistrées avant la fin de l'interface de ligne de commande.
+* L'interface de ligne de commande enregistre les données d'erreur en les écrivant dans un nom de fichier standard.
+* L'interface de ligne de commande enregistre automatiquement les données dans un fichier. Les options de ligne de commande spéciales ne sont pas nécessaires pour enregistrer les données d'erreur.
+* Vous n'êtes pas tenu d'effectuer une action pour enregistrer les données d'erreur dans un fichier.
+* L'interface de ligne de commande ne dispose d'aucune disposition pour éviter l'écriture excessive d'une version existante du fichier contenant des données d'erreur.
+
+
+Pour le traitement des erreurs, les erreurs apparaissent sous la forme de deux types :
+
+* Erreurs de terminal ou erreurs de syntaxe que vous pouvez saisir.
+* Les exceptions qui se produisent suite à une erreur opérationnelle.
+
+
+Lorsque la CLI rencontre un type d'erreur, la CLI écrit des informations décrivant l'erreur directement sur la ligne de commande et définit un code retour. En fonction du code retour, l'interface de ligne de commande peut également écrire des informations supplémentaires sur le terminal à l'origine de l'erreur. L'interface de ligne de commande écrit également des informations sur ce qu'elle attendait dans la syntaxe de commande pour vous aider à identifier toutes les erreurs de syntaxe que vous pourriez avoir saisies.
+
+Lorsqu'une exception se produit lorsqu'une commande est en cours d'exécution, la CLI capture l'erreur. À la fin du traitement de la commande (après l'écriture des informations de traitement de la commande dans la ligne de commande), l'interface de ligne de commande enregistre automatiquement les informations d'erreur dans un fichier.
+
+Le nom du fichier dans lequel les informations d'erreur sont enregistrées est `excprpt.txt`. L'interface de ligne de commande tente de placer le `excprpt.txt` fichier dans le répertoire spécifié par la propriété système `devmgr.datadir`. Si, pour une raison quelconque, l'interface de ligne de commande ne peut pas placer le fichier dans le répertoire spécifié par `devmgr.datadir`, La CLI enregistre le `excprpt.txt` Fichier dans le même répertoire à partir duquel s'exécute l'interface de ligne de commande. Vous ne pouvez pas modifier le nom ou l'emplacement du fichier. Le `excprpt.txt` le fichier est écrasé à chaque fois qu'une exception se produit. Si vous souhaitez enregistrer les informations dans le `excprpt.txt` fichier, vous devez copier les informations dans un nouveau fichier ou dans un nouveau répertoire.

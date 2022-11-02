@@ -1,0 +1,59 @@
+---
+permalink: get-started/naming-conventions.html 
+sidebar: sidebar 
+keywords: name, conventions 
+summary: Les noms peuvent comporter un maximum de 30 caractères. 
+---
+= Respecter les conventions de nom
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* Les noms peuvent comporter un maximum de 30 caractères.
+* Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms des composants suivants :
++
+** Les baies de stockage
+** Groupes d'hôtes
+** Hôtes
+** Groupes de volumes
+** Pools de disques dynamiques
+** Volumes
+** Ports hôtes HBA
+
+
+* Vous devez utiliser des noms uniques. Si vous n'utilisez pas de noms uniques, le micrologiciel du contrôleur renvoie une erreur.
+* Si le nom contient plusieurs mots, tirets ou traits de soulignement, placez-le entre guillemets ("` `"). Dans certains usages, vous devez également entourer le nom avec des crochets ([ ]). La description de chaque paramètre indique si vous devez inclure un paramètre entre guillemets, entre crochets ou les deux.
+* La chaîne de caractères du nom ne peut pas contenir une nouvelle ligne.
+* Sur les systèmes d'exploitation Windows, vous devez inclure le nom entre deux barres obliques inverses (\\) en plus d'autres délimiteurs. Par exemple, le nom suivant est utilisé dans une commande qui s'exécute sous un système d'exploitation Windows :
++
+[listing]
+----
+[\“Engineering\”]
+----
+* Pour un système d'exploitation UNIX et, lorsqu'il est utilisé dans un fichier script, le nom apparaît comme dans l'exemple suivant :
++
+[listing]
+----
+[“Engineering”]
+----
+* Lorsque vous entrez un WWID (World Wide identifier) d'un port hôte HBA, certains usages nécessitent que vous entouriez le WWID avec des guillemets doubles. Dans d'autres utilisations, vous devez entourer le WWID avec des crochets d'angle (<>). La description du paramètre WWID indique si vous devez inclure le WWID entre guillemets doubles ou entre crochets.
+
+
+
+
+== Saisie de noms numériques
+
+Lorsque le logiciel de gestion du stockage configure automatiquement une matrice de stockage, le logiciel de gestion du stockage attribue des noms composés de caractères numériques. Les noms composés uniquement de caractères numériques sont des noms valides. Toutefois, les noms de caractères numériques doivent être traités différemment des noms commençant par des caractères alphabétiques.
+
+* Noms qui ne sont que des numéros, par exemple 1 ou 2
+* Noms commençant par un nombre, tel que 1Disk ou 32Volume
+* `[\“1\”]`
+* `[\“1Disk\”]`
+
+
+[NOTE]
+====
+En cas de doute sur la validité d'un nom, utilisez à la fois des guillemets doubles et des crochets. L'utilisation des deux permet de s'assurer que le nom fonctionne et ne provoque aucun problème de traitement.
+
+====

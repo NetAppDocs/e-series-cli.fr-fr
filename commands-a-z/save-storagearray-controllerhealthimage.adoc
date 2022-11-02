@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/save-storagearray-controllerhealthimage.html 
+sidebar: sidebar 
+keywords: save, storage, array, controller, health, image 
+summary: 'La commande Save storageArray contrôlerHealthImage enregistre une image de l"état du contrôleur dans un fichier spécifié sur un hôte pour les matrices de stockage qui prennent en charge la fonctionnalité d"image d"intégrité du contrôleur.' 
+---
+= Image sauvegarde de l'état du contrôleur de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray controllerHealthImage` la commande enregistre une image d'état du contrôleur dans un fichier spécifié sur un hôte pour les baies de stockage prenant en charge la fonction d'image de santé du contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.20 du micrologiciel `coreDump` le paramètre est remplacé par le `controllerHealthImage` paramètre.
+
+====
+Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrité du contrôleur, la commande renvoie une erreur.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray controllerHealthImage file=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous enregistrez l'image d'intégrité du contrôleur. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+[listing]
+----
+file="C:\Array Backups\DBMbackup_03302010.core"
+----
+|===
+
+
+== Remarques
+
+Un fichier d'image de l'état de santé du contrôleur peut avoir une taille de 1 à 2 gigaoctets et l'enregistrement prend plusieurs minutes. En plus d'enregistrer l'image d'intégrité du contrôleur elle-même, cette commande génère un fichier descripteur XML basé sur les métadonnées des images d'état de santé du contrôleur. Ce fichier descripteur est enregistré au format de fichier ZIP au même chemin que l'image d'intégrité du contrôleur. L'exemple suivant montre le format XML du fichier descripteur.
+
+[listing]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+- <DPLcontrollerHealthImageInfo>
+<dplcontrollerHealthImageTag>sometag#</dplcontrollerHealthImageTag>
+<captureTime>12/22/10 3:58:53 PM IST</captureTime>
+- <StorageArrayData>
+<ArraySAID>600a0b80006e006a000000004c65efc1</ArraySAID>
+<ManagementApiVersion>devmgr.v1083api01.Manager</ManagementApiVersion>
+<fwVersion>07.83.01.00</fwVersion>
+<platformType>7091</platformType>
+</StorageArrayData>
+<fullcontrollerHealthImageCtlr>controllerserialNumber1
+     </fullcontrollerHealthImageCtlr>
+<fullcontrollerHealthImageSize>fullCaptureSize</fullcontrollerHealthImageSize>
+<altcontrollerHealthImageCtlr>controllerserialNumber2</altcontrollerHealthImage
+     Ctlr>
+<altcontrollerHealthImageSize>altCaptureSize</altcontrollerHealthImageSize>
+<triggerReason>Exception</triggerReason>-<DPLcontrollerHealthImageDetail>
+<dplcontrollerHealthImageReason>DPLcontrollerHealthImageReason
+     </dplcontrollerHealthImageReason>
+- <fwLocation >
+<filename>filename</filename>
+<lineNumber>line#</lineNumber>
+</fwLocation >
+<panicReason>panicString</panicReason>
+</DPLcontrollerHealthImageDetail>
+</DPLcontrollerHealthImageInfo>
+----
+Lorsque vous récupérez une image d'intégrité du contrôleur du cache du contrôleur vers un hôte, un indicateur est défini sur le contrôleur pour indiquer que l'image d'intégrité du contrôleur n'a pas besoin d'être récupérée. Ce paramètre persiste pendant 48 heures. Si une nouvelle image de l'état du contrôleur se produit pendant cette période, la nouvelle image de l'état de santé du contrôleur est enregistrée dans le cache du contrôleur et remplace toutes les données d'image d'état de santé précédentes du contrôleur dans le cache.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.20 remplace le `coreDump` paramètre avec le `controllerHealthImage` paramètre.

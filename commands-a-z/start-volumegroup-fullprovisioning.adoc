@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-volumegroup-fullprovisioning.html 
+sidebar: sidebar 
+keywords: start, volume, group, full provision 
+summary: La commande start Volume Volume Group fullProvisioning démarre une opération de provisionnement complet sur tous les volumes du pool de disques et désactive éventuellement le provisionnement des ressources sur le groupe de volumes. 
+---
+= Démarrer le provisionnement complet du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volumeGroup fullProvisioning` commande lance une opération de provisionnement complet sur tous les volumes du pool de disques et désactive éventuellement le provisionnement des ressources sur le groupe de volumes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage, y compris aux baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage EF600 et EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+La fonction de provisionnement des ressources améliore l'usure des disques SSD et augmente les performances d'écriture en laissant une partie plus importante des blocs de disques non alloués qu'un volume standard. Un volume provisionné en ressources est un volume lourd dans un groupe ou un pool de volume SSD, où la capacité de disque est allouée (affectée au volume), mais la désallocation des blocs de disque est effectuée (non mappée) lors de la création du volume. Les blocs de disques sont alloués selon les besoins pour finaliser les E/S d'écriture de l'hôte. Les opérations de mappage hôte peuvent renvoyer les blocs de lecteur à l'état non alloué . Le provisionnement des ressources élimine également l'initialisation en arrière-plan limitée dans le temps, ce qui permet l'initialisation rapide de grands volumes.
+
+Les volumes provisionnés de ressource ne sont pris en charge que sur les pools et les groupes de volumes SSD, où tous les disques du groupe ou du pool prennent en charge la fonction de récupération d'erreur DULBE (Logical Block Error Enable, deallocalisé ou non écrit) de NVMe. L'amélioration des performances varie selon le modèle de disque et la capacité.
+
+Le format de provisionnement complet permet de garantir que tous les blocs nécessaires aux volumes du groupe sont entièrement mappés sur les disques. Cette commande s'applique uniquement au groupe de volumes provisionnés par ressource. Si l'option à `disableResourceProvisioning` n'est pas défini sur `FALSE`, les volumes seront toujours provisionnés en ressources et les nouveaux volumes créés sur le groupe de volumes seront provisionnés en ressources. Si l'option de désactivation du provisionnement des ressources est définie sur `TRUE`, les volumes ne seront plus provisionnés en ressources et les nouveaux volumes créés sur le groupe de volumes ne seront pas provisionnés en ressources.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start volumeGroup[volumeGroupName] fullProvisioning [disableResourceProvisioning=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Le groupe de volumes que vous souhaitez démarrer l'opération de provisionnement complet. Placez le nom du groupe de volumes entre crochets ([ ])
+
+
+
+ a| 
+`disableResourceProvisioning`
+ a| 
+Paramètre permettant de spécifier si le provisionnement des ressources doit être désactivé une fois l'opération de provisionnement complet terminée. Pour ignorer la désactivation du provisionnement des ressources, définissez cette option sur `FALSE`. La valeur par défaut est `TRUE`.
+
+[NOTE]
+====
+Pour réactiver le provisionnement des ressources sur un groupe de volumes et sur tous les volumes associés, utilisez le `Start Volume Group Resource Provisioning` commande.
+
+====
+|===
+
+
+== Niveau minimal de firmware
+
+11.72

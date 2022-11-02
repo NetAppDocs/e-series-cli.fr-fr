@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/save-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: save, storage, array, dbm, database 
+summary: 'La commande save storageArray dbmDatabase sauvegarde les données de configuration RAID ou toutes les données dans un fichier sur l"hôte. Vous pouvez indiquer plusieurs emplacements de données et contrôleurs.' 
+---
+= Enregistrer la base de données DBM de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray dbmDatabase` La commande sauvegarde les données de configuration RAID ou toutes les données dans un fichier de l'hôte. Vous pouvez indiquer plusieurs emplacements de données et contrôleurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing]
+----
+save storageArray dbmDatabase
+[sourceLocation=(disk | onboard)]
+[controller [(a|b)]]
+[contentType= all]
+ file="fileName"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer la base de données. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\dbmdata.zip"`
+
+Ce paramètre doit apparaître en dernier après l'un des paramètres facultatifs.
+
+Cette commande crée un fichier .zip et vous n'avez pas besoin de spécifier d'extension de fichier.
+
+
+
+ a| 
+`sourceLocation`
+ a| 
+Ce paramètre indique l'emplacement à partir duquel obtenir les informations de la base de données de sauvegarde.
+
+* `disk` indique que les données proviennent directement de la base de données sur le lecteur
+* `onboard` Indique que les données proviennent de l'emplacement de mémoire RPA
+
+
+L'emplacement par défaut est `onboard`.
+
+
+
+ a| 
+`controller`
+ a| 
+Ce paramètre spécifie le contrôleur à partir duquel les données seront extraites exclusivement, si `sourceLocation` est défini sur `onboard`. Si le `controller` paramètre non spécifié, les données peuvent être extraites de l'un ou l'autre des contrôleurs.
+
+Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B.
+
+
+
+ a| 
+`contentType`
+ a| 
+Ce paramètre spécifie le type de contenu des données qui seront récupérées.
+
+Ce paramètre est défini sur `all` par défaut, de sorte que toutes les données incluant les données de configuration du pool de disques soient récupérées.
+
+|===
+
+
+== Remarques
+
+Si nécessaire, les données que vous enregistrez sur l'hôte à l'aide de cette commande peuvent être restaurées sur le contrôleur. Un validateur est cependant nécessaire pour restaurer les données du fichier sur l'hôte.
+
+
+
+== Niveau minimal de firmware
+
+7.75
+
+7.83 ajoute ces paramètres :
+
+* `sourceLocation`
+* `controller`
+* `contentType`
+

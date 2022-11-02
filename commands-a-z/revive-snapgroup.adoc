@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/revive-snapgroup.html 
+sidebar: sidebar 
+keywords: revive, snapshot, group 
+summary: 'La commande reset snapGroup force le groupe d"instantanés spécifié à l"état optimal.' 
+---
+= Ressusciter le groupe de snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `revive snapGroup` La commande force le groupe de snapshots spécifié à l'état optimal.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Si le groupe de snapshots n'est pas en panne, le micrologiciel affiche un message d'erreur et n'exécute pas cette commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+revive snapGroup pass:quotes[[_snapGroupName_]]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots que vous souhaitez définir sur l'état optimal. Placez le nom du groupe de snapshots entre crochets ([ ]). Si le nom du groupe de snapshots comporte des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du groupe de snapshots entre guillemets (" ") entre crochets.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+7.83

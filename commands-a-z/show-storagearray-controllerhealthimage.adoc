@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/show-storagearray-controllerhealthimage.html 
+sidebar: sidebar 
+keywords: show, storage, array, controller, health, image 
+summary: 'La commande show storageArray controllerHealthImage affiche les détails de l"image d"état du contrôleur sur le cache du contrôleur, si une image d"intégrité du contrôleur est disponible, sur les baies de stockage prenant en charge l"image d"état du contrôleur.' 
+---
+= Affiche l'image d'état de santé du contrôleur de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray controllerHealthImage` la commande affiche les détails de l'image d'état du contrôleur sur le cache du contrôleur, si une image d'intégrité du contrôleur est disponible, sur les baies de stockage qui prennent en charge l'image d'état du contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.20 du micrologiciel `coreDump` le paramètre est remplacé par le `controllerHealthImage` paramètre.
+
+====
+Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrité du contrôleur, cette commande renvoie une erreur.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray controllerHealthImage
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.20 remplace le `coreDump` paramètre avec le `controllerHealthImage` paramètre.

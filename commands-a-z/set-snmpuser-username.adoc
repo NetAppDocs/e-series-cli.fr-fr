@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/set-snmpuser-username.html 
+sidebar: sidebar 
+keywords: update, snmpv3, usm, user 
+summary: 'La commande set snmpUser username met à jour un utilisateur SNMP (simple Network Management Protocol) USM existant. L"utilisateur USM à modifier est identifié à l"aide du nom d"utilisateur s"il n"y a qu"un seul utilisateur avec le nom d"utilisateur. L"utilisateur est identifié à l"aide du nom d"utilisateur et de l"ID du moteur s"il y a plusieurs utilisateurs avec le même nom d"utilisateur et un ID de moteur différent.' 
+---
+= Mettre à jour l'utilisateur SNMPv3 USM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snmpUser userName` La commande met à jour un utilisateur SNMP (simple Network Management Protocol) USM existant. L'utilisateur USM à modifier est identifié à l'aide du nom d'utilisateur s'il n'y a qu'un seul utilisateur avec le nom d'utilisateur. L'utilisateur est identifié à l'aide du nom d'utilisateur et de l'ID du moteur s'il y a plusieurs utilisateurs avec le même nom d'utilisateur et un ID de moteur différent.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set snmpUser userName="snmpUserName" [engineId=(local | engineId)]
+[newUserName="newSnmpUserName"] [newEngineId=(local | engineId)]
+[authProtocol=(none | sha | sha256 | sha512) authPassword="authPassword"]
+[privProtocol=(none | aes128) privPassword="privPassword"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userName`
+ a| 
+Nom de l'utilisateur SNMP USM que vous souhaitez mettre à jour. Placez le nom d'utilisateur SNMP USM entre guillemets (" ")
+
+
+
+ a| 
+`engineId`
+ a| 
+ID du moteur de l'utilisateur SNMP USM que vous souhaitez mettre à jour. L'ID du moteur est requis si plusieurs utilisateurs USM ont le même nom d'utilisateur. La valeur peut être de `local` Pour spécifier l'agent SNMP local est l'agent faisant autorité ou une chaîne de chiffres hexadécimale qui permet de spécifier un ID de moteur d'agent SNMP distant.
+
+
+
+ a| 
+`newSnmpUserName`
+ a| 
+Le nouveau nom que vous souhaitez donner à l'utilisateur SNMP. Placez le nom d'utilisateur SNMP entre guillemets (" "). La valeur par défaut est le nom d'utilisateur précédemment défini pour l'utilisateur.
+
+
+
+ a| 
+`newEngineId`
+ a| 
+Le nouvel ID de moteur à utiliser comme identifiant de l'ID de moteur SNMP faisant autorité pour l'utilisateur. La valeur peut être "[.code]local" pour spécifier l'agent SNMP local comme agent faisant autorité ou une chaîne de chiffres hexadécimaux pour spécifier un ID de moteur d'agent SNMP distant. La valeur par défaut correspond à l'ID de moteur précédemment défini pour l'utilisateur.
+
+
+
+ a| 
+`authProtocol`
+ a| 
+Protocole d'authentification (HMAC) à utiliser pour l'utilisateur. La valeur peut être l'une des suivantes :
+
+* `none` - Pas d'authentification des messages SNMP (par défaut)
+* `sha` - Authentification SHA-1
+* `sha256` - Authentification SHA-256
+* `sha512` - Authentification SHA-512
+
+
+La valeur par défaut est le protocole d'authentification précédemment défini pour l'utilisateur.
+
+
+
+ a| 
+`authPassword`
+ a| 
+Mot de passe à utiliser pour l'authentification de l'utilisateur. Doit être spécifié si le protocole d'authentification est `sha`, `sha256` ou `sha512`
+
+
+
+ a| 
+`privProtocol`
+ a| 
+Le protocole de confidentialité (chiffrement) à utiliser pour l'utilisateur. La valeur peut être l'une des suivantes :
+
+* `none` - Pas de cryptage des messages SNMP (par défaut)
+* `aes128` - Chiffrement AES-18
+
+
+La valeur par défaut est le protocole de confidentialité défini précédemment pour l'utilisateur.
+
+
+
+ a| 
+`privPassword`
+ a| 
+Mot de passe à utiliser pour la confidentialité/le chiffrement de l'utilisateur. Doit être spécifié si le protocole de confidentialité est « [.code]'aes128 ».
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.72

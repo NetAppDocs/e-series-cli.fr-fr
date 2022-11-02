@@ -1,0 +1,150 @@
+---
+permalink: commands-a-z/set-tray-serviceallowedindicator.html 
+sidebar: sidebar 
+keywords: set, tray, service, action, allowed, indicator 
+summary: 'La commande Set plateau serviceAllowedIndicator (définir le voyant de maintenance autorisé) s"allume ou éteint sur un boîtier de ventilateur d"alimentation, un boîtier de batterie d"interconnexion ou un boîtier de module de services environnementaux (ESM).' 
+---
+= Définir le voyant d'action d'entretien du bac autorisé
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set tray serviceAllowedIndicator` La commande active ou désactive le témoin action de service autorisée sur un boîtier de ventilateur d'alimentation, un boîtier de batterie d'interconnexion ou un boîtier de module de services environnementaux (ESM).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur.
+
+Pour allumer ou éteindre le témoin d'action d'entretien autorisée sur le boîtier du contrôleur, utilisez le `set controller serviceAllowedIndicator` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]]
+(powerFan [(left | right | top | bottom)] |
+interconnect |
+esm [(left | right | top | bottom)]) |
+battery [(left | right)] |
+fanCanister [(left | right)]  |
+powerCanister [(top | bottom)] |
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`tray`
+ a| 
+Le plateau où se trouve le boîtier du ventilateur d'alimentation, le boîtier d'interconnexion, le boîtier ESM ou le boîtier de la batterie. Les valeurs d'ID du bac sont `0` à `99`. Placez la valeur d'ID du bac entre crochets ([ ]). Si vous n'entrez pas de valeur d'ID de bac, l'ID de bac du plateau contrôleur est la valeur par défaut.
+
+
+
+ a| 
+`powerFan`
+ a| 
+Le témoin action de service autorisée sur le boîtier du ventilateur d'alimentation que vous souhaitez allumer ou éteindre. Les identifiants valides du boîtier du ventilateur de puissance sont `left`, `right`, `top`, ou `bottom`. Placez l'identificateur de la cartouche du ventilateur d'alimentation entre crochets ([ ]).
+
+
+
+ a| 
+`interconnect`
+ a| 
+Le témoin action de service autorisée pour le boîtier interconnexion-batterie.
+
+
+
+ a| 
+`esm`
+ a| 
+Le témoin action d'entretien autorisée pour une cartouche ESM. Les identifiants de canister ESM valides sont `left`, `right`, `top`, ou `bottom`.
+
+
+
+ a| 
+`battery`
+ a| 
+Le témoin action de service autorisée pour une batterie. Les identifiants de batterie valides sont `left` ou `right`.
+
+
+
+ a| 
+`fanCanister`
+ a| 
+Le témoin action d'entretien autorisée pour une cartouche de ventilateur. Les identifiants valides du boîtier du ventilateur sont `left` ou `right`.
+
+
+
+ a| 
+`powerCanister`
+ a| 
+Le témoin action d'entretien autorisée pour une cartouche d'alimentation. Les identifiants valides de l'absorbeur de puissance sont `top` ou `bottom`.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Paramètre permettant d'activer ou de désactiver le voyant action de service autorisée. Pour activer le voyant action de service autorisée, définissez ce paramètre sur `on`. Pour désactiver le voyant action de service autorisée, définissez ce paramètre sur `off`.
+
+|===
+
+
+== Remarques
+
+Cette commande a été initialement définie pour être utilisée avec le plateau contrôleur CE6998 Cette commande n'est pas prise en charge par les tiroirs de contrôleur livrés avant l'introduction du plateau de contrôleur CE6998
+
+
+
+== Exemple
+
+Cette commande active le voyant action de service autorisée pour le ESM gauche du bac 5 avec l'adresse IP 155.155.155.155.
+
+[listing]
+----
+SMcli 123.145.167.214 123.145.167.215 -c "set tray [5]
+ESM [left] serviceAllowedIndicator=on;"
+----
+
+
+== Niveau minimal de firmware
+
+6.14 ajoute ces paramètres :
+
+* `powerFan`
+* `interconnect`
+
+
+6.16 ajoute ces paramètres :
+
+* `tray`
+* `esm`
+
+
+7.60 ajoute les identificateurs `top` et `bottom`.
+
+7.60 ajoute le `powerCanister` et `fanCanister` paramètres.

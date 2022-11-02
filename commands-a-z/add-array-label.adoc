@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/add-array-label.html 
+sidebar: sidebar 
+keywords: add array label, supported, syntax, parameters, minimum firmware level 
+summary: 'La commande Ajouter un label de tableau permet d"ajouter une matrice de stockage à la configuration avec un libellé défini par l"utilisateur. Cela permet aux commandes ultérieures d"adresser la baie de stockage par le libellé défini par l"utilisateur plutôt que par l"adresse IP ou le nom d"hôte.' 
+---
+= Ajouter une étiquette de tableau
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Add array label` commande permet d'ajouter une matrice de stockage à la configuration avec un libellé défini par l'utilisateur. Cela permet aux commandes ultérieures d'adresser la baie de stockage par le libellé défini par l'utilisateur plutôt que par l'adresse IP ou le nom d'hôte.
+
+
+
+== Baies prises en charge
+
+[NOTE]
+====
+L'étiquette définie par l'utilisateur fournie n'a pas besoin de correspondre au nom de la baie de stockage tel qu'il est affiché dans System Manager. Il s'agit d'une étiquette locale utilisée uniquement pour référencer la matrice de stockage à partir de la CLI.
+
+====
+Cette commande s'applique aux baies de stockage EF600 et EF300.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`Address`
+ a| 
+Permet de spécifier l'adresse IP (IPv4 ou IPv6) ou le nom d'hôte complet de la matrice de stockage.
+
+[NOTE]
+====
+Le `Address2` la valeur est facultative.
+
+====
+
+
+ a| 
+`userDefinedString`
+ a| 
+Permet de spécifier une étiquette pour la matrice de stockage.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

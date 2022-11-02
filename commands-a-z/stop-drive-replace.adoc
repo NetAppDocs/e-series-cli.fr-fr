@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/stop-drive-replace.html 
+sidebar: sidebar 
+keywords: stop, drive, replace 
+summary: 'La commande stop drive replace arrête une opération de copie de données qui a été démarrée par une commande set drive ou une commande replace drive avec l"entrée utilisateur copyDrive.' 
+---
+= Arrêter le remplacement de l'entraînement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop drive replace` la commande arrête une opération de copie de données qui a été démarrée par un `set drive` commande ou un `replace drive` commande avec `*copyDrive*` saisie utilisateur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+stop drive replace ([trayID,[drawerID,]slotID] | <"wwID">)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`drive`
+ a| 
+Le World Wide identifier (WWID) du lecteur que vous souhaitez remplacer. Placez le WWID entre guillemets (" ") à l'intérieur des supports d'angle (<>).
+
+|===
+
+
+== Remarques
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+
+
+== Niveau minimal de firmware
+
+8.20

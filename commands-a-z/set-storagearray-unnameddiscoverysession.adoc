@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/set-storagearray-unnameddiscoverysession.html 
+sidebar: sidebar 
+keywords: set, storage, array, unnamed, discovery, session 
+summary: La commande set storageArray unnamedDiscoverysession permet à la matrice de stockage de participer à des sessions de découverte sans nom. 
+---
+= Définissez une session de découverte sans nom de baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray unnamedDiscoverySession` la commande permet à la baie de stockage de participer à des sessions de découverte sans nom.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray unnamedDiscoverySession=(TRUE | FALSE)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`unnamedDiscoverySession`
+ a| 
+Ce paramètre active ou désactive les sessions de découverte sans nom. Définissez le paramètre sur `TRUE` pour activer les sessions de découverte sans nom. Définissez le paramètre sur `FALSE` pour désactiver les sessions de découverte sans nom.
+
+|===
+
+
+== Remarques
+
+La découverte est le processus qui permet aux initiateurs de déterminer les cibles disponibles. La détection se produit lors de la mise sous tension/de l'initialisation et également si la topologie du bus change, par exemple, si un périphérique supplémentaire est ajouté.
+
+Une session de découverte sans nom est une session de découverte établie sans spécifier d'ID cible dans la demande de connexion. Pour les sessions de découverte sans nom, ni l'ID cible ni l'ID du groupe de portails cible ne sont disponibles pour les cibles.
+
+
+
+== Niveau minimal de firmware
+
+7.10

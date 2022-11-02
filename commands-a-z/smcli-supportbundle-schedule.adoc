@@ -1,0 +1,388 @@
+---
+permalink: commands-a-z/smcli-supportbundle-schedule.html 
+sidebar: sidebar 
+keywords: schedule, automatic, support, bundle, collection, configuration 
+summary: 'La commande SMcli -supportBundle schedule crée ou supprime un planning pour enregistrer un bundle de support sur une ou plusieurs matrices de stockage. Vous collectez les informations relatives au système et à la configuration dans des packs de support. Ces informations sont transmises au support technique pour l"analyse et les diagnostics.' 
+---
+= Planifiez la configuration automatique de la collecte de bundle de support
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli -supportBundle schedule` la commande crée ou supprime un programme d'enregistrement d'un bundle de support sur une ou plusieurs matrices de stockage. Vous collectez les informations relatives au système et à la configuration dans des packs de support. Ces informations sont transmises au support technique pour l'analyse et les diagnostics.
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+Vous pouvez créer deux types d'horaires :
+
+* Daily/Weekly – utilisez cette planification lorsque vous devez collecter fréquemment des données pour surveiller de nouvelles configurations ou dépanner une configuration existante.
+* Mensuel/annuel -- utilisez ce calendrier lorsque vous recueillez des données pour évaluer le fonctionnement à long terme de votre matrice de stockage.
+
+
+
+
+== Syntaxe permettant de créer un planning quotidien/hebdomadaire
+
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule enable
+pass:quotes[(all | _storageArrayName_)]
+pass:quotes[startTime=_HH:MM_]
+pass:quotes[startDate=_MM:DD:YYYY_]
+pass:quotes[endDate=_MM:DD:YYYY_]
+daysOfWeek=[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+pass:quotes[data=_pathName_]
+----
+
+
+== Syntaxe permettant de créer un planning mensuel/annuel
+
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule enable
+pass:quotes[(all | _storageArrayName_)]
+pass:quotes[startTime=_HH:MM_]
+pass:quotes[startDate=_MM:DD:YYYY_]
+pass:quotes[endDate=_MM:DD:YYYY_]
+months=[January February March April May June July August September October
+November December]
+weekNumber=(First|Second|Third|Fourth|Last)
+dayOfWeek=(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)|
+onDays=[1-31] |
+pass:quotes[data=_pathName_]
+----
+
+
+== Syntaxe permettant de supprimer un planning
+
+[NOTE]
+====
+Cette commande supprime complètement la planification de la matrice de stockage. Pour relancer l'enregistrement des informations de bundle de support, vous devez créer un nouveau programme.
+
+====
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule disable
+pass:quotes[(all|_storageArrayName_)]
+----
+
+
+== Paramètres
+
+Le tableau suivant répertorie les paramètres d'un planning quotidien/hebdomadaire.
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`enable`
+ a| 
+Activer la collecte automatique des offres groupées de support lorsqu'un événement important MEL est détecté. Ce paramètre reprend la collecte des données de bundle de support s'il a été suspendu. Vous devez utiliser le paramètre chaque fois que vous créez une planification ou que vous modifiez une planification existante.
+
+
+
+ a| 
+`all`
+ a| 
+Utilisez ce paramètre si vous souhaitez définir un programme de collecte pour toutes les matrices de stockage détectées à partir de l'hôte.
+
+
+
+ a| 
+`_storageArrayName_`
+ a| 
+Nom d'une matrice de stockage spécifique pour laquelle vous souhaitez définir un planning.
+
+
+
+ a| 
+`startTime`
+ a| 
+L'heure de la journée à laquelle vous souhaitez que la collection d'un pack support commence. Le format de saisie de l'heure est HH:MM, où HH est l'heure et MM est la minute au-delà de l'heure. Utilisez une horloge de 24 heures.
+
+L'heure par défaut est 00:00, minuit. Si vous n'entrez pas une heure pour démarrer et que vous avez activé la collecte de bundle de support, la collecte des données se produit automatiquement à minuit.
+
+
+
+ a| 
+`startDate`
+ a| 
+Une date spécifique à laquelle vous souhaitez commencer à collecter les données de bundle de support. Le format de saisie de la date est MM:JJ:AA.
+
+La date par défaut est la date actuelle.
+
+
+
+ a| 
+`endDate`
+ a| 
+Une date spécifique à laquelle vous souhaitez arrêter la collecte des données de bundle de support. Le format de saisie de la date est MM:JJ:AA.
+
+La valeur par défaut est aucune.
+
+Si vous utilisez ce paramètre, il doit être au moins une semaine après la date de début et ne peut pas se produire dans le passé.
+
+
+
+ a| 
+`daysOfWeek`
+ a| 
+Jour ou jours spécifiques de la semaine où vous souhaitez recueillir des données de bundle de support. Utilisez ce paramètre lorsque vous souhaitez recueillir des données de bundle de support sur un ou plusieurs jours de la semaine. Par exemple :
+
+[listing]
+----
+daysOfWeek=[Tuesday]
+----
+[listing]
+----
+daysOfWeek=[Monday Wednesday Friday]
+----
+Placez les jours de la semaine entre crochets ([ ]). Si vous saisissez plusieurs jours, séparez chaque jour par un espace.
+
+
+
+ a| 
+`data`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les données de l'ensemble de support. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\data.txt"
+----
+[NOTE]
+====
+Vous pouvez utiliser n'importe quelle extension de fichier.
+
+====
+Placez le chemin et le nom du fichier entre guillemets (" ").
+
+|===
+Le tableau suivant répertorie les paramètres d'un planning mensuel/annuel.
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`enable`
+ a| 
+Activer la collecte automatique des offres groupées de support lorsqu'un événement important MEL est détecté. Ce paramètre reprend la collecte des données de bundle de support s'il a été suspendu. Vous devez utiliser le paramètre chaque fois que vous créez une planification ou que vous modifiez une planification existante.
+
+
+
+ a| 
+`all`
+ a| 
+Utilisez ce paramètre si vous souhaitez définir un programme de collecte pour toutes les matrices de stockage détectées à partir de l'hôte.
+
+
+
+ a| 
+`storageArrayName`
+ a| 
+Nom d'une matrice de stockage spécifique pour laquelle vous souhaitez définir un planning.
+
+
+
+ a| 
+`startTime`
+ a| 
+Heure de la journée à laquelle vous souhaitez que la collection d'un pack support commence. Le format de saisie de l'heure est HH:MM, où HH est l'heure et MM est la minute au-delà de l'heure. Utilisez une horloge de 24 heures.
+
+L'heure par défaut est 00:00, minuit. Si vous n'entrez pas une heure pour démarrer et que vous avez activé la collecte de bundle de support, la collecte des données se produit automatiquement à minuit.
+
+
+
+ a| 
+`startDate`
+ a| 
+Une date spécifique à laquelle vous souhaitez commencer à collecter les données de bundle de support. Le format de saisie de la date est MM:JJ:AA.
+
+La date par défaut est la date actuelle.
+
+
+
+ a| 
+`endDate`
+ a| 
+Une date spécifique à laquelle vous souhaitez arrêter la collecte des données de bundle de support. Le format de saisie de la date est MM:JJ:AA.
+
+La valeur par défaut est aucune.
+
+
+
+ a| 
+`months`
+ a| 
+Mois ou mois spécifiques de l'année pour lesquels vous souhaitez recueillir des données de bundle de support. Utilisez ce paramètre lorsque vous souhaitez collecter des données de bundle de support sur un ou plusieurs mois d'une année. Par exemple :
+
+[listing]
+----
+months=[June]
+----
+[listing]
+----
+months=[January April July October]
+----
+Placez le mois entre crochets ([ ]). Si vous saisissez plus d'un mois, séparez chaque mois par un espace.
+
+
+
+ a| 
+`weekNumber`
+ a| 
+Une semaine du mois au cours duquel vous souhaitez recueillir des données de bundle de support. Par exemple :
+
+[listing]
+----
+weekNumber=first
+----
+
+
+ a| 
+`dayOfWeek`
+ a| 
+Un jour spécifique de la semaine sur lequel vous souhaitez recueillir des données de bundle de support. Utilisez ce paramètre lorsque vous souhaitez recueillir des données de bundle de support sur un seul jour de la semaine. Par exemple :
+
+[listing]
+----
+dayOfWeek=Wednesday
+----
+
+
+ a| 
+`onDays`
+ a| 
+Jour ou jours spécifiques d'un mois sur lequel vous souhaitez recueillir des données de bundle de support. Par exemple :
+
+[listing]
+----
+onDays=[15]
+----
+[listing]
+----
+onDays=[7 21]
+----
+Placez le jour entre crochets ([ ]). Si vous saisissez plusieurs jours, séparez chaque jour par un espace.
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser `*onDays*` paramètre avec l'un ou l'autre `*weekNumber*` ou le `*dayOfWeek*` paramètre.
+
+====
+
+
+ a| 
+`data`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les données de l'ensemble de support. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\data.txt"
+----
+[NOTE]
+====
+Vous pouvez utiliser n'importe quelle extension de fichier.
+
+====
+Placez le chemin et le nom du fichier entre guillemets (" ").
+
+|===
+Le tableau suivant répertorie les paramètres de suppression d'un planning.
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`disable`
+ a| 
+Désactive la collecte automatique de packs de support et supprime immédiatement tout programme précédemment défini.
+
+[NOTE]
+====
+La désactivation d'un planning supprime également le planning.
+
+====
+
+
+ a| 
+`all`
+ a| 
+Utilisez ce paramètre si vous souhaitez définir un programme de collecte pour toutes les matrices de stockage détectées à partir de l'hôte.
+
+
+
+ a| 
+`storageArrayName`
+ a| 
+Nom d'une matrice de stockage spécifique pour laquelle vous souhaitez définir un planning.
+
+|===
+
+
+== Remarques
+
+Lorsque vous utilisez le `all` paramètre pour définir une planification commune pour toutes les matrices de stockage, les planifications pour les matrices de stockage individuelles sont supprimées. Si une planification est définie pour toutes les baies de stockage, les baies de stockage nouvellement découvertes suivront la même planification. Si une planification est définie pour toutes les baies de stockage et qu'une planification est définie pour une seule baie de stockage, les baies de stockage nouvellement découvertes n'ont pas de planification définie.
+
+Voici quelques exemples d'utilisation de cette commande. Le premier exemple est un planning quotidien/hebdomadaire qui répond aux critères suivants pour la collecte des données de bundle de support :
+
+* Le nom de la matrice de stockage est DevKit4
+* L'heure de début de la collecte est 02:00 (2:00 le matin)
+* La date de début est 05:01:2013 (1er mai 2013)
+* Les données seront recueillies le lundi et le vendredi de chaque semaine
+* Ce programme ne comporte pas de date de fin et ne peut être arrêté qu'en exécutant le `SMcli -supportBundle schedule disable` commande
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable DevKit4 startTime=02:00
+startDate=05:01:2013 endDate=05:10:2014 daysOfWeek=[Monday Friday]
+----
+Le deuxième exemple est un planning mensuel/annuel qui répond aux critères suivants pour la collecte des données de bundle de support :
+
+* Le nom de la matrice de stockage est eng_stor1
+* L'heure de début de la collecte est 04:00 (4:00 le matin)
+* La date de début est 05:01:2013 (1er mai 2013)
+* Les données seront recueillies en mars, avril, mai, juin et août
+* Les données seront recueillies les premiers et les vingt premiers jours de chaque mois
+* Ce programme ne comporte pas de date de fin et ne peut être arrêté qu'en exécutant le `SMcli -supportBundle schedule disable` commande
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable eng_stor1 startTime=04:00
+startDate=05:01:2013 months=[March April May June August] onDays=[1 21]
+----
+Le troisième exemple est un planning mensuel/annuel qui répond aux critères suivants pour la collecte des données de bundle de support :
+
+* Le nom de la matrice de stockage est firmware_2
+* L'heure de début de la collection est 22:00 (10:00 la nuit)
+* La date de début est 05:01:2013 (1er mai 2013)
+* Les données seront recueillies en mars, avril, mai, juin et août
+* Les données seront recueillies le vendredi de la première semaine de chaque mois
+* Cette annexe se terminera le 05:10:2014 (10 mai 2014)
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable firmware_2 startTime=22:00
+startDate=05:01:2013 endDate=05:10:2014 months=[March April May June August]
+weekNumber=First dayOfWeek=Friday
+----
+
+
+== Niveau minimal de firmware
+
+7.83

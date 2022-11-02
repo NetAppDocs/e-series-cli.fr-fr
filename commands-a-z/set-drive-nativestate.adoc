@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/set-drive-nativestate.html 
+sidebar: sidebar 
+keywords: set, foreign, drive, native 
+summary: 'La commande set drive nativeState ajoute les disques manquants (étrangers) à leur groupe de volumes d"origine et les fait partie du groupe de volumes de la nouvelle baie de stockage.' 
+---
+= Réglez le lecteur étranger sur natif
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set drive nativeState` la commande reajoute les disques manquants (étrangers) dans leur groupe de volumes d'origine et les fait partie du groupe de volumes de la nouvelle baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Un disque est considéré comme natif lorsqu'il fait partie d'un groupe de volumes dans une baie de stockage. Un lecteur est considéré comme étranger lorsqu'il n'appartient pas à un groupe de volumes d'une matrice de stockage ou lorsqu'il ne peut pas être importé avec les disques d'un groupe de volumes qui sont transférés vers une nouvelle matrice de stockage. Cette dernière défaillance crée un groupe de volumes incomplet sur la nouvelle baie de stockage.
+
+Utilisez cette opération pour la récupération d'urgence uniquement : lorsqu'un ou plusieurs lecteurs doivent être remplacés par un état de disque étranger et renvoyés à un état natif dans leur groupe de volumes d'origine.
+
+[NOTE]
+====
+*Corruption ou perte de données possible* -- l'utilisation de cette commande pour des raisons autres que ce qui est indiqué précédemment peut entraîner une perte de données sans notification.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set (drive=pass:quotes[(_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_)] | drives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)] |
+allDrives) nativeState
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800, E5700, EF600 et EF300 possèdent des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`allDrives`
+ a| 
+Paramètre permettant de sélectionner tous les lecteurs.
+
+|===
+
+
+== Remarques
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+
+
+== Niveau minimal de firmware
+
+7.10
+
+7.60 ajoute le `drawerID` saisie utilisateur.

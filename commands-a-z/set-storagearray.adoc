@@ -1,0 +1,545 @@
+---
+permalink: commands-a-z/set-storagearray.html 
+sidebar: sidebar 
+keywords: set, storage, array 
+summary: La commande set storageArray définit les propriétés de la matrice de stockage. 
+---
+= Définir la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray` commande définit les propriétés de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.10 du micrologiciel `cacheFlushStop` ce paramètre est obsolète et sera supprimé dans une prochaine version du logiciel de gestion du stockage.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray
+([autoLoadBalancingEnable=(TRUE | FALSE)]|
+[autoSupportMaintenanceWindow AutoSupport Maintenance Window parameters]
+[autoSupport schedule AutoSupport Schedule Parameters]|
+[autoSupportConfig (enable | disable)]|
+[autoSupportOnDemand (enable | disable)]|
+[autoSupportRemoteDiag (enable |disable)]|
+[cacheBlockSize=cacheBlockSizeValue]|
+[cacheFlushStart=cacheFlushStartSize]|
+[cacheFlushStop=cacheFlushStopSize]|
+[cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)]|
+[controllerHealthImageAllowOverWrite]|
+[defaultHostType=("hostTypeName" |"hostTypeIdentifier")] |
+[directoryServer directory server parameters]|
+[externalKeyManagement external key management parameters]|
+[failoverAlertDelay=delayValue]|
+[hostConnectivityReporting (enable | disable)]|
+[icmpPingResponse=(TRUE | FALSE)]|
+[isnsIPV4ConfigurationMethod isns IPv4 Config Method Parameters]|
+[isnsIPv6Address=ipAddress]|
+[isnsListeningPort=listeningPortIPAddress]]|
+[isnsRegistration=(TRUE | FALSE)]|
+[learnCycleDate learn cycle parameters]|
+[localUsername=local user name parameters]|
+[loginBanner file="path_to_login_banner"]|
+[managementInterface restOnly={true | false}]|
+[mediaScanRate=(disabled | 1-30)]|
+[odxEnabled=(TRUE | FALSE)]|
+[password="password"]|
+[passwordLength=<INTEGER>]|
+[pqValidateOnReconstruct P/Q Validate on Reconstruct parameters]|
+[redundancyMode=(simplex | duplex)]|
+[revocationCheckSettings revocation check settings parameters]|
+[securityKey]|
+[symbol SYMbol user name and password parameters]|
+[syslog syslog parameters]|
+[time]|
+[trayPositions=(controller | trayID ... trayIDn)]|
+[unnamedDiscoverySession=(TRUE | FALSE)]|
+[userLabel="storageArrayName"]|
+[userSession sessionTimeout=n]|
+[vaaiEnabled=(TRUE | FALSE)])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`autoLoadBalancingEnable`
+ a| 
+Ce paramètre active l'équilibrage automatique de la charge sur le contrôleur. Pour activer l'option, définissez ce paramètre sur `TRUE`. Pour désactiver cette option, définissez ce paramètre sur `FALSE`.
+
+[NOTE]
+====
+Lorsque la fonction équilibrage automatique de la charge est activée, la fonction Rapport de connectivité hôte est également activée.
+
+====
+
+
+ a| 
+`autoSupport schedule`
+ a| 
+Définit les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont envoyés.
+
+
+
+ a| 
+`autoSupportConfig`
+ a| 
+Paramètre permettant de collecter automatiquement les données de support chaque fois que le micrologiciel détecte un événement MEL critique. Ce paramètre a les valeurs suivantes :
+
+* `enable` -- active la collecte des données de support
+* `disable` -- désactive la collecte des données de support
+
+
+Utilisez ce paramètre dans ces conditions uniquement :
+
+* La fonctionnalité AutoSupport (ASUP) n'est pas disponible sur la baie de stockage
+* Pour prendre en charge les configurations sur les matrices de stockage qui utilisaient auparavant ce paramètre
+
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser ce paramètre avec les commandes ASUP.
+
+====
+
+
+ a| 
+`autoSupportMaintenanceWindow`
+ a| 
+Active ou désactive la fonction de fenêtre de maintenance AutoSupport et configure la fonction.
+
+
+
+ a| 
+`cacheBlockSize`
+ a| 
+Taille de bloc de cache utilisée par le contrôleur pour gérer le cache. Les valeurs valides sont `4` (4 KO), `8` (8 KO), `16` (16 Ko), ou `32` (32 KO).
+
+
+
+ a| 
+`cacheMirrorDataAssuranceCheckEnable`
+ a| 
+Ce paramètre permet la vérification de l'assurance des données en miroir dans le cache sur le contrôleur. Pour activer l'option, définissez ce paramètre sur `TRUE`. Pour désactiver cette option, définissez ce paramètre sur `FALSE`.
+
+
+
+ a| 
+`cacheFlushStart`
+ a| 
+Pourcentage de données non écrites dans le cache entraînant un vidage du cache. Utiliser les valeurs d'entier de `0` à `100` pour définir le pourcentage. La valeur par défaut est `80`.
+
+
+
+ a| 
+`cacheFlushStop`
+ a| 
+[NOTE]
+====
+Ce paramètre est obsolète et sera supprimé dans une prochaine version.
+
+====
+Pourcentage de données non écrites dans le cache qui arrête un vidage du cache. Utiliser les valeurs d'entier de `0` à `100` pour définir le pourcentage. Cette valeur doit être inférieure à la valeur de l' `cacheFlushStart` paramètre.
+
+
+
+ a| 
+`controllerHealthImageAllowOverWrite`
+ a| 
+Définit un indicateur sur un contrôleur pour permettre à une nouvelle image d'intégrité du contrôleur de remplacer une image d'intégrité existante du contrôleur sur des baies de stockage prenant en charge la fonction d'image d'intégrité du contrôleur.
+
+
+
+ a| 
+`defaultHostType`
+ a| 
+Type d'hôte par défaut de tout port hôte non configuré auquel les contrôleurs sont connectés. Pour générer une liste de types d'hôte valides pour la matrice de stockage, exécutez l' `show storageArray hostTypeTable` commande. Les types d'hôte sont identifiés par un nom ou un index numérique. Placez le nom du type d'hôte entre guillemets (" "). Ne placez pas l'identificateur numérique de type hôte entre guillemets.
+
+
+
+ a| 
+`directoryServer`
+ a| 
+Met à jour la configuration du serveur d'annuaire, y compris les mappages de rôles.
+
+
+
+ a| 
+`externalKeyManagement`
+ a| 
+Configure l'adresse et le numéro de port du serveur de gestion externe des clés
+
+
+
+ a| 
+`failoverAlertDelay`
+ a| 
+Délai d'alerte de basculement en minutes. Les valeurs valides pour le temps de retard sont `0` à `60` quelques minutes La valeur par défaut est `5`.
+
+
+
+ a| 
+`hostConnectivityReporting`
+ a| 
+Ce paramètre active les rapports de connectivité hôte sur le contrôleur. Pour activer l'option, définissez ce paramètre sur `enable`. Pour désactiver cette option, définissez ce paramètre sur `disable`.
+
+[NOTE]
+====
+Si vous essayez de désactiver le rapport de connectivité hôte lorsque l'équilibrage automatique de la charge est activé, vous recevez une erreur. Désactivez tout d'abord la fonction d'équilibrage automatique de la charge, puis désactivez la fonction de rapport de connectivité hôte.
+
+====
+[NOTE]
+====
+Vous pouvez maintenir l'option Rapport de connectivité hôte activée lorsque l'équilibrage automatique de la charge est désactivé.
+
+====
+
+
+ a| 
+`icmpPingResponse`
+ a| 
+Ce paramètre active ou désactive les messages de demande d'écho. Définissez le paramètre sur `TRUE` Pour activer les messages de demande d'écho. Définissez le paramètre sur `FALSE` Pour désactiver les messages de demande d'écho.
+
+
+
+ a| 
+`isnsIPv4ConfigurationMethod`
+ a| 
+La méthode que vous souhaitez utiliser pour définir la configuration du serveur iSNS. Vous pouvez entrer l'adresse IP des serveurs IPv4 iSNS en sélectionnant `static`. Pour IPv4, vous pouvez choisir d'avoir un serveur DHCP (Dynamic Host Configuration Protocol) pour sélectionner l'adresse IP du serveur iSNS en entrant `dhcp`. Pour activer DHCP, vous devez définir le `isnsIPv4Address` paramètre à `0.0.0.0`.
+
+
+
+ a| 
+`isnsIPv6Address`
+ a| 
+Adresse IPv6 que vous souhaitez utiliser pour le serveur iSNS.
+
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+L'adresse IP que vous souhaitez utiliser pour le port d'écoute du serveur iSNS. La plage de valeurs du port d'écoute est `49152` à `65535`. La valeur par défaut est `53205`.
+
+Le port d'écoute réside sur le serveur et effectue les opérations suivantes :
+
+* Surveille les demandes de connexion client entrantes
+* Gère le trafic vers le serveur
+
+
+Lorsqu'un client demande une session réseau avec un serveur, l'écouteur reçoit la requête réelle. Si les informations client correspondent aux informations d'écoute, l'écouteur accorde une connexion au serveur de base de données.
+
+
+
+ a| 
+`isnsRegistration`
+ a| 
+Ce paramètre répertorie la matrice de stockage comme cible iSCSI sur le serveur iSNS. Pour enregistrer la matrice de stockage sur le serveur iSNS, définissez ce paramètre sur `TRUE`. Pour supprimer la matrice de stockage du serveur iSNS, définissez ce paramètre sur `FALSE`.
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser `isnsRegistration` paramètre avec tout autre paramètre lors de l'exécution du `set storageArray` commande.
+
+====
+Pour plus d'informations sur l'enregistrement iSNS, reportez-vous au `set storageArray isnsRegistration` commande.
+
+
+
+ a| 
+`learnCycleDate`
+ a| 
+Définit les cycles d'apprentissage de la batterie du contrôleur.
+
+
+
+ a| 
+`localUsername`
+ a| 
+Permet de définir un mot de passe de nom d'utilisateur local ou un mot de passe de symbole pour un rôle particulier.
+
+
+
+ a| 
+`loginBanner`
+ a| 
+Vous permet de télécharger un fichier texte à utiliser comme bannière de connexion. Le texte de la bannière peut inclure un avis d'avertissement et un message de consentement qui sont présentés aux utilisateurs avant d'établir des sessions dans SANtricity System Manager ou avant d'exécuter des commandes
+
+
+
+ a| 
+`managementInterface`
+ a| 
+Modifie l'interface de gestion du contrôleur. Modifiez le type d'interface de gestion pour appliquer la confidentialité entre la baie de stockage et son logiciel de gestion ou pour accéder à des outils externes.
+
+
+
+ a| 
+`mediaScanRate`
+ a| 
+Nombre de jours pendant lesquels l'analyse des supports s'exécute. Les valeurs valides sont `disabled` , qui éteint la numérisation du support, ou `1` jour après jour `30` jours, où `1` le jour est le taux de balayage le plus rapide, et `30` jours est la vitesse d'acquisition la plus lente. Une valeur autre que `disabled` ou `1` à `30` ne permet pas au lecteur multimédia de fonctionner.
+
+
+
+ a| 
+`odxEnabled`
+ a| 
+Active ou désactive le transfert de données déchargées (ODX) d'une baie de stockage.
+
+
+
+ a| 
+`password`
+ a| 
+Mot de passe de la matrice de stockage. Placez le mot de passe entre guillemets (" ").
+
+[NOTE]
+====
+Dans la version 8.40, ce paramètre est obsolète. Utilisez le `localUsername` ou le symbole `symbol` paramètres, avec le `password` ou `adminPassword` paramètres, à la place.
+
+====
+
+
+ a| 
+`passwordLength`
+ a| 
+Permet de définir la longueur minimale requise pour tous les mots de passe nouveaux ou mis à jour. Utilisez une valeur comprise entre 0 et 30.
+
+
+
+ a| 
+`pqValidateOnReconstruct`
+ a| 
+Modifie la validation P/Q sur la capacité de reconstruction.
+
+
+
+ a| 
+`redundancyMode`
+ a| 
+Utiliser `simplex` mode lorsque vous disposez d'un seul contrôleur. Utiliser `duplex` mode lorsque vous avez deux contrôleurs.
+
+
+
+ a| 
+`revocationCheckSettings`
+ a| 
+Permet d'activer ou de désactiver la vérification de révocation et de configurer un serveur OCSP (Online Certificate Status Protocol).
+
+
+
+ a| 
+`securityKey`
+ a| 
+Définit la clé de sécurité interne utilisée dans toute la matrice de stockage pour implémenter la fonction de sécurité des lecteurs.
+
+[NOTE]
+====
+Utilisé pour une clé de sécurité interne. Lorsqu'un serveur de gestion externe des clés est utilisé, utilisez `create storageArray securityKey` commande.
+
+====
+
+
+ a| 
+`symbol`
+ a| 
+Permet de définir un mot de passe de symbole pour un rôle particulier.
+
+
+
+ a| 
+`syslog`
+ a| 
+Permet de modifier l'adresse, le protocole ou le numéro de port du serveur syslog.
+
+
+
+ a| 
+`time`
+ a| 
+Définit les horloges sur les deux contrôleurs d'une matrice de stockage en synchronisant les horloges du contrôleur avec l'horloge de l'hôte à partir duquel vous exécutez cette commande.
+
+
+
+ a| 
+`trayPositions`
+ a| 
+Liste de tous les ID de bac. La séquence des ID de bac dans la liste définit les positions du plateau de contrôleur et des tiroirs d'unité dans une matrice de stockage. Les valeurs valides sont `0` à `99`. Entrez les valeurs d'ID de bac séparées par un espace. Placez la liste des valeurs d'ID de bac entre parenthèses. Pour les matrices de stockage dans lesquelles le plateau de contrôleur possède un identifiant prédéfini qui ne se trouve pas dans la plage de valeurs de position de bac valides, utilisez le `controller` valeur.
+
+[NOTE]
+====
+Le `controller` l'option n'est pas valide après la version 6.14 du firmware.
+
+====
+
+
+ a| 
+`unnamedDiscoverySession`
+ a| 
+Permet à la baie de stockage de participer à des sessions de découverte sans nom.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom de la matrice de stockage. Placez le nom de la matrice de stockage entre guillemets (" ").
+
+
+
+ a| 
+`userSession`
+ a| 
+Vous permet de définir un délai d'expiration dans System Manager, de sorte que les sessions inactives des utilisateurs soient déconnectées au bout d'un délai spécifié.
+
+
+
+ a| 
+`vaaiEnabled`
+ a| 
+Active ou désactive VMware vStorage API Array Architecture (VAAI) pour une baie de stockage
+
+|===
+
+
+== Remarques
+
+Sauf pour le `isnsRegistration`, lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs des paramètres facultatifs.
+
+
+
+== Données d'AutoSupport
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser ce paramètre avec les commandes ASUP.
+
+====
+Lorsque cette option est activée, le `set storageArray autoSupportConfig` Commande entraîne le renvoi de toutes les informations de configuration et d'état de la matrice de stockage à chaque détection d'un événement important du journal des événements majeurs (MEL). Les informations de configuration et d'état sont renvoyées sous la forme d'un graphique d'objet. Le graphique d'objets contient tous les objets logiques et physiques pertinents ainsi que leurs informations d'état associées pour la matrice de stockage.
+
+Le `set storageArray autoSupportConfig` la commande collecte les informations de configuration et d'état de cette manière :
+
+* La collecte automatique des informations de configuration et d'état est effectuée toutes les 72 heures. Les informations de configuration et d'état sont enregistrées dans le fichier d'archive zip de la matrice de stockage. Le fichier d'archive est doté d'un horodatage qui permet de gérer les fichiers d'archive.
+* Deux fichiers d'archive zip de matrice de stockage sont conservés pour chaque matrice de stockage. Les fichiers d'archive zip sont conservés sur un lecteur. Après le dépassement de la période de 72 heures, le fichier d'archive le plus ancien est toujours écrasé pendant le nouveau cycle.
+* Après avoir activé la collecte automatique des informations de configuration et d'état à l'aide de cette commande, une collecte initiale d'informations démarre. Collecte d'informations après l'émission de la commande, assurez-vous qu'un fichier d'archive est disponible et démarre le cycle d'horodatage.
+
+
+Vous pouvez exécuter le `set storageArray autoSupportConfig` commande sur plusieurs matrices de stockage.
+
+
+
+== Taille de bloc de cache
+
+Lorsque vous définissez des tailles de bloc de cache, utilisez la taille de bloc de cache de 4 Ko pour les baies de stockage nécessitant des flux d'E/S généralement de petite taille et aléatoires. Utilisez la taille de bloc de cache de 8 Ko lorsque la majorité de vos flux d'E/S dépasse 4 Ko mais est inférieure à 8 Ko. Utilisez la taille du bloc de cache de 16 Ko ou celle du bloc de cache de 32 Ko pour les baies de stockage qui requièrent des applications de transfert de données importantes, séquentielles ou à large bande passante.
+
+Le `cacheBlockSize` paramètre définit la taille du bloc de cache pris en charge pour tous les volumes de la matrice de stockage. Tous les types de contrôleurs ne prennent pas en charge toutes les tailles de bloc en cache. Pour les configurations redondantes, ce paramètre inclut tous les volumes qui appartiennent aux deux contrôleurs de la baie de stockage.
+
+
+
+== Démarrage de vidage du cache
+
+Lorsque vous définissez des valeurs pour démarrer un vidage du cache, une valeur trop faible augmente le risque que les données nécessaires à une lecture de l'hôte ne se trouvent pas dans le cache. Une valeur faible augmente également le nombre d'écritures sur le disque nécessaires pour maintenir le niveau de cache, ce qui augmente la surcharge du système et diminue les performances.
+
+
+
+== Type d'hôte par défaut
+
+Lorsque vous définissez des types d'hôtes, si le partitionnement de stockage est activé, le type d'hôte par défaut n'affecte que les volumes qui sont mappés dans le groupe par défaut. Si le partitionnement du stockage n'est pas activé, tous les hôtes connectés à la matrice de stockage doivent exécuter le même système d'exploitation et être compatibles avec le type d'hôte par défaut.
+
+
+
+== Vitesse de numérisation du support
+
+L'analyse des supports s'exécute sur tous les volumes de la matrice de stockage qui ont un état optimal, qui n'ont pas d'opérations de modification en cours et qui ont le `mediaScanRate` paramètre activé. Utilisez le `set volume` pour activer ou désactiver le `mediaScanRate` paramètre.
+
+
+
+== Mot de passe
+
+Des mots de passe sont stockés sur chaque matrice de stockage. Pour une meilleure protection, le mot de passe doit répondre aux critères suivants :
+
+* Le mot de passe doit comporter entre 8 et 30 caractères.
+* Le mot de passe doit contenir au moins une lettre majuscule.
+* Le mot de passe doit contenir au moins une lettre minuscule.
+* Le mot de passe doit contenir au moins un chiffre.
+* Le mot de passe doit contenir au moins un caractère non alphanumérique, par exemple @ +.
+
+
+[NOTE]
+====
+Si vous utilisez des lecteurs de cryptage de disque intégral dans votre matrice de stockage, vous devez utiliser ces critères pour votre mot de passe de matrice de stockage.
+
+====
+[NOTE]
+====
+Vous devez définir un mot de passe pour votre matrice de stockage avant de pouvoir créer une clé de sécurité pour les disques cryptés à cryptage complet.
+
+====
+
+
+== Niveau minimal de firmware
+
+5.00 ajoute le `defaultHostType` paramètre.
+
+5.40 ajoute le `failoverAlertDelay` paramètre.
+
+6.10 ajoute le `redundancyMode`, `trayPositions`, et `time` paramètres.
+
+6.14 ajoute le `alarm` paramètre.
+
+7.10 ajoute le `icmpPingResponse`, `unnamedDiscoverySession`, `isnsIPv6Address`, et `isnsIPv4ConfigurationMethod` paramètres.
+
+7.15 ajoute des tailles de bloc de cache supplémentaires et le `learnCycleDate` paramètre.
+
+7.86 supprime le `alarm` paramètre car il n'est plus utilisé et ajoute le `coreDumpAllowOverWrite` paramètre.
+
+8.10 dégénère le `cacheFlushStop` paramètre.
+
+8.20 ajoute le `odxEnabled` et `vaaiEnabled` paramètres.
+
+8.20 met à jour le `cacheBlockSize` pour ajouter le `cacheBlockSizeValue` De 4 (4 ko).
+
+8.20 remplace le `coreDumpAllowOverWrite` paramètre avec le `controllerHealthImageAllowOverWrite` paramètre.
+
+8.30 ajoute le `autoLoadBalancingEnable` paramètre.
+
+8.40 ajoute le `localUsername` paramètre (utilisé avec une variable de nom d'utilisateur et l' `password` ou `adminPassword` paramètre. Ajoute également le `symbol` paramètre (utilisé avec une variable de nom d'utilisateur et l' `password` ou `adminPassword` paramètre.
+
+8.40 dégénère le `password` et `userRole` paramètres autonomes.
+
+8.40 ajoute le `managementInterface` paramètre.
+
+8.40 ajoute le `externalKeyManagement` paramètre.
+
+8.41 ajoute le `cacheMirrorDataAssuranceCheckEnable`, `directoryServer`, `userSession`, `passwordLength`, et `loginBanner` paramètres.
+
+8.42 ajoute le `pqValidateOnReconstruct`, `syslog`, `hostConnectivityReporting`, et `revocationCheckSettings` paramètres.

@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/remove-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: remove, incomplete, asynchronous, mirror, pair, group 
+summary: La commande remove asynchrones MirrorGroup supprime un volume de paires mises en miroir orphelin sur la matrice de stockage. 
+---
+= Supprime la paire en miroir asynchrone incomplète du groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `remove asyncMirrorGroup` la commande supprime un volume de paire en miroir orphelin sur la baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Un volume de paires mises en miroir orphelines existe lorsqu'un volume membre d'un groupe de miroirs asynchrone a été supprimé d'un côté du groupe de miroirs asynchrones (côté principal ou secondaire), mais pas de l'autre côté.
+
+Les volumes de paires miroir orphelins sont détectés lors de la restauration de la communication entre contrôleurs et les deux côtés de la configuration miroir concilient les paramètres de miroir.
+
+Utilisez cette commande lorsque la relation miroir est correctement supprimée sur la matrice de stockage locale ou distante, mais ne peut pas être supprimée sur la matrice de stockage correspondante en raison d'un problème de communication.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+remove asyncMirrorGroup pass:quotes[[_"asyncMirrorGroupName"_]]
+incompleteMirror volume=pass:quotes[_"volumeName"_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrone contenant le volume orphelin que vous souhaitez supprimer. Placez le nom du groupe de miroirs asynchrones entre guillemets (« ») dans les crochets ([ ]).
+
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume orphelin que vous souhaitez supprimer du groupe miroir asynchrone. Placez le nom du volume entre guillemets (" ").
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

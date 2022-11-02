@@ -1,0 +1,294 @@
+---
+permalink: get-started/synopsis-of-the-script-commands.html 
+sidebar: sidebar 
+keywords: synopsis, script commands 
+summary: 'Étant donné que vous pouvez utiliser les commandes script pour définir et gérer les différents aspects d"une baie de stockage (topologie hôte, configuration des lecteurs, configuration des contrôleurs, définitions de volumes et définitions de groupes de volumes, par exemple), le nombre réel de commandes est considérable.' 
+---
+= Synopsis des commandes de script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Étant donné que vous pouvez utiliser les commandes script pour définir et gérer les différents aspects d'une baie de stockage (topologie hôte, configuration des lecteurs, configuration des contrôleurs, définitions de volumes et définitions de groupes de volumes, par exemple), le nombre réel de commandes est considérable. Les commandes, cependant, se divisent en catégories générales qui sont réutilisées lorsque vous appliquez les commandes pour configurer ou gérer une matrice de stockage. Le tableau suivant répertorie la forme générale des commandes de script et une définition de chaque commande.
+
+[cols="2*"]
+|===
+| Syntaxe | Description 
+
+
+ a| 
+[listing]
+----
+accept object
+{statement-data}
+---- a| 
+Exécute l'opération en attente.
+
+
+
+ a| 
+[listing]
+----
+activate object
+{statement-data}
+---- a| 
+Configure l'environnement de manière à ce qu'une opération puisse avoir lieu ou exécute l'opération si l'environnement est déjà correctement configuré.
+
+
+
+ a| 
+[listing]
+----
+autoConfigure storageArray
+{statement-data}
+---- a| 
+Crée automatiquement une configuration basée sur les paramètres spécifiés dans la commande.
+
+
+
+ a| 
+[listing]
+----
+check object
+{statement-data}
+---- a| 
+Lance une opération pour signaler les erreurs dans l'objet, qui est une opération synchrone.
+
+
+
+ a| 
+[listing]
+----
+clear object
+{statement-data}
+---- a| 
+Supprime le contenu de certains attributs d'un objet. Cette opération est destructive et ne peut pas être inversée.
+
+
+
+ a| 
+[listing]
+----
+create object
+{statement-data}
+---- a| 
+Crée un objet du type spécifié.
+
+
+
+ a| 
+[listing]
+----
+deactivate object
+{statement-data}
+---- a| 
+Supprime l'environnement pour une opération.
+
+
+
+ a| 
+[listing]
+----
+delete object
+---- a| 
+Supprime un objet créé précédemment.
+
+
+
+ a| 
+[listing]
+----
+diagnose object
+{statement-data}
+---- a| 
+Exécute un test et affiche les résultats.
+
+
+
+ a| 
+[listing]
+----
+disable object {statement-data}
+---- a| 
+Empêche une fonction de fonctionner.
+
+
+
+ a| 
+[listing]
+----
+download object
+{statement-data}
+---- a| 
+Transfère les données vers la matrice de stockage ou vers le matériel associé à la matrice de stockage.
+
+
+
+ a| 
+[listing]
+----
+enable object
+{statement-data}
+---- a| 
+Définit une fonction à utiliser.
+
+
+
+ a| 
+[listing]
+----
+load object
+{statement-data}
+---- a| 
+Transfère les données vers la matrice de stockage ou vers le matériel associé à la matrice de stockage. Cette commande est fonctionnellement similaire à l' `download` commande.
+
+
+
+ a| 
+[listing]
+----
+recopy object
+{statement-data}
+---- a| 
+Redémarre une opération de copie de volume en utilisant une paire de copies de volume existante. Vous pouvez modifier les paramètres avant de redémarrer l'opération.
+
+
+
+ a| 
+[listing]
+----
+recover object
+{statement-data}
+---- a| 
+Recréez un objet à partir des données de configuration enregistrées et des paramètres d'instruction. (Cette commande est similaire à la `create` commande.)
+
+
+
+ a| 
+[listing]
+----
+remove object
+{statement-data}
+---- a| 
+Supprime une relation entre les objets.
+
+
+
+ a| 
+[listing]
+----
+repair object
+{statement-data}
+---- a| 
+Réparer les erreurs détectées par le `check` commande.
+
+
+
+ a| 
+[listing]
+----
+replace object
+{statement-data}
+---- a| 
+L'objet spécifié remplace un objet existant dans la matrice de stockage.
+
+
+
+ a| 
+[listing]
+----
+reset object
+{statement-data}
+---- a| 
+Renvoie l'état initial du matériel ou d'un objet.
+
+
+
+ a| 
+[listing]
+----
+resume object
+---- a| 
+Démarre une opération suspendue. L'opération commence à l'endroit où elle s'est laissée lorsqu'elle a été suspendue.
+
+
+
+ a| 
+[listing]
+----
+revive object
+---- a| 
+Force l'objet de l'état en échec à l'état optimal. Utilisez cette commande uniquement dans le cadre d'une procédure de récupération d'erreur.
+
+
+
+ a| 
+[listing]
+----
+save object
+{statement-data}
+---- a| 
+Écrit des informations sur l'objet dans un fichier.
+
+
+
+ a| 
+[listing]
+----
+set object
+{statement-data}
+---- a| 
+Modifie les attributs d'objet. Toutes les modifications sont effectuées une fois la commande renvoyée.
+
+
+
+ a| 
+[listing]
+----
+show object
+{statement-data}
+---- a| 
+Affiche des informations sur l'objet.
+
+
+
+ a| 
+[listing]
+----
+start object
+{statement-data}
+---- a| 
+Démarre une opération asynchrone. Vous pouvez arrêter certaines opérations après leur démarrage. Vous pouvez interroger la progression de certaines opérations.
+
+
+
+ a| 
+[listing]
+----
+stop object
+{statement-data}
+---- a| 
+Arrête une opération asynchrone.
+
+
+
+ a| 
+[listing]
+----
+suspend object
+{statement-data}
+---- a| 
+Arrête une opération. Vous pouvez ensuite redémarrer l'opération suspendue et la reprendre à partir du point où elle a été suspendue.
+
+
+
+ a| 
+[listing]
+----
+validate object
+{statement-data}
+---- a| 
+Valide une clé de sécurité.
+
+|===

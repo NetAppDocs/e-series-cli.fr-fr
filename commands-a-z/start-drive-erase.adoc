@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/start-drive-erase.html 
+sidebar: sidebar 
+keywords: start, drive, erase 
+summary: 'La commande de démarrage de l"effacement du lecteur efface toutes les données d"un ou de plusieurs lecteurs.' 
+---
+= Commencez à effacer le lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start drive erase` la commande efface toutes les données d'un ou de plusieurs lecteurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle s'utilise sur les baies de stockage E2700 et E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Exécutez cette commande uniquement si vous souhaitez supprimer définitivement toutes les données d'un lecteur. Si le lecteur est sécurisé, le `start drive erase` l'option de commande effectue une suppression cryptographique et réinitialise les attributs de sécurité du disque en mode sécurisé.
+
+[NOTE]
+====
+L'opération d'effacement ne peut pas être annulée. Assurez-vous de sélectionner le lecteur approprié lorsque vous utilisez cette commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+[NOTE]
+====
+La liste des lecteurs ne peut pas contenir tous les lecteurs de la matrice de stockage, sinon la commande sera rejetée.
+
+====
+|===
+
+
+== Niveau minimal de firmware
+
+11.70.1

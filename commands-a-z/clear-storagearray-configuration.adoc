@@ -1,0 +1,143 @@
+---
+permalink: commands-a-z/clear-storagearray-configuration.html 
+sidebar: sidebar 
+keywords: clear, storage array, configuration 
+summary: 'La commande clear storageArray configuration efface la totalité de la configuration de la matrice de stockage ou une partie d"une configuration de la matrice de stockage, ou efface uniquement le groupe de volumes et la configuration du volume.' 
+---
+= Effacez la configuration de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear storageArray configuration` cette commande efface toute la configuration de la matrice de stockage ou une partie de la configuration de la matrice de stockage, ou efface uniquement la configuration du groupe de volumes et du volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Utilisez cette commande pour effectuer l'une des opérations suivantes :
+
+* Effacez toute la configuration de la baie de stockage et retournez-la à l'état d'installation initiale.
+* Effacez la configuration, à l'exception des informations relatives à la sécurité et aux informations d'identification.
+* Effacez uniquement les informations sur la configuration des groupes de volumes et celles relatives à la configuration des volumes.
+
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- dès que vous exécutez cette commande, la configuration existante de la matrice de stockage est supprimée.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+clear storageArray configuration (all | volumeGroups)
+----
+[listing]
+----
+clear storageArray configuration factoryReset
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+*Aucun*
+ a| 
+Si vous ne saisissez pas de paramètre, cette commande supprime toutes les informations de configuration de la matrice de stockage, à l'exception des informations relatives à la sécurité et à l'identification.
+
+
+
+ a| 
+`all`
+ a| 
+Paramètre permettant de supprimer toute la configuration de la matrice de stockage, y compris les informations de sécurité et d'identification. La suppression de toutes les informations de configuration renvoie la matrice de stockage à son état initial.
+
+
+
+ a| 
+`volumeGroups`
+ a| 
+Paramètre permettant de supprimer la configuration du volume et la configuration du groupe de volumes. Le reste de la configuration reste intact.
+
+
+
+ a| 
+`factoryReset`
+ a| 
+Ce paramètre supprime toute la configuration de la matrice de stockage (fonction identique à celle du `all` ), mais réinitialise également la configuration du réseau et toutes les informations relatives au mot de passe stockées dans le contrôleur.
+
+
+
+ a| 
+`supportReset`
+ a| 
+[NOTE]
+====
+Cette commande est destinée au support technique uniquement.
+
+====
+Ce paramètre se comporte comme le `factoryReset` paramètre, mais efface également toutes les clés de harnais.
+
+|===
+
+
+== Remarques
+
+Cette commande permet d'effacer la configuration de la matrice de stockage de différentes manières. Lorsque vous effacez la matrice de stockage pour les groupes de volumes, le mode de récupération démarre automatiquement. En mode de reprise, les sauvegardes intégrées (cache) (si elles existent sur la plateforme) sont conservées. Lorsque la baie de stockage est en mode de restauration, vous pouvez éventuellement restaurer la configuration de la baie de stockage à partir d'un fichier de sauvegarde basé sur l'hôte ou d'une des sauvegardes intégrées (cache).
+
+Cette commande réinitialise également l'identificateur de la matrice de stockage. Toutes les fonctionnalités Premium activées avec un fichier de clé sont invalidée et de nouvelles clés de fonction Premium doivent être créées et appliquées. Contactez l'assistance technique.
+
+Lorsque vous exécutez cette commande, la matrice de stockage ne répond plus et tout traitement de script est annulé. Vous devez supprimer et réajouter la matrice de stockage pour reprendre la communication avec l'hôte. Pour supprimer une matrice de stockage qui ne répond pas, utilisez la commande SMcli wrapper :
+
+[listing, subs="+macros"]
+----
+SMcli -X -n pass:quotes[_storageArrayName_]
+----
+Le `X` Est un terminal SMcli unique et doit être en majuscules.
+
+Pour ajouter à nouveau la matrice de stockage, utilisez la commande SMcli wrapper suivante :
+
+[listing, subs="+macros"]
+----
+SMcli -A -n pass:quotes[_storageArrayName_]
+----
+Le `A` Est un terminal SMcli unique et doit être en majuscules.
+
+
+
+== Niveau minimal de firmware
+
+7.10 ajoute ces paramètres :
+
+* `all`
+* `volumeGroups`
+
+
+7.83 ajoute la fonction de mode de récupération.
+
+11.41 ajoute ces paramètres :
+
+* `factoryReset`
+* `supportReset`
+

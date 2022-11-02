@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/create-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: register, snmp, trap, destination 
+summary: 'La commande create snmpTrapdestination crée une nouvelle destination de trap SNMP (simple Network Management Protocol). Une destination d"interruption est le gestionnaire SNMP pour recevoir les messages d"interruption.' 
+---
+= Enregistrer la destination d'interruption SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create snmpTrapDestination` La commande crée une nouvelle destination de trap SNMP (simple Network Management Protocol). Une destination d'interruption est le gestionnaire SNMP pour recevoir les messages d'interruption.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create snmpTrapDestination trapReceiverIP=ipAddress
+    (communityName=pass:quotes[_"communityName" | (userName="userName"_] [engineId=(local | engineId)]))
+    [sendAuthenticationFailureTraps=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+Adresse IP du gestionnaire SNMP auquel vous souhaitez envoyer des messages d'interruption.
+
+
+
+ a| 
+`communityName`
+ a| 
+Nom de la communauté SNMP pour laquelle vous voulez envoyer des messages d'interruption.
+
+
+
+ a| 
+`userName`
+ a| 
+Nom de l'utilisateur SNMP pour lequel vous voulez envoyer des messages d'interruption.
+
+
+
+ a| 
+`engineId`
+ a| 
+ID du moteur de l'utilisateur SNMP pour lequel vous voulez envoyer des messages d'interruption. L'ID du moteur est requis si plusieurs utilisateurs USM ont le même nom d'utilisateur. La valeur peut être «[.code]``local``" Pour spécifier l'agent SNMP local est l'agent faisant autorité ou une chaîne de chiffres hexadécimal pour spécifier un ID de moteur d'agent SNMP distant.
+
+
+
+ a| 
+`sendAuthenticationFailureTraps`
+ a| 
+Ce paramètre active ou désactive l'envoi de messages d'échec d'authentification à un gestionnaire SNMP. Pour envoyer des messages d'échec d'authentification, définissez le paramètre sur `TRUE`. Pour empêcher l'envoi de messages d'échec d'authentification, définissez le paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.30

@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/set-storagearray-isnsipv4configurationmethod.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, ipv4, address 
+summary: 'La commande set storageArray isnsIPv4ConfigurationMethod définit la méthode et l"adresse de configuration d"un service de nom de stockage Internet IPv4 (iSNS).' 
+---
+= Définissez l'adresse IPv4 du serveur iSNS de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray isnsIPv4ConfigurationMethod` Commande définit la méthode de configuration et l'adresse d'un service de nom de stockage Internet IPv4 (iSNS).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray isnsIPv4ConfigurationMethod=(static | dhcp)
+isnsIPv4Address=pass:quotes[_ipAddress_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètres | Description 
+
+
+ a| 
+`isnsIPv4ConfigurationMethod`
+ a| 
+La méthode que vous souhaitez utiliser pour définir la configuration du serveur iSNS. Vous pouvez entrer l'adresse IP des serveurs IPv4 iSNS en sélectionnant `static`. Pour IPv4, vous pouvez choisir d'avoir un serveur DHCP (Dynamic Host Configuration Protocol) pour sélectionner l'adresse IP du serveur iSNS en entrant `dhcp`. Pour activer DHCP, vous devez définir le `isnsIPv4Address` paramètre à `0.0.0.0`.
+
+
+
+ a| 
+`isnsIPv4Address`
+ a| 
+Adresse IP que vous souhaitez utiliser pour le serveur iSNS. Utilisez ce paramètre avec le `static` Valeur pour les configurations IPv4. Si vous choisissez d'avoir un serveur DHCP défini l'adresse IP d'un serveur IPv4 Internet iSNS, vous devez définir le `*isnsIPv4Address*` paramètre à `0.0.0.0`.
+
+|===
+
+
+== Remarques
+
+Le protocole iSNS facilite la découverte, la gestion et la configuration automatisées des périphériques iSCSI et des périphériques Fibre Channel sur un réseau TCP/IP. ISNS propose des services intelligents de gestion et de détection du stockage comparables à ceux des réseaux Fibre Channel, qui permettent à un réseau IP ordinaire de fonctionner dans une capacité similaire à celle d'un réseau SAN. ISNS facilite également l'intégration transparente des réseaux IP et des réseaux Fibre Channel grâce à sa capacité à émuler les services de structure Fibre Channel et à gérer à la fois les périphériques iSCSI et les périphériques Fibre Channel.
+
+Le serveur DHCP transmet les paramètres de configuration, tels que les adresses réseau, aux nœuds IP. DHCP permet à un client d'acquérir tous les paramètres de configuration IP dont il a besoin pour fonctionner. DHCP vous permet d'attribuer automatiquement des adresses réseau réutilisables.
+
+
+
+== Niveau minimal de firmware
+
+7.10

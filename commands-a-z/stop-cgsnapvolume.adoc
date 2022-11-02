@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/stop-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: stop, consistency, group, snapshot, volume 
+summary: 'La commande stop cgSnapVolume arrête l"opération de copie sur écriture pour créer un volume snapshot de groupe de cohérence.' 
+---
+= Arrêt du volume Snapshot de groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop cgSnapVolume` la commande arrête l'opération de copie en écriture pour la création d'un volume snapshot de groupe de cohérence.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour redémarrer l'opération de copie sur écriture, utilisez le `resume cgSnapVolume` commande.
+
+[NOTE]
+====
+Cette commande ne supprime pas le volume Snapshot de groupe de cohérence. Pour supprimer un volume Snapshot de groupe de cohérence, utilisez le `delete cgSnapVolume` commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop cgSnapVolume [_snapVolumeName_]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Nom du volume de snapshot du groupe de cohérence que vous souhaitez arrêter la création. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

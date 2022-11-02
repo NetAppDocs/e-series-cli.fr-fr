@@ -1,0 +1,161 @@
+---
+permalink: commands-a-z/set-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: set, storage, array, directory, server 
+summary: 'La commande set storageArray directoryServer met à jour la configuration du serveur d"annuaire.' 
+---
+= Définir le serveur d'annuaire de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray directoryServer` commande met à jour la configuration du serveur d'annuaire.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+set storageArray directoryServer ["domainId"]
+    (domainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |
+     addDomainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |
+     serverUrl=pass:quotes["_serverUrl_"] |
+     bindAccount=pass:quotes["_username_"] bindPassword=pass:quotes["_password_"] |
+     searchBaseDN=pass:quotes["_distinguishedName_"] |
+     usernameAttribute=pass:quotes["_attributeName_"] |
+     groupAttributes=pass:quotes[("_attrName1_"..."_attrNameN_")] |
+     addGroupAttributes=pass:quotes[("_attrName1_"..."_attrNameN_"))]
+    [skipConfigurationTest={true | false}]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`directoryServer`
+ a| 
+Permet de spécifier l'ID de domaine pour mettre à jour les paramètres.
+
+
+
+ a| 
+`domainNames`
+ a| 
+Permet de définir un ou plusieurs noms de domaine valides pour le serveur d'annuaire. Si vous saisissez plusieurs noms, séparez les valeurs par un espace. L'utilisation de cette option Set permet de supprimer les noms de domaine existants.
+
+
+
+ a| 
+`addDomainNames`
+ a| 
+Permet d'ajouter un ou plusieurs noms de domaine valides pour le serveur d'annuaire. Si vous saisissez plusieurs noms, séparez les valeurs par un espace.
+
+
+
+ a| 
+`serverUrl`
+ a| 
+Permet de spécifier l'URL du serveur.
+
+
+
+ a| 
+`bindAccount`
+ a| 
+Permet de spécifier le nom d'utilisateur à utiliser comme compte de liaison.
+
+
+
+ a| 
+`bindPassword`
+ a| 
+Permet de spécifier le mot de passe à utiliser comme mot de passe de liaison.
+
+
+
+ a| 
+`searchBaseDN`
+ a| 
+Permet de spécifier le nom distinctif de la base de recherche pour rechercher des objets utilisateur LDAP afin de déterminer l'appartenance au groupe.
+
+
+
+ a| 
+`usernameAttribute`
+ a| 
+Permet de spécifier l'attribut à utiliser pour rechercher des objets utilisateur pour déterminer l'appartenance à un groupe. Si elle est spécifiée, la chaîne doit contenir la variable `+{uid}+` qui sera remplacé par le nom d'utilisateur utilisé lors de la connexion. Exemple : `+sAMAccountName={uid}+`
+
+
+
+ a| 
+`groupAttributes`
+ a| 
+Permet de définir un ou plusieurs attributs de groupe à utiliser pour rechercher des noms distinctifs de groupe. Les noms distinctifs sont utilisés pour déterminer l'appartenance à un groupe pour le mappage de rôles.
+
+[NOTE]
+====
+Si vous entrez plusieurs groupes, séparez les valeurs par un espace.
+
+====
+[NOTE]
+====
+L'utilisation de ce paramètre efface les groupes existants.
+
+====
+
+
+ a| 
+`addGroupAttributes`
+ a| 
+Permet d'ajouter un ou plusieurs attributs de groupe à utiliser pour rechercher des noms distinctifs de groupe. Les noms distinctifs sont utilisés pour déterminer l'appartenance à un groupe aux fins de la cartographie des rôles.
+
+[NOTE]
+====
+Si vous entrez plusieurs groupes, séparez les valeurs par un espace.
+
+====
+
+
+ a| 
+`skipConfigurationTest`
+ a| 
+Vous permet d'ignorer le test de configuration avant d'enregistrer la configuration. La valeur par défaut est `false`.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+     serverUrl="ldaps://hqldap.eng.mycompany.com:636";"
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    bindAccount="bindDN2" bindPassword="thePassword2"
+                    searchBaseDN="OU=_Users,DC=hq,DC=mycompany,DC=com"
+                    usernameAttribute="sAMAccountName" groupAttributes=("memberOf");"
+
+SMcli completed successfully.
+----

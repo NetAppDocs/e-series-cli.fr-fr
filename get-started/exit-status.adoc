@@ -1,0 +1,639 @@
+---
+permalink: get-started/exit-status.html 
+sidebar: sidebar 
+keywords: exit, status 
+summary: Ce tableau répertorie les États de sortie qui peuvent être renvoyés et la signification de chaque état. 
+---
+= Statut de sortie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Ce tableau répertorie les États de sortie qui peuvent être renvoyés et la signification de chaque état.
+
+[cols="3*"]
+|===
+| Valeur d'état | Nom de l'erreur | Signification 
+
+
+ a| 
+0
+ a| 
+RÉUSSI
+ a| 
+La commande s'est terminée sans erreur.
+
+
+
+ a| 
+1
+ a| 
+UTILISATION_NON VALIDE
+ a| 
+La commande s'est terminée par une erreur. Des informations sur l'erreur s'affichent également.
+
+
+
+ a| 
+2
+ a| 
+SCRIPT_FILE_NOT_EXISTS_EXISTS
+ a| 
+Le fichier script n'existe pas.
+
+
+
+ a| 
+3
+ a| 
+ERREUR_OUVERTURE_FICHIER_SORTIE
+ a| 
+Une erreur s'est produite lors de l'ouverture d'un fichier de sortie.
+
+
+
+ a| 
+4
+ a| 
+NO_STORAGE_ARRAY_AT_ADDRESS
+ a| 
+Une matrice de stockage n'était pas à l'adresse spécifiée.
+
+
+
+ a| 
+5
+ a| 
+ADRESSES_SPÉCIFIER_DIFFÉRENTS_TABLEAUX
+ a| 
+Les adresses spécifient différentes matrices de stockage.
+
+
+
+ a| 
+6
+ a| 
+NO_SANAME_FOR_HOST_AGENT_CONNECT
+ a| 
+Un nom de matrice de stockage n'existe pas pour l'agent hôte connecté.
+
+
+
+ a| 
+7
+ a| 
+SANAME_NOT_AT_ADDRESS
+ a| 
+Le nom de la matrice de stockage n'était pas à l'adresse spécifiée.
+
+
+
+ a| 
+8
+ a| 
+SANAME_NOT_UNIQUE
+ a| 
+Le nom de la matrice de stockage n'était pas unique.
+
+
+
+ a| 
+9
+ a| 
+SANAME_NOT_IN_CONFIG_FILES
+ a| 
+Le nom de la matrice de stockage n'était pas dans le fichier de configuration.
+
+
+
+ a| 
+10
+ a| 
+NO_MANAGEMENT_CLASS_FOR_SA
+ a| 
+Une classe de gestion n'existe pas pour la matrice de stockage.
+
+
+
+ a| 
+11
+ a| 
+NO_SA_IN_CONFIG_FILE_TROUVÉ
+ a| 
+Une matrice de stockage est introuvable dans le fichier de configuration.
+
+
+
+ a| 
+12
+ a| 
+ERREUR_INTERNE
+ a| 
+Une erreur interne s'est produite. Cet état de sortie indique que vous ne disposez pas des privilèges nécessaires pour exécuter une commande CLI à partir de la ligne de commande. Vous devez disposer des privilèges d'administrateur pour exécuter toutes les commandes CLI à partir d'une ligne de commande.
+
+
+
+ a| 
+13
+ a| 
+SYNTAXE_SCRIPT_INCORRECTE
+ a| 
+La syntaxe de script n'est pas valide.
+
+
+
+ a| 
+14
+ a| 
+IMPOSSIBLE_DE_COMMUNIQUER
+ a| 
+Le contrôleur n'a pas pu communiquer avec la matrice de stockage.
+
+
+
+ a| 
+15
+ a| 
+ARGUMENT_DUPLIQUÉ
+ a| 
+Un argument en double a été saisi.
+
+
+
+ a| 
+16
+ a| 
+ERREUR_EXÉCUTION
+ a| 
+Une erreur d'exécution s'est produite.
+
+
+
+ a| 
+17
+ a| 
+NO_HOST_AT_ADDRESS
+ a| 
+Un hôte n'était pas à l'adresse spécifiée.
+
+
+
+ a| 
+18
+ a| 
+WWNAME_NOT_IN_CONFIG_FILES
+ a| 
+L'identifiant WWID n'était pas dans le fichier de configuration.
+
+
+
+ a| 
+19
+ a| 
+ADRESSE_WWNAME_NOT_AT_ADDRESS
+ a| 
+L'identifiant WWID n'était pas à l'adresse.
+
+
+
+ a| 
+20
+ a| 
+IP_INCONNU
+ a| 
+Une adresse IP inconnue a été spécifiée.
+
+
+
+ a| 
+21
+ a| 
+PM_CONFIG_FILE_CORROMPU
+ a| 
+Le fichier de configuration du moniteur d'événements a été corrompu.
+
+
+
+ a| 
+22
+ a| 
+IMPOSSIBLE_DE_COMMUNIQUER_À_PM
+ a| 
+La matrice de stockage n'a pas pu communiquer avec le moniteur d'événements.
+
+
+
+ a| 
+23
+ a| 
+UNEVXIST_ALERT
+ a| 
+Le contrôleur n'a pas pu écrire les paramètres d'alerte.
+
+
+
+ a| 
+24
+ a| 
+NŒUD_ORGANISEUR_INCORRECT
+ a| 
+Le nœud d'organiseur spécifié n'est pas correct.
+
+
+
+ a| 
+25
+ a| 
+CMD_NOT_AVAILABLE
+ a| 
+La commande n'était pas disponible.
+
+
+
+ a| 
+26
+ a| 
+DEVICE_NOT_IN_CONFIG_FILE
+ a| 
+Le périphérique n'était pas dans le fichier de configuration.
+
+
+
+ a| 
+27
+ a| 
+ERREUR_MISE_À_JOUR_FICHIER_CONFIG
+ a| 
+Une erreur s'est produite lors de la mise à jour du fichier de configuration.
+
+
+
+ a| 
+28
+ a| 
+ERREUR_HÔTE_INCONNU
+ a| 
+Une erreur d'hôte inconnue s'est produite.
+
+
+
+ a| 
+29
+ a| 
+SENDER_CONTACT_FILE_INTROUVABLE
+ a| 
+Le fichier d'informations de contact de l'expéditeur est introuvable.
+
+
+
+ a| 
+30
+ a| 
+ÉCHEC DE LECTURE_SENDER_CONTACT_FILE
+ a| 
+Impossible de lire le fichier d'informations de contact de l'expéditeur.
+
+
+
+ a| 
+31
+ a| 
+USERDATA_FILE_EXISTS
+ a| 
+Le `userdata.txt` le fichier existe déjà.
+
+
+
+ a| 
+32
+ a| 
+BAD_EMAIL_INFORMATION_TO_INCLUDE
+ a| 
+Une valeur non valide `-I` la valeur de la notification d'alerte par e-mail a été spécifiée.
+
+
+
+ a| 
+33
+ a| 
+FRÉQUENCE_E-MAIL_INCORRECTE
+ a| 
+Une valeur non valide `-f` la valeur de la notification d'alerte par e-mail a été spécifiée.
+
+
+
+ a| 
+34
+ a| 
+OPTION_SUPPRIMÉE
+ a| 
+Le `-r` cette option n'est plus prise en charge.
+
+
+
+ a| 
+35
+ a| 
+UNKNOWN_ALERT_PRIORITY
+ a| 
+Gravité d'alerte non valide spécifiée.
+
+
+
+ a| 
+36
+ a| 
+MOT_DE_PASSE_REQUIS
+ a| 
+L'opération nécessite que le mot de passe Administrateur ou moniteur soit défini.
+
+
+
+ a| 
+37
+ a| 
+MOT_DE_PASSE_MONITEUR_NON VALIDE
+ a| 
+L'opération ne peut pas être terminée car un mot de passe de moniteur non valide a été saisi.
+
+
+
+ a| 
+38
+ a| 
+MOT_DE_PASSE_ADMIN NON VALIDE
+ a| 
+Impossible de terminer l'opération car un mot de passe administrateur non valide a été saisi.
+
+
+
+ a| 
+39
+ a| 
+DÉPASSÉE_MAX_CARACS_FOR_PASSWORD
+ a| 
+Le mot de passe fourni dépasse la limite de caractères.
+
+
+
+ a| 
+40
+ a| 
+JETON_MONITEUR_NON VALIDE
+ a| 
+Le `-R` le moniteur n'est pas pris en charge pour cette matrice. Utilisez un rôle valide et relancez l'opération.
+
+
+
+ a| 
+41
+ a| 
+ASUP_CONFIG_ERROR
+ a| 
+Une erreur s'est produite lors de l'écriture ou de la lecture à partir du fichier de configuration AutoSupport. Veuillez réessayer cette opération.
+
+
+
+ a| 
+42
+ a| 
+MAIL_SERVER_INCONNU
+ a| 
+L'adresse de l'hôte ou du serveur de messagerie est incorrecte.
+
+
+
+ a| 
+43
+ a| 
+ASUP_SMTP_RÉPONDRE_ADDRESS_REQUIS
+ a| 
+Aucune baie ASUP saine n'a été détectée lors d'une tentative de test de configuration d'ASUP.
+
+
+
+ a| 
+44
+ a| 
+NO_ASUP_BAIES_DÉTECTÉES
+ a| 
+Demande d'e-mail de réponse requise si le type de livraison ASUP est SMTP.
+
+
+
+ a| 
+45
+ a| 
+ASUP_INVALID_MAIL_RELAY_SERVER
+ a| 
+Impossible de valider le serveur de relais de messagerie ASUP.
+
+
+
+ a| 
+46
+ a| 
+ASUP_INVALID_SENDER_EMAIL
+ a| 
+L'adresse e-mail de l'expéditeur que vous avez spécifiée n'est pas un format valide.
+
+
+
+ a| 
+47
+ a| 
+ASUP_INVALID_PAC_SCRIPT
+ a| 
+Le fichier de script PAC (Configuration automatique du proxy) n'est pas une URL valide.
+
+
+
+ a| 
+48
+ a| 
+ASUP_INVALID_PROXY_SERVER_HOST_ADDRESS
+ a| 
+L'adresse d'hôte spécifiée est introuvable ou dans un format incorrect.
+
+
+
+ a| 
+49
+ a| 
+ASUP_INVALID_PROXY_SERVER_PORT_NUMBER
+ a| 
+Le format du numéro de port que vous avez spécifié n'est pas valide.
+
+
+
+ a| 
+50
+ a| 
+PARAMÈTRE_D'AUTHENTIFICATION_ASUP_INCORRECT
+ a| 
+Le nom d'utilisateur ou le mot de passe que vous avez spécifié n'est pas valide.
+
+
+
+ a| 
+51
+ a| 
+PARAMÈTRE ASUP_INVALID_DAILY_TIME
+ a| 
+Le paramètre de temps quotidien spécifié n'est pas valide.
+
+
+
+ a| 
+52
+ a| 
+PARAMÈTRE_ASUP_INVALID_DAY_OF_WEEK
+ a| 
+Le `-dayOfWeek` les paramètres saisis ne sont pas valides.
+
+
+
+ a| 
+53
+ a| 
+ASUP_INVALID_WEEKLY_TIME_PARAMÈTRE
+ a| 
+Le paramètre de temps hebdomadaire n'est pas valide.
+
+
+
+ a| 
+54
+ a| 
+ANALYSE_DE_PLANIFICATION_ASUP_NON VALIDE
+ a| 
+Impossible d'analyser correctement les informations de planification fournies.
+
+
+
+ a| 
+55
+ a| 
+ASUP_INVALID_SA_DEID
+ a| 
+Le spécificateur de baie de stockage fourni n'est pas valide.
+
+
+
+ a| 
+56
+ a| 
+ASUP_INVALID_INPUT_ARCHIVE
+ a| 
+L'archive d'entrée saisie n'est pas valide. Le paramètre d'archive d'entrée doit être sous la forme de ``-inputArchive=<n>``où est un entier compris entre 0 et 5.
+
+
+
+ a| 
+57
+ a| 
+ASUP_INVALID_OUTPUT_LOG
+ a| 
+Un journal de sortie valide n'a pas été spécifié.
+
+
+
+ a| 
+58
+ a| 
+ASUP_TRANSMISSION_FICHIER_COPIE_ERREUR
+ a| 
+Une erreur s'est produite lors de la tentative de copie du fichier journal de transmission AutoSupport. Le journal de transmission n'existe pas ou une erreur d'E/S s'est produite lors de la tentative de copie de ses données.
+
+
+
+ a| 
+59
+ a| 
+ASUP_DUPLIQUER_NAMED_BAIES
+ a| 
+Plusieurs baies de stockage portant le même nom ont été trouvées. Veuillez réessayer la commande en utilisant le paramètre World-Wide-name, `-w <WWID>`.
+
+
+
+ a| 
+60
+ a| 
+ASUP_NO_SPECIFIED_ARRAY_FOUND
+ a| 
+La baie de stockage spécifiée avec le paramètre -n <Storage-system-name> n'est pas présente ou n'est pas prise en charge pour cette commande.
+
+
+
+ a| 
+61
+ a| 
+ASUP_NO_SPECIFIED_WWID_TROUVÉ
+ a| 
+La matrice de stockage spécifiée avec le `-w <WWID>` le paramètre n'est pas présent ou n'est pas pris en charge pour cette commande.
+
+
+
+ a| 
+62
+ a| 
+ASUP_FILTRÉ_TRANSMISSION_LOG_ERROR
+ a| 
+Une erreur inconnue s'est produite lors de la tentative d'obtention du journal de transmission filtré.
+
+
+
+ a| 
+63
+ a| 
+ASUP_TRANSMISSION_ARCHIVE_NE_PAS_EXISTE
+ a| 
+Le journal de transmission d'archive d'entrée AutoSupport spécifié avec le``-inputArchive=<n>`` le paramètre n'existe pas.
+
+
+
+ a| 
+64
+ a| 
+NO_VALID_REST_CLIENT_DÉCOUVERT
+ a| 
+Impossible de communiquer avec la baie de stockage via https.
+
+
+
+ a| 
+65
+ a| 
+VERSION_CLI_NON VALIDE
+ a| 
+La version CLI du client n'est pas compatible avec la version CLI exécutée sur la matrice de stockage.
+
+
+
+ a| 
+66
+ a| 
+NOM_D'UTILISATEUR_OU_MOT_DE_PASSE_NON VALIDE
+ a| 
+Le nom d'utilisateur ou le mot de passe saisi n'est pas valide.
+
+
+
+ a| 
+67
+ a| 
+CONNEXION_NON FIABLE
+ a| 
+Impossible d'établir une connexion sécurisée à la matrice de stockage.
+
+
+
+ a| 
+68
+ a| 
+FICHIER_MOT_DE_PASSE_NON VALIDE
+ a| 
+Le fichier de mot de passe est introuvable ou n'est pas lisible.
+
+|===

@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/show-storagearray-revocationchecksettings.html 
+sidebar: sidebar 
+keywords: show, certificate, revocation, check, set 
+summary: 'La commande show storageArray révocationCheckSettings permet d"afficher les paramètres de révocation de certificats pour la matrice de stockage.' 
+---
+= Affiche les paramètres de vérification de révocation du certificat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray revocationCheckSettings` la commande vous permet d'afficher les paramètres de révocation de certificats de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray revocationCheckSettings
+----
+
+
+=== Exemple
+
+[listing]
+----
+SMcli -n Array1 c "show storageArray revocationCheckSettings;"
+Revocation Checking: Disabled
+OCSP Responder Server URL: https://ocspResponderURL.com
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.42

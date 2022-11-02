@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/repair-volume-parity.html 
+sidebar: sidebar 
+keywords: repair, volume, parity 
+summary: La commande réparer la parité du volume répare les erreurs de parité sur un volume. 
+---
+= Réparation de la parité du volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `repair volume parity` la commande répare les erreurs de parité sur un volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[CAUTION]
+====
+Si les données de parité et de volume ne correspondent pas, les données de volume risquent d'être défectueuses plutôt que de parité des volumes. La réparation de la parité du volume détruit la capacité de réparer les données de volume défectueuses, si nécessaire.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+repair volume pass:quotes[[_volumeName_]] parity
+parityErrorFile=pass:quotes[_"filename"_]
+[verbose=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume pour lequel vous réparez la parité. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Le chemin du fichier et le nom du fichier contenant les informations d'erreur de parité que vous utilisez pour réparer les erreurs. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\sup\parfile.txt"`
+
+[NOTE]
+====
+A `parityErrorFile` est le résultat d'un précédent `check volume parity` fonctionnement.
+
+====
+
+
+ a| 
+`verbose`
+ a| 
+Paramètre permettant de saisir les détails de progression, tels que pourcentage terminé, et d'afficher les informations au fur et à mesure de la réparation de la parité du volume. Pour capturer les détails de la progression, définissez ce paramètre sur `TRUE`. Pour empêcher la capture des détails de progression, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

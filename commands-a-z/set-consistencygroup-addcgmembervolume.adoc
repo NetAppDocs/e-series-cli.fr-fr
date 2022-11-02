@@ -1,0 +1,160 @@
+---
+permalink: commands-a-z/set-consistencygroup-addcgmembervolume.html 
+sidebar: sidebar 
+keywords: add, member, consistency, group 
+summary: La commande set ConsistenceGroup addCGMemberVolume ajoute un nouveau volume de base comme membre à un groupe de cohérence existant. 
+---
+= Ajoutez un membre au groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set consistencyGroup addCGMemberVolume` commande ajoute un nouveau volume de base en tant que membre d'un groupe de cohérence existant.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez spécifier un volume de référentiel existant pour le nouveau membre du groupe de cohérence ou créer un volume de référentiel. Lorsque vous créez un nouveau volume de référentiel, vous identifiez un groupe de volumes existant ou un pool de disques existant où vous souhaitez que le volume de référentiel soit utilisé.
+
+
+
+== Syntaxe à utiliser avec un volume de référentiel existant
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup ["consistencyGroupName"]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes["_volumeGroupName_"]
+----
+
+
+== Syntaxe à utiliser lors de la création d'un volume de référentiel dans un groupe de volumes
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Syntaxe à utiliser lors de la création d'un volume de référentiel dans un pool de disques
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence auquel vous souhaitez ajouter un nouveau volume membre. Le nouveau volume membre est le volume de base pour les opérations de snapshot. Placez le nom du groupe de cohérence entre guillemets (" ") dans les crochets ([ ]).
+
+
+
+ a| 
+`addCGMemberVolume`
+ a| 
+Nom du volume de base que vous souhaitez ajouter. Placez le nom du volume entre guillemets (" ").
+
+Si le volume spécifié est un volume de référentiel existant ou un volume de snapshot existant, la commande échoue.
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Ce paramètre exécute deux fonctions :
+
+* Dans un groupe de cohérence existant doté d'un volume de référentiel, ce paramètre identifie le volume de référentiel.
+* Lors de la création d'un volume de référentiel, ce paramètre identifie un groupe de volumes ou un pool de disques dans lequel créer le nouveau volume de référentiel.
+
+
+Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+La taille d'un nouveau volume de référentiel dans un groupe de volumes ou un pool de disques. La taille est définie en unités d'octets, Ko, Mo, Go ou To.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Un groupe de cohérence est un ensemble de volumes de base qui sont les volumes source des snapshots. Vous collectez les volumes de base d'un groupe de cohérence, de sorte que vous puissiez effectuer les mêmes opérations Snapshot sur chacun des volumes de base. Dans le contexte de cette commande, le terme _member_ signifie un volume de base pour les opérations de snapshot. Vous pouvez manipuler les images de snapshot associées aux membres d'un groupe de cohérence par le biais d'opérations de type batch, tout en maintenant la cohérence entre les images de snapshot.
+
+Chaque volume membre doit avoir un volume de référentiel correspondant. Vous pouvez définir la relation entre le volume membre et le volume du référentiel à l'aide de la `repositoryVolume` paramètre. Le `repositoryVolume` le paramètre peut effectuer l'une des actions suivantes :
+
+* Identifiez un volume de référentiel existant connecté au groupe de cohérence.
+* Identifiez un groupe de volumes ou un pool de disques dans lequel vous souhaitez créer un nouveau volume de référentiel.
+
+
+L'ajout d'un membre à un groupe de cohérence avec un référentiel existant a deux objectifs :
+
+* Vous pouvez créer un volume de référentiel entièrement nouveau en exécutant la commande sans l' `repositoryVolume` paramètre. Lorsque vous exécutez la commande sans `repositoryVolume` paramètre, la commande crée un nouveau volume de référentiel dans le groupe de volumes ou le pool de disques dans lequel tous les autres volumes de référentiel sont stockés. Exemple d'utilisation de cette commande :
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+----
+* Vous pouvez réutiliser un volume de référentiel existant si ce volume de référentiel est vide et n'est pas lié à un autre volume membre. Vous pouvez le faire si vous souhaitez maintenir une séquence ou une relation particulière pour les volumes du référentiel. Pour réutiliser un volume de référentiel vide existant, vous devez connaître le nom du volume de référentiel. Pour déterminer le nom du volume de référentiel, utilisez le `show allVolumes summary` commande. Tous les noms de volume de référentiel ont la forme `repos_XXXX` où `XXXX` est un identifiant unique généré par le logiciel de gestion du stockage. Exemple d'utilisation de cette commande :
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume="repos_0011"
+----
+
+
+Vous pouvez placer le volume de référentiel dans un groupe de volumes ou un pool de disques de votre choix. Vous n'avez pas besoin d'avoir le volume de référentiel au même emplacement que les autres volumes de référentiel. Pour placer le volume de référentiel dans un groupe de volumes ou un pool de disques de votre choix, utilisez le `repositoryVolume` et d'identifier le groupe de volumes ou le pool de disques et une taille pour le volume du référentiel. Exemple d'utilisation de cette commande :
+
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume=("12" capacity=2 GB)
+----
+Dans cet exemple, «[.code]``12``" est le nom d'un groupe de volumes existant ou d'un pool de disques existant. Le paramètre capacité définit la taille que vous souhaitez pour le groupe de volumes du référentiel.
+
+Lorsque vous créez un nouveau volume de référentiel dans un groupe de volumes ou un pool de disques, vous devez inclure des parenthèses autour du nom du groupe de volumes et de la capacité, ou le nom et la capacité du pool de disques.
+
+
+
+== Niveau minimal de firmware
+
+7.83

@@ -1,0 +1,279 @@
+---
+permalink: get-started/downloadable-smcli-parameters.html 
+sidebar: sidebar 
+keywords: downloadable, smcli, command line, parameters 
+summary: 'La version SANtricity OS 11.60 comprenait la possibilité de télécharger et d"installer la version http de l"interface de ligne de commande (également appelée Secure CLI ou SMcli) directement via SANtricity System Manager.' 
+---
+= Paramètres de ligne de commande SMcli téléchargeables
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.60 et les nouveaux paramètres de ligne de commande SMcli téléchargeables
+
+La version SANtricity OS 11.60 inclut la possibilité de télécharger et d'installer la version http de l'interface de ligne de commande (également appelée « Secure CLI » ou SMcli) directement via SANtricity System Manager. Cette version téléchargeable du SMcli est disponible sur les systèmes EF600, EF300, E5700, EF570, E2800, Et des contrôleurs EF280. Pour télécharger le SMcli dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* > *système* et *Add-ons* > *interface de ligne de commande* .
+
+
+NOTE: Un environnement d'exécution Java (JRE), version 8 et supérieure, doit être disponible sur le système de gestion dans lequel vous prévoyez d'exécuter les commandes CLI.
+
+Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le Gestionnaire système SANtricity dispose d'un ensemble unique de paramètres. Pour plus d'informations sur l'utilisation des paramètres de ligne de commande pour SANtricity OS 11.53 et les versions antérieures, reportez-vous à la section xref:./get-started/command-line-parameters.adoc[Paramètres de ligne de commande existants]
+
+
+
+=== Authentification multifacteur
+
+Si le langage SAML est activé, seuls les jetons d'accès peuvent être utilisés avec l'interface de ligne de commande. Si le langage SAML n'est pas activé, vous pouvez utiliser le nom d'utilisateur/mot de passe ou les jetons d'accès. Les jetons d'accès peuvent être générés via SANtricity System Manager.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`-t`
+ a| 
+Définit le jeton d'accès à utiliser pour l'authentification avec une baie de stockage. Un jeton d'accès remplace le nom d'utilisateur et le mot de passe.
+
+
+
+ a| 
+`-T` (majuscules)
+ a| 
+Cet argument requiert l'un des deux arguments suivants :
+
+* `access_token-file` - Contient le jeton d'accès à utiliser pour l'authentification
+* `-(dash)` - Lire le jeton d'accès de stdin
+
+
+
+
+ a| 
+`-u`
+ a| 
+Suivez ce paramètre avec le `_username_` variable. Ce paramètre est requis lorsqu'un jeton d'accès n'est pas utilisé.
+
+
+
+ a| 
+`-p`
+ a| 
+Définit le mot de passe de la matrice de stockage sur laquelle vous souhaitez exécuter des commandes. Un mot de passe n'est pas nécessaire dans les conditions suivantes :
+
+* Aucun mot de passe n'a été défini sur la matrice de stockage.
+* Le mot de passe est indiqué dans un fichier script que vous exécutez.
+
+
+
+
+ a| 
+`-P` (majuscules)
+ a| 
+Cet argument requiert l'un des deux arguments suivants :
+
+* `_password_file_` - Contient le mot de passe à utiliser pour l'authentification.
+* `-` (Un tiret) - Lire le mot de passe de `stdin`.
+
+
+|===
+
+
+=== Paramètres généraux de ligne de commande du mode https
+
+Le SMcli téléchargeable prend uniquement en charge le mode https. Les paramètres de ligne de commande ci-dessous sont couramment utilisés pour le mode https.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Spécifie le nom d'hôte ou l'adresse IP (Internet Protocol) (`_xxx.xxx.xxx.xxx_`) d'une baie de stockage gérée hors bande.
+
+Lorsque vous gérez la gestion du stockage hors bande via la connexion Ethernet de chaque contrôleur, vous devez spécifier le `_host-name-or-IP-address_` des contrôleurs.
+
+
+
+ a| 
+`-k`
+ a| 
+Cet argument facultatif permet un `*https*` le client doit fonctionner en mode non sécurisé. Cela signifie que le certificat de la baie de stockage ne sera pas validé. Par défaut, si omis, la validation correcte sera effectuée.
+
+
+NOTE: Pour plus d'informations sur la gestion des certificats de matrice de stockage, reportez-vous à la section ,Gestion des paramètres de ligne de commande des certificats stockés.
+
+
+
+ a| 
+`-e`
+ a| 
+Exécute les commandes sans effectuer de vérification de syntaxe en premier.
+
+
+
+ a| 
+`-L` (majuscules)
+ a| 
+Affiche les mentions légales pour SMcli téléchargeables.
+
+
+
+ a| 
+`-n`
+ a| 
+Indique l'étiquette stockée localement sur laquelle vous souhaitez exécuter les commandes de script. Cette option est facultative lorsque vous utilisez `_host-name-or-IP-address_`. L'étiquette stockée localement est requise lorsque l' `_host-name-or-IP-address_` n'est pas utilisé.
+
+
+NOTE: Pour plus d'informations sur l'utilisation d'étiquettes stockées localement pour gérer les matrices de stockage, reportez-vous à la section ,Gestion des paramètres de ligne de commande des matrices stockées.
+
+
+
+ a| 
+`-o`
+ a| 
+Indique un nom de fichier pour tout le texte de sortie résultant de l'exécution des commandes de script. Utilisez le `-o` paramètre avec ces paramètres :
+
+* `-c`
+* `-f`
+
+
+Si vous ne spécifiez pas de fichier de sortie, le texte de sortie passe à la sortie standard  `stdout`). Toutes les valeurs de sortie des commandes qui ne sont pas des commandes de script sont envoyées à `stdout`, que ce paramètre soit défini ou non.
+
+
+
+ a| 
+`-S` (majuscules)
+ a| 
+Supprime les messages d'information décrivant la progression de la commande qui s'affichent lorsque vous exécutez des commandes de script. (La suppression des messages d'information est également appelée mode silencieux.) Ce paramètre supprime ces messages :
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-version`
+ a| 
+Affiche la version SMcli téléchargeable
+
+
+
+ a| 
+`-?`
+ a| 
+Affiche des informations d'utilisation sur les commandes CLI.
+
+|===
+
+
+=== Gestion des baies stockées
+
+Les paramètres de ligne de commande suivants vous permettent de gérer les matrices stockées à l'aide de votre étiquette stockée localement.
+
+
+NOTE: L'étiquette stockée localement peut ne pas correspondre au nom réel de la matrice de stockage affiché sous SANtricity System Manager.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`SMcli storageArrayLabel show all`
+ a| 
+Affiche toutes les étiquettes stockées localement et leurs adresses associées
+
+
+
+ a| 
+`SMcli storageArrayLabel show label <LABEL>`
+ a| 
+Affiche les adresses associées à l'étiquette stockée localement nommée `<LABEL>`
+
+
+
+ a| 
+`SMcli storageArrayLabel delete all`
+ a| 
+Supprime toutes les étiquettes stockées localement
+
+
+
+ a| 
+`SMcli storageArrayLabel delete label <LABEL>`
+ a| 
+Supprime l'étiquette stockée localement nommée `<LABEL>`
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] storageArrayLabel add label <LABEL>`
+ a| 
+* Ajoute une étiquette stockée localement avec son nom `<LABEL>` contenant les adresses fournies
+* Les mises à jour ne sont pas directement prises en charge. Pour mettre à jour, supprimez le libellé, puis ajoutez-le à nouveau.
+
+
+
+NOTE: Le SMcli n'entre pas en contact avec la matrice de stockage lors de l'ajout d'une étiquette stockée localement.
+
+|===
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`SMcli localCertificate show all`
+ a| 
+Affiche tous les certificats approuvés stockés localement
+
+
+
+ a| 
+`SMcli localCertificate show alias <ALIAS>`
+ a| 
+Affiche un certificat approuvé stocké localement avec l'alias `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate delete all`
+ a| 
+Supprime tous les certificats approuvés stockés localement
+
+
+
+ a| 
+`SMcli localCertificate delete alias <ALIAS>`
+ a| 
+Supprime un certificat approuvé stocké localement avec l'alias `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate trust file <CERT_FILE> alias <ALIAS>`
+ a| 
+* Enregistre un certificat pour qu'il soit approuvé avec l'alias `<ALIAS>`
+* Le certificat à approuver est téléchargé à partir du contrôleur dans une opération distincte, par exemple à l'aide d'un navigateur Web
+
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] localCertificate trust`
+ a| 
+* Se connecte à chaque adresse et enregistre le certificat renvoyé dans la banque de certificats approuvée
+* Le nom d'hôte ou l'adresse IP spécifié est utilisé comme alias pour chaque certificat enregistré de cette façon
+* L'utilisateur doit vérifier que le certificat sur le(s) contrôleur(s) doit être approuvé(s) avant d'exécuter cette commande
+* Pour une sécurité optimale, la commande d'approbation qui prend un fichier doit être utilisée pour garantir que le certificat ne change pas entre la validation de l'utilisateur et l'exécution de cette commande
+
+
+|===

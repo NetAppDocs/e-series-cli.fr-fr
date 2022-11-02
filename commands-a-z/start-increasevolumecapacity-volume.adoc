@@ -1,0 +1,101 @@
+---
+permalink: commands-a-z/start-increasevolumecapacity-volume.html 
+sidebar: sidebar 
+keywords: increase, capacity, volume, disk pool, volume, group 
+summary: 'La commande start deVolumeCapacity volume augmente la capacité d"un volume standard ou d"un volume de référentiel dans un pool de disques ou un groupe de volumes.' 
+---
+= Augmentez la capacité du volume dans le pool de disques ou le groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start increaseVolumeCapacity volume` commande augmente la capacité d'un volume standard ou d'un volume de référentiel dans un pool de disques ou un groupe de volumes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Dans cette commande, un volume standard est également appelé « thick volume ».
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour augmenter la capacité d'un volume fin.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start increaseVolumeCapacity volume="_volumeName_"
+incrementalCapacity=_volumeCapacity_]
+[addDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume dans un pool de disques ou un groupe de volumes pour lequel vous souhaitez augmenter la capacité. Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`incrementalCapacity`
+ a| 
+Paramètre permettant d'augmenter la taille de stockage (capacité) du volume. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`. La valeur par défaut est `bytes`.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Paramètre permettant d'ajouter de nouveaux lecteurs au volume. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+[NOTE]
+====
+Le `addDrives` le paramètre ne peut être utilisé que pour augmenter la capacité d'un groupe de volumes. Le paramètre ne peut pas être utilisé pour augmenter la capacité d'un pool de disques.
+
+====
+|===
+
+
+== Remarques
+
+Dans certains cas un `drive` le paramètre peut apparaître en tant qu'entrée valide pour la syntaxe de commande. Cependant, vous ne pouvez pas utiliser le `drive` paramètre avec cette commande.
+
+Réglage du `incrementalCapacity` paramètre, démarre une opération longue durée que vous ne pouvez pas arrêter. Les opérations de longue durée sont exécutées en arrière-plan et ne vous empêchent pas d'exécuter d'autres commandes. Pour afficher la progression des opérations de longue durée, utilisez le `show volume actionProgress` commande.
+
+Le `addDrives` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+
+
+== Niveau minimal de firmware
+
+7.83

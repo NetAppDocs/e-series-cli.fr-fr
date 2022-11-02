@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/start-volumegroup-export.html 
+sidebar: sidebar 
+keywords: start, volume, group, export 
+summary: La commande start Volume Volume Group export déplace un groupe de volumes dans un état exporté. 
+---
+= Démarrer l'exportation du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volumeGroup export` La commande déplace un groupe de volumes à l'état exporté.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez ensuite retirer les lecteurs qui composent le groupe de volumes et réinstaller les disques dans une autre matrice de stockage.
+
+[CAUTION]
+====
+Ne pas effectuer ces étapes sans effectuer d'abord les étapes répertoriées dans xref:../get-started/learn-about-volume-group-migration.html[En savoir plus sur la migration de groupes de volumes.]
+
+====
+[NOTE]
+====
+Au sein du groupe de volumes, vous ne pouvez pas déplacer les volumes associés aux fonctions d'une matrice de stockage vers une autre matrice de stockage.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] export
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes à exporter. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Lorsque cette commande a réussi, vous pouvez exécuter le `start volumeGroup import` Commande pour terminer le déplacement du groupe de volumes vers un état complet, ce qui rend le groupe de volumes disponible pour la nouvelle matrice de stockage.
+
+Si cette commande échoue car des problèmes matériels ont empêché l'exportation, utilisez le `set volumeGroup forceState` commande. Le `set volumeGroup forceState` vous permet d'utiliser le `start volumeGroup import` commande permettant d'importer un groupe de volumes.
+
+Une fois que le groupe de volumes est à l'état exporté ou forcé, vous pouvez supprimer les lecteurs qui constituent le groupe de volumes de la matrice de stockage. Vous pouvez réinstaller les disques dans une autre matrice de stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.10

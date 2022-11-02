@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/set-auditlog.html 
+sidebar: sidebar 
+keywords: set, audit log 
+summary: 'La commande set auditlog configure les paramètres du journal d"audit.' 
+---
+= Définissez les paramètres du journal d'audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set auditLog` la commande configure les paramètres du journal d'audit.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+set auditLog (logLevel={all | writeOnly} |
+    fullPolicy={overwrite | preventSystemAccess} |
+    pass:quotes[maxRecords=_n_] | pass:quotes[warningThreshold=_n_)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`logLevel`
+ a| 
+Permet de spécifier le niveau de journalisation. Les choix valides sont les suivants : `all` et `writeOnly`. La valeur par défaut est `writeOnly`.
+
+
+
+ a| 
+`fullPolicy`
+ a| 
+Vous permet de spécifier la stratégie lorsque le journal est plein. Les choix valides sont les suivants : `overwrite` et `preventSystemAccess`.
+
+
+
+ a| 
+`maxRecords`
+ a| 
+Permet à l'utilisateur de spécifier le nombre maximum d'enregistrements à stocker `n` est un entier commençant à 30000 et se terminant à 50000.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+Vous permet de spécifier le pourcentage auquel une alerte d'avertissement sera envoyée pour indiquer que le journal d'audit est presque complet lorsque la police complète est définie sur `preventSystemAccess`. Utilisez des valeurs entières comprises entre 0 et 100. Le réglage de ce paramètre sur 0 (zéro) désactive les alertes d'avertissement.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set auditLog logLevel=writeOnly fullPolicy=preventSystemAccess maxRecords=40000 warningThreshold=90;"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

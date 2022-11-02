@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-sasphybaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, sas, phy, baseline 
+summary: 'La commande reset storageArray SASPHYBaseline réinitialise la ligne de base SAS Physical Layer (SAS PHY) pour tous les périphériques et supprime la liste des erreurs du fichier .csv.' 
+---
+= Réinitialisez la base de la matrice de stockage SAS PHY
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray SASPHYBaseline` Commande réinitialise la ligne de base de la couche physique SAS (SAS PHY) pour tous les périphériques et supprime la liste des erreurs du `.csv` fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Le `.csv` le fichier est généré lorsque vous exécutez le `save storageArray SASPHYCounts` commande.
+
+[NOTE]
+====
+La version précédente de la `reset storageArray SASPHYBaseline` commande effacée compte d'erreurs pour tous les périphériques à l'exception des lecteurs. Le `reset storageArray SASPHYBaseline` Commande réinitialise maintenant la ligne de base du PHY SAS pour les lecteurs et les autres périphériques. Toutes les erreurs sont supprimées du `.csv` fichier.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray SASPHYBaseline
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.83 réinitialise la ligne de base du PHY SAS pour les lecteurs.

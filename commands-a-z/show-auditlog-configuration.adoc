@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/show-auditlog-configuration.html 
+sidebar: sidebar 
+keywords: show, audit log, configuration 
+summary: 'La commande show auditlog configuration affiche les paramètres de configuration du journal d"audit de la matrice de stockage.' 
+---
+= Affiche la configuration du journal d'audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show auditLog configuration` la commande affiche les paramètres de configuration du journal d'audit de la baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing]
+----
+
+show auditLog configuration
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "show auditLog configuration;"
+
+Logging level: All
+Full policy: Overwrite
+Maximum records: 30,000 count
+Warning threshold: 90 percent
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

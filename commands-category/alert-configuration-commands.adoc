@@ -1,0 +1,85 @@
+---
+permalink: commands-category/alert-configuration-commands.html 
+sidebar: sidebar 
+keywords: configuration, commands, alert, embedded 
+summary: 'Commandes de configuration d"alertes' 
+---
+= Commandes de configuration d'alertes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Configuration SNMP intégrée
+
+link:../commands-a-z/create-snmpcommunity.html["Enregistrer la communauté SNMP"]
+
+link:../commands-a-z/create-snmptrapdestination.html["Enregistrer la destination d'interruption SNMP"]
+
+link:../commands-a-z/show-allsnmpcommunities.html["Afficher les communautés SNMP"]
+
+link:../commands-a-z/show-snmpsystemvariables.html["Afficher les variables du groupe système MIB II SNMP"]
+
+link:../commands-a-z/start-snmptrapdestination.html["Tester la destination de l'interruption SNMP"]
+
+link:../commands-a-z/delete-snmpcommunity.html["Annuler l'enregistrement de la communauté SNMP"]
+
+link:../commands-a-z/delete-snmptrapdestination.html["Annuler l'enregistrement de la destination d'interruption SNMP"]
+
+link:../commands-a-z/set-snmpcommunity.html["Mettre à jour la communauté SNMP"]
+
+link:../commands-a-z/set-snmpsystemvariables.html["Mettre à jour les variables du groupe système MIB II SNMP"]
+
+link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Mettre à jour la destination du trap SNMP"]
+
+
+
+== Configuration des alertes par e-mail - baies E2700 ou E5600
+
+link:../commands-a-z/set-emailalert.html["Configurez les paramètres d'alerte par e-mail"]
+
+link:../commands-a-z/set-event-alert.html["Définir le filtrage des alertes d'événement"]
+
+link:../commands-a-z/show-blockedeventalertlist.html["Afficher les événements bloqués"]
+
+link:../commands-a-z/smcli-alerttest.html["Testez les alertes"]
+
+
+
+== Commandes SSD cache
+
+link:../commands-a-z/clear-emailalert-configuration.html["Effacez la configuration des alertes par e-mail"]
+
+link:../commands-a-z/set-emailalert.html["Configurez les paramètres d'alerte par e-mail"]
+
+link:../commands-a-z/delete-emailalert.html["Supprimer le destinataire de l'alerte par e-mail"]
+
+link:../commands-a-z/show-emailalert-summary.html["Affiche la configuration des alertes par e-mail"]
+
+link:../commands-a-z/start-emailalert-test.html["Testez la configuration de l'alerte par e-mail"]
+
+
+
+== Configuration syslog
+
+link:../commands-a-z/clear-syslog-configuration.html["Effacer la configuration syslog"]
+
+link:../commands-a-z/set-syslog.html["Configurer les paramètres syslog"]
+
+link:../commands-a-z/create-storagearray-syslog.html["Créer une configuration syslog de matrice de stockage"]
+
+link:../commands-a-z/delete-storagearray-syslog.html["Supprimer la configuration syslog de la baie de stockage"]
+
+link:../commands-a-z/delete-syslog.html["Supprimer le serveur syslog"]
+
+link:../commands-a-z/show-storagearray-syslog.html["Affiche la configuration syslog de la matrice de stockage"]
+
+link:../commands-a-z/show-syslog-summary.html["Affiche la configuration syslog"]
+
+link:../commands-a-z/start-storagearray-syslog-test.html["Démarrer le test syslog de la baie de stockage"]
+
+link:../commands-a-z/start-syslog-test.html["Tester la configuration syslog"]
+
+link:../commands-a-z/set-storagearray-syslog.html["Mettre à jour la configuration syslog de la baie de stockage"]

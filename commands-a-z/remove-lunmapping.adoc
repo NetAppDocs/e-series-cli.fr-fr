@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/remove-lunmapping.html 
+sidebar: sidebar 
+keywords: remove, volume, lun map 
+summary: 'La commande remove lunMapping supprime le mappage du numéro d"unité logique (LUN) ou de l"ID d"espace de noms (NSID) d"un ou plusieurs volumes.' 
+---
+= Supprimer le mappage de LUN de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `remove lunMapping` La commande supprime le mappage du numéro d'unité logique (LUN) ou de l'ID d'espace de noms (NSID) d'un ou de plusieurs volumes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
+(host=pass:quotes[_"hostName_" | hostGroup=(_"hostGroupName"_] | defaultGroup)
+----
+
+
+== Syntaxe permettant de supprimer le mappage de LUN ou de NSID de plusieurs LUN de volume ou mappage de NSID
+
+[listing, subs="+macros"]
+----
+remove (allVolumes | volumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+lunMapping
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom d'un volume dont vous supprimez le mappage de LUN ou NSID. Placez les guillemets doubles (" ") du nom du volume entre crochets ([ ]).
+
+
+
+ a| 
+`accessVolume`
+ a| 
+Ce paramètre supprime le volume d'accès.
+
+
+
+ a| 
+`allVolumes`
+ a| 
+Ce paramètre supprime le mappage de LUN de tous les volumes.
+
+
+
+ a| 
+`volumes`
+ a| 
+Noms de plusieurs volumes dont vous supprimez le mappage de LUN ou NSID. Entrez les noms des volumes à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes comportent des caractères spéciaux ou ne sont composés que de chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte sur lequel le volume est mappé. Placez le nom d'hôte entre guillemets (" ").
+
+Ce paramètre fonctionne uniquement lorsque vous supprimez le mappage de LUN ou de NSID d'un volume.
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes contenant l'hôte auquel le volume est mappé. Placez le nom du groupe d'hôtes entre guillemets (" "). Le `defaultGroup` valeur est le groupe hôte qui contient l'hôte sur lequel le volume est mappé.
+
+Ce paramètre fonctionne uniquement lorsque vous supprimez le mappage de LUN ou de NSID d'un volume.
+
+|===
+
+
+== Remarques
+
+Le volume d'accès est le volume d'un environnement SAN utilisé pour la communication entre le logiciel de gestion du stockage et le contrôleur de la baie de stockage. Le volume d'accès utilise une adresse LUN ou NSID et utilise 20 Mo d'espace de stockage non disponible pour le stockage des données d'application. Un volume d'accès est uniquement nécessaire pour les baies de stockage gérées sur bande.
+
+[NOTE]
+====
+*La suppression d'un volume d'accès peut endommager votre configuration* -- l'agent utilise les volumes d'accès pour communiquer avec une matrice de stockage. Si vous supprimez un mappage de volume d'accès pour une matrice de stockage d'un hôte sur lequel un agent s'exécute, le logiciel de gestion du stockage n'est plus en mesure de gérer la matrice de stockage via l'agent.
+
+====
+Vous devez utiliser le `host` paramètre et le `hostGroup` paramètre lorsque vous spécifiez un volume sans accès ou un volume d'accès. Le moteur de script ignore le `host` ou le `hostGroup` paramètre lorsque vous utilisez le `allVolumes` ou le `volumes` paramètre.
+
+
+
+== Niveau minimal de firmware
+
+6.10

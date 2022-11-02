@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/start-storagearray-autosupport-deliverytest.html 
+sidebar: sidebar 
+keywords: test, autosupport, delivery, set, individual, E2800, E5700, arrays 
+summary: 'La commande start storageArray AutoSupport DeliveryTest envoie un exemple de message de collecte de paquets AutoSupport afin que vous puissiez tester la connexion au système de support technique de destination à l"aide des paramètres de livraison spécifiés.' 
+---
+= Tester les paramètres de livraison AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start storageArray autoSupport deliveryTest` La commande envoie un exemple de message de collecte de bundle AutoSupport afin que vous puissiez tester la connexion au système de support technique de destination à l'aide des paramètres de livraison spécifiés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start storageArray autoSupport deliveryTest pass:quotes[[replyToEmail="_address_"]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`replyToEmail`
+ a| 
+Permet à l'utilisateur de spécifier l'adresse e-mail de réponse pour le message de test AutoSupport. Elle n'est utilisée/requise que lorsque le mode de livraison est défini sur courrier électronique.
+
+|===
+
+
+=== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "start storageArray autoSupport deliveryTest;"
+
+SMcli -n Array1 -c "start storageArray autoSupport deliveryTest replyToEmail=\"user@company.com\";"
+
+The sample AutoSupport message was successfully sent to the ASUP gateway server.
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

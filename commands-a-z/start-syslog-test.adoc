@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/start-syslog-test.html 
+sidebar: sidebar 
+keywords: test, syslog, configuration 
+summary: La commande start syslog test envoie un exemple de message pour tester la configuration syslog. 
+---
+= Tester la configuration syslog
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start syslog test` commande envoie un exemple de message pour tester la configuration syslog.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+
+start syslog test
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "start syslog test;"
+
+The sample alert message was successfully sent to the syslog servers.
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

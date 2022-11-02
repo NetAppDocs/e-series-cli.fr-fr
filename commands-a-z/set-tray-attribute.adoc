@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/set-tray-attribute.html 
+sidebar: sidebar 
+keywords: set, tray, attribute 
+summary: 'La commande définir bac définit les attributs définis par l"utilisateur pour un bac' 
+---
+= Définir l'attribut de bac
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set tray` commande définit les attributs définis par l'utilisateur pour un bac
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`tray`
+ a| 
+Identifie un bac spécifique pour lequel définir l'attribut. Les valeurs d'ID du bac sont comprises entre 0 et 99. Vous devez mettre des crochets ([ ]) autour de la valeur d'ID de boîtier.
+
+
+
+ a| 
+`chassisName`
+ a| 
+Nom ou numéro de châssis pour indiquer la nouvelle armoire. Les noms de châssis peuvent être n'importe quelle combinaison de caractères alphanumériques d'une longueur maximale de 32 caractères. Les caractères alphabétiques peuvent être en majuscules ou minuscules. Vous pouvez également utiliser le caractère de soulignement (_) et le trait d'Union (-). Vous ne pouvez pas utiliser d'espaces dans un nom de châssis. Vous devez placer des guillemets (" ") autour du nom du châssis.
+
+
+
+ a| 
+`assetTag`
+ a| 
+Nom ou numéro de l'étiquette d'inventaire pour donner le nouveau boîtier. Les étiquettes d'inventaire peuvent être n'importe quelle combinaison de caractères alphanumériques d'une longueur maximale de dix caractères. Les caractères alphabétiques peuvent être en majuscules ou minuscules. Vous pouvez également utiliser le caractère de soulignement (_) et le trait d'Union (-). Vous ne pouvez pas utiliser d'espaces dans le nom d'une balise de ressource. Vous devez placer des guillemets (" ") autour du nom de l'étiquette d'inventaire.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.16

@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/delete-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: delete, asynchronous, mirror group 
+summary: La commande delete asynchrones MirrorGroup supprime un ou plusieurs groupes de miroirs asynchrones de la matrice de stockage locale et de la matrice de stockage distante. 
+---
+= Supprimer le groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete asyncMirrorGroup` la commande supprime un ou plusieurs groupes de miroirs asynchrones de la matrice de stockage locale et de la matrice de stockage distante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Le groupe de miroirs asynchrones doit être vide avant de pouvoir être supprimé. Vous devez supprimer toutes les paires mises en miroir asynchrones du groupe de miroirs asynchrone avant d'utiliser cette commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete (allAsyncMirrorGroups | asyncMirrorGrouppass:quotes[[_"asyncMirrorGroupName"_] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName_1" ... "asyncMirrorGroupName_n"_]])
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Utilisez ce paramètre pour supprimer tous les groupes de miroirs asynchrones de la matrice de stockage locale et de la matrice de stockage distante.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones que vous souhaitez supprimer. Placez le nom du groupe de miroirs asynchrones entre guillemets (« ») dans les crochets ([ ]).
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Les noms de plusieurs groupes de miroirs asynchrones que vous souhaitez supprimer. Entrez les noms des groupes de miroirs asynchrones à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

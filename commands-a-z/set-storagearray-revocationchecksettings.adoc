@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/set-storagearray-revocationchecksettings.html 
+sidebar: sidebar 
+keywords: set, certificate, revocation, check, set 
+summary: 'La commande Set storageArray révocationCheckSettings permet d"activer ou de désactiver la vérification de révocation et de configurer un serveur OCSP (Online Certificate Status Protocol).' 
+---
+= Définissez les paramètres de vérification de révocation du certificat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray revocationCheckSettings` Cette commande vous permet d'activer ou de désactiver la vérification de révocation et de configurer un serveur OCSP (Online Certificate Status Protocol).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Le serveur OCSP recherche tous les certificats que l'autorité de certification (CA) a révoqués avant leur date d'expiration prévue. Vous pouvez activer la vérification de révocation dans les cas où l'autorité de certification a émis un certificat de manière incorrecte ou si une clé privée est compromise.
+
+[NOTE]
+====
+Assurez-vous qu'un serveur DNS est configuré sur les deux contrôleurs, ce qui vous permet d'utiliser un nom de domaine complet pour le serveur OCSP.
+
+====
+Après avoir activé la vérification de révocation, la matrice de stockage refuse une tentative de connexion à un serveur avec un certificat révoqué.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray revocationCheckSettings ([revocationCheckEnable = boolean] &| [ocspResponderUrl=stringLiteral])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`revocationCheckEnable`
+ a| 
+Réglez sur `true` pour activer la vérification de révocation de certificats.
+
+
+
+ a| 
+`ocspResponderUrl`
+ a| 
+L'URL du serveur de réponse OCSP à utiliser pour la vérification de révocation du certificat.
+
+[NOTE]
+====
+La définition d'une adresse de réponse OCSP remplace l'adresse OCSP trouvée dans le fichier de certificat.
+
+====
+|===
+
+
+== Niveau minimal de firmware
+
+8.42

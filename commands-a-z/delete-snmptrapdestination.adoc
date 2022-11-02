@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/delete-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: delete, command, snmptrapdestination, existing, simple, network, management, protocol, trap, destination, previous, create, registered 
+summary: 'La commande delete snmpTrapDestination supprime une destination de trap SNMP (simple Network Management Protocol) existante que vous avez précédemment créée et enregistrée à l"aide de la commande create snmpTrapdestination.' 
+---
+= Annuler l'enregistrement de la destination d'interruption SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete snmpTrapDestination` Commande supprime une destination de déroutement SNMP (simple Network Management Protocol) existante que vous avez créée et enregistrée précédemment à l'aide de `create snmpTrapDestination` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snmpTrapDestination trapReceiverIP=_ipAddress_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+Adresse IP du gestionnaire SNMP à partir duquel vous souhaitez arrêter l'envoi de messages d'interruption.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.30

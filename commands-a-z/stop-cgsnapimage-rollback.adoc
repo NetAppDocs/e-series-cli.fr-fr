@@ -1,0 +1,111 @@
+---
+permalink: commands-a-z/stop-cgsnapimage-rollback.html 
+sidebar: sidebar 
+keywords: stop, consistency, group, snapshot, rollback 
+summary: 'La commande stop cgSnapImage rollback arrête une opération de restauration vers les volumes de base membres d"un groupe de cohérence snapshot.' 
+---
+= Arrêt de la restauration des snapshots du groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop cgSnapImage rollback` commande arrête une opération de restauration vers les volumes de base membres d'un groupe de cohérence snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+L'annulation d'une opération de restauration de snapshot de groupe de cohérence laisse le volume de base dans un état indéterminé avec des données potentiellement non valides ou incohérentes. Le volume de snapshot du groupe de cohérence associé est désactivé et inutilisable.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop cgSnapImage["_snapCGID:imageID_"]] rollback
+memberVolumeSet pass:quotes[("_memberVolumeName1_" ... "_memberVolumeNamen_")]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Nom de l'image de snapshot du groupe de cohérence dont vous souhaitez arrêter une opération de restauration. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` -- utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` -- utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ") entre crochets ([ ]).
+
+
+
+ a| 
+`memberVolumeSet`
+ a| 
+Nom d'un ou plusieurs volumes de base membres d'un groupe de cohérence que vous souhaitez arrêter une opération de restauration. Placez chaque nom de volume de base membre entre guillemets (" ") entre parenthèses.
+
+Vous pouvez entrer plusieurs noms de volume de base de membre. Placez tous les noms des volumes de base membres dans un ensemble de crochets ([ ]). Placez chaque nom de volume de base membre entre guillemets (" "). Séparez le nom de chaque volume de base membre par un espace.
+
+Lorsque le `memberVolumeSet` le paramètre n'est pas utilisé pour arrêter le processus de restauration s'applique à tous les volumes membres du groupe de cohérence.
+
+|===
+
+
+== Remarques
+
+Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
+
+* Identifiant du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez arrêter une opération de restauration pour l'image Snapshot la plus récente d'un groupe de cohérence complet portant le nom de CG1, vous pouvez utiliser la commande suivante :
+
+[listing]
+----
+stop cgSnapImage ["CG1:newest"] rollback;
+----
+Pour arrêter une opération de reprise de l'image snapshot 12345 pour les membres du volume de base memVol1, memVol2 et memVol3 dans un groupe de cohérence qui porte le nom CG2, utilisez la commande suivante :
+
+[listing]
+----
+stop cgSnapImage ["CG2:12345"] rollback memberVolumeset=("memVol1 memVol2 memVol3");
+----
+
+
+== Niveau minimal de firmware
+
+7.83

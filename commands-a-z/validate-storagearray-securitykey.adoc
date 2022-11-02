@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/validate-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: validate, storage array, security key 
+summary: 'La commande validate storageArray securityKey valide la clé de sécurité d"une matrice de stockage dotée de disques compatibles avec la sécurité pour s"assurer que le fichier de clé de sécurité de sauvegarde n"est pas corrompu.' 
+---
+= Validation de la clé de sécurité de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `validate storageArray securityKey` la commande valide la clé de sécurité pour une matrice de stockage dotée de disques compatibles avec la sécurité pour vous assurer que le fichier de clé de sécurité de sauvegarde n'est pas corrompu.
+
+
+
+== Baies prises en charge
+
+Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E2800 et E5700. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+La validation de la clé de sécurité utilise la phrase de passe utilisée pour générer le fichier afin de décrypter la clé et la faire correspondre à la valeur conservée dans la mémoire du contrôleur (pour les clés internes) ou sur le serveur externe (pour les clés externes).
+
+[NOTE]
+====
+Cette commande s'applique à la gestion interne et externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[validate storageArray securityKey file="_fileName_" passPhrase="_passPhraseString_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier qui possède la clé de sécurité. Placez le chemin du fichier et le nom du fichier entre guillemets (" "). Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez stocker la clé de sécurité dans un fichier externe. Placez la phrase de passe entre guillemets (" ").
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.70

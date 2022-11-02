@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/disable-storagearray.html 
+sidebar: sidebar 
+keywords: disable, storage, array, command, storage, feature 
+summary: La commande disable storageArray désactive une fonctionnalité de matrice de stockage. 
+---
+= Désactiver la fonction de matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `disable storageArray` commande désactive une fonctionnalité de matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Exécutez le `show storageArray` commande permettant d'afficher une liste des identificateurs de fonctionnalité pour toutes les fonctions activées de la matrice de stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[disable storageArray (featurePack | feature=_featureAttributeList_)]
+----
+Pass:quotes[The `_featureAttributeList_`] peut être une ou plusieurs de ces valeurs d'attribut. Si vous entrez plusieurs valeurs d'attribut, séparez-les par un espace.
+
+* `driveSecurity`
+
+
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+8.20 ajoute le `driveSecurity` attribut et supprime tous les autres attributs.

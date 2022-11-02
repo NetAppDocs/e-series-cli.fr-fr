@@ -1,0 +1,239 @@
+---
+permalink: commands-a-z/recover-volume.html 
+sidebar: sidebar 
+keywords: recover, raid, volume 
+summary: La commande recover volume crée un volume RAID avec les propriétés indiquées sans initialiser aucune des zones de données utilisateur sur les lecteurs. 
+---
+= Récupérer un volume RAID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recover volume` Commande crée un volume RAID avec les propriétés données sans initialiser aucune des zones de données utilisateur sur les lecteurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les valeurs des paramètres sont dérivées du fichier de données du profil de récupération (`recovery-profile.csv`) pour la matrice de stockage. Vous pouvez créer le volume de restauration dans un groupe de volumes existant ou créer un nouveau groupe de volumes à l'aide de cette commande.
+
+[NOTE]
+====
+Vous ne pouvez exécuter cette commande qu'à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script de l'interface utilisateur graphique. Vous ne pouvez pas utiliser l'interface graphique de gestion du stockage pour restaurer un volume.
+
+====
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour les volumes DDP (Dynamic Disk Pool).
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+recover volume (drive=pass:quotes[(_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_])) |
+(drives=pass:quotes[_trayID1_,pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,_]pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_])) |
+volumeGroup=pass:quotes[_volumeGroupName_]))
+[newVolumeGroup=pass:quotes[_volumeGroupName_]]
+userLabel=pass:quotes["_volumeName_" volumeWWN="_volumeWWN_"
+capacity=_volumeCapacity_
+offset=_offsetValue_
+raidLevel=(0 | 1 | 3 | 5 | 6)
+segmentSize=_segmentSizeValue_
+dssPreAllocate=(TRUE | FALSE)
+SSID=_subsystemVolumeID_]
+[owner=(a|b)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+[hostUnmapEnabled=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Les lecteurs que vous souhaitez attribuer au groupe de volumes contenant le volume que vous souhaitez restaurer. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom d'un groupe de volumes existant dans lequel vous souhaitez créer le volume. (Pour déterminer les noms des groupes de volumes de votre matrice de stockage, exécutez la `show storageArray profile` commande.)
+
+
+
+ a| 
+`newVolumeGroup`
+ a| 
+Nom que vous souhaitez attribuer à un nouveau groupe de volumes. Placez le nouveau nom de groupe de volumes entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom du volume que vous souhaitez restaurer. L'étiquette utilisateur comporte deux parties :
+
+* Nom du volume. Placez le nom du volume entre guillemets (" ").
+* Le World Wide name du volume, `volumeWWN`, Sous la forme d'un identificateur de 16 octets, par exemple 60080E500017B432000049887D77. Placez l'identificateur entre guillemets (" ").
+
+
+Vous devez saisir à la fois le nom du volume et le nom mondial du volume. Vous devez d'abord entrer le nom du volume. Par exemple :
+
+[listing]
+----
+userLabel="engdata"
+volumeWWN=60080E500017B4320000000049887D77
+----
+
+
+ a| 
+`capacity`
+ a| 
+Taille du volume que vous ajoutez à la matrice de stockage. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+
+ a| 
+`offset`
+ a| 
+Nombre de blocs du début du groupe de volumes au début du volume référencé.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Niveau RAID du groupe de volumes qui contient les disques. Les valeurs valides sont `0`, `1`, `3`, `5`, ou `6`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Quantité de données (en Ko) que le contrôleur écrit sur un seul disque d'un groupe de volumes avant d'écrire les données sur le disque suivant. Les valeurs valides sont `8`, `16`, `32`, `64`, `128`, `256`, ou `512`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Paramètre permettant d'activer ou de désactiver l'allocation de capacité de stockage de volume pour les changements de taille de segment futurs. Pour activer l'allocation, définissez ce paramètre sur `TRUE`. Pour désactiver l'allocation, définissez ce paramètre sur `FALSE`.
+
+
+
+ a| 
+`SSID`
+ a| 
+Identifiant du sous-système de la matrice de stockage d'un volume. Utilisez le `show volume` commande permettant de déterminer l'identifiant du sous-système de la matrice de stockage.
+
+
+
+ a| 
+`owner`
+ a| 
+Contrôleur qui détient le volume. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Si vous ne spécifiez pas de propriétaire, le micrologiciel du contrôleur détermine le propriétaire.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Paramètre permettant d'activer ou de désactiver la lecture préalable du cache. Pour désactiver la lecture préalable du cache, définissez ce paramètre sur `FALSE`. Pour activer la lecture préalable du cache, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`hostUnmapEnabled`
+ a| 
+Lorsque ce paramètre est défini sur `True`, un hôte est autorisé à émettre des commandes unmap au volume. Les commandes UNMAP ne sont autorisées que sur les volumes provisionnés pour la ressource.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Ce paramètre correspond à la taille du bloc de volume en octets.
+
+|===
+
+
+== Remarques
+
+Le logiciel de gestion du stockage collecte les profils de récupération des baies de stockage surveillées et enregistre les profils sur une station de gestion du stockage.
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+Si vous tentez de récupérer un volume à l'aide du `drive` ou le `drives` le paramètre et les disques sont dans un état non attribué, le contrôleur crée automatiquement un nouveau groupe de volumes. Utilisez le `newVolumeGroup` paramètre permettant de spécifier un nom pour le nouveau groupe de volumes.
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Le `owner` le paramètre définit quel contrôleur détient le volume. La propriété de contrôleur préférée d'un volume est le contrôleur qui est actuellement propriétaire du groupe de volumes.
+
+
+
+== Préallocation de la capacité de stockage
+
+Le `dssPreAllocate` paramètre vous permet d'affecter de la capacité d'un volume pour le stockage des informations utilisées lors de la reconstruction d'un volume. Lorsque vous définissez le `dssPreallocate` paramètre à `TRUE`, la logique d'allocation de l'espace de stockage dans le micrologiciel du contrôleur préalloue l'espace dans un volume pour les changements futurs de taille de segment. L'espace pré-alloué est la taille de segment maximale autorisée. Le `dssPreAllocate` paramètre nécessaire pour récupérer correctement les configurations de volumes qui ne peuvent pas être récupérées dans la base de données du contrôleur. Pour désactiver la fonction de préallocation, définissez `dssPreAllocate` à `FALSE`.
+
+
+
+== Taille du segment
+
+La taille d'un segment détermine le nombre de blocs de données que le contrôleur écrit sur un seul disque du volume avant d'écrire des données sur le disque suivant. Chaque bloc de données stocke 512 octets de données. Le bloc de données est la plus petite unité de stockage. La taille d'un segment détermine le nombre de blocs de données qu'il contient. Par exemple, un segment de 8 Ko contient 16 blocs de données. Un segment de 64 Ko contient 128 blocs de données.
+
+Lorsque vous entrez une valeur pour la taille du segment, la valeur est vérifiée par rapport aux valeurs prises en charge fournies par le contrôleur au moment de l'exécution. Si la valeur saisie n'est pas valide, le contrôleur renvoie une liste de valeurs valides. L'utilisation d'un lecteur unique pour une seule demande laisse les autres lecteurs disponibles pour traiter simultanément d'autres demandes.
+
+Si le volume se trouve dans un environnement où un utilisateur unique transfère de grandes unités de données (comme le multimédia), les performances sont optimisées lorsqu'une seule demande de transfert de données est traitée avec une seule bande de données. (Une bande de données est la taille du segment multipliée par le nombre de disques du groupe de volumes utilisés pour le transfert de données.) Dans ce cas, plusieurs disques sont utilisés pour la même demande, mais chaque disque n'est accessible qu'une seule fois.
+
+Pour des performances optimales dans une base de données multi-utilisateurs ou un environnement de stockage de système de fichiers, définissez la taille de votre segment afin de minimiser le nombre de lecteurs requis pour répondre à une demande de transfert de données.
+
+
+
+== Préextraction de lecture du cache
+
+La lecture préalable en cache permet au contrôleur de copier des blocs de données supplémentaires dans le cache pendant que le contrôleur lit et copie les blocs de données requis par l'hôte depuis le disque vers le cache. Cette action augmente le risque d'une future demande de données à partir du cache. Le préchargement de lecture du cache est important pour les applications multimédia qui utilisent des transferts de données séquentiels. Les paramètres de configuration de la matrice de stockage que vous utilisez déterminent le nombre de blocs de données supplémentaires que le contrôleur lit dans le cache. Valeurs valides pour le `cacheReadPrefetch` les paramètres sont `TRUE` ou `FALSE`.
+
+
+
+== Niveau minimal de firmware
+
+5.43
+
+7.10 ajoute la capacité de niveau RAID 6 et le `newVolumeGroup` paramètre.
+
+7.60 ajoute le `drawerID` saisie utilisateur.
+
+7.75 ajoute le `dataAssurance` paramètre.
+
+8.78 ajoute le `hostUnmapEnabled` paramètre.
+
+11.70.1 ajoute le `blockSize` paramètre.

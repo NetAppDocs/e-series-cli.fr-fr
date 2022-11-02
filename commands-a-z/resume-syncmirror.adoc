@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/resume-syncmirror.html 
+sidebar: sidebar 
+keywords: resume, synchronous, mirroring 
+summary: La commande RESUME SyncMirror reprend une opération de mise en miroir synchrone suspendue. 
+---
+= Reprise de la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `resume syncMirror` la commande reprend une opération de mise en miroir synchrone suspendue.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+resume syncMirror (primary pass:quotes[[_volumeName_]] |
+primaries pass:quotes[[_volumeName1 ... volumeNameN_]])
+[writeConsistency=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`primary`
+ a| 
+Le nom du volume primaire pour lequel vous souhaitez reprendre une opération de mise en miroir synchrone. Placez le nom du volume primaire entre crochets ([ ]). Si le nom du volume principal contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du volume primaire entre guillemets (" ") à l'intérieur de crochets.
+
+
+
+ a| 
+`primaries`
+ a| 
+Les noms de plusieurs volumes primaires pour lesquels vous voulez reprendre une opération de mise en miroir synchrone. Entrez les noms des volumes primaires à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes primaires comportent des caractères spéciaux ou ne sont composés que de chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`writeConsistency`
+ a| 
+Paramètre permettant d'identifier les volumes de cette commande situés dans un groupe de cohérence d'écriture ou distincte. Pour que les volumes situés dans le même groupe de cohérence d'écriture, définissez ce paramètre sur `TRUE`. Pour que les volumes soient séparés, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+Si vous définissez le `writeConsistency` paramètre à `TRUE`, les volumes doivent se trouver dans un ou plusieurs groupes de cohérence d'écriture. Cette commande reprend tous les groupes de cohérence d'écriture qui contiennent les volumes. Par exemple, si les volumes A, B et C sont dans un groupe de cohérence en écriture et qu'ils ont des homologues distants A'', B', et C'', le `resume syncMirror volume ["A"] writeConsistency=TRUE` Le commandement reprend A-A'', B-B'' et C-C''.
+
+
+
+== Niveau minimal de firmware
+
+6.10

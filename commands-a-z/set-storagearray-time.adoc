@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/set-storagearray-time.html 
+sidebar: sidebar 
+keywords: set, storage, array, time 
+summary: 'La commande set storageArray Time définit les horloges sur les deux contrôleurs d"une matrice de stockage en synchronisant les horloges de contrôleur avec l"horloge de l"hôte à partir duquel vous exécutez cette commande.' 
+---
+= Définir l'heure de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray time` commande définit les horloges sur les deux contrôleurs d'une matrice de stockage en synchronisant les horloges du contrôleur avec l'horloge de l'hôte à partir duquel vous exécutez cette commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray time
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10

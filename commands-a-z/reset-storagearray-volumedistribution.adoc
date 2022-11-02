@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/reset-storagearray-volumedistribution.html 
+sidebar: sidebar 
+keywords: reset, storage array, volume, distribution 
+summary: 'La commande reset storageArray volume distribution (« reset storageArray volume distribution ») réassigne (déplace) tous les volumes vers leur contrôleur préféré.' 
+---
+= Réinitialisez la distribution du volume de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray volumeDistribution` réassigne les commandes (déplace) tous les volumes vers leur contrôleur préféré.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray volumeDistribution
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Si vous utilisez cette commande sur un hôte sans pilote multichemin, vous devez arrêter les opérations d'E/S vers les volumes jusqu'à ce que cette commande soit terminée pour éviter les erreurs d'application.
+
+Dans certains environnements de système d'exploitation hôte, vous devrez peut-être reconfigurer le pilote d'hôte à chemins multiples. Vous devrez peut-être aussi apporter des modifications au système d'exploitation pour reconnaître le nouveau chemin d'E/S vers les volumes.
+
+
+
+== Niveau minimal de firmware
+
+5.20

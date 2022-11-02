@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-asyncmirrorgroup-synchronize.html 
+sidebar: sidebar 
+keywords: start, asynchronous, mirror, synchronization 
+summary: La commande start asynchrones MirrorCsynchronize démarre la synchronisation asynchrone de la mise en miroir. 
+---
+= Démarrez la synchronisation de la mise en miroir asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start asyncMirrorGroup synchronize` La commande démarre la synchronisation de mise en miroir asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start asyncMirrorGroup pass:quotes[["_asyncMirrorGroupName_"]] synchronize [deleteRecoveryPointIfNecessary]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones pour lequel vous souhaitez démarrer la synchronisation. Placez le nom du groupe de miroirs asynchrones entre guillemets (« ») à l'intérieur des crochets ([« » »]).
+
+
+
+ a| 
+`deleteRecoveryPointIfNecessary`
+ a| 
+Paramètre permettant de supprimer le point de récupération si les données de synchronisation récupérables ont dépassé le seuil de récupération. L'âge du point de restauration est mesuré à partir de la période de gel des données sur la baie de stockage primaire.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84
+
+8.10 ajoute le `deleteRecoveryPointIfNecessary` paramètre.

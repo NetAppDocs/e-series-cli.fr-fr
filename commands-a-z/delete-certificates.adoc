@@ -1,0 +1,48 @@
+---
+permalink: commands-a-z/delete-certificates.html 
+sidebar: sidebar 
+keywords: delete, certificates 
+summary: La commande Supprimer les certificats permet de supprimer un certificat du magasin de confiance du package CLI. 
+---
+= Supprimer des certificats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Delete certificates` Cette commande vous permet de supprimer un certificat du magasin de confiance du package CLI.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique aux baies de stockage EF600 et EF300.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete localCertificate all | alias pass:quotes[_alias_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`alias`
+ a| 
+Permet de spécifier un certificat via l'alias défini par l'utilisateur.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

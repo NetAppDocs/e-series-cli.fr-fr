@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/enable-volumegroup-security.html 
+sidebar: sidebar 
+keywords: enable, volumegroup, security, command, non secure, volume, group 
+summary: La commande activer la sécurité du groupe de volumes convertit un groupe de volumes non sécurisé en un groupe de volumes sécurisé. 
+---
+= Activez la sécurité du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `enable volumeGroup security` commande convertit un groupe de volumes non sécurisé en un groupe de volumes sécurisé.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable volumeGroup [_volumeGroupName_]] security
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes que vous souhaitez placer à l'état sécurité activée. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Ces conditions doivent être remplies pour exécuter correctement cette commande.
+
+* Tous les disques du groupe de volumes doivent être des disques Full Disk Encryption.
+* La fonction de sécurité du lecteur doit être activée.
+* La clé de sécurité de la matrice de stockage doit être définie.
+* Le groupe de volumes est optimal et ne possède pas de volumes de référentiel.
+
+
+Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE. Les disques FDE sont dotés d'un état appelé « Security capable ». Lorsque vous créez une clé de sécurité, l'état est défini sur sécurité activée, ce qui limite l'accès à tous les disques FDE présents dans la baie de stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.40

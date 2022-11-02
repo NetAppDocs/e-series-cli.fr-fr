@@ -1,0 +1,638 @@
+---
+permalink: get-started/recurring-syntax-elements.html 
+sidebar: sidebar 
+keywords: recur, syntax, elements 
+summary: 'Les éléments de syntaxe récurrente sont une catégorie générale de paramètres et d"options que vous pouvez utiliser dans les commandes de script.' 
+---
+= Éléments de syntaxe récurrents
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Les éléments de syntaxe récurrente sont une catégorie générale de paramètres et d'options que vous pouvez utiliser dans les commandes de script. Le tableau suivant répertorie les conventions utilisées dans les éléments de syntaxe récurrents.
+
+[cols="2*"]
+|===
+| Convention | Définition 
+
+
+ a| 
+`*a | b*`
+ a| 
+Alternative (« a » ou « b »)
+
+
+
+ a| 
+`italicized-words`
+ a| 
+Nécessite une entrée utilisateur pour remplir un paramètre (réponse à une variable)
+
+
+
+ a| 
+`+[ ... ]+` (crochets)
+ a| 
+Zéro ou une occurrence (les crochets sont également utilisés comme délimiteur pour certains paramètres de commande)
+
+
+
+ a| 
+`+{ ... }+` (accolades)
+ a| 
+Zéro occurrence ou plus
+
+
+
+ a| 
+`(*a | b | c*)`
+ a| 
+Choisissez une seule option
+
+|===
+Le tableau suivant répertorie les paramètres de syntaxe récurrents et les valeurs que vous pouvez utiliser avec les paramètres de syntaxe récurrents.
+
+[cols="2*"]
+|===
+| Syntaxe récurrente | Valeur de syntaxe 
+
+
+ a| 
+`_autoconfigure-vols-attr- value-list_`
+ a| 
+{`_autoconfigure-vols-attr-value-pair_` {`_autoconfigure-vols-attr-value-pair_`}
+
+
+
+ a| 
+`_autoconfigure-vols-attr- value-pair_`
+ a| 
+[listing]
+----
+driveType=drive-type | driveMediaType=drive-media-type |
+raidLevel=raid-level | volumeGroupWidth=integer-literal |
+volumeGroupCount=integer-literal | volumesPerGroupCount=integer-literal6|
+hotSpareCount=integer-literal | segmentSize=segment-size-spec | cacheReadPrefetch=(TRUE | FALSE)
+securityType=(none | capable | enabled)7| dataAssurance=(none | enabled)5
+----
+
+
+ a| 
+`_boolean_`
+ a| 
+[listing]
+----
+(TRUE | FALSE)
+----
+
+
+ a| 
+`_cache-flush-modifier- setting_`
+ a| 
+[listing]
+----
+immediate, 0, .25, .5, .75, 1, 1.5, 2, 5, 10, 20, 60, 120, 300, 1200, 3600, infinite
+----
+
+
+ a| 
+`_capacity-spec_`
+ a| 
+`_integer-literal_` `[KB | MB | GB | TB | Bytes]`
+
+
+
+ a| 
+`_count-based-repository- spec_`
+ a| 
+[listing]
+----
+repositoryRAIDLevel =repository-raid-level repositoryDriveCount=integer-literal
+[repositoryVolumeGroupUserLabel =user-label] [driveType=drive-type4
+] [trayLossProtect=(TRUE | FALSE)1] | [drawerLossProtect=(TRUE | FALSE)2] |
+[dataAssurance=(none | enabled)5] |
+----
+
+
+ a| 
+`_create-raid-vol-attr- value-list_`
+ a| 
+{`_create-raid-volume-attribute-value-pair_` {`_create-raid-volume-attribute-value-pair_`}
+
+
+
+ a| 
+`_create-raid-volume- attribute-value-pair_`
+ a| 
+[listing]
+----
+capacity=capacity-spec | owner=(a | b) |
+cacheReadPrefetch=(TRUE | FALSE) | segmentSize=integer-literal |
+usageHint=usage-hint-spec
+----
+
+
+ a| 
+`_create-volume-copy-attr- value-list_`
+ a| 
+{`_create-volume-copy-attr-value-pair_` {`_create-volume-copy-attr-value-pair_`}
+
+
+
+ a| 
+`_create-volume-copy-attr- value-pair_`
+ a| 
+[listing]
+----
+copyPriority=(highest | high | medium | low | lowest) |
+targetReadOnlyEnabled=(TRUE | FALSE) | copyType=(offline | online) |
+repositoryPercentOfBase=(20 | 40 | 60 | 120 | default) |
+repositoryGroupPreference=(sameAsSource | otherThanSource | default)
+----
+
+
+ a| 
+`_drive-media-type_`
+ a| 
+`(HDD | SSD | unknown | allMedia)` _HDD_ signifie disque dur. _SSD_ signifie disque SSD.
+
+
+
+ a| 
+`_drive-spec_`
+ a| 
+`_trayID,slotID` ou `trayID,drawerID,slotID_` Un lecteur est défini comme deux ou trois valeurs littérales entières séparées par une virgule. Les plateaux à faible densité nécessitent deux valeurs. Les plateaux haute densité, ceux dotés de tiroirs, nécessitent trois valeurs.
+
+
+
+ a| 
+`_drive-spec-list_`
+ a| 
+ `_drive-spec_` `_drive-spec_`
+
+
+
+ a| 
+`drive-type`
+ a| 
+`(fibre | SATA | SAS)`
+
+[NOTE]
+====
+Seuls les disques SAS sont pris en charge par les versions de firmware 7.86 et ultérieures.
+
+====
+
+
+ a| 
+`_error-action_`
+ a| 
+`(stop | continue)`
+
+
+
+ a| 
+`_ethernet-port-options_`
+ a| 
+[listing]
+----
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) |
+IPv6LocalAddress=ipv6-address | IPv6RoutableAddress=ipv6-address |
+IPv6RouterAddress=ipv6-address | IPv4Address=ip-address |
+IPv4ConfigurationMethod= (static | dhcp) | IPv4GatewayIP=ip-address |
+IPv4SubnetMask=ip-address | duplexMode=(TRUE | FALSE) | portSpeed=(autoNegotiate | 10 | 100 |
+1000)
+----
+
+
+ a| 
+`_feature-identifier_`
+ a| 
+[NOTE]
+====
+Toutes les fonctionnalités de SANtricity 11.40 sont activées par défaut.
+
+====
+
+
+ a| 
+`_filename_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_gid_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_hex-literal_`
+ a| 
+Un littéral dans la plage 0x00 - 0xFF.
+
+
+
+ a| 
+`_host-card-identifier_`
+ a| 
+`(1 | 2 | 3 | 4)`
+
+
+
+ a| 
+`_host-type_`
+ a| 
+`string-literal`| `integer-literal`
+
+
+
+ a| 
+`_instance-based- repository-spec_`
+ a| 
+[listing]
+----
+(repositoryRAIDLevel =repository-raid-level repositoryDrives= (drive-spec-list)
+[repositoryVolumeGroupUserLabel =user-label] [trayLossProtect=(TRUE | FALSE)1]) |
+[drawerLossProtect=(TRUE | FALSE)2]) | (repositoryVolumeGroup=user-label
+[freeCapacityArea=integer-literal3])
+----
+Spécifiez le `*repositoryRAIDLevel*` paramètre avec le `*repositoryDrives*` paramètre. Ne spécifiez pas le niveau RAID ou les disques avec le groupe de volumes. Ne définissez pas de valeur pour le `*trayLossProtect*` paramètre lorsque vous spécifiez un groupe de volumes.
+
+
+
+ a| 
+`_ip-address_`
+ a| 
+`*(0-255).(0-255).(0-255).(0-255)*`
+
+
+
+ a| 
+`_ipv6-address_`
+ a| 
+`*(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)*`
+
+Vous devez entrer les 32 caractères hexadécimaux.
+
+
+
+ a| 
+`_iscsi-host-port_`
+ a| 
+[listing]
+----
+(1 | 2 | 3 | 4)
+----
+Le numéro de port hôte peut être 2, 3 ou 4 selon le type de contrôleur que vous utilisez.
+
+
+
+ a| 
+`_iscsi-host-port-options_`
+ a| 
+[listing]
+----
+IPv4Address=ip-address | IPv6LocalAddress=ipv6-address |
+IPv6RoutableAddress=ipv6-address | IPv6RouterAddress=ipv6-address |
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) | enableIPv4Priority=(TRUE | FALSE) |
+enableIPv6Priority=(TRUE | FALSE) | IPv4ConfigurationMethod=(static | dhcp) |
+IPv6ConfigurationMethod= (static | auto) | IPv4GatewayIP=ip-address |
+IPv6HopLimit=integer | IPv6NdDetectDuplicateAddress=integer |
+IPv6NdReachableTime=time-interval | IPv6NdRetransmitTime=time-interval |
+IPv6NdTimeOut=time-interval | IPv4Priority=integer |
+IPv6Priority=integer | IPv4SubnetMask=ip-address |
+IPv4VlanId=integer | IPv6VlanId=integer |
+maxFramePayload=integer | tcpListeningPort=tcp-port-id |
+portSpeed=(autoNegotiate | 1 | 10)
+----
+
+
+ a| 
+`_iscsiSession_`
+ a| 
+[listing]
+----
+[session-identifier]
+----
+
+
+ a| 
+`_nvsram-offset_`
+ a| 
+`_hex-literal_`
+
+
+
+ a| 
+`_nvsramBitSetting_`
+ a| 
+`_nvsram-mask, nvsram-value_` = `_0xhexadecimal, 0xhexadecimal_` | `_integer-literal_`
+
+Le `_0xhexadecimal_` La valeur est généralement une valeur comprise entre 0x00 et 0xFF.
+
+
+
+ a| 
+`_nvsramByteSetting_`
+ a| 
+`_nvsram-value_` = `_0xhexadecimal_` | `_integer-literal_`
+
+Le `0xhexadecimal` La valeur est généralement une valeur comprise entre 0x00 et 0xFF.
+
+
+
+ a| 
+`_portID_`
+ a| 
+[listing]
+----
+(0-127)
+----
+
+
+ a| 
+`_raid-level_`
+ a| 
+[listing]
+----
+(0 | 1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_recover-raid-volume-attr- value-list_`
+ a| 
+{`_recover-raid-volume-attr-value-pair_` {`_recover-raid-volume-attr-value-pair_`}
+
+
+
+ a| 
+`_recover-raid-volume-attr- value-pair_`
+ a| 
+[listing]
+----
+owner=(a|b) |cacheReadPrefetch=(TRUE | FALSE) | dataAssurance=(none | enabled)
+----
+
+
+ a| 
+`_repository-raid-level_`
+ a| 
+[listing]
+----
+(1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_repository-spec_`
+ a| 
+`instance-based-repository-spec` | `count-based-repository-spec`
+
+
+
+ a| 
+`_segment-size-spec_`
+ a| 
+`_integer-literal_` - toutes les capacités sont dans la base-2.
+
+
+
+ a| 
+`_serial-number_`
+ a| 
+[listing]
+----
+string-literal
+----
+
+
+ a| 
+`_slotID_`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+[listing]
+----
+(drive=\(trayID,[drawerID,]slotID\)|
+drives=\(trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\) )
+----
+
+
+ a| 
+`_test-devices_`
+ a| 
+[listing]
+----
+controller=(a|b)
+esms=(esm-spec-list)drives=(drive-spec-list)
+----
+
+
+ a| 
+`_test-devices-list_`
+ a| 
+{`_test-devices_` {`_test-devices_`}
+
+
+
+ a| 
+`_time-zone-spec_`
+ a| 
+[listing]
+----
+(GMT+HH:MM | GMT-HH:MM) [dayLightSaving=HH:MM]
+----
+
+
+ a| 
+`_trayID-list_`
+ a| 
+{`_trayID_` {`_trayID_`}
+
+
+
+ a| 
+`_usage-hint-spec_`
+ a| 
+[listing]
+----
+usageHint=(multiMedia | database | fileSystem)
+----
+L'indice d'utilisation ou les caractéristiques d'E/S attendues du volume sont utilisés par le contrôleur pour indiquer une taille de segment de volume par défaut appropriée et une préextraction de lecture dynamique du cache. Pour le système de fichiers et la base de données, une taille de segment de 128 Ko est utilisée. Pour le multimédia, une taille de segment de 256 Ko est utilisée. Les trois conseils d'utilisation permettent d'activer la lecture préalable du cache dynamique.
+
+
+
+ a| 
+`_user-label_`
+ a| 
+`_string-literal_`
+
+Les caractères valides sont alphanumériques, le tiret et le trait de soulignement.
+
+
+
+ a| 
+`_user-label-list_`
+ a| 
+{`_user-label_` {`_user-label_`}
+
+
+
+ a| 
+`_volumeGroup-number_`
+ a| 
+`_integer-literal_`
+
+
+
+ a| 
+`_wwID_`
+ a| 
+`_string-literal_`
+
+|===
+1pour que la protection contre les pertes de bac fonctionne, votre configuration doit respecter les directives suivantes :
+
+[cols="3*"]
+|===
+| Niveau | Critères pour la protection contre les pertes du plateau | Nombre minimum de bacs requis 
+
+
+ a| 
+Pool de disques
+ a| 
+Le pool de disques ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+6
+
+
+
+ a| 
+RAID 6
+ a| 
+Le groupe de volumes ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+3
+
+
+
+ a| 
+RAID 3 ou RAID 5
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un bac distinct
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Chaque lecteur d'une paire RAID 1 doit se trouver dans un bac distinct
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossible d'obtenir la protection contre les pertes du bac.
+ a| 
+Sans objet
+
+|===
+2pour que la protection contre les pertes de tiroirs fonctionne, votre configuration doit respecter les directives suivantes :
+
+[cols="3*"]
+|===
+| Niveau | Critères pour la protection contre les pertes de tiroirs | Nombre minimum de tiroirs requis 
+
+
+ a| 
+Pool de disques
+ a| 
+Le pool comprend des disques des cinq tiroirs et il y a un nombre égal de disques dans chaque tiroir. Un plateau de 60 lecteurs peut atteindre la protection contre les pertes de tiroirs lorsque le pool de disques contient 15, 20, 25, 30, 35, 40, 45, 50, 55 ou 60 disques.
+ a| 
+5
+
+
+
+ a| 
+RAID 6
+ a| 
+Le groupe de volumes ne contient pas plus de deux disques dans un tiroir unique.
+ a| 
+3
+
+
+
+ a| 
+RAID 3 ou RAID 5
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un tiroir distinct.
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Chaque lecteur d'une paire symétrique doit être placé dans un tiroir séparé.
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossible d'obtenir la protection contre la perte de tiroir.
+ a| 
+Sans objet
+
+|===
+Si vous disposez d'une configuration de matrice de stockage dans laquelle un groupe de volumes couvre plusieurs bacs, vous devez vous assurer que le paramètre de protection contre les pertes de tiroir fonctionne avec le paramètre de protection contre les pertes de bac. Vous pouvez bénéficier d'une protection contre les pertes de tiroirs sans protection contre les pertes de bac. Vous ne pouvez pas bénéficier d'une protection contre les pertes de bac sans protection contre les pertes de tiroir. Si le `*trayLossProtect*` paramètre et le `*drawerLossProtect*` les paramètres ne sont pas définis sur la même valeur, la matrice de stockage renvoie un message d'erreur et aucune configuration de matrice de stockage ne sera créée.
+
+3 pour déterminer si une zone de capacité libre existe, exécutez le `show volumeGroup` commande.
+
+4 le disque par défaut (type de disque) est `SAS`.
+
+Le `*driveType*` le paramètre n'est pas requis si un seul type de disque se trouve dans la matrice de stockage. Si vous utilisez le `*driveType*` paramètre, vous devez également utiliser le `*hotSpareCount*` paramètre et le `*volumeGroupWidth*` paramètre.
+
+5 le `*dataAssurance*` Le paramètre est lié à la fonctionnalité Data assurance (DA).
+
+La fonctionnalité Data assurance (DA) renforce l'intégrité des données sur l'ensemble du système de stockage. DA permet à la matrice de stockage de vérifier si des erreurs peuvent se produire lorsque des données sont déplacées entre les hôtes et les lecteurs. Lorsque cette fonctionnalité est activée, la matrice de stockage ajoute des codes de vérification des erreurs (également appelés vérifications cycliques de redondance ou CRCS) à chaque bloc de données du volume. Après le déplacement d'un bloc de données, la matrice de stockage utilise ces codes CRC pour déterminer si des erreurs se sont produites au cours de la transmission. Les données potentiellement corrompues ne sont ni écrites sur le disque ni renvoyées à l'hôte.
+
+Si vous souhaitez utiliser la fonction DA, commencez par un pool ou un groupe de volumes qui inclut uniquement les lecteurs qui prennent en charge DA. Ensuite, créez des volumes compatibles DA. Enfin, mappez ces volumes compatibles DA à l'hôte à l'aide d'une interface d'E/S capable de gérer DA. Les interfaces d'E/S qui peuvent être DA incluent Fibre Channel, SAS et iser over InfiniBand (iSCSI Extensions for RDMA/IB). DA n'est pas pris en charge par iSCSI over Ethernet ou par le SRP sur InfiniBand.
+
+[NOTE]
+====
+Lorsque tout le matériel requis et l'interface d'E/S sont compatibles DA, vous pouvez configurer le `*dataAssurance*` paramètre à `enabled` Puis utiliser DA avec certaines opérations. Par exemple, vous pouvez créer un groupe de volumes comprenant des disques compatibles DA, puis créer un volume au sein de ce groupe de volumes qui est activé par DA. Les autres opérations qui utilisent un volume activé par DA peuvent prendre en charge la fonction DA.
+
+====
+6 le `*volumesPerGroupCount*` paramètre correspond au nombre de volumes de capacité égale par groupe de volumes.
+
+7 le `*securityType*` paramètre vous permet de spécifier le paramètre de sécurité pour un groupe de volumes que vous créez. Tous les volumes sont également définis sur le paramètre de sécurité de votre choix. Les options disponibles pour définir le paramètre de sécurité sont les suivantes :
+
+* `none` -- le groupe de volumes n'est pas sécurisé.
+* `capable` -- le groupe de volumes est sécurisé, mais la sécurité n'a pas été activée.
+* `enabled` -- le groupe de volumes est sécurisé activé.
+
+
+[NOTE]
+====
+Une clé de sécurité de la matrice de stockage doit déjà être créée pour la matrice de stockage si vous souhaitez la définir `*securityType=enabled*`. (Pour créer une clé de sécurité de la matrice de stockage, utilisez le `create storageArray securityKey` commande.)
+
+====

@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/create-host.html 
+sidebar: sidebar 
+keywords: create, host 
+summary: La commande create host crée un nouvel hôte. 
+---
+= Créer un hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create host` commande crée un hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour les baies de stockage E2700 et E5600, si vous ne spécifiez pas de groupe d'hôtes dans lequel créer le nouvel hôte, le nouvel hôte est créé dans le groupe par défaut.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create host userLabel=pass:quotes[_"hostName"_]
+[hostGroup=pass:quotes[(_"hostGroupName"_] | defaultGroup)]
+[hostType=(hostTypeIndexLabel | hostTypeIndexNumber)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Le nom que vous souhaitez donner à l'hôte que vous créez. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes dans lequel vous souhaitez créer un nouvel hôte. Placez le nom du groupe d'hôtes entre guillemets (" "). (Si un groupe d'hôtes n'existe pas, vous pouvez créer un nouveau groupe d'hôtes à l'aide du `create hostGroup` commande.) Le `defaultGroup` option est le groupe hôte qui contient l'hôte sur lequel le volume est mappé.
+
+
+
+ a| 
+`hostType`
+ a| 
+Le label d'index ou le numéro d'index qui identifie le type d'hôte. Utilisez le `show storageArray hostTypeTable` commande pour générer une liste des identificateurs de type d'hôte disponibles. Si le type d'hôte comporte des caractères spéciaux, placez-le entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Un hôte est un ordinateur connecté à la matrice de stockage et accède aux volumes de la matrice de stockage via les ports d'hôte. Vous pouvez définir des mappages spécifiques à un hôte individuel. Vous pouvez également affecter l'hôte à un groupe d'hôtes qui partage l'accès à un ou plusieurs volumes.
+
+Un groupe d'hôtes est un élément topologique facultatif que vous pouvez définir si vous souhaitez désigner une collection d'hôtes partageant l'accès aux mêmes volumes. Le groupe d'hôtes est une entité logique. Définissez un groupe d'hôtes uniquement si au moins deux hôtes partagent l'accès aux mêmes volumes.
+
+Si vous n'indiquez pas de groupe d'hôtes dans lequel placer l'hôte que vous créez, l'hôte nouvellement défini appartient au groupe d'hôtes par défaut.
+
+
+
+== Niveau minimal de firmware
+
+5.20
+
+7.10 ajoute le `hostType` paramètre.

@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/diagnose-controller.html 
+sidebar: sidebar 
+keywords: diagnose, controller, command, run, diagnostic, tests, arrays, roles, context 
+summary: La commande diagnostiquer le contrôleur exécute des tests de diagnostic sur le contrôleur. 
+---
+= Diagnostiquer le contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `diagnose controller` la commande exécute des tests de diagnostic sur le contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les tests de diagnostic consistent en des tests de bouclage dans lesquels les données sont écrites sur les disques et lues depuis les disques.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+diagnose controller [(a| b)]
+loopbackDriveChannel=(allchannels | (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8))
+testID=(1 | 2 | 3 | discreteLines)
+pass:quotes[[patternFile="_filename_"]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur sur lequel vous souhaitez exécuter les tests de diagnostic. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+
+
+ a| 
+`loopbackDriveChannel`
+ a| 
+Canaux d'entraînement sur lesquels vous souhaitez exécuter les tests de diagnostic. Vous pouvez choisir d'exécuter les diagnostics sur toutes les chaînes ou de sélectionner un canal spécifique sur lequel exécuter les diagnostics. Si vous sélectionnez un canal spécifique, les valeurs valides pour les canaux de transmission sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`.
+
+
+
+ a| 
+`testID`
+ a| 
+Identifiant du test de diagnostic à exécuter. L'identifiant et les tests correspondants sont les suivants :
+
+* `1` -- Lire le test
+* `2` -- Ecrire le test
+* `3` -- Test de boucle de données
+* `discreteLines` -- test de diagnostic des lignes discrètes
+
+
+
+
+ a| 
+`patternFile`
+ a| 
+Le chemin du fichier et le nom du fichier contenant un modèle de données que vous souhaitez utiliser comme données de test. Placez le nom du fichier du modèle de données entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\sup\patfile.txt"`
+
+|===
+
+
+== Remarques
+
+Lorsque vous exécutez un test de boucle de données, vous pouvez éventuellement spécifier un fichier contenant un modèle de données. Si vous ne spécifiez pas de fichier, le micrologiciel du contrôleur fournit un modèle par défaut.
+
+Les lignes discrètes sont des lignes de contrôle et des lignes d'état qui sont connectées entre deux contrôleurs dans un plateau de contrôleur Le test de diagnostic des lignes discrètes permet à chaque contrôleur de vérifier que les transitions du signal de commande peuvent être observées aux entrées de commande du contrôleur alternatif. Le test de diagnostic des lignes discrètes s'exécute automatiquement après chaque cycle d'alimentation ou chaque réinitialisation du contrôleur. Vous pouvez effectuer le test de diagnostic des conduites discrètes après avoir remplacé un composant ayant échoué au test de diagnostic initial des conduites discrètes. Le test de diagnostic des lignes discrètes renvoie l'un des messages suivants :
+
+* Lorsque le test de diagnostic des lignes discrètes s'exécute correctement, ce message s'affiche :
++
+[listing]
+----
+The controller discrete lines successfully passed the diagnostic
+test. No failures were detected.
+----
+* Si le test de diagnostic des lignes discrètes échoue, ce message apparaît :
++
+[listing]
+----
+One or more controller discrete lines failed the diagnostic test.
+----
+* Si l'interface CLI ne peut pas exécuter le test de diagnostic des lignes discrètes, l'interface CLI renvoie l'erreur 270, ce qui signifie que le test de diagnostic des lignes discrètes n'a pas pu démarrer ni se terminer.
+
+
+
+
+== Niveau minimal de firmware
+
+6.10 ajoute le test de lecture, le test d'écriture et le test de boucle de données.
+
+6.14 ajoute le test de diagnostic des lignes discrètes.
+
+7.30 ajoute l'identificateur de canal de lecteur mis à jour.

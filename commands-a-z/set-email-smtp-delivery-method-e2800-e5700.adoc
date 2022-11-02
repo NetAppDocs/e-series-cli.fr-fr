@@ -1,0 +1,97 @@
+---
+permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+sidebar: sidebar 
+keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
+summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi de messages AutoSupport à des e-mails (SMTP).' 
+---
+= Spécifiez la méthode de livraison de l'e-mail (SMTP)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray autoSupport deliveryMethod` Commande configure la méthode de distribution pour envoyer des messages AutoSupport à l'e-mail (SMTP).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray autoSupport deliveryMethod=email
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Permet à l'utilisateur de spécifier la méthode de livraison de la collection AutoSupport. Les choix valides sont les suivants :
+
+* e-mail
+* HTTP
+* HTTPS
+
+
+[NOTE]
+====
+Si la méthode de messagerie est configurée, AutoSupport OnDemand et diagnostic à distance sont désactivés.
+
+====
+
+
+ a| 
+`mailRelayServer`
+ a| 
+Permet à l'utilisateur de spécifier le serveur de relais de messagerie pour la collection AutoSupport.
+
+
+
+ a| 
+`senderEmail`
+ a| 
+Permet à l'utilisateur de spécifier l'adresse e-mail d'envoi pour la collection AutoSupport.
+
+|===
+
+
+=== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportConfig deliveryMethod=email mailRelayServer=\"mailserver.company.com\" senderEmail=\"user@company.com\";"
+
+SMcli completed successfully.
+----
+
+
+=== Vérification
+
+Envoyer un message de test à l'aide du `_start storageArray autoSupport deliveryTest_` commande pour vérifier que vos méthodes de livraison sont correctement configurées.
+
+
+
+== Niveau minimal de micrologiciel
+
+8.40

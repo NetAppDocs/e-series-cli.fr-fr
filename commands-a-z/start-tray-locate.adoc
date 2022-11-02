@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-tray-locate.html 
+sidebar: sidebar 
+keywords: start, tray, locate 
+summary: La commande de localisation du plateau de démarrage permet de localiser un bac en allumant le voyant. 
+---
+= Démarrer la localisation du bac
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start tray locate` la commande permet de localiser un bac en allumant le voyant.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Utilisez le `stop tray locate` commande pour éteindre le voyant du bac
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start tray [_trayID_]] locate
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`tray`
+ a| 
+Le bac que vous souhaitez localiser. Les valeurs d'ID du bac sont `0` à `99`. Placez la valeur d'ID du bac entre crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

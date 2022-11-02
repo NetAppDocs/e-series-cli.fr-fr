@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/set-tray-drawer.html 
+sidebar: sidebar 
+keywords: set, drawer, service, action, allowed, indicator 
+summary: La commande définir tiroir bac active ou désactive le voyant action de service autorisée sur un tiroir qui contient des lecteurs. 
+---
+= Définir l'indicateur d'action d'entretien du tiroir autorisé
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set tray drawer` La commande active ou désactive le voyant action de service autorisée sur un tiroir qui contient des disques.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les tiroirs sont utilisés dans des tiroirs disques haute capacité. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Utilisez cette commande uniquement pour les tiroirs. Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]] drawer pass:quotes[[_drawerID_]]
+serviceAllowedIndicator=(on | off | forceOnWarning)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`tray`
+ a| 
+Le tiroir où se trouve le tiroir. Les valeurs d'ID du bac sont `0` à `99` . Placez la valeur d'ID du bac entre crochets ([ ]). Si vous n'entrez pas de valeur d'ID de bac, l'ID de bac du plateau contrôleur est la valeur par défaut.
+
+
+
+ a| 
+`drawer`
+ a| 
+L'emplacement du tiroir pour lequel vous souhaitez activer ou désactiver le voyant action de service autorisée. Les valeurs d'ID de tiroir sont `1` à `5`. Placez la valeur d'ID du tiroir entre crochets ([ ]).
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Paramètre permettant d'activer ou de désactiver le voyant action de service autorisée. Pour activer le voyant action de service autorisée, définissez ce paramètre sur `on`. Pour désactiver le voyant action de service autorisée, définissez ce paramètre sur `off`.
+
+Pour plus d'informations sur l'utilisation de `forceOnWarning`, Voir les Notes.
+
+|===
+
+
+== Remarques
+
+Avant de pouvoir saisir cette commande, le tiroir disque doit respecter les conditions suivantes :
+
+* Le plateau du lecteur ne peut pas être trop chaud.
+* Les ventilateurs doivent avoir un état optimal.
+* Tous les composants du plateau d'entraînement doivent être en place.
+* Les volumes dans le tiroir du lecteur ne peuvent pas être en état dégradé. Si vous retirez des disques du tiroir du lecteur et qu'un volume est déjà en état dégradé, le volume peut échouer.
+
+
+[NOTE]
+====
+N'émettez pas cette commande si vous ne parvenez pas à remplir l'une de ces conditions.
+
+====
+Tous les volumes dont les disques se trouvent dans le tiroir de disque concerné sont vérifiés pour s'assurer que les volumes ont une protection contre la perte de tiroir avant l'envoi de la commande. Si les volumes ont une protection contre la perte de tiroir, la commande définir l'action de service autorisée se poursuit sans arrêter l'activité d'E/S sur le volume.
+
+Si les volumes du tiroir affecté ne sont pas protégés contre la perte de tiroir, vous devez arrêter l'activité d'E/S de ces volumes. Un avertissement apparaît, indiquant que cette commande ne doit pas être terminée.
+
+Pour activer ou désactiver le voyant action de service autorisée pour l'ensemble du plateau de lecteur haute capacité, utilisez le `set tray serviceAllowedIndicator` commande.
+
+
+
+== Utilisation du paramètre forceOnWarning
+
+Si vous préparez un composant pour le retrait et que vous souhaitez ignorer l'avertissement indiquant que les volumes ne sont pas protégés contre la perte de tiroir, entrez ce paramètre :
+
+[listing]
+----
+serviceAllowedIndicator=forceOnWarning
+----
+Le `forceOnWarning` paramètre envoie la demande de préparation pour supprimer un composant du firmware du contrôleur et force le `set drawer serviceAllowedIndicator` commande pour continuer.
+
+[NOTE]
+====
+Ce paramètre indique que tous les disques du tiroir sont inaccessibles et peut entraîner des volumes défaillants et des restaurations complexes, notamment la nécessité de redémarrer l'hôte. Utilisez ce paramètre avec précaution.
+
+====
+
+
+== Niveau minimal de firmware
+
+7.60

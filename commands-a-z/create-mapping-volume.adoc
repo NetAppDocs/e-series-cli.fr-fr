@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/create-mapping-volume.html 
+sidebar: sidebar 
+keywords: create, volume, map 
+summary: La commande create mapping volume crée un mappage logique d’un volume vers un hôte ou un groupe d’hôtes. 
+---
+= Créer un mappage de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create mapping volume` la commande crée un mappage logique d'un volume vers un hôte ou un groupe d'hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create mapping volume=pass:quotes[_"VolumeName"_
+(host="_hostName_" | hostGroup=("_hostGroupName_"] | defaultGroup))
+logicalUnitNumber=lun
+mapWaitPeriod=mapWaitPeriodValue
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`Volume`
+ a| 
+Nom du volume pour lequel vous souhaitez créer un mappage logique. Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Nom d'un hôte auquel vous souhaitez créer un mappage logique. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom d'un groupe d'hôtes auquel vous souhaitez créer un mappage logique. Placez le nom du groupe d'hôtes entre guillemets (" "). Si vous utilisez le `defaultGroup` mot-clé, ne l'placez pas entre guillemets.
+
+
+
+ a| 
+`logicalUnitNumber`
+ a| 
+Numéro logique ou ID d'espace de noms que vous souhaitez utiliser pour mapper à un hôte spécifique. Ce paramètre affecte également l'hôte à un groupe d'hôtes.
+
+[NOTE]
+====
+Le numéro d'unité logique ou l'ID d'espace de noms que vous spécifiez ne doit pas être déjà utilisé et doit se trouver dans la plage prise en charge par le système d'exploitation hôte. Il n'y aura pas d'erreur si vous mappez le volume sur un numéro d'unité logique ou un identifiant d'espace de noms non pris en charge par l'hôte, mais l'hôte ne pourra pas accéder au volume.
+
+====
+
+
+ a| 
+`mapWaitPeriod`
+ a| 
+Bloque le mappage jusqu'à ce qu'il soit capable de terminer la commande ou qu'il se termine comme n'affecte pas l'interaction. Si aucune valeur n'est saisie, le comportement par défaut est d'échouer si le volume ne peut pas être mappé immédiatement.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.63 ajoute le paramètre mapWaitePeriod.

@@ -1,0 +1,147 @@
+---
+permalink: commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html 
+sidebar: sidebar 
+keywords: 'Specify AutoSupport HTTP(S) delivery method (for individual E2800 or E5700 arrays)' 
+summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi des messages AutoSupport au protocole HTTP(S).' 
+---
+= Spécification de la méthode de livraison AutoSupport HTTP(S) (pour les baies E2800 ou E5700 individuelles)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray autoSupport deliveryMethod` Commande configure la méthode de distribution pour l'envoi des messages AutoSupport au protocole HTTP(S).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+set storageArray autoSupport deliveryMethod={HTTP | HTTPS}
+   {direct | proxyConfigScript=pass:quotes["_proxyConfigScriptUrl_"] |
+proxyServer hostAddress=pass:quotes[_address_] portNumber=pass:quotes[_portNumber_]
+ [userName=pass:quotes["_username_"] password=pass:quotes["_password_"]]}
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Permet à l'utilisateur de spécifier la méthode de livraison de la collection AutoSupport. Les choix valides sont les suivants :
+
+* e-mail
+* HTTP
+* HTTPS
+
+
+[NOTE]
+====
+Si la méthode de messagerie est configurée, AutoSupport OnDemand et diagnostic à distance sont désactivés.
+
+====
+
+
+ a| 
+`direct`
+ a| 
+Permet à l'utilisateur de se connecter directement aux systèmes de support technique de destination à l'aide du protocole HTTP ou HTTPS.
+
+
+
+ a| 
+`proxyConfigScript`
+ a| 
+Permet à l'utilisateur de spécifier l'emplacement d'un fichier de script PAC (Proxy Auto-Configuration)
+
+
+
+ a| 
+`proxyServer`
+ a| 
+Permet à l'utilisateur de spécifier les détails du serveur proxy HTTP(S) requis pour établir la connexion avec le système de support technique de destination.
+
+
+
+ a| 
+`hostAddress`
+ a| 
+Permet à l'utilisateur de spécifier l'adresse hôte du serveur proxy. Requis si le proxyserver est utilisé.
+
+
+
+ a| 
+`portNumber`
+ a| 
+Permet à l'utilisateur de spécifier le numéro de port du serveur proxy. Requis si le proxyserver est utilisé.
+
+
+
+ a| 
+`username`
+ a| 
+Permet à l'utilisateur de spécifier le nom d'utilisateur du serveur proxy s'il est configuré.
+
+
+
+ a| 
+`password`
+ a| 
+Permet à l'utilisateur de spécifier le mot de passe du serveur proxy s'il est configuré.
+
+|===
+
+
+== Niveau minimal de micrologiciel
+
+8.40
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupport deliveryMethod=HTTP direct;"
+
+SMcli -n Array1 -c "set storageArray autoSupport deliveryMethod=HTTP
+proxyConfigScript=\"http://company.com/~username/proxy.pac\";"
+
+SMcli -n Array1 -c "set storageArray autoSupport deliveryMethod=HTTPS
+proxyServer hostAddress=10.117.12.112 portNumber=8080 userName=\"tracyt\" password=\"1234456\";"
+
+SMcli completed successfully.
+----
+
+
+== Vérification
+
+Envoyer un message de test à l'aide du `start storageArray autoSupport deliveryTest` commande pour vérifier que vos méthodes de livraison sont correctement configurées.
+
+
+
+== Niveau minimal de firmware
+
+8.40

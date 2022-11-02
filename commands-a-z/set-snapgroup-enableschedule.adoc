@@ -1,0 +1,114 @@
+---
+permalink: commands-a-z/set-snapgroup-enableschedule.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, schedule 
+summary: 'La commande set snapGroup enableSchedule définit le planning de prise d"images instantanées pour un groupe de snapshots.' 
+---
+= Définir la planification du groupe d'instantanés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snapGroup enableSchedule` commande définit la planification de la prise d'images de snapshot pour un groupe de snapshots.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+enableSchedule=(TRUE | FALSE)
+schedule (immediate | snapshotSchedule)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots pour lequel vous définissez les propriétés. Placez le nom du groupe de snapshots entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`enableSchedule`
+ a| 
+Ce paramètre permet d'activer ou de désactiver la planification d'une opération d'instantané. Pour activer la planification des snapshots, définissez ce paramètre sur `TRUE`. Pour désactiver la planification des snapshots, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Le `enableSchedule` paramètre et le `schedule` paramètre vous permet de planifier la création d'images de snapshot pour un groupe de snapshots. Ces paramètres vous permettent de programmer des instantanés tous les jours, toutes les semaines ou tous les mois (par jour ou par date). Le `enableSchedule` paramètre active ou désactive la possibilité de planifier des snapshots. Lorsque vous activez la planification, vous utilisez le `schedule` paramètre pour définir l'heure à laquelle les snapshots doivent être effectués.
+
+Cette liste explique comment utiliser les options de l' `schedule` paramètre :
+
+* `immediate` -- dès que vous entrez la commande, une image instantanée est créée et une opération de copie sur écriture commence.
+* `startDate` -- une date spécifique à laquelle vous souhaitez créer une image instantanée et effectuer une opération de copie sur écriture. Le format de saisie de la date est `MM:DD:YY` . Si vous ne fournissez pas de date de début, la date actuelle est utilisée. Voici un exemple de cette option `startDate=06:27:11`.
+* `scheduleDay` -- un jour de la semaine où vous voulez créer une image instantanée et effectuer une opération de copie sur écriture. Vous pouvez entrer ces valeurs : `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday`, et `all`. Voici un exemple de cette option `scheduleDay=wednesday`.
+* `startTime` -- l'heure d'un jour où vous voulez créer une image instantanée et commencer à effectuer une opération de copie sur écriture. Le format de saisie de l'heure est `HH:MM`, où `HH` est l'heure et `MM` est la minute après l'heure. Utilisez une horloge de 24 heures. Par exemple, 2:00 dans l'après-midi est 14:00. Voici un exemple de cette option `*startTime=14:27*`.
+*  `scheduleInterval` -- durée, en minutes, que vous souhaitez avoir au minimum entre les opérations de copie sur écriture. Vous pouvez créer un programme dans lequel des opérations de copie sur écriture se chevauchent en raison de la durée d'une opération de copie. Vous pouvez vérifier que vous avez un temps entre les opérations de copie sur écriture en utilisant cette option. La valeur maximale pour le `scheduleInterval` l'option est de 1440 minutes. Voici un exemple de cette option `*scheduleInterval=180*`.
+* `endDate` -- une date spécifique à laquelle vous souhaitez arrêter la création d'une image instantanée et mettre fin à l'opération de copie sur écriture. Le format de saisie de la date est `MM:DD:YY`. Voici un exemple de cette option `*endDate=11:26:11*`.
+* `noEndDate` -- utilisez cette option si vous ne souhaitez pas que votre opération de copie sur écriture programmée se termine Si vous décidez par la suite de mettre fin aux opérations de copie sur écriture, vous devez saisir à nouveau le `set snapGroup` et spécifiez une date de fin.
+* `timesPerDay` -- le nombre de fois que vous souhaitez que l'horaire soit exécuté dans un jour. Voici un exemple de cette option `timesPerDay=4`.
+* `timeZone` -- utilisez ce paramètre pour définir le fuseau horaire dans lequel la matrice de stockage fonctionne. Vous pouvez définir le fuseau horaire de deux manières :
++
+** `GMT±HH:MM` -- décalage du fuseau horaire par rapport à GMT. Entrez le décalage en heures et minutes. Par exemple, GMT-06:00 est le fuseau horaire central aux États-Unis.
+** `Text string` -- chaînes de texte de fuseau horaire standard. Par exemple : "America/Chicago" ou "Australia/Brisbane". Les chaînes de texte du fuseau horaire sont sensibles à la casse. Si vous saisissez une chaîne de texte incorrecte, l'heure GMT est utilisée. Placez la chaîne de texte entre guillemets.
+
+
+
+
+La chaîne de code pour la définition d'un planning est similaire aux exemples suivants :
+
+[listing]
+----
+enableSchedule=true schedule startTime=14:27
+----
+[listing]
+----
+enableSchedule=true schedule scheduleInterval=180
+----
+[listing]
+----
+enableSchedule=true schedule timeZone=GMT-06:00
+----
+[listing]
+----
+enableSchedule=true schedule timeZone="America/Chicago"
+----
+Si vous utilisez également le `scheduleInterval` le micrologiciel sélectionne l'option `timesPerDay` et le `scheduleInterval` en sélectionnant la valeur la plus basse des deux options. Le micrologiciel calcule une valeur entière pour l' `scheduleInterval` option en divisant 1440 par le `scheduleInterval` valeur d'option que vous définissez. Par exemple, 1440/180 = 8. Le micrologiciel compare ensuite le `timesPerDay` valeur entière calculée `scheduleInterval` valeur entière et utilise la valeur la plus petite.
+
+Pour supprimer une planification, utilisez le `delete volume` commande avec `schedule` paramètre. Le `delete volume` commande avec `schedule` le paramètre supprime uniquement la planification, pas le volume snapshot.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+7.86 ajoute le `scheduleDate` et le `month` option.

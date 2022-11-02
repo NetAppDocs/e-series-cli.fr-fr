@@ -1,0 +1,135 @@
+---
+permalink: commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: save, asynchronous, mirror, group, statistics 
+summary: La commande save storageArray arvmStats asynchrones cMirrorGroup enregistre les statistiques de synchronisation dans un fichier pour un ou plusieurs volumes membres dans un groupe de miroirs asynchrone. 
+---
+= Enregistrer les statistiques de groupe de miroirs asynchrones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray arvmStats asyncMirrorGroup` commande enregistre les statistiques de synchronisation dans un fichier pour un ou plusieurs volumes membres d'un groupe de miroirs asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les statistiques collectées sont uniquement disponibles pour les volumes membres du groupe miroir asynchrone dans un rôle principal sur la matrice de stockage locale.
+
+Un ensemble de données est collecté pendant le processus de synchronisation qui peut être utilisé pour évaluer le fonctionnement de la configuration du miroir. Les données sont collectées sous forme d'un ensemble de _échantillons_. Un échantillon est créé au début d'un processus de synchronisation et mis à jour régulièrement pendant le processus de synchronisation.
+
+Un exemple collecte des données jusqu'à ce que le processus de synchronisation soit terminé ou jusqu'à ce qu'une interruption du processus de synchronisation se produise, comme un transfert de propriété de volume ou un `read-write` erreur. Lorsqu'une interruption du processus de synchronisation est résolue (par exemple, le volume est transféré vers l'autre contrôleur), un nouvel échantillon est créé et mis à jour au fur et à mesure que le processus de synchronisation se poursuit.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+arvmStats file=pass:quotes["_filename_"]
+"
+[volume=pass:quotes["_volumeName_"]]
+[sampleType=(all | mostRecent | longestSyncTime | errors)]
+[recordLimit=(1-90)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe miroir asynchrone pour lequel vous enregistrez les statistiques de synchronisation. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les statistiques de synchronisation. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\asynchdata.csv"`
+
+Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous pouvez utiliser n'importe quel nom de fichier, mais vous devez utiliser le `.csv` extension.
+
+
+
+ a| 
+`volume`
+ a| 
+Ce paramètre est facultatif. Nom du volume membre spécifique dans le groupe miroir asynchrone pour lequel vous récupérez les statistiques de synchronisation. Si aucun volume n'est spécifié, les statistiques de chaque volume membre du groupe de miroirs asynchrones sont enregistrées.
+
+Si des statistiques sont collectées pour plusieurs volumes d'un groupe de miroirs asynchrone, toutes les données sont écrites dans le même fichier.
+
+Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`sampleType`
+ a| 
+Ce paramètre est facultatif. Valeur par défaut pour `sampleType` est `all`.
+
+* `all` -- les données pour les trois types d'échantillons sont collectées et écrites dans le même fichier.
+* `mostRecent` -- les statistiques sont enregistrées pour les 50 derniers échantillons de resynchronisation.
+* `longestSyncTime` -- des statistiques sont recueillies pour les 20 plus récents échantillons de resynchronisation.
+* `errors` -- les statistiques sont enregistrées pour les 20 derniers échantillons de resynchronisation échoués. Ces exemples comprennent un code d'échec.
+
+
+
+
+ a| 
+`recordLimit`
+ a| 
+Ce paramètre est facultatif. La valeur par défaut de la limite d'enregistrement est `no limit`. Le `recordLimit` doit être supérieur à 0 et inférieur ou égal à 90.
+
+|===
+
+
+== Remarques
+
+Les statistiques sont capturées pour les volumes en miroir dans le rôle principal. Les statistiques collectées incluent les données suivantes :
+
+* Heure de début de la synchronisation
+* Type de synchronisation (manuelle ou périodique)
+* Durée de synchronisation
+* Nombre d'octets envoyés
+* Durée d'écriture maximale (pour une seule écriture)
+* Durée d'écriture minimale (pour une seule écriture)
+* Débit de données de synchronisation minimum
+* Débit de données de synchronisation maximum
+* Durée totale d'écriture
+* Utilisation du référentiel (%)
+* Âge du point de récupération
+
+
+Pendant la synchronisation initiale, les échantillons de statistiques sont capturés environ toutes les 15 minutes.
+
+Les statistiques de synchronisation sont incluses dans le pack support.
+
+
+
+== Niveau minimal de firmware
+
+7.84

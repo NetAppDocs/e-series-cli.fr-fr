@@ -1,0 +1,189 @@
+---
+permalink: commands-a-z/create-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: create, asynchronous, mirror, group 
+summary: La commande create asynchrones MirrorGroup crée un nouveau groupe de miroirs asynchrone vide sur la matrice de stockage locale et la matrice de stockage distante. 
+---
+= Créer un groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create asyncMirrorGroup` la commande crée un nouveau groupe de miroirs asynchrones vide sur la matrice de stockage locale et la matrice de stockage distante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Un groupe de miroirs asynchrone est un conteneur qui peut héberger plusieurs paires mises en miroir afin qu'elles puissent être gérées comme une seule entité. Vous créez un groupe de miroirs asynchrone pour définir les paramètres de synchronisation de toutes les paires en miroir du groupe. Chaque paire en miroir dans un groupe de miroirs asynchrones partage les mêmes paramètres de synchronisation, les mêmes rôles principal et secondaire et le même mode d'écriture.
+
+Le groupe de miroirs asynchrone est associé à la baie de stockage locale et à la baie de stockage distante utilisée pour la mise en miroir. La baie de stockage locale est le côté principal du groupe de miroirs asynchrone, tandis que la matrice de stockage distante est le côté secondaire du groupe de miroirs asynchrones. Tous les volumes ajoutés au groupe de miroirs asynchrone sur la matrice de stockage locale détiennent le rôle principal dans la relation de miroir. Par la suite, tous les volumes ajoutés au groupe de miroirs asynchrone sur la baie de stockage distante occupent le rôle secondaire dans la relation miroir.
+
+Assurez-vous d'exécuter le `Create Asynchronous Mirror Group` commande sur la matrice de stockage locale. La création d'un groupe de miroirs asynchrone est initiée à partir de la baie de stockage qui contient les volumes qui détiennent le rôle principal dans la relation de miroir. Vous utilisez le `Create Asynchronous Mirror Group` commande permettant de spécifier l'identité de la matrice de stockage distante contenant les volumes qui détiennent le rôle secondaire dans la relation miroir.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create asyncMirrorGroup userLabel=pass:quotes[_"asyncMirrorGroupName"_]
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_] | remoteStorageArrayWWN=pass:quotes[_"wwID"_])
+[remotePassword=pass:quotes[_"password"_]
+interfaceType=(FC | iSCSI)
+[syncInterval=pass:quotes[_integer_](minutes | hours | days)]
+[warningSyncThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningRecoveryThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningThresholdPercent=pass:quotes[_percentValue_]]
+[autoResync=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Nom du nouveau groupe de miroirs asynchrones que vous souhaitez créer. Placez le nouveau nom de groupe de miroirs asynchrones entre guillemets (" ").
+
+Le nom doit être unique sur les matrices de stockage locales et distantes.
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Nom de la matrice de stockage distante sur laquelle vous mettez en miroir le groupe miroir asynchrone. Placez le nom de la matrice de stockage entre guillemets (" ").
+
+La matrice de stockage distante doit avoir le même type de connexion que la matrice de stockage locale.
+
+
+
+ a| 
+`remoteStorageArrayWWN`
+ a| 
+Le World Wide identifier (WWID) de la matrice de stockage distante sur laquelle vous mettez en miroir le groupe de miroirs asynchrone. Vous pouvez utiliser le WWID à la place du nom de la matrice de stockage pour identifier la matrice de stockage. Placez le WWID entre crochets (< >).
+
+La matrice de stockage distante doit avoir le même type de connexion que la matrice de stockage locale.
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Mot de passe de la matrice de stockage distante. Utilisez ce paramètre lorsque la matrice de stockage distante est protégée par mot de passe. Placez le mot de passe entre guillemets (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Spécifiez le type de connexion à utiliser : structure Fibre Channel ou interface iSCSI. (La valeur par défaut est Fibre Channel.) La matrice de stockage locale et la matrice de stockage distante doivent être connectées via une structure Fibre Channel ou une interface iSCSI appropriée.
+
+
+
+ a| 
+`syncInterval`
+ a| 
+Spécifiez la durée entre l'envoi automatique des mises à jour des données modifiées de la matrice de stockage locale vers la matrice de stockage distante. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+[NOTE]
+====
+N'ajoutez pas d'espace entre l'entier et la durée.
+
+====
+Exemple : `10minutes`
+
+
+
+ a| 
+`warningSyncThreshold`
+ a| 
+Spécifiez le temps d'attente jusqu'au déclenchement d'un avertissement pour les cas où la synchronisation de tous les volumes du groupe de miroirs asynchrones prend plus de temps que le temps défini. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+[NOTE]
+====
+N'ajoutez pas d'espace entre l'entier et la durée.
+
+====
+Exemple : `30minutes`
+
+
+
+ a| 
+`warningRecoveryThreshold`
+ a| 
+Spécifiez la durée d'attente jusqu'au déclenchement d'un avertissement lorsque la mise à jour automatique des données de l'image ponctuelle de la matrice de stockage distante est antérieure à l'heure définie. Définissez le seuil à partir de la fin de la mise à jour précédente. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+[NOTE]
+====
+Vous devez définir le seuil du point de récupération sur deux fois plus grand que le seuil de l'intervalle de synchronisation.
+
+====
+[NOTE]
+====
+N'ajoutez pas d'espace entre l'entier et la durée.
+
+====
+Exemple : `60minutes`
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Spécifiez le temps d'attente jusqu'au déclenchement d'un avertissement lorsque la capacité d'un volume de référentiel miroir atteint le pourcentage défini. Définissez le seuil par pourcentage (%) de la capacité restante.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Les paramètres de resynchronisation automatique entre les volumes primaires et les volumes secondaires d'une paire en miroir asynchrone dans un groupe de miroirs asynchrone. Ce paramètre a les valeurs suivantes :
+
+* `enabled` -- la resynchronisation automatique est activée. Vous n'avez rien à faire de plus pour resynchroniser le volume principal et le volume secondaire.
+* `disabled` -- la resynchronisation automatique est désactivée. Pour resynchroniser le volume principal et le volume secondaire, vous devez exécuter la `resume asyncMirrorGroup` commande.
+
+
+|===
+
+
+== Remarques
+
+* La fonctionnalité de mise en miroir asynchrone doit être activée sur les baies de stockage locales et distantes qui seront utilisées pour les activités de mise en miroir.
+* Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+* Les baies de stockage locales et distantes doivent être connectées via une structure Fibre Channel ou une interface iSCSI.
+* Des mots de passe sont stockés sur chaque matrice de stockage d'un domaine de gestion. Si un mot de passe n'a pas été défini précédemment, vous n'avez pas besoin d'un mot de passe. Le mot de passe peut être toute combinaison de caractères alphanumériques avec un maximum de 30 caractères. (Vous pouvez définir un mot de passe de matrice de stockage à l'aide de la `set storageArray` commande.)
+* En fonction de votre configuration, il existe un nombre maximum de groupes de miroirs asynchrones que vous pouvez créer sur une baie de stockage.
+* Des groupes de miroirs asynchrones sont créés vides et des paires mises en miroir y sont ajoutées ultérieurement. Seules les paires mises en miroir peuvent être ajoutées à un groupe de miroirs asynchrone. Chaque paire en miroir est associée à un groupe de miroirs asynchrone précis.
+* Le processus de mise en miroir asynchrone est lancé à un intervalle de synchronisation défini. Les images ponctuelles périodiques sont répliquées dans la mesure où seules les données modifiées sont copiées et non l'ensemble du volume.
+
+
+
+
+== Niveau minimal de firmware
+
+7.84

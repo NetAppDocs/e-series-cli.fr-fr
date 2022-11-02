@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/enable-storagearray-externalkeymanagement-file.html 
+sidebar: sidebar 
+keywords: enable, storage, array, external, key, management, file, command, security, disk, encryption, initial, roles, context, support 
+summary: La commande enable storageArray externalKeyManagement file permet la gestion externe des clés de sécurité pour une baie de stockage dotée de disques Full Disk Encryption et crée la clé de sécurité initiale du disque. 
+---
+= Activez la gestion externe des clés de sécurité
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `enable storageArray externalKeyManagement file` La commande permet la gestion externe des clés de sécurité pour une baie de stockage dotée de disques Full Disk Encryption et crée la clé de sécurité initiale du disque.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande ne s'applique qu'à la gestion externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+enable storageArray externalKeyManagement
+pass:quotes[file="_fileName_"]
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[saveFile=_(TRUE | FALSE)_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel la nouvelle clé de sécurité sera stockée. Placez le chemin du fichier et le nom du fichier entre guillemets (" "). Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez stocker la clé de sécurité dans un fichier externe. Placez la chaîne de caractères de la phrase de passe entre guillemets (" ").
+
+
+
+ a| 
+`saveFile`
+ a| 
+Vérifie et enregistre la clé de sécurité dans un fichier. Réglez sur `FALSE` pour ne pas enregistrer et vérifier la clé de sécurité dans un fichier. La valeur par défaut est `TRUE`.
+
+|===
+
+
+== Remarques
+
+Votre phrase de passe doit répondre aux critères suivants :
+
+* Doit comporter entre 8 et 32 caractères.
+* Doit contenir au moins une lettre majuscule.
+* Doit contenir au moins une lettre minuscule.
+* Doit contenir au moins un chiffre.
+* Doit contenir au moins un caractère non alphanumérique, par exemple @ +.
+
+
+[NOTE]
+====
+Si votre phrase de passe ne répond pas à ces critères, vous recevrez un message d'erreur.
+
+====
+
+
+== Niveau minimal de firmware
+
+8.40
+
+8.70 ajoute le `_saveFile_` paramètre.

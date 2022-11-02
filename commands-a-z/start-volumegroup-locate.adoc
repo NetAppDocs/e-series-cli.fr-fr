@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-volumegroup-locate.html 
+sidebar: sidebar 
+keywords: start, volume, group, locate 
+summary: La commande start Volume Volume Group Locate identifie les lecteurs qui sont regroupés de manière logique pour former le groupe de volumes spécifié en faisant clignoter les voyants des lecteurs. 
+---
+= Démarrer la recherche du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volumeGroup locate` la commande identifie les lecteurs qui sont regroupés de manière logique pour former le groupe de volumes spécifié en faisant clignoter les voyants des lecteurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Utilisez le `stop volumeGroup locate` commande pour éteindre les voyants lumineux des lecteurs.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] locate
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes pour lequel vous souhaitez localiser les lecteurs appartenant à ce groupe de volumes. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.16

@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/save-storagearray-autosupport-log.html 
+sidebar: sidebar 
+keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
+summary: 'La commande Save storageArray AutoSupport log permet d"afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l"état, l"historique de l"activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.' 
+---
+= Récupère un journal AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray autoSupport log` Commande permet d'afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l'état, l'historique de l'activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Cette commande permet d'afficher deux types de journaux :
+
+* Journal actuel -- affiche le journal capturé à ce moment.
+* Journal d'archivage -- permet d'afficher le journal d'un fichier archivé.
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray autoSupport log [inputArchive=n]
+file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`inputArchive`
+ a| 
+Permet de spécifier le journal AutoSupport archivé, où se trouve le fichier d'archive `n`, un entier commençant à 0.
+
+[NOTE]
+====
+Si vous omettant ce paramètre, vous sélectionnez le journal AutoSupport actuel (capturé à ce moment).
+
+====
+
+
+ a| 
+`file`
+ a| 
+Vous permet de spécifier le nom du fichier journal de transmission ASUP de sortie.
+
+[NOTE]
+====
+Ce paramètre est obligatoire.
+
+====
+|===
+
+
+=== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "save storageArray autoSupport log inputArchive=0 file=\"ASUPTransmissionLog\";"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de micrologiciel
+
+8.40

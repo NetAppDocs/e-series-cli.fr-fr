@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-ssdcache-locate.html 
+sidebar: sidebar 
+keywords: stop, ssd, cache, locate 
+summary: La commande stop ssdcache locate désactive les voyants des disques SSD qui ont été allumés par la commande start ssdcache locate. 
+---
+= Arrêt de la localisation du cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop ssdCache locate` La commande éteint les voyants des disques SSD qui ont été allumés par le `start ssdCache locate` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+stop ssdCache locate
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+7.84

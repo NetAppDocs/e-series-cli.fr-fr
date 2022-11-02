@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/set-snapgroup-mediascanenabled.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, media, scan 
+summary: La commande set snapGroup mediaScanEnabled exécute une analyse des supports sur un groupe de snapshots. 
+---
+= Définir l'analyse des supports du groupe d'instantanés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snapGroup mediaScanEnabled` commande exécute une analyse de support sur un groupe de snapshots.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+mediaScanEnabled=(TRUE | FALSE)
+redundancyCheckEnabled=(TRUE | FALSE)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots sur lequel vous souhaitez exécuter une analyse de support. Placez le nom du groupe de snapshots entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`mediaScanEnabled`
+ a| 
+Paramètre permettant d'activer ou de désactiver la recherche multimédia pour le volume. Pour activer l'analyse des supports, définissez ce paramètre sur `TRUE`. Pour désactiver la numérisation de support, définissez ce paramètre sur `FALSE`. (Si l'analyse des supports est désactivée au niveau de la matrice de stockage, ce paramètre n'a aucun effet.)
+
+
+
+ a| 
+`redundancyCheckEnabled`
+ a| 
+Paramètre permettant d'activer ou de désactiver la vérification de redondance lors d'une analyse de support. Pour activer la vérification de redondance, définissez ce paramètre sur `TRUE`. Pour désactiver la vérification de redondance, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+7.83

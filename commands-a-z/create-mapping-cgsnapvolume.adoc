@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/create-mapping-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: create, consistency, group, snapshot, volume, map 
+summary: 'La commande create mapping cgSnapVolume crée un mappage logique à partir d"un volume snapshot de groupe de cohérence vers un hôte ou un groupe d"hôtes.' 
+---
+= Créer un mappage de volume Snapshot de groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create mapping cgSnapVolume` la commande crée un mappage logique à partir d'un volume snapshot de groupe de cohérence vers un hôte ou un groupe d'hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create mapping cgSnapVolume=pass:quotes[_"snapVolumeName"_
+(host="_hostName_" | hostGroup=("_hostGroupName_" | defaultGroup))]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Nom du volume de snapshot du groupe de cohérence pour lequel vous souhaitez créer un mappage logique. Placez le nom du volume de snapshot du groupe de cohérence entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Nom d'un hôte auquel vous souhaitez créer un mappage logique. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom d'un groupe d'hôtes auquel vous souhaitez créer un mappage logique. Placez le nom du groupe d'hôtes entre guillemets (" "). Si vous utilisez le `defaultGroup` mot-clé, ne l'placez pas entre guillemets.
+
+|===
+
+
+== Remarques
+
+Un hôte est un ordinateur connecté à la matrice de stockage et accède aux volumes de la matrice de stockage via les ports d'hôte. Vous pouvez définir des mappages spécifiques à un hôte individuel. Vous pouvez également affecter l'hôte à un groupe d'hôtes qui partage l'accès à un ou plusieurs volumes.
+
+Un groupe d'hôtes est un élément topologique facultatif que vous pouvez définir si vous souhaitez désigner une collection d'hôtes partageant l'accès aux mêmes volumes. Le groupe d'hôtes est une entité logique. Définissez un groupe d'hôtes uniquement si au moins deux hôtes partagent l'accès aux mêmes volumes.
+
+
+
+== Niveau minimal de firmware
+
+7.83

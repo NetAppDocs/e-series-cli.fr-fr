@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/save-alldrives-logfile.html 
+sidebar: sidebar 
+keywords: save, drive log 
+summary: La commande Enregistrer allDrives logfile enregistre les journaux du lecteur dans un fichier. 
+---
+= Enregistrer le journal de lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save allDrives logFile` la commande enregistre les journaux du lecteur dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les données du journal des disques sont conservées par la matrice de stockage pour chaque disque.
+
+[NOTE]
+====
+N'exécutez pas cette commande à moins d'en recevoir l'instruction du support technique.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save allDrives logFile=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`*logFile*`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les journaux du lecteur. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\drive01.zip"`
+
+[NOTE]
+====
+Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier l'extension du fichier .zip lors de la saisie du nom de fichier.
+
+====
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/autoconfigure-storagearray-hotspares.html 
+sidebar: sidebar 
+keywords: autoconfigure, storage, array, hot spares, supported, roles, syntax, parameters, minimum firmware level 
+summary: La commande autoConfigure storageArray hotSpares définit et configure automatiquement les disques de secours dans une matrice de stockage. Vous pouvez exécuter cette commande à tout moment. Cette commande offre la meilleure couverture de disque de secours pour une matrice de stockage. 
+---
+= Configurer automatiquement les disques de secours de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `autoConfigure storageArray hotSpares` commande définit et configure automatiquement les disques de secours dans une matrice de stockage. Vous pouvez exécuter cette commande à tout moment. Cette commande offre la meilleure couverture de disque de secours pour une matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+autoConfigure storageArray hotSpares
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Lorsque vous exécutez le `autoconfigure storageArray hotSpares` commande, le firmware du contrôleur détermine le nombre de disques de rechange à créer en fonction du nombre et du type de disques de la baie de stockage. Pour les disques SAS, le micrologiciel du contrôleur crée un disque de secours pour la matrice de stockage et un disque de secours supplémentaire pour chaque 60 disques de la matrice de stockage.
+
+
+
+== Niveau minimal de firmware
+
+6.10

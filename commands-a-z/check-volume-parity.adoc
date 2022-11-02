@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/check-volume-parity.html 
+sidebar: sidebar 
+keywords: check, volume, parity 
+summary: La commande vérifier la parité du volume vérifie un volume pour détecter les erreurs de parité et de support, puis écrit les résultats du contrôle dans un fichier. 
+---
+= Vérifier la parité du volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `check volume parity` la commande vérifie un volume pour détecter les erreurs de parité et de support, puis écrit les résultats du contrôle dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+check volume pass:quotes[[_volumeName_]] parity
+[parityErrorFile=pass:quotes[_filename_]]
+[mediaErrorFile=pass:quotes[_filename_]]
+[priority=(highest | high | medium | low | lowest)]
+[startingLBA=pass:quotes[_LBAvalue_]]
+[endingLBA=pass:quotes[_LBAvalue_]]
+[verbose=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume spécifique pour lequel vous souhaitez vérifier la parité. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure l'identifiant entre guillemets (" ") à l'intérieur de crochets.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les informations d'erreur de parité. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\parerr.txt"`
+
+Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+
+
+ a| 
+`mediaErrorFile`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les informations d'erreur de support. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\mederr.txt"`
+
+Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+
+
+ a| 
+`priority`
+ a| 
+Priorité du contrôle de parité par rapport aux activités d'E/S de l'hôte. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.Le taux de priorité le plus faible bénéficie des performances du système, mais le contrôle de parité prend plus de temps. Le taux de priorité le plus élevé bénéficie du contrôle de parité, mais les performances du système peuvent être compromises.
+
+
+
+ a| 
+`startingLBA`
+ a| 
+Adresse du bloc logique de démarrage.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+Adresse du bloc logique de fin.
+
+
+
+ a| 
+`verbose`
+ a| 
+Paramètre permettant de capturer les détails de la progression, tels que pourcentage terminé, et d'afficher les informations au fur et à mesure que la parité du volume est en cours d'analyse. Pour capturer les détails de la progression, définissez ce paramètre sur `TRUE`. Pour empêcher la capture des détails de progression, définissez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+L'adresse de début et l'adresse de fin de bloc logique sont utiles pour des LUN ou des espaces de noms à un très grand volume. L'exécution d'un contrôle de parité du volume sur un très grand volume unique LUN ou espace de noms peut prendre longtemps. En définissant l'adresse de début et l'adresse de fin des blocs de données, vous pouvez réduire le temps nécessaire à la vérification de parité du volume.

@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: test, snmp, trap, destination 
+summary: 'La commande start snmpTrapDestination teste la connexion et l"identification du récepteur d"interruption pour une communauté ou un utilisateur SNMP (simple Network Management Protocol) spécifique. Cette commande teste la destination de l"interruption en envoyant un message d"interruption au récepteur d"interruption.' 
+---
+= Tester la destination de l'interruption SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start snmpTrapDestination` Commande teste la connexion et l'identification du récepteur d'interruption pour une communauté ou un utilisateur SNMP (simple Network Management Protocol) spécifique. Cette commande teste la destination de l'interruption en envoyant un message d'interruption au récepteur d'interruption.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start snmpTrapDestination trapReceiverIP=ipAddress
+    pass:quotes[(communityName="_communityName_" | (userName="_userName_"] [engineId=(local | engineId)]))
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+Adresse IP du gestionnaire SNMP auquel vous souhaitez envoyer des messages d'interruption.
+
+
+
+ a| 
+`communityName`
+ a| 
+Nom de la communauté SNMP pour laquelle vous voulez envoyer des messages d'interruption.
+
+
+
+ a| 
+`userName`
+ a| 
+Nom de l'utilisateur SNMP pour lequel vous voulez envoyer des messages d'interruption.
+
+
+
+ a| 
+`engineId`
+ a| 
+ID du moteur de l'utilisateur SNMP pour lequel vous voulez envoyer des messages d'interruption. L'ID du moteur est requis si plusieurs utilisateurs USM ont le même nom d'utilisateur. La valeur peut être «[.code]``local``" Pour spécifier l'agent SNMP local est l'agent faisant autorité ou une chaîne de chiffres hexadécimal pour spécifier un ID de moteur d'agent SNMP distant.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.30

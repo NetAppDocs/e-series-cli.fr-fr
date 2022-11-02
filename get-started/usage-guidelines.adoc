@@ -1,0 +1,26 @@
+---
+permalink: get-started/usage-guidelines.html 
+sidebar: sidebar 
+keywords: script command, guidelines 
+summary: Cette liste fournit des instructions pour écrire des commandes de script sur la ligne de commande. 
+---
+= Instructions de commande de script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Cette liste fournit des instructions pour écrire des commandes de script sur la ligne de commande :
+
+* Vous devez terminer toutes les commandes par un point-virgule (`;`).
+* Vous pouvez entrer plusieurs commandes sur une ligne, mais vous devez séparer chaque commande par un point-virgule (`;`).
+* Vous devez séparer chaque commande de base et ses paramètres primaires et secondaires associés par un espace.
+* Le moteur de script n'est pas sensible à la casse. Vous pouvez saisir des commandes en utilisant des lettres majuscules, des lettres minuscules ou des lettres majuscules/minuscules.
+* Ajoutez des commentaires à vos scripts pour faciliter la compréhension de l'objectif des commandes de script pour vous et les futurs utilisateurs. (Pour plus d'informations sur l'ajout de commentaires, reportez-vous à la section link:adding-comments-to-a-script-file.html["Ajout de commentaires à un fichier de script"].)
+
+
+[NOTE]
+====
+Bien que les commandes de l'interface de ligne de commande et les commandes de script ne soient pas sensibles à la casse, les étiquettes des utilisateurs (comme pour les volumes, les hôtes ou les ports hôtes) sont sensibles à la casse. Si vous essayez de mapper un objet identifié par un libellé utilisateur, vous devez entrer le libellé de l'utilisateur exactement tel qu'il est défini, ou les commandes CLI et les commandes de script échoueront.
+
+====

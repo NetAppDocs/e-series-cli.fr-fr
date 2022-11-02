@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-iserstatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, iser, baseline 
+summary: La commande reset storageArray iserStatsBaseline réinitialise la base iser à 0 pour la baie de stockage. 
+---
+= Réinitialiser la base iser des baies de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray iserStatsBaseline` Commande réinitialise la base iser à 0 pour la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, y compris aux baies E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:reset-storagearray-hostportstatisticsbaseline.adoc[Réinitialise les statistiques de base du port hôte de la baie de stockage] commande.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray iserStatsBaseline
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Cette commande ne permet pas de réinitialiser le nombre brut de disques gérés dans le matériel et le firmware. Au lieu de cela, le micrologiciel crée un instantané des valeurs de compteur actuelles et utilise ces valeurs pour signaler les différences dans les nombres lorsque les statistiques sont récupérées. Le nouveau temps de référence est appliqué aux deux contrôleurs de sorte que le nombre de contrôleurs soit synchronisé. Si un contrôleur se réinitialise sans réinitialiser l'autre contrôleur, les compteurs ne sont plus synchronisés. Le client sait que les contrôleurs ne sont pas synchronisés, car les données d'horodatage indiquées avec les statistiques ne sont pas identiques pour les deux contrôleurs.
+
+
+
+== Niveau minimal de firmware
+
+8.20
+
+8.41 cette commande est obsolète.

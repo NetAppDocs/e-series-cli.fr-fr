@@ -1,0 +1,324 @@
+---
+permalink: commands-a-z/create-diskpool.html 
+sidebar: sidebar 
+keywords: create, disk pool 
+summary: La commande create DISKPOOL crée un nouveau pool de disques en fonction des paramètres spécifiés. 
+---
+= Création d'un pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create diskPool` la commande crée un nouveau pool de disques en fonction des paramètres spécifiés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez créer le pool de disques en entrant une liste de lecteurs ou un type de lecteur que vous souhaitez utiliser pour le pool de disques.
+
+[NOTE]
+====
+Si vous entrez une liste de lecteurs, assurez-vous que tous les lecteurs ont la même capacité. Si les lecteurs n'ont pas la même capacité, chaque lecteur du pool de disques indique une capacité égale au plus petit disque.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create diskPool
+(drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1 ... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN)_]|
+driveType=(fibre | SATA | SAS | NVMe4K))
+ userLabel=pass:quotes[_"diskPoolName"_]
+[driveCount=pass:quotes[_driveCountValue_]]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[warningThreshold=(pass:quotes[_warningThresholdValue_] | default)]
+[criticalThreshold=(pass:quotes[_criticalThresholdValue_] | default)]
+[criticalPriority=(highest|high|medium|low|lowest)]
+[backgroundPriority=(highest|high|medium|low|lowest)]
+[degradedPriority=(highest|high|medium|low|lowest)]
+[securityType=(none | capable | enabled )]
+[secureDrives=(fips | fde )]
+[driveMediaType=(hdd | ssd | allMedia | unknown)]
+[dataAssurance=(none|enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drives`
+ a| 
+Les lecteurs que vous souhaitez attribuer au pool de disques que vous souhaitez créer. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau pool de disques. Placez le nom du pool de disques entre guillemets (" ").
+
+
+
+ a| 
+`driveCount`
+ a| 
+Le `driveCount` ce paramètre limite les candidats au pool de disques au nombre indiqué. Si vous utilisez ce paramètre, la valeur minimale que vous pouvez entrer pour les disques durs est 11. Pour les disques SSD, la valeur minimale que vous pouvez entrer est de 8.
+
+[NOTE]
+====
+Des pools de disques SSD avec un `driveCount` Moins de 11 sont limitées aux volumes RAID 1.
+
+====
+
+
+ a| 
+`warningThreshold`
+ a| 
+Pourcentage de capacité de stockage dont vous recevez une alerte d'avertissement indiquant que le pool de disques est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 60 signifie 60 %. Pour un fonctionnement optimal, la valeur de ce paramètre doit être inférieure à la valeur de l' `criticalThreshold` paramètre.
+
+Les valeurs valides vont de 0 à 100.
+
+La valeur par défaut est 50.
+
+Le fait de définir ce paramètre sur 0 (zéro) désactive les alertes d'avertissement.
+
+Si vous définissez cette option sur `default`, la valeur du seuil d'alerte d'avertissement est déterminée par le micrologiciel du contrôleur.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+Le pourcentage de capacité de stockage dont vous recevez une alerte critique indiquant que le pool de disques approche de plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. Pour un fonctionnement optimal, la valeur de ce paramètre doit être supérieure à la valeur de l' `warningThreshold` paramètre.
+
+Les valeurs valides vont de 0 à 100.
+
+La valeur par défaut est 85 %.
+
+Si vous définissez ce paramètre sur 0 (zéro), les alertes d'avertissement et les alertes critiques sont désactivées.
+
+Si vous définissez cette option sur `default`, la valeur du seuil d'alerte critique est déterminée par le micrologiciel du contrôleur.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+Priorité des opérations de reconstruction pour les événements critiques sur le pool de disques. Par exemple, la reconstruction d'un pool de disques après au moins deux pannes de disques.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `highest`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+Priorité des opérations en arrière-plan sur le pool de disques.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `low`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+Priorité des activités dégradées sur le pool de disques. Par exemple, la reconstruction d'un pool de disques après une panne disque.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `high`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Paramètre permettant de spécifier le niveau de sécurité lors de la création du pool de disques. Tous les volumes candidats pour le pool de disques auront le type de sécurité spécifié.
+
+Ces paramètres sont valides :
+
+* `none` -- les candidats en volume ne sont pas sécurisés.
+* `capable` -- les candidats au volume sont capables d'avoir la sécurité définie, mais la sécurité n'a pas été activée.
+* `enabled` -- la sécurité des candidats au volume est activée.
+
+
+La valeur par défaut est `none`.
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Type de disques sécurisés à utiliser dans le groupe de volumes. Ces paramètres sont valides :
+
+* `fips` -- pour utiliser uniquement des disques compatibles FIPS.
+* `fde` -- pour utiliser des disques conformes FDE.
+
+
+[NOTE]
+====
+Utilisez ce paramètre avec le `securityType` paramètre. Si vous spécifiez `none` pour le `securityType` paramètre, valeur de `secureDrives` le paramètre est ignoré car les pools de disques non sécurisés n'ont pas besoin d'avoir des types de disques sécurisés spécifiés.
+
+====
+[NOTE]
+====
+Ce paramètre est ignoré sauf si vous utilisez également le `driveCount` paramètre. Si vous spécifiez les lecteurs à utiliser pour le pool de disques au lieu de fournir un nombre, spécifiez le type approprié de lecteurs dans la liste de sélection en fonction du type de sécurité souhaité.
+
+====
+
+
+ a| 
+`driveMediaType`
+ a| 
+Type de support de lecteur que vous souhaitez utiliser pour le pool de disques.
+
+Vous devez utiliser ce paramètre lorsque vous disposez de plusieurs types de support de lecteur dans votre matrice de stockage.
+
+Ces supports de lecteur sont valides :
+
+* `hdd` -- utilisez cette option lorsque vous avez des disques durs.
+* `ssd` -- utilisez cette option lorsque vous avez des disques SSD.
+* `unknown` -- utilisez cette option si vous ne savez pas quels types de support se trouvent dans le bac d'alimentation
+* `allMedia` -- utilisez cette option lorsque vous souhaitez utiliser tous les types de support de lecteur qui se trouvent dans le bac de lecteur
+
+
+La valeur par défaut est `hdd`.
+
+[NOTE]
+====
+Le firmware du contrôleur ne fonctionne pas de même `hdd` et `ssd` les supports de lecteur se trouvent dans le même pool de disques, quel que soit le paramètre sélectionné.
+
+====
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+Paramètre permettant de spécifier si les capacités de provisionnement des ressources sont activées. Pour désactiver le provisionnement de ressources, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+
+|===
+
+
+== Remarques
+
+Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Si les paramètres spécifiés ne peuvent pas être satisfaits par l'un des lecteurs candidats disponibles, la commande échoue. Normalement, tous les lecteurs qui correspondent aux attributs de qualité de service sont renvoyés en tant que meilleurs candidats. Toutefois, si vous spécifiez une liste de lecteurs, certains des lecteurs disponibles renvoyés en tant que candidats peuvent ne pas correspondre à la qualité des attributs de service.
+
+Si vous ne spécifiez pas de valeur pour un paramètre facultatif, une valeur par défaut est attribuée.
+
+
+
+== Disques
+
+Lorsque vous utilisez le `driveType` paramètre : tous les disques non affectés de ce type sont utilisés pour créer le pool de disques. Si vous souhaitez limiter le nombre de lecteurs trouvés par le `driveType` paramètre dans le pool de disques, vous pouvez spécifier le nombre de disques à l'aide de l' `driveCount` paramètre. Vous pouvez utiliser le `driveCount` paramètre uniquement lorsque vous utilisez le `driveType` paramètre.
+
+Le `drives` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+Si vous entrez les spécifications d'un plateau de disque haute capacité mais qu'aucun plateau de lecteur n'est disponible, le logiciel de gestion du stockage renvoie un message d'erreur.
+
+
+
+== Seuils d'alerte de pool de disques
+
+Chaque pool de disques comporte deux niveaux d'alertes progressivement importants pour informer les utilisateurs lorsque la capacité de stockage du pool de disques approche pleine. Le seuil d'une alerte est un pourcentage de la capacité utilisée par rapport à la capacité totale utilisable dans le pool de disques. Les alertes sont les suivantes :
+
+* Avertissement -- c'est le premier niveau d'alerte. Ce niveau indique que la capacité utilisée dans un pool de disques est presque pleine. Lorsque le seuil de l'alerte d'avertissement est atteint, une condition d'attention requise est générée et un événement est envoyé au logiciel de gestion du stockage. Le seuil d'avertissement est remplacé par le seuil critique. Le seuil d'avertissement par défaut est de 50 %.
+* Critique -- il s'agit du niveau d'alerte le plus grave. Ce niveau indique que la capacité utilisée dans un pool de disques est presque pleine. Une fois le seuil de l'alerte critique atteint, une condition de besoin d'attention est générée et un événement est envoyé au logiciel de gestion du stockage. Le seuil d'avertissement est remplacé par le seuil critique. Le seuil par défaut de l'alerte critique est de 85 %.
+
+
+Pour être effectif, la valeur d'une alerte d'avertissement doit toujours être inférieure à la valeur d'une alerte critique. Si la valeur de l'alerte d'avertissement est identique à celle d'une alerte critique, seule l'alerte critique est envoyée.
+
+
+
+== Opérations en arrière-plan du pool de disques
+
+Les pools de disques prennent en charge les opérations d'arrière-plan suivantes :
+
+* Reconstruction
+* Format de disponibilité instantanée (IAF)
+* Format
+* Extension de capacité dynamique (DCE)
+* Extension de volume dynamique (DVE) (pour les pools de disques, la DVE n'est en fait pas une opération d'arrière-plan, mais la DVE est prise en charge comme une opération synchrone).
+
+
+Les pools de disques ne mettent pas en file d'attente des commandes d'arrière-plan Vous pouvez démarrer plusieurs commandes d'arrière-plan séquentiellement, mais le démarrage de plusieurs opérations d'arrière-plan à la fois retarde l'exécution des commandes que vous avez démarrées précédemment. Les opérations d'arrière-plan prises en charge ont les niveaux de priorité relatifs suivants :
+
+. Reconstruction
+. Format
+. IAF
+. DCE
+
+
+
+
+== Type de sécurité
+
+Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
+
+Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez créer une clé de sécurité de la matrice de stockage. Utilisez le `create storageArray securityKey` commande permettant de créer une clé de sécurité de la matrice de stockage. Ces commandes sont liées à la clé de sécurité :
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Sécuriser les disques
+
+Les disques sécurisés peuvent être des disques FDE (Full Disk Encryption) ou FIPS (Federal information Processing Standard). Utilisez le `secureDrives` paramètre pour spécifier le type de disques sécurisés à utiliser. Les valeurs que vous pouvez utiliser sont les suivantes `fips` et `fde`.
+
+
+
+== Exemple de commande
+
+[listing]
+----
+create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=capable secureDrives=fips;
+----
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.20 ajoute ces paramètres :
+
+* `trayLossProtect`
+* `drawerLossProtect`
+
+
+8.25 ajoute le `secureDrives` paramètre.
+
+8.63 ajoute le `resourceProvisioningCapable` paramètre.
+
+11.73 met à jour le `driveCount` paramètre.

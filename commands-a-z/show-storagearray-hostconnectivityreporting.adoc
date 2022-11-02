@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storagearray-hostconnectivityreporting.html 
+sidebar: sidebar 
+keywords: show, storage, array, host, connectivity, report 
+summary: 'La commande show storageArray hostConnectivtyReporting renvoie l"état d"activation de la fonctionnalité de reporting de connectivité hôte.' 
+---
+= Affiche les rapports sur la connectivité hôte de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray hostConnectivityReporting` commande renvoie l'état d'activation de la fonction de génération de rapports sur la connectivité hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray hostConnectivityReporting
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+8.42 Nouveau paramètre de commande.

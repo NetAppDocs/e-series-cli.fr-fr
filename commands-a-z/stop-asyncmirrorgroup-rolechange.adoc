@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/stop-asyncmirrorgroup-rolechange.html 
+sidebar: sidebar 
+keywords: cancel, asynchronous, mirror, group, role, reversal 
+summary: 'La commande stop asynchrones MirrorGroup rochancge annule une opération d"inversion de rôle en attente entre les groupes de miroirs asynchrones.' 
+---
+= Annuler l'inversion du rôle du groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop asyncMirrorGroup rolechange` cette commande annule une opération d'inversion de rôle en attente entre les groupes de miroirs asynchrones.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop asyncMirrorGroup [_asyncMirrorGroupName_]] rolechange
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones pour lequel ou pour lequel vous souhaitez annuler l'opération d'inversion de rôle en attente. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

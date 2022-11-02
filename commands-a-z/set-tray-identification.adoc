@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-tray-identification.html 
+sidebar: sidebar 
+keywords: set, tray, identification 
+summary: 'La commande définir le bac définit l"ID du bac d"alimentation d"un tiroir de contrôleur, d"un plateau de contrôleur ou d"un plateau de lecteur dans une matrice de stockage.' 
+---
+= Définir l'identification du bac
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set tray` Commande définit l'ID de bac d'un bac de contrôleur, un plateau de lecteur de contrôleur ou un plateau de lecteur dans une matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande n'est valide que pour les tiroirs de contrôleur, les tiroirs de disque contrôleur ou les tiroirs disques dotés d'ID de tiroir que vous pouvez définir via le micrologiciel du contrôleur. Vous ne pouvez pas utiliser cette commande pour les tiroirs de contrôleur, les tiroirs de disque contrôleur ou les tiroirs de disques dotés d'un ID de tiroir que vous avez défini à l'aide d'un commutateur.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`tray`
+ a| 
+Le numéro de série du tiroir du contrôleur, du tiroir du lecteur de contrôleur ou du bac d'alimentation pour lequel vous définissez l'ID du bac. Les numéros de série peuvent être n'importe quelle combinaison de caractères alphanumériques et n'importe quelle longueur. Placez le numéro de série entre guillemets (" ").
+
+
+
+ a| 
+`id`
+ a| 
+Valeur de l'ID du bac du contrôleur, de l'ID du bac du lecteur de contrôleur ou de l'ID du bac du lecteur. Les valeurs d'ID du bac sont `0` à `9` ou `10` à `99`.
+
+[NOTE]
+====
+Pour les boîtiers DE5600, DE1600 et DE6600, faites précéder le numéro de série de la chaîne de texte « SN » et d'un espace. Par exemple : `SN SV23802522`.
+
+====
+[NOTE]
+====
+Il n'est pas nécessaire de mettre la valeur d'ID de bac entre parenthèses.
+
+====
+[NOTE]
+====
+Valeurs de bac de `00` à `09` sont rejetés par le contrôleur. Utiliser `0` à `9` pour spécifier ces valeurs.
+
+====
+|===
+
+
+== Remarques
+
+Cette commande prenait à l'origine en charge le plateau contrôleur CE6998 Les tiroirs de contrôleurs de la série CE6998 peuvent se connecter à une variété de tiroirs de disques, y compris ceux dont les ID de bac sont définis par des commutateurs. Lors de la connexion d'un plateau de contrôleur série CE6998 aux plateaux de disques dont les ID de bac sont définis par des commutateurs, les valeurs valides pour les ID de bac du contrôleur sont `80` à `99`. Cette plage permet d'éviter les conflits avec les ID de bac utilisés pour les tiroirs de disques connectés.

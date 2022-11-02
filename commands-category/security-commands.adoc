@@ -1,0 +1,169 @@
+---
+permalink: commands-category/security-commands.html 
+sidebar: sidebar 
+keywords: security, commands, audit, log management, authentication, certificate, management, embedded, external, key 
+summary: Commandes de sécurité 
+---
+= Commandes de sécurité
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Commandes de gestion du journal d'audit
+
+link:../commands-a-z/delete-auditlog.html["Supprimer les enregistrements du journal d'audit"]
+
+link:../commands-a-z/save-auditlog.html["Enregistrer les enregistrements du journal d'audit"]
+
+link:../commands-a-z/set-auditlog.html["Définissez les paramètres du journal d'audit"]
+
+link:../commands-a-z/show-auditlog-configuration.html["Affiche la configuration du journal d'audit"]
+
+link:../commands-a-z/show-auditlog-summary.html["Affiche le résumé du journal d'audit"]
+
+
+
+== Commandes d'authentification
+
+link:../commands-a-z/getting-started-with-authentication.html["Mise en route de l'authentification"]
+
+link:../commands-a-z/create-storagearray-directoryserver.html["Créer un serveur de répertoire de matrice de stockage"]
+
+link:../commands-a-z/delete-storagearray-directoryservers.html["Supprimer le serveur de répertoire de la matrice de stockage"]
+
+link:../commands-a-z/delete-storagearray-loginbanner.html["Supprimez la bannière de connexion de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-usersession.html["Affichez la session utilisateur de la baie de stockage"]
+
+link:../commands-a-z/remove-storagearray-directoryserver.html["Supprimer le mappage de rôles de serveur de répertoire de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-loginbanner.html["Enregistrez la bannière de connexion à la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-directoryserver.html["Définir le serveur d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-directoryserver-roles.html["Définir le mappage de rôle du serveur d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-localusername.html["Définissez le mot de passe ou le symbole de l'utilisateur local de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-loginbanner.html["Définir la bannière de connexion de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-managementinterface.html["Définissez l'interface de gestion des baies de stockage"]
+
+link:../commands-a-z/set-storagearray-passwordlength.html["Définir la longueur du mot de passe de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-usersession.html["Définir la session utilisateur de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-directoryservices-summary.html["Affiche le récapitulatif des services d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/start-storagearray-directoryservices-test.html["Tester le serveur d'annuaire de la matrice de stockage"]
+
+
+
+== Commandes de gestion des certificats pour les contrôleurs E2800 et E5700
+
+link:../commands-a-z/save-controller-arraymanagementcsr.html["Générer une requête de signature de certificat de serveur Web (RSC)"]
+
+link:../commands-a-z/download-controller-arraymanagementservercertificate.html["Installez le certificat signé du serveur"]
+
+link:../commands-a-z/download-controller-cacertificate.html["Installer des certificats CA racine/intermédiaire"]
+
+link:../commands-a-z/download-controller-trustedcertificate.html["Installer des certificats CA de confiance"]
+
+link:../commands-a-z/delete-storagearray-trustedcertificate.html["Supprimer les certificats d'autorité de certification approuvés installés"]
+
+link:../commands-a-z/delete-controller-cacertificate.html["Supprimer le certificat signé installé"]
+
+link:../commands-a-z/reset-controller-arraymanagementsignedcertificate.html["Réinitialise le certificat signé installé"]
+
+link:../commands-a-z/save-controller-cacertificate.html["Récupérer les certificats CA installés"]
+
+link:../commands-a-z/save-controller-arraymanagementsignedcertificate.html["Récupère le certificat du serveur installé"]
+
+link:../commands-a-z/save-storagearray-trustedcertificate.html["Récupérer les certificats d'autorité de certification de confiance installés"]
+
+link:../commands-a-z/set-storagearray-revocationchecksettings.html["Définissez les paramètres de vérification de révocation du certificat"]
+
+link:../commands-a-z/show-storagearray-revocationchecksettings.html["Affiche les paramètres de vérification de révocation du certificat"]
+
+link:../commands-a-z/show-controller-cacertificate.html["Affiche le récapitulatif des certificats CA racine/intermédiaire installés"]
+
+link:../commands-a-z/show-storagearray-trustedcertificate-summary.html["Afficher le résumé des certificats CA approuvés installés"]
+
+link:../commands-a-z/show-controller-arraymanagementsignedcertificate-summary.html["Affiche le certificat signé"]
+
+link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Démarrer le test du serveur OCSP de révocation du certificat"]
+
+
+
+== Commandes de gestion des certificats pour EF600
+
+link:../commands-a-z/add-array-label.html["Ajouter une étiquette de tableau"]
+
+link:../commands-a-z/remove-array-label.html["Retirez l'étiquette de la matrice"]
+
+link:../commands-a-z/show-array-label.html["Afficher l'étiquette de tableau"]
+
+
+
+== Commandes de base de données
+
+link:../commands-a-z/clear-storagearray-configuration.html["Effacez la configuration de la matrice de stockage"]
+
+link:../commands-a-z/clear-storagearray-recoverymode.html["Effacer le mode de restauration de la matrice de stockage"]
+
+link:../commands-a-z/load-storagearray-dbmdatabase.html["Charger la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-dbmdatabase.html["Enregistrer la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-dbmvalidatorinfo.html["Enregistrer le fichier d'informations du validateur DBM de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Affiche la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/start-storagearray-configdbdiagnostic.html["Démarrer le diagnostic de la base de données de configuration de la matrice de stockage"]
+
+link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Arrêter le diagnostic de configuration de la matrice de stockage"]
+
+
+
+== Commandes intégrées de gestion de clés externes
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Mise en route avec la gestion externe des clés"]
+
+link:../commands-a-z/getting-started-with-internal-key-management.html["Premiers pas avec la gestion interne des clés"]
+
+link:../commands-a-z/create-storagearray-securitykey.html["Créer une clé de sécurité de la matrice de stockage"]
+
+link:../commands-a-z/disable-storagearray-externalkeymanagement-file.html["Désactivez la gestion externe des clés de sécurité"]
+
+link:../commands-a-z/enable-storagearray-externalkeymanagement-file.html["Activez la gestion externe des clés de sécurité"]
+
+link:../commands-a-z/export-storagearray-securitykey.html["Exportation de la clé de sécurité de la baie de stockage"]
+
+link:../commands-a-z/import-storagearray-securitykey-file.html["Importer la clé de sécurité de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Définissez l'identifiant de sécurité du lecteur FIPS"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Définissez les paramètres externes de gestion des clés"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Définir la clé de sécurité de la matrice de stockage"]
+
+link:../commands-a-z/start-secureerase-drive.html["Démarrer l'effacement sécurisé du disque FDE"]
+
+link:../commands-a-z/start-storagearray-externalkeymanagement-test.html["Tester la communication externe de gestion des clés"]
+
+link:../commands-a-z/validate-storagearray-securitykey.html["Validation de la clé de sécurité de la baie de stockage"]
+
+
+
+== Commandes externes de gestion des clés liées aux certificats
+
+link:../commands-a-z/save-storagearray-keymanagementclientcsr.html["Récupérer la demande CSR de gestion des clés installées"]
+
+link:../commands-a-z/download-storagearray-keymanagementcertificate.html["Installation du certificat de gestion externe des clés de la baie de stockage"]
+
+link:../commands-a-z/delete-storagearray-keymanagementcertificate.html["Supprimez le certificat de gestion externe des clés installé"]
+
+link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Récupère le certificat de gestion externe des clés installé"]

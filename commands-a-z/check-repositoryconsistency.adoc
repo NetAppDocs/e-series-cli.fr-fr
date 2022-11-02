@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/check-repositoryconsistency.html 
+sidebar: sidebar 
+keywords: check, repository, consistency 
+summary: 'La commande Check remitoryConsistency génère un rapport basé sur l"analyse des données du volume de référentiel sous-jacent d"un objet spécifié.' 
+---
+= Vérifier la cohérence du référentiel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `check repositoryConsistency` commande génère un rapport basé sur l'analyse des données du volume de référentiel sous-jacent d'un objet spécifié.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+check (snapGroup pass:quotes[[_snapGroupName_]] repositoryConsistency |
+snapVolume pass:quotes[[_snapVolumeName_]] repositoryConsistency |
+volume pass:quotes[[_volumeName_]] repositoryConsistency |
+volumeCopy target pass:quotes[[_targetName_]] repositoryConsistency |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+repositoryConsistency localVolume=pass:quotes[_"localVolumeName"_]]
+file=pass:quotes[_"filePath"_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`repositoryConsistency`
+ a| 
+Spécifie que le groupe de snapshots, le volume de snapshot, le volume ou le groupe de miroirs asynchrone (selon la spécification du paramètre correspondant) sont vérifiés pour assurer la cohérence.
+
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots sur lequel effectuer une vérification de cohérence. Placez le nom du groupe de snapshots entre crochets ([ ]). Si le nom du groupe de snapshots contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`snapVolume`
+ a| 
+Nom du volume snapshot sur lequel effectuer une vérification de cohérence. Placez le nom du volume de snapshot entre crochets ([ ]). Si le nom du volume de snapshot contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume fin sur lequel effectuer une vérification de cohérence. Placez le nom du volume fin entre crochets ([ ]). Si le nom du volume fin contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`volumeCopy`
+ a| 
+Spécifie que la cible d'une relation de copie de volume est vérifiée pour vérifier la cohérence.
+
+
+
+ a| 
+`target`
+ a| 
+Utiliser uniquement en association avec le `volumeCopy` paramètre pour spécifier le nom du volume cible de la relation de copie de volume. Si le nom du volume contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones sur lequel effectuer une vérification de cohérence. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`localVolume`
+ a| 
+À utiliser uniquement avec le `asyncMirrorGroup` paramètre pour spécifier le nom d'un volume local participant à la relation de miroir. Vous pouvez spécifier un volume local source ou destination sur une relation miroir. Placez le nom du volume local entre guillemets (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer le rapport résultant de la vérification de cohérence. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\repoConsistency.txt"` Ce paramètre doit apparaître en dernier après l'un des paramètres facultatifs.
+
+|===
+
+
+== Remarques
+
+Le rapport généré par cette commande doit être utilisé par le support technique pour analyser les problèmes.
+
+
+
+== Niveau minimal de firmware
+
+7.83

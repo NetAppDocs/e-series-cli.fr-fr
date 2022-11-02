@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/show-syncmirror-synchronizationprogress.html 
+sidebar: sidebar 
+keywords: show, synchronous, mirror, volume, synchronization, progress 
+summary: La commande show SyncMirror synchronizationProgress renvoie la progression de la synchronisation des données entre le volume primaire et le volume secondaire dans une configuration de mise en miroir synchrone. 
+---
+= Affiche la progression de la synchronisation du volume de la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show syncMirror synchronizationProgress` Commande renvoie la progression de la synchronisation des données entre le volume primaire et le volume secondaire dans une configuration de mise en miroir synchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou moniteur de stockage.
+
+
+
+== Contexte
+
+Cette commande indique la progression sous forme de pourcentage de synchronisation des données terminée.
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `*syncMirror*`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1_... _volumeNameN_]]) synchronizationProgress
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume principal de la paire symétrique distante pour laquelle vous souhaitez vérifier la progression de la synchronisation. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`volumes`
+ a| 
+Les noms du volume primaire de la paire symétrique distante pour laquelle vous souhaitez vérifier la progression de la synchronisation. Entrez les noms des volumes à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes comportent des caractères spéciaux ou ne sont composés que de chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Niveau minimal de firmware
+
+5.40

@@ -1,0 +1,67 @@
+---
+permalink: commands-a-z/set-storagearray-odxenabled.html 
+sidebar: sidebar 
+keywords: enable, disable, odx 
+summary: 'La commande Set storageArray odxEnabled (définir la matrice de stockage odxEnabled) active ou désactive Offloaded Data Transfer (ODX) pour une matrice de stockage.' 
+---
+= Activer ou désactiver ODX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray odxEnabled` La commande active ou désactive le transfert de données déchargé (ODX) pour une baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+ODX est activée sur la baie de stockage. Utilisez cette commande pour désactiver ODX si vous ne souhaitez pas exécuter ODX, ou si ODX cause des problèmes de la baie de stockage. La seule matrice de stockage affectée est la matrice de stockage sur laquelle la commande est exécutée.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray odxEnabled=(TRUE | FALSE)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`odxEnabled`
+ a| 
+Paramètre permettant d'activer ou de désactiver ODX. Pour activer ODX, définissez ce paramètre sur `TRUE`. Pour désactiver ODX, définissez ce paramètre sur `FALSE`. Par défaut, ODX est activé.
+
+|===
+
+
+== Remarques
+
+ODX fournit la possibilité de transférer des données sans opérations de lecture mise en tampon et d'écriture mise en tampon. Elle ne requiert aucune implication directe de l'hôte dans l'opération de transfert de données. Lorsque ODX n'est pas activé, les données sont lues depuis le stockage source vers l'hôte, puis écrites sur le stockage cible à partir de l'hôte. Avec ODX activé, les opérations de transfert de données sont directement gérées par l'infrastructure de stockage. Les données sont déplacées directement depuis le stockage source vers le stockage cible sans passer par l'hôte.
+
+
+
+== Niveau minimal de firmware
+
+8.20

@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/reset-storagearray-hostportstatisticsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, host, port, statistics, baseline 
+summary: La commande reset storageArray hostPortStatisticsBaseline réinitialise les statistiques de base du port hôte de la matrice de stockage. 
+---
+= Réinitialise les statistiques de base du port hôte de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray hostPortStatisticsBaseline` la commande réinitialise les statistiques de base du port hôte de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande remplace le document obsolète xref:reset-storagearray-ibstatsbaseline.adoc[Réinitialise les statistiques InfiniBand de la baie de stockage], xref:reset-storagearray-iscsistatsbaseline.adoc[Réinitialisez la ligne de base iSCSI de la baie de stockage], et xref:reset-storagearray-iserstatsbaseline.adoc[Réinitialiser la base iser des baies de stockage] commandes.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+reset storageArray hostPortStatisticsBaseline type=(ISCSI| ISER | SRP | NVMEOF)
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`type`
+ a| 
+Permet d'indiquer le type de statistiques à collecter. Les choix valides sont les suivants : `ISCSI`, `ISER`, `SRP`, et `NVMEOF`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

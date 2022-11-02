@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/create-cgsnapimage-consistencygroup.html 
+sidebar: sidebar 
+keywords: create, consistency group, snapshot image 
+summary: 'Il crée la commande cgSnapImage ConsistenGroup crée une nouvelle image snapshot pour chaque volume de base membre d"un groupe de cohérence snapshot.' 
+---
+= Créer une image Snapshot de groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create cgSnapImage consistencyGroup` la commande crée une nouvelle image snapshot pour chaque volume de base membre d'un groupe de cohérence de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create cgSnapImage consistencyGroup=pass:quotes[_"consistencyGroupName"_]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence pour lequel vous créez des images de snapshot. Placez le nom du groupe de cohérence entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+La commande entraîne l'exécution de toutes les opérations d'E/S en attente vers chaque volume de base membre du groupe de cohérence à vider et à suspendre avant de créer les images du Snapshot. Si la création de toutes les images de snapshot ne peut pas être effectuée avec succès pour tous les membres du groupe de cohérence, l'opération échoue et les nouvelles images de snapshot ne sont pas créées.
+
+Normalement, tous les membres d'un groupe de cohérence de snapshot ont le même nombre d'images de snapshot. Lorsque vous ajoutez un nouveau membre à un groupe de cohérence de snapshot, ce nouveau membre ne dispose pas des images de snapshot précédemment créées sur les membres établis du groupe de cohérence de snapshot. Il ne s'agit pas d'une condition d'erreur. Les demandes de suppression ou de restauration d'images de snapshot qui existent uniquement sur un sous-ensemble des membres du groupe de cohérence de snapshot affectent uniquement les membres pour lesquels l'image de snapshot spécifiée existe réellement.
+
+
+
+== Niveau minimal de firmware
+
+7.83

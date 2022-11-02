@@ -1,0 +1,52 @@
+---
+section: get-started
+title: Commencez
+entries:
+- title: Formatage de la commande
+  entries:
+  - title: Présentation
+    url: "/get-started/overview-format-commands.html"
+  - title: Structure CLI
+    entries:
+    - title: Structure des commandes CLI
+      url: "/get-started/structure-of-a-cli-command.html"
+    - title: Mode interactif
+      url: "/get-started/interactive-mode.html"
+    - title: Syntaxe de l'encapsuleur CLI
+      url: "/get-started/cli-command-wrapper-syntax.html"
+    - title: Télécharger les paramètres SMcli
+      url: "/get-started/downloadable-smcli-parameters.html"
+    - title: Paramètres CLI hérités
+      url: "/get-started/command-line-parameters.html"
+  - title: Structure des commandes de script
+    entries:
+    - title: Structure d'une commande de script
+      url: "/get-started/structure-of-a-script-command.html"
+    - title: Synopsis des commandes de script
+      url: "/get-started/synopsis-of-the-script-commands.html"
+    - title: Éléments de syntaxe récurrents
+      url: "/get-started/recurring-syntax-elements.html"
+  - title: Respecter les conventions de nom
+    url: "/get-started/naming-conventions.html"
+  - title: Règles de format
+    entries:
+    - title: Commandes d'interface de ligne de commandes
+      url: "/get-started/formatting-cli-commands.html"
+    - title: Commandes de script
+      url: "/get-started/formatting-rules-for-script-commands.html"
+    - title: Windows PowerShell
+      url: "/get-started/formatting-cli-commands-in-windows-powershell.html"
+  - title: Rapports détaillés sur les erreurs
+    url: "/get-started/detailed-error-reporting.html"
+  - title: Statut de sortie
+    url: "/get-started/exit-status.html"
+  - title: Ajoutez des commentaires à un fichier de script
+    url: "/get-started/adding-comments-to-a-script-file.html"
+  - title: Instructions de commande de script
+    url: "/get-started/usage-guidelines.html"
+  - title: Niveaux de compatibilité du micrologiciel
+    url: "/get-started/firmware-compatibility-levels.html"
+- title: Mode SMcli https
+  url: "/get-started/new-https-mode.html"
+- title: Migration de groupe de volumes
+  url: "/get-started/learn-about-volume-group-migration.html"

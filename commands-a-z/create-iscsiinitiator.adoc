@@ -1,0 +1,93 @@
+---
+permalink: commands-a-z/create-iscsiinitiator.html 
+sidebar: sidebar 
+keywords: create, iscsi, initiator 
+summary: La commande create iscsiInitiator crée un nouvel objet initiateur iSCSI. 
+---
+= Créer un initiateur iSCSI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create iscsiInitiator` Commande crée un objet initiateur iSCSI.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:create-initiator.adoc[Créer un initiateur] commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create iscsiInitiator iscsiName=pass:quotes[_"iscsiID"_
+userLabel="_name_"
+host="_hostName"_]
+[chapSecret=pass:quotes[_"securityKey"_]]
+----
+
+
+== Paramètres
+
+|===
+| Paramètres | Description 
+
+
+ a| 
+`iscsiName`
+ a| 
+Identifiant par défaut de l'initiateur iSCSI. Placez l'identificateur entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom à utiliser pour l'initiateur iSCSI. Placez le nom entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte dans lequel l'initiateur iSCSI est installé. Placez le nom entre guillemets (" ").
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Clé de sécurité que vous souhaitez utiliser pour authentifier une connexion homologue. Placez la clé de sécurité entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Le protocole CHAP (Challenge Handshake Authentication Protocol) est un protocole qui authentifie l'homologue d'une connexion. CHAP est basé sur les pairs partageant un _secret_. Un secret est une clé de sécurité similaire à un mot de passe.
+
+Utilisez le `chapSecret` paramètre pour configurer les clés de sécurité des initiateurs qui exigent une authentification mutuelle.
+
+
+
+== Niveau minimal de firmware
+
+7.10
+
+8.41 cette commande est obsolète.

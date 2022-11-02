@@ -1,0 +1,519 @@
+---
+permalink: whats-new.html 
+sidebar: sidebar 
+keywords: 'what"s new' 
+summary: Cette rubrique répertorie les modifications apportées aux dernières versions de SANtricity System Manager de la commande CLI et des commandes script. 
+---
+= Quoi de neuf
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette rubrique répertorie les modifications apportées aux dernières versions de SANtricity System Manager de la commande CLI et des commandes script.
+
+[NOTE]
+====
+Lors de l'émission de commandes SMcli à l'invite de commande, vous devez entrer une barre oblique inverse supplémentaire (`\`) Caractère comme caractère d'échappement dans le chemin d'accès d'un fichier d'entrée ou de sortie lors de l'utilisation du système d'exploitation Windows. La barre oblique inverse supplémentaire (`\`) Doit être inclus lors de l'utilisation de SMcli en mode sécurisé https, en fournissant l'option -u pour spécifier un utilisateur de gestion d'accès basé sur des rôles. Exemple : `C:\\dir\\subdir\\filename`
+
+====
+[NOTE]
+====
+Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous ne pouvez pas effectuer la mise à niveau vers la dernière version d'SANtricity par le biais de l'interface de ligne de commande héritée. Les mises à niveau de SANtricity 11.52 vers des versions ultérieures peuvent uniquement être effectuées via SMcli.
+
+====
+
+
+== SANtricity 11.70.4
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.4.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./get-started/downloadable-smcli-parameters.adoc[Télécharger les paramètres de ligne de commande SMcli]
+ a| 
+Ajouté `-t` et `-T` description des paramètres des jetons d'accès pour l'authentification multifactorielle.
+
+|===
+
+
+== SANtricity 11.70.3
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.3.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/start-diskpool-resourceprovisioning.adoc[Démarrer le provisionnement de ressources de pool de disques]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/start-volumegroup-resourceprovisioning.adoc[Démarrer l'approvisionnement des ressources du groupe de volumes]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/start-diskpool-fullprovisioning.adoc[Démarrage du provisionnement complet du pool de disques]
+ a| 
+Mise à jour `disableResourceProvisioning` description du paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/start-volumegroup-fullprovisioning.adoc[Démarrer le provisionnement complet du groupe de volumes]
+ a| 
+Mise à jour `disableResourceProvisioning` description du paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/recreate-storagearray-securitykey.html[Recréez la clé de sécurité externe]
+ a| 
+Ajouté `deleteOldKey` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/create-diskpool.html[Création d'un pool de disques]
+ a| 
+Mise à jour `driveCount` description du paramètre.
+
+|===
+
+
+== SANtricity 11.70.2
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.2.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/create-snmpuser-username.adoc[Enregistrer l'utilisateur SNMPv3 USM]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/set-snmpuser-username.adoc[Mettre à jour l'utilisateur SNMPv3 USM]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/show-allsnmpusers.adoc[Afficher l'utilisateur SNMPv3 USM]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/delete-snmpuser-username.adoc[Annuler l'inscription de l'utilisateur SNMPv3 USM]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/create-snmptrapdestination.adoc[Enregistrer la destination d'interruption SNMP]
+ a| 
+Ajouté `userName` et `engineid` paramètres.
+
+
+
+ a| 
+xref:./commands-a-z/set-snmptrapdestination-trapreceiverip.adoc[Mettre à jour la destination du trap SNMP]
+ a| 
+Ajouté `userName` et `engineid` paramètres.
+
+
+
+ a| 
+xref:./commands-a-z/start-snmptrapdestination.adoc[Tester la destination de l'interruption SNMP]
+ a| 
+Ajouté `userName` et `engineid` paramètres.
+
+|===
+
+
+== SANtricity 11.70.1
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.1.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/start-drive-erase.adoc[Commencez à effacer le lecteur]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/import-storagearray-securitykey-file.adoc[Importer la clé de sécurité de la matrice de stockage]
+ a| 
+Ajouté `forceOverwrite` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/set-controller-hostport.adoc[Définissez les propriétés du port hôte du contrôleur]
+ a| 
+Ajouté `fecMode` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/show-syslog-summary.adoc[Affiche la configuration syslog]
+ a| 
+Ajouté `syslogFormat` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/set-syslog.adoc[Configurer les paramètres syslog]
+ a| 
+Ajouté `syslogFormat` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/set-emailalert.adoc[Configurez les paramètres d'alerte par e-mail]
+ a| 
+Ajouté `serverEncryption`, `serverPort`, `serverUsername`, et `serverPassword` paramètres.
+
+
+
+ a| 
+xref:./commands-a-z/show-emailalert-summary.adoc[Affiche la configuration des alertes par e-mail]
+ a| 
+Ajouté `SMTP` chiffrement, port et données des paramètres d'identification.
+
+
+
+ a| 
+xref:./commands-a-z/recover-volume.adoc[Récupérer un volume RAID]
+ a| 
+Ajouté `blockSize` paramètre.
+
+|===
+
+
+== SANtricity 11.70
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/download-storagearray-firmware.adoc[Téléchargez le micrologiciel de la matrice de stockage/NVSRAM]
+ a| 
+Ajouté `healthCheckNeedsAttnOverride` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/create-volume-diskpool.adoc[Créez le volume dans le pool de disques]
+ a| 
+Ajouté `raidLevel` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/enable-storagearray-externalkeymanagement-file.adoc[Activez la gestion externe des clés de sécurité]
+ a| 
+Ajouté `saveFile` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/disable-storagearray-externalkeymanagement-file.adoc[Désactivez la gestion externe des clés de sécurité]
+ a| 
+Ajouté `saveFile` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/recover-volume.adoc[Récupérer un volume RAID]
+ a| 
+Ajouté `hostUnmapEnabled` paramètre.
+
+|===
+
+
+== SANtricity 11.63
+
+Les tableaux suivants répertorient les modifications apportées à l'interface de ligne de commande et aux commandes de script pour la version 11.63.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/start-storagearray-autosupport-manualdispatch.adoc[Démarrer l'intervention manuelle du AutoSupport de la baie de stockage]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/start-volumegroup-fullprovisioning.adoc[Démarrer le provisionnement complet du groupe de volumes]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/start-diskpool-fullprovisioning.adoc[Démarrage du provisionnement complet du pool de disques]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/repair-data-parity.adoc[Réparer la parité des données]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/set-storagearray-resourceprovisionedvolumes.adoc[Définir les volumes provisionnés des ressources de la baie de stockage]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/create-mapping-volume.adoc[Créer un mappage de volume]
+ a| 
+Ajouté `mapWaitPeriod` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/show-storagearray.adoc[Afficher la matrice de stockage]
+ a| 
+Ajouté `Resource-Provisioned Volumes` entrée sous le `profile` résultats des paramètres.
+
+
+
+ a| 
+xref:./commands-a-z/create-diskpool.adoc[Création d'un pool de disques]
+ a| 
+Ajouté `resourceProvisioningCapable` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/create-volumegroup.adoc[Créer un groupe de volumes]
+ a| 
+Ajouté `resourceProvisioningCapable` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/show-volumegroup.adoc[Afficher le groupe de volumes]
+ a| 
+Ajouté `resource-provisioned` informations dans les résultats de la commande.
+
+
+
+ a| 
+xref:./commands-a-z/create-raid-volume-automatic-drive-select.adoc[Créer un volume RAID (sélection automatique du lecteur)]
+ a| 
+Ajouté `resourceProvisioningCapable` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/create-raid-volume-manual-drive-select.adoc[Créer un volume RAID (sélection manuelle du lecteur)]
+ a| 
+Ajouté `resourceProvisioningCapable` paramètre.
+
+
+
+ a| 
+xref:./commands-a-z/show-diskpool.adoc[Afficher le pool de disques]
+ a| 
+Ajouté `resource-provisioned` informations dans les résultats de la commande.
+
+|===
+
+
+== SANtricity 11.62
+
+Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.62.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/set-controller-hostport.adoc[Définissez les propriétés du port hôte du contrôleur]
+ a| 
+Ajouté `Physical` et `Virtual` valeurs pour `host Port` paramètre.
+
+|===
+
+
+== SANtricity 11.61 et version antérieure
+
+* Ajout de la plateforme EF600 en tant que baie prise en charge pour les commandes applicables
+
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./commands-a-z/save-storagearray-supportdata.adoc[Enregistrer les données de prise en charge de la matrice de stockage]
+ a| 
+Ajouté `object-bundle.json` type de données.
+
+
+
+ a| 
+xref:./commands-a-z/show-alldrives.adoc[Afficher le lecteur]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/activate-synchronous-mirroring.adoc[Activer la mise en miroir synchrone]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/recreate-storagearray-mirrorrepository.adoc[Recréez le volume du référentiel de mise en miroir synchrone]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/create-raid-volume-automatic-drive-select.adoc[Créer un volume RAID (sélection automatique du lecteur)]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/show-storagearray-autoconfiguration.adoc[Affiche la configuration automatique de la matrice de stockage]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/autoconfigure-storagearray.adoc[Configurer automatiquement la matrice de stockage]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/create-diskpool.adoc[Création d'un pool de disques]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/create-volumegroup.adoc[Créer un groupe de volumes]
+ a| 
+Ajout de la compatibilité NVMe4K.
+
+
+
+ a| 
+xref:./commands-a-z/save-storagearray-autoloadbalancestatistics-file.adoc[Enregistrer les statistiques d'équilibrage de charge automatique]
+ a| 
+Ajout de la remarque « Drive Lost Primary Path »
+
+
+
+ a| 
+xref:./commands-a-z/set-storagearray-autoloadbalancingenable.adoc[Définissez la matrice de stockage pour activer ou désactiver l'équilibrage automatique de la charge]
+ a| 
+Ajout de la remarque « Drive Lost Primary Path »
+
+
+
+ a| 
+xref:./commands-a-z/add-certificate-from-array.adoc[Ajouter un certificat à partir de la matrice]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/add-certificate-from-file.adoc[Ajouter un certificat à partir du fichier]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/delete-certificates.adoc[Supprimer des certificats]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/show-certificates.adoc[Afficher les certificats]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/add-array-label.adoc[Ajouter une étiquette de tableau]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/remove-array-label.adoc[Retirez l'étiquette de la matrice]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+xref:./commands-a-z/show-array-label.adoc[Afficher l'étiquette de tableau]
+ a| 
+Commande ajoutée
+
+|===

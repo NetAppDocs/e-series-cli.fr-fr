@@ -1,0 +1,153 @@
+---
+permalink: commands-a-z/save-controller-arraymanagementcsr.html 
+sidebar: sidebar 
+keywords: generate, web server, certificate, sign, request, csr 
+summary: 'La commande save Controller arrayManagementTM génère une requête de signature de certificat (CSR) pour le contrôleur.' 
+---
+= Générer une requête de signature de certificat de serveur Web (RSC)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save controller arrayManagementCSR` Commande génère une requête de signature de certificat (RSC) pour le contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+La RSC doit être signée par une autorité de certification. Le certificat signé qui en résulte est installé sur le serveur Web du contrôleur afin que les navigateurs puissent faire automatiquement confiance au serveur Web du contrôleur lors de la tentative de gestion de la baie. Effectuer cette action pour chaque contrôleur.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+save controller [(a|b)] arrayManagementCSR
+     commonName=pass:quotes["_ipOrDnsName_"]
+     [alternateIPAddresses=pass:quotes[(_ipvX1_..._ipvXN_)]]
+     [alternateDnsNames=pass:quotes[("_dnsName1_"..."_dnsNameN_")]]
+     organization=pass:quotes["_organizationName_"]
+     [organizationalUnit=pass:quotes["_organizationalUnitName_"]]
+     locality=pass:quotes["_cityOrLocality_"]
+     [stateProvince=pass:quotes["_stateOrRegion_"]]
+     country=pass:quotes["_string_"]
+     file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Permet de spécifier le contrôleur pour lequel vous souhaitez créer la RSC. Des identifiants de contrôleur valides sont a ou b, où a est le contrôleur dans le slot A, et b le contrôleur dans le slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`commonName`
+ a| 
+Permet de spécifier l'adresse IP ou le nom DNS du contrôleur. Cela doit correspondre exactement à ce qui sera saisi dans le navigateur pour accéder à System Manager (n'inclut pas http:// ni https://) ou il y aura une erreur de non-concordance de nom.
+
+
+
+ a| 
+`alternateIPAddresses`
+ a| 
+Permet de spécifier des adresses IP ou des alias supplémentaires pour le contrôleur. Placez toutes les adresses IP entre parenthèses. Si vous saisissez plusieurs adresses IP, séparez-les par un espace.
+
+
+
+ a| 
+`alternateDnsNames`
+ a| 
+Permet de spécifier des noms DNS supplémentaires pour le contrôleur. Placez tous les noms DNS entre parenthèses. Si vous saisissez plusieurs noms, séparez-les par un espace.
+
+
+
+ a| 
+`organization`
+ a| 
+Permet de spécifier le nom légal complet de l'entreprise auquel appartient la baie de stockage. N'abusez pas de l'abréviation et n'incluez pas de suffixes tels que Inc, Corp ou LLC.
+
+
+
+ a| 
+`organizationalUnit`
+ a| 
+Permet à l'utilisateur de spécifier la division de l'organisation qui gère le certificat.
+
+
+
+ a| 
+`locality`
+ a| 
+Permet de spécifier la ville ou la localité où la matrice de stockage est située.
+
+
+
+ a| 
+`stateProvince`
+ a| 
+Permet de spécifier l'état ou la région où la matrice de stockage est située. Ceci ne doit pas être abrégé.
+
+
+
+ a| 
+`country`
+ a| 
+Permet de spécifier le code ISO (International Organization for Standardization) à deux chiffres de votre pays, tel que les États-Unis.
+
+
+
+ a| 
+`file`
+ a| 
+Permet de spécifier le fichier pour lequel enregistrer le fichier CSR du contrôleur.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "save controller [a] arrayManagementCSR
+   commonName="ictd0702s05c01-a.ict.englab.xyz.com"
+   alternateIPAddresses=(10.113.174.190 10.113.174.191)
+   alternateDnsNames=("ictd0702s05c01-b.ict.englab.xyz.com")
+   organization="Company"
+   locality="Wichita"
+   stateProvince="Kansas"
+   country="US"
+   file="C:\storage_array_csr.csr";"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

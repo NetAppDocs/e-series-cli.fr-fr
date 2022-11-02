@@ -1,0 +1,859 @@
+---
+permalink: commands-category/cli-commands.html 
+sidebar: sidebar 
+keywords: cli commands, synchronous, asynchronous, certificate, autoconfigure, storage 
+summary: 'Commandes CLI (liste alphabétique)' 
+---
+= Commandes CLI (liste alphabétique)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
+
+link:../commands-a-z/activate-storagearray-firmware.html["Activer le micrologiciel de la matrice de stockage"]
+
+link:../commands-a-z/activate-synchronous-mirroring.html["Activer la mise en miroir synchrone"]
+
+link:../commands-a-z/add-array-label.html["Ajouter une étiquette de tableau"]
+
+link:../commands-a-z/add-certificate-from-array.html["Ajouter un certificat à partir de la matrice"]
+
+link:../commands-a-z/add-certificate-from-file.html["Ajouter un certificat à partir du fichier"]
+
+link:../commands-a-z/add-drives-to-ssd-cache.html["Ajout de disques à SSD cache"]
+
+link:../commands-a-z/set-consistencygroup-addcgmembervolume.html["Ajoutez un membre au groupe de cohérence"]
+
+link:../commands-a-z/add-volume-asyncmirrorgroup.html["Ajout de volume à un groupe de miroirs asynchrone"]
+
+link:../commands-a-z/autoconfigure-storagearray.html["Configurer automatiquement la matrice de stockage"]
+
+link:../commands-a-z/autoconfigure-storagearray-hotspares.html["Configurer automatiquement les disques de secours de la baie de stockage"]
+
+link:../commands-a-z/stop-asyncmirrorgroup-rolechange.html["Annuler l'inversion du rôle du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/smcli-autosupportlog.html["Capturez ou affichez un journal AutoSupport"]
+
+link:../commands-a-z/change-ssd-cache-application-type.html["Changer le type d'application SSD cache"]
+
+link:../commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html["Vérifiez la cohérence du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/check-repositoryconsistency.html["Vérifier la cohérence du référentiel"]
+
+link:../commands-a-z/check-storagearray-connectivity.html["Vérifier la connectivité de la baie de stockage"]
+
+link:../commands-a-z/check-syncmirror.html["Vérifiez l'état de la mise en miroir synchrone"]
+
+link:../commands-a-z/check-volume-parity.html["Vérifier la parité du volume"]
+
+link:../commands-a-z/clear-asyncmirrorfault.html["Effacer la panne de mise en miroir asynchrone"]
+
+link:../commands-a-z/clear-alldrivechannels-stats.html["Effacer les statistiques du canal de lecteur"]
+
+link:../commands-a-z/clear-emailalert-configuration.html["Effacez la configuration des alertes par e-mail"]
+
+link:../commands-a-z/clear-storagearray-configuration.html["Effacez la configuration de la matrice de stockage"]
+
+link:../commands-a-z/clear-storagearray-eventlog.html["Effacer le journal des événements de la matrice de stockage"]
+
+link:../commands-a-z/clear-storagearray-firmwarependingarea.html["Effacez la zone en attente du micrologiciel de la matrice de stockage"]
+
+link:../commands-a-z/clear-storagearray-recoverymode.html["Effacer le mode de restauration de la matrice de stockage"]
+
+link:../commands-a-z/clear-syslog-configuration.html["Effacer la configuration syslog"]
+
+link:../commands-a-z/clear-volume-reservations.html["Effacer les réservations de volume"]
+
+link:../commands-a-z/clear-volume-unreadablesectors.html["Effacer les secteurs illisibles du volume"]
+
+link:../commands-a-z/set-emailalert.html["Configurez les paramètres d'alerte par e-mail"]
+
+link:../commands-a-z/set-syslog.html["Configurer les paramètres syslog"]
+
+link:../commands-a-z/create-asyncmirrorgroup.html["Créer un groupe de miroirs asynchrone"]
+
+link:../commands-a-z/create-consistencygroup.html["Créer un groupe de cohérence"]
+
+link:../commands-a-z/create-cgsnapimage-consistencygroup.html["Créer une image Snapshot de groupe de cohérence"]
+
+link:../commands-a-z/create-cgsnapvolume.html["Créer un volume Snapshot de groupe de cohérence"]
+
+link:../commands-a-z/create-mapping-cgsnapvolume.html["Créer un mappage de volume Snapshot de groupe de cohérence"]
+
+link:../commands-a-z/create-diskpool.html["Création d'un pool de disques"]
+
+link:../commands-a-z/create-host.html["Créer un hôte"]
+
+link:../commands-a-z/create-hostgroup.html["Créer un groupe d'hôtes"]
+
+link:../commands-a-z/create-hostport.html["Créer un port hôte"]
+
+link:../commands-a-z/create-initiator.html["Créer un initiateur"]
+
+link:../commands-a-z/create-iscsiinitiator.html["Créer un initiateur iSCSI"]
+
+link:../commands-a-z/create-raid-volume-automatic-drive-select.html["Créer un volume RAID (sélection automatique du lecteur)"]
+
+link:../commands-a-z/create-raid-volume-free-extent-based-select.html["Création d'un volume RAID (sélection basée sur une extension gratuite)"]
+
+link:../commands-a-z/create-raid-volume-manual-drive-select.html["Créer un volume RAID (sélection manuelle du lecteur)"]
+
+link:../commands-a-z/create-read-only-snapshot-volume.html["Créer un volume Snapshot en lecture seule"]
+
+link:../commands-a-z/create-snapgroup.html["Créer un groupe de snapshots"]
+
+link:../commands-a-z/create-snapimage.html["Créer une image snapshot"]
+
+link:../commands-a-z/create-snapshot-volume.html["Créer un volume snapshot"]
+
+link:../commands-a-z/create-ssdcache.html["Créez un cache SSD"]
+
+link:../commands-a-z/create-storagearray-directoryserver.html["Créer un serveur de répertoire de matrice de stockage"]
+
+link:../commands-a-z/create-storagearray-securitykey.html["Créer une clé de sécurité de la matrice de stockage"]
+
+link:../commands-a-z/create-storagearray-syslog.html["Créer une configuration syslog de matrice de stockage"]
+
+link:../commands-a-z/create-syncmirror.html["Création d'une mise en miroir synchrone"]
+
+link:../commands-a-z/create-volumecopy.html["Créer une copie de volume"]
+
+link:../commands-a-z/create-volumegroup.html["Créer un groupe de volumes"]
+
+link:../commands-a-z/create-mapping-volume.html["Créer un mappage de volume"]
+
+link:../commands-a-z/create-volume-diskpool.html["Créez le volume dans le pool de disques"]
+
+link:../commands-a-z/deactivate-storagearray.html["Désactiver la mise en miroir asynchrone"]
+
+link:../commands-a-z/deactivate-storagearray-feature.html["Désactiver la mise en miroir synchrone"]
+
+link:../commands-a-z/delete-asyncmirrorgroup.html["Supprimer le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/delete-auditlog.html["Supprimer les enregistrements du journal d'audit"]
+
+link:../commands-a-z/delete-certificates.html["Supprimer des certificats"]
+
+link:../commands-a-z/delete-consistencygroup.html["Supprimer le groupe de cohérence"]
+
+link:../commands-a-z/delete-cgsnapimage-consistencygroup.html["Supprimez l'image Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/delete-sgsnapvolume.html["Supprimez le volume Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/delete-diskpool.html["Supprimer le pool de disques"]
+
+link:../commands-a-z/delete-emailalert.html["Supprimer le destinataire de l'alerte par e-mail"]
+
+link:../commands-a-z/delete-host.html["Supprimer l'hôte"]
+
+link:../commands-a-z/delete-hostgroup.html["Supprimer le groupe d'hôtes"]
+
+link:../commands-a-z/delete-hostport.html["Supprimer le port hôte"]
+
+link:../commands-a-z/delete-initiator.html["Supprimer l'initiateur"]
+
+link:../commands-a-z/delete-iscsiinitiator.html["Supprimer l'initiateur iSCSI"]
+
+link:../commands-a-z/delete-snapgroup.html["Supprimer le groupe d'instantanés"]
+
+link:../commands-a-z/delete-snapimage.html["Supprimer l'image snapshot"]
+
+link:../commands-a-z/delete-snapvolume.html["Supprimez le volume snapshot"]
+
+link:../commands-a-z/delete-ssdcache.html["Supprime le cache SSD"]
+
+link:../commands-a-z/delete-storagearray-directoryservers.html["Supprimer le serveur de répertoire de la matrice de stockage"]
+
+link:../commands-a-z/delete-storagearray-loginbanner.html["Supprimez la bannière de connexion de la matrice de stockage"]
+
+link:../commands-a-z/delete-storagearray-syslog.html["Supprimer la configuration syslog de la baie de stockage"]
+
+link:../commands-a-z/delete-syslog.html["Supprimer le serveur syslog"]
+
+link:../commands-a-z/delete-volume.html["Supprimer le volume"]
+
+link:../commands-a-z/delete-volume-from-disk-pool.html["Supprimer le volume du pool de disques"]
+
+link:../commands-a-z/delete-volumegroup.html["Supprimer le groupe de volumes"]
+
+link:../commands-a-z/diagnose-controller.html["Diagnostiquer le contrôleur"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Diagnostiquer le câble hôte iSCSI du contrôleur"]
+
+link:../commands-a-z/diagnose-syncmirror.html["Diagnostiquez la mise en miroir synchrone"]
+
+link:../commands-a-z/disable-storagearray-externalkeymanagement-file.html["Désactivez la gestion externe des clés de sécurité"]
+
+link:../commands-a-z/disable-storagearray.html["Désactiver la fonction de matrice de stockage"]
+
+link:../commands-a-z/smcli-autosupportconfig-show.html["Afficher les paramètres de collection de bundle AutoSupport"]
+
+link:../commands-a-z/smcli-autosupportschedule-show.html["Afficher le programme de collecte des messages AutoSupport"]
+
+link:../commands-a-z/show-storagearray-syslog.html["Affiche la configuration syslog de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-usersession.html["Affichez la session utilisateur de la baie de stockage"]
+
+link:../commands-a-z/download-drive-firmware.html["Téléchargez le micrologiciel du lecteur"]
+
+link:../commands-a-z/download-tray-firmware-file.html["Téléchargez le micrologiciel de la carte environnementale"]
+
+link:../commands-a-z/download-storagearray-drivefirmware-file.html["Téléchargez le micrologiciel du lecteur de la matrice de stockage"]
+
+link:../commands-a-z/download-storagearray-firmware.html["Téléchargez le micrologiciel de la matrice de stockage/NVSRAM"]
+
+link:../commands-a-z/download-storagearray-nvsram.html["Téléchargez la NVSRAM de la baie de stockage"]
+
+link:../commands-a-z/download-tray-configurationsettings.html["Téléchargez les paramètres de configuration du bac"]
+
+link:../commands-a-z/enable-controller-datatransfer.html["Activer le transfert des données du contrôleur"]
+
+link:../commands-a-z/enable-diskpool-security.html["Activer la sécurité du pool de disques"]
+
+link:../commands-a-z/enable-storagearray-externalkeymanagement-file.html["Activez la gestion externe des clés de sécurité"]
+
+link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Activer ou désactiver AutoSupport (toutes les baies individuelles)"]
+
+link:../commands-a-z/smcli-enable-autosupportfeature.html["Activer ou désactiver AutoSupport au niveau du domaine de gestion EMW..."]
+
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Activation ou désactivation de la fenêtre de maintenance AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/set-storagearray-hostconnectivityreporting.html["Activation ou désactivation des rapports sur la connectivité des hôtes"]
+
+link:../commands-a-z/set-storagearray-odxenabled.html["Activer ou désactiver ODX"]
+
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Activez ou désactivez la fonctionnalité AutoSupport OnDemand (pour les baies E2800 ou E5700 individuelles)."]
+
+link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Activez ou désactivez la fonctionnalité AutoSupport OnDemand sur l'EMW..."]
+
+link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Activez ou désactivez la fonctionnalité de diagnostic à distance AutoSupport OnDemand à l'adresse suivante :"]
+
+link:../commands-a-z/set-storagearray-autosupportremotediag.html["Activation ou désactivation de la fonctionnalité de diagnostic à distance AutoSupport (pour des baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/set-storagearray-vaaienabled.html["Activer ou désactiver VAAI"]
+
+link:../commands-a-z/enable-storagearray-feature-file.html["Activer la fonctionnalité de la baie de stockage"]
+
+link:../commands-a-z/enable-volumegroup-security.html["Activez la sécurité du groupe de volumes"]
+
+link:../commands-a-z/establish-asyncmirror-volume.html["Établir une paire en miroir asynchrone"]
+
+link:../commands-a-z/export-storagearray-securitykey.html["Exportation de la clé de sécurité de la baie de stockage"]
+
+link:../commands-a-z/save-storagearray-keymanagementclientcsr.html["Générer une requête de signature de certificat de gestion des clés (CSR)"]
+
+link:../commands-a-z/save-controller-arraymanagementcsr.html["Générer une requête de signature de certificat de serveur Web (RSC)"]
+
+link:../commands-a-z/import-storagearray-securitykey-file.html["Importer la clé de sécurité de la matrice de stockage"]
+
+link:../commands-a-z/start-increasevolumecapacity-volume.html["Augmenter la capacité du volume dans le pool de disques ou le groupe de volumes..."]
+
+link:../commands-a-z/start-volume-initialize.html["Initialiser le volume fin"]
+
+link:../commands-a-z/download-controller-cacertificate.html["Installer des certificats CA racine/intermédiaire"]
+
+link:../commands-a-z/download-controller-arraymanagementservercertificate.html["Installez le certificat signé du serveur"]
+
+link:../commands-a-z/download-storagearray-keymanagementcertificate.html["Installation du certificat de gestion externe des clés de la baie de stockage"]
+
+link:../commands-a-z/download-controller-trustedcertificate.html["Installer des certificats CA de confiance"]
+
+link:../commands-a-z/load-storagearray-dbmdatabase.html["Charger la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/recopy-volumecopy-target.html["Recopier la copie de volume"]
+
+link:../commands-a-z/recover-disabled-driveports.html["Récupérer les ports de disque désactivés"]
+
+link:../commands-a-z/recover-volume.html["Récupérer un volume RAID"]
+
+link:../commands-a-z/recover-sasport-miswire.html["Récupération du câble défectueux du port SAS"]
+
+link:../commands-a-z/recreate-storagearray-securitykey.adocV879933["Recréez la clé de sécurité externe"]
+
+link:../commands-a-z/recreate-storagearray-mirrorrepository.html["Recréez le volume du référentiel de mise en miroir synchrone"]
+
+link:../commands-a-z/reduce-disk-pool-capacity.html["Réduire la capacité du pool de disques"]
+
+link:../commands-a-z/create-snmpcommunity.html["Enregistrer la communauté SNMP"]
+
+link:../commands-a-z/create-snmptrapdestination.html["Enregistrer la destination d'interruption SNMP"]
+
+link:../commands-a-z/remove-array-label.html["Retirez l'étiquette de la matrice"]
+
+link:../commands-a-z/remove-drives-from-ssd-cache.html["Retirez les disques du cache SSD"]
+
+link:../commands-a-z/remove-asyncmirrorgroup.html["Supprime la paire en miroir asynchrone incomplète du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/delete-storagearray-trustedcertificate.html["Supprimer les certificats d'autorité de certification approuvés installés"]
+
+link:../commands-a-z/delete-storagearray-keymanagementcertificate.html["Supprimez le certificat de gestion externe des clés installé"]
+
+link:../commands-a-z/delete-controller-cacertificate.html["Supprimer les certificats CA racine/intermédiaire installés"]
+
+link:../commands-a-z/remove-member-volume-from-consistency-group.html["Supprimez le volume membre du groupe de cohérence"]
+
+link:../commands-a-z/remove-storagearray-directoryserver.html["Supprimer le mappage de rôles de serveur de répertoire de la matrice de stockage"]
+
+link:../commands-a-z/remove-syncmirror.html["Supprimer la mise en miroir synchrone"]
+
+link:../commands-a-z/remove-volumecopy-target.html["Supprimer la copie de volume"]
+
+link:../commands-a-z/remove-volume-asyncmirrorgroup.html["Suppression du volume du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/remove-lunmapping.html["Supprimer le mappage de LUN de volume"]
+
+link:../commands-a-z/set-snapvolume.html["Renommer le volume snapshot"]
+
+link:../commands-a-z/rename-ssd-cache.html["Renommez le cache SSD"]
+
+link:../commands-a-z/repair-data-parity.html["Réparer la parité des données"]
+
+link:../commands-a-z/repair-volume-parity.html["Réparation de la parité du volume"]
+
+link:../commands-a-z/replace-drive-replacementdrive.html["Remplacez le lecteur"]
+
+link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Réinitialise les statistiques du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/smcli-autosupportschedule-reset.html["Réinitialiser le planning de collecte des messages AutoSupport"]
+
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Réinitialiser le programme de collecte de messages AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/reset-controller.html["Réinitialiser le contrôleur"]
+
+link:../commands-a-z/reset-drive.html["Réinitialiser le lecteur"]
+
+link:../commands-a-z/reset-controller-arraymanagementsignedcertificate.html["Réinitialise le certificat signé installé"]
+
+link:../commands-a-z/reset-iscsiipaddress.html["Réinitialisez l'adresse IP iSCSI"]
+
+link:../commands-a-z/reset-storagearray-diagnosticdata.html["Réinitialiser les données de diagnostic de la matrice de stockage"]
+
+link:../commands-a-z/reset-storagearray-hostportstatisticsbaseline.html["Réinitialise les statistiques de base du port hôte de la baie de stockage"]
+
+link:../commands-a-z/reset-storagearray-ibstatsbaseline.html["Réinitialise les statistiques InfiniBand de la baie de stockage"]
+
+link:../commands-a-z/reset-storagearray-iscsistatsbaseline.html["Réinitialisez la ligne de base iSCSI de la baie de stockage"]
+
+link:../commands-a-z/reset-storagearray-iserstatsbaseline.html["Réinitialiser la base iser des baies de stockage"]
+
+link:../commands-a-z/reset-storagearray-rlsbaseline.html["Réinitialiser la ligne de base RLS de la matrice de stockage"]
+
+link:../commands-a-z/reset-storagearray-sasphybaseline.html["Réinitialisez la base de la matrice de stockage SAS PHY"]
+
+link:../commands-a-z/reset-storagearray-socbaseline.html["Réinitialiser la configuration de base du SOC de la baie de stockage"]
+
+link:../commands-a-z/reset-storagearray-volumedistribution.html["Réinitialisez la distribution du volume de la matrice de stockage"]
+
+link:../commands-a-z/resume-asyncmirrorgroup.html["Reprendre le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/resume-cgsnapvolume.html["Reprenez le volume Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/resume-snapimage-rollback.html["Reprendre la restauration de l'image instantanée"]
+
+link:../commands-a-z/resume-snapvolume.html["Reprendre le volume snapshot"]
+
+link:../commands-a-z/resume-ssdcache.html["Reprenez le cache SSD"]
+
+link:../commands-a-z/resume-syncmirror.html["Reprise de la mise en miroir synchrone"]
+
+link:../commands-a-z/save-storagearray-autosupport-log.html["Récupération d'un journal AutoSupport (pour des baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/save-controller-cacertificate.html["Récupérer les certificats CA installés"]
+
+link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Récupère le certificat de gestion externe des clés installé"]
+
+link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Récupérer la demande CSR de gestion des clés installées"]
+
+link:../commands-a-z/save-controller-arraymanagementsignedcertificate.html["Récupère le certificat du serveur installé"]
+
+link:../commands-a-z/save-storagearray-trustedcertificate.html["Récupérer les certificats d'autorité de certification de confiance installés"]
+
+link:../commands-a-z/revive-drive.html["Ranimer la route"]
+
+link:../commands-a-z/revive-snapgroup.html["Ressusciter le groupe de snapshots"]
+
+link:../commands-a-z/revive-snapvolume.html["Restaurer le volume snapshot"]
+
+link:../commands-a-z/revive-volumegroup.html["Ressusciter le groupe de volumes"]
+
+link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Enregistrer les statistiques de groupe de miroirs asynchrones"]
+
+link:../commands-a-z/save-auditlog.html["Enregistrer les enregistrements du journal d'audit"]
+
+link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Enregistrer les statistiques d'équilibrage de charge automatique"]
+
+link:../commands-a-z/save-controller-nvsram-file.html["Enregistrez la NVSRAM du contrôleur"]
+
+link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Enregistrer l'état de diagnostic d'isolation des défauts du canal d'entraînement"]
+
+link:../commands-a-z/save-alldrives-logfile.html["Enregistrer le journal de lecteur"]
+
+link:../commands-a-z/save-ioclog.html["Sauvegarder le vidage du contrôleur de sortie d'entrée (IOC)"]
+
+link:../commands-a-z/save-storagearray-configuration.html["Enregistrer la configuration de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-controllerhealthimage.html["Image sauvegarde de l'état du contrôleur de la baie de stockage"]
+
+link:../commands-a-z/save-storagearray-dbmdatabase.html["Enregistrer la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-dbmvalidatorinfo.html["Enregistrer le fichier d'informations du validateur DBM de la matrice de stockage"]
+
+link:../commands-a-z/save-storage-array-diagnostic-data.html["Enregistrer les données de diagnostic de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-warningevents.html["Enregistrer les événements de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-firmwareinventory.html["Enregistrer l'inventaire du micrologiciel de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-hostportstatistics.html["Enregistrer les statistiques de port hôte de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-ibstats.html["Enregistrer les statistiques InfiniBand de la baie de stockage"]
+
+link:../commands-a-z/save-storagearray-iscsistatistics.html["Enregistrer les statistiques iSCSI de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-iserstatistics.html["Enregistrez les statistiques iser des baies de stockage"]
+
+link:../commands-a-z/save-storagearray-loginbanner.html["Enregistrez la bannière de connexion à la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-performancestats.html["Enregistrez les statistiques de performances des baies de stockage"]
+
+link:../commands-a-z/save-storagearray-rlscounts.html["Réduire le nombre de RLS des baies de stockage"]
+
+link:../commands-a-z/save-storagearray-sasphycounts.html["Enregistrer le nombre de PHY SAS de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-soccounts.html["Économisez le nombre de SOC des baies de stockage"]
+
+link:../commands-a-z/save-storagearray-statecapture.html["Enregistrer la capture de l'état de la matrice de stockage"]
+
+link:../commands-a-z/save-storagearray-supportdata.html["Enregistrer les données de prise en charge de la matrice de stockage"]
+
+link:../commands-a-z/save-alltrays-logfile.html["Enregistrer journal bac"]
+
+link:../commands-a-z/smcli-supportbundle-schedule.html["Planifiez la configuration automatique de la collecte de bundle de support"]
+
+link:../commands-a-z/set-asyncmirrorgroup.html["Définissez le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/set-auditlog.html["Définissez les paramètres du journal d'audit"]
+
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Définir le calendrier de collecte des messages AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/set-storagearray-revocationchecksettings.html["Définissez les paramètres de vérification de révocation du certificat"]
+
+link:../commands-a-z/set-consistency-group-attributes.html["Définissez les attributs du groupe de cohérence"]
+
+link:../commands-a-z/set-cgsnapvolume.html["Définissez le volume Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/set-controller.html["Définissez le contrôleur"]
+
+link:../commands-a-z/set-controller-dnsservers.html["Définissez les paramètres DNS du contrôleur"]
+
+link:../commands-a-z/set-controller-hostport.html["Définissez les propriétés du port hôte du contrôleur"]
+
+link:../commands-a-z/set-controller-ntpservers.html["Définissez les paramètres NTP du contrôleur"]
+
+link:../commands-a-z/set-controller-service-action-allowed-indicator.html["Définir le témoin d'action d'entretien autorisée du contrôleur"]
+
+link:../commands-a-z/set-disk-pool.html["Définir le pool de disques"]
+
+link:../commands-a-z/set-disk-pool-modify-disk-pool.html["Définir le pool de disques (modifier le pool de disques)"]
+
+link:../commands-a-z/set-tray-drawer.html["Définir l'indicateur d'action d'entretien du tiroir autorisé"]
+
+link:../commands-a-z/set-drivechannel.html["Définir l'état du canal d'entraînement"]
+
+link:../commands-a-z/set-drive-hotspare.html["Configurez le disque de secours"]
+
+link:../commands-a-z/set-drive-serviceallowedindicator.html["Définir le témoin d'action d'entretien de conduite autorisée"]
+
+link:../commands-a-z/set-drive-operationalstate.html["Définissez l'état du lecteur"]
+
+link:../commands-a-z/set-event-alert.html["Définir le filtrage des alertes d'événement"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Définissez les paramètres externes de gestion des clés"]
+
+link:../commands-a-z/set-drive-securityid.html["Définissez l'identifiant de sécurité du lecteur FIPS"]
+
+link:../commands-a-z/set-drive-nativestate.html["Réglez le lecteur étranger sur natif"]
+
+link:../commands-a-z/set-host.html["Définir l'hôte"]
+
+link:../commands-a-z/set-hostchannel.html["Définissez le canal hôte"]
+
+link:../commands-a-z/set-hostgroup.html["Définir le groupe d'hôtes"]
+
+link:../commands-a-z/set-hostport.html["Définissez le port hôte"]
+
+link:../commands-a-z/set-initiator.html["Définissez l'initiateur"]
+
+link:../commands-a-z/set-storagearray-securitykey.html["Définir la clé de sécurité de la matrice de stockage interne"]
+
+link:../commands-a-z/set-controller-iscsihostport.html["Définissez les propriétés de mise en réseau du port hôte iSCSI"]
+
+link:../commands-a-z/set-iscsiinitiator.html["Définissez l'initiateur iSCSI"]
+
+link:../commands-a-z/set-iscsitarget.html["Définissez les propriétés de la cible iSCSI"]
+
+link:../commands-a-z/set-isertarget.html["Définir la cible iser"]
+
+link:../commands-a-z/set-snapvolume-converttoreadwrite.html["Définissez le volume Snapshot en lecture seule sur le volume en lecture/écriture"]
+
+link:../commands-a-z/set-session-erroraction.html["Configurez la session"]
+
+link:../commands-a-z/set-snapgroup.html["Définissez les attributs du groupe de snapshots"]
+
+link:../commands-a-z/set-snapgroup-mediascanenabled.html["Définir l'analyse des supports du groupe d'instantanés"]
+
+link:../commands-a-z/set-snapgroup-increase-decreaserepositorycapacity.html["Définissez la capacité du volume du référentiel du groupe de snapshots"]
+
+link:../commands-a-z/set-snapgroup-enableschedule.html["Définir la planification du groupe d'instantanés"]
+
+link:../commands-a-z/set-snapvolume-mediascanenabled.html["Définir le volume de capture d'écran de lecture multimédia"]
+
+link:../commands-a-z/set-snapvolume-increase-decreaserepositorycapacity.html["Définissez la capacité du volume du référentiel de volumes du snapshot"]
+
+link:../commands-a-z/set-volume-ssdcacheenabled.html["Définissez le cache SSD d'un volume"]
+
+link:../commands-a-z/set-storagearray.html["Définir la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-learncycledate-controller.html["Définir le cycle d'apprentissage de la batterie du contrôleur de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-controllerhealthimageallowoverwrite.html["Définir l'image d'intégrité du contrôleur de la matrice de stockage autoriser le remplacement"]
+
+link:../commands-a-z/set-storagearray-directoryserver.html["Définir le serveur d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-directoryserver-roles.html["Définir le mappage de rôle du serveur d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-icmppingresponse.html["Définissez la réponse ICMP de la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-isnsregistration.html["Définir l'enregistrement iSNS de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-isnsipv4configurationmethod.html["Définissez l'adresse IPv4 du serveur iSNS de la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-isnsipv6address.html["Définissez l'adresse IPv6 du serveur iSNS de la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-isnslisteningport.html["Définissez le port d'écoute du serveur iSNS de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-isnsserverrefresh.html["Définissez l'actualisation du serveur iSNS de la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-localusername.html["Définissez le mot de passe ou le symbole de l'utilisateur local de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-loginbanner.html["Définir la bannière de connexion de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-managementinterface.html["Définissez l'interface de gestion des baies de stockage"]
+
+link:../commands-a-z/set-storagearray-passwordlength.html["Définir la longueur du mot de passe de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-pqvalidateonreconstruct.html["Définir la validation PQ de la matrice de stockage lors de la reconstruction"]
+
+link:../commands-a-z/set-storagearray-redundancymode.html["Définir le mode de redondance de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-resourceprovisionedvolumes.html["Définir les volumes provisionnés des ressources de la baie de stockage"]
+
+link:../commands-a-z/set-storagearray-time.html["Définir l'heure de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Définir la matrice de stockage pour activer ou désactiver l'équilibrage automatique de la charge..."]
+
+link:../commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html["Définissez la matrice de stockage pour activer ou désactiver les données du miroir de cache"]
+
+link:../commands-a-z/set-storagearray-traypositions.html["Définissez les positions des plateaux de la matrice de stockage"]
+
+link:../commands-a-z/set-storagearray-unnameddiscoverysession.html["Définissez une session de découverte sans nom de baie de stockage"]
+
+link:../commands-a-z/set-storagearray-usersession.html["Définir la session utilisateur de la baie de stockage"]
+
+link:../commands-a-z/set-syncmirror.html["Définissez la mise en miroir synchrone"]
+
+link:../commands-a-z/set-target.html["Définissez les propriétés de la cible"]
+
+link:../commands-a-z/set-thin-volume-attributes.html["Définir les attributs du volume fin"]
+
+link:../commands-a-z/set-tray-attribute.html["Définir l'attribut de bac"]
+
+link:../commands-a-z/set-tray-identification.html["Définir l'identification du bac"]
+
+link:../commands-a-z/set-tray-serviceallowedindicator.html["Définir le voyant d'action d'entretien du bac autorisé"]
+
+link:../commands-a-z/set-volumes.html["Définir les attributs de volume d'un volume dans un pool de disques..."]
+
+link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Définir les attributs des volumes pour un volume dans un groupe de volumes..."]
+
+link:../commands-a-z/set-volumecopy-target.html["Définissez la copie de volume"]
+
+link:../commands-a-z/set-volumegroup.html["Définissez le groupe de volumes"]
+
+link:../commands-a-z/set-volumegroup-forcedstate.html["Définir l'état forcé du groupe de volumes"]
+
+link:../commands-a-z/set-volume-logicalunitnumber.html["Définir le mappage de volumes"]
+
+link:../commands-a-z/show-array-label.html["Afficher l'étiquette de tableau"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Affiche la progression de la synchronisation des groupes de miroirs asynchrones"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Affiche les groupes de miroirs asynchrones"]
+
+link:../commands-a-z/show-auditlog-configuration.html["Affiche la configuration du journal d'audit"]
+
+link:../commands-a-z/show-auditlog-summary.html["Affiche le résumé du journal d'audit"]
+
+link:../commands-a-z/show-storagearray-autosupport.html["Afficher la configuration AutoSupport (pour les systèmes de stockage E2800 ou E5700)"]
+
+link:../commands-a-z/show-blockedeventalertlist.html["Afficher les événements bloqués"]
+
+link:../commands-a-z/show-storagearray-revocationchecksettings.html["Affiche les paramètres de vérification de révocation du certificat"]
+
+link:../commands-a-z/show-certificates.html["Afficher les certificats"]
+
+link:../commands-a-z/show-consistencygroup.html["Affiche le groupe de cohérence"]
+
+link:../commands-a-z/show-cgsnapimage.html["Affiche l'image Snapshot du groupe de cohérence"]
+
+link:../commands-a-z/show-controller.html["Affiche le contrôleur"]
+
+link:../commands-a-z/show-controller-diagnostic-status.html["Affiche l'état de diagnostic du contrôleur"]
+
+link:../commands-a-z/show-controller-nvsram.html["Afficher la NVSRAM du contrôleur"]
+
+link:../commands-a-z/show-iscsisessions.html["Affiche les sessions iSCSI en cours"]
+
+link:../commands-a-z/show-diskpool.html["Afficher le pool de disques"]
+
+link:../commands-a-z/show-alldrives.html["Afficher le lecteur"]
+
+link:../commands-a-z/show-drivechannel-stats.html["Affiche les statistiques des canaux de lecteur"]
+
+link:../commands-a-z/show-alldrives-downloadprogress.html["Affiche la progression du téléchargement du lecteur"]
+
+link:../commands-a-z/show-alldrives-performancestats.html["Affiche les statistiques de performances des disques"]
+
+link:../commands-a-z/show-emailalert-summary.html["Affiche la configuration des alertes par e-mail"]
+
+link:../commands-a-z/show-allhostports.html["Affiche les ports hôte"]
+
+link:../commands-a-z/show-controller-cacertificate.html["Affiche le récapitulatif des certificats CA racine/intermédiaire installés"]
+
+link:../commands-a-z/show-storagearray-trustedcertificate-summary.html["Afficher le résumé des certificats CA approuvés installés"]
+
+link:../commands-a-z/show-replaceabledrives.html["Affiche les disques remplaçables"]
+
+link:../commands-a-z/show-controller-arraymanagementsignedcertificate-summary.html["Affiche le certificat signé"]
+
+link:../commands-a-z/show-snapgroup.html["Affiche le groupe de snapshots"]
+
+link:../commands-a-z/show-snapimage.html["Affiche l'image snapshot"]
+
+link:../commands-a-z/show-snapvolume.html["Affiche les volumes snapshot"]
+
+link:../commands-a-z/show-allsnmpcommunities.html["Afficher les communautés SNMP"]
+
+link:../commands-a-z/show-snmpsystemvariables.html["Afficher les variables du groupe système MIB II SNMP"]
+
+link:../commands-a-z/show-ssd-cache.html["Affiche le cache SSD"]
+
+link:../commands-a-z/show-ssd-cache-statistics.html["Affiche les statistiques du cache SSD"]
+
+link:../commands-a-z/show-storagearray.html["Afficher la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-autoconfiguration.html["Affiche la configuration automatique de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-cachemirrordataassurancecheckenable.html["Affichez l'activation de la vérification de l'assurance de données miroir de la baie de stockage cache"]
+
+link:../commands-a-z/show-storagearray-controllerhealthimage.html["Affiche l'image d'état de santé du contrôleur de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Affiche la base de données DBM de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-directoryservices-summary.html["Affiche le récapitulatif des services d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-hostconnectivityreporting.html["Affiche les rapports sur la connectivité hôte de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Affiche la topologie hôte de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-lunmappings.html["Affiche les mappages de LUN de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Affiche les valeurs par défaut de négociation de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-odxsetting.html["Affiche le paramètre d'ODX de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-powerinfo.html["Affiche les informations d'alimentation de la matrice de stockage"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Affiche les initiateurs iSCSI non configurés de la baie de stockage"]
+
+link:../commands-a-z/show-storagearray-unreadablesectors.html["Montrez les secteurs illisibles de la matrice de stockage"]
+
+link:../commands-a-z/show-textstring.html["Affiche la chaîne"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Affiche les candidats au volume de mise en miroir synchrone"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Affiche la progression de la synchronisation du volume de la mise en miroir synchrone"]
+
+link:../commands-a-z/show-syslog-summary.html["Affiche la configuration syslog"]
+
+link:../commands-a-z/show-volume.html["Afficher le volume fin"]
+
+link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Affiche les initiateurs non configurés"]
+
+link:../commands-a-z/show-volume-summary.html["Afficher le volume"]
+
+link:../commands-a-z/show-volume-actionprogress.html["Affiche la progression de l'action du volume"]
+
+link:../commands-a-z/show-volumecopy.html["Affiche la copie de volume"]
+
+link:../commands-a-z/show-volumecopy-sourcecandidates.html["Afficher les candidats source de copie de volume"]
+
+link:../commands-a-z/show-volumecopy-source-targetcandidates.html["Afficher les candidats cibles de copie de volume"]
+
+link:../commands-a-z/show-volumegroup.html["Afficher le groupe de volumes"]
+
+link:../commands-a-z/show-volumegroup-exportdependencies.html["Afficher les dépendances d'exportation de groupe de volumes"]
+
+link:../commands-a-z/show-volumegroup-importdependencies.html["Afficher les dépendances d'importation des groupes de volumes"]
+
+link:../commands-a-z/show-volume-performancestats.html["Affiche les statistiques de performances des volumes"]
+
+link:../commands-a-z/show-volume-reservations.html["Afficher les réservations de volume"]
+
+link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Spécification de la méthode de livraison AutoSupport HTTP(S) (pour les baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/smcli-autosupportconfig.html["Spécifier la méthode de livraison AutoSupport"]
+
+link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Définir la méthode de livraison du courrier électronique (SMTP) (pour les baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Démarrez la synchronisation de la mise en miroir asynchrone"]
+
+link:../commands-a-z/start-cgsnapimage-rollback.html["Démarrer la restauration de snapshot de groupe de cohérence"]
+
+link:../commands-a-z/start-controller.html["Démarrer le suivi du contrôleur"]
+
+link:../commands-a-z/start-diskpool-fullprovisioning.html["Démarrage du provisionnement complet du pool de disques"]
+
+link:../commands-a-z/start-diskpool-locate.html["Démarrer la localisation du pool de disques"]
+
+link:../commands-a-z/start-drivechannel-faultdiagnostics.html["Démarrer les diagnostics d'isolation des défauts du canal d'entraînement"]
+
+link:../commands-a-z/start-drivechannel-locate.html["Démarrer la localisation du canal d'entraînement"]
+
+link:../commands-a-z/start-drive-initialize.html["Démarrer l'initialisation du lecteur"]
+
+link:../commands-a-z/start-drive-locate.html["Démarrer la recherche de conduite"]
+
+link:../commands-a-z/start-drive-reconstruct.html["Démarrer la reconstruction du disque"]
+
+link:../commands-a-z/start-secureerase-drive.html["Démarrer l'effacement sécurisé du disque FDE"]
+
+link:../commands-a-z/start-ioclog.html["Démarrer le vidage du contrôleur de sortie d'entrée (IOC)"]
+
+link:../commands-a-z/start-controller-iscsihostport-dhcprefresh.html["Démarrez l'actualisation iSCSI DHCP"]
+
+link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Démarrez le test URL du serveur OCSP"]
+
+link:../commands-a-z/start-snapimage-rollback.html["Démarrer la restauration de l'image instantanée"]
+
+link:../commands-a-z/start-ssdcache-locate.html["Démarrer la localisation du cache SSD"]
+
+link:../commands-a-z/start-ssdcache-performancemodeling.html["Démarrez la modélisation des performances du cache SSD"]
+
+link:../commands-a-z/start-storagearray-autosupport-manualdispatch.html["Démarrer l'intervention manuelle du AutoSupport de la baie de stockage"]
+
+link:../commands-a-z/start-storagearray-configdbdiagnostic.html["Démarrer le diagnostic de la base de données de configuration de la matrice de stockage"]
+
+link:../commands-a-z/start-storagearray-controllerhealthimage-controller.html["Image démarrage de l'état du contrôleur de la baie de stockage"]
+
+link:../commands-a-z/start-storagearray-isnsserverrefresh.html["Démarrez l'actualisation du serveur iSNS de la baie de stockage"]
+
+link:../commands-a-z/start-storagearray-locate.html["Démarrer la localisation de la matrice de stockage"]
+
+link:../commands-a-z/start-storagearray-syslog-test.html["Démarrer le test syslog de la baie de stockage"]
+
+link:../commands-a-z/start-syncmirror-primary-synchronize.html["Démarrez la synchronisation de la mise en miroir synchrone"]
+
+link:../commands-a-z/start-tray-locate.html["Démarrer la localisation du bac"]
+
+link:../commands-a-z/start-volumegroup-defragment.html["Démarrer le défragmentation du groupe de volumes"]
+
+link:../commands-a-z/start-volumegroup-export.html["Démarrer l'exportation du groupe de volumes"]
+
+link:../commands-a-z/start-volumegroup-fullprovisioning.html["Démarrer le provisionnement complet du groupe de volumes"]
+
+link:../commands-a-z/start-volumegroup-import.html["Démarrer l'importation du groupe de volumes"]
+
+link:../commands-a-z/start-volumegroup-locate.html["Démarrer la recherche du groupe de volumes"]
+
+link:../commands-a-z/start-volume-initialization.html["Démarrer l'initialisation du volume"]
+
+link:../commands-a-z/stop-cgsnapimage-rollback.html["Arrêt de la restauration des snapshots du groupe de cohérence"]
+
+link:../commands-a-z/stop-cgsnapvolume.html["Arrêt du volume Snapshot de groupe de cohérence"]
+
+link:../commands-a-z/stop-diskpool-locate.html["Arrêter la localisation du pool de disques"]
+
+link:../commands-a-z/stop-drivechannel-faultdiagnostics.html["Arrêter les diagnostics d'isolation des défauts du canal d'entraînement"]
+
+link:../commands-a-z/stop-drivechannel-locate.html["Arrêtez la localisation du canal d'entraînement"]
+
+link:../commands-a-z/stop-drive-locate.html["Arrêter la localisation de l'entraînement"]
+
+link:../commands-a-z/stop-drive-replace.html["Arrêter le remplacement de l'entraînement"]
+
+link:../commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html["Arrêtez les images de snapshot en attente sur le groupe de cohérence"]
+
+link:../commands-a-z/stop-pendingsnapimagecreation.html["Arrêter le groupe d'instantanés en attente d'images de snapshot"]
+
+link:../commands-a-z/stop-snapimage-rollback.html["Arrêter la restauration de l'image instantanée"]
+
+link:../commands-a-z/stop-snapvolume.html["Arrêter le volume snapshot"]
+
+link:../commands-a-z/stop-ssdcache-locate.html["Arrêt de la localisation du cache SSD"]
+
+link:../commands-a-z/stop-ssdcache-performancemodeling.html["Arrêtez la modélisation des performances du cache SSD"]
+
+link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Arrêter le diagnostic de la base de données de configuration de la matrice de stockage"]
+
+link:../commands-a-z/stop-storagearray-drivefirmwaredownload.html["Arrêtez le téléchargement du micrologiciel du lecteur de la matrice de stockage"]
+
+link:../commands-a-z/stop-storagearray-iscsisession.html["Arrêter la session iSCSI de la baie de stockage"]
+
+link:../commands-a-z/stop-storagearray-locate.html["Arrêter la localisation de la matrice de stockage"]
+
+link:../commands-a-z/stop-tray-locate.html["Arrêtez la localisation du bac"]
+
+link:../commands-a-z/stop-volumecopy-target-source.html["Arrêter la copie de volume"]
+
+link:../commands-a-z/stop-volumegroup-locate.html["Arrêter la localisation du groupe de volumes"]
+
+link:../commands-a-z/suspend-asyncmirrorgroup.html["Suspendre le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/suspend-ssdcache.html["Suspendre le cache SSD"]
+
+link:../commands-a-z/suspend-syncmirror-primaries.html["Suspendre la mise en miroir synchrone"]
+
+link:../commands-a-z/smcli-alerttest.html["Testez les alertes"]
+
+link:../commands-a-z/diagnose-asyncmirrorgroup.html["Tester la connectivité avec un groupe de miroirs asynchrone"]
+
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Test des paramètres de fourniture des AutoSupport (pour des baies E2800 ou E5700 individuelles)"]
+
+link:../commands-a-z/start-emailalert-test.html["Testez la configuration de l'alerte par e-mail"]
+
+link:../commands-a-z/start-storagearray-externalkeymanagement-test.html["Tester la communication externe de gestion des clés"]
+
+link:../commands-a-z/start-snmptrapdestination.html["Tester la destination de l'interruption SNMP"]
+
+link:../commands-a-z/start-storagearray-directoryservices-test.html["Tester le serveur d'annuaire de la matrice de stockage"]
+
+link:../commands-a-z/start-syslog-test.html["Tester la configuration syslog"]
+
+link:../commands-a-z/smcli-autosupportconfig-test.html["Tester la configuration AutoSupport"]
+
+link:../commands-a-z/delete-snmpcommunity.html["Annuler l'enregistrement de la communauté SNMP"]
+
+link:../commands-a-z/delete-snmptrapdestination.html["Annuler l'enregistrement de la destination d'interruption SNMP"]
+
+link:../commands-a-z/set-snmpcommunity.html["Mettre à jour la communauté SNMP"]
+
+link:../commands-a-z/set-snmpsystemvariables.html["Mettre à jour les variables du groupe système MIB II SNMP"]
+
+link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Mettre à jour la destination du trap SNMP"]
+
+link:../commands-a-z/set-storagearray-syslog.html["Mettre à jour la configuration syslog de la baie de stockage"]
+
+link:../commands-a-z/validate-storagearray-securitykey.html["Validation de la clé de sécurité de la baie de stockage"]

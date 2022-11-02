@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/remove-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: remove, volume, asynchronous, mirror, group 
+summary: 'La commande remove volume asynchrones MirrorGroup supprime un volume membre d"un groupe de miroirs asynchrone existant.' 
+---
+= Suppression du volume du groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `remove volume asyncMirrorGroup` commande supprime un volume membre d'un groupe de miroirs asynchrone existant.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez également supprimer les membres du volume de référentiel du groupe miroir asynchrone.
+
+Cette commande n'est valide que sur la matrice de stockage locale qui contient le groupe de miroirs asynchrones dont le volume membre à supprimer.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+remove volume pass:quotes[[_"volumeName"_]] asyncMirrorGroup=pass:quotes[_"asyncMirrorGroupName"_]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume spécifique que vous souhaitez supprimer du groupe de miroirs asynchrone. Placez le nom du volume entre guillemets (" ") dans les crochets ([ ]).
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones qui contient le volume membre que vous souhaitez supprimer. Placez le nom du groupe de miroirs asynchrones entre guillemets (" ").
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Détermine si tous les membres du référentiel doivent être supprimés du groupe miroir asynchrone.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/add-certificate-from-array.html 
+sidebar: sidebar 
+keywords: add certificate array, supported, syntax, parameters, minimum firmware level 
+summary: 'La commande Ajouter un certificat à partir de la baie vous permet de prendre un certificat à partir de la baie et de l"ajouter au magasin d"approbation du package CLI. Le certificat ajouté sera utilisé uniquement par le pack de l"interface de ligne de commande.' 
+---
+= Ajouter un certificat à partir de la matrice
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Add certificate from array` Cette commande vous permet de prendre un certificat à partir de la baie et de l'ajouter au magasin d'approbation du package CLI. Le certificat ajouté sera utilisé uniquement par le pack de l'interface de ligne de commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique aux baies de stockage EF600 et EF300.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[_ipAddress1 ipAddress2_  trust localCertificate]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`IPaddress`
+ a| 
+Permet de spécifier l'adresse IP de la matrice de stockage.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

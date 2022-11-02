@@ -1,0 +1,470 @@
+---
+permalink: commands-a-z/create-raid-volume-automatic-drive-select.html 
+sidebar: sidebar 
+keywords: create, raid, volume, automatic, drive, select 
+summary: La commande create volume crée un groupe de volumes entre les lecteurs de la matrice de stockage et un nouveau volume dans le groupe de volumes. Les contrôleurs de la matrice de stockage choisissent les lecteurs à inclure dans le volume. 
+---
+= Créer un volume RAID (sélection automatique du lecteur)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create volume` la commande crée un groupe de volumes sur les disques de la matrice de stockage et un nouveau volume dans le groupe de volumes. Les contrôleurs de la matrice de stockage choisissent les lecteurs à inclure dans le volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Si vous avez des disques de différentes capacités, vous ne pouvez pas créer automatiquement des volumes en spécifiant le `driveCount` paramètre. Pour créer des volumes avec des disques de différentes capacités, reportez-vous à la section link:create-raid-volume-manual-drive-select.html["Créer un volume RAID (sélection manuelle du lecteur)"].
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create volume driveCount=pass:quotes[_numberOfDrives_]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupUserLabel"_]]
+raidLevel=(0 | 1 | 3 | 5 | 6)
+userLabel=pass:quotes[_"userLabel"_]
+driveMediaType=(HDD | SSD | unknown | allMedia)
+[driveType=(SAS | NVMe4K)]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+[listing, subs="+macros"]
+----
+create volume driveCount=pass:quotes[_numberOfDrives_]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupName"_]]
+raidLevel=(0 | 1 | 5 | 6)
+userLabel=pass:quotes[_"volumeName"_]
+driveMediaType=(HDD | SSD | unknown | allMedia)
+[driveType=SAS]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveCount`
+ a| 
+Nombre de disques non assignés que vous souhaitez utiliser dans le groupe de volumes.
+
+
+
+ a| 
+`volumeGroupUserLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau groupe de volumes. Placez le nouveau nom de groupe de volumes entre guillemets (" ").
+
+[NOTE]
+====
+Si vous ne spécifiez pas d'étiquette d'utilisateur pour le groupe de volumes, le micrologiciel du contrôleur lui attribue un numéro.
+
+====
+
+
+ a| 
+`raidLevel`
+ a| 
+Niveau RAID du groupe de volumes qui contient le volume. Les valeurs valides sont `0`, `1`, `3`, `5`, ou `6`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau volume. Placez le nouveau nom du volume entre guillemets (" ").
+
+[NOTE]
+====
+Ce paramètre est obligatoire.
+
+====
+
+
+ a| 
+`driveMediaType`
+ a| 
+Type de support de lecteur que vous souhaitez utiliser pour le groupe de volumes. Ces supports de lecteur sont valides :
+
+* `HDD` -- utilisez cette option lorsque vous avez des disques durs dans le plateau du lecteur
+* `SSD` -- utilisez cette option lorsque vous disposez de disques SSD dans le plateau
+* `unknown` -- utilisez cette option si vous ne savez pas quels types de support se trouvent dans le bac d'alimentation
+* `allMedia` -- utilisez cette option lorsque vous souhaitez utiliser tous les types de support de lecteur qui se trouvent dans le bac de lecteur
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Le type de lecteur que vous souhaitez utiliser dans le volume. Vous ne pouvez pas combiner plusieurs types de disques.
+
+Vous devez utiliser ce paramètre lorsque vous avez plusieurs types de lecteur dans votre matrice de stockage.
+
+Ces types de disques sont valides :
+
+* `SAS`
+* `NVMe4K`
+
+
+Si vous ne spécifiez pas de type de lecteur, la commande est définie par défaut sur `any type`.
+
+
+
+ a| 
+`capacity`
+ a| 
+Taille du volume que vous ajoutez à la matrice de stockage. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Contrôleur qui détient le volume. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Si vous ne spécifiez pas de propriétaire, le micrologiciel du contrôleur détermine le propriétaire.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Paramètre permettant d'activer ou de désactiver la lecture préalable du cache. Pour désactiver la lecture préalable du cache, définissez ce paramètre sur `FALSE`. Pour activer la lecture préalable du cache, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Quantité de données (en Ko) que le contrôleur écrit sur un seul disque du volume avant d'écrire les données sur le disque suivant. Les valeurs valides sont `8`, `16`, `32`, `64`, `128`, `256`, ou `512`.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Le réglage pour les deux `cacheReadPrefetch` paramètre et le `segmentSize` paramètre devant être des valeurs par défaut. Les valeurs par défaut sont basées sur le modèle d'utilisation d'E/S type de l'application qui utilise le volume. Les valeurs valides sont `fileSystem`, `dataBase`, ou `multiMedia`.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+Paramètre permettant d'appliquer la protection contre les pertes de bac lorsque vous créez le groupe de volumes. Pour appliquer la protection contre les pertes de bac, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+Paramètre permettant d'appliquer la protection contre les pertes de tiroirs lorsque vous créez le groupe de volumes du référentiel miroir. Pour appliquer la protection contre les pertes de tiroirs, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Paramètre permettant de s'assurer que la capacité de réserve est allouée pour la taille de segment future augmente. La valeur par défaut est `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Paramètre permettant de spécifier le niveau de sécurité lors de la création des groupes de volumes et de tous les volumes associés. Ces paramètres sont valides :
+
+* `none` -- le groupe de volumes et les volumes ne sont pas sécurisés.
+* `capable` -- le groupe de volumes et les volumes sont capables d'avoir la sécurité définie, mais la sécurité n'a pas été activée.
+* `enabled` -- la sécurité est activée pour le groupe de volumes et les volumes.
+
+
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+Paramètre permettant de spécifier si les capacités de provisionnement des ressources sont activées. Pour désactiver le provisionnement de ressources, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+
+
+
+ a| 
+`mapping`
+ a| 
+Ce paramètre vous permet de mapper le volume à un hôte. Si vous souhaitez mapper ultérieurement, définissez ce paramètre sur `none`. Si vous souhaitez mapper maintenant, définissez ce paramètre sur `default`. Le volume est mappé à tous les hôtes ayant accès au pool de stockage. La valeur par défaut est `none`.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Ce paramètre définit la taille de bloc du volume en cours de création. La valeur 0 ou le paramètre non défini utilise la taille de bloc par défaut.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Le `driveCount` paramètre vous permet de choisir le nombre de lecteurs que vous souhaitez utiliser dans le groupe de volumes. Il n'est pas nécessaire d'indiquer les lecteurs par ID de bac et ID de logement. Les contrôleurs choisissent les lecteurs spécifiques à utiliser pour le groupe de volumes.
+
+Le `owner` le paramètre définit quel contrôleur détient le volume.
+
+Si vous ne spécifiez pas de capacité à l'aide de l' `capacity` paramètre, toute la capacité du lecteur disponible dans le groupe de volumes est utilisée. Si vous ne spécifiez pas d'unités de capacité, `bytes` est utilisé comme valeur par défaut.
+
+
+
+== Taille du segment
+
+La taille d'un segment détermine le nombre de blocs de données que le contrôleur écrit sur un seul disque du volume avant d'écrire des données sur le disque suivant. Chaque bloc de données stocke 512 octets de données. Le bloc de données est la plus petite unité de stockage. La taille d'un segment détermine le nombre de blocs de données qu'il contient. Par exemple, un segment de 8 Ko contient 16 blocs de données. Un segment de 64 Ko contient 128 blocs de données.
+
+Lorsque vous entrez une valeur pour la taille du segment, la valeur est vérifiée par rapport aux valeurs prises en charge fournies par le contrôleur au moment de l'exécution. Si la valeur saisie n'est pas valide, le contrôleur renvoie une liste de valeurs valides. L'utilisation d'un lecteur unique pour une seule demande laisse les autres lecteurs disponibles pour traiter simultanément d'autres demandes. Si le volume se trouve dans un environnement où un utilisateur unique transfère de grandes unités de données (comme le multimédia), les performances sont optimisées lorsqu'une seule demande de transfert de données est traitée avec une seule bande de données. (Une bande de données est la taille du segment multipliée par le nombre de disques du groupe de volumes utilisés pour le transfert de données.) Dans ce cas, plusieurs disques sont utilisés pour la même demande, mais chaque disque n'est accessible qu'une seule fois.
+
+Pour des performances optimales dans une base de données multi-utilisateurs ou un environnement de stockage de système de fichiers, définissez la taille de votre segment afin de minimiser le nombre de lecteurs requis pour répondre à une demande de transfert de données.
+
+
+
+== Conseils d'utilisation
+
+[NOTE]
+====
+Il n'est pas nécessaire de saisir une valeur pour le `cacheReadPrefetch` ou le `segmentSize` paramètre. Si vous ne saisissez aucune valeur, le micrologiciel du contrôleur utilise le `usageHint` paramètre avec `fileSystem` comme valeur par défaut. Saisie d'une valeur pour le `usageHint` et une valeur pour le `cacheReadPrefetch` ou une valeur pour le `segmentSize` le paramètre n'entraîne pas d'erreur. La valeur que vous saisissez pour le `cacheReadPrefetch` ou le `segmentSize` le paramètre prend priorité sur la valeur de `usageHint` paramètre. La taille du segment et les paramètres de lecture préalable en cache pour différents conseils d'utilisation sont indiqués dans le tableau suivant :
+
+====
+|===
+| Indice d'utilisation | Réglage de la taille du segment | Paramètre de préextraction de lecture dynamique du cache 
+
+
+ a| 
+Système de fichiers
+ a| 
+128 KO
+ a| 
+Activé
+
+
+
+ a| 
+Base de données
+ a| 
+128 KO
+ a| 
+Activé
+
+
+
+ a| 
+Multimédia
+ a| 
+256 KO
+ a| 
+Activé
+
+|===
+
+
+== Préextraction de lecture du cache
+
+La lecture préalable en cache permet au contrôleur de copier des blocs de données supplémentaires dans le cache pendant que le contrôleur lit et copie les blocs de données requis par l'hôte depuis le disque vers le cache. Cette action augmente le risque d'une future demande de données à partir du cache. Le préchargement de lecture du cache est important pour les applications multimédia qui utilisent des transferts de données séquentiels. Valeurs valides pour le `cacheReadPrefetch` les paramètres sont `TRUE` ou `FALSE`. La valeur par défaut est `TRUE`.
+
+
+
+== Type de sécurité
+
+Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
+
+Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez créer une clé de sécurité de la matrice de stockage. Utilisez le `create storageArray securityKey` commande permettant de créer une clé de sécurité de la matrice de stockage. Ces commandes sont liées à la clé de sécurité :
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Sécuriser les disques
+
+Les disques sécurisés peuvent être des disques FDE (Full Disk Encryption) ou FIPS (Federal information Processing Standard). Utilisez le `secureDrives` paramètre pour spécifier le type de disques sécurisés à utiliser. Les valeurs que vous pouvez utiliser sont les suivantes `fips` et `fde`.
+
+
+
+== Protection contre les pertes de bac et protection contre les pertes de tiroir
+
+Pour activer la protection contre les pertes des tiroirs/bacs, reportez-vous aux tableaux suivants pour obtenir des critères supplémentaires :
+
+|===
+| Niveau | Critères pour la protection contre les pertes du plateau | Nombre minimum de bacs requis 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Le pool de disques ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+6
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Le groupe de volumes ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` ou `RAID 5`
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un bac distinct
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Chaque lecteur d'une paire RAID 1 doit se trouver dans un bac distinct
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossible d'obtenir la protection contre les pertes du bac.
+ a| 
+Sans objet
+
+|===
+|===
+| Niveau | Critères pour la protection contre les pertes de tiroirs | Nombre minimum de tiroirs requis 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Le pool comprend des disques des cinq tiroirs et il y a un nombre égal de disques dans chaque tiroir. Un plateau de 60 lecteurs peut atteindre la protection contre les pertes de tiroirs lorsque le pool de disques contient 15, 20, 25, 30, 35, 40, 45, 50, 55 ou 60 disques.
+ a| 
+5
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Le groupe de volumes ne contient pas plus de deux disques dans un tiroir unique.
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` ou `RAID 5`
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un tiroir distinct.
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Chaque lecteur d'une paire symétrique doit être placé dans un tiroir séparé.
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossible d'obtenir la protection contre la perte de tiroir.
+ a| 
+Sans objet
+
+|===
+
+
+== Exemple de commande
+
+[listing]
+----
+create volume driveCount=2 volumeGroupUserLabel="FIPS_VG" raidLevel=1 userLabel="FIPS_V"
+----
+[listing]
+----
+driveMediaType=HDD securityType=capable secureDrives=fips
+----
+
+
+== Niveau minimal de firmware
+
+7.10 ajoute la fonctionnalité RAID de niveau 6 et `dssPreAllocate` paramètre.
+
+7.50 ajoute le `securityType` paramètre.
+
+7.60 ajoute le `drawerLossProtect` paramètre.
+
+7.75 ajoute le `dataAssurance` paramètre.
+
+8.25 ajoute le `secureDrives` paramètre.
+
+8.63 ajoute le `resourceProvisioningCapable` paramètre.
+
+11.70 ajoute le `blockSize` paramètre.

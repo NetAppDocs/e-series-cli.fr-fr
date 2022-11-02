@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-diskpool-locate.html 
+sidebar: sidebar 
+keywords: start, disk pool, locate 
+summary: La commande start DISKPOOL Locate identifie les lecteurs qui sont regroupés logiquement ensemble pour former le pool de disques spécifié en faisant clignoter les voyants des lecteurs. 
+---
+= Démarrer la localisation du pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start diskPool locate` la commande identifie les lecteurs qui sont regroupés de manière logique pour former le pool de disques spécifié en faisant clignoter les voyants des lecteurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+(Utilisez le `stop diskPool locate` commande pour éteindre les voyants lumineux sur les lecteurs.)
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start diskPool pass:quotes[[_diskPoolName_]] locate
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques pour lequel vous souhaitez le localiser. Placez le nom du pool de disques entre crochets ([ ]). Si le nom du pool de disques contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du pool de disques entre guillemets (" ") entre crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

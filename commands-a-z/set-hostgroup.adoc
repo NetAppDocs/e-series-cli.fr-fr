@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-hostgroup.html 
+sidebar: sidebar 
+keywords: set, host, group 
+summary: La commande set hostGroup renomme un groupe hôte. 
+---
+= Définir le groupe d'hôtes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set hostGroup` commande renomme un groupe hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set hostGroup pass:quotes[[_hostGroupName_]]
+userLabel=pass:quotes["_newHostGroupName_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes que vous souhaitez renommer. Placez le nom du groupe d'hôtes entre crochets ([ ]). Si le nom du groupe d'hôtes comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe d'hôtes entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nouveau nom pour le groupe hôte. Placez le nouveau nom de groupe d'hôtes entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+6.10

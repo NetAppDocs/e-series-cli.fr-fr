@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/enable-controller-datatransfer.html 
+sidebar: sidebar 
+keywords: enable, controller, datatransfer, command, revive, quiesced, running, diagnostics, role, syntax, parameter, firmware level 
+summary: 'La commande enable Controller DataTransfer fait revivre un contrôleur qui est mis au repos lors de l"exécution des diagnostics.' 
+---
+= Activer le transfert des données du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `enable controller dataTransfer` la commande réexécute un contrôleur qui est mis au repos lors de l'exécution des diagnostics.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+enable controller [(a|b)] dataTransfer
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur que vous voulez relancer. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

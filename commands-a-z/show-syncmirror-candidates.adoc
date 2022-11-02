@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/show-syncmirror-candidates.html 
+sidebar: sidebar 
+keywords: show, synchronous, mirror, volume, candidates 
+summary: La commande show SyncMirror candidate renvoie des informations sur les volumes candidats sur une matrice de stockage distante que vous pouvez utiliser comme volumes secondaires dans une configuration de mise en miroir synchrone. 
+---
+= Affiche les candidats au volume de mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show syncMirror candidates` La commande renvoie des informations sur les volumes candidats sur une matrice de stockage distante que vous pouvez utiliser comme volumes secondaires dans une configuration de mise en miroir synchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou moniteur de stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show syncMirror candidates primary="_volumeName_"
+remoteStorageArrayName="_storageArrayName_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`primary`
+ a| 
+Nom du volume local que vous souhaitez pour le volume primaire dans la paire mise en miroir à distance. Placez le nom du volume primaire entre guillemets (" ").
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Matrice de stockage distante contenant des volumes possibles pour un volume secondaire. Si le nom de la matrice de stockage distante contient des caractères spéciaux, vous devez également inclure le nom de la matrice de stockage distante entre guillemets (" ").
+
+|===
+
+
+== Niveau minimal de firmware
+
+5.40

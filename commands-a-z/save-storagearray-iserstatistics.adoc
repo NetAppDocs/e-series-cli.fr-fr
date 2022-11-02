@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/save-storagearray-iserstatistics.html 
+sidebar: sidebar 
+keywords: save, storage, array, iser, statistics 
+summary: La commande Save storageArray iserStatistics enregistre les statistiques de performance iser de la baie de stockage dans un fichier. 
+---
+= Enregistrez les statistiques iser des baies de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray iserStatistics` Commande enregistre les statistiques de performance iser de la baie de stockage dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:save-storagearray-hostportstatistics.adoc[Enregistrer les statistiques de port hôte de la matrice de stockage] commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray iserStatistics [(raw | baseline)] file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`raw`
+ a| 
+Les statistiques collectées sont toutes les statistiques du début de journée du contrôleur. Placez le paramètre entre crochets ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Les statistiques collectées sont toutes des statistiques établies à partir du moment où les contrôleurs ont été réinitialisés à l'aide du `reset storageArray iserStatsBaseline` commande. Placez le paramètre entre crochets ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les statistiques de performances. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\iserstat.csv"`
+
+Le nom par défaut du fichier contenant les statistiques de performances iSCSI est `iser-statistics.csv`. Vous pouvez utiliser n'importe quel nom de fichier, mais vous devez utiliser le `.csv` extension.
+
+|===
+
+
+== Remarques
+
+Si vous n'avez pas réinitialisé les statistiques de base iser depuis le début de la journée du contrôleur, l'heure au début de la journée est l'heure de référence par défaut.
+
+
+
+== Niveau minimal de firmware
+
+8.20
+
+8.41 cette commande est obsolète.

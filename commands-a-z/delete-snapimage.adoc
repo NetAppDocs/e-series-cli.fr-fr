@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/delete-snapimage.html 
+sidebar: sidebar 
+keywords: delete, snapimage, command, snapshot, images, group, support, array, roles 
+summary: 'La commande Supprimer SnapImage supprime une ou plusieurs images d"un groupe de snapshots.' 
+---
+= Supprimer l'image snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete snapImage` la commande supprime une ou plusieurs images d'un groupe de snapshots.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapImage (snapGroup="snapGroupName" |
+snapGroups=("_snapGroupName1"
+... "snapGroupNamen_"))]
+[deleteCount=numberOfSnapImages]
+[retainCount=numberOfSnapImages]
+[ignoreSnapVolume=(TRUE | FALSE)]
+[snapImageID=OLDEST]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots qui contient l'image de snapshot que vous souhaitez supprimer. Placez le nom du groupe de snapshots entre guillemets (" ").
+
+
+
+ a| 
+`snapGroups`
+ a| 
+Les noms de plusieurs groupes d'instantanés contenant l'image d'instantané que vous souhaitez supprimer. Entrez les noms des groupes de snapshots à l'aide des règles suivantes :
+
+* Placez tous les noms entre parenthèses.
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Nombre d'images de snapshot que vous souhaitez supprimer du groupe de snapshots. Utiliser des valeurs entières.
+
+Ce paramètre supprime d'abord l'image snapshot la plus ancienne et continue à supprimer les images snapshot les plus anciennes jusqu'à ce que vous obteniez le numéro que vous entrez.
+
+Si le nombre que vous entrez est supérieur au nombre réel de toutes les images de snapshot du groupe de snapshots, toutes les images de snapshot seront supprimées. Le groupe d'instantanés reste vide.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Le nombre d'images de snapshot que vous souhaitez conserver dans le groupe de snapshots. Utiliser des valeurs entières.
+
+Ce paramètre conserve les images de snapshot les plus récentes du groupe de snapshots et supprime les images de snapshot plus anciennes.
+
+Si le nombre d'images de snapshot existantes dans le groupe de snapshots est inférieur au nombre que vous entrez, aucune des images de snapshot n'est supprimée.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Utilisez ce paramètre pour vous assurer que vous ne supprimez pas d'image instantanée associée à un volume instantané. Vous pouvez utiliser l'une des valeurs suivantes :
+
+* `TRUE` - Utilisez cette valeur pour supprimer l'image snapshot même si l'image snapshot a un volume snapshot associé.
+* `FALSE` - Utilisez cette valeur pour conserver l'image snapshot lorsque l'image snapshot est associée à un volume snapshot.
+
+
+La valeur par défaut est `TRUE`.
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Le `snapImageID` le paramètre accepte uniquement le `OLDEST` option. Ce paramètre supprime l'image snapshot la plus ancienne créée.
+
+|===
+
+
+== Remarques
+
+Vous pouvez supprimer l'image snapshot la plus ancienne d'un volume de référentiel de groupe de snapshots. La définition d'une image instantanée que vous supprimez est supprimée du système. L'espace occupé par l'image instantanée que vous supprimez du volume de référentiel de groupe de snapshots est libéré et mis à disposition pour réutilisation au sein du groupe de snapshots.
+
+Si vous n'utilisez pas d'autres paramètres avec le `snapGroup` paramètre ou `snapGroups` par défaut, l'image snapshot la plus ancienne est supprimée.
+
+Tous les volumes de snapshot existants pour une transition d'image instantanée à l'état arrêté lorsque l'image de snapshot est supprimée.
+
+Cette commande ne s'exécute pas lorsque le contrôleur est en mode verrouillage.
+
+
+
+== Niveau minimal de firmware
+
+7.83

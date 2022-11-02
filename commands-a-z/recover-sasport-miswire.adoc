@@ -1,0 +1,87 @@
+---
+permalink: commands-a-z/recover-sasport-miswire.html 
+sidebar: sidebar 
+keywords: recover, sas, port, mis-wire 
+summary: 'La commande de défaut de sasPort de récupération indique à un contrôleur qu"une action corrective a été entreprise pour récupérer en cas de mauvais câblage.' 
+---
+= Récupération du câble défectueux du port SAS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recover sasPort miswire` la commande indique à un contrôleur qu'une action corrective a été prise pour récupérer à partir d'une condition de fil défectueux.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Le contrôleur peut alors réactiver tous les ports SAS qui ont été désactivés car un mauvais fil a été détecté. Exécutez cette commande après avoir corrigé les problèmes de câblage SAS.
+
+Les problèmes de câblage SAS peuvent être l'un des suivants :
+
+* Topologies SAS non valides
+* Connexion du port hôte du contrôleur au plateau d'extension
+* Initiateur pour établir la connexion de la topologie de lecteur
+* Mauvais câblage MSE
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+recover sasPort miswire
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Lorsqu'une condition de fil défectueux est détectée, le micrologiciel du contrôleur signale ce qui suit :
+
+* Un événement important MEL indiquant la présence d'un défaut de câblage
+* Une condition « nécessite une attention »
+* Action de récupération indiquant le mauvais fil
+
+
+En outre, le contrôleur signale les informations « perte de redondance » pour les lecteurs, les modules de stockage et les bacs pour lesquels il n'a qu'un seul chemin d'accès en raison du mauvais câblage (par exemple, les deux bacs inférieurs d'une matrice de stockage). Les informations sur la perte de redondance ne sont pas uniques aux topologies SAS.
+
+Voici les notifications d'événement relatives au câble défectueux du port SAS :
+
+* Câble SAS défectueux détecté
+* Adaptateur HBA connecté au canal du lecteur
+* Canaux d'entraînement transversaux
+
+
+Dans le cas d'une condition de câblage défectueux dans laquelle le contrôleur désactive un ou plusieurs ports SAS afin de protéger l'intégrité du domaine SAS, effectuez les opérations suivantes pour effectuer la restauration à partir de la condition :
+
+. Déterminez quel câble se trouve au mauvais endroit et retirez-le. Si la dernière action a été d'installer un nouveau câble, c'est le candidat le plus probable. Si ce n'est pas le cas, recherchez les câbles connectés à des périphériques qui ne font pas partie de la matrice de stockage ou des câbles reliés entre les canaux. L'événement de récupération doit indiquer le canal sur lequel le fil défectueux a été détecté, et peut-être le bac
+. Après avoir retiré un câble ou déplacé le câble à l'emplacement approprié, exécutez le `recover sasPort miswire` commande. Le contrôleur tente de réactiver tous les ports SAS qui ont été désactivés lorsque le mauvais fil a été détecté.
+. Si le câble que vous avez retiré ou déplacé pour corriger le câble défectueux, à condition que le contrôleur ait uniquement accès au port désactivé, le contrôleur ne pourra pas réactiver le port SAS qui a été désactivé. Pour terminer la récupération, vous devez mettre hors tension les bacs de la matrice de stockage.
+
+
+
+
+== Niveau minimal de firmware
+
+8.10

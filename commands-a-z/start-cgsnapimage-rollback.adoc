@@ -1,0 +1,112 @@
+---
+permalink: commands-a-z/start-cgsnapimage-rollback.html 
+sidebar: sidebar 
+keywords: start, consistency, group, snapshot, rollback 
+summary: 'La commande start cgSnapImage rollback lance une opération de restauration vers les volumes de base membres d"un groupe de cohérence snapshot.' 
+---
+= Démarrer la restauration de snapshot de groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start cgSnapImage rollback` la commande démarre une opération de restauration vers les volumes de base membres d'un groupe de cohérence de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Le contenu des volumes de base change immédiatement pour correspondre au contenu instantané du volume snapshot de groupe de cohérence. Les volumes de base deviennent immédiatement disponibles pour les demandes de lecture/écriture une fois l'opération de restauration terminée.
+
+Le volume de référentiel associé au volume de snapshot du groupe de cohérence continue de suivre toute nouvelle modification entre le volume de base et le volume de snapshot du groupe de cohérence qui se produit une fois l'opération de restauration terminée.
+
+Pour arrêter une opération de restauration vers les volumes de base membres, utilisez le `stop cgSnapImage rollback` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start cgSnapImage pass:quotes[["_snapCGID:imageID_"]] rollback
+memberVolumeSet pass:quotes[("_memberVolumeName1_" ... "_memberVolumeNameN_")]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Nom de l'image Snapshot du groupe de cohérence pour laquelle vous souhaitez démarrer une opération de restauration. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots.
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` -- utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` -- utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ") entre crochets ([ ]).
+
+
+
+ a| 
+`memberVolumeSet`
+ a| 
+Nom d'un ou plusieurs volumes de base membres d'un groupe de cohérence que vous souhaitez restaurer. Placez chaque nom de volume de base membre entre guillemets (" ") entre parenthèses.
+
+Vous pouvez entrer plusieurs noms de volume. Placez tous les noms de volume dans un jeu de crochets ([ ]). Placez chaque nom de volume entre guillemets (" "). Séparez chaque nom de volume par un espace.
+
+Lorsque le `memberVolumeSet` paramètre n'est pas utilisé. le processus de restauration s'applique à tous les volumes membres du groupe de cohérence.
+
+|===
+
+
+== Remarques
+
+Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
+
+* Identifiant du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez lancer une opération de restauration pour l'image Snapshot la plus récente dans un groupe de cohérence complet qui porte le nom de CG1, vous pouvez utiliser la commande suivante :
+
+[listing]
+----
+start cgSnapImage ["CG1:newest"] rollback;
+----
+Pour lancer une opération de reprise de l'image snapshot 12345 pour les membres du volume de base memVol1, memVol2 et memVol3 dans un groupe de cohérence portant le nom CG2, vous devez utiliser la commande suivante :
+
+[listing]
+----
+start cgSnapImage ["CG2:12345"] rollback memberVolumeset=("memVol1 memVol2 memVol3");
+----
+
+
+== Niveau minimal de firmware
+
+7.83

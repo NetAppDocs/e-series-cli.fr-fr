@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/enable-diskpool-security.html 
+sidebar: sidebar 
+keywords: enable, diskpool, security, command, convert, non secure, diskpool, support, arrays, role, context 
+summary: La commande enable DISKPOOL Security convertit un pool de disques non sécurisé en un pool de disques sécurisé. 
+---
+= Activer la sécurité du pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `enable diskPool security` commande convertit un pool de disques non sécurisé en un pool de disques sécurisé.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Tous les disques qui composent le pool de disques doivent être sécurisés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable diskPool [_diskPoolName_]] security
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques que vous souhaitez placer à l'état sécurité activée. Placez l'identificateur de pool de disques entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+7.83

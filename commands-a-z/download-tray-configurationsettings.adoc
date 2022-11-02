@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/download-tray-configurationsettings.html 
+sidebar: sidebar 
+keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
+summary: 'La commande ConfigurationSettings du plateau de téléchargement télécharge les paramètres par défaut d"usine sur tous les plateaux de disques d"une matrice de stockage ou sur un plateau de lecteur spécifique d"une matrice de stockage.' 
+---
+= Téléchargez les paramètres de configuration du bac
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `download tray configurationSettings` commande télécharge les paramètres par défaut d'usine sur tous les tiroirs de disques d'une matrice de stockage ou sur un plateau de lecteur spécifique d'une matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (allTrays | tray [_trayID_]] configurationSettings
+pass:quotes[file="_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allTrays`
+ a| 
+Ce paramètre télécharge le nouveau micrologiciel sur tous les bacs de la matrice de stockage.
+
+
+
+ a| 
+`tray`
+ a| 
+Le plateau de lecteur qui contient la carte ESM vers laquelle vous souhaitez charger le nouveau micrologiciel. Les valeurs d'ID du bac sont `0` à `99`. Placez la valeur d'ID du bac entre crochets ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier contenant l'image du micrologiciel. Placez le chemin du fichier et le nom du fichier de l'image du micrologiciel entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\dnld\trayset.dlp"`
+
+Les noms de fichiers valides ont un `.dlp` extension.
+
+|===
+
+
+== Remarques
+
+Le `tray` paramètre télécharge les paramètres de configuration par défaut d'usine sur un plateau de lecteur spécifique Si vous devez télécharger les paramètres de configuration par défaut d'usine sur plusieurs tiroirs disques, mais pas tous les tiroirs, vous devez saisir cette commande pour chaque plateau
+
+
+
+== Niveau minimal de firmware
+
+7.75

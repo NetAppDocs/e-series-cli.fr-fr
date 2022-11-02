@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/save-storagearray-rlscounts.html 
+sidebar: sidebar 
+keywords: save, storage, array, rls, counts 
+summary: 'La commande save storageArray RLSCounts enregistre les compteurs d"état de lecture de lien (RLS) dans un fichier.' 
+---
+= Réduire le nombre de RLS des baies de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray RLSCounts` La commande enregistre les compteurs d'état de lecture de lien (RLS) dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray RLSCounts file=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les compteurs RLS. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\rlscnt.csv"`
+
+Le nom par défaut du fichier contenant les nombres RLS est `read-link-status.csv`. Vous pouvez utiliser n'importe quel nom de fichier, mais vous devez utiliser le `.csv` extension.
+
+|===
+
+
+== Remarques
+
+Pour enregistrer plus efficacement les compteurs RLS dans un fichier, procédez comme suit :
+
+. Exécutez le `reset storageArray RLSBaseline` Commande permettant de définir tous les compteurs RLS sur 0.
+. Exécutez la baie de stockage pendant une durée prédéterminée (par exemple, deux heures).
+. Exécutez le `save storageArray RLSCounts file`= »[.code]``_filename_``commande.
+
+
+
+
+== Niveau minimal de firmware
+
+6.10

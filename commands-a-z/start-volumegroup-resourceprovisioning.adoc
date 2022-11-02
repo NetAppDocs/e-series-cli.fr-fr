@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-volumegroup-resourceprovisioning.html 
+sidebar: sidebar 
+keywords: start, volume, group, resource, provision 
+summary: 'La commande start Volume Volume Group resourceProvisioning permet le provisionnement des ressources sur un groupe de volumes donné et lance une opération asynchrone d"activation du provisionnement des ressources sur chaque volume du groupe de volumes. Le provisionnement des ressources nécessite que tous les disques du groupe de volumes prennent en charge la fonctionnalité DULBE de NVMe.' 
+---
+= Démarrer l'approvisionnement des ressources du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volumeGroup resourceProvisioning` la commande active le provisionnement des ressources sur un groupe de volumes donné et lance une opération asynchrone d'activation du provisionnement des ressources sur chaque volume du groupe de volumes. Le provisionnement des ressources nécessite que tous les disques du groupe de volumes prennent en charge la fonctionnalité DULBE de NVMe.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage, y compris aux baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage EF600 et EF300, vous devez disposer des rôles Administrateur stockage ou Administrateur support.
+
+
+
+== Contexte
+
+Pour désactiver le provisionnement des ressources sur un groupe de volumes, utilisez la commande de provisionnement complet avec la possibilité de désactiver le provisionnement des ressources. Un groupe de volumes est provisionné en ressources lorsqu'il est créé si tous les disques sont compatibles DULBE et ceux de la baie de stockage `resourceProvisionedVolumes` le paramètre est `true`.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup[_volumeGroupName_]] resourceProvisioning
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroupName`
+ a| 
+Le groupe de volumes que vous souhaitez activer la fonctionnalité de provisionnement de ressources. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+11.73

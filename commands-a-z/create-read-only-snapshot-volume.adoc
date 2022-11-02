@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/create-read-only-snapshot-volume.html 
+sidebar: sidebar 
+keywords: create, read only, snapshot, volume 
+summary: 'La commande create snapVolume crée un volume snapshot en lecture seule pour les images snapshot d"un volume de base. Pour remplacer un volume snapshot en lecture seule par un volume en lecture/écriture, utilisez la commande set snapVolume convertToReadWrite.' 
+---
+= Créer un volume Snapshot en lecture seule
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create snapVolume` la commande crée un volume snapshot en lecture seule pour les images snapshot d'un volume de base. Pour remplacer un volume Snapshot en lecture seule par un volume en lecture/écriture, utilisez le `set snapVolume convertToReadWrite` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour une image Snapshot utilisée dans la copie de volume en ligne.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create snapVolume userLabel=pass:quotes[_"snapVolumeName"_
+snapImageID="_snapCGID:imageID"_]
+readOnly
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer à un volume snapshot. Placez le nom du volume de snapshot entre guillemets (" ").
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Nom d'une image snapshot que vous souhaitez ajouter au nouveau volume snapshot en lecture seule. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` - Utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` - Utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ").
+
+
+
+ a| 
+`readOnly`
+ a| 
+Ce paramètre définit le volume de snapshot en lecture seule. Ce paramètre est en fait un booléen ; cependant, dans le contexte de cette commande, la valeur booléenne est toujours `TRUE`.
+
+[NOTE]
+====
+Avec le `readOnly` paramètre, les volumes snapshot ne sont pas créés.
+
+====
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+L'identificateur d'une image snapshot comporte deux parties séparées par deux points (:) :
+
+* Nom du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez créer un volume en lecture seule nommé engData1 en utilisant l'image snapshot la plus récente d'un groupe de snapshots portant le nom snapGroup1, utilisez la commande suivante :
+
+[listing]
+----
+create snapVolume userLabel="engData1" snapImageID="snapGroup1:newest" readOnly;
+----
+
+
+== Niveau minimal de firmware
+
+7.83

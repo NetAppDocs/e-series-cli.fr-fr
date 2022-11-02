@@ -1,0 +1,119 @@
+---
+permalink: commands-a-z/smcli-autosupportlog.html 
+sidebar: sidebar 
+keywords: capture, view, autosupport, log 
+summary: 'La commande SMcli -autoSupportLog vous permet d"afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l"état, l"historique de l"activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.' 
+---
+= Capturez ou affichez un journal AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli -autoSupportLog` Commande permet d'afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l'état, l'historique de l'activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+Cette commande permet d'afficher deux types de journaux :
+
+* Journal actuel : permet d'afficher le journal capturé à ce moment.
+* Journal d'archivage : permet d'afficher le journal d'un fichier archivé.
+
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+SMcli -autoSupportLog pass:quotes[(all|-n "_storageArrayName_" | -w "_wwID_")]
+pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]
+----
+
+
+== Paramètres
+
+Le tableau suivant répertorie les paramètres de la commande.
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`all`
+ a| 
+Utilisez ce paramètre si vous souhaitez créer un journal de transmission pour toutes les matrices de stockage du domaine de gestion avec la fonctionnalité AutoSupport AutoSupport activée.
+
+
+
+ a| 
+`_n_`
+ a| 
+Nom de la matrice de stockage pour laquelle vous souhaitez afficher un journal AutoSupport.
+
+
+
+ a| 
+`_w_`
+ a| 
+Le World Wide identifier (WWID) de la baie de stockage pour laquelle vous souhaitez afficher un journal AutoSupport.
+
+
+
+ a| 
+`inputArchive`
+ a| 
+Permet de spécifier le journal AutoSupport archivé, où se trouve le fichier d'archive `_n_`, un entier compris entre 0 et 5.
+
+[NOTE]
+====
+Si vous omettant ce paramètre, vous sélectionnez le journal AutoSupport actuel (capturé à ce moment).
+
+====
+
+
+ a| 
+`outputLog`
+ a| 
+Permet de spécifier le nom du fichier journal AutoSupport de sortie.
+
+[NOTE]
+====
+Ce paramètre est obligatoire.
+
+====
+|===
+
+
+== Niveau minimal de micrologiciel
+
+8.25
+
+
+
+== Exemple
+
+[listing]
+----
+SMcli -autosupportLog -n StorageArrayName inputArchive=0 outputLog=ASUPTransmissionLog
+----
+
+
+== Vérification
+
+Affichez le journal AutoSupport demandé, qui se trouve dans le répertoire client sur lequel le logiciel de gestion du stockage a été installé.

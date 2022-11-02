@@ -1,0 +1,53 @@
+---
+permalink: commands-category/performance-tuning-commands.html 
+sidebar: sidebar 
+keywords: performance, tuning, commands, automatic, load balance, cache commands 
+summary: 'Commandes d"ajustement des performances' 
+---
+= Commandes d'ajustement des performances
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Commandes d'équilibrage automatique de la charge
+
+link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Enregistrer les statistiques d'équilibrage de charge automatique"]
+
+link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Définissez la matrice de stockage pour activer ou désactiver l'équilibrage automatique de la charge"]
+
+
+
+== Commandes SSD cache
+
+link:../commands-a-z/add-drives-to-ssd-cache.html["Ajout de disques à SSD cache"]
+
+link:../commands-a-z/change-ssd-cache-application-type.html["Changer le type d'application SSD cache"]
+
+link:../commands-a-z/create-ssdcache.html["Créez un cache SSD"]
+
+link:../commands-a-z/delete-ssdcache.html["Supprime le cache SSD"]
+
+link:../commands-a-z/remove-drives-from-ssd-cache.html["Retirez les disques du cache SSD"]
+
+link:../commands-a-z/rename-ssd-cache.html["Renommez le cache SSD"]
+
+link:../commands-a-z/resume-ssdcache.html["Reprenez le cache SSD"]
+
+link:../commands-a-z/set-volume-ssdcacheenabled.html["Définissez le cache SSD d'un volume"]
+
+link:../commands-a-z/show-ssd-cache.html["Affiche le cache SSD"]
+
+link:../commands-a-z/show-ssd-cache-statistics.html["Affiche les statistiques du cache SSD"]
+
+link:../commands-a-z/start-ssdcache-locate.html["Démarrer la localisation du cache SSD"]
+
+link:../commands-a-z/start-ssdcache-performancemodeling.html["Démarrez la modélisation des performances du cache SSD"]
+
+link:../commands-a-z/stop-ssdcache-locate.html["Arrêt de la localisation du cache SSD"]
+
+link:../commands-a-z/stop-ssdcache-performancemodeling.html["Arrêtez la modélisation des performances du cache SSD"]
+
+link:../commands-a-z/suspend-ssdcache.html["Suspendre le cache SSD"]

@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html 
+sidebar: sidebar 
+keywords: check, asynchronous mirror group, consistency 
+summary: 'La commande Check asynchrones MirrorGroup rechitorConsistency produit un rapport basé sur l"analyse des données du volume de référentiel sous-jacent du groupe de miroirs asynchrones spécifié.' 
+---
+= Vérifiez la cohérence du groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `check asyncMirrorGroup repositoryConsistency` commande génère un rapport basé sur l'analyse des données du volume de référentiel sous-jacent du groupe de miroirs asynchrones spécifié.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+check asyncMirrorGrouppass:quotes[[_asyncMirrorGroupName_]]
+repositoryConsistency localVolume=pass:quotes[[_localVolumeName"_]]
+file=pass:quotes[_"filePath"_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones sur lequel effectuer une vérification de cohérence. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`repositoryConsistency`
+ a| 
+Indique que le groupe de miroirs asynchrone est vérifié pour vérifier la cohérence.
+
+
+
+ a| 
+`localVolume`
+ a| 
+Spécifie le nom d'un volume local qui participe à la relation de miroir. Vous pouvez spécifier un volume local source ou destination sur une relation miroir. Si le nom du volume local contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer le rapport résultant de la vérification de cohérence. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\repoConsistency.txt"` Ce paramètre doit apparaître en dernier après l'un des paramètres facultatifs.
+
+|===
+
+
+== Remarques
+
+Le rapport généré par cette commande doit être utilisé par le support technique pour analyser les problèmes.
+
+
+
+== Niveau minimal de firmware
+
+7.83

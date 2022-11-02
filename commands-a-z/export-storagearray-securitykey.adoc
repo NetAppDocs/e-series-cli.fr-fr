@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/export-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: export, storage, array, security, key, command, save, drive, securitykey, file, context, role 
+summary: La commande export storageArray securityKey enregistre une clé de sécurité de lecteur dans un fichier. 
+---
+= Exportation de la clé de sécurité de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `export storageArray securityKey` la commande enregistre une clé de sécurité de lecteur dans un fichier.
+
+
+
+== Baies prises en charge
+
+Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E2800, E5700, EF600 et EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Lorsque le fichier de clé est exporté d'une matrice de stockage, cette clé peut être importée dans une autre matrice de stockage. Vous pouvez ainsi déplacer des disques sécurisés d'une baie de stockage à une autre.
+
+[NOTE]
+====
+Cette commande s'applique à la gestion interne et externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+export storageArray securityKey
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[file="_fileName_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez stocker la clé de sécurité dans un fichier externe. Placez la phrase de passe entre guillemets (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer la clé de sécurité. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk`.
+
+====
+|===
+
+
+== Remarques
+
+La matrice de stockage dans laquelle vous allez déplacer les lecteurs doit avoir une capacité égale ou supérieure aux lecteurs que vous importez.
+
+Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE (Full Disk Encryption). Les disques FDE sont dotés d'un état appelé « Security capable ». Lorsque vous créez une clé de sécurité, l'état est défini sur sécurité activée, ce qui limite l'accès à tous les disques FDE présents dans la baie de stockage.
+
+Votre phrase de passe doit répondre aux critères suivants :
+
+* Doit comporter entre 8 et 32 caractères.
+* Ne doit pas contenir d'espaces.
+* Doit contenir au moins une lettre majuscule.
+* Doit contenir au moins une lettre minuscule.
+* Doit contenir au moins un chiffre.
+* Doit contenir au moins un caractère non alphanumérique, par exemple @ +.
+
+
+[NOTE]
+====
+Si votre phrase de passe ne répond pas à ces critères, vous recevrez un message d'erreur et vous serez invité à réessayer la commande.
+
+====
+
+
+== Niveau minimal de firmware
+
+7.40

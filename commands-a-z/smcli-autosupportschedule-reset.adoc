@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/smcli-autosupportschedule-reset.html 
+sidebar: sidebar 
+keywords: reset, autosupport, message, collection, schedule 
+summary: La commande de réinitialisation SMcli autoSupportSchedule réinitialise les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont envoyés. Vous pouvez accepter les valeurs aléatoires par défaut générées par le logiciel de gestion ou spécifier des valeurs avec cette commande. 
+---
+= Réinitialiser le planning de collecte des messages AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli autoSupportSchedule reset` La commande réinitialise les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont envoyés. Vous pouvez accepter les valeurs aléatoires par défaut générées par le logiciel de gestion ou spécifier des valeurs avec cette commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+* Si AutoSupport est activé, le logiciel de gestion envoie des messages AutoSupport quotidiens et des messages AutoSupport hebdomadaires.
+* Le logiciel de gestion sélectionne de façon aléatoire une heure de la journée pour les messages quotidiens et hebdomadaires et un jour de la semaine pour les messages hebdomadaires. Le logiciel de gestion vérifie qu'aucune deux baies de stockage d'un domaine de gestion n'envoie simultanément des messages AutoSupport planifiés.
+* Vous pouvez indiquer une plage (granularité au niveau des heures) de quand envoyer tous les jours et quand envoyer des messages hebdomadaires pour les baies de stockage dans votre domaine de gestion.
+* Pour le planning hebdomadaire, vous sélectionnez les jours de semaine préférés pour la collecte et la transmission de AutoSupport.
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli -autoSupportSchedule reset | (dailyTime=<startTime>-<endTime>
+   dayOfWeek=[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+   weeklyTime=<startTime>-<endTime>)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`reset`
+ a| 
+Réinitialise et génère de nouveaux horaires à l'aide d'un intervalle de 24 heures par jour et de 7 jours par semaine (du dimanche au samedi).
+
+
+
+ a| 
+`dailyTime`
+ a| 
+<``startTime``> - <``endTime``> Spécifie l'heure de début et de fin de la collecte de données AutoSupport pour toutes les matrices de stockage. L'heure de début et l'heure de fin doivent être au format HH:MM[am|pm}.
+
+
+
+ a| 
+`dayOfWeek`
+ a| 
+[Dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi] indique les jours de semaine préférés (du dimanche au samedi) que vous souhaitez collecter les données de collection AutoSupport pour toutes les matrices de stockage. Le `_dayOfWeek_` le paramètre doit être entouré par des crochets et séparé par un espace.
+
+
+
+ a| 
+`weeklyTime`
+ a| 
+<``startTime``> - <``endTime``> Spécifie l'heure du jour de début et de fin de la collecte des données de collection de bundle AutoSupport pour chaque jour de la semaine que vous avez sélectionné. Le `_startTime_` et `_endTime_` Doit avoir la forme HH:MM[am|pm].
+
+|===
+
+
+== Niveau minimal de micrologiciel
+
+8.25
+
+
+
+== Exemple
+
+[listing]
+----
+ SMcli -autoSupportSchedule dailyTime=10:00am-11:00am
+dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am
+----
+`SMcli -autoSupportSchedule dailyTime=10:00am-11:00am dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am`
+
+
+
+== Vérification
+
+Utilisez le `SMcli -autoSupportSchedule show` commande pour voir la modification résultant du planning dans le domaine de gestion.

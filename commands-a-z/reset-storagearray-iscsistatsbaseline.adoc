@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-iscsistatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, iscsi, baseline 
+summary: La commande reset storageArray iscsiStatsBaseline réinitialise la ligne de base iSCSI à 0 pour la matrice de stockage. 
+---
+= Réinitialisez la ligne de base iSCSI de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray iscsiStatsBaseline` Commande réinitialise la ligne de base iSCSI à 0 pour la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:reset-storagearray-hostportstatisticsbaseline.adoc[Réinitialise les statistiques de base du port hôte de la baie de stockage] commande.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray iscsiStatsBaseline
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Cette commande réinitialise la ligne de base sur 0 pour les deux contrôleurs de la baie de stockage. L'objectif de la réinitialisation des deux lignes de base du contrôleur est de vous assurer que le nombre de contrôleurs est synchronisé entre ces deux contrôleurs. Si un contrôleur se réinitialise mais que le second contrôleur ne se réinitialise pas, l'hôte est informé que les contrôleurs sont désynchronisés. L'hôte est informé par les horodatages qui sont signalés avec les statistiques.
+
+
+
+== Niveau minimal de firmware
+
+7.10
+
+8.41 cette commande est obsolète.

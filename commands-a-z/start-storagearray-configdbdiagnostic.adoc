@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/start-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: start, storage, array, configuration, database, diagnostic 
+summary: La commande start storageArray configDbdiagnostic exécute une vérification de cohérence sur une base de données de configuration. 
+---
+= Démarrer le diagnostic de la base de données de configuration de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start storageArray configDbDiagnostic` la commande exécute une vérification de cohérence par rapport à une base de données de configuration.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start storageArray configDbDiagnostic
+[sourceLocation=(disk | onboard) |
+diagnosticType=(fileSystem | mirror) |
+controller[(a|b)]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`sourceLocation`
+ a| 
+Ce paramètre spécifie l'emplacement de la base de données.
+
+* `disk` indique que les données proviennent directement de la base de données sur le lecteur
+* `onboard` Indique que les données proviennent de l'emplacement de mémoire RPA
+
+
+L'emplacement par défaut est `disk`.
+
+
+
+ a| 
+`diagnosticType`
+ a| 
+Niveau de test de diagnostic que vous souhaitez exécuter sur la base de données. Vous pouvez exécuter l'un des niveaux de test suivants :
+
+`fileSystem` -- cette option vérifie l'intégrité structurelle de la base de données.
+
+`mirror` -- les tests exécutés à l'aide de cette option varient en fonction de la valeur du `sourceLocation` paramètre :
+
+* Lorsque le `*sourceLocation*` le paramètre est défini sur `disk`, le contrôleur homologue lance une vérification de bloc.
+* Lorsque le `*sourceLocation*` le paramètre est défini sur `onboard` , le contrôleur homologue lance une vérification d'enregistrement.
+
+
+[NOTE]
+====
+Vous pouvez exécuter le `mirror` Option uniquement à partir d'une ligne de commande ou de l'éditeur de script. Cette option n'est pas disponible via l'interface utilisateur graphique du logiciel de gestion du stockage. Le `mirror` cette option lance une longue opération que vous ne pouvez pas arrêter.
+
+====
+La valeur par défaut est `fileSystem`.
+
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur qui possède la base de données sur laquelle vous souhaitez exécuter les tests de diagnostic. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Cette commande exécute une vérification de cohérence par rapport à une base de données de configuration. Tous les enregistrements de la base de données sont vérifiés. Les données d'erreur sont écrites automatiquement dans un fichier du dossier de données sur le disque. Il n'est pas nécessaire de spécifier un fichier de sortie.
+
+[NOTE]
+====
+Exécution d'une vérification de cohérence avec le `diagnosticType` paramètre défini sur `mirror` et avec le `sourceLocation` paramètre défini sur `onboard` peut provoquer le fonctionnement de l'opération pendant une longue période. Cela peut avoir des effets indésirables sur le traitement des E/S hôte. Cette opération ne doit être effectuée que sous la direction de l'organisation de support.
+
+====
+Une fois le test de diagnostic terminé, le micrologiciel du contrôleur renvoie l'un des résultats suivants :
+
+* `Diagnosis completed without errors. No ZIP file created.`
+* `Diagnosis completed with errors. Refer to the ZIP file created at:`
++
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+
+
+Si le test de diagnostic détecte une incohérence dans la base de données de configuration, le micrologiciel du contrôleur effectue les actions suivantes :
+
+* Renvoie une description de l'incohérence
+* Enregistre un fichier ZIP contenant des données binaires brutes
+
+
+Le micrologiciel du contrôleur enregistre le fichier ZIP à cet emplacement :
+
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+Vous pouvez utiliser les données binaires pour déterminer la cause du problème ou envoyer le fichier contenant les données binaires au support technique.
+
+Pour arrêter le test de diagnostic de configuration de la base de données, utilisez le `stop storageArray configDbDiagnostic` commande.
+
+En outre, vous pouvez lancer le test de diagnostic de configuration de la base de données à partir de l'interface graphique du logiciel de gestion du stockage. Cependant, vous ne pouvez pas arrêter le test de diagnostic de configuration de la base de données à l'aide de l'interface graphique du logiciel de gestion du stockage. Si vous souhaitez arrêter un test de diagnostic, vous devez utiliser le `stop storageArray configDbDiagnostic` commande.
+
+
+
+== Niveau minimal de firmware
+
+7.75
+
+7.83 ajoute ces paramètres :
+
+* `sourceLocation`
+* `diagnosticType`
+* `controller`
+

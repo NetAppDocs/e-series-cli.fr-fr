@@ -1,0 +1,61 @@
+---
+permalink: get-started/formatting-cli-commands.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands 
+summary: 'Les guillemets doubles utilisés dans le cadre d"un nom ou d"une étiquette doivent être pris en compte lors de l"exécution des commandes CLI et des commandes de script sur un système d"exploitation Windows, Linux ou Solaris.' 
+---
+= Règles de format pour les commandes CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Les guillemets doubles (" ") utilisés dans le cadre d'un nom ou d'un libellé nécessitent une considération particulière lorsque vous exécutez les commandes CLI et les commandes de script sur un système d'exploitation Windows, Linux ou Solaris.
+
+Lorsque les guillemets doubles (" ") font partie d'un nom ou d'une valeur, vous devez insérer une barre oblique inverse (\) avant chaque caractère de guillemets double.
+
+Par exemple :
+
+[listing]
+----
+-c "set storageArray userLabel=\"Engineering\";"
+----
+Dans cet exemple, « Ingénierie » est le nom de la baie de stockage.
+
+Un deuxième exemple est :
+
+[listing]
+----
+-n \"My\"_Array
+----
+Dans cet exemple, « My »_Array est le nom de la baie de stockage.
+
+Vous ne pouvez pas utiliser de guillemets (" ") dans le cadre d'une chaîne de caractères (également appelée chaîne littérale) dans une commande de script. Par exemple, vous ne pouvez pas entrer la chaîne suivante pour définir le nom de la matrice de stockage sur « Finance » Array :
+
+[listing]
+----
+-c "set storageArray userLabel=\"\"Finance\"Array\";"
+----
+Dans un système d'exploitation Windows, si vous n'utilisez pas de guillemets doubles (" ") autour d'un nom, vous devez insérer un caret ( {caret} ) avant chaque caractère de script spécial. Les caractères spéciaux sont {caret}, | , < et >.
+
+Insérez un caret avant chaque caractère de script spécial lorsqu'il est utilisé avec les terminaux `-n`, `-o`, `-f`, et `-p`. Par exemple, pour spécifier l'interface de ligne de commande de la baie de stockage du CLIENT, entrez la chaîne suivante :
+
+[listing]
+----
+-n CLI^>CLIENT
+----
+Insérez un caret ({caret}) avant chaque caractère spécial de script lorsqu'il est utilisé dans un littéral de chaîne dans une commande de script. Par exemple, pour changer le nom d'une matrice de stockage en FINANCES_|_PAYLOAD, entrez la chaîne suivante :
+
+[listing]
+----
+-c "set storageArray userLabel=\"FINANCE_^|_PAYROLL\";"
+----
+[NOTE]
+====
+Lors de l'émission de commandes SMcli à l'invite de commande, une barre oblique inverse supplémentaire (`\`) Le caractère est requis comme caractère d'échappement dans le chemin d'accès d'un fichier d'entrée ou de sortie lors de l'utilisation du système d'exploitation Windows. La barre oblique inverse supplémentaire (`\`) Doit être inclus lors de l'utilisation de SMcli en mode sécurisé https, en fournissant l'option -u pour spécifier un utilisateur de gestion d'accès basé sur des rôles. *Exemple:*
+
+[listing]
+----
+C:\\dir\\subdir\\filename
+----
+====

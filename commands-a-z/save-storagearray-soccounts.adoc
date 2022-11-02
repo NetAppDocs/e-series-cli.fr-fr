@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/save-storagearray-soccounts.html 
+sidebar: sidebar 
+keywords: save, storage, array, soc, counts 
+summary: 'La commande save storageArray SOCCounts enregistre les statistiques d"erreur SOC dans un fichier.' 
+---
+= Économisez le nombre de SOC des baies de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray SOCCounts` La commande enregistre les statistiques d'erreur SOC dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande n'est valide que pour les périphériques Fibre Channel dans une topologie de boucle arbitrée.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray SOCCounts file=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les statistiques d'erreur SOC. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\socstat.csv"`
+
+Le nom par défaut du fichier contenant les statistiques d'erreur SOC est `soc-statistics.csv`. Vous pouvez utiliser n'importe quel nom de fichier, mais vous devez utiliser le `.csv` extension.
+
+|===
+
+
+== Remarques
+
+Pour enregistrer de façon plus efficace les statistiques d'erreur SOC dans un fichier, procédez comme suit :
+
+. Exécutez le `reset storageArray SOCBaseline` Commande permettant de définir tous les compteurs de SOC sur 0.
+. Exécutez la baie de stockage pendant un temps prédéterminé (par exemple, deux heures).
+. Exécutez le `save storageArray SOCCounts file`= »[.code]``_filename_``commande.
+
+
+
+
+== Niveau minimal de firmware
+
+6.16

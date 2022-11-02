@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/remove-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: remove, storage array, directory, server, role, mapping 
+summary: 'La commande remove storageArray directoryServer supprime les mappages de rôles définis pour le serveur d"annuaire spécifié.' 
+---
+= Supprimer le mappage de rôles de serveur de répertoire de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `remove storageArray directoryServer` la commande supprime les mappages de rôles définis pour le serveur d'annuaire spécifié.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+remove storageArray directoryServer pass:quotes[[_domainId_]]
+    (allGroupDNs | groupDNs=pass:quotes[(_groupDN1 ... groupDNN_))]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`directoryServer`
+ a| 
+Permet de spécifier le domaine, à l'aide de l'ID de domaine, pour lequel supprimer le mappage.
+
+
+
+ a| 
+`allGroupDNs`
+ a| 
+Permet de supprimer tous les mappages de noms distinctifs du groupe du domaine.
+
+
+
+ a| 
+`groupDNs`
+ a| 
+Permet de spécifier le nom distinctif (DN) des groupes à supprimer.
+
+[NOTE]
+====
+Si vous entrez plusieurs groupes, séparez les valeurs par un espace.
+
+====
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "remove storageArray directoryServer ["domain1"]
+                    groupDNs=("CN=company-distlist,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com");"
+
+SMcli -n Array1 -c "remove storageArray directoryServer ["domain1"]
+                    allGroupDNs;"
+
+SMcli completed successfully.
+----

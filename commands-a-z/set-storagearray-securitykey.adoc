@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: set, internal, storage, array, security key 
+summary: 'La commande Set storageArray securityKey définit la clé de sécurité utilisée dans l"ensemble de la matrice de stockage pour mettre en œuvre la fonction Drive Security.' 
+---
+= Définir la clé de sécurité de la matrice de stockage interne
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray securityKey` Commande définit la clé de sécurité utilisée dans toute la matrice de stockage pour implémenter la fonction de sécurité des lecteurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Lorsqu'un disque compatible avec la sécurité de la matrice de stockage est affecté à un groupe de volumes sécurisé ou à un pool de disques, ce disque est activé en fonction de la sécurité à l'aide de la clé de sécurité. Avant de pouvoir définir la clé de sécurité, vous devez utiliser le `create storageArray securityKey` commande permettant de créer la clé de sécurité.
+
+[NOTE]
+====
+Cette commande ne s'applique qu'à la gestion interne des clés.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray securityKey
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Les disques qui prennent en charge la sécurité disposent de matériel pour accélérer le traitement cryptographique et disposent chacun d'une clé de disque unique. Un lecteur compatible avec la sécurité se comporte comme n'importe quel autre disque jusqu'à ce qu'il soit ajouté à un groupe de volumes sécurisé, auquel cas le lecteur compatible avec la sécurité devient sécurisé.
+
+Lorsqu'un disque de sécurité est sous tension, il requiert la clé de sécurité adéquate du contrôleur avant de pouvoir lire ou écrire des données. Ainsi, un disque sécurisé utilise deux clés : la clé de disque qui crypte et décrypte les données et la clé de sécurité qui autorise les processus de cryptage et de décryptage. Le `set storageArray securityKey` la commande valide la clé de sécurité sur tous les contrôleurs et les lecteurs sécurisés de la matrice de stockage. La fonction Full Disk Encryption garantit que si un disque sécurisé est physiquement retiré d'une matrice de stockage, ses données ne peuvent pas être lues par un autre périphérique, sauf si la clé de sécurité est connue.
+
+
+
+== Niveau minimal de firmware
+
+7.50

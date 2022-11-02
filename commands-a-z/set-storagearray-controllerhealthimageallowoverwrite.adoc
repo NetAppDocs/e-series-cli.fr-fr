@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-controllerhealthimageallowoverwrite.html 
+sidebar: sidebar 
+keywords: set, storage, array, controller, health, image, allow, overwrite 
+summary: 'La commande Set storageArray contrôlerHealthImageAllowOverWrite définit un indicateur sur un contrôleur pour permettre à une nouvelle image de l"état de santé du contrôleur d"écraser une image de l"état de santé du contrôleur existante sur les baies de stockage prenant en charge la fonctionnalité d"image d"état du contrôleur.' 
+---
+= Définir l'image d'intégrité du contrôleur de la matrice de stockage autoriser le remplacement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray controllerHealthImageAllowOverWrite` la commande définit un indicateur sur un contrôleur afin de permettre à une nouvelle image de l'état de santé du contrôleur de remplacer une image existante sur des baies de stockage prenant en charge la fonctionnalité d'image de santé du contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrité du contrôleur, la commande renvoie une erreur.
+
+[NOTE]
+====
+Avec la version 8.20 du micrologiciel `coreDumpAllowOverWrite` le paramètre est remplacé par le `controllerHealthImageAllowOverWrite` paramètre.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray controllerHealthImageAllowOverWrite
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Lorsque l'image d'état du contrôleur est récupérée, le système `allow overwrite` l'indicateur est défini. Si l'image d'intégrité du contrôleur n'est pas récupérée, elle expire dans 48 heures après quoi `allow overwrite` l'indicateur est défini. Lorsque vous utilisez le `set storageArray controllerHealthImageAllowOverWrite` pour définir le `allow overwrite` drapeau : l'expiration des 48 heures est annulée comme si l'image avait été récupérée.
+
+
+
+== Niveau minimal de firmware
+
+7.86
+
+8.20 remplace le `*coreDumpAllowOverWrite*` paramètre avec le `controllerHealthImageAllowOverWrite` paramètre.

@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/show-snmpsystemvariables.html 
+sidebar: sidebar 
+keywords: show, snmp, mib ii, system, group, variables 
+summary: 'La commande show snmpSystemvariables renvoie des informations sur les variables système SNMP (simple Network Management Protocol). Les variables système sont conservées dans une base de données MIB-II (Management information base II).' 
+---
+= Afficher les variables du groupe système MIB II SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show snmpSystemVariables` La commande renvoie des informations sur les variables système SNMP (simple Network Management Protocol). Les variables système sont conservées dans une base de données MIB-II (Management information base II).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage ou Administrateur du support ou moniteur de stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show snmpSystemVariables
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Cette commande renvoie des informations sur les variables système SNMP similaires à cet exemple.
+
+[listing]
+----
+SYSTEM VARIABLES
+    Sys Name: NONE
+    Sys Contact: NONE
+    Sys Location: NONE
+----
+
+
+== Niveau minimal de firmware
+
+8.30

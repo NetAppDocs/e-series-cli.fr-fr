@@ -1,0 +1,111 @@
+---
+permalink: commands-a-z/set-consistency-group-attributes.html 
+sidebar: sidebar 
+keywords: set, consistency, group, attributes 
+summary: 'La commande set ConsistenceGroup définit les propriétés d"un groupe de cohérence de snapshot.' 
+---
+= Définissez les attributs du groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set consistencyGroup` commande définit les propriétés d'un groupe de cohérence de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+[userLabel=pass:quotes["_consistencyGroupName_"]]
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages)]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]]
+[rollbackPriority=(lowest | low | medium | high | highest)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`consistencyGroupName`
+ a| 
+Nom du groupe de cohérence pour lequel vous définissez les propriétés. Placez le nom du groupe de cohérence entre guillemets (" ") dans les crochets ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nouveau nom à attribuer au groupe de cohérence Snapshot. Placez le nouveau nom de groupe de cohérence entre guillemets ("").
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Comment souhaitez-vous que le traitement des instantanés se poursuive si les volumes du référentiel de snapshots sont pleins. Vous pouvez choisir de faire échouer les écritures dans le volume de base (`failBaseWrites`) ou supprimez (purgez) les images de snapshot  `purgeSnapImages`). L'action par défaut est `purgeSnapImages`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Pourcentage de capacité du référentiel sur lequel vous recevez un avertissement indiquant que le volume du référentiel snapshot approche de son plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. La valeur par défaut est 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Chaque groupe de cohérence peut être configuré de manière à supprimer automatiquement ses images de snapshot afin de conserver le nombre total d'images de snapshot dans le groupe de snapshots au niveau ou en dessous d'un niveau désigné. Lorsque cette option est activée, chaque fois qu'une nouvelle image instantanée est créée dans le groupe de snapshots, le système supprime automatiquement l'image snapshot la plus ancienne du groupe pour qu'elle soit conforme à la valeur limite. Cette action libère de la capacité de l'espace de stockage afin de satisfaire les exigences de copie en écriture pour les images de snapshot restantes.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+La priorité des opérations de restauration d'un groupe de cohérence alors que la baie de stockage est opérationnelle. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres. Cependant, il n'est pas nécessaire d'utiliser tous les paramètres.
+
+La priorité de restauration définit la quantité de ressources système à allouer à l'opération de restauration aux dépens des performances du système. Valeur de `high` Indique que l'opération de restauration est prioritaire sur toutes les autres E/S hôtes Valeur de `low` Indique que l'opération de restauration doit être effectuée avec un impact minimal sur les E/S de l'hôte
+
+
+
+== Suppression automatique
+
+Vous pouvez configurer chaque groupe de snapshots pour qu'il effectue la suppression automatique de ses images de snapshot afin de conserver le nombre total d'images de snapshot dans le groupe de snapshots à un nombre maximum d'images ou en dessous. Lorsque le nombre d'images de snapshot dans le groupe de snapshots est au maximum, le `autoDeleteLimit` le paramètre supprime automatiquement les images instantanées chaque fois qu'une nouvelle image instantanée est créée dans le groupe d'instantanés. Le `autoDeleteLimit` le paramètre supprime les images snapshot les plus anciennes du groupe d'instantanés jusqu'à ce que le nombre maximal d'images défini avec le paramètre soit atteint. La suppression d'images instantanées libère ainsi de la capacité de stockage et peut donc être utilisée pour satisfaire les exigences continues de copie en écriture des images snapshots restantes.
+
+
+
+== Niveau minimal de firmware
+
+7.83

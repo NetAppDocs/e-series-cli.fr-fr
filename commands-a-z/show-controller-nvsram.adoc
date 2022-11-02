@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/show-controller-nvsram.html 
+sidebar: sidebar 
+keywords: show, controller, nvsram 
+summary: 'La commande show Controller NVSRAM renvoie des informations sur les valeurs d"octet NVSRAM.' 
+---
+= Afficher la NVSRAM du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show controller NVSRAM` La commande renvoie des informations sur les valeurs d'octet NVSRAM.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande renvoie une liste des valeurs d'octets NVSRAM pour le type d'hôte spécifié. Si vous n'entrez pas les paramètres facultatifs, cette commande renvoie une liste de toutes les valeurs d'octets NVSRAM.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allControllers | controller [(a|b)])
+NVSRAM pass:quotes[[hostType=_hostTypeIndexLabel_ | host="_hostName_"]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allControllers`
+ a| 
+Paramètre permettant de renvoyer des informations sur les deux contrôleurs de la matrice de stockage.
+
+
+
+ a| 
+`controller`
+ a| 
+Paramètre permettant de renvoyer des informations sur un contrôleur spécifique de la matrice de stockage. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`hostType`
+ a| 
+L'étiquette d'index ou le numéro du type d'hôte. Utilisez le `show storageArray hostTypeTable` commande pour générer une liste des identificateurs de type d'hôte disponibles.
+
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte connecté aux contrôleurs. Placez le nom d'hôte entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Utilisez le `show controller NVSRAM` Commande permettant d'afficher des parties de ou de la totalité de la NVSRAM avant d'utiliser le `set controller` Pour modifier les valeurs NVSRAM. Avant d'apporter des modifications à la NVSRAM, contactez le support technique pour connaître les régions de la NVSRAM que vous pouvez modifier.

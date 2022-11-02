@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/show-blockedeventalertlist.html 
+sidebar: sidebar 
+keywords: show, blocked, events 
+summary: 'La commande show blockedEventAlertList renvoie une liste d"événements actuellement bloqués par la commande set blockEventAlert. Les événements de cette liste sont les événements qui n"envoient pas de notifications que vous avez configurées à l"aide des terminaux d"alerte et des paramètres, c"est-à-dire les notifications par e-mail, syslog et interruption.' 
+---
+= Afficher les événements bloqués
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show blockedEventAlertList` commande renvoie une liste d'événements actuellement bloqués par le `set blockEventAlert` commande. Les événements de cette liste sont les événements qui n'envoient pas de notifications que vous avez configurées à l'aide des terminaux d'alerte et des paramètres, c'est-à-dire les notifications par e-mail, syslog et interruption.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+show blockedEventAlertList
+----
+
+
+== Exemple
+
+La sortie comporte une ligne pour chaque événement bloqué, répertoriant le type d'événement au format hexadécimal suivi d'une description de l'événement. Voici un exemple de résultat :
+
+[listing]
+----
+Executing Script...
+0x280D Enclosure Failure
+0x282B Tray Redundancy Lost
+Script execution complete.
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+8.10

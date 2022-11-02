@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/recreate-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: recreate, external, security key 
+summary: La commande reate storageArray securityKey régénère une clé de sécurité de matrice de stockage à utiliser avec la fonction de gestion des clés de sécurité externe. 
+---
+= Recréez la clé de sécurité externe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recreate storageArray securityKey` la commande régénère une clé de sécurité de la matrice de stockage à utiliser avec la fonction de gestion des clés de sécurité externe.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande ne s'applique qu'à la gestion externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+recreate storageArray securityKey
+passPhrase=pass:quotes[_"passPhraseString"_
+file="_fileName"_]
+[deleteOldKey=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez stocker la clé de sécurité dans un fichier externe. Placez la phrase de passe entre guillemets (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier qui possède la clé de sécurité. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk`.
+
+====
+
+
+ a| 
+`deleteOldKey`
+ a| 
+Définissez ce paramètre sur `TRUE` pour supprimer l'ancienne clé de sécurité du serveur de gestion externe des clés après la création de la nouvelle clé de sécurité. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Votre phrase de passe doit répondre aux critères suivants :
+
+* La phrase de passe doit comporter entre 8 et 32 caractères.
+* La phrase de passe doit contenir au moins une lettre majuscule.
+* La phrase de passe doit contenir au moins une lettre minuscule.
+* La phrase de passe doit contenir au moins un chiffre.
+* La phrase de passe doit contenir au moins un caractère non alphanumérique, par exemple < > @ +.
+
+
+[NOTE]
+====
+Si votre phrase de passe ne répond pas à ces critères, vous recevrez un message d'erreur.
+
+====
+
+
+== Niveau minimal de firmware
+
+7.70
+
+11.73 ajoute le `deleteOldKey` paramètre.

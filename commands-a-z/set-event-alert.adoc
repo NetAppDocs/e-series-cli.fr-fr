@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/set-event-alert.html 
+sidebar: sidebar 
+keywords: set, event, alert, filter 
+summary: 'Les commandes Set Event Alert gèrent la notification d"événements d"alerte en désactivant ou en activant la notification relative à un événement alertable spécifique. Pour empêcher la notification d"un événement alertable spécifique, vous le bloquez. Pour activer la notification concernant un événement alertable spécifique, vous devez le débloquer.' 
+---
+= Définir le filtrage des alertes d'événement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set event alert` les commandes gèrent la notification d'événements d'alerte en désactivant ou en activant la notification relative à un événement alertable spécifique. Pour empêcher la notification d'un événement alertable spécifique, vous _block_ it. Pour activer la notification concernant un événement alertable spécifique, vous _débloquer_.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage
+
+====
+
+
+== Contexte
+
+Lorsque vous définissez votre baie de stockage, vous pouvez configurer les alertes et définir le mode de gestion des alertes d'événements. Si vous avez configuré la baie de stockage pour envoyer des alertes, une notification est envoyée à un destinataire désigné lorsqu'un événement alertable se produit. Cette notification peut être de l'un ou de l'autre des types suivants :
+
+* e-mail
+* syslog
+* Notifications de trap SNMP
+
+
+Les commandes CLI set Event Alert fonctionnent sur une seule baie de stockage. Lorsque vous exécutez les commandes sur une matrice de stockage, seule cette matrice est affectée par les commandes. Les autres matrices de stockage qui n'ont pas exécuté la commande CLI contre elles ont le comportement par défaut.
+
+[NOTE]
+====
+Le blocage d'une alerte d'événement n'empêche pas l'affichage de l'événement dans le journal des événements système. Tous les événements continuent d'être publiés dans le journal des événements.
+
+====
+[NOTE]
+====
+Les événements non alertables ne peuvent pas être créés avec cette commande.
+
+====
+
+
+== Syntaxe permettant de bloquer une alerte d'événement
+
+[listing, subs="+macros"]
+----
+set blockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Syntaxe pour débloquer une alerte d'événement
+
+[listing, subs="+macros"]
+----
+set unBlockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`_eventType_`
+ a| 
+Ce paramètre est la valeur entière de l'événement. Entrez la valeur de l'événement dans un format hexadécimal, par exemple 0x280D. Commencez toujours la valeur hexadécimale par *0x* pour indiquer qu'elle est au format hexadécimal. Si vous n'utilisez pas 0x, la valeur est interprétée comme une décimale et convertie en valeur hexadécimale avant d'appliquer la commande de blocage ou de déblocage. Cela peut entraîner le blocage ou le blocage d'un événement incorrect.
+
+Une erreur s'affiche si vous saisissez un événement non valide.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.10

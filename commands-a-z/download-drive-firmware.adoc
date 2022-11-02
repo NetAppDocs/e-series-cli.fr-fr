@@ -1,0 +1,126 @@
+---
+permalink: commands-a-z/download-drive-firmware.html 
+sidebar: sidebar 
+keywords: download, drive, firmware, array, support, role, context, level 
+summary: La commande télécharger le firmware du disque télécharge une image de firmware sur un disque. 
+---
+= Téléchargez le micrologiciel du lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `download drive firmware` commande télécharge une image de firmware sur un disque.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+[CAUTION]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- le téléchargement incorrect du micrologiciel du lecteur peut endommager les lecteurs ou entraîner une perte d'accès aux données.
+
+====
+[NOTE]
+====
+Le `content` paramètre obsolète. Utilisez le `firmware` paramètre à la place.
+
+====
+Cette commande est destinée à télécharger une image de firmware sur un seul modèle de lecteur à la fois. Si vous utilisez cette commande dans un script, assurez-vous que vous n'utilisez cette commande qu'une seule fois. Si vous utilisez cette commande plusieurs fois, l'opération peut échouer. Vous pouvez télécharger simultanément des images de micrologiciel sur tous les lecteurs d'une matrice de stockage en utilisant le `download storageArray driveFirmware` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
+ [online|offline] firmware file="filename"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`online` ou `offline`
+ a| 
+Sélectionnez `online` pour télécharger le micrologiciel d'un lecteur en ligne, sinon sélectionnez `offline`. La valeur par défaut est `offline`.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier contenant l'image du micrologiciel. Placez le chemin du fichier et le nom du fichier de l'image du micrologiciel entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\dnld\drvfrm.dlp"`
+
+Les noms de fichiers valides ont un `.dlp` extension.
+
+
+
+ a| 
+`firmware`
+ a| 
+Indique de télécharger le micrologiciel du contrôleur.
+
+|===
+
+
+== Remarques
+
+Avant d'essayer de télécharger le firmware du disque, prenez les précautions suivantes :
+
+* À moins que vous n'utilisiez le `online` Paramètre, arrêtez toutes les activités d'E/S de la matrice de stockage avant de télécharger l'image du micrologiciel. Le `download drive firmware` commande sans `online` Le paramètre bloque toutes les activités d'E/S jusqu'à la fin ou l'échec du téléchargement ; cependant, par mesure de précaution, assurez-vous que toutes les activités d'E/S susceptibles d'affecter le disque sont arrêtées.
+* Assurez-vous que le fichier image du micrologiciel est compatible avec le plateau du lecteur Si vous téléchargez un fichier image de micrologiciel qui n'est pas compatible avec le plateau de lecteur sélectionné, il est possible que le plateau de lecteur devienne inutilisable.
+* Ne modifiez pas la configuration de la matrice de stockage pendant le téléchargement du micrologiciel du lecteur. Toute tentative de modification de la configuration risque d'entraîner l'échec du téléchargement du micrologiciel et d'rendre les lecteurs sélectionnés inutilisables.
+* Pour les demandes de mise à jour du micrologiciel des disques en ligne émises à l'aide de cette commande, le contrôleur supprime les lecteurs de groupe de volumes RAID 0 de la liste des lecteurs vers lesquels le nouveau micrologiciel est téléchargé. L'état de retour de conduite individuel est défini sur `Never Attempted With Reason`.
+
+
+Lorsque vous téléchargez le micrologiciel sur les lecteurs, vous devez fournir le chemin complet et le nom du fichier à l'image du micrologiciel stockée sur votre système.
+
+Vous pouvez utiliser `download drive` commande pour tester le micrologiciel sur un lecteur avant d'installer le micrologiciel sur tous les lecteurs d'une matrice de stockage. Le téléchargement renvoie l'un des États suivants :
+
+* Réussi
+* Échec avec raison
+* Ne jamais tenter de raison
+
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+
+
+== Niveau minimal de firmware
+
+7.60 ajoute le `drawerID` saisie utilisateur.
+
+8.25 ajoute le `online` paramètre.

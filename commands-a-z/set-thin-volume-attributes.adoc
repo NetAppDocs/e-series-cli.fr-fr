@@ -1,0 +1,202 @@
+---
+permalink: commands-a-z/set-thin-volume-attributes.html 
+sidebar: sidebar 
+keywords: set, thin, volume, attributes 
+summary: 'La commande set volume définit les propriétés d"un volume fin.' 
+---
+= Définir les attributs du volume fin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set volume` commande définit les propriétés d'un volume fin.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez utiliser les paramètres pour définir des propriétés pour un ou plusieurs volumes fins.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set (volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
+[newCapacity=pass:quotes[_capacityValue_]]
+[repositoryMaxCapacity=pass:quotes[_capacityValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[addRepositoryCapacity=capacity-spec][hostReportingPolicy=(standard | thin)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume pour lequel vous souhaitez définir des propriétés. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`volume`
+ a| 
+Identifiant WWID (World Wide identifier) du volume pour lequel vous souhaitez définir des propriétés. Placez le WWID entre guillemets (" ") à l'intérieur des supports d'angle (<>).
+
+
+
+ a| 
+`volumes`
+ a| 
+Les noms de plusieurs volumes pour lesquels vous souhaitez définir des propriétés. Tous les volumes auront les mêmes propriétés. Entrez les noms des volumes à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes comportent des caractères spéciaux ou ne sont composés que de chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`newCapacity`
+ a| 
+Ce paramètre augmente la capacité virtuelle du volume fin. La capacité virtuelle est la valeur que le volume indique à un hôte mappé sur le volume. Des valeurs inférieures ou égales à la capacité existante causeront une erreur. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+La capacité virtuelle minimale est de 32 Mo.
+
+La capacité virtuelle maximale est de 63 To.
+
+
+
+ a| 
+`repositoryMaxCapacity*`
+ a| 
+Ce paramètre définit la capacité maximale du volume du référentiel. La valeur ne doit pas être inférieure à la capacité physique du volume du référentiel. Si la nouvelle valeur entraîne une réduction de la capacité à un niveau inférieur au seuil d'avertissement, la commande génère une erreur.
+
+[NOTE]
+====
+La commande `repositoryMaxCapacity` compatible avec `repositoryExpansionPolicy=automatic`.
+
+====
+
+
+ a| 
+`repositoryExpansionPolic*`
+ a| 
+Ce paramètre définit la stratégie d'extension sur `automatic` ou `manual`.Lorsque vous modifiez la police de `automatic` à `manual`, la valeur de capacité maximale (quota) change à la capacité physique du volume de référentiel.
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Pourcentage de capacité du volume fin auquel vous recevez une alerte d'avertissement indiquant que le volume fin est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %.
+
+Les valeurs valides vont de 1 à 100.
+
+Le fait de définir ce paramètre sur 100 désactive les alertes d'avertissement.
+
+
+
+ a| 
+`addRepositoryCapacity`
+ a| 
+Ce paramètre alloue de la capacité à partir de l'extension libre du pool de disques. Si l'espace disponible est insuffisant, la commande échoue.
+
+[NOTE]
+====
+La commande `addRepositoryCapacity` compatible avec `repositoryExpansionPolicy=manual`.
+
+====
+
+
+ a| 
+`*hostReportingPolicy*`
+ a| 
+Ce paramètre modifie la façon dont le volume fin est signalé à l'hôte. Les valeurs valides sont `standard` ou `thin`.
+
+|===
+
+
+== Remarques
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
+
+Le tableau suivant répertorie les limites de capacité pour un volume fin.
+
+[cols="2*"]
+|===
+| Type de capacité | Taille 
+
+
+ a| 
+Capacité virtuelle minimale
+ a| 
+32 MO
+
+
+
+ a| 
+Capacité virtuelle maximale
+ a| 
+63 TO
+
+
+
+ a| 
+Capacité physique minimale
+ a| 
+4 Go
+
+
+
+ a| 
+Capacité physique maximale
+ a| 
+64 TO
+
+|===
+Les volumes fins prennent en charge toutes les opérations réalisées par les volumes standard, à l'exception des cas suivants :
+
+* Vous ne pouvez pas modifier la taille du segment d'un volume fin.
+* Vous ne pouvez pas activer la vérification de redondance préalable à la lecture d'un volume fin.
+* Vous ne pouvez pas utiliser un volume fin comme volume cible dans une copie de volume.
+* Vous ne pouvez pas utiliser un volume fin dans une opération de mise en miroir synchrone.
+
+
+Si vous souhaitez modifier un volume fin en volume standard, utilisez l'opération de copie de volume pour créer une copie du volume fin. La cible d'une copie de volume est toujours un volume standard.
+
+
+
+== Niveau minimal de firmware
+
+7.83

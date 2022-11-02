@@ -1,0 +1,50 @@
+---
+permalink: commands-a-z/show-array-label.html 
+sidebar: sidebar 
+keywords: show, array, label 
+summary: 'La commande Show array label renvoie des informations sur la définition ou non d"une étiquette de matrice de stockage ou de toutes les étiquettes existantes de matrice de stockage.' 
+---
+= Afficher l'étiquette de tableau
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Show array label` la commande renvoie des informations sur la définition ou non d'une étiquette de matrice de stockage ou de toutes les étiquettes de matrice de stockage existantes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique aux baies de stockage EF600.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show storageArrayLabel label _userDefinedString_]
+show storageArrayLabel all
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userDefinedString`
+ a| 
+Permet de spécifier un libellé défini par l'utilisateur pour la matrice de stockage.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

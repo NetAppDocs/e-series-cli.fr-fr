@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/start-snapimage-rollback.html 
+sidebar: sidebar 
+keywords: start, snapshot, image, rollback 
+summary: 'La commande Start SnapImage rollback lance une opération de restauration pour un ensemble d"images instantanées.' 
+---
+= Démarrer la restauration de l'image instantanée
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start snapImage rollback` commande lance une opération de restauration pour un ensemble d'images de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Le contenu du volume de base change immédiatement pour correspondre au contenu instantané du volume d'image snapshot sélectionné. Le volume de base devient immédiatement disponible pour les demandes de lecture/écriture une fois l'opération de restauration terminée. Pour arrêter une opération de restauration d'image instantanée, utilisez le `stop rollback snapImage` commande.
+
+Le volume de référentiel associé à l'image instantanée continue de suivre toute nouvelle modification entre le volume de base et le volume d'image instantanée qui se produit une fois l'opération de restauration terminée.
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour les images Snapshot impliquées dans la copie de volume en ligne.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start snapImage ["_snapImageName_"]] rollback
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapImage`
+ a| 
+Nom de l'image instantanée. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` -- utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` -- utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ") entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
+
+* Identifiant du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez démarrer une opération de restauration pour l'image snapshot 12345 dans un groupe de snapshots dont le nom est snapGroup1, utilisez la commande suivante :
+
+[listing]
+----
+start snapImage ["snapGroup1:12345"] rollback;
+----
+Pour lancer une opération de restauration pour l'image snapshot la plus récente d'un groupe de snapshots portant le nom snapGroup1, utilisez la commande suivante :
+
+[listing]
+----
+start snapImage ["snapGroup1:newest"]rollback;
+----
+
+
+== Niveau minimal de firmware
+
+7.83

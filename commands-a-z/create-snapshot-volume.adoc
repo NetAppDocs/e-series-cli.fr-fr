@@ -1,0 +1,149 @@
+---
+permalink: commands-a-z/create-snapshot-volume.html 
+sidebar: sidebar 
+keywords: create, snapshot, volume 
+summary: 'La commande create snapVolume crée un volume snapshot avec des capacités de lecture/écriture pour les images snapshot d"un volume de base.' 
+---
+= Créer un volume snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create snapVolume` la commande crée un volume snapshot avec des capacités de lecture/écriture pour les images snapshot d'un volume de base.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez mapper le volume de snapshot à un hôte et toutes les écritures de l'hôte résident dans le volume de référentiel associé au volume de snapshot. Vous pouvez affecter le nouveau volume snapshot à un volume de référentiel existant ou créer un nouveau volume de référentiel dans un groupe de volumes ou un pool de disques.
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour une image Snapshot utilisée dans la copie de volume en ligne.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create snapVolume userLabel=pass:quotes[_"snapVolumeName_" snapImageID="_snapCGID:imageID_"]
+[(repositoryVolume="repos_xxxx"]
+[repositoryVolume=pass:quotes[_(volumeGroupName_]pass:quotes[[capacity=_capacityValue_]]]
+[repositoryVolume=pass:quotes[(_diskPoolName_]pass:quotes[[capacity=_capacityValue_])]]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Nom que vous souhaitez attribuer à un volume snapshot. Placez le nom du volume de snapshot entre guillemets (" ").
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Identifiant alphanumérique d'une image de snapshot à ajouter au nouveau volume de snapshot. L'identifiant d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` - Utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` - Utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Nom du volume du référentiel qui contient les données modifiées de l'image snapshot.
+
+Vous disposez de deux options pour définir le nom d'un volume de référentiel :
+
+* Utiliser un nom de volume de référentiel existant
+* Créez un nouveau volume de référentiel lorsque vous exécutez cette commande
+
+
+Le nom d'un volume de référentiel existant comprend deux parties :
+
+* Le terme « repos »
+* Un identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel
+
+
+Placez le nom du volume de référentiel existant entre guillemets (" ").
+
+Si vous souhaitez créer un nouveau volume de référentiel lorsque vous exécutez cette commande, vous devez entrer le nom d'un groupe de volumes ou d'un pool de disques dans lequel vous voulez que le volume de référentiel soit. Vous pouvez également définir la capacité du volume du référentiel. Si vous souhaitez définir la capacité, vous pouvez utiliser les valeurs suivantes :
+
+* Valeur entière représentant un pourcentage de la capacité du volume de base
+* Valeur décimale représentant un pourcentage de la capacité du volume de base
+* Taille spécifique du volume du référentiel. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+Si vous n'utilisez pas l'option Capacity, le logiciel de gestion du stockage définit la capacité sur 20 % de la capacité du volume de base.
+
+Lorsque vous exécutez cette commande, le logiciel de gestion du stockage crée le volume de référentiel du volume de snapshot.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Pourcentage de capacité du référentiel sur lequel vous recevez un avertissement indiquant que le volume du référentiel snapshot approche de son plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. La valeur par défaut est 75.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+L'identificateur d'une image snapshot comporte deux parties séparées par deux points (:) :
+
+* Nom du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez créer un volume snapshot nommé snapData1 en utilisant l'image snapshot la plus récente d'un groupe de snapshots dont le nom est snapGroup1 avec une limite de remplissage maximale de 80 % pour le volume de référentiel, utilisez la commande suivante :
+
+[listing]
+----
+create snapVolume userLabel="snapData1" snapImageID="snapGroup1:newest"
+repositoryVolume="repos_1234" repositoryFullLimit=80;
+----
+L'identifiant du volume de référentiel est automatiquement créé par le logiciel de gestion du stockage et le micrologiciel lorsque vous créez un nouveau groupe de snapshots. Vous ne pouvez pas renommer le volume du référentiel car le fait de renommer le volume du référentiel interrompt la liaison avec les images de snapshot.
+
+
+
+== Niveau minimal de firmware
+
+7.83

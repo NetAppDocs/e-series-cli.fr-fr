@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/smcli-alerttest.html 
+sidebar: sidebar 
+keywords: test, alerts 
+summary: La commande SMcli alertTest envoie une alerte de test au journal des événements Windows et à tous les récepteurs syslog configurés. 
+---
+= Testez les alertes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli alertTest` La commande envoie une alerte de test au journal des événements Windows et à tous les récepteurs syslog configurés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli -alertTest
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de micrologiciel
+
+7.83

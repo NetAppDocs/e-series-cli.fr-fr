@@ -1,0 +1,35 @@
+---
+permalink: get-started/structure-of-a-cli-command.html 
+sidebar: sidebar 
+keywords: structure, cli, commands 
+summary: 'Les commandes CLI se présentent sous la forme d"un gestionnaire de commandes et d"éléments intégrés à l"encapsuleur.' 
+---
+= Structure des commandes CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Les commandes CLI se présentent sous la forme d'un gestionnaire de commandes et d'éléments intégrés à l'encapsuleur. Une commande CLI comprend les éléments suivants :
+
+* Un encapsuleur de commande identifié par le terme `SMcli`
+* L'identifiant de la matrice de stockage
+* Bornes qui définissent l'opération à effectuer
+* Commandes de script
+
+
+L'encapsuleur de commande CLI est un shell qui identifie les contrôleurs de la matrice de stockage, les terminaux opérationnels embeds, les commandes de script embeds et les transmet au moteur de script.
+
+Toutes les commandes CLI ont la structure suivante :
+
+[listing]
+----
+SMcli *storageArray terminal script-commands*;
+----
+* `SMcli` appelle l'interface de ligne de commande.
+* `storageArray` Est le nom ou l'adresse IP de la matrice de stockage.
+* `terminal` Est une valeur de l'interface de ligne de commandes qui définit l'environnement et l'objectif de la commande.
+* `script-commands` sont une ou plusieurs commandes de script ou le nom d'un fichier script qui contient des commandes de script. (Les commandes de script permettent de configurer et de gérer la matrice de stockage.)
+
+
+Si vous saisissez une saisie incomplète ou inexacte `SMcli` chaîne qui ne possède pas la syntaxe correcte, les noms de paramètres, les options ou les terminaux, le moteur de script renvoie des informations d'utilisation.

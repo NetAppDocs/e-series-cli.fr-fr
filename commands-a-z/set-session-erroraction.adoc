@@ -1,0 +1,120 @@
+---
+permalink: commands-a-z/set-session-erroraction.html 
+sidebar: sidebar 
+keywords: set, session 
+summary: La commande set session errorAction définit la manière dont vous souhaitez exécuter la session de moteur de script en cours. 
+---
+= Configurez la session
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set session errorAction` commande définit la manière dont vous souhaitez exécuter la session de moteur de script en cours.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage, Administrateur du support, Administrateur de sécurité ou moniteur de stockage.
+
+
+
+== Contexte
+
+Aux fins de cette commande, une session correspond à la durée de l'exécution des commandes. Cette commande ne définit pas définitivement les paramètres de la matrice de stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set session errorAction=(stop | continue)
+password="storageArrayPassword"
+performanceMonitorInterval=intervalValue
+performanceMonitorIterations=iterationValue
+----
+[listing]
+----
+set session errorAction=(stop | continue)
+password="storageArrayPassword"
+userRole=(admin | monitor)
+performanceMonitorInterval=intervalValue
+performanceMonitorIterations=iterationValue
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`errorAction`
+ a| 
+Comment la session répond si une erreur est détectée pendant le traitement. Vous pouvez choisir d'arrêter la session en cas d'erreur ou de poursuivre la session après avoir rencontré une erreur. La valeur par défaut est `stop`. (Ce paramètre définit l'action pour les erreurs d'exécution, et non les erreurs de syntaxe. Certaines conditions d'erreur peuvent remplacer le `continue` valeur.)
+
+
+
+ a| 
+`password`
+ a| 
+Mot de passe de la matrice de stockage. Placez le mot de passe entre guillemets (" ").
+
+[NOTE]
+====
+Lorsque le type de client est défini sur `https`, ce paramètre est obsolète. Le mot de passe doit être spécifié avant l'exécution du script de commande CLI et ne peut pas être modifié au milieu d'un script.
+
+====
+
+
+ a| 
+`performanceMonitorInterval`
+ a| 
+La fréquence de collecte des données de performance. Entrez une valeur entière pour l'intervalle d'interrogation, en secondes, pour lequel vous souhaitez capturer les données. La plage de valeurs est `3` à `3600` secondes. La valeur par défaut est `5` secondes.
+
+[NOTE]
+====
+Lorsque le type de client est défini sur `https`, ce paramètre est obsolète. Pour modifier la valeur d'intervalle par défaut, utilisez ce paramètre avec les commandes affectées individuelles. Les commandes sont `save storageArray performanceStats` et `show drive performanceStats`.
+
+====
+
+
+ a| 
+`performanceMonitorIterations`
+ a| 
+Nombre d'échantillons à capturer. Entrez une valeur entière. La plage de valeurs pour les échantillons capturés est `1` à `3600`. La valeur par défaut est `5`.
+
+[NOTE]
+====
+Lorsque le type de client est défini sur `https`, ce paramètre est obsolète. A la place, pour modifier la valeur d'itération par défaut, utilisez ce paramètre avec les commandes affectées individuelles. Les commandes sont `save storageArray performanceStats` et `show drive performanceStats`.
+
+====
+|===
+
+
+== Remarques
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
+
+Des mots de passe sont stockés sur chaque matrice de stockage d'un domaine de gestion. Si un mot de passe n'a pas été défini précédemment, vous n'avez pas besoin d'un mot de passe. Le mot de passe peut être toute combinaison de caractères alphanumériques avec un maximum de 30 caractères. (Vous pouvez définir un mot de passe de matrice de stockage à l'aide de la `set storageArray` commande.)
+
+L'intervalle d'interrogation et le nombre d'itérations que vous spécifiez restent en vigueur jusqu'à la fin de la session. Une fois la session terminée, l'intervalle d'interrogation et le nombre d'itérations reviennent aux valeurs par défaut.
+
+
+
+== Niveau minimal de firmware
+
+5.20
+
+8.40 - lorsque le type de client est défini sur `https`, obsolète `password`, `userRole`, `performanceMonitorInterval`, et `performanceMonitorIterations` paramètres.

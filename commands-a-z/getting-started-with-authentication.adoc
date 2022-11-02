@@ -1,0 +1,27 @@
+---
+permalink: commands-a-z/getting-started-with-authentication.html 
+sidebar: sidebar 
+keywords: authentication, users, access, system, assign, login credentials, associated, profile, include, specific, role, access, permissions, start 
+summary: 'L"authentification requiert que les utilisateurs accèdent au système avec des informations d"identification de connexion attribuées. Chaque connexion utilisateur est associée à un profil utilisateur qui inclut des rôles et des autorisations d"accès spécifiques.' 
+---
+= Mise en route de l'authentification
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'authentification requiert que les utilisateurs accèdent au système avec des informations d'identification de connexion attribuées. Chaque connexion utilisateur est associée à un profil utilisateur qui inclut des rôles et des autorisations d'accès spécifiques.
+
+Les administrateurs peuvent implémenter l'authentification système comme suit :
+
+* RBAC (contrôle d'accès basé sur des rôles) appliqué dans la baie de stockage, qui inclut des utilisateurs et des rôles prédéfinis.
+* Connexion à un serveur LDAP (Lightweight Directory Access Protocol) et à un service d'annuaire, comme Active Directory de Microsoft, puis mappage des utilisateurs LDAP aux rôles intégrés de la baie de stockage.
+* Se connecter à un fournisseur d'identités qui utilise le langage SAML 2.0, puis mapper les utilisateurs vers les rôles intégrés de la baie de stockage.
++
+[NOTE]
+====
+Le langage SAML est une fonctionnalité intégrée à la baie de stockage (versions 8.42 et supérieures du micrologiciel). Il n'est configurable que à partir de l'interface utilisateur SANtricity System Manager.
+
+====
+

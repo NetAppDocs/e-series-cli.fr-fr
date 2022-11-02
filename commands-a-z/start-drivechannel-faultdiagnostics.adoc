@@ -1,0 +1,145 @@
+---
+permalink: commands-a-z/start-drivechannel-faultdiagnostics.html 
+sidebar: sidebar 
+keywords: start, drive channel, fault, isolation, diagnostics 
+summary: 'La commande START RESULTATS fautDiagnostics exécute les diagnostics d"isolation des défauts du canal d"entraînement et enregistre les résultats.' 
+---
+= Démarrer les diagnostics d'isolation des défauts du canal d'entraînement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start driveChannel faultDiagnostics` la commande exécute les diagnostics d'isolation des défauts du canal d'entraînement et stocke les résultats.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.10 du micrologiciel, le `start driveChannel faultDiagnostics` la commande est obsolète.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
+controller [(a|b)] faultDiagnostics
+testDevices=[all |
+controller=(a|b) |
+esms=pass:quotes[[_trayID1_ (left | right), ... , _trayIDN_] (left | right)] |
+drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]
+|[dataPattern=(fixed | pseudoRandom) |
+patternNumber=[pass:quotes[(_0xhexadecimal_ | _number_)]] |
+pass:quotes[maxErrorCount=_integer_] |
+pass:quotes[testIterations=_integer_] |
+pass:quotes[timeout=_timeInterval_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveChannel`
+ a| 
+Numéro d'identification du canal de lecteur à localiser. Les valeurs valides pour le numéro d'identification du canal de lecteur sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`. Placez le numéro d'identification du canal du lecteur entre crochets ([ ]).
+
+
+
+ a| 
+`controller`
+ a| 
+La lettre d'identification du contrôleur que vous souhaitez tester. Les valeurs d'identifiant de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`testDevices`
+ a| 
+Les identifiants des périphériques (contrôleurs, module de services environnementaux [EMM] ou lecteurs) que vous souhaitez tester. Vous pouvez spécifier `all` Ou entrez les identifiants spécifiques des appareils que vous souhaitez diagnostiquer.le `controller` les identifiants sont `a` ou `b`, où `a` Est le module de contrôleur RAID dans le connecteur A, et `b` Est le module de contrôleur RAID dans le connecteur B.
+
+Le `esms` Les identifiants sont l'ID du bac et la gauche ou la droite, où l'ID du bac est une valeur comprise entre 0 et 99, et la gauche ou la droite sont déterminés lors de l'affichage du plateau de lecteur par l'arrière.
+
+Le `drive` les identificateurs incluent un identificateur de tiroir, un identificateur de tiroir lorsque le tiroir est doté de tiroirs et un identificateur de logement.
+
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`dataPattern`
+ a| 
+La méthode de répétabilité que vous souhaitez tester.
+
+
+
+ a| 
+`patternNumber`
+ a| 
+Le modèle de données hexadécimales à utiliser pour exécuter le test. Ce nombre peut être n'importe quel nombre hexadécimal entre `0000` à `FFFF`. Vous devez placer `0x` devant pour indiquer un nombre hexadécimal.
+
+
+
+ a| 
+`maxErrorCount`
+ a| 
+Nombre d'erreurs que vous souhaitez accepter avant de terminer le test.
+
+
+
+ a| 
+`testIterations`
+ a| 
+Nombre de fois que vous souhaitez répéter le test.
+
+
+
+ a| 
+`timeout`
+ a| 
+Durée en minutes pendant laquelle vous souhaitez exécuter le test.
+
+|===
+
+
+== Remarques
+
+Vous pouvez entrer plusieurs types de périphériques à tester et entrer plusieurs types de tests à exécuter.
+
+Utilisez le `save driveChannel faultDiagnostics` commande et le `stop driveChannel faultDiagnostics` commande avec `start driveChannel faultDiagnostics` commande. Ces commandes sont nécessaires pour enregistrer les résultats des tests de diagnostic dans un fichier et pour arrêter le test de diagnostic.
+
+Exemples de validité `patternNumber` les entrées sont `0xA5A5`, `0x3C3C`, `8787`, et `1234`.
+
+Vous pouvez également arrêter cette commande à tout moment en appuyant sur `Ctrl+C`.
+
+
+
+== Niveau minimal de firmware
+
+7.15

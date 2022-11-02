@@ -1,0 +1,166 @@
+---
+permalink: commands-a-z/create-syncmirror.html 
+sidebar: sidebar 
+keywords: create, synchronous, mirroring 
+summary: 'La commande create SyncMirror crée à la fois le volume principal et le volume secondaire pour une paire synchrone mise en miroir à distance. Cette commande définit également le mode d"écriture (mode d"écriture synchrone ou mode d"écriture asynchrone) et la priorité de synchronisation.' 
+---
+= Création d'une mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create syncMirror` la commande crée le volume primaire et le volume secondaire pour une paire synchrone à distance en miroir. Cette commande définit également le mode d'écriture (mode d'écriture synchrone ou mode d'écriture asynchrone) et la priorité de synchronisation.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create syncMirror primary=pass:quotes[_"primaryVolumeName_"
+secondary="_secondaryVolumeName_"
+(remoteStorageArrayName="_storageArrayName_" |
+remoteStorageArrayWwn="_wwID_")]
+[remotePassword="password"]
+[syncPriority=(highest | high | medium | low | lowest)]
+[autoResync=(enabled | disabled)]
+[writeOrder=(preserved | notPreserved)]
+[writeMode=(synchronous | asynchronous)]
+[role=(primary | secondary)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`primary`
+ a| 
+Nom d'un volume existant sur la matrice de stockage locale que vous souhaitez utiliser pour le volume principal. Placez le nom du volume primaire entre guillemets (" ").
+
+
+
+ a| 
+`secondary`
+ a| 
+Nom d'un volume existant sur la matrice de stockage distante que vous souhaitez utiliser pour le volume secondaire. Placez le nom du volume secondaire entre guillemets (" ").
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Nom de la matrice de stockage distante. Placez le nom de la matrice de stockage distante entre guillemets (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwn`
+ a| 
+Le World Wide identifier (WWID) de la baie de stockage distante. Placez le WWID entre guillemets (" ").
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Mot de passe de la matrice de stockage distante. Utilisez ce paramètre lorsque la matrice de stockage distante est protégée par mot de passe. Placez le mot de passe entre guillemets (" ").
+
+
+
+ a| 
+`syncPriority`
+ a| 
+Priorité de la synchronisation complète relative aux activités d'E/S de l'hôte. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Les paramètres de resynchronisation automatique entre les volumes primaires et les volumes secondaires d'une paire miroir à distance. Ce paramètre a les valeurs suivantes :
+
+* `enabled` -- la resynchronisation automatique est activée. Vous n'avez rien à faire de plus pour resynchroniser le volume principal et le volume secondaire.
+* `disabled` -- la resynchronisation automatique est désactivée. Pour resynchroniser le volume principal et le volume secondaire, vous devez exécuter la `resume syncMirror` commande.
+
+
+
+
+ a| 
+`writeOrder`
+ a| 
+Ordre d'écriture pour la transmission de données entre le volume primaire et le volume secondaire. Les valeurs valides sont `preserved` ou `notPreserved`.
+
+
+
+ a| 
+`writeMode`
+ a| 
+Méthode d'écriture du volume primaire sur le volume secondaire Les valeurs valides sont `synchronous` ou `asynchronous`.
+
+
+
+ a| 
+`role`
+ a| 
+Ce paramètre permet de promouvoir le groupe de miroirs asynchrones en rôle principal ou de rétrograder le groupe de miroirs asynchrones en rôle secondaire. Pour définir le groupe de miroirs asynchrones comme rôle principal, définissez ce paramètre sur `primary`. Pour définir le groupe de miroirs asynchrones comme rôle secondaire, définissez ce paramètre sur `secondary`.
+
+
+
+ a| 
+`force`
+ a| 
+Le changement de rôle est forcé si la liaison entre les baies de stockage est en panne et la promotion ou la rétrogradation du côté local entraîne une condition double primaire ou une condition double secondaire. Pour forcer une inversion de rôle, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Lorsque vous choisissez le volume primaire et le volume secondaire, le volume secondaire doit être de taille supérieure ou égale à celle du volume primaire. Le niveau RAID du volume secondaire ne doit pas être identique au volume primaire.
+
+Des mots de passe sont stockés sur chaque matrice de stockage d'un domaine de gestion. Si un mot de passe n'a pas été défini précédemment, vous n'avez pas besoin d'un mot de passe. Le mot de passe peut être toute combinaison de caractères alphanumériques avec un maximum de 30 caractères. (Vous pouvez définir un mot de passe de matrice de stockage à l'aide de la `set storageArray` commande.)
+
+La priorité de synchronisation définit la quantité de ressources système utilisées pour synchroniser les données entre le volume primaire et le volume secondaire d'une relation miroir. Si vous sélectionnez le niveau de priorité le plus élevé, la synchronisation des données utilise le plus grand nombre de ressources système pour effectuer la synchronisation complète, ce qui réduit les performances des transferts de données hôte.
+
+Le `writeOrder` le paramètre ne s'applique qu'aux modes d'écriture asynchrone et fait partie de la paire en miroir d'un groupe de cohérence. Réglage du `writeOrder` paramètre à `preserved` provoque la transmission par la paire miroir distante des données du volume principal vers le volume secondaire dans le même ordre que les écritures de l'hôte sur le volume primaire. En cas d'échec de la liaison de transmission, les données sont mises en mémoire tampon jusqu'à ce qu'une synchronisation complète puisse se produire. Cette action peut impliquer une surcharge supplémentaire du système pour conserver les données mises en tampon, ce qui ralentit les opérations. Réglage du `writeOrder` paramètre à `notPreserved` libère le système de n'avoir pas à conserver les données dans la mémoire tampon, mais il est nécessaire de forcer une synchronisation complète pour s'assurer que le volume secondaire dispose des mêmes données que le volume primaire.
+
+
+
+== Niveau minimal de firmware
+
+6.10

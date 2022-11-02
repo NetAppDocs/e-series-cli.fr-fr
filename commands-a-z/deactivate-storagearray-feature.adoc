@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/deactivate-storagearray-feature.html 
+sidebar: sidebar 
+keywords: deactivate, synchronous, mirror 
+summary: La commande Désactiver la fonction StorageArray désactive la fonction de mise en miroir synchrone, déassemble le volume du référentiel miroir et libère le propriétaire du contrôleur du volume secondaire. 
+---
+= Désactiver la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `deactivate storageArray feature` commande désactive la fonction de mise en miroir synchrone, déassemble le volume du référentiel miroir et libère le propriétaire du contrôleur du volume secondaire.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou Administrateur du support.
+
+
+
+== Contexte
+
+Le port hôte du contrôleur dédié au volume secondaire est disponible pour les transferts de données de l'hôte.
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+deactivate storageArray feature=syncMirror
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10

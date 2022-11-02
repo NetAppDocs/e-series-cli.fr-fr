@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/create-snapimage.html 
+sidebar: sidebar 
+keywords: create, snapshot, image 
+summary: La commande create SnapImage crée une nouvelle image snapshot dans un ou plusieurs groupes de snapshots existants. 
+---
+= Créer une image snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create snapImage` la commande crée une nouvelle image snapshot dans un ou plusieurs groupes de snapshots existants.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Avant de pouvoir créer une image instantanée, vous devez d'abord avoir au moins un groupe d'instantanés dans lequel vous pouvez placer l'image instantanée. Pour créer un groupe de snapshots, utilisez le `create snapGroup` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create snapImage (snapGroup=pass:quotes[_"snapGroupName" |
+snapGroups=("_snapGroupName1"... "snapGroupNamen_"))]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe d'instantanés qui contiendra l'image d'instantané. Placez le nom du groupe de snapshots entre guillemets (" ").
+
+
+
+ a| 
+`snapGroups`
+ a| 
+Noms de plusieurs groupes d'instantanés contenant l'image d'instantané. Entrez les noms des groupes de snapshots à l'aide des règles suivantes :
+
+* Placez tous les noms entre parenthèses.
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Une image snapshot est une image logique ponctuelle du contenu d'un _base_ volume associé. L'image Snapshot est créée instantanément et enregistre l'état du volume de base à ce moment-là. Chaque image snapshot est créée dans le contexte d'exactement un _snapshot group_. Un groupe de snapshots est une séquence d'images instantanées du volume de base associé. Un groupe de snapshots possède un _volume_référentiel utilisé pour enregistrer toutes les données des images de snapshot. Les images d'instantané d'un groupe d'instantanés ont un ordre spécifique. L'ordre spécifique des images de snapshot vous permet de gérer les images de snapshot, telles que la restauration d'une image snapshot spécifique au volume de base ou la suppression des images de snapshot dont vous n'avez plus besoin.
+
+Le résultat de la création d'une image Snapshot d'un groupe de cohérence est une image Snapshot de chaque volume membre du groupe de cohérence.
+
+
+
+== Niveau minimal de firmware
+
+7.83

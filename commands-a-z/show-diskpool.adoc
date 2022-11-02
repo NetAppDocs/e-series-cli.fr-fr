@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/show-diskpool.html 
+sidebar: sidebar 
+keywords: show, disk pool 
+summary: La commande show DISKPOOL renvoie des informations sur un pool de disques. 
+---
+= Afficher le pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show diskPool` la commande renvoie des informations sur un pool de disques.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande renvoie ces informations sur un pool de disques :
+
+* Le statut (optimal, en ligne, hors ligne, par exemple)
+* La capacité totale
+* La capacité de préservation, la capacité exploitable et la capacité inutilisable
+* La capacité utilisée, la capacité libre et le pourcentage de saturation
+* Le propriétaire actuel (le contrôleur dans le slot A ou le contrôleur dans le slot B )
+* Le support de disque (SAS)
+* Le type de support (HDD ou SSD)
+* Le type d'interface de disque (Fibre Channel, iSCSI, InfiniBand, SAS)
+* Protection contre les pertes du plateau (oui ou non)
+* Secure capable : indique si le pool de disques est composé de tous les disques sécurisés. Les disques sécurisés peuvent être des disques FDE ou FIPS.
+* Secure : indique si la sécurité du lecteur est activée pour le pool de disques (cette option est appelée Secure Enabled).
+* Les paramètres de notification de capacité restants (avertissement critique et précoce)
+* Les paramètres de priorité
+* Les volumes associés et la capacité disponible
+* Les lecteurs associés
+* Les fonctionnalités Data assurance et la présence de volumes Data assurance
+* Capacités de provisionnement de ressources
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show diskPool [_diskPoolName_]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques pour lequel vous récupérez des informations. Placez le nom du pool de disques entre crochets ([ ]). Si le nom du pool de disques contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du pool de disques entre guillemets (" ") entre crochets.
+
+|===
+
+
+== Remarques
+
+Utilisez cette commande pour afficher le contenu du pool de disques du profil de la matrice de stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.83

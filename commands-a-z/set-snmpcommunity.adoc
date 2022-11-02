@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/set-snmpcommunity.html 
+sidebar: sidebar 
+keywords: update, snmp, community 
+summary: 'La commande set snmpCommunity crée un nouveau nom pour une communauté SNMP (simple Network Management Protocol) existante.' 
+---
+= Mettre à jour la communauté SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snmpCommunity` Commande crée un nouveau nom pour une communauté SNMP (simple Network Management Protocol) existante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snmpCommunity communityName=pass:quotes["_snmpCommunityName_"]
+newCommunityName=pass:quotes["_newSnmpCommunityName_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`communityName`
+ a| 
+Nom de la communauté SNMP existante que vous souhaitez renommer. Placez le nom de la communauté SNMP entre guillemets (" ").
+
+
+
+ a| 
+`newCommunityName`
+ a| 
+Le nouveau nom que vous souhaitez donner à la communauté SNMP. Placez le nom de la communauté SNMP entre guillemets (" ").
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.30

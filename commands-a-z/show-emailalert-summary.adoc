@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/show-emailalert-summary.html 
+sidebar: sidebar 
+keywords: show, email, alert, configuration 
+summary: La commande show emailAlert Summary affiche les informations de configuration des alertes par e-mail. 
+---
+= Affiche la configuration des alertes par e-mail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show emailAlert summary` la commande affiche les informations de configuration de l'alerte par e-mail.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage ou Administrateur du support ou moniteur de stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show emailAlert summary
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "show emailAlert summary;"
+
+EMAIL ALERT SETTINGS
+   Mail server address: email@company.com
+   Mail server encryption: starttls
+   Mail server port: 587
+   Mail server user name: accountName
+   Mail server password: secret123
+   Email sender address: no-reply@company.com
+   Recipient Email
+      recipient@company.com
+      recipient-two@company.com
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40
+
+11.70.01 a ajouté des paramètres qui spécifient le chiffrement SMTP (aucun, SMTPS, STARTTLS), le port SMTP et les informations d'identification SMTP (nom d'utilisateur et mot de passe).

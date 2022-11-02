@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/set-storagearray-managementinterface.html 
+sidebar: sidebar 
+keywords: set, storage, array, management, interface 
+summary: 'La commande set storageArray manageinterface change l"interface de gestion du contrôleur. Modifiez le type d"interface de gestion pour appliquer la confidentialité entre la baie de stockage et son logiciel de gestion ou pour accéder à des outils externes.' 
+---
+= Définissez l'interface de gestion des baies de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray managementInterface` la commande modifie l'interface de gestion du contrôleur. Modifiez le type d'interface de gestion pour appliquer la confidentialité entre la baie de stockage et son logiciel de gestion ou pour accéder à des outils externes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing]
+----
+
+set storageArray managementInterface restOnly={true | false}
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`restOnly`
+ a| 
+Lorsqu'il est réglé sur `true`, Indique que l'interface RESTful est la seule interface de gestion autorisée. Cette interface applique une connexion chiffrée entre la baie de stockage et le logiciel de gestion.
+
+Lorsqu'il est réglé sur `false`, indique que l'interface héritée entre la matrice de stockage et le logiciel de gestion est autorisée. Cette interface n'est pas chiffrée.
+
+Certains outils qui communiquent directement avec l'interface de gestion héritée, tels que le fournisseur SANtricity SMI-S ou OCI (OnCommand Insight), ne fonctionneront pas à moins que `restOnly` le paramètre est défini sur `false`. Contactez le support technique pour plus d'informations.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray managementInterface restOnly=true;"
+
+SMcli completed successfully.
+----

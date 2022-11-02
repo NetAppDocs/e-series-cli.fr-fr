@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/reset-iscsiipaddress.html 
+sidebar: sidebar 
+keywords: reset, iscsi, ip address 
+summary: 'La commande reset iscsiIpAddress réinitialise l"adresse IP de la matrice de stockage distante pour rétablir la connexion avec la matrice de stockage locale.' 
+---
+= Réinitialisez l'adresse IP iSCSI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset iscsiIpAddress` Commande réinitialise l'adresse IP de la matrice de stockage distante pour rétablir la connexion avec la matrice de stockage locale.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez utiliser cette commande pour avertir la matrice de stockage locale que l'adresse IP iSCSI de la matrice de stockage distante a changé et doit être mise à jour.
+
+Lors de l'établissement d'une relation de mise en miroir asynchrone avec une connexion iSCSI, les matrices de stockage locales et distantes stockent un enregistrement de l'adresse IP de la matrice de stockage distante dans la configuration de mise en miroir asynchrone. Si l'adresse IP d'un port iSCSI change, la matrice de stockage distante qui tente d'utiliser ce port rencontre une erreur de communication.
+
+La matrice de stockage avec l'adresse IP modifiée envoie un message à chaque matrice de stockage distante associée aux groupes de miroirs asynchrones qui sont configurés pour effectuer une mise en miroir sur une connexion iSCSI. Les matrices de stockage qui reçoivent ce message mettent automatiquement à jour leur adresse IP cible distante.
+
+Si la matrice de stockage avec l'adresse IP modifiée ne parvient pas à envoyer son message inter-contrôleur à une matrice de stockage distante, le système vous envoie une alerte du problème de connectivité. Utilisez le `reset` commande permettant de rétablir la connexion avec la matrice de stockage locale.
+
+
+
+== Syntaxe
+
+[listing]
+----
+reset (remoteStorageArrayName="storageArrayName" | remoteStorageArrayWwid=<wwID>)
+iscsiIpAddress
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Nom de la matrice de stockage distante pour laquelle vous réinitialisez l'adresse IP iSCSI. Placez le nom de la matrice de stockage entre guillemets (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+Le World Wide identifier (WWID) de la matrice de stockage pour laquelle vous réinitialisez l'adresse IP iSCSI. Vous pouvez utiliser le WWID à la place du nom de la matrice de stockage pour identifier la matrice de stockage. Placez le WWID entre crochets ( ).
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

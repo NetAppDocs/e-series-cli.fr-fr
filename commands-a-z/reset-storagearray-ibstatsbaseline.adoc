@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-ibstatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, infiniband, statistics, baseline 
+summary: La commande reset storageArray ibStatsBaseline réinitialise les statistiques InfiniBand de base à 0 pour la matrice de stockage. 
+---
+= Réinitialise les statistiques InfiniBand de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray ibStatsBaseline` Commande réinitialise les statistiques InfiniBand de base à 0 pour la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+[NOTE]
+====
+Cette commande est obsolète et est remplacée par le xref:reset-storagearray-hostportstatisticsbaseline.adoc[Réinitialise les statistiques de base du port hôte de la baie de stockage] commande.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray ibStatsBaseline
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Cette commande ne permet pas de réinitialiser le nombre brut de disques gérés dans le matériel et le firmware. Au lieu de cela, le micrologiciel crée un instantané des valeurs de compteur actuelles et utilise ces valeurs pour signaler les différences dans les nombres lorsque les statistiques sont récupérées. Le nouveau temps de référence est appliqué aux deux contrôleurs de sorte que le nombre de contrôleurs soit synchronisé. Si un contrôleur se réinitialise sans réinitialiser l'autre contrôleur, les compteurs ne sont plus synchronisés. Le client sait que les contrôleurs ne sont pas synchronisés, car les données d'horodatage indiquées avec les statistiques ne sont pas identiques pour les deux contrôleurs.
+
+
+
+== Niveau minimal de firmware
+
+7.10
+
+8.41 cette commande est obsolète.

@@ -1,0 +1,143 @@
+---
+permalink: commands-a-z/download-storagearray-firmware.html 
+sidebar: sidebar 
+keywords: download, storage, array, firmware, command, downloads, optionally, values, controllers, role, context, parameter 
+summary: La commande download storageArray Firmware télécharge le micrologiciel et, éventuellement, les valeurs NVSRAM pour le contrôleur de la matrice de stockage. 
+---
+= Téléchargez le micrologiciel de la matrice de stockage/NVSRAM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `download storageArray firmware` La commande télécharge le micrologiciel et, éventuellement, les valeurs NVSRAM pour le contrôleur de la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Si vous souhaitez télécharger uniquement les valeurs NVSRAM, utilisez le `downLoad storageArray NVSRAM` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+download storageArray firmware [, NVSRAM ]
+pass:quotes[file="_filename_" [, "_NVSRAM-filename_"]]
+[downgrade=(TRUE | FALSE)
+activateNow=(TRUE | FALSE)
+healthCheckMelOverride=(TRUE | FALSE)
+healthCheckNeedsAttnOverride=(TRUE | FALSE)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`NVSRAM`
+ a| 
+Ce paramètre télécharge un fichier avec les valeurs NVSRAM lorsque vous téléchargez un fichier de micrologiciel. Ne pas inclure de crochets avec ce paramètre. Incluez une virgule après le `firmware` paramètre.
+
+
+
+ a| 
+`file`
+ a| 
+Ce paramètre spécifie le chemin du fichier et le nom du fichier qui contient le micrologiciel. Placez le chemin du fichier et le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\dnld\safrm.dlp"`
+
+Les noms de fichiers valides ont un `.dlp` extension.
+
+
+
+ a| 
+`NVSRAM-filename`
+ a| 
+Ce paramètre indique le chemin du fichier et le nom du fichier contenant les valeurs NVSRAM. Placez le nom du fichier NVSRAM entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\dnld\safrm.dlp"` Les noms de fichiers valides ont un `.dlp` extension.
+
+Ajoutez une virgule avant le nom du fichier lorsque vous téléchargez à la fois le micrologiciel et la NVSRAM.
+
+
+
+ a| 
+`downgrade`
+ a| 
+[CAUTION]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- le téléchargement incorrect d'une version précédente du micrologiciel du contrôleur ou de la NVSRAM peut endommager les contrôleurs ou entraîner une perte d'accès aux données. Contactez le support technique avant d'utiliser ce paramètre.
+
+====
+Ce paramètre permet de charger une version précédente du micrologiciel. La valeur par défaut est `FALSE`. Réglez le `downgrade` paramètre à `TRUE` si vous souhaitez télécharger une version antérieure du micrologiciel.
+
+[NOTE]
+====
+Ce paramètre n'est pas valide lorsque vous téléchargez uniquement NVSRAM.
+
+====
+
+
+ a| 
+`activateNow`
+ a| 
+Ce paramètre active l'image du micrologiciel et l'image NVSRAM. La valeur par défaut est `TRUE`. Si vous définissez le `activateNow` paramètre à `FALSE`, vous devez exécuter l' `activate storageArray firmware` Commande permettant d'activer ultérieurement le micrologiciel et la NVSRAM.
+
+[NOTE]
+====
+Ce paramètre n'est pas valide lorsque vous n'avez téléchargé que la NVSRAM.
+
+====
+
+
+ a| 
+`healthCheckMelOverride`
+ a| 
+Ce paramètre remplace les résultats du contrôle d'intégrité du journal des événements majeurs (MEL). La validation MEL se produit toujours ; elle n'est pas contournée. Si la vérification MEL échoue, vous pouvez contourner la défaillance en utilisant ce paramètre lors de l'exécution de la commande.
+
+Avant tout téléchargement, le contrôleur vérifie le journal des événements pour déterminer si un événement s'est produit et empêcher le téléchargement du nouveau firmware du contrôleur. Si un tel événement s'est produit, le contrôleur ne télécharge normalement pas le nouveau micrologiciel.
+
+Ce paramètre force le contrôleur à télécharger le nouveau firmware. La valeur par défaut est `FALSE`. Définissez cette valeur sur `TRUE` si vous souhaitez forcer le contrôleur à télécharger le nouveau micrologiciel du contrôleur.
+
+
+
+ a| 
+`healthCheckNeedsAttnOverride`
+ a| 
+Ce paramètre remplace les résultats de vérification de l'état par un ensemble spécifique de conditions d'attention requises. Nécessite une validation d'attention pour un ensemble spécifique de conditions qui se produit toujours ; elle n'est pas contournée. Si la vérification nécessitant une attention échoue, vous pouvez contourner la panne en utilisant ce paramètre lors de l'exécution de la commande.
+
+Avant tout téléchargement, le contrôleur vérifie un ensemble spécifique de conditions d'avertissement pour déterminer si une défaillance s'est produite et empêcher le téléchargement du nouveau firmware du contrôleur. Si un tel événement s'est produit, le contrôleur ne télécharge normalement pas le nouveau micrologiciel.
+
+Ce paramètre force le contrôleur à télécharger le nouveau firmware. La valeur par défaut est `FALSE`. Définissez cette valeur sur `TRUE` si vous souhaitez forcer le contrôleur à télécharger le nouveau micrologiciel du contrôleur.
+
+|===
+
+
+== Niveau minimal de firmware
+
+5.00
+
+8.10 ajoute le `*healthCheckMelOverride*` paramètre.
+
+8.70 ajoute `*healthCheckNeedsAttnOverride*` paramètre.

@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/set-hostport.html 
+sidebar: sidebar 
+keywords: set, host, port 
+summary: 'La commande set hostPort modifie les propriétés d"un port hôte.' 
+---
+= Définissez le port hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set hostPort` commande modifie les propriétés d'un port hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande ne fonctionne pas dans un environnement iSCSI où les ports hôtes sont considérés comme des initiateurs. Utilisez plutôt le `set iscsiInitiator` commande. Voir xref:set-iscsiinitiator.adoc[Définissez l'initiateur iSCSI].
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set hostPort pass:quotes[[_portLabel_]] userLabel=pass:quotes[_newPortLabel_]
+[host=pass:quotes[_hostName_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`hostPort`
+ a| 
+Nom du port hôte pour lequel vous souhaitez modifier le type d'hôte ou pour lequel vous souhaitez créer un nouveau nom. Placez le nom du port hôte entre crochets ([ ]). Si le nom du port hôte contient des caractères spéciaux ou des chiffres, placez le nom du port hôte entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Le nouveau nom que vous souhaitez attribuer au port hôte. Placez le nouveau nom du port hôte entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte pour lequel vous définissez un port hôte HBA ou HCA. Placez le nom d'hôte entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+6.10

@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/save-ioclog.html 
+sidebar: sidebar 
+keywords: save, input, output, controller, ioc, dump 
+summary: 'La commande Save IOCLog enregistre les vidages CIO des contrôleurs d"une matrice de stockage dans un fichier d"hôte.' 
+---
+= Sauvegarder le vidage du contrôleur de sortie d'entrée (IOC)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save IOCLog` La commande enregistre les « CIO dumps » depuis les contrôleurs d'une matrice de stockage vers un fichier sur un hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save IOCLog [file=pass:quotes["_filename_"]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous enregistrez le fichier CIO dump. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+[listing]
+----
+file="C:\Array Backups\IOCcoredump1.7z"
+----
+Cette commande enregistre les données dans un fichier compressé et ajoute l'extension de fichier `.7z` vers le fichier enregistré. Le nom par défaut du fichier qui contient les données relatives au CIO pour les contrôleurs de la matrice de stockage utilise le WWN de la matrice de stockage.
+
+|===
+
+
+== Remarques
+
+Cette commande récupère les données du journal CIO dump sur les deux contrôleurs et les métadonnées IOC dump. Avec un format de fichier 7zip, les données récupérées sont archivées et compressées dans un seul fichier avec le nom de fichier de votre choix. Le fichier d'archive 7zip contient les éléments suivants :
+
+* Filename+"IOCLog"+[A|B].gz -- les journaux IOC récupérés du contrôleur A ou du contrôleur B s'ils sont disponibles
+* Filename+"IOCLoInfo"+[A|B].txt -- le CIO consigne les informations de métadonnées extraites du contrôleur A ou du contrôleur B . Si les données du journal IOC ne peuvent pas être récupérées à partir d'un contrôleur, le fichier de métadonnées .txt contiendra la condition et la raison de l'erreur.
+
+
+Les conditions d'erreur suivantes sont les suivantes :
+
+* La plate-forme du contrôleur et la HIC ne prennent pas en charge le vidage IOC.
+* Les contrôleurs n'ont pas collecté de données de vidage IOC.
+
+
+Les journaux compressés ne sont pas dans un format lisible par l'homme. Vous devez renvoyer les journaux au support technique pour évaluation.
+
+
+
+== Niveau minimal de firmware
+
+8.20

@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/change-ssd-cache-application-type.html 
+sidebar: sidebar 
+keywords: ssd cache application type 
+summary: 'La commande set ssdcache modifie le type d"application associé au cache SSD. Le type d"application peut être serveur Web, base de données ou multimédia. La modification du type d"application modifie la taille du bloc, la taille du sous-bloc, le seuil de lecture est renseigné et le seuil d"écriture des volumes sous-jacents au cache SSD est atteint.' 
+---
+= Changer le type d'application SSD cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set ssdCache` La commande modifie le type d'application associé au SSD cache. Le type d'application peut être serveur Web, base de données ou multimédia. La modification du type d'application modifie la taille du bloc, la taille du sous-bloc, le seuil de lecture est renseigné et le seuil d'écriture des volumes sous-jacents au cache SSD est atteint.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set ssdCache pass:quotes[[_ssdCacheName_]]usageHint=(webServer|dataBase|fileSystem)
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD pour lequel vous souhaitez modifier le type d'application. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Les valeurs sont basées sur le modèle d'utilisation d'E/S standard de l'application qui utilise le cache SSD. Les valeurs valides sont `webServer`, `dataBase`, ou `fileSystem`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/show-alldrives-performancestats.html 
+sidebar: sidebar 
+keywords: show, drive, performance, statistics 
+summary: La commande show allDrives PerformancesStats renvoie des informations sur les performances du disque. 
+---
+= Affiche les statistiques de performances des disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show allDrives performanceStats` la commande renvoie des informations sur les performances des disques.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour chaque lecteur de la matrice de stockage, cette commande renvoie les informations suivantes :
+
+* Matrice de stockage contenant le ou les lecteurs
+* Latence d'E/S actuelle
+* Latence maximale d'E/S.
+* Latence d'E/S minimale
+* Latence d'E/S moyenne
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allDrives |drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]) performanceStats
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allDrives`
+ a| 
+Paramètre permettant de renvoyer des informations sur tous les lecteurs de la matrice de stockage.
+
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+Le `show drive performanceStats` la commande renvoie les statistiques de performances des disques, comme illustré dans cet exemple :
+
+[listing]
+----
+"Performance Monitor Statistics for Storage Array: remote_pp -
+Date/Time: 10/23/12 3:47:27 PM -
+Polling interval in seconds: 5"
+
+"Objects","Current IO Latency","Maximum IO Latency","Minimum IO Latency",
+"Average IO Latency"
+
+"Capture Iteration: 1","","","",""
+"Date/Time: 10/23/12 3:47:27 PM","","","",""
+"Drive Tray 0, Slot 1","0.0","0.0","0.0","0.0"
+----
+
+
+== Niveau minimal de firmware
+
+7.86

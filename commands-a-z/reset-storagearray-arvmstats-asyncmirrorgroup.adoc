@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: reset, asynchronous, mirror group, statistics 
+summary: 'La commande reset storageArray arvmStats asynchrones cMirrorGroup réinitialise les statistiques de synchronisation pour un ou plusieurs volumes membres d"un groupe de miroirs asynchrone à un niveau relatif 0.' 
+---
+= Réinitialise les statistiques du groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray arvmStats asyncMirrorGroup` commande réinitialise les statistiques de synchronisation d'un ou plusieurs volumes membres d'un groupe miroir asynchrone à un 0 relatif.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+reset storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTime | errors)
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones pour lequel vous réinitialisez les statistiques de synchronisation. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+
+
+ a| 
+`volume`
+ a| 
+Ce paramètre est facultatif. Nom du volume membre spécifique dans le groupe miroir asynchrone pour lequel vous réinitialisez les statistiques de synchronisation. Si aucun volume n'est spécifié, les statistiques de chaque volume membre du groupe de miroirs asynchrones sont réinitialisées.
+
+Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`sampleType`
+ a| 
+Ce paramètre est facultatif. Valeur par défaut pour `sampleType` est `all`.
+
+* `all`-- les données des trois types d'échantillons sont réinitialisées.
+* `mostRecent` -- les statistiques sont réinitialisées pour les 50 échantillons de resynchronisation les plus récents.
+* `longestSyncTime` -- les statistiques sont réinitialisées pour les 20 plus récents échantillons de resynchronisation.
+* `errors`-- les statistiques sont réinitialisées pour les 20 derniers échantillons de resynchronisation échoués.
+
+
+|===
+
+
+== Remarques
+
+Les statistiques sont réinitialisées pour les volumes mis en miroir dans le rôle principal. Les statistiques à réinitialiser incluent les données suivantes :
+
+* Heure de début de la synchronisation
+* Type de synchronisation (manuelle ou périodique)
+* Durée de synchronisation
+* Nombre d'octets envoyés
+* Temps d'écriture maximum et minimum (pour une seule écriture)
+* Débit de données de synchronisation maximum et minimum
+* Durée totale d'écriture
+* Utilisation du référentiel (%)
+* Âge du point de récupération
+
+
+
+
+== Niveau minimal de firmware
+
+7.84

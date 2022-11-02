@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/set-initiator.html 
+sidebar: sidebar 
+keywords: set, initiator 
+summary: 'La commande définir initiateur met à jour l"objet initiateur.' 
+---
+= Définissez l'initiateur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set initiator` la commande met à jour l'objet initiateur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande remplace le document obsolète xref:set-iscsiinitiator.adoc[Définissez l'initiateur iSCSI] commande.
+
+====
+[NOTE]
+====
+Cette commande s'applique uniquement aux technologies iSCSI, iser, NVMe over RoCE, NVMe over InfiniBand et NVMe over Fibre Channel.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+set initiator (["initiatorName"] | <"initiatorQualifiedName">) ([userLabel="newInitiatorName"] |
+[host="newHostName"] | [chapSecret="newSecurityKey"])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`initiator`
+ a| 
+Permet de spécifier l'identifiant de l'initiateur pour lequel vous souhaitez définir des propriétés. Placez le nom entre guillemets ("` ''). Vous devez également inclure le nom entre crochets ([ ]) si la valeur est une étiquette utilisateur ou des crochets d'angle ( ) si la valeur est un nom qualifié (par exemple iqn ou nqn).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Permet d'entrer un nouveau libellé utilisateur pour l'objet initiateur. Placez le nouveau label utilisateur entre guillemets (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Permet d'entrer un nouvel hôte auquel le port hôte est connecté. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Vous permet de saisir une nouvelle clé de sécurité que vous souhaitez utiliser pour authentifier une connexion homologue. Placez la clé de sécurité entre guillemets (" "). Ce paramètre s'applique uniquement à `iSCSI` et `iSER` types d'interface hôte.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

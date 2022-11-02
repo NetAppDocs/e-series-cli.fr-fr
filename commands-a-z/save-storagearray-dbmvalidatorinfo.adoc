@@ -1,0 +1,95 @@
+---
+permalink: commands-a-z/save-storagearray-dbmvalidatorinfo.html 
+sidebar: sidebar 
+keywords: save, storage, array, dbm, validator, information, file 
+summary: 'La commande save storageArray dbmValidatorInfo enregistre les informations de validation de la gestion de la base de données (DBM) pour une matrice de stockage dans un fichier XML.' 
+---
+= Enregistrer le fichier d'informations du validateur DBM de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray dbmValidatorInfo` Commande enregistre les informations de validation de la gestion de base de données (DBM) pour une matrice de stockage dans un fichier XML.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Le support technique peut utiliser ce fichier XML pour générer une chaîne de validateur (un code de sécurité). La chaîne du validateur doit être incluse dans le `load storageArray dbmDatabase` commande lors de la restauration d'une matrice de stockage dans une configuration préexistante.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray dbmValidatorInfo file=pass:quotes["_filename_"] dbmDatabase=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier du validateur DBM requis pour le support technique. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Array Backups \DBMvalidator.xml"` Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier l'extension de fichier .xml lorsque vous entrez le nom de fichier.
+
+
+
+ a| 
+`dbmDatabase`
+ a| 
+Le chemin d'accès au fichier et le nom de fichier de la base de données DBM à partir de laquelle vous souhaitez générer le fichier d'informations XML. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`dbmDatabase="C:\Array Backups \DBMbackup_03302010.dbm"` Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier l'extension de fichier .dbm lorsque vous saisissez le nom du fichier.
+
+|===
+
+
+== Remarques
+
+Si vous générez le fichier d'informations XML pour obtenir une chaîne de validateur, vous devez exécuter cette commande pendant que vous êtes connecté au contrôleur où vous avez l'intention de restaurer la base de données. L'exemple suivant montre le format du fichier XML :
+
+[listing]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<DbmImageMetadata>
+<Controllers>
+<A>1IT0nnnnnnnnnABCD</A>
+<B>1T0nnnnnnnnnABCD</B>
+</Controllers>
+<Header>
+<ImageVersion>1</ImageVersion>
+<TimeStamp>1269388283</TimeStamp>
+</Header>
+<Trailer>
+<CRC>nnnnnnnnnn</CRC><
+/Trailer>
+</DbmImageMetadata>
+----
+
+
+== Niveau minimal de firmware
+
+7.75

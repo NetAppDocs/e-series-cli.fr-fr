@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/set-storagearray-icmppingresponse.html 
+sidebar: sidebar 
+keywords: set, storage, array, icmp, response 
+summary: La commande set storageArray icmpPingResponse renvoie les valeurs par défaut des paramètres négociables pour les sessions et les connexions, qui représentent le point de départ de la matrice de stockage pour les négociations. 
+---
+= Définissez la réponse ICMP de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray icmpPingResponse` la commande renvoie les valeurs par défaut des paramètres négociables pour les sessions et les connexions, qui représentent le point de départ de la matrice de stockage pour les négociations.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray icmpPingResponse=(TRUE | FALSE)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`icmpPingResponse`
+ a| 
+Ce paramètre active ou désactive les messages de demande d'écho. Définissez le paramètre sur `TRUE` Pour activer les messages de demande d'écho. Définissez le paramètre sur `FALSE` Pour désactiver les messages de demande d'écho.
+
+|===
+
+
+== Remarques
+
+Le protocole ICMP (Internet Control message Protocol) est utilisé par les systèmes d'exploitation d'un réseau pour envoyer des messages d'erreur, des paquets de test et des messages d'information relatifs à l'IP, tels qu'un service demandé n'est pas disponible ou qu'un hôte ou un routeur n'a pas pu être atteint. La commande ICMP Response envoie des messages de demande d'écho ICMP et reçoit des messages de réponse d'écho ICMP pour déterminer si un hôte est accessible et le temps nécessaire pour que les paquets soient envoyés à et à partir de cet hôte.
+
+
+
+== Niveau minimal de firmware
+
+7.10

@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-controller-service-action-allowed-indicator.html 
+sidebar: sidebar 
+keywords: set, controller, service, action, allowed, indicator 
+summary: 'La commande set Controller (définir le contrôleur) active ou désactive le voyant Service action autorisé (action de service autorisée) d"un contrôleur dans un tiroir de contrôleur ou d"un plateau de contrôleur' 
+---
+= Définir le témoin d'action d'entretien autorisée du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set controller` La commande active ou désactive le voyant action de service autorisée sur un contrôleur dans un tiroir de contrôleur ou un plateau de contrôleur
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, y compris les baies E2700 et E5600.
+
+
+
+== Contexte
+
+Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur. (Pour allumer ou éteindre le témoin d'action de service autorisée sur le boîtier du ventilateur d'alimentation ou le boîtier interconnexion-batterie, utilisez le `set tray serviceAllowedIndicator` commande.)
+
+[NOTE]
+====
+Cette commande n'est valide que pour les baies E2700, E5600 ou EF560 (et d'autres générations précédentes de contrôleurs E-Series ou EF-Series). Le tiroir du contrôleur E2800 est doté d'un seul indicateur d'avertissement qui s'allume uniquement lorsque 1) il y a une panne et 2) le composant défectueux peut être retiré en toute sécurité.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+set controller [(a| b)]
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur doté du voyant action de service autorisée que vous souhaitez allumer ou éteindre. Les identifiants de contrôleur valides sont `a` ou `b` , où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le micrologiciel du contrôleur renvoie une erreur de syntaxe.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Paramètre permettant d'activer ou de désactiver le voyant action de service autorisée. Pour activer le voyant action de service autorisée, définissez ce paramètre sur `on`. Pour désactiver le voyant action de service autorisée, définissez ce paramètre sur `off`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.14

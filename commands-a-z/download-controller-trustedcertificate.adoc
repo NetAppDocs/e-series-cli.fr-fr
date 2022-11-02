@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/download-controller-trustedcertificate.html 
+sidebar: sidebar 
+keywords: download, controller, trusted, certificate, command, install, web, servers, validate, array, roles, context 
+summary: La commande download Controller trustedCertificate installe les certificats d’autorité de certification approuvés sur les serveurs Web des contrôleurs pour valider le certificat signé par le serveur LDAP. 
+---
+= Installer des certificats CA de confiance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `download controller trustedCertificate` Commande installe les certificats d'autorité de certification approuvés sur les serveurs Web des contrôleurs pour valider le certificat signé par le serveur LDAP.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Effectuez cette action uniquement si l'autorité de certification qui a signé les certificats n'est pas connue ou est généralement fiable. La commande installe le certificat CA sur les deux contrôleurs.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[download storageArray trustedCertificate [alias=_string_]] pass:quotes[file="_filename_"]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`alias`
+ a| 
+Permet de spécifier un alias pour représenter le certificat d'autorité de certification approuvée. Cet alias est utilisé pour rechercher des informations sur les certificats d'autorité de certification approuvés ou pour les supprimer. Un alias est associé à un certificat approuvé et doit être unique.
+
+
+
+ a| 
+`file`
+ a| 
+Permet de spécifier le fichier contenant le certificat de l'autorité de certification approuvée. Les extensions acceptables sont .pem, .cer, .crt et .der.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "download storageArray trustedCertificate alias="myAlias"
+   file="C:\rootCA1.cer";"
+SMcli -n Array1 -c "download storageArray trustedCertificate
+   file="C:\rootCA1.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

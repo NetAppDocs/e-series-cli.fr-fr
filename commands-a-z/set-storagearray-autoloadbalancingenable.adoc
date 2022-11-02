@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/set-storagearray-autoloadbalancingenable.html 
+sidebar: sidebar 
+keywords: set, storage, array, enable, disable, automatic, load, balance 
+summary: 'La commande Set storageArray autoLoadBalancingEnable active ou désactive la fonction d"équilibrage automatique de la charge.' 
+---
+= Définissez la matrice de stockage pour activer ou désactiver l'équilibrage automatique de la charge
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray autoLoadBalancingEnable` La commande active ou désactive la fonction d'équilibrage automatique de la charge.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray autoLoadBalancingEnable=(TRUE | FALSE)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`storageArray`
+ a| 
+Indique que ce paramètre fonctionne sur une matrice de stockage.
+
+
+
+ a| 
+`autoLoadBalancingEnable`
+ a| 
+Ce paramètre active ou désactive l'équilibrage automatique de la charge sur le contrôleur. Définissez le paramètre sur `TRUE` Pour activer l'équilibrage automatique de la charge. Définissez le paramètre sur `FALSE` Pour désactiver l'équilibrage automatique de la charge.
+
+|===
+
+
+== Qu'est-ce que l'équilibrage automatique de la charge ?
+
+La fonction d'équilibrage automatique de la charge améliore la gestion des ressources d'E/S en réagissant dynamiquement aux changements de charge dans le temps et en ajustant automatiquement la propriété du contrôleur de volume pour corriger les problèmes de déséquilibre de la charge lorsque les charges de travail sont transférées sur les contrôleurs.
+
+La charge de travail de chaque contrôleur est surveillée en permanence et, avec la collaboration des pilotes multichemins installés sur les hôtes, il est possible d'équilibrer automatiquement la charge de travail dès que nécessaire. Lorsque la charge de travail est automatiquement reéquilibrée entre les contrôleurs, l'administrateur du stockage n'a plus à régler manuellement la charge de travail des contrôleurs de volume pour prendre en charge les changements de charge qui se sont opérés sur la baie de stockage.
+
+Lorsque l'équilibrage automatique de la charge est activé, il exécute les fonctions suivantes :
+
+* Surveille et équilibre automatiquement l'utilisation des ressources du contrôleur.
+* Ajuste automatiquement la propriété des contrôleurs de volume lorsque vous en avez besoin, ce qui optimise la bande passante d'E/S entre les hôtes et la baie de stockage.
+
+
+
+
+== Activation et désactivation de l'équilibrage automatique de la charge
+
+La fonction d'équilibrage automatique de la charge est activée par défaut sur toutes les baies de stockage fournies avec SANtricity OS (contrôleur) version 8.30 ou ultérieure. Les pilotes multipathing Linux, Windows et VMware peuvent utiliser la fonction d'équilibrage automatique de la charge. Si vous mettez à niveau votre contrôleur de SANtricity OS (logiciel du contrôleur) version 8.25 ou antérieure à 8.30 ou ultérieure, l'équilibrage automatique de la charge est désactivé par défaut sur la baie de stockage.
+
+Vous pouvez désactiver l'équilibrage automatique de la charge sur votre matrice de stockage pour les raisons suivantes :
+
+* Vous ne souhaitez pas modifier automatiquement la propriété du contrôleur d'un volume pour équilibrer la charge de travail.
+* Vous travaillez dans un environnement très ajusté où la distribution de charge est volontairement configurée pour obtenir une distribution spécifique entre les contrôleurs.
+
+
+Dans le Gestionnaire de stockage SANtricity, sélectionnez l'option de menu *matrice de stockage* *Configuration* *équilibrage automatique de la charge* pour activer ou désactiver la fonction équilibrage automatique de la charge pour une matrice de stockage individuelle.
+
+Dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* *système*, faites défiler jusqu'à la section *Paramètres supplémentaires*, cliquez sur le lien E** exécutable/Désactiver l'équilibrage automatique de la charge** et cochez la case** Activer/Désactiver l'équilibrage automatique de la charge** pour activer ou désactiver la fonction pour une matrice de stockage individuelle.
+
+
+
+== Exemples
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoLoadBalancingEnable=true;"
+
+SMcli completed successfully.
+----
+[NOTE]
+====
+Une condition active « Drive Lost Primary Path » entraînera un équilibrage automatique de la charge incapable d'équilibrer les charges de travail. Cette condition doit être inactive pour garantir l'équilibre des charges de travail via la fonction d'équilibrage automatique de la charge.
+
+====
+
+
+== Niveau minimal de firmware
+
+8.30

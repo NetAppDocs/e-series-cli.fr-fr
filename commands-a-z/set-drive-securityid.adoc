@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/set-drive-securityid.html 
+sidebar: sidebar 
+keywords: set, fips, drive, security, identifier 
+summary: 'La commande set drive securityID permet de rétablir les paramètres d"origine d"un lecteur FIPS.' 
+---
+= Définissez l'identifiant de sécurité du lecteur FIPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set drive securityID` La commande permet de rétablir les paramètres d'origine du fabricant d'un lecteur FIPS.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande réinitialise un lecteur FIPS aux paramètres d'origine du fabricant et efface toutes les données de lecteur existantes. Cette opération est complètement irréversible. Cela peut être nécessaire si le lecteur est verrouillé en raison d'un fichier de clé de sécurité incorrect ou manquant ou d'une phrase de passe inconnue. Toutes les données de lecteur existantes seront effacées.
+
+====
+Pour effacer un disque FDE, utilisez le `start secureErase` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] securityID="string"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`securityID`
+ a| 
+ID de sécurité du disque à effacer, sous forme de chaîne. Cette chaîne peut comporter jusqu'à 32 caractères. La forme de l'ID de sécurité varie selon le fabricant.
+
+[NOTE]
+====
+Pour trouver l'ID de sécurité, retirez le lecteur et lisez l'ID de sécurité figurant sur l'étiquette de l'absorbeur.
+
+====
+|===
+
+
+== Remarques
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+
+
+== Exemple
+
+[listing]
+----
+set drive [1,31,4] securityID="V2zdvLTdGWdWyTALGHns";
+----
+
+
+== Niveau minimal de firmware
+
+8.25

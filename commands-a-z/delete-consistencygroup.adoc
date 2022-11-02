@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group 
+summary: La commande delete constance.Group supprime un groupe de cohérence snapshot. 
+---
+= Supprimer le groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete consistencyGroup` la commande supprime un groupe de cohérence de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande fonctionne de deux manières :
+
+* Vous pouvez supprimer le groupe de cohérence et les volumes de référentiel contenus dans ce groupe de cohérence.
+* Vous pouvez supprimer uniquement le groupe de cohérence et conserver les volumes de référentiel contenus par le groupe de cohérence intact.
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete consistencyGroup pass:quotes[[_"consistencyGroupName"_]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence de snapshot que vous souhaitez supprimer. Placez le nom du groupe de cohérence de snapshot entre guillemets (" ") dans les crochets ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Paramètre permettant de supprimer ou de conserver les volumes du référentiel. Pour supprimer les volumes du référentiel, définissez ce paramètre sur `TRUE`. Pour conserver les volumes de référentiel, définissez ce paramètre sur `FALSE`. Le paramètre par défaut est `FALSE`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

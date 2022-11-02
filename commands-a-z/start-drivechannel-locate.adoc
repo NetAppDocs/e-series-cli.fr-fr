@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/start-drivechannel-locate.html 
+sidebar: sidebar 
+keywords: start, drive, channel, locate 
+summary: La commande Start driveChannel Locate identifie les tiroirs de disques connectés à un canal de lecteur spécifique en allumant les voyants du plateau de lecteur connecté au canal de lecteur. 
+---
+= Démarrer la localisation du canal d'entraînement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start driveChannel locate` commande identifie les tiroirs de lecteur connectés à un canal de lecteur spécifique en allumant les voyants du plateau de lecteur connecté au canal de lecteur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Utilisez le `stop driveChannel locate` commande pour éteindre les voyants lumineux du plateau de lecteur
+
+
+
+== Syntaxe
+
+[listing]
+----
+start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] locate
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveChannel`
+ a| 
+Numéro d'identification du canal de lecteur à localiser. Les valeurs valides pour le numéro d'identification du canal de lecteur sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`. Placez le numéro d'identification du canal du lecteur entre crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.15 ajoute une mise à jour à l'identificateur de canal de lecteur.

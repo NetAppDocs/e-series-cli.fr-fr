@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-vaaienabled.html 
+sidebar: sidebar 
+keywords: enable, disable, vaai 
+summary: 'La commande set storageArray vaaiEnabled active ou désactive VMware vStorage API Array Architecture (VAAI) pour une baie de stockage.' 
+---
+= Activer ou désactiver VAAI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray vaaiEnabled` La commande active ou désactive VMware vStorage API Array Architecture (VAAI) pour une baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+La baie de stockage est équipée d'un VAAI. Utilisez cette commande pour désactiver VAAI si vous ne souhaitez pas exécuter VAAI, ou si VAAI est responsable des problèmes liés à la baie de stockage. La seule matrice de stockage affectée est la matrice de stockage sur laquelle la commande est exécutée.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray vaaiEnabled=(TRUE | FALSE)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`vaaiEnabled`
+ a| 
+Paramètre permettant d'activer ou de désactiver VAAI. Pour activer VAAI, définissez ce paramètre sur `TRUE`. Pour désactiver VAAI, définissez ce paramètre sur `FALSE`. Par défaut, VAAI est activé.
+
+|===
+
+
+== Remarques
+
+[NOTE]
+====
+VAAI permet de décharger certaines tâches de stockage du matériel serveur vers une baie de stockage. Le transfert des tâches de stockage vers une baie de stockage augmente les performances de l'hôte en réduisant les tâches que l'hôte doit effectuer.
+
+====
+[NOTE]
+====
+Affichez le paramètre VAAI à l'aide de l' `show storageArray odxSetting` nom.
+
+====
+
+
+== Niveau minimal de firmware
+
+8.20

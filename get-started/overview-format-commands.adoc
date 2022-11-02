@@ -1,0 +1,21 @@
+---
+permalink: get-started/overview-format-commands.html 
+sidebar: sidebar 
+keywords: overview, cli 
+summary: 'L"interface de ligne de commande est une application logicielle qui permet de configurer et de surveiller les matrices de stockage.' 
+---
+= Présentation de l'interface de ligne de commandes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+L'interface de ligne de commande est une application logicielle qui permet de configurer et de surveiller les matrices de stockage. À l'aide de l'interface de ligne de commande, vous pouvez exécuter des commandes à partir d'une invite du système d'exploitation, telle que DOS `C:` Invite, chemin d'accès au système d'exploitation Linux ou chemin d'accès au système d'exploitation Solaris.
+
+L'interface de ligne de commandes vous donne un accès direct à un moteur de script utilisé dans le logiciel de gestion du stockage. Le moteur de script exécute des commandes qui configurent et gèrent les matrices de stockage. Le moteur de script lit les commandes, soit par le biais d'un fichier script, soit directement à partir de la ligne de commande, et exécute les opérations spécifiées par les commandes.
+
+Les commandes de script permettent de configurer et de gérer une matrice de stockage. Les commandes de script sont distinctes des commandes CLI. Vous pouvez entrer des commandes de script individuelles ou exécuter un fichier de commandes de script. Lorsque vous entrez une commande de script individuelle, vous incorporez la commande de script dans une commande CLI. Lorsque vous exécutez un fichier de commandes de script, vous incorporez le nom du fichier dans la commande CLI.
+
+Il est possible que certaines fonctionnalités logicielles décrites dans ce document ne soient pas disponibles pour votre système de stockage E-Series. Pour toute question sur les fonctionnalités disponibles, contactez votre ingénieur commercial.
+
+L'interface de ligne de commandes est une fonctionnalité du gestionnaire de stockage SANtricity.

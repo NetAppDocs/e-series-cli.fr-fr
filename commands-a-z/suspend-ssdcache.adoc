@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/suspend-ssdcache.html 
+sidebar: sidebar 
+keywords: suspend, ssd cache 
+summary: La commande suspend ssdcache arrête temporairement la mise en cache de tous les volumes qui utilisent le cache SSD. 
+---
+= Suspendre le cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `suspend ssdCache` La commande arrête temporairement la mise en cache de tous les volumes qui utilisent le cache SSD.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Contexte
+
+Lorsque la mise en cache est interrompue, les lectures d'hôtes sont gérées à partir des volumes de base au lieu du cache SSD.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[suspend ssdCache [_ssdCacheName_]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD que vous souhaitez suspendre. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+|===
+
+
+== Remarques
+
+Pour redémarrer la mise en cache, utilisez le `resume ssdCache` commande.
+
+
+
+== Niveau minimal de firmware
+
+7.84

@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/suspend-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: suspend, asynchronous, mirror, group 
+summary: La commande suspendre asynchrones MirrorGroup suspend la synchronisation des données sur toutes les paires symétriques au niveau du groupe de miroirs asynchrone. 
+---
+= Suspendre le groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `suspend asyncMirrorGroup` la commande suspend la synchronisation des données sur toutes les paires symétriques au niveau du groupe de miroirs asynchrones.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+C'est ça `suspend` la commande permet de réduire l'impact sur les performances de l'application hôte pouvant survenir pendant la copie des données modifiées de la baie de stockage locale sur la baie de stockage distante.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe miroir asynchrone pour lequel vous souhaitez suspendre la synchronisation des données. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+|===
+
+
+== Remarques
+
+Lorsqu'un groupe de miroirs asynchrone est à l'état suspendu, aucune tentative n'est effectuée pour copier les données des volumes primaires vers les volumes secondaires des paires en miroir. Toute écriture sur le côté primaire du groupe de miroirs asynchrone est enregistrée de manière persistante dans les volumes de référentiel miroir associés. Après la reprise du groupe de miroirs asynchrone, seules les régions modifiées des volumes primaires sont écrites sur les volumes secondaires.
+
+
+
+== Niveau minimal de firmware
+
+7.84

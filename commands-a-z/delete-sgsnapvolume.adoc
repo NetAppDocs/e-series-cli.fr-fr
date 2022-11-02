@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/delete-sgsnapvolume.html 
+sidebar: sidebar 
+keywords: delte, snapvolume, command, snapshot, consistency, group, optionally, repository, members 
+summary: 'La commande delete sgSnapVolume supprime le volume snapshot d"un groupe de cohérence. Vous pouvez également supprimer les membres du référentiel.' 
+---
+= Supprimez le volume Snapshot du groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete sgSnapVolume` commande supprime le volume snapshot d'un groupe de cohérence. Vous pouvez également supprimer les membres du référentiel.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete cgSnapVolume ["_snapVolumeName_"]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Nom du volume de snapshot du groupe de cohérence que vous souhaitez supprimer. Placez le nom du volume de snapshot du groupe de cohérence entre guillemets (" ") dans les crochets ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Paramètre pour enregistrer ou supprimer les volumes membres. Pour enregistrer les volumes membres, définissez ce paramètre sur `TRUE`. Pour supprimer les volumes membres, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

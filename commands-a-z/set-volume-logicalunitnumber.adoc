@@ -1,0 +1,119 @@
+---
+permalink: commands-a-z/set-volume-logicalunitnumber.html 
+sidebar: sidebar 
+keywords: set, volume, map 
+summary: 'La commande set volume logicalUnitNumber définit le mappage du numéro d"unité logique (LUN) ou de l"ID d"espace de noms (NSID) entre un volume et un hôte ou un groupe d"hôtes.' 
+---
+= Définir le mappage de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set volume logicalUnitNumber` La commande définit le mappage du numéro d'unité logique (LUN) ou de l'ID d'espace de noms (NSID) entre un volume et un hôte ou un groupe d'hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande s'applique aux volumes d'un groupe de volumes ou d'un pool de disques.
+
+[NOTE]
+====
+Vous ne pouvez pas utiliser cette commande pour un volume snapshot utilisé dans la copie de volume en ligne.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set (volume pass:quotes[[_volumeName_]] | volume <"wwID"> | accessVolume)
+pass:quotes[logicalUnitNumber=_lun_]
+pass:quotes[(host="_hostName_"] |
+hostGroup=pass:quotes[("_hostGroupName_"] | defaultGroup)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume pour lequel vous souhaitez définir le numéro d'unité logique. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`volume`
+ a| 
+Identifiant WWID (World Wide identifier) du volume pour lequel vous souhaitez définir le numéro d'unité logique. Placez le WWID entre guillemets (" ") à l'intérieur des supports d'angle (<>).
+
+
+
+ a| 
+`accessVolume`
+ a| 
+Numéro d'unité logique du volume d'accès. Le numéro d'unité logique est la seule propriété que vous pouvez définir pour le volume d'accès.
+
+
+
+ a| 
+`logicalUnitNumber`
+ a| 
+Le numéro d'unité logique ou l'ID d'espace de noms que vous souhaitez utiliser pour mapper à un hôte spécifique. Ce paramètre affecte également l'hôte à un groupe d'hôtes.
+
+[NOTE]
+====
+Le numéro d'unité logique ou l'ID d'espace de noms que vous spécifiez ne doit pas être déjà utilisé et doit se trouver dans la plage prise en charge par le système d'exploitation hôte. Il n'y aura pas d'erreur si vous mappez le volume sur un numéro d'unité logique ou un identifiant d'espace de noms non pris en charge par l'hôte, mais l'hôte ne pourra pas accéder au volume.
+
+====
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte sur lequel le volume est mappé. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes sur lequel le volume est mappé. Placez le nom du groupe d'hôtes entre guillemets (" "). `defaultGroup` est le groupe d'hôtes qui contient l'hôte sur lequel le volume est mappé.
+
+|===
+
+
+== Remarques
+
+Un groupe d'hôtes est un élément topologique facultatif que vous pouvez définir si vous souhaitez désigner une collection d'hôtes partageant l'accès aux mêmes volumes. Le groupe d'hôtes est une entité logique. Définissez un groupe d'hôtes uniquement si vous avez au moins deux hôtes qui peuvent partager l'accès aux mêmes volumes.
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Le volume d'accès est le volume d'un environnement SAN utilisé pour la communication intrabande entre le logiciel de gestion du stockage et le contrôleur de la baie de stockage. Ce volume utilise une adresse LUN ou NSID et utilise 20 Mo d'espace de stockage non disponible pour le stockage des données d'application. Un volume d'accès est uniquement nécessaire pour les baies de stockage gérées sur bande. Si vous spécifiez le `accessVolume` paramètre, la seule propriété que vous pouvez définir est `logicalUnitNumber` paramètre.
+
+
+
+== Niveau minimal de firmware
+
+7.83 ajoute un volume snapshot pour les pools de disques.

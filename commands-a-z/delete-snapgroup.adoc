@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/delete-snapgroup.html 
+sidebar: sidebar 
+keywords: delete, snapgroup, command, entire, snapshot, group, option, associate, repository, volume 
+summary: La commande delete snapGroup représente un groupe de snapshots entier et, éventuellement, les volumes de référentiel associés. 
+---
+= Supprimer le groupe d'instantanés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete snapGroup` commandez un groupe de snapshots complet et, le cas échéant, les volumes de référentiel associés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- toutes les données du groupe de snapshots sont perdues dès que vous exécutez cette commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapGroup ["_snapGroupName_"]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots que vous souhaitez supprimer. Placez le nom du groupe de snapshots entre guillemets (" ") entre crochets ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Paramètre permettant de supprimer ou d'enregistrer les volumes du référentiel. Pour supprimer les volumes du référentiel, définissez ce paramètre sur `TRUE`. Pour enregistrer les volumes du référentiel, définissez ce paramètre sur `FALSE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Vous pouvez supprimer un groupe de snapshots s'il est vide ou s'il contient des images de snapshot. Toutes les images de snapshot du groupe de snapshots sont supprimées avec le groupe de snapshots. Si une image snapshot existante du groupe de snapshots est associée à un volume de snapshot, chaque volume de snapshot est arrêté et détaché de l'image snapshot. Lorsque vous supprimez un groupe de snapshots, le volume de référentiel associé est également supprimé. Par défaut, tous les volumes membres du volume de référentiel sont conservés comme des volumes standard non utilisés et non mappés. Pour supprimer les volumes membres, définissez l' `deleteRepositoryMembers` paramètre à `TRUE`, ou n'utilisez pas ce paramètre. Pour conserver les volumes membres, définissez l' `deleteRepositoryMembers` paramètre à `FALSE`.
+
+
+
+== Niveau minimal de firmware
+
+7.83

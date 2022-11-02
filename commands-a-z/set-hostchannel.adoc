@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-hostchannel.html 
+sidebar: sidebar 
+keywords: set, host, channel 
+summary: 'La commande set hostChannel définit l"ID de boucle pour le canal hôte.' 
+---
+= Définissez le canal hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set hostChannel` Commande définit l'ID de boucle pour le canal hôte.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set hostChannel pass:quotes[[_hostChannelNumber_]]
+preferredID=pass:quotes[_portID_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`hostChannel`
+ a| 
+Numéro d'identification du canal hôte pour lequel vous souhaitez définir l'ID de boucle. Placez le numéro d'identification du canal hôte entre crochets ([ ]).
+
+Utilisez une valeur de canal hôte adaptée à votre modèle de contrôleur. Un plateau de contrôleur peut prendre en charge un canal hôte ou jusqu'à huit canaux hôtes. Les valeurs de canal hôte valides sont `a1`, `a2`, `a3`, `a4`, `a5`, `a6`, `a7`, `a8`, `b1`, `b2`, `b3`, `b4`, `b5`, `b6`, `b7`, ou `b8`.
+
+
+
+ a| 
+`preferredID`
+ a| 
+Identifiant de port pour le canal hôte spécifié. Les valeurs ID de port sont `0` à `127`.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10
+
+6.14 ajoute une mise à jour à l'identificateur de canal hôte.
+
+7.15 ajoute une mise à jour à l'identificateur de canal hôte.

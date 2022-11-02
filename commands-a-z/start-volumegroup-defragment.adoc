@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/start-volumegroup-defragment.html 
+sidebar: sidebar 
+keywords: start, volume, group, defragment 
+summary: La commande start Volume Volume Group defragment démarre une opération de défragmentation sur le groupe de volumes spécifié. 
+---
+= Démarrer le défragmentation du groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volumeGroup defragment` commande lance une opération de défragmentation sur le groupe de volumes spécifié.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+La défragmentation d'un groupe de volumes démarre une opération longue durée que vous ne pouvez pas arrêter.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] defragment
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes que vous souhaitez défragmenter. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Des erreurs d'E/S de l'hôte peuvent entraîner des groupes de volumes comprenant plus de 32 volumes. Cette opération peut également entraîner le redémarrage du contrôleur interne, car la période d'expiration se termine avant que la définition du groupe de volumes ne soit définie. Si vous rencontrez ce problème, effectuez une mise au repos des opérations d'E/S de l'hôte, puis réessayez la commande.
+
+
+
+== Niveau minimal de firmware
+
+6.10

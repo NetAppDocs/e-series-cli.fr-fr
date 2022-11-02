@@ -1,0 +1,99 @@
+---
+permalink: commands-a-z/set-storagearray-autosupport-schedule.html 
+sidebar: sidebar 
+keywords: set, autosupport, message, collection, schedule, individual, E2800, E5700, arrays 
+summary: La commande Set storageArray AutoSupport schedule définit les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont envoyés. 
+---
+= Définir le planning de collecte des messages AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray autoSupport schedule` Commande définit les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont envoyés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+* Si AutoSupport est activé, le logiciel de gestion envoie des messages AutoSupport quotidiens et des messages AutoSupport hebdomadaires.
+* Vous pouvez indiquer une plage (granularité au niveau des heures) de quand envoyer tous les jours et quand envoyer des messages hebdomadaires pour les baies de stockage dans votre domaine de gestion.
+* Pour le planning hebdomadaire, vous sélectionnez les jours de semaine préférés pour la collecte et la transmission de AutoSupport.
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray autoSupport schedule dailyTime=pass:quotes[_startTime-endTime_]
+ [dayOfWeek=(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)]
+weeklyTime=pass:quotes[_startTime-endTime_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`dailyTime`
+ a| 
+``startTime`` - ``endTime`` Spécifie l'heure de la journée pendant laquelle vous souhaitez démarrer et mettre fin à la collecte de données AutoSupport pour toutes les baies de stockage. L'heure de début et l'heure de fin doivent être au format HH:00 de 24 heures et doivent être à l'heure. Par exemple, 9:00 doit être saisi sous la forme 21:00.
+
+
+
+ a| 
+`dayOfWeek`
+ a| 
+(Dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi) indique les jours préférés de la semaine (du dimanche au samedi) que vous souhaitez recueillir les données de collection AutoSupport. Le `dayOfWeek` le paramètre doit être entouré de parenthèses et séparé par un espace.
+
+
+
+ a| 
+`weeklyTime`
+ a| 
+ `startTime` -  `endTime` Spécifie l'heure du jour de début et de fin de la collecte des données de collecte du bundle AutoSupport pour chaque jour de la semaine que vous avez sélectionné. Le `startTime` et `endTime` Doit avoir la forme HH:MM[am|pm].
+
+|===
+
+
+=== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupport schedule dailyTime=14:00-15:00 weeklyTime=1:00-5:00;"
+
+SMcli -n Array1 -c "set storageArray autoSupport schedule dailyTime=14:00-15:00 dayOfWeek=(Monday Friday) weeklyTime=1:00-5:00;"
+
+SMcli completed successfully.
+----
+
+
+=== Vérification
+
+Utilisez le `show storageArray autoSupport` pour voir la modification résultant du planning.
+
+
+
+== Niveau minimal de micrologiciel
+
+8.40

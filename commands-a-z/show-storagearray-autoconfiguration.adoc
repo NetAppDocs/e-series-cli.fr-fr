@@ -1,0 +1,383 @@
+---
+permalink: commands-a-z/show-storagearray-autoconfiguration.html 
+sidebar: sidebar 
+keywords: show, storage, array, auto, configuration 
+summary: La commande show storageArray autoconfiguration affiche la configuration automatique par défaut que la matrice de stockage crée si vous exécutez la commande autoConfigure storageArray. 
+---
+= Affiche la configuration automatique de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray autoConfiguration` la commande affiche la configuration automatique par défaut que la matrice de stockage crée si vous exécutez le `autoConfigure storageArray` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+Si vous souhaitez déterminer si la matrice de stockage peut prendre en charge des propriétés spécifiques, entrez le paramètre des propriétés lorsque vous exécutez cette commande. Il n'est pas nécessaire d'entrer les paramètres de cette commande pour renvoyer les informations de configuration.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show storageArray autoConfiguration
+[driveType=(SAS | NVMe4K)
+driveMediaType=(HDD | SSD | unknown | allMedia)
+raidLevel=(0 | 1 | 3 | 5 | 6)
+pass:quotes[volumeGroupWidth=_numberOfDrives_]
+pass:quotes[volumeGroupCount=_numberOfVolumeGroups_]
+pass:quotes[volumesPerGroupCount=_numberOfVolumesPerGroup_]
+pass:quotes[hotSpareCount=_numberOfHotspares_]
+pass:quotes[segmentSize=_segmentSizeValue_]
+cacheReadPrefetch=(TRUE | FALSE)
+securityType=(none | capable | enabled)
+secureDrives=(fips | fde)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveType`
+ a| 
+Type de disque que vous souhaitez utiliser pour la matrice de stockage.
+
+Le `driveType` le paramètre n'est pas requis si un seul type de disque se trouve dans la matrice de stockage. Vous devez utiliser ce paramètre lorsque vous avez plusieurs types de lecteur dans votre matrice de stockage.
+
+Les types de disques valides sont les suivants :
+
+* `SAS`
+* `NVMe4K`
+
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Type de disque dur que vous souhaitez utiliser pour le groupe de volumes du référentiel miroir. Les supports de lecteur valides sont les suivants :
+
+* `HDD` -- utilisez cette option lorsque vous avez des disques durs dans le plateau du lecteur
+* `SSD` -- utilisez cette option lorsque vous disposez de disques SSD dans le plateau
+* `unknown` -- utilisez si vous n'êtes pas sûr des types de support de lecteur qui se trouvent dans le bac de lecteur
+* `allMedia` -- utilisez cette option lorsque vous souhaitez utiliser tous les types de support de lecteur qui se trouvent dans le bac de lecteur
+
+
+Utilisez ce paramètre lorsque vous utilisez le `repositoryDriveCount` paramètre.
+
+Vous devez utiliser ce paramètre lorsque vous disposez de plusieurs types de support de lecteur dans votre matrice de stockage.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Niveau RAID du groupe de volumes qui contient les disques de la matrice de stockage. Les niveaux RAID valides sont `0`, `1`, `3`, `5`, ou `6`.
+
+
+
+ a| 
+`volumeGroupWidth`
+ a| 
+Nombre de disques dans un groupe de volumes de la matrice de stockage, qui dépend de la capacité des disques. Utiliser des valeurs entières.
+
+
+
+ a| 
+`volumeGroupCount`
+ a| 
+Nombre de groupes de volumes dans la matrice de stockage. Utiliser des valeurs entières.
+
+
+
+ a| 
+`volumesPerGroupCount`
+ a| 
+Nombre de volumes de même capacité par groupe de volumes. Utiliser des valeurs entières.
+
+
+
+ a| 
+`hotSpareCount`
+ a| 
+Le nombre de disques de secours que vous souhaitez dans la matrice de stockage. Utiliser des valeurs entières.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Quantité de données (en Ko) que le contrôleur écrit sur un seul disque du volume avant d'écrire les données sur le disque suivant. Les valeurs valides sont `8`, `16`, `32`, `64`, `128`, `256`, ou `512`.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Paramètre permettant d'activer ou de désactiver la lecture préalable du cache. Pour désactiver la lecture préalable du cache, définissez ce paramètre sur `FALSE`. Pour activer la lecture préalable du cache, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Paramètre permettant de spécifier le niveau de sécurité lors de la création des groupes de volumes et de tous les volumes associés. Ces paramètres sont valides :
+
+* `none` -- le groupe de volumes et les volumes ne sont pas sécurisés.
+* `capable` -- le groupe de volumes et les volumes sont capables d'avoir la sécurité définie, mais la sécurité n'a pas été activée.
+* `enabled` -- la sécurité est activée pour le groupe de volumes et les volumes.
+
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Type de disques sécurisés à utiliser dans le groupe de volumes. Ces paramètres sont valides :
+
+* `fips` -- pour utiliser uniquement des disques compatibles FIPS.
+* `fde` -- pour utiliser des disques conformes FDE.
+
+
+[NOTE]
+====
+Utilisez ce paramètre avec le `securityType` paramètre. Si vous spécifiez `none` pour le `securityType` paramètre, valeur de `secureDrives` le paramètre est ignoré car les groupes de volumes non sécurisés n'ont pas besoin d'avoir des types de lecteurs sécurisés spécifiés.
+
+====
+|===
+
+
+== Remarques
+
+Si vous ne spécifiez pas de propriétés, cette commande renvoie les candidats RAID de niveau 5 pour chaque type de lecteur. Si les candidats au niveau RAID 5 ne sont pas disponibles, cette commande renvoie les candidats aux niveaux RAID 6, RAID 3, RAID 1 ou RAID 0. Lorsque vous spécifiez des propriétés de configuration automatique, les contrôleurs confirment que le micrologiciel peut prendre en charge les propriétés.
+
+
+
+== Disques et groupes de volumes
+
+Un groupe de volumes est un ensemble de disques regroupés de manière logique par les contrôleurs de la baie de stockage. Le nombre de disques d'un groupe de volumes est une limitation du niveau RAID et du micrologiciel du contrôleur. Lorsque vous créez un groupe de volumes, suivez les consignes suivantes :
+
+* À partir de la version 7.10 du micrologiciel, vous pouvez créer un groupe de volumes vide afin de pouvoir réserver la capacité pour une utilisation ultérieure.
+* Vous ne pouvez pas mélanger les types de disques, tels que SAS et Fibre Channel, au sein d'un seul groupe de volumes.
+* Le nombre maximum de disques dans un groupe de volumes dépend des conditions suivantes :
++
+** Le type de contrôleur
+** Niveau RAID
+
+
+* Niveaux RAID : 0, 1, 10, 3, 5 et 6 .
++
+** Dans une baie de stockage CDE3992 ou CDE3994, un groupe de volumes avec RAID de niveau 0 et un groupe de volumes avec RAID de niveau 10 peuvent avoir un maximum de 112 lecteurs.
+** Dans une baie de stockage CE6998, un groupe de volumes avec RAID de niveau 0 et un groupe de volumes avec RAID de niveau 10 peuvent avoir un maximum de 224 disques.
+** Un groupe de volumes de niveau RAID 3, RAID de niveau 5 ou RAID de niveau 6 ne peut pas avoir plus de 30 disques.
+** Un groupe de volumes RAID de niveau 6 doit comporter au moins cinq disques.
+** Si un groupe de volumes RAID de niveau 1 comporte quatre disques ou plus, le logiciel de gestion du stockage convertit automatiquement le groupe de volumes en RAID de niveau 10, c'est-à-dire de niveau 1 + RAID de niveau 0.
+
+
+* Si un groupe de volumes contient des disques de capacité différente, la capacité globale du groupe de volumes est basée sur le lecteur de capacité la plus faible.
+* Pour activer la protection contre les pertes des tiroirs/bacs, reportez-vous aux tableaux suivants pour obtenir des critères supplémentaires :
+
+
+[cols="3*"]
+|===
+| Niveau | Critères pour la protection contre les pertes du plateau | Nombre minimum de bacs requis 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Le pool de disques ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+6
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Le groupe de volumes ne contient pas plus de deux lecteurs dans un bac unique
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` ou `RAID 5`
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un bac distinct
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Chaque lecteur d'une paire RAID 1 doit se trouver dans un bac distinct
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossible d'obtenir la protection contre les pertes du bac.
+ a| 
+Sans objet
+
+|===
+[cols="3*"]
+|===
+| Niveau | Critères pour la protection contre les pertes de tiroirs | Nombre minimum de tiroirs requis 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Le pool comprend des disques des cinq tiroirs et il y a un nombre égal de disques dans chaque tiroir. Un plateau de 60 lecteurs peut atteindre la protection contre les pertes de tiroirs lorsque le pool de disques contient 15, 20, 25, 30, 35, 40, 45, 50, 55 ou 60 disques.
+ a| 
+5
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Le groupe de volumes ne contient pas plus de deux disques dans un tiroir unique.
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` ou `RAID 5`
+ a| 
+Chaque lecteur du groupe de volumes se trouve dans un tiroir distinct.
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Chaque lecteur d'une paire symétrique doit être placé dans un tiroir séparé.
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossible d'obtenir la protection contre la perte de tiroir.
+ a| 
+Sans objet
+
+|===
+
+
+== Disques de secours
+
+Avec les groupes de volumes, une stratégie de protection des données intéressante consiste à attribuer les disques disponibles de la baie de stockage en tant que disques de secours. Un disque de secours est un disque, qui ne contient aucune donnée, qui agit comme un disque de secours dans la matrice de stockage en cas de panne d'un disque dans un groupe de volumes RAID 1, RAID 3, RAID 5 ou RAID 6. Le disque de secours ajoute un niveau supplémentaire de redondance à la matrice de stockage.
+
+Généralement, les disques de secours doivent avoir des capacités égales ou supérieures à la capacité utilisée sur les disques qu'ils protègent. Les disques de secours doivent être du même type de support, du même type d'interface et de la même capacité que les lecteurs qu'ils protègent.
+
+Si un disque tombe en panne dans la matrice de stockage, le disque de secours est normalement remplacé automatiquement par le disque défectueux sans intervention de votre part. Si un disque de secours est disponible en cas de panne, le contrôleur reconstruit les données sur le disque de secours à l'aide d'une parité de redondance. La prise en charge de l'évacuation des données permet également de copier les données sur un disque de secours avant que le logiciel ne marque l'échec du disque.
+
+Une fois le disque défectueux remplacé physiquement, vous pouvez utiliser l'une des options suivantes pour restaurer les données :
+
+Lorsque vous avez remplacé le disque défectueux, les données du disque de secours sont recopiées sur le disque de remplacement. Cette action est appelée recopie.
+
+Si vous désignez le disque de secours comme membre permanent d'un groupe de volumes, l'opération de recopie n'est pas nécessaire.
+
+La disponibilité de la protection contre les pertes de tiroirs et la protection contre les pertes de tiroirs pour un groupe de volumes dépend de l'emplacement des lecteurs qui constituent le groupe de volumes. La protection contre les pertes de tiroir et la protection contre les pertes de tiroir peuvent être perdues en raison d'un disque défectueux et de l'emplacement du disque de secours. Pour vous assurer que la protection contre les pertes de bac et la protection contre les pertes de tiroir ne sont pas affectées, vous devez remplacer un disque défectueux pour lancer le processus de copie.
+
+La baie de stockage sélectionne automatiquement les disques compatibles Data assurance (DA) pour la couverture à chaud des volumes compatibles DA.
+
+Assurez-vous que la matrice de stockage comporte des disques compatibles DA pour la couverture de remplacement à chaud des volumes compatibles DA. Pour plus d'informations sur les disques compatibles DA, consultez la fonction Data assurance.
+
+Vous pouvez utiliser des disques de capacité sécurisée (FIPS et FDE) comme unité de rechange à chaud pour les disques compatibles et non sécurisés. Les disques non sécurisés peuvent couvrir d'autres disques non sécurisés et les disques sécurisés si la sécurité n'est pas activée dans le groupe de volumes. Un groupe de volumes FIPS ne peut utiliser qu'un disque FIPS comme unité de rechange à chaud. Cependant, vous pouvez utiliser un disque de rechange FIPS pour des groupes de volumes non sécurisés, sécurisés et sécurisés.
+
+Si vous ne disposez pas d'un disque de secours, vous pouvez toujours remplacer un disque défectueux pendant que la matrice de stockage fonctionne. Si le disque fait partie d'un groupe de volumes RAID 1, RAID 3, RAID 5 ou RAID 6, le contrôleur utilise la parité des données de redondance pour reconstruire automatiquement les données sur le disque de remplacement. Cette action est appelée reconstruction.
+
+
+
+== Taille du segment
+
+La taille d'un segment détermine le nombre de blocs de données que le contrôleur écrit sur un seul disque du volume avant d'écrire des données sur le disque suivant. Chaque bloc de données stocke 512 octets de données. Le bloc de données est la plus petite unité de stockage. La taille d'un segment détermine le nombre de blocs de données qu'il contient. Par exemple, un segment de 8 Ko contient 16 blocs de données. Un segment de 64 Ko contient 128 blocs de données.
+
+Lorsque vous entrez une valeur pour la taille du segment, la valeur est vérifiée par rapport aux valeurs prises en charge fournies par le contrôleur au moment de l'exécution. Si la valeur saisie n'est pas valide, le contrôleur renvoie une liste de valeurs valides. L'utilisation d'un lecteur unique pour une seule demande laisse les autres lecteurs disponibles pour traiter simultanément d'autres demandes. Si le volume se trouve dans un environnement où un utilisateur unique transfère de grandes unités de données (comme le multimédia), les performances sont optimisées lorsqu'une seule demande de transfert de données est traitée avec une seule bande de données. (Une bande de données est la taille du segment multipliée par le nombre de disques du groupe de volumes utilisés pour le transfert de données.) Dans ce cas, plusieurs disques sont utilisés pour la même demande, mais chaque disque n'est accessible qu'une seule fois.
+
+Pour des performances optimales dans une base de données multi-utilisateurs ou un environnement de stockage de système de fichiers, définissez la taille de votre segment afin de minimiser le nombre de lecteurs requis pour répondre à une demande de transfert de données.
+
+
+
+== Préextraction de lecture du cache
+
+La lecture préalable en cache permet au contrôleur de copier des blocs de données supplémentaires dans le cache pendant que le contrôleur lit et copie les blocs de données requis par l'hôte depuis le disque vers le cache. Cette action augmente le risque d'une future demande de données à partir du cache. Le préchargement de lecture du cache est important pour les applications multimédia qui utilisent des transferts de données séquentiels. Valeurs valides pour le `cacheReadPrefetch` les paramètres sont `TRUE` ou `FALSE`. La valeur par défaut est `TRUE`.
+
+
+
+== Type de sécurité
+
+Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
+
+Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez créer une clé de sécurité de la matrice de stockage. Utilisez le `create storageArray securityKey` commande permettant de créer une clé de sécurité de la matrice de stockage. Ces commandes sont liées à la clé de sécurité :
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Sécuriser les disques
+
+Les disques sécurisés peuvent être des disques FDE (Full Disk Encryption) ou FIPS (Federal information Processing Standard). Utilisez le `secureDrives` paramètre pour spécifier le type de disques sécurisés à utiliser. Les valeurs que vous pouvez utiliser sont les suivantes `fips` et `fde`.
+
+
+
+== Exemple de commande
+
+[listing]
+----
+show storageArray autoConfiguration securityType=capable secureDrives=fips;
+----
+
+
+== Niveau minimal de firmware
+
+7.10 ajoute la fonctionnalité RAID de niveau 6 et supprime les limites des disques de secours.
+
+7.50 ajoute le `securityType` paramètre.
+
+7.75 ajoute le `dataAssurance` paramètre.
+
+8.25 ajoute le `secureDrives` paramètre.

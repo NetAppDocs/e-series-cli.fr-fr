@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/show-volumecopy.html 
+sidebar: sidebar 
+keywords: show, volume, copy 
+summary: La commande show VolumeCopy renvoie des informations sur les opérations de copie de volume. 
+---
+= Affiche la copie de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volumeCopy` la commande renvoie des informations sur les opérations de copie de volume.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+Cette commande renvoie les informations suivantes concernant les opérations de copie de volume :
+
+* État de la copie
+* L'horodatage de début
+* L'horodatage d'achèvement
+* Priorité de copie
+* Le WWID (World Wide identifier) du volume source ou le WWID du volume cible
+* Paramètre d'attribut lecture seule du volume cible
+
+
+Vous pouvez récupérer des informations sur une paire de copies de volume spécifique ou sur toutes les paires de copies de volume de la matrice de stockage. Cette commande est valide pour les paires de copies de volume de snapshot.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show volumeCopy (allVolumes | source pass:quotes[["_sourceName_"]] |
+target pass:quotes[["_targetName_"]])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allVolumes`
+ a| 
+Paramètre permettant de renvoyer des informations sur les opérations de copie de volume pour toutes les paires de copies de volume.
+
+
+
+ a| 
+`source`
+ a| 
+Nom du volume source sur lequel vous souhaitez récupérer des informations. Placez le nom du volume source entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`target`
+ a| 
+Nom du volume cible sur lequel vous souhaitez récupérer des informations. Placez le nom du volume cible entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+|===

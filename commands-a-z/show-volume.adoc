@@ -1,0 +1,146 @@
+---
+permalink: commands-a-z/show-volume.html 
+sidebar: sidebar 
+keywords: show, thin, volume 
+summary: 'La commande show volume renvoie l"historique d"extension ou la capacité consommée pour le ou les volumes fins spécifiés.' 
+---
+= Afficher le volume fin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volume` la commande renvoie l'historique d'extension ou la capacité consommée pour le ou les volumes fins spécifiés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]])
+(consumedCapacity |
+(expansionHistory pass:quotes[[file=_fileName_]]))
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allVolumes`
+ a| 
+Ce paramètre renvoie des informations sur tous les volumes fins de la matrice de stockage.
+
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume fin pour lequel vous récupérez des informations. Placez le nom du volume fin entre crochets ([ ]). Si le nom du volume fin comporte des caractères ou des chiffres spéciaux, vous devez inclure le nom du volume fin entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`volumes`
+ a| 
+Les noms de plusieurs volumes fins pour lesquels vous souhaitez récupérer des informations. Entrez les noms des volumes à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes comportent des caractères spéciaux ou des chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`consumedCapacity`
+ a| 
+Paramètre permettant de renvoyer une liste concise d'informations sur la capacité consommée des volumes fins.
+
+
+
+ a| 
+`expansionHistory`
+ a| 
+Paramètre permettant de renvoyer une liste concise d'informations sur l'historique d'extension des volumes fins.
+
+
+
+ a| 
+`file`
+ a| 
+Le `file` paramètre spécifie un fichier pour enregistrer la sortie du `expansionHistory` paramètre. Le `file` est valide uniquement lorsqu'il est utilisé avec `expansionHistory` paramètre. Un nom de fichier non valide provoque l'échec de la commande.
+
+|===
+
+
+== Remarques
+
+Avec le `expansionHistory` paramètre, la commande renvoie des informations similaires à l'exemple illustré ci-dessous.
+
+`Thin volume name: volume-nameRepository volume Name: REPOS_NNNN`
+
+[cols="4*"]
+|===
+| Heure enregistrée | Type d'extension | Démarrer la capacité | Capacité de fin 
+
+
+ a| 
+MM/JJ/AAAA HH:MM:SS
+ a| 
+Manuel|automatique
+ a| 
+NNNNNNNN octets
+ a| 
+NNNNNNNN octets
+
+|===
+Avec le `consumedCapacity` paramètre, la commande renvoie des informations similaires à l'exemple illustré ci-dessous.
+
+[cols="5*"]
+|===
+| Volumétrie | Capacité provisionnée | Capacité consommée | Quota | % Prov.consommé 
+
+
+ a| 
+`volumeName`
+ a| 
+500.000 GO
+ a| 
+230.000 GO
+ a| 
+700.000 GO
+ a| 
+46 %
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

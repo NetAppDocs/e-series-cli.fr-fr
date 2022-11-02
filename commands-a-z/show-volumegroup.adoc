@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/show-volumegroup.html 
+sidebar: sidebar 
+keywords: show, volume, group 
+summary: La commande show Volume Group renvoie des informations sur un groupe de volumes. 
+---
+= Afficher le groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volumeGroup` la commande renvoie des informations sur un groupe de volumes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+Cette commande renvoie les informations suivantes concernant un groupe de volumes :
+
+* Statut (en ligne ou hors ligne)
+* La capacité
+* Le propriétaire actuel (le contrôleur dans le slot A ou le contrôleur dans le slot B )
+* Niveau RAID
+* Le type de support (HDD ou SSD)
+* Le type d'interface de disque (Fibre Channel, iSCSI, InfiniBand, SAS)
+* Protection contre les pertes du plateau (oui ou non)
+* Secure capable : indique si le groupe de volumes est composé de tous les disques sécurisés. Les disques sécurisés peuvent être des disques FDE ou FIPS.
+* Secure : indique si la sécurité du lecteur est activée pour le groupe de volumes (cette option est appelée Secure Enabled).
+* Les volumes associés et la capacité disponible
+* Les lecteurs associés
+* Les fonctionnalités Data assurance et la présence de volumes Data assurance
+* Capacités de provisionnement de ressources
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show volumeGroup [_volumeGroupName_]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes pour lequel vous souhaitez afficher les informations. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Cette commande renvoie les informations de groupe de volumes comme indiqué dans cet exemple :
+
+[listing]
+----
+Name:              SecureGroup
+
+      Status:         Optimal
+      Capacity:       120.000 GB
+      Current owner: Controller in slot A
+
+      Quality of Service (QoS) Attributes
+
+         RAID level:                  5
+         Drive media type:            Hard Disk Drive
+         Drive interface type:        SAS
+         Shelf loss protection:       No
+         Secure Capable:              Yes
+         Secure:                      No
+         Data Assurance (DA) capable: Yes
+         DA enabled volume present:   No
+         Resource-provisioned:           Yes
+
+
+      Total Volumes:          1
+         Standard volumes:    1
+         Repository volumes:  0
+         Free Capacity:       110.000 GB
+
+      Associated drives - present (in piece order)
+      Total drives present: 5
+
+         Tray     Slot
+         99       1
+         99       2
+         99       3
+         99       4
+         99       5
+----
+
+
+== Niveau minimal de firmware
+
+6.10

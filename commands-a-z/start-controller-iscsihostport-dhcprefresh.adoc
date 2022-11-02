@@ -1,0 +1,131 @@
+---
+permalink: commands-a-z/start-controller-iscsihostport-dhcprefresh.html 
+sidebar: sidebar 
+keywords: start, iscsi, dhcp, refresh 
+summary: 'La commande start Controller iscsiHostPort dhcpRefresh lance une actualisation des paramètres DHCP pour l"interface iSCSI.' 
+---
+= Démarrez l'actualisation iSCSI DHCP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start controller iscsiHostPort dhcpRefresh` Commande lance une actualisation des paramètres DHCP pour l'interface iSCSI.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Si la méthode de configuration de l'interface n'est pas définie sur DHCP, la procédure renvoie une erreur.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start controller [(a|b)] iscsiHostPort [portLabel] dhcpRefresh
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Lettre d'identification du contrôleur qui possède les ports d'hôte iSCSI. Les valeurs d'identifiant de contrôleur valides sont `a` ou `b` où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B.
+
+
+
+ a| 
+`iscsiHostPort`
+ a| 
+Étiquette du port hôte ou numéro du port hôte iSCSI pour lequel vous souhaitez actualiser les paramètres DHCP.
+
+Pour plus d'informations, reportez-vous aux sections suivantes :
+
+ an iSCSI host port label,« Identification d'une étiquette de port hôte iSCSI »
+
+|===
+
+
+== Identification d'une étiquette de port hôte iSCSI
+
+Vous devez spécifier une étiquette pour le port hôte. Procédez comme suit pour spécifier l'étiquette du port hôte :
+
+.Étapes
+. Si vous ne connaissez pas l'étiquette de port du port hôte iSCSI, exécutez le `show controller` commande.
+. Dans la section interface hôte des résultats, recherchez le port hôte que vous souhaitez sélectionner.
++
+[NOTE]
+====
+L'étiquette de port est la valeur complète renvoyée pour le `Port` légale.
+
+====
+. Placez la valeur entière de l'étiquette de port entre guillemets et crochets : ["portLabel"]. Par exemple, si l'étiquette de port est `Ch 2`, Spécifiez le port hôte iSCSI comme suit :
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Si vous utilisez une ligne de commande Windows et que le libellé contient un canal (|), le caractère doit être échappé (en utilisant {caret}) ; sinon, il sera interprété comme une commande. Par exemple, si l'étiquette de port est `e0b|0b`, Spécifiez le port hôte iSCSI comme suit :
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Pour assurer la compatibilité ascendante, les numéros de port iscsiPortsNumber, entourés d'accolades [ ] plutôt que de devis et d'accolades [« »] peuvent toujours être utilisés pour les contrôleurs E2700, E5600 ou EF560 (et d'autres générations précédentes de contrôleurs E-Series ou EF-Series). Pour ces contrôleurs, les valeurs valides pour iscsiPortNumber sont les suivantes :
+
+* Pour les contrôleurs avec ports hôtes intégrés, la numérotation est 3, 4, 5 ou 6.
+* Pour les contrôleurs avec des ports hôtes sur une carte d'interface hôte uniquement, la numérotation est 1, 2, 3 ou 4.
+
+
+Voici un exemple de syntaxe précédente :
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Remarques
+
+Cette opération met fin aux connexions iSCSI du portail et fait temporairement descendre le portail.
+
+
+
+== Niveau minimal de firmware
+
+7.10
+
+8.10 révise le système de numérotation pour les ports hôtes iSCSI.
+
+8.30 révision de la méthode d'identification des ports hôtes iSCSI sur la baie E2800.

@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/diagnose-syncmirror.html 
+sidebar: sidebar 
+keywords: diagnose, syncmirror, command, test, connection, specified, primary, volumes, mirror, storage, array, synchronous, feature, enabled 
+summary: La commande diagnostic SyncMirror teste la connexion entre les volumes primaires spécifiés et les volumes miroir sur une matrice de stockage avec la fonction de mise en miroir synchrone activée. 
+---
+= Diagnostiquez la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `diagnose syncMirror` commande teste la connexion entre les volumes primaires spécifiés et les volumes miroir sur une baie de stockage avec la fonction de mise en miroir synchrone activée.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose syncMirror (_primary [primaryVolumeName_]] |pass:quotes[primaries ["_primaryVolumeName1_]" ... pass:quotes[_"primaryVolumeNameN"_]])
+testID=connectivity
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`primary`
+ a| 
+Nom du volume principal de la paire de miroirs distants que vous souhaitez tester. Placez le nom du volume primaire entre crochets ([ ]). Si le nom du volume principal comporte des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du volume primaire entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`primaries`
+ a| 
+Vous pouvez entrer plusieurs noms de volume. Placez tous les noms de volume dans un jeu de crochets ([ ]). Placez chaque nom de volume entre guillemets (" "). Séparez chaque nom de volume par un espace.
+
+Les noms de plusieurs volumes que vous souhaitez utiliser comme volumes primaires. Entrez les noms des volumes primaires à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

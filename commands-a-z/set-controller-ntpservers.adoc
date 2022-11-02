@@ -1,0 +1,135 @@
+---
+permalink: commands-a-z/set-controller-ntpservers.html 
+sidebar: sidebar 
+keywords: set, controller, ntp 
+summary: 'La commande set Controller NTPServers définit les paramètres NTP du contrôleur afin que le contrôleur puisse synchroniser automatiquement les horloges avec un hôte externe à l"aide de SNTP (simple Network Time Protocol).' 
+---
+= Définissez les paramètres NTP du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set controller NTPServers` Commande définit les paramètres NTP du contrôleur afin que le contrôleur puisse synchroniser automatiquement les horloges avec un hôte externe à l'aide de SNTP (simple Network Time Protocol).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Lorsque cette fonctionnalité est activée, le contrôleur interroge régulièrement le serveur NTP configuré, puis utilise les résultats pour mettre à jour son horloge interne de l'heure du jour. Si le protocole NTP est activé sur un seul contrôleur, l'autre contrôleur synchronise régulièrement son horloge avec le contrôleur sur lequel le protocole NTP est activé. Si le protocole NTP n'est pas activé pour aucun contrôleur, les contrôleurs synchronisent régulièrement leurs horloges entre eux.
+
+[NOTE]
+====
+Cette commande est spécifique au contrôleur. Il n'est pas nécessaire de configurer le protocole NTP sur les deux contrôleurs. Toutefois, cela améliore la capacité de la baie à rester synchronisée pendant les pannes matérielles ou de communication.
+
+====
+[NOTE]
+====
+Si vous configurez le protocole NTP à l'aide d'un nom de domaine complet, vous devez également configurer le serveur DNS sur ces contrôleurs pour que l'opération réussisse.Voir xref:set-controller-dnsservers.adoc[Définissez les paramètres DNS du contrôleur] pour en savoir plus.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+set controller(a|b) NTPServers=(disabled|auto|(Address1 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()] [Address2 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()]]))
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur pour lequel vous souhaitez modifier les paramètres NTP. Les identifiants de contrôleur valides sont a ou b.
+
+
+
+ a| 
+`NTPServers`
+ a| 
+Ce paramètre configure les serveurs NTP du contrôleur.
+
+* Spécifiez `disabled` Pour désactiver la prise en charge NTP.
+* Spécifiez `auto` Pour utiliser les adresses de serveur NTP fournies par un serveur DHCP.
++
+[NOTE]
+====
+Cette option ne doit être utilisée que si au moins un port de gestion du contrôleur est défini pour obtenir les paramètres d'interface via DHCP et qu'au moins un serveur NTP est configuré sur le serveur DHCP.
+
+====
+* Dans le cas contraire, spécifiez une liste séparée en espaces d'un ou deux serveurs NTP. Les adresses peuvent être un nom de domaine, une adresse IPv4 ou une adresse IPv6. Si vous spécifiez plusieurs adresses, les types d'adresse ne doivent pas correspondre. Si plusieurs adresses sont spécifiées, elles seront utilisées dans l'ordre dans lequel elles sont spécifiées (première adresse principale, seconde étant la sauvegarde).
+
+
+[NOTE]
+====
+Entourez le nom du serveur NTP de guillemets, comme indiqué dans la section exemples.
+
+====
+
+
+ a| 
+`Address`
+ a| 
+« Domainname »|IPv4Address|IPv6Address
+
+[NOTE]
+====
+Si un nom de domaine est spécifié, un serveur DNS doit également être configuré pour permettre au contrôleur de résoudre l'adresse IP du serveur.
+
+====
+
+
+ a| 
+`keyIdentifier` `keyType`
+
+`passPhrase`
+ a| 
+Si vous le souhaitez, ces paramètres fournissent les informations d'identification clés pour l'activation de l'authentification NTP :
+
+* `key Identifier` est un entier compris entre 0 et 65535.
+* `keyType` est l'une des suivantes: aucun, sha1, sha224, sha256, sha384 ou sha512.
+* `passPhrase` Est soit un chiffre hexadécimal (0-9, avec a-f autorisé), qui est exactement 40 chiffres saisis comme stringLiteral, soit une chaîne de caractères alphanumériques jusqu'à 20 octets de long.
+
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+set controller[a] NTPServers=disabled;
+set controller[a] NTPServers=auto;
+set controller[a] NTPServers=("0.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase="SomePassword1" "1.us.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
+set controller[b] NTPServers=(192.168.1.105 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1" "1.us.pool.ntp.org");
+set controller[b] NTPServers=(set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
+----
+
+
+== Niveau minimal de firmware
+
+8.25
+
+8.42 ajoute les paramètres d'informations d'identification clés pour l'authentification NTP.

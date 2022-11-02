@@ -1,0 +1,148 @@
+---
+permalink: commands-a-z/start-controller.html 
+sidebar: sidebar 
+keywords: start, controller, trace 
+summary: La commande start Controller démarre une opération qui enregistre les informations de trace de débogage dans un fichier compressé. 
+---
+= Démarrer le suivi du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start controller` commande lance une opération qui enregistre les informations de trace de débogage dans un fichier compressé.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les informations de trace de débogage peuvent être utilisées par le support technique pour vous aider à analyser la qualité d'exécution d'une matrice de stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start controller [(a
+ | b
+ | both)] trace
+dataType=(current | flushed | currentFlushed | all)
+forceFlush=(TRUE | FALSE)
+pass:quotes[file="_fileName_]"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Contrôleur pour lequel vous souhaitez collecter les informations de débogage de trace. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A , et `b` Est le contrôleur associé au slot B. Vous pouvez également collecter simultanément le débogage pour les deux contrôleurs en entrant `both` . Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+
+
+ a| 
+`dataType`
+ a| 
+Le type de données que vous souhaitez collecter :
+
+* `current` -- récupère les traces DQ actuelles
+* `flushed` -- récupère toutes les traces DQ vidées
+* `currentFlushed` -- récupère à la fois le tracé DQ actuel et le tracé DQ rincé
+* `all` -- récupère le tracé DQ actuel, le tracé DQ rincé et toutes les traces DQ de la plate-forme
+
+
+[NOTE]
+====
+Si `dataType=flushed` et `forceFlush=True`, un message d'erreur s'affiche, indiquant que seules les traces actives peuvent être transférées vers la mémoire tampon lors de la récupération.
+
+====
+
+
+ a| 
+`*forceFlush*`
+ a| 
+Paramètre permettant de déplacer les informations DQ dans la mémoire tampon actuelle vers la mémoire tampon vidée lorsque les informations de trace DQ définies par l' `dataType` le paramètre est récupéré. Pour activer le rinçage forcé, définissez ce paramètre sur `TRUE`. Pour désactiver le vidage forcé, définissez ce paramètre sur `FALSE`.
+
+[NOTE]
+====
+Si `dataType=flushed` et `forceFlush=True`, un message d'erreur s'affiche, indiquant que seules les traces actives peuvent être transférées vers la mémoire tampon lors de la récupération.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les informations de trace DQ. Placez le nom du fichier entre guillemets (" ").
+
+Reportez-vous à la section Notes pour plus d'informations sur la dénomination des fichiers.
+
+|===
+
+
+== Remarques
+
+Les informations de trace DQ sont écrites dans un fichier compressé avec l'extension .zip. Le nom de fichier est une combinaison d'un nom de fichier défini par l'utilisateur et de l'identifiant de la matrice de stockage (DIT). Une constante de "dq" est également ajoutée au nom du fichier. Le nom complet du fichier a le formulaire suivant :
+
+[listing]
+----
+user_defined_file_name-SAID-dq.zip
+----
+Le fichier compressé contient les informations répertoriées dans ce tableau.
+
+[cols="3*"]
+|===
+| Nom du fichier | Répertoire | Commentaires 
+
+
+ a| 
+`user_provided_file_name-SAID-A.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+Données de trace DQ récupérées du contrôleur A.
+
+
+
+ a| 
+`user_provided_file_name-SAID-B.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+Données de trace DQ récupérées du contrôleur B.
+
+
+
+ a| 
+`user_provided_file_name-SAID-trace_description.xm`
+ a| 
+`SAID/timestamp/`
+ a| 
+Fichier de description au format xml décrivant les attributs de fichier DQ pour l'exploration de données future.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.75

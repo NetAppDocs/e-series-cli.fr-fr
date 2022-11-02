@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/clear-emailalert-configuration.html 
+sidebar: sidebar 
+keywords: clear email, alert, configuration 
+summary: 'La commande Effacer la configuration de l"application emailAlert efface la configuration de l"alerte par e-mail sur les valeurs par défaut.' 
+---
+= Effacez la configuration des alertes par e-mail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear emailAlert configuration` commande efface la configuration de l'alerte par e-mail sur les valeurs par défaut.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+clear emailAlert configuration
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "clear emailAlert configuration;"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/check-syncmirror.html 
+sidebar: sidebar 
+keywords: check, synchronous, mirroring status 
+summary: 'La commande check SyncMirror renvoie l"état d"un volume miroir distant. Utilisez cette commande pour déterminer quand l"état du volume du miroir distant est optimal.' 
+---
+= Vérifiez l'état de la mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `check syncMirror` commande renvoie l'état d'un volume miroir distant. Utilisez cette commande pour déterminer quand l'état du volume du miroir distant est optimal.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Dans les versions précédentes de cette commande, l'identifiant de fonction était `remoteMirror`. Cet identifiant de fonction n'est plus valide et est remplacé par `syncMirror`.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=pass:quotes[_timeoutValue_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`localVolume`
+ a| 
+Nom de tout volume de miroir distant. Le volume du miroir distant peut être le volume principal ou le volume secondaire d'une paire distante en miroir. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères spéciaux, vous devez inclure le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`timeout`
+ a| 
+Intervalle de temps pendant lequel le logiciel peut revenir à l'état du volume du miroir distant. Le délai d'expiration est de en minutes.
+
+|===
+
+
+== Remarques
+
+Cette commande attend que le statut soit optimal ou que l'intervalle entre les délais expire. Utilisez cette commande lorsque vous exécutez l'utilitaire de mise en miroir synchrone asynchrone.

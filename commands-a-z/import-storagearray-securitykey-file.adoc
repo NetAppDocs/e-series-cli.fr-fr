@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/import-storagearray-securitykey-file.html 
+sidebar: sidebar 
+keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
+summary: 'La commande Import storageArray securityKey file déverrouille un ou plusieurs lecteurs FDE (Full Disk Encryption) que vous avez déplacés d"une matrice de stockage vers une autre matrice de stockage.' 
+---
+= Importer la clé de sécurité de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `import storageArray securityKey file` Commande déverrouille un ou plusieurs lecteurs FDE (Full Disk Encryption) que vous avez déplacés d'une matrice de stockage à une autre matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E2800, E5700, EF600 ou EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Seuls les disques avec la clé de sécurité correspondante sont déverrouillés. Une fois débloqué, la clé de sécurité de la nouvelle baie de stockage est appliquée.
+
+[NOTE]
+====
+Cette commande s'applique à la gestion interne et externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+import storageArray securityKey file="fileName"
+passPhrase="passPhraseString"
+[forceOverwrite=(TRUE|FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier qui contient la clé de sécurité d'origine des disques FDE importés. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères fournissant l'authentification pour la clé de sécurité.
+
+
+
+ a| 
+`forceOverwrite`
+ a| 
+Si ce paramètre est défini sur `TRUE`, L'importation force l'écrasement de la clé FDE lorsque l'importation ne serait normalement pas autorisée, par exemple lorsqu'un contrôleur est absent ou défectueux. Par défaut, le paramètre forcer le remplacement est défini sur FALSE.
+
+|===
+
+
+== Remarques
+
+Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE. Les disques FDE sont dotés d'un état appelé « Security capable ». Lorsque vous créez une clé de sécurité, l'état est défini sur sécurité activée, ce qui limite l'accès à tous les disques FDE présents dans la baie de stockage.
+
+Votre phrase de passe doit répondre aux critères suivants :
+
+* Doit comporter entre 8 et 32 caractères.
+* Doit contenir au moins une lettre majuscule.
+* Doit contenir au moins une lettre minuscule.
+* Doit contenir au moins un chiffre.
+* Doit contenir au moins un caractère non alphanumérique, par exemple < > @ +.
+
+
+[NOTE]
+====
+Si votre phrase de passe ne répond pas à ces critères, vous recevrez un message d'erreur et vous serez invité à réessayer la commande.
+
+====
+
+
+== Niveau minimal de firmware
+
+7.40
+
+8.40 ajout de la possibilité d'importer une clé de sécurité de matrice de stockage externe
+
+11.70.1 a ajouté le `forceOverwrite` paramètre.

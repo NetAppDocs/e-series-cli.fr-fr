@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/recopy-volumecopy-target.html 
+sidebar: sidebar 
+keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
+summary: La commande recopy VolumeCopy target lance de nouveau une opération de copie de volume en utilisant une paire de copies de volume existante. 
+---
+= Recopier la copie de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recopy volumeCopy target` la commande lance de nouveau une opération de copie de volume via une paire de copies de volume existante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 7.83 du micrologiciel `copyType=(online | offline)` paramètre n'est plus utilisé.
+
+====
+Cette commande est valide pour les paires de copies de volume d'images de snapshot.
+
+Cette commande fonctionne avec les paires de copies de volume que vous avez créées avec un volume d'images snapshot.
+
+[NOTE]
+====
+Le démarrage d'une opération de copie de volume écrase toutes les données existantes sur le volume cible, rend le volume cible en lecture seule vers les hôtes et échoue tous les volumes d'images snapshot associés au volume cible, le cas échéant. Si vous avez déjà utilisé le volume cible comme copie, assurez-vous qu'il n'a plus besoin des données ou qu'il n'a plus été sauvegardé.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+recopy volumeCopy target [targetName]
+[source [sourceName]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`target`
+ a| 
+Nom du volume cible pour lequel vous souhaitez réinitialiser une opération de copie de volume. Placez le nom du volume cible entre crochets ([ ]). Si le nom du volume cible contient des caractères spéciaux, vous devez inclure le nom du volume cible entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`source`
+ a| 
+Nom du volume source pour lequel vous souhaitez réinitialiser une opération de copie de volume. Placez le nom du volume source entre crochets ([ ]). Si le nom du volume source contient des caractères spéciaux, vous devez inclure le nom du volume source entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Priorité de la copie de volume relative aux activités d'E/S de l'hôte. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Paramètre permettant d'écrire sur le volume cible ou uniquement de le lire à partir du volume cible. Pour écrire dans le volume cible, définissez ce paramètre sur `FALSE`. Pour empêcher l'écriture sur le volume cible, définissez ce paramètre sur `TRUE`.
+
+|===
+
+
+== Remarques
+
+La priorité de copie définit la quantité de ressources système utilisées pour copier les données entre le volume source et le volume cible d'une paire de copies de volume. Si vous sélectionnez le niveau de priorité le plus élevé, la copie de volume utilise le plus de ressources système pour effectuer la copie de volume, ce qui diminue les performances des transferts de données hôte.
+
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.83 supprime le `copyType=(online | offline)` paramètre.

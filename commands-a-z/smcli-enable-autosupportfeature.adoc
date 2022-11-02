@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/smcli-enable-autosupportfeature.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, emw, management, domain, level, smcli 
+summary: 'La commande SMcli enable autoSupportFeature active la fonctionnalité AutoSupport (ASUP) de toutes les baies de stockage gérées et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, toute baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l"analyse des problèmes.' 
+---
+= Activer ou désactiver AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement).
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli enable autoSupportFeature` La commande active la fonction AutoSupport (ASUP) pour toutes les baies de stockage gérées et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, toute baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l'analyse des problèmes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+[NOTE]
+====
+Le moniteur persistant doit être activé pour que la fonction AutoSupport fonctionne.
+
+====
+[NOTE]
+====
+Aucune donnée client n'est transmise au site de support technique.
+
+====
+Cette commande a des répercussions sur toutes les baies de stockage compatibles avec ASUP du domaine de gestion. Après avoir activé cette fonction pour le domaine de gestion, vous contrôlez l'activation des fonctionnalités pour chaque matrice de stockage.
+
+Après avoir activé cette fonction, vous pouvez ensuite activer la fonction AutoSupport OnDemand (si vous le souhaitez), puis activer la fonction AutoSupport Remote Diagnostics (diagnostic à distance) (si vous le souhaitez).
+
+Vous devez activer les trois fonctions dans l'ordre suivant :
+
+. *Activer AutoSupport*
+. *Activer AutoSupport OnDemand*
+. *Activer les diagnostics à distance AutoSupport*
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli enable|disable autoSupportFeature
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Vérification
+
+Utilisez le `SMcli -autoSupportConfig show` commande pour voir si vous avez activé la fonction. La ligne initiale de la sortie affichée indique l'état d'activation :
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+----
+
+
+== Niveau minimal de micrologiciel
+
+7.86

@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/delete-cgsnapimage-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group, snapshot, image 
+summary: 'La commande delete cgSnapImage Consistengroup supprime les images de snapshot d"un groupe de cohérence.' 
+---
+= Supprimez l'image Snapshot du groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete cgSnapImage consistencyGroup` la commande supprime les images de snapshot d'un groupe de cohérence.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete cgSnapImage consistencyGroup=pass:quotes[_"consistencyGroupName"_]
+pass:quotes[[deleteCount=_numberOfSnapImages_]
+[retainCount=pass:quotes[_numberOfSnapImages_]
+[ignoreSnapVolume=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence depuis lequel vous souhaitez supprimer les images de snapshot. Placez le nom du groupe de cohérence entre guillemets (" ").
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Le nombre d'images snapshot que vous souhaitez supprimer du groupe de cohérence. Utiliser des valeurs entières.
+
+Ce paramètre supprime d'abord l'image snapshot la plus ancienne et continue à supprimer les images snapshot les plus anciennes jusqu'à ce que vous obteniez le numéro que vous entrez.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Nombre d'images de snapshot que vous souhaitez conserver dans le groupe de cohérence. Utiliser des valeurs entières.
+
+Ce paramètre conserve les images de snapshot les plus récentes du groupe de cohérence.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Détermine si le volume de snapshot du groupe de cohérence associé est conservé ou supprimé. Ce paramètre s'applique uniquement si l'image Snapshot du groupe de cohérence est associée à un volume Snapshot de groupe de cohérence. Pour conserver le volume d'instantané, définissez ce paramètre sur `TRUE`. Pour supprimer le volume de snapshot, définissez ce paramètre sur `FALSE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Si les images de snapshot ne peuvent pas être supprimées pour tous les volumes membres concernés du groupe de cohérence, l'opération échoue et aucune des images de snapshot n'est supprimée.
+
+Lorsque vous supprimez une image snapshot de groupe de cohérence associée à un volume snapshot de groupe de cohérence, le membre de volume snapshot correspondant du volume de groupe de cohérence est transféré à l'état arrêté. Un membre du volume de snapshot à l'état Arrêté n'a plus de relation avec le groupe de snapshots de l'image de snapshot supprimée. Cependant, un membre du volume snapshot défini sur l'état arrêté conserve sa relation avec son volume Snapshot de groupe de cohérence.
+
+
+
+== Niveau minimal de firmware
+
+7.83

@@ -1,0 +1,138 @@
+---
+permalink: commands-a-z/create-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: create, storage, array, security, key 
+summary: 'La commande create storageArray securityKey crée ou modifie une nouvelle clé de sécurité pour une baie de stockage dotée de disques FDE (Full Disk Encryption).' 
+---
+= Créer une clé de sécurité de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create storageArray securityKey` La commande crée ou modifie une nouvelle clé de sécurité pour une baie de stockage dotée de disques FDE (Full Disk Encryption).
+
+
+
+== Baies prises en charge
+
+Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E2800, E5700, EF600 et EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Pour la gestion interne des clés, cette commande active la fonctionnalité de gestion interne des clés et crée la clé de sécurité. Après avoir créé la clé, utilisez le `set storageArray securityKey` commande permettant de mettre la clé en service. Cette commande peut également être utilisée pour modifier la clé de sécurité.
+
+Pour la gestion externe des clés, cette commande crée une clé différente pour remplacer la clé créée à l'origine lorsque vous avez activé la fonction. Utilisez le `enable storageArray externalKeyManagement` Commande permettant d'activer la fonction gestion des clés externes et de créer la clé de sécurité initiale. Cette commande peut également être utilisée pour modifier la clé de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create storageArray securityKey
+[keyIdentifier=pass:quotes[_"keyIdentifierString"_]]
+passPhrase=pass:quotes[_"passPhraseString"_
+file=_"fileName"_]
+[commitSecurityKey=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`keyIdentifier` - applicable uniquement à la gestion interne des clés
+ a| 
+Chaîne de caractères que vous pouvez lire, c'est-à-dire un wrapper autour d'une clé de sécurité. Placez l'identificateur de clé entre guillemets (" ").
+
+Vous pouvez saisir des caractères pour l'identificateur de clé pour les clés de sécurité internes afin de vous aider à identifier la clé ultérieurement. Ces règles de formatage sont les suivantes :
+
+* Vous pouvez entrer jusqu'à 189 caractères alphanumériques pour un identificateur de clé. Les caractères autorisés sont les suivants :
++
+** Espaces
+** Ponctuation
+** Symboles
+
+
+* Si vous n'entrez pas le `keyIdentifer` paramètre pour les clés internes, le contrôleur génère automatiquement le `keyIdentifer` paramètre.
+
+
+Des caractères supplémentaires sont générés automatiquement et ajoutés à la fin de la chaîne que vous entrez pour l'identificateur de clé. Si vous n'entrez aucune chaîne pour le `keyIdentifier` paramètre, l'identificateur de clé se compose uniquement des caractères générés automatiquement.
+
+[NOTE]
+====
+Ce paramètre n'est pas pris en compte dans le cadre de la gestion externe des clés, car l'identifiant de clé est complètement généré automatiquement. Si la matrice de stockage comporte un libellé utilisateur, cette chaîne générée automatiquement est composée des caractères `sa.`, suivi du libellé utilisateur de la matrice de stockage, de l'identificateur de la matrice de stockage et d'une chaîne générée de manière aléatoire. Tous les caractères du libellé utilisateur qui ne sont pas alphanumériques sont convertis en trait de soulignement (`_`) caractère. Par exemple, un libellé utilisateur de abc#8 sera converti en `sa.abc_8` avant d'être précédé de la prépended au reste de l'identificateur de clé. Pour les matrices de stockage sans étiquette utilisateur, l'identificateur de clé est composé de l'identificateur de matrice de stockage et d'une chaîne générée de manière aléatoire.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez stocker la clé de sécurité dans un fichier externe. Placez la phrase de passe entre guillemets (" ").
+
+Pour plus d'informations sur le formulaire correct pour créer une phrase de passe valide, reportez-vous aux notes de cette description de commande.
+
+Votre phrase de passe doit répondre aux critères suivants :
+
+* Doit comporter entre 8 et 32 caractères.
+* Ne doit pas contenir d'espaces.
+* Doit contenir au moins une lettre majuscule.
+* Doit contenir au moins une lettre minuscule.
+* Doit contenir au moins un chiffre.
+* Doit contenir au moins un caractère non alphanumérique, par exemple @ +.
+
+
+[NOTE]
+====
+Si votre phrase de passe ne répond pas à ces critères, vous recevrez un message d'erreur et vous serez invité à réessayer la commande.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer la clé de sécurité. Par exemple :
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Le nom de fichier doit avoir une extension de `.slk` .
+
+====
+Placez le chemin et le nom du fichier entre guillemets (" ").
+
+
+
+ a| 
+`commitSecurityKey` - applicable uniquement à la gestion interne des clés
+ a| 
+Ce paramètre engage la clé de sécurité sur la matrice de stockage pour tous les disques FDE ainsi que les contrôleurs. Une fois la clé de sécurité engagée, une clé est requise pour accéder aux données des disques sécurisés de la matrice de stockage. Les données ne peuvent être lues ou modifiées qu'à l'aide d'une touche, et le lecteur ne peut jamais être utilisé en mode non sécurisé sans rendre les données inutiles ou totalement supprimées du lecteur.
+
+La valeur par défaut est FALSE. Si ce paramètre est défini sur FALSE, envoyez une commande séparée `set storageArray securityKey` commande pour valider la clé de sécurité sur la matrice de stockage.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.40 introduit pour la gestion interne des clés
+
+8.40 introduit pour la gestion externe des clés

@@ -1,0 +1,117 @@
+---
+permalink: commands-a-z/repair-data-parity.html 
+sidebar: sidebar 
+keywords: repair, data, parity 
+summary: La commande réparer la parité des données répare les erreurs de parité des données. 
+---
+= Réparer la parité des données
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Repair Data Parity` la commande répare les erreurs de parité des données.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Avant d'utiliser cette commande, consultez la section support de NetApp pour obtenir des informations sur le firmware, les disques et la bande RAID affectés.
+
+
+
+== Syntaxe
+
+[listing]
+----
+repair volume[volumeName] parity
+   [startingLBA=LBAvalue]
+   [endingLBA=LBAvalue]
+   [repairMethods=(repairMethod . . . repairMethod)]
+           Space delimited list where possible repair methods are: reconstruct, unmap, updateP, updateQ, updateData, and writeZeros
+   [repairPI=(TRUE|FALSE)]
+   [suspectDrives=(trayID1,[drawerID1,]slotID1 . . . trayIDn,[drawerIDn,]slotIDn)]
+   [timeout=(0-65535)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume pour lequel vous réparez la parité. Placez le nom du volume entre crochets ([ ])
+
+
+
+ a| 
+`startingLBA`
+ a| 
+Adresse du bloc logique de démarrage.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+Adresse du bloc logique de fin.
+
+
+
+ a| 
+`repairMethods`
+ a| 
+Méthode utilisée pour réparer l'erreur de parité. Les méthodes disponibles incluent :
+
+* Reconstruction : reconstruit les disques spécifiés sous le `suspectDrives` paramètre.
+* Unmap : pour les volumes R5/R6 dulbe, utilisés pour annuler le mappage d'une bande RAID R5/R6
+* UpdateP : permet de corriger le type de non-concordance de la parité des données.
+* UpdateQ : permet de corriger le type de non-concordance de la parité des données.
+* UpdateData : permet de corriger le type de non-concordance de la parité des données.
+* WriteZeros : pour les volumes de dulbe R5/R6, utilisé lorsqu'une bande RAID5/6 inattendue contenant un mélange de données mappées et non mappées est trouvée. Met les blocs non mappés de la bande et des zéros à l'écrire, puis met à jour la parité
+
+
+
+
+ a| 
+`repairPI`
+ a| 
+Défini sur TRUE pour réparer PI dans l'extension commençant à startingLBA.
+
+
+
+ a| 
+`suspectDrives`
+ a| 
+Permet de spécifier les disques à reconstruire.
+
+
+
+ a| 
+`timeout`
+ a| 
+Durée en minutes pendant laquelle vous souhaitez exécuter l'opération.
+
+|===
+
+
+== Niveau minimal de micrologiciel
+
+8.63

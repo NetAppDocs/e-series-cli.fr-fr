@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/start-storagearray-controllerhealthimage-controller.html 
+sidebar: sidebar 
+keywords: start, storage, array, controller, health, image 
+summary: 'La commande start storageArray contrôlerHealthImage Controller génère une image d"état du contrôleur de la baie de stockage sur les systèmes de stockage qui prennent en charge la fonction d"image d"état de santé du contrôleur.' 
+---
+= Image démarrage de l'état du contrôleur de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start storageArray controllerHealthImage controller` la commande génère une image d'état du contrôleur de la baie de stockage sur les baies de stockage qui prennent en charge la fonctionnalité d'image d'état de santé du contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.20 du micrologiciel `coreDump` le paramètre est remplacé par le `controllerHealthImage` paramètre.
+
+====
+[NOTE]
+====
+Utilisez cette commande uniquement sous la direction du support technique.
+
+====
+Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrité du contrôleur, la commande renvoie une erreur.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start storageArray controllerHealthImage controller [(a|b)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Ce paramètre spécifie le contrôleur depuis lequel produire l'image de santé du contrôleur. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+|===
+
+
+== Remarques
+
+Cette commande force le contrôleur sélectionné à vider ses données « core » en cache. Utilisez le `save storageArray controllerHealthImage` commande pour enregistrer une copie des données de cache dans un fichier hôte.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.20 remplace le `coreDump` paramètre avec le `controllerHealthImage` paramètre.

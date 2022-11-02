@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/add-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: add volume, asynchronous, mirror group, supported arrays, roles, context, syntax, parameter, minimum firmware level 
+summary: La commande add volume asynchrones MirrorGroup ajoute un volume primaire à un groupe de miroirs asynchrone. 
+---
+= Ajout de volume à un groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `add volume asyncMirrorGroup` commande ajoute un volume primaire à un groupe de miroirs asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande n'est valide que sur la matrice de stockage locale qui contient le groupe de miroirs asynchrone auquel vous souhaitez ajouter le volume primaire. Un groupe de miroirs asynchrone dispose d'un volume de référentiel qui permet d'enregistrer les données de toutes les images instantanées faisant partie du groupe de miroirs asynchrone. Chaque volume primaire du groupe de miroirs asynchrone dispose d'un volume de miroir correspondant sur une baie de stockage distante.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[add volume="_volumeName_" asyncMirrorGroup="_asyncMirrorGroupName_"
+remotePassword="_password_"
+(repositoryVolume="repos_xxxx" |
+repositoryVolume=(_volumeGroupName_ ]pass:quotes[[capacity=_capacityValue_])]
+repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityValue_]))
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume primaire que vous souhaitez ajouter au groupe de miroirs asynchrone. Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones qui contiendra le volume principal que vous souhaitez ajouter. Placez le nom du groupe de miroirs asynchrones entre guillemets (" ").
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Ce paramètre est facultatif. Utilisez ce paramètre lorsque la matrice de stockage distante est protégée par mot de passe. Placez le mot de passe entre guillemets (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Nom du volume du référentiel qui contiendra les données modifiées du volume primaire.
+
+Vous disposez de deux options pour définir le nom d'un volume de référentiel :
+
+* Utiliser un volume de référentiel existant : nom.
+* Créez un nouveau volume de référentiel lorsque vous exécutez cette commande.
+
+
+Le nom d'un volume de référentiel existant comprend deux parties :
+
+* Le terme repos.
+* Un identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel.
+
+
+Placez le nom du volume de référentiel existant entre guillemets (" ").
+
+Si vous souhaitez créer un nouveau volume de référentiel lorsque vous exécutez cette commande, vous devez entrer le nom d'un groupe de volumes ou d'un pool de disques dans lequel vous voulez que le volume de référentiel soit. Vous pouvez également définir la capacité du volume du référentiel. Si vous souhaitez définir la capacité, vous pouvez utiliser les valeurs suivantes :
+
+* Valeur entière représentant un pourcentage de la capacité du volume de base.
+* Valeur décimale représentant un pourcentage de la capacité du volume de base.
+* Taille spécifique du volume du référentiel. La taille est définie en unités de `bytes` , `KB` , `MB` , `GB` , ou `TB` .
+
+
+Si vous ne définissez pas la capacité, le logiciel de gestion du stockage définit la capacité à 20 % de la capacité du volume primaire.
+
+Le logiciel de gestion du stockage crée le volume du référentiel et le lie au volume principal.
+
+|===
+
+
+== Remarques
+
+* La mise en miroir asynchrone doit être activée et activée sur les baies de stockage locales et distantes qui seront utilisées pour les activités de miroir.
+* Les baies de stockage locales et distantes doivent être connectées via une structure Fibre Channel ou une interface iSCSI appropriée.
+* La matrice de stockage distante doit disposer d'un volume dont la capacité est supérieure ou égale à celle du volume principal de la matrice de stockage locale. Le volume de la matrice de stockage distante est utilisé comme volume miroir.
+
+
+
+
+== Niveau minimal de firmware
+
+7.84

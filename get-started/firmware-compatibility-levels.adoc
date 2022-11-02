@@ -1,0 +1,45 @@
+---
+permalink: get-started/firmware-compatibility-levels.html 
+sidebar: sidebar 
+keywords: firmware, compatibility, levels 
+summary: 'Les commandes de script et les paramètres de commande ne s"exécutent pas sous toutes les versions du micrologiciel du contrôleur.' 
+---
+= Niveaux de compatibilité du micrologiciel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Les commandes de script et les paramètres de commande ne s'exécutent pas sous toutes les versions du micrologiciel du contrôleur. Les commandes de script des sections suivantes répertorient les niveaux de micrologiciel minimum sous lesquels les commandes de script peuvent être exécutées. Dans les commandes de script, les niveaux de micrologiciel sont répertoriés sous l'en-tête "niveau de micrologiciel de Minimum". Cette liste décrit comment interpréter les informations relatives aux niveaux de micrologiciel.
+
+* Si une commande script ne répertorie pas un niveau minimal de micrologiciel de contrôleur, la commande script et tous les paramètres associés à cette commande de script peuvent s'exécuter sous n'importe quel niveau de micrologiciel de contrôleur.
+* Un numéro de micrologiciel de contrôleur sans aucune information explicative indique que le niveau de micrologiciel du contrôleur s'applique à l'ensemble de la commande script et à tous les paramètres de cette commande script.
+* Un numéro de firmware du contrôleur associé à un paramètre indique le niveau minimum de firmware du contrôleur sous lequel le paramètre peut s'exécuter.
+
+
+[NOTE]
+====
+Le niveau minimal du firmware des contrôleurs indique la prise en charge par le logiciel qui libère la commande, ainsi que par tous les logiciels de gestion du stockage qui prennent en charge l'utilisation. Les fonctionnalités de prise en charge de l'interface de ligne de commande dépendent du matériel utilisé. Lorsqu'une commande non prise en charge est saisie, un message d'erreur s'affiche.
+
+====
+
+
+== Exemples de niveaux de compatibilité du micrologiciel
+
+Le `create hostGroup` la commande dispose de la section suivante.
+
+*Niveau minimum du micrologiciel*
+
+8.10
+
+Ce niveau indique que l'intégralité de la commande script s'exécute sous un minimum de la version 8.10 du micrologiciel du contrôleur.
+
+Le `create ssdCache` la commande dispose de la section suivante.
+
+*Niveau minimum du micrologiciel*
+
+7.84
+
+8.20.11 - Ajout du `*securityType*` paramètre.
+
+Ces notations indiquent que la commande script et tous les paramètres sauf `*securityType*` exécutez la version 7.84 du firmware du contrôleur au minimum. Le `*securityType*` Le paramètre s'exécute sous un minimum de la version 8.20_M3 du firmware du contrôleur.

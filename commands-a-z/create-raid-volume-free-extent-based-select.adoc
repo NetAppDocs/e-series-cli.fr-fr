@@ -1,0 +1,253 @@
+---
+permalink: commands-a-z/create-raid-volume-free-extent-based-select.html 
+sidebar: sidebar 
+keywords: create, raid, volume, free, extent, based, select 
+summary: 'La commande create volume crée un volume dans l"espace libre d"un groupe de volumes.' 
+---
+= Création d'un volume RAID (sélection basée sur une extension gratuite)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create volume` commande crée un volume dans l'espace libre d'un groupe de volumes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create volume volumeGroup=pass:quotes[_"volumeGroupName"_
+userLabel="_volumeName"_]
+[freeCapacityArea=pass:quotes[_freeCapacityIndexNumber_]]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[dataAssurance=(none | enabled)]
+[blockSize=blockSizeValue]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom d'un groupe de volumes spécifique dans votre matrice de stockage. Placez le nom du groupe de volumes entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom à attribuer au nouveau volume. Placez le nouveau nom du volume entre guillemets (" ").
+
+[NOTE]
+====
+Ce paramètre est obligatoire.
+
+====
+
+
+ a| 
+`freeCapacityArea`
+ a| 
+Numéro d'index de l'espace libre dans un groupe de volumes existant que vous souhaitez utiliser pour créer le nouveau volume. La capacité libre est définie comme la capacité libre entre les volumes existants d'un groupe de volumes. Par exemple, un groupe de volumes peut disposer des éléments suivants : volume 1, capacité libre, volume 2, capacité libre, volume 3, capacité libre. Pour utiliser la capacité libre suivante volume 2, entrez ce numéro d'index :
+
+`freeCapacityArea=2`
+
+[NOTE]
+====
+Exécutez le `show volumeGroup` commande pour déterminer si la zone de capacité libre existe.
+
+====
+[NOTE]
+====
+Si ce paramètre n'est pas spécifié, le volume est créé dans la zone de capacité disponible la plus petite avec une capacité suffisante pour le volume.
+
+====
+
+
+ a| 
+`capacity`
+ a| 
+Taille du volume que vous ajoutez à la matrice de stockage. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Contrôleur qui détient le volume. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Si vous ne spécifiez pas de propriétaire, le micrologiciel du contrôleur détermine le propriétaire.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Paramètre permettant d'activer ou de désactiver la lecture préalable du cache. Pour activer la lecture préalable du cache, définissez ce paramètre sur `TRUE`. Pour désactiver la lecture préalable du cache, définissez ce paramètre sur `FALSE`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Quantité de données (en Ko) que le contrôleur écrit sur un seul disque du volume avant d'écrire les données sur le disque suivant. Les valeurs valides sont `8`, `16`, `32`, `64`, `128`, `256`, ou `512`.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Les paramètres pour les deux `cacheReadPrefetch` paramètre et le `segmentSize` paramètre devant être des valeurs par défaut. Les valeurs par défaut sont basées sur le modèle d'utilisation d'E/S type de l'application qui utilise le volume. Les valeurs valides sont `fileSystem`, `dataBase`, ou `multiMedia`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Paramètre permettant de s'assurer que la capacité de réserve est allouée pour la taille de segment future augmente. La valeur par défaut est `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Paramètre permettant de spécifier le niveau de sécurité lors de la création des groupes de volumes et de tous les volumes associés. Ces paramètres sont valides :
+
+`none` -- le groupe de volumes et les volumes ne sont pas sécurisés.
+
+`capable` -- le groupe de volumes et les volumes sont capables d'avoir la sécurité définie, mais la sécurité n'a pas été activée.
+
+`enabled` -- la sécurité est activée pour le groupe de volumes et les volumes.
+
+
+
+ a| 
+`mapping`
+ a| 
+Ce paramètre vous permet de mapper le volume à un hôte. Si vous souhaitez mapper ultérieurement, définissez ce paramètre sur `none`. Si vous souhaitez mapper maintenant, définissez ce paramètre sur `default`. Le volume est mappé à tous les hôtes ayant accès au pool de stockage. La valeur par défaut est `none`.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Ce paramètre définit la taille de bloc du volume en cours de création. La valeur 0 ou le paramètre non défini utilise la taille de bloc par défaut.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Le `owner` le paramètre définit quel contrôleur détient le volume. La propriété de contrôleur préférée d'un volume est le contrôleur qui est actuellement propriétaire du groupe de volumes.
+
+Si vous ne spécifiez pas de capacité à l'aide de l' `capacity` paramètre, toute la capacité disponible dans la zone de capacité libre du groupe de volumes est utilisée. Si vous ne spécifiez pas d'unités de capacité, `bytes` est utilisé comme valeur par défaut.
+
+
+
+== Taille du segment
+
+La taille d'un segment détermine le nombre de blocs de données que le contrôleur écrit sur un seul disque du volume avant d'écrire des données sur le disque suivant. Chaque bloc de données stocke 512 octets de données. Le bloc de données est la plus petite unité de stockage. La taille d'un segment détermine le nombre de blocs de données qu'il contient. Par exemple, un segment de 8 Ko contient 16 blocs de données. Un segment de 64 Ko contient 128 blocs de données.
+
+Lorsque vous entrez une valeur pour la taille du segment, la valeur est vérifiée par rapport aux valeurs prises en charge fournies par le contrôleur au moment de l'exécution. Si la valeur saisie n'est pas valide, le contrôleur renvoie une liste de valeurs valides. L'utilisation d'un lecteur unique pour une seule demande laisse les autres lecteurs disponibles pour traiter simultanément d'autres demandes. Si le volume se trouve dans un environnement où un utilisateur unique transfère de grandes unités de données (comme le multimédia), les performances sont optimisées lorsqu'une seule demande de transfert de données est traitée avec une seule bande de données. (Une bande de données est la taille du segment multipliée par le nombre de disques du groupe de volumes utilisés pour le transfert de données.) Dans ce cas, plusieurs disques sont utilisés pour la même demande, mais chaque disque n'est accessible qu'une seule fois.
+
+Pour des performances optimales dans une base de données multi-utilisateurs ou un environnement de stockage de système de fichiers, définissez la taille de votre segment afin de minimiser le nombre de lecteurs requis pour répondre à une demande de transfert de données.
+
+
+
+== Conseils d'utilisation
+
+[NOTE]
+====
+Il n'est pas nécessaire de saisir une valeur pour le `cacheReadPrefetch` ou le `segmentSize` paramètre. Si vous ne saisissez aucune valeur, le micrologiciel du contrôleur utilise le `usageHint` paramètre avec `fileSystem` comme valeur par défaut. Saisie d'une valeur pour le `usageHint` et une valeur pour le `cacheReadPrefetch` ou une valeur pour le `segmentSize` le paramètre n'entraîne pas d'erreur. La valeur que vous saisissez pour le `cacheReadPrefetch` ou le `segmentSize` le paramètre prend priorité sur la valeur de `usageHint` paramètre. La taille du segment et les paramètres de lecture préalable en cache pour différents conseils d'utilisation sont indiqués dans le tableau suivant :
+
+====
+|===
+| Indice d'utilisation | Réglage de la taille du segment | Paramètre de préextraction de lecture dynamique du cache 
+
+
+ a| 
+Système de fichiers
+ a| 
+128 KO
+ a| 
+Activé
+
+
+
+ a| 
+Base de données
+ a| 
+128 KO
+ a| 
+Activé
+
+
+
+ a| 
+Multimédia
+ a| 
+256 KO
+ a| 
+Activé
+
+|===
+
+
+== Préextraction de lecture du cache
+
+La lecture préalable en cache permet au contrôleur de copier des blocs de données supplémentaires dans le cache pendant que le contrôleur lit et copie les blocs de données requis par l'hôte depuis le disque vers le cache. Cette action augmente le risque d'une future demande de données à partir du cache. Le préchargement de lecture du cache est important pour les applications multimédia qui utilisent des transferts de données séquentiels. Valeurs valides pour le `cacheReadPrefetch` les paramètres sont `TRUE` ou `FALSE`. La valeur par défaut est `TRUE`.
+
+
+
+== Type de sécurité
+
+Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
+
+Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez créer une clé de sécurité de la matrice de stockage. Utilisez le `create storageArray securityKey` commande permettant de créer une clé de sécurité de la matrice de stockage. Ces commandes sont liées à la clé de sécurité :
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Niveau minimal de firmware
+
+7.10 ajoute le `dssPreAllocate` paramètre.
+
+7.50 ajoute le `securityType` paramètre.
+
+7.75 ajoute le `dataAssurance` paramètre.
+
+11.70 ajoute le `blockSize` paramètre.

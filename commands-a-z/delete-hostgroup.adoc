@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/delete-hostgroup.html 
+sidebar: sidebar 
+keywords: delete, hostgroup, command, support, role 
+summary: 'La commande delete hostGroup supprime un groupe d"hôtes.' 
+---
+= Supprimer le groupe d'hôtes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete hostGroup` commande supprime un groupe d'hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- cette commande supprime toutes les définitions d'hôte du groupe d'hôtes.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete hostGroup [_hostGroupName_]]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes que vous souhaitez supprimer. Placez le nom du groupe d'hôtes entre crochets ([ ]). Si le nom du groupe d'hôtes contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du groupe d'hôtes entre guillemets (" ") entre crochets.
+
+|===
+
+
+== Remarques
+
+Un groupe d'hôtes est un élément topologique facultatif qui est un ensemble d'hôtes partageant l'accès aux mêmes volumes. Le groupe d'hôtes est une entité logique.
+
+
+
+== Niveau minimal de firmware
+
+5.20

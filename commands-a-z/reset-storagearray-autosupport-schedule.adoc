@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/reset-storagearray-autosupport-schedule.html 
+sidebar: sidebar 
+keywords: reset, autosupport, message, collection, schedule 
+summary: La commande reset storageArray AutoSupport schedule réinitialise les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont renvoyés vers les valeurs aléatoires générées par le logiciel de gestion. 
+---
+= Réinitialiser le programme de collecte de messages AutoSupport (pour les baies E2800 ou E5700 individuelles)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset storageArray autoSupport schedule` Commande réinitialise les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont renvoyés aux valeurs aléatoires générées par le logiciel de gestion.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+* Le logiciel de gestion sélectionne de façon aléatoire une heure de la journée pour les messages quotidiens et hebdomadaires et un jour de la semaine pour les messages hebdomadaires.
+* Le logiciel de gestion fait en sorte que deux baies de stockage d'un domaine de gestion envoient simultanément des messages AutoSupport planifiés.
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+reset storageArray autoSupport schedule
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "reset storageArray autoSupport schedule;"
+
+SMcli completed successfully.
+----
+
+
+== Vérification
+
+Utilisez le `show storageArray autoSupport` pour voir la modification résultant du planning.
+
+
+
+== Niveau minimal de firmware
+
+8.40

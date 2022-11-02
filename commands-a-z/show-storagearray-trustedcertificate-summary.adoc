@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/show-storagearray-trustedcertificate-summary.html 
+sidebar: sidebar 
+keywords: show, installed, trusted, ca, certificates, summary 
+summary: 'La commande show storageArray trustedCertificate Summary affiche le résumé des certificats CA installés de confiance de la matrice. Cette commande est utile avant d"exécuter la commande delete storageArray trustedCertificate afin de connaître les noms d"alias des certificats à supprimer.' 
+---
+= Afficher le résumé des certificats CA approuvés installés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray trustedCertificate summary` Commande affiche le récapitulatif des certificats CA installés approuvés de la matrice. Cette commande est utile à utiliser avant d'exécuter le `delete storageArray trustedCertificate` commande pour connaître les noms d'alias des certificats à supprimer.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+show storageArray trustedCertificate [all | allUserInstalled|
+ aliases=pass:quotes[("_alias1_" ... "_aliasN_")]] summary
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`all`
+ a| 
+Permet de spécifier la récupération de tous les certificats, y compris les certificats pré-installés et les certificats installés par l'utilisateur.
+
+
+
+ a| 
+`allUserInstalled`
+ a| 
+Permet de spécifier la récupération de tous les certificats installés par l'utilisateur. Il s'agit de l'option par défaut.
+
+
+
+ a| 
+`aliases`
+ a| 
+Permet à l'utilisateur de spécifier le certificat approuvé préinstallé ou installé par l'utilisateur à récupérer par alias. Placez tous les alias entre parenthèses. Si vous saisissez plusieurs alias, séparez-les par un espace.
+
+|===
+
+
+== Exemples
+
+La sortie de l'échantillon peut être différente de celle illustrée ci-dessous.
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "show storageArray trustedCertificate allUserInstalled summary;"
+============================
+Trusted Certificates
+============================
+Alias:        19527b38-8d26-44e5-8c7f-5bf2ca9db7cf
+Type:         Pre-installed | User installed
+Subject DN:   CN=Corp Issuing CA 1
+Issuer DN:    CN=Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+---------------------
+Alias:        myAliasName
+Type:         Pre-installed | User installed
+Subject DN:   CN=Corp Issuing CA 1
+Issuer DN:    CN=Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

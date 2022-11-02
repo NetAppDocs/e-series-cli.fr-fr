@@ -1,0 +1,142 @@
+---
+permalink: commands-a-z/smcli-autosupportconfig-show.html 
+sidebar: sidebar 
+keywords: display, autosupport, bundle, collection, set 
+summary: 'La commande SMcli -autoSupportConfig show affiche les paramètres de collecte de bundle AutoSupport pour le domaine de gestion. Ces paramètres s"appliquent à toutes les baies de stockage de votre domaine de gestion pour lesquelles vous avez activé AutoSupport.' 
+---
+= Afficher les paramètres de collection de bundle AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli -autoSupportConfig show` Commande affiche les paramètres de collection de bundle AutoSupport pour le domaine de gestion. Ces paramètres s'appliquent à toutes les baies de stockage de votre domaine de gestion pour lesquelles vous avez activé AutoSupport.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+Le résultat de la commande depuis cette commande affiche les informations de configuration suivantes :
+
+* L'état d'activation de ce domaine de gestion de la fonctionnalité AutoSupport, de la fonctionnalité AutoSupport OnDemand et de la fonction AutoSupport Remote Diagnostics
+* Paramètres de livraison qui dépendent de la méthode de livraison configurée :
++
+** La méthode de livraison est SMTP : l'adresse e-mail de destination, le serveur de relais de messagerie et l'adresse e-mail de l'expéditeur sont affichés
+** La méthode de livraison est HTTP ou HTTPS :
++
+*** Connexion directe : l'adresse IP de destination s'affiche
+*** Connexion au serveur proxy : l'adresse hôte, le numéro de port et les détails d'authentification sont affichés
+*** Connexion au script de configuration automatique du proxy (PAC) - l'emplacement du script est affiché
+
+
+
+
+* Un tableau qui répertorie, pour chaque baie de stockage, le nom de la baie, qu'il s'agisse d'une baie compatible ASUP, des numéros de série du châssis et des adresses IP des contrôleurs de la baie
+
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+[NOTE]
+====
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli -autoSupportConfig show
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de micrologiciel
+
+8.25
+
+
+
+== Exemple de sortie pour les États d'activation
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+The AutoSupport OnDemand feature is de-activated on this storage management station.
+The AutoSupport Remote Diagnostics feature is de-activated on this storage management station.
+----
+
+
+== Exemple de sortie pour la méthode de distribution SMTP
+
+[listing]
+----
+Delivery method: SMTP
+Destination email address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Mail relay server: server.eng.netapp.com
+Sender email address:  user@netapp.com
+----
+
+
+== Exemple de résultat pour la méthode de distribution HTTP ou HTTPS avec une connexion directe
+
+[listing]
+----
+Delivery method:  HTTP
+Destination IP address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Connection:  Direct
+----
+
+
+== Exemple de sortie pour la méthode de distribution HTTP avec une connexion proxy
+
+[listing]
+----
+Connection:  Proxy server
+Host Address:  10.227.76.123
+Port number: 8080
+Authentication required: Yes
+User name: admin
+Password: **********
+----
+
+
+== Exemple de sortie pour la méthode de distribution HTTP avec un script de configuration de proxy automatique (PAC)
+
+[listing]
+----
+Connection: Automatic proxy configuration script (PAC)
+Script location: http://esgweb.eng.netapp.com/~user/proxy.pac
+----
+
+
+== Exemple de sortie pour tableau (toutes les méthodes de distribution)
+
+[listing]
+----
+
+Name  AutoSupport Capable   Chassis Serial Number   IP Address
+SA_1  Yes (enabled)         SX94500434              10.113.173.123, 10.113.173.456
+SA_2  Yes (disabled)        SX94607107              10.113.174.789, 10.113.174.345
+SA_3  No                    Not available           10.113.59.58, 10.113.59.59
+----

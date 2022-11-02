@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/start-emailalert-test.html 
+sidebar: sidebar 
+keywords: test, email, alert, configuration 
+summary: 'La commande start emailAlert test vous permet de tester la configuration des alertes en envoyant un exemple d"e-mail.' 
+---
+= Testez la configuration de l'alerte par e-mail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start emailAlert test` commande permet de tester la configuration des alertes en envoyant un exemple d'e-mail.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+
+start emailAlert test
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "start emailAlert test;"
+
+The sample alert message was successfully sent to the email addresses.
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

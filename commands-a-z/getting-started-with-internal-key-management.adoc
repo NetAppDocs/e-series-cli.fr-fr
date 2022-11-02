@@ -1,0 +1,34 @@
+---
+permalink: commands-a-z/getting-started-with-internal-key-management.html 
+sidebar: sidebar 
+keywords: security key, string, characters, secure enabled, drive, controllers, storage, array, internal, key, management, create, maintain, persistent, memory 
+summary: 'Une clé de sécurité est une chaîne de caractères partagée entre les disques et les contrôleurs sécurisés d"une matrice de stockage. Lorsque vous utilisez la gestion interne des clés, vous créez et conservez les clés de sécurité sur la mémoire persistante du contrôleur.' 
+---
+= Premiers pas avec la gestion interne des clés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une clé de sécurité est une chaîne de caractères partagée entre les disques et les contrôleurs sécurisés d'une matrice de stockage. Lorsque vous utilisez la gestion interne des clés, vous créez et conservez les clés de sécurité sur la mémoire persistante du contrôleur.
+
+Consultez l'aide en ligne de SANtricity System Manager pour obtenir des informations conceptuelles sur l'utilisation des clés de sécurité internes.
+
+Le workflow de base pour l'utilisation des clés de sécurité internes est le suivant :
+
+. *Créer des clés de sécurité*
+. *Définissez les clés de sécurité*
+. *Valider la clé de sécurité*
+
+
+
+
+== Étapes du workflow
+
+Les commandes suivantes vous permettent de démarrer avec des clés de sécurité internes :
+
+. Créez une clé de sécurité de la matrice de stockage à l'aide de `create storageArray securityKey` commande. Voir xref:create-storagearray-securitykey.adoc[Création d'une clé de sécurité de la matrice de stockage].
+. Définissez la clé de sécurité de la matrice de stockage à l'aide de `set storageArray securityKey` commande. Voir xref:set-storagearray-securitykey.adoc[Configuration d'une clé de sécurité de la matrice de stockage].
+. Valider la clé de sécurité à l'aide de `validate storageArray securityKey` commande. Voir xref:validate-storagearray-securitykey.adoc[Validation d'une clé de sécurité de baie de stockage].
+

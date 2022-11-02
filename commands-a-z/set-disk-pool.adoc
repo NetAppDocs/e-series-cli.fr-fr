@@ -1,0 +1,203 @@
+---
+permalink: commands-a-z/set-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool 
+summary: La commande set DISKPOOL définit les attributs associés à un pool de disques en fonction des paramètres spécifiés. 
+---
+= Définir le pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set diskPool` commande définit les attributs associés à un pool de disques en fonction des paramètres spécifiés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set (diskPool pass:quotes[[_diskPoolName_]] |
+diskPools pass:quotes[[_diskPoolName1_ ... _diskPoolNameN_]] | allDiskPools)
+[reservedDriveCount=pass:quotes[_reservedDriveCountValue_]]
+[warningThreshold=(warningThresholdValue | default)]
+[criticalThreshold=(criticalThresholdValue | default)]
+[criticalPriority=(highest | high | medium |low |lowest)]
+[degradedPriority=(highest |high |medium |low |lowest)]
+[backgroundPriority=(highest | high | medium |low |lowest)]
+[userLabel=pass:quotes[_diskPoolName_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques pour lequel vous définissez des attributs. Placez le nom du pool de disques entre crochets ([ ]). Si le nom du pool de disques comporte des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du pool de disques entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`diskPools`
+ a| 
+Les noms de plusieurs pools de disques pour lesquels vous souhaitez définir des attributs. Entrez les noms des pools de disques à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms des pools de disques comportent des caractères ou des chiffres spéciaux, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`allDiskPools`
+ a| 
+Ce paramètre définit les attributs de tous les pools de disques de la matrice de stockage.
+
+
+
+ a| 
+`reservedDriveCount`
+ a| 
+Ce paramètre réserve de l'espace sur chaque disque du pool, à utiliser exclusivement pour la reconstruction des disques défaillants. Chaque unité de ce nombre représente la capacité de reconstruire un disque défaillant sur le reste du pool de disques.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+Pourcentage de capacité du pool de disques sur lequel vous recevez une alerte d'avertissement indiquant que le pool de disques est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. Pour un fonctionnement optimal, la valeur de ce paramètre doit être inférieure à la valeur de l' `criticalThreshold` paramètre.
+
+Les valeurs valides vont de 0 à 100.
+
+La valeur par défaut est 50.
+
+Réglage de ce paramètre sur `0` désactive les alertes d'avertissement.
+
+Si vous définissez cette option sur `default`, la valeur du seuil d'alerte d'avertissement est déterminée par le micrologiciel du contrôleur.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+Pourcentage de capacité du pool de disques dans lequel vous recevez une alerte critique indiquant que le pool de disques approche de plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. Pour un fonctionnement optimal, la valeur de ce paramètre doit être supérieure à la valeur de l' `warningThreshold` paramètre.
+
+Les valeurs valides vont de 0 à 100.
+
+La valeur par défaut est 85 %.
+
+Réglage de ce paramètre sur `0` désactive les alertes d'avertissement et les alertes critiques.
+
+Si vous définissez cette option sur `default`, la valeur du seuil d'alerte critique est déterminée par le micrologiciel du contrôleur.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+Priorité des opérations de reconstruction pour les événements critiques sur le pool de disques. Par exemple, la reconstruction d'un pool de disques après au moins deux pannes de disques.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `highest`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+Priorité des opérations de reconstruction pour les événements dégradés sur le pool de disques. Par exemple, la reconstruction du pool de disques après une panne d'un disque.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `high`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+Priorité des opérations en arrière-plan sur le pool de disques.
+
+Les valeurs valides sont `highest`, `high`, `medium`, `low`, et `lowest`. La valeur par défaut est `low`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nouveau nom que vous souhaitez attribuer au pool de disques. Placez le nom du pool de disques entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Vous pouvez spécifier un ensemble arbitraire de pools de disques. Si vous sélectionnez plusieurs pools de disques, définissez une valeur pour le `userLabel` provoque une erreur.
+
+Si vous ne spécifiez pas de valeur pour un paramètre facultatif, une valeur par défaut est attribuée.
+
+
+
+== Seuils d'alerte de pool de disques
+
+Chaque pool de disques comporte deux niveaux d'alertes progressivement importants pour informer les utilisateurs lorsque la capacité de stockage du pool de disques approche pleine. Le seuil d'une alerte est un pourcentage de la capacité utilisée par rapport à la capacité totale utilisable dans le pool de disques. Les alertes sont les suivantes :
+
+* Avertissement -- il s'agit du premier niveau d'alerte indiquant que la capacité utilisée dans un pool de disques est presque pleine. Lorsque le seuil de l'alerte d'avertissement est atteint, une condition d'attention requise est générée et un événement est envoyé au logiciel de gestion du stockage. Le seuil d'avertissement est remplacé par le seuil critique. Le seuil d'avertissement par défaut est de 50 %.
+* Critique -- il s'agit du niveau d'alerte le plus grave que la capacité utilisée dans un pool de disques soit presque pleine. Lorsque le seuil de l'alerte critique est atteint, une condition de besoin d'attention est générée et un événement est envoyé au logiciel de gestion du stockage. Le seuil d'avertissement est remplacé par le seuil critique. Le seuil par défaut de l'alerte critique est de 85 %.
+
+
+Pour être effectif, la valeur d'une alerte d'avertissement doit toujours être inférieure à la valeur d'une alerte critique. Si la valeur de l'alerte d'avertissement est identique à celle d'une alerte critique, seule l'alerte critique est envoyée.
+
+
+
+== Opérations en arrière-plan du pool de disques
+
+Les pools de disques prennent en charge les opérations d'arrière-plan suivantes :
+
+* Reconstruction
+* Format de disponibilité instantanée (IAF)
+* Format
+* Extension de capacité dynamique (DCE)
+* Réduction dynamique de la capacité (DCR)
+* Extension de volume dynamique (DVE) (pour les pools de disques, la DVE n'est en fait pas une opération d'arrière-plan, mais la DVE est prise en charge comme une opération synchrone).
+
+
+Les pools de disques ne mettent pas en file d'attente des commandes d'arrière-plan Vous pouvez démarrer plusieurs commandes d'arrière-plan séquentiellement, mais le démarrage de plusieurs opérations d'arrière-plan à la fois retarde l'exécution des commandes que vous avez démarrées précédemment. Les niveaux de priorité relative pour les opérations d'arrière-plan prises en charge sont les suivants :
+
+. Reconstruction
+. Format
+. IAF
+. DCE/DCR
+
+
+
+
+== Niveau minimal de firmware
+
+7.83

@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/show-volumegroup-importdependencies.html 
+sidebar: sidebar 
+keywords: show, volume, group, import, dependencies 
+summary: 'La commande show Volume Group imporDependencies affiche une liste des dépendances des disques d"un groupe de volumes que vous souhaitez déplacer d"une baie de stockage vers une autre baie de stockage.' 
+---
+= Afficher les dépendances d'importation des groupes de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volumeGroup importDependencies` la commande affiche la liste des dépendances des lecteurs d'un groupe de volumes que vous souhaitez déplacer d'une matrice de stockage à une seconde matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show volumeGroup [_volumeGroupName_]] importDependencies
+[cancelImport=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes pour lequel vous souhaitez afficher les dépendances d'importation. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+
+
+ a| 
+`cancelImport`
+ a| 
+Paramètre permettant de faire tourner les disques vers le bas une fois que les dépendances des groupes de volumes ont été lues. Pour faire tourner les disques, définissez ce paramètre sur `TRUE`. Pour laisser les disques tourner, réglez ce paramètre sur `FALSE`.
+
+|===
+
+
+== Remarques
+
+Cette commande renvoie les dépendances d'un groupe de volumes spécifique, qui doit être à l'état exporté ou forcé. Si une décision est prise pour conserver les dépendances répertoriées, alors le `cancelImport` paramètre pouvant être appliqué pour faire reculer les disques.
+
+Vous devez exécuter le `show volumeGroup importDependencies` avant d'exécuter le `start volumeGroup import` commande.
+
+
+
+== Niveau minimal de firmware
+
+7.10

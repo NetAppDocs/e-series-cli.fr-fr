@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/reset-drive.html 
+sidebar: sidebar 
+keywords: reset, drive 
+summary: 'La commande de réinitialisation du lecteur alimente un lecteur dans un groupe de volumes ou un pool de disques afin de faciliter la récupération d"un lecteur présentant un comportement incohérent ou non optimal.' 
+---
+= Réinitialiser le lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset drive` l'alimentation par commande effectue un cycle d'un lecteur dans un groupe de volumes ou un pool de disques afin de faciliter la récupération d'un lecteur présentant un comportement incohérent ou non optimal.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+En mettant hors tension un lecteur, vous pouvez effacer certaines erreurs qui entraînent un comportement incohérent ou non optimal. Cela évite de remplacer un lecteur lorsqu'il ne rencontre qu'une erreur transitoire et non fatale et que le lecteur reste opérationnel. La réinitialisation d'un lecteur permet de réduire les interruptions et d'éviter le remplacement d'un lecteur.
+
+Si le problème ne peut pas être résolu par la mise hors tension du lecteur, les données sont copiées à partir du lecteur et le lecteur est hors tension pour remplacement.
+
+[NOTE]
+====
+Cette commande ne peut pas être utilisée pour les disques SSD fabriqués par pliant. Utilisez le `show storageArray profile` commande ou le `show drive` commande permettant d'afficher le fabricant du ou des lecteurs.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset drive([trayID,[drawerID,]slotID] | <"wwID">)
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`drive`
+ a| 
+Le World Wide identifier (WWID) du lecteur que vous souhaitez remplacer. Placez le WWID entre guillemets (" ") à l'intérieur des supports d'angle (<>).
+
+|===
+
+
+== Remarques
+
+Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0` , Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+Après avoir mis le lecteur hors tension puis sous tension, le contrôleur doit vérifier qu'il fonctionne avant de le remettre en service. Si le lecteur ne peut pas être vérifié, il est marqué comme étant en panne. La mise hors/sous tension d'un disque défaillant nécessite des disques de secours globaux et une copie complète vers un disque de remplacement après sa mise en service.
+
+Les disques défectueux ne peuvent pas être réinitialisés après une mise hors/sous tension de plus d'une fois sur une période de 24 heures. Dans certains cas, il est impossible de réinitialiser plusieurs fois. Les seuils et les compteurs d'alimentation des disques sont conservés dans un stockage persistant et inclus dans les données de capture d'état. Les événements d'information sont consignés lorsqu'un lecteur est mis hors tension.
+
+
+
+== Niveau minimal de firmware
+
+8.20

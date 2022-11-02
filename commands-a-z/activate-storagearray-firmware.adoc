@@ -1,0 +1,47 @@
+---
+permalink: commands-a-z/activate-storagearray-firmware.html 
+sidebar: sidebar 
+keywords: activate, storage array, firmware, syntax, parameter, minimum, level 
+summary: La commande Activer le micrologiciel du système de stockage active le micrologiciel que vous avez déjà téléchargé dans la zone de configuration en attente sur les contrôleurs de la matrice de stockage. 
+---
+= Activer le micrologiciel de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `activate storageArray firmware` la commande active le micrologiciel que vous avez déjà téléchargé dans la zone de configuration en attente sur les contrôleurs de la matrice de stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+activate storageArray firmware
+[healthCheckMelOverride=(TRUE | FALSE)]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`healthCheckMelOverride`
+ a| 
+Paramètre permettant de remplacer les résultats du contrôle d'intégrité du journal des événements majeurs (MEL). La validation MEL se produit toujours ; elle n'est pas contournée. Si la vérification MEL échoue, vous pouvez contourner la défaillance en utilisant ce paramètre lors de l'exécution de la commande.
+
+Avant toute activation, le contrôleur vérifie le journal des événements pour déterminer si un événement est survenu et empêcher l'activation du nouveau micrologiciel du contrôleur. Si un tel événement s'est produit, le contrôleur n'active normalement pas le nouveau micrologiciel.
+
+Ce paramètre force le contrôleur à activer le nouveau firmware. La valeur par défaut est `FALSE`. Définissez cette valeur sur `TRUE` si vous souhaitez forcer le contrôleur à activer le nouveau micrologiciel du contrôleur.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.10 ajoute le `healthCheckMelOverride` paramètre.

@@ -1,0 +1,141 @@
+---
+permalink: commands-a-z/create-volumecopy.html 
+sidebar: sidebar 
+keywords: create, volume, copy 
+summary: 'La commande create VolumeCopy crée une copie de volume et démarre l"opération de copie de volume. Cette commande est valide pour les paires de copies de volume d"images de snapshot.' 
+---
+= Créer une copie de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create volumeCopy` la commande crée une copie de volume et démarre l'opération de copie de volume. Cette commande est valide pour les paires de copies de volume d'images de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Le démarrage d'une opération de copie de volume écrase toutes les données existantes sur le volume cible, rend le volume cible en lecture seule vers les hôtes et échoue tous les volumes d'images snapshot associés au volume cible, le cas échéant. Si vous avez déjà utilisé le volume cible comme copie, assurez-vous qu'il n'a plus besoin des données ou qu'il n'a plus été sauvegardé.
+
+====
+Cette commande crée des copies de volumes de deux manières :
+
+* Copie de volume sans image snapshot, également appelée copie de volume _offline_
+* Copie de volume avec image snapshot, également appelée _online_ volume copy
+
+
+Si vous utilisez la copie de volume sans image snapshot, vous ne pouvez pas écrire sur le volume source tant que l'opération de copie n'est pas terminée. Si vous souhaitez pouvoir écrire sur le volume source avant la fin de l'opération de copie, utilisez la copie de volume avec l'image snapshot. Vous pouvez sélectionner la copie de volume avec l'image snapshot à l'aide des paramètres facultatifs de la syntaxe de commande.
+
+Une fois le processus de copie de clone avec image Snapshot terminé, l'image Snapshot est supprimée et le volume Snapshot est désactivé.
+
+[NOTE]
+====
+Vous pouvez avoir jusqu'à huit copies de volume en cours d'exécution. Si vous essayez de créer plusieurs huit copies de volume à la fois, les contrôleurs renvoient un état en attente jusqu'à la fin de l'une des copies du volume en cours, puis renvoient l'état terminé.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create volumeCopy source=pass:quotes[_"sourceName"_
+target="_targetName_"]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(offline | online)]
+[repositoryPercentOfBase=(20 | 40 | 60 | 120 | default)]
+[repositoryGroupPreference=(sameAsSource | otherThanSource | default)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`source`
+ a| 
+Nom d'un volume existant que vous souhaitez utiliser en tant que volume source. Placez le nom du volume source entre guillemets (" ").
+
+
+
+ a| 
+`target`
+ a| 
+Nom d'un volume existant que vous souhaitez utiliser comme volume cible. Placez le nom du volume cible entre guillemets (" ").
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Priorité de la copie de volume par rapport aux activités d'E/S de l'hôte. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Paramètre permettant d'écrire sur le volume cible ou uniquement de le lire à partir du volume cible. Pour écrire dans le volume cible, définissez ce paramètre sur `FALSE`. Pour empêcher l'écriture sur le volume cible, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+Utilisez ce paramètre pour créer une copie de volume avec une image snapshot. La création d'une copie de volume avec une image Snapshot vous permet de continuer à écrire sur le volume source pendant la création de la copie de volume. Pour créer une copie de volume avec une image snapshot, définissez ce paramètre sur `online`. Pour créer une copie de volume sans image snapshot, définissez ce paramètre sur `offline`.
+
+Si vous n'utilisez pas ce paramètre, la copie de volume est créée sans image snapshot.
+
+
+
+ a| 
+`repositoryPercentOfBase`
+ a| 
+Ce paramètre détermine la taille du volume de référentiel pour l'image snapshot lorsque vous créez une copie de volume avec une image snapshot. La taille du volume de référentiel est exprimée en pourcentage du volume source, également appelé volume de base. Les valeurs valides de ce paramètre sont `20`, `40`, `60`, `120`, et `default`. La valeur par défaut est 20. Si vous n'utilisez pas ce paramètre, le micrologiciel utilise une valeur de 20 %.
+
+Vous devez utiliser le `copyType` paramètre avec le `repositoryPercentOfBase` paramètre.
+
+
+
+ a| 
+`repositoryGroupPreference`
+ a| 
+Ce paramètre détermine à quel groupe de volumes le volume de référentiel d'images d'instantanés est écrit. Vous avez le choix entre :
+
+* `sameAsSource` -- le volume de l'image instantanée est écrit dans le même groupe de volumes que le volume source si l'espace est disponible.
+* `otherThanSource` -- paramètre obsolète. Ne pas utiliser
+* `default` -- le volume du référentiel d'images de snapshot est écrit dans n'importe quel groupe de volumes ayant de l'espace.
+
+
+Pour obtenir d'excellentes performances, utilisez le `sameAsSource` option.
+
+Vous devez utiliser le `copyType` paramètre avec le `repositoryGroupPreference` paramètre.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de événements et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+La priorité de copie définit la quantité de ressources système utilisées pour copier les données entre le volume source et le volume cible d'une paire de copies de volume. Si vous sélectionnez le niveau de priorité le plus élevé, la copie de volume utilise le plus de ressources système pour effectuer des copies de volumes, ce qui diminue les performances pour les transferts de données de l'hôte.

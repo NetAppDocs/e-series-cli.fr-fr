@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/remove-drives-from-ssd-cache.html 
+sidebar: sidebar 
+keywords: remove, drives, ssd, cache 
+summary: La commande set ssdcache diminue la capacité du cache SSD en retirant des disques SSD. 
+---
+= Retirez les disques du cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set ssdCache` Cette commande réduit la capacité du cache SSD en supprimant les disques SSD.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set ssdCache pass:quotes[[_ssdCacheName_]]
+removeDrives=pass:quotes[(_trayID1_,]pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn_],pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_])
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD duquel vous souhaitez supprimer les disques SSD. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+
+
+ a| 
+`removeDrives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Vous ne pouvez pas supprimer tous les disques SSD du cache SSD à l'aide de cette commande ; au moins un disque SSD doit rester dans le cache SSD. Si vous souhaitez supprimer entièrement le cache SSD, utilisez le `delete ssdCache` à la place de la commande.
+
+
+
+== Niveau minimal de firmware
+
+7.84

@@ -1,0 +1,58 @@
+---
+permalink: commands-a-z/stop-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: stop, storage, array, configuration, database, diagnostic 
+summary: La commande stop storageArray configDbdiagnostic arrête le test de diagnostic pour valider la base de données de configuration dans le micrologiciel du contrôleur qui a été démarré par la commande start storageArray configDbdiagnostic. 
+---
+= Arrêter le diagnostic de la base de données de configuration de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop storageArray configDbDiagnostic` la commande arrête le test de diagnostic pour valider la base de données de configuration dans le firmware du contrôleur qui a été démarré par le `start storageArray configDbDiagnostic` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+stop storageArray configDbDiagnostic
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Le micrologiciel du contrôleur renvoie une confirmation que le test de diagnostic a été annulé.
+
+En outre, vous pouvez lancer le test de diagnostic de configuration de la base de données à partir de l'interface graphique du logiciel de gestion du stockage. Cependant, vous ne pouvez pas arrêter le test de diagnostic de configuration de la base de données à l'aide de l'interface graphique du logiciel de gestion du stockage. Si vous souhaitez arrêter un test de diagnostic, vous devez utiliser le `stop storageArray configDbDiagnostic` commande.
+
+Si vous essayez d'utiliser le `stop storageArray configDbDiagnostic` commande une fois la validation de la configuration de la matrice de stockage terminée, vous ne recevez aucun message indiquant que la validation est terminée. Ce comportement est attendu.
+
+
+
+== Niveau minimal de firmware
+
+7.75
+
+7.77 utilisation des raffinements.

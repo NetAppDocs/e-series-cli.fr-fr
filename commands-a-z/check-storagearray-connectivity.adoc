@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/check-storagearray-connectivity.html 
+sidebar: sidebar 
+keywords: check, storage array, connectivity 
+summary: La commande Check storageArray Connectivity vérifie que la matrice de stockage locale et la matrice de stockage distante ont un chemin de communication et affiche les détails de connexion entre la matrice de stockage locale et distante. 
+---
+= Vérifier la connectivité de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `check storageArray connectivity` la commande vérifie que la matrice de stockage locale et la matrice de stockage distante ont un chemin de communication et affiche les détails de connexion entre la matrice de stockage locale et distante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Avant de créer un groupe de miroirs asynchrone, vous devez vérifier si la matrice de stockage locale et la matrice de stockage distante peuvent communiquer entre elles. Lorsque vous exécutez cette commande, le système interroge la matrice de stockage distante sur tous les ports hôtes éligibles afin de déterminer quels ports sont connectés à la matrice de stockage distante. Le résultat du test est une liste de tous les ports de la matrice de stockage locale ainsi qu'une liste des adresses de port de la matrice de stockage distante accessibles via ce port.
+
+[NOTE]
+====
+La connectivité est testée à l'aide de tous les canaux possibles et, s'il s'agit d'une configuration à double contrôleur, la connectivité est vérifiée à partir de chaque contrôleur. Il faudra parfois jusqu'à 20 minutes pour vérifier la connectivité entre les deux baies de stockage.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+check storageArray connectivity
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_]|
+remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Nom de la matrice de stockage distante pour laquelle vous vérifiez la connectivité. Placez le nom de la matrice de stockage entre guillemets (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+Le World Wide identifier (WWID) de la matrice de stockage pour laquelle vous vérifiez la connectivité. Vous pouvez utiliser le WWID à la place du nom de la matrice de stockage pour identifier la matrice de stockage. Placez le WWID entre crochets ( ).
+
+|===
+
+
+== Remarques
+
+Avant de pouvoir établir un miroir entre deux baies de stockage, elles doivent être connectées par une connexion Fibre Channel ou iSCSI.
+
+La mise en miroir asynchrone Fibre Channel doit être activée sur les deux baies de stockage avant qu'elles ne puissent communiquer les unes avec les autres pour la mise en miroir ou la vérification de la connectivité.
+
+Si la baie de stockage locale prend en charge iSCSI, la connectivité via iSCSI est vérifiée. Si la baie de stockage locale prend en charge Fibre Channel et que la mise en miroir sur Fibre Channel a été activée, la connectivité sur Fibre Channel est vérifiée. Si la matrice de stockage locale ne prend pas en charge iSCSI ou Fibre Channel, un message d'erreur s'affiche et l'opération a été abandonnée.
+
+
+
+== Niveau minimal de firmware
+
+7.84

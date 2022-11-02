@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/start-ioclog.html 
+sidebar: sidebar 
+keywords: start, input, output, controller, ioc, dump 
+summary: La commande start IOCLog produit un vidage du journal CIO des transmissions de données entre un hôte et un contrôleur. 
+---
+= Démarrer le vidage du contrôleur de sortie d'entrée (IOC)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start IOCLog` Command produit un vidage du journal CIO des transmissions de données entre un hôte et un contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Les contrôleurs sont identifiés comme « a » ou « b ». Chaque contrôleur peut disposer de quatre canaux hôtes maximum, chaque canal étant identifié par un nombre compris entre 1 et 4.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
+[overwrite=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller-channel identifiers`
+ a| 
+Ce paramètre spécifie le contrôleur et le canal hôte à partir duquel produire le vidage CIO. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Les canaux d'hôte ont des identificateurs numériques. Placez l'identificateur du contrôleur et l'identificateur du canal hôte entre crochets ([ ]).
+
+Les valeurs d'identifiant de contrôleur et de canal hôte valides sont `a1`, `a2`, `a3`, `a4`, `b1`, `b2`, `b3`, `b4`.
+
+Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+
+
+ a| 
+`overwrite`
+ a| 
+Ce paramètre entraîne le remplacement du nouveau vidage du journal CIO par un vidage existant. Pour remplacer le vidage existant, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Cette commande génère un journal de débogage à partir de la COI du contrôleur sélectionné et stocke les données dans un format compressé dans une mémoire tampon persistante sur le contrôleur. Vous pouvez récupérer les données du journal de débogage à l'aide de l' `save IOCLog` commande. Le contrôleur renvoie une erreur dans ces conditions :
+
+* La plate-forme du contrôleur et la HIC ne prennent pas en charge un vidage IOC.
+* Le contrôleur spécifié dispose d'un vidage IOC en attente et le paramètre d'écrasement est faux.
+* L'identificateur de contrôleur ou l'identificateur de canal spécifié est hors de la plage valide.
+
+
+
+
+== Niveau minimal de firmware
+
+8.20

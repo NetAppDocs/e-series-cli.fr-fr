@@ -1,0 +1,161 @@
+---
+permalink: get-started/structure-of-a-script-command.html 
+sidebar: sidebar 
+keywords: structure, script command 
+summary: Toutes les commandes de script ont la structure suivante. 
+---
+= Structure d'une commande de script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Toutes les commandes de script ont la structure suivante :
+
+[listing]
+----
+
+      *command operand-data* (*statement-data*)
+----
+* `command` identifie l'action à effectuer.
+* `operand-data` représente les objets associés à une matrice de stockage que vous souhaitez configurer ou gérer.
+* `statement-data` fournit les informations nécessaires à la réalisation de la commande.
+
+
+Syntaxe pour `_operand-data_` a la structure suivante :
+
+[listing]
+----
+(*object-type* | all *object-types* | [*qualifier*] (*object-type* [*identifier*] (*object-type* [*identifier*] | *object-types* [*identifier-list*])))
+----
+Un objet peut être identifié de quatre façons :
+
+* Type d'objet -- utilisez lorsque la commande ne fait pas référence à un objet spécifique.
+* `*all*` Préfixe des paramètres -- utilisez lorsque la commande fait référence à tous les objets du type spécifié dans la matrice de stockage (par exemple, `*allVolumes*`).
+* Crochets -- utiliser lors de l'exécution d'une commande sur un objet spécifique pour identifier l'objet (par exemple, `*volume [engineering]*`).
+* Une liste d'identificateurs -- permet de spécifier un sous-ensemble d'objets. Placez les identificateurs d'objet entre crochets (par exemple, `*volumes [sales engineering marketing]*`).
+
+
+Un critère est requis si vous souhaitez inclure des informations supplémentaires pour décrire les objets.
+
+Le type d'objet et les identificateurs associés à chaque type d'objet sont répertoriés dans ce tableau.
+
+[cols="2*"]
+|===
+| Type d'objet | Identificateur 
+
+
+ a| 
+`*controller*`
+ a| 
+a ou b
+
+
+
+ a| 
+`*drive*`
+ a| 
+Pour les boîtiers avec tiroirs, utilisez l'ID du tiroir, l'ID du tiroir et l'ID du logement. Vous pouvez également utiliser l'ID du bac et l'ID du logement.
+
+
+
+ a| 
+`*replacementDrive*`
+ a| 
+Pour les boîtiers avec tiroirs, utilisez l'ID du tiroir, l'ID du tiroir et l'ID du logement. Vous pouvez également utiliser l'ID du bac et l'ID du logement.
+
+
+
+ a| 
+`*driveChannel*`
+ a| 
+Identificateur de canal de lecteur
+
+
+
+ a| 
+`*host*`
+ a| 
+Libellé utilisateur
+
+
+
+ a| 
+`*hostChannel*`
+ a| 
+Identificateur de canal hôte
+
+
+
+ a| 
+`*hostGroup*`
+ a| 
+Libellé utilisateur
+
+
+
+ a| 
+`*hostPort*`
+ a| 
+Libellé utilisateur
+
+
+
+ a| 
+`*iscsiInitiator*`
+ a| 
+Nom d'utilisateur ou nom qualifié iSCSI (IQN)
+
+
+
+ a| 
+`*iscsiTarget*`
+ a| 
+Nom d'utilisateur ou IQN
+
+
+
+ a| 
+`*storageArray*`
+ a| 
+Sans objet
+
+
+
+ a| 
+`*tray*`
+ a| 
+ID bac
+
+
+
+ a| 
+`*volume*`
+ a| 
+Libellé d'utilisateur du volume ou identifiant WWID (World Wide identifier) du volume (`set` commande uniquement)
+
+
+
+ a| 
+`*volumeCopy*`
+ a| 
+Libellé de l'utilisateur du volume cible et, éventuellement, libellé de l'utilisateur du volume source
+
+
+
+ a| 
+`*volumeGroup*`
+ a| 
+Libellé utilisateur
+
+Les caractères autorisés sont des caractères alphanumériques, un tiret et un trait de soulignement.
+
+|===
+Les données de la déclaration se présentent sous la forme suivante :
+
+* Paramètre = valeur (par exemple `*raidLevel=5*`)
+* Nom-paramètre (par exemple `*batteryInstallDate*`)
+* Nom-opération (par exemple `*redundancyCheck*`)
+
+
+Une entrée définie par l'utilisateur (telle que le nom de l'utilisateur) est appelée une variable. Dans la syntaxe, elle est affichée en italique (par exemple `trayID` ou `volumeGroupName`).

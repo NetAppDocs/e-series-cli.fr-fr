@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/delete-iscsiinitiator.html 
+sidebar: sidebar 
+keywords: delete, initiator, command, specific, object, supported, array, role 
+summary: 'La commande delete iscsiInitiator supprime un objet d"initiateur iSCSI spécifique.' 
+---
+= Supprimer l'initiateur iSCSI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete iscsiInitiator` Commande supprime un objet d'initiateur iSCSI spécifique.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+[IMPORTANT]
+====
+Cette commande est obsolète et est remplacée par le xref:delete-initiator.adoc[Supprimer l'initiateur] commande.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+delete iscsiInitiator (<"iscsiID"> | ["name"])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`iscsiInitiator`
+ a| 
+Identifiant de l'initiateur iSCSI que vous souhaitez supprimer. L'identifiant de l'initiateur iSCSI peut être un ID iSCSI ou un nom unique.
+
+Placez un ID iSCSI entre guillemets (" ") à l'intérieur des supports d'angle (< >).
+
+Placez le nom entre guillemets (" ") dans les crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.10
+
+8.41 cette commande est obsolète.

@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/show-replaceabledrives.html 
+sidebar: sidebar 
+keywords: show, replaceable, drives 
+summary: 'La commande show replace eableDrives affiche tous les disques remplaçables d"une matrice de stockage.' 
+---
+= Affiche les disques remplaçables
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show replaceableDrives` la commande affiche tous les disques remplaçables sur une baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour chaque disque remplaçable de la baie de stockage, cette commande renvoie les informations suivantes :
+
+* L'emplacement du bac et l'emplacement du logement
+* Nom du groupe de volumes auquel le lecteur appartient
+* Le World Wide Name (WWN)
+* L'état du lecteur
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+show replaceableDrives
+----
+
+
+== Exemple de sortie
+
+[listing]
+----
+Replaceable drive at Tray 0, Slot 3
+                Volume group: 2
+                World-wide name: 5000c50028785aff0000000000000000
+                Status: Removed
+Replaceable drive at Tray 0, Slot 23
+                Volume group: 2
+                World-wide name: 5000c500095d46df0000000000000000
+                Status: Removed
+Replaceable drive at Tray 0, Slot 24
+                Volume group: 2
+                World-wide name: 5000c500287854d70000000000000000
+                Status: Removed
+----
+
+
+== Niveau minimal de firmware
+
+7.10

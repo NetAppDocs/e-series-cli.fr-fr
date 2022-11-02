@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/reduce-disk-pool-capacity.html 
+sidebar: sidebar 
+keywords: reduce, disk pool, capacity 
+summary: La commande set DISKPOOL réduit la capacité du pool de disques en supprimant logiquement les lecteurs du pool. 
+---
+= Réduire la capacité du pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set diskPool` commande réduit la capacité du pool de disques en supprimant de manière logique les disques du pool.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande utilise la fonction de réduction dynamique de la capacité (DCR, Dynamic Capacity Reduction), qui vous permet de supprimer les lecteurs sélectionnés d'un pool de disques et de réutiliser les disques supprimés si nécessaire.
+
+Le nombre maximum de lecteurs que vous pouvez retirer d'un pool de disques dans une seule opération DCR est 60. Vous ne pouvez pas réduire le pool de disques au-dessous de la taille minimale du pool de disques.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set diskPool pass:quotes[[_diskPoolName_]]
+removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1
+... trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_])
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques pour lequel vous souhaitez réduire la capacité. Placez le nom du pool de disques entre crochets ([ ]).
+
+
+
+ a| 
+`removeDrives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Vous pouvez supprimer les disques sélectionnés d'un pool de disques si vous devez créer un groupe distinct ou supprimer la capacité inutile de la matrice de stockage. Les disques supprimés deviennent des disques non assignés et les données qui les existaient sont redistribuées entre les disques restants du pool. La capacité du pool de disques est réduite par la capacité des lecteurs que vous supprimez. La suppression de disques d'un pool de disques est toujours effectuée en arrière-plan et les volumes restent entièrement accessibles pendant cette opération. La progression de l'opération de retrait est signalée dans le cadre de l'état des opérations de longue durée.
+
+Cette commande échoue si la capacité disponible sur les disques qui restent dans le pool de disques est insuffisante pour stocker toutes les données qui se trouvent sur les disques que vous retirez du pool de disques. La capacité de réserve du pool de disques peut être utilisée pour stocker les données qui se trouvent sur les disques que vous retirez du pool de disques. Cependant, si la capacité de réserve est inférieure au seuil critique, un événement critique est inscrit dans le journal des événements majeurs.
+
+La diminution de la taille du pool de disques peut entraîner une réduction de la capacité de réserve nécessaire. Dans certains cas, afin de réduire la probabilité que cette commande échoue, réduisez votre capacité de réserve avant d'exécuter cette commande afin d'augmenter la quantité d'espace disponible pour les données du pool de disques.
+
+Le micrologiciel du contrôleur détermine le nombre de lecteurs que vous pouvez supprimer et vous pouvez ensuite sélectionner les lecteurs spécifiques à supprimer. Le firmware du contrôleur établit la quantité d'espace libre nécessaire pour redistribuer les données sur les disques restants sans consommer de capacité réservée aux reconstructions. Si la capacité libre du pool de disques est déjà inférieure à la quantité du lecteur de reconstruction réservé, le contrôleur n'autorise pas le démarrage d'une opération DCR.
+
+Une opération DCR peut entraîner une capacité configurée supérieure à un ou aux deux seuils d'utilisation du pool. Si c'est le cas, des alertes de seuil normal sont émises.
+
+
+
+== Niveau minimal de firmware
+
+8.10

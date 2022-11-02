@@ -1,0 +1,102 @@
+---
+permalink: commands-a-z/set-controller-dnsservers.html 
+sidebar: sidebar 
+keywords: set, controller, dns 
+summary: 'La commande set Controller DNSServers met à jour les paramètres DNS (Domain Name System) d"un contrôleur. Le DNS est utilisé pour résoudre les noms de domaine complets pour les contrôleurs et un serveur NTP (Network Time Protocol).' 
+---
+= Définissez les paramètres DNS du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set controller DNSServers` Commande met à jour les paramètres DNS (Domain Name System) d'un contrôleur. Le DNS est utilisé pour résoudre les noms de domaine complets pour les contrôleurs et un serveur NTP (Network Time Protocol).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Avant de commencer, assurez-vous que :
+
+* Un serveur DNS est configuré.
+* Vous connaissez les adresses d'un serveur DNS principal et d'un serveur DNS de sauvegarde, en cas de défaillance du serveur DNS principal. Ces adresses peuvent être des adresses IPv4 ou IPv6.
+
+
+[NOTE]
+====
+Vous devez envoyer cette commande aux deux contrôleurs. Cette commande est spécifique au contrôleur.
+
+====
+[NOTE]
+====
+Si vous avez déjà configuré les ports de gestion de la baie avec DHCP (Dynamic Host Configuration Protocol) et si vous avez un ou plusieurs serveurs DNS ou NTP associés à la configuration DHCP, vous n'avez pas besoin de configurer manuellement DNS/NTP. Dans ce cas, la baie doit avoir déjà obtenu automatiquement les adresses du serveur DNS/NTP.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+set controller[a] DNSServers=(auto|(Address1 [Address2]))
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`DNSServers`
+ a| 
+Ce paramètre configure les serveurs DNS pour le contrôleur. Spécifiez `auto` Pour utiliser les serveurs DNS fournis par DHCP. Dans le cas contraire, utilisez une liste séparée d'espaces d'un ou deux serveurs DNS.
+
+[NOTE]
+====
+Les ports Ethernet de gestion de la baie peuvent prendre en charge les protocoles IPv4 ou IPv6 simultanément. Les adresses peuvent être une adresse IPv4 ou IPv6. Si vous spécifiez plusieurs adresses, les types d'adresse ne doivent pas correspondre.
+
+====
+Si plusieurs adresses sont spécifiées, elles seront utilisées dans l'ordre dans lequel elles sont spécifiées (première adresse principale, seconde étant la sauvegarde).
+
+
+
+ a| 
+`AddressX`
+ a| 
+Adresse IPv4Address|IPv6Address
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+set controller[a] DNSServers=auto;
+set controller[a] DNSServers=(192.168.1.1);
+set controller[b] DNSServers=(192.168.1.1 192.168.1.105);
+set controller[b] DNSServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 192.168.1.1)
+----
+
+
+== Niveau minimal de firmware
+
+8.25

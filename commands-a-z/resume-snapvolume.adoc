@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/resume-snapvolume.html 
+sidebar: sidebar 
+keywords: resume, snapshot, volume 
+summary: La commande RESUME snapVolume reprend une opération de snapshot volume qui a été arrêtée. 
+---
+= Reprendre le volume snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `resume snapVolume` la commande reprend une opération de volume de snapshot qui a été arrêtée.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+resume snapVolume pass:quotes[[_"snapVolumeName"_]] snapImage=pass:quotes[_"snapCGID:imageID"_]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapVolume`
+ a| 
+Nom du volume de snapshot pour lequel vous souhaitez reprendre les opérations. Placez le nom du volume de snapshot entre guillemets (" ") entre crochets ([ ]).
+
+
+
+ a| 
+`snapImage`
+ a| 
+Nom de l'image d'instantané pour laquelle vous souhaitez reprendre les opérations de volume d'instantané. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de snapshots
+* Identificateur de l'image snapshot dans le groupe de snapshots
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de snapshots.
+* `NEWEST` - Utilisez cette option lorsque vous souhaitez afficher la dernière image instantanée créée dans le groupe de snapshots.
+* `OLDEST` - Utilisez cette option lorsque vous souhaitez afficher l'image de snapshot la plus ancienne créée dans le groupe de snapshots.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ").
+
+|===
+
+
+== Remarques
+
+Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
+
+* Identifiant du groupe de snapshots
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez reprendre les opérations de snapshot volume pour l'image snapshot 12345 dans un groupe de snapshots dont le nom est snapGroup1, utilisez la commande suivante :
+
+[listing]
+----
+resume snapVolume ["snapVol1"] snapImage="snapGroup1:12345";
+----
+Pour reprendre les opérations de snapshot volume pour l'image snapshot la plus récente d'un groupe de snapshots portant le nom snapGroup1, utilisez la commande suivante :
+
+[listing]
+----
+resume snapVolume ["snapVol1"] snapImage="snapGroup1:newest";
+----
+
+
+== Niveau minimal de firmware
+
+7.83

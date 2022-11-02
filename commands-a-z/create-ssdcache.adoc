@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-ssdcache.html 
+sidebar: sidebar 
+keywords: create, ssd, cache 
+summary: 'La commande create ssdcache crée un cache de lecture pour une matrice de stockage à l"aide de disques SSD.' 
+---
+= Créez un cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create ssdCache` La commande crée un cache de lecture pour une matrice de stockage à l'aide de disques SSD (Solid State Disks).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Contexte
+
+L'utilisation de disques SSD hautes performances pour mettre en cache les données de lecture améliore les performances d'E/S et les temps de réponse de l'application. Ils permettent en outre d'améliorer considérablement les performances sur différentes charges de travail, en particulier celles exigeant des IOPS élevées. Le cache SSD optimise l'utilisation de disques SSD rapides et coûteux. Le cache SSD fonctionne en plus du cache principal dans la mémoire DRAM du contrôleur. Avec le cache du contrôleur, les données sont stockées dans la DRAM après une lecture de l'hôte. Avec le cache SSD, les données sont copiées à partir de volumes de base spécifiés par l'utilisateur, puis mises en cache sur des disques SSD.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+create ssdCache userLabel=pass:quotes[_"ssdCacheName"_]
+drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,[drawerIDn,_]]pass:quotes[_slotIDn_)]
+[updateExistingVolumes=(TRUE|FALSE)]
+[securityType=(none|capable|enabled)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userLabel`
+ a| 
+Nom du nouveau cache SSD. Placez le nom du cache SSD entre guillemets (" ").
+
+
+
+ a| 
+`drives`
+ a| 
+Les disques que vous souhaitez utiliser pour créer le cache SSD. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+
+
+ a| 
+`updateExistingVolumes`
+ a| 
+Ce paramètre facultatif indique si le cache SSD doit être activé pour tous les volumes existants de la baie de stockage. Pour activer le cache SSD pour tous les volumes existants, définissez ce paramètre sur `TRUE`. Si vous souhaitez activer le cache SSD pour des volumes individuels plus tard, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Ce paramètre facultatif spécifie le niveau de sécurité lors de la création d'un cache SSD. Ces paramètres sont valides :
+
+* `none` - Le cache SSD n'est pas sécurisé.
+* `capable` - Le cache SSD est capable d'avoir la sécurité définie, mais la sécurité n'a pas été activée.
+* `enabled` - La sécurité du cache SSD est activée.
+
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le nom. Les noms peuvent comporter un maximum de 30 caractères.
+
+Une baie de stockage ne peut posséder qu'un seul cache SSD.
+
+Seuls les volumes créés à l'aide de disques durs peuvent utiliser le cache SSD. Vous ne pouvez pas activer le cache SSD sur les images de snapshot.
+
+Si tous les disques SSD du cache SSD prennent en charge la fonctionnalité Data assurance (DA) et que la fonctionnalité DA est activée, la fonction DA est automatiquement activée pour le cache SSD et ne peut pas être désactivée. De plus, vous ne pouvez pas ajouter de disques SSD non compatibles DA à un cache SSD compatible DA.
+
+
+
+== Niveau minimal de firmware
+
+7.84
+
+8.20 _M3 - les disques FDE sont maintenant pris en charge. Ajouté le `securityType` paramètre.

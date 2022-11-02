@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/delete-diskpool.html 
+sidebar: sidebar 
+keywords: delete, disk pool 
+summary: La commande delete DISKPOOL supprime un pool de disques. 
+---
+= Supprimer le pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete diskPool` commande supprime un pool de disques.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- toutes les données du pool de disques sont perdues dès que vous exécutez cette commande.
+
+====
+En fonction de votre version du logiciel de gestion du stockage, cette commande supprime également tous les volumes du pool de disques. Si votre version du logiciel de gestion du stockage ne prend pas en charge la suppression automatique des volumes, vous pouvez forcer la suppression du pool de disques et des volumes.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete diskPool pass:quotes[[_diskPoolName_]]
+[force=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPoolName`
+ a| 
+Nom du pool de disques que vous souhaitez supprimer. Placez le nom du pool de disques entre crochets ([ ]). Si le nom du pool de disques contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (") à l'intérieur de crochets.
+
+
+
+ a| 
+`force`
+ a| 
+Ce paramètre force la suppression des volumes si votre logiciel de gestion du stockage ne prend pas en charge la suppression automatique des volumes dans le pool de disques. Pour forcer la suppression d'un pool de disques et des volumes qu'il contient, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union(-) et de dièse (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+7.83

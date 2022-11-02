@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/smcli-autosupportschedule-show.html 
+sidebar: sidebar 
+keywords: display, autosupport, message, collection, schedule 
+summary: La commande SMcli -autoSupportSchedule show affiche le planning de collecte et de traitement des messages AutoSupport quotidiens et hebdomadaires. 
+---
+= Afficher le programme de collecte des messages AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `SMcli -autoSupportSchedule show` Commande affiche le programme de collecte et de traitement des messages AutoSupport quotidiens et hebdomadaires.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande est une commande SMcli, pas une commande script. Vous devez exécuter cette commande à partir d'une ligne de commande. Vous ne pouvez pas exécuter cette commande à partir de l'éditeur de script dans le logiciel de gestion du stockage.
+
+====
+Remarque :
+
+* Si AutoSupport est activé, le logiciel de gestion envoie des messages AutoSupport quotidiens et des messages AutoSupport hebdomadaires.
+* Le logiciel de gestion sélectionne de façon aléatoire une heure de la journée pour les messages quotidiens et hebdomadaires et un jour de la semaine pour les messages hebdomadaires.
+* Le logiciel de gestion fait en sorte que deux baies de stockage d'un domaine de gestion envoient simultanément des messages AutoSupport planifiés.
+* À l'aide du `SMcli -autoSupportSchedule reset` commande, vous pouvez spécifier une plage (granularité au niveau des heures) de temps préférés pour envoyer des messages quotidiens et hebdomadaires pour les baies de stockage dans votre domaine de gestion. Pour le planning des messages hebdomadaires, utilisez la commande pour sélectionner les jours de la semaine préférés.
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+SMcli -autoSupportSchedule show
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de micrologiciel
+
+8.25
+
+
+
+== Exemple
+
+La sortie affiche les plages de temps préférées, suivies par le planning quotidien et hebdomadaire.
+
+[NOTE]
+====
+Si vous ne sélectionnez pas les plages de temps souhaitées pour les planifications et les jours préférés de la semaine, cette commande affiche le planning quotidien et le planning hebdomadaire que le logiciel de gestion du stockage a sélectionnés de manière aléatoire.
+
+====
+[listing]
+----
+SMcli -autoSupportSchedule show
+The AutoSupport daily schedule preferred time range is from 12:00 AM to 01:00 AM.
+The AutoSupport weekly schedule preferred time range is from 10:00 PM to 11:00 PM on Thursday, Saturday.
+
+Name           Daily Schedule         Weekly Schedule
+Accounting     12:55 AM               10:08 PM on Thursdays
+Finance        12:02 AM               10:30 PM on Saturdays
+
+SMcli completed successfully.
+----

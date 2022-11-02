@@ -1,0 +1,98 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-summary.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, groups 
+summary: 'La commande show asynchrones MirrorGroup summary affiche les informations de configuration d"un ou de plusieurs groupes de miroirs asynchrones.' 
+---
+= Affiche les groupes de miroirs asynchrones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show asyncMirrorGroup summary` la commande affiche les informations de configuration pour un ou plusieurs groupes de miroirs asynchrones.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande affiche également les paires en miroir asynchrone associées à chaque groupe de miroirs asynchrone, y compris les paires en miroir asynchrone incomplètes.
+
+Vous pouvez également utiliser cette commande pour afficher la progression de la synchronisation périodique des données sur toutes les paires mises en miroir du groupe de miroirs asynchrones.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allAsyncMirrorGroups |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_asyncMirrorGroupName1_ ... _asyncMirrorGroupNameN_]])
+[summary]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Utilisez ce paramètre pour afficher les propriétés de tous les groupes de miroirs asynchrones.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Le nom d'un groupe de miroirs asynchrone pour lequel vous souhaitez afficher les informations de configuration et la progression de la synchronisation périodique des données. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Les noms de plusieurs groupes de miroirs asynchrones pour lesquels vous souhaitez récupérer des informations. Entrez les noms des groupes de miroirs asynchrones à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms des groupes de miroirs asynchrones comportent des caractères spéciaux ou des chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Ce paramètre affiche une liste concise d'informations sur la progression de la synchronisation d'un ou de plusieurs groupes de miroirs asynchrones.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

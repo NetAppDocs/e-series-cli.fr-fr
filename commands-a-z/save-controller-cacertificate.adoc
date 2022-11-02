@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/save-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: retrieve, installed, ca, certificates 
+summary: La commande save Controller caCertificate récupère les certificats CA installés à partir du contrôleur spécifié. Les certificats récupérés sont inclus dans tous les certificats CA demandés du serveur Web du contrôleur. 
+---
+= Récupérer les certificats CA installés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save controller caCertificate` La commande récupère les certificats CA installés à partir du contrôleur spécifié. Les certificats récupérés sont inclus dans tous les certificats d'autorité de certification demandés du serveur Web du contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+save controller[(a|b)] caCertificate [all | aliases=pass:quotes[("_alias1_" ... "_aliasN_")]]
+ path="fileLocation"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Permet de spécifier le contrôleur sur lequel vous souhaitez récupérer les certificats racine/intermédiaire. Des identifiants de contrôleur valides sont a ou b, où a est le contrôleur dans le slot A, et b le contrôleur dans le slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`all`
+ a| 
+Permet de spécifier la récupération de tous les certificats importés afin de résoudre la chaîne de certificats signée. Les certificats installés par l'utilisateur incluent des certificats de gestion des clés.
+
+
+
+ a| 
+`aliases`
+ a| 
+Permet de spécifier le certificat racine/intermédiaire installé par l'utilisateur à récupérer par alias. Placez tous les alias entre parenthèses. Si vous saisissez plusieurs alias, séparez-les par un espace.
+
+
+
+ a| 
+`path`
+ a| 
+Permet de spécifier l'emplacement local pour enregistrer les certificats racine/intermédiaire des contrôleurs.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "save controller[a] caCertificate all path="C:\";"
+
+SMcli -n Array1 -c "save controller[b] caCertificate aliases=("myAlias" "anotherAlias") path="C:\";"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

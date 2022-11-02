@@ -1,0 +1,152 @@
+---
+permalink: commands-a-z/set-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: set, asynchronous, mirror, group 
+summary: 'La commande set asynchrones MirrorGroup modifie les paramètres de synchronisation et les seuils d"avertissement que le propriétaire du contrôleur du côté principal du groupe de miroirs asynchrones utilise lorsqu"il effectue une synchronisation ou une resynchronisation initiale.' 
+---
+= Définissez le groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set asyncMirrorGroup` commande modifie les paramètres de synchronisation et les seuils d'avertissement que le propriétaire du contrôleur du côté principal du groupe de miroirs asynchrones utilise lorsqu'il effectue une synchronisation ou une resynchronisation initiale.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou Administrateur du support.
+
+
+
+== Contexte
+
+La modification des paramètres de synchronisation affecte les opérations de synchronisation de toutes les paires mises en miroir dans le groupe de miroirs asynchrones.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+[volume="repos_xxxx" increaseRepositoryCapacity (repositoryVolume=("repos_xxxx")]
+[syncInterval=pass:quotes[_integer_] (minutes | hours | days)]
+[warningSyncThreshold=pass:quotes[_integer_] (minutes | hours | days)]
+[warningRecoveryThreshold=integer (minutes | hours | days)]
+[userLabel=pass:quotes["_New_asyncMirrorGroupName_"]]
+[warningThresholdPercent=pass:quotes[_percentValue_]]
+[role=(primary | secondary)]
+[autoResync=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones à modifier. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume de référentiel de groupe de miroirs asynchrone pour lequel vous souhaitez augmenter la capacité.
+
+Le nom d'un volume de référentiel est composé de deux parties :
+
+* Le terme « repos »
+* Identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel
+
+
+Placez le nom du volume du référentiel entre guillemets (" ").
+
+
+
+ a| 
+`syncInterval`
+ a| 
+Spécifiez la durée entre l'envoi automatique des mises à jour des données modifiées de la matrice de stockage locale vers la matrice de stockage distante. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+
+
+ a| 
+`warningSyncThreshold`
+ a| 
+Spécifiez le temps d'attente jusqu'au déclenchement d'un avertissement pour les cas où la synchronisation de tous les volumes du groupe de miroirs asynchrones prend plus de temps que le temps défini. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+
+
+ a| 
+`warningRecoveryThreshold`
+ a| 
+Spécifiez la durée d'attente jusqu'au déclenchement d'un avertissement lorsque la mise à jour automatique des données de l'image ponctuelle de la matrice de stockage distante est antérieure à l'heure définie. Définissez le seuil à partir de la fin de la mise à jour précédente. Vous pouvez indiquer la durée en minutes, heures ou jours.
+
+[NOTE]
+====
+Vous devez définir le seuil du point de récupération sur deux fois plus grand que le seuil de l'intervalle de synchronisation.
+
+====
+
+
+ a| 
+`userLabel`
+ a| 
+Nouveau nom à attribuer au groupe de miroirs asynchrones. Utilisez ce paramètre pour renommer le groupe de miroirs asynchrone. Placez le nouveau nom de groupe de miroirs asynchrones entre guillemets (" ").
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Spécifiez le pourcentage qui détermine quand un avertissement est déclenché lorsque la capacité d'un volume de référentiel miroir atteint le pourcentage défini. Définissez le seuil par pourcentage (%) de la capacité restante.
+
+
+
+ a| 
+`role`
+ a| 
+Ce paramètre permet de promouvoir le groupe de miroirs asynchrones en rôle principal ou de rétrograder le groupe de miroirs asynchrones en rôle secondaire. Pour définir le groupe de miroirs asynchrones comme rôle principal, définissez ce paramètre sur `primary`. Pour définir le groupe de miroirs asynchrones comme rôle secondaire, définissez ce paramètre sur `secondary`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Les paramètres de resynchronisation automatique entre les volumes primaires et les volumes secondaires d'une paire en miroir asynchrone dans un groupe de miroirs asynchrone. Ce paramètre a les valeurs suivantes :
+
+* `enabled` -- la resynchronisation automatique est activée. Vous n'avez rien à faire de plus pour resynchroniser le volume principal et le volume secondaire.
+* `disabled` -- la resynchronisation automatique est désactivée. Pour resynchroniser le volume principal et le volume secondaire, vous devez exécuter la `start asyncMirrorGroup` commande.
+
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres. Cependant, il n'est pas nécessaire d'utiliser tous les paramètres.
+
+Un volume de référentiel de groupe de miroirs asynchrone est un volume extensible structuré comme une collection concaténée d'un maximum de 16 entités de volumes standard. Dans un premier temps, un volume de référentiel extensible n'a qu'un seul volume. La capacité du volume du référentiel extensible est exactement celle du volume unique. Vous pouvez augmenter la capacité d'un volume de référentiel extensible en y ajoutant des volumes de référentiel non utilisés. La capacité du volume de référentiel extensible composite devient alors la somme des capacités de tous les volumes standard concaténés.
+
+
+
+== Niveau minimal de firmware
+
+7.84

@@ -1,0 +1,140 @@
+---
+permalink: commands-a-z/save-storagearray-warningevents.html 
+sidebar: sidebar 
+keywords: save, storage, array, events 
+summary: La commande Save storageArray warningEvents enregistre les événements du journal des événements majeurs dans un fichier. 
+---
+= Enregistrer les événements de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray warningEvents` Commande enregistre les événements du journal des événements principaux dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande enregistre les événements du journal des événements principaux dans un fichier. Vous pouvez enregistrer ces événements :
+
+* *Événements critiques* -- une erreur s'est produite sur la matrice de stockage qui doit être traitée immédiatement. Une perte d'accès aux données peut se produire si vous ne corrigez pas immédiatement l'erreur.
+* *Événements d'avertissement* -- une erreur s'est produite sur la matrice de stockage qui entraîne une dégradation des performances ou une réduction de la capacité de récupération après une autre erreur. L'accès aux données n'a pas été perdu, mais vous devez corriger l'erreur pour éviter une perte éventuelle d'accès aux données si une autre erreur se produit.
+* *Événements informationnels* -- un événement s'est produit sur la matrice de stockage qui n'a pas d'impact sur les opérations normales. L'événement signale un changement de configuration ou d'autres informations utiles pour évaluer les performances de la baie de stockage.
+* *Événements de débogage* -- un événement s'est produit sur la matrice de stockage qui fournit des informations que vous pouvez utiliser pour aider à déterminer les étapes ou les États qui ont mené à une erreur. Vous pouvez envoyer un fichier contenant ces informations au support technique pour aider à déterminer la cause d'une erreur.
+
+
+[NOTE]
+====
+Certaines baies de stockage ne sont peut-être pas en mesure de prendre en charge les quatre types d'événements.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray (allEvents | criticalEvents |
+warningEvents | infoEvents | debugEvents)
+file=pass:quotes["_filename_"]
+[count=pass:quotes[_numberOfEvents_]]
+[forceSave=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allEvents`
+ a| 
+Paramètre pour enregistrer tous les événements dans un fichier.
+
+
+
+ a| 
+`criticalEvents`
+ a| 
+Le paramètre pour enregistrer uniquement les événements critiques dans un fichier.
+
+
+
+ a| 
+`warningEvents`
+ a| 
+Paramètre pour enregistrer uniquement les événements d'avertissement dans un fichier.
+
+
+
+ a| 
+`infoEvents`
+ a| 
+Paramètre pour enregistrer uniquement les événements d'information dans un fichier.
+
+
+
+ a| 
+`debugEvents`
+ a| 
+Paramètre pour enregistrer uniquement les événements de débogage dans un fichier.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les événements. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\events.txt"`
+
+Le nom par défaut du fichier contenant le contenu du journal des événements principaux est `major-event-log.txt`. Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+
+
+ a| 
+`count`
+ a| 
+Nombre d'événements que vous souhaitez enregistrer dans un fichier. Si vous n'entrez pas de valeur pour le compte, tous les événements correspondant au type d'événement que vous spécifiez sont enregistrés dans le fichier. Si vous entrez une valeur pour le compte, seul ce nombre d'événements (commençant par le dernier événement entré) sont enregistrés dans le fichier. Utiliser des valeurs entières.
+
+
+
+ a| 
+`forceSave`
+ a| 
+Paramètre pour forcer l'enregistrement des événements de débogage que vous avez éventuellement filtrés de la vue vers un fichier. Pour forcer l'enregistrement des événements, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+[NOTE]
+====
+Ce paramètre enregistre les événements de débogage qui ont été filtrés hors de l'afficheur d'événements SANtricity.
+
+====
+|===
+
+
+== Niveau minimal de firmware
+
+7.77 ajouter ces paramètres :
+
+* `warningEvents`
+* `infoEvents`
+* `debugEvents`
+* `forceSave`
+

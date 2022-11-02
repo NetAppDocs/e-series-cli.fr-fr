@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/clear-storagearray-eventlog.html 
+sidebar: sidebar 
+keywords: clear, storage array, event log 
+summary: 'La commande Effacer le journal d"événements du système de stockage efface le journal des événements de la matrice de stockage en supprimant les données dans la mémoire tampon du journal des événements.' 
+---
+= Effacer le journal des événements de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear storageArray eventLog` Cette commande efface le journal des événements de la matrice de stockage en supprimant les données de la mémoire tampon du journal des événements.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+*Dommages possibles à la configuration de la matrice de stockage* -- dès que vous exécutez cette commande, le journal des événements existant dans la matrice de stockage est supprimé.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+clear storageArray eventLog
+----
+
+
+== Paramètres
+
+Aucune.

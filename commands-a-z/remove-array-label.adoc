@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/remove-array-label.html 
+sidebar: sidebar 
+keywords: remove, array, label 
+summary: 'La commande Supprimer un label de tableau vous permet de supprimer un libellé défini par l"utilisateur pour un tableau de stockage.' 
+---
+= Retirez l'étiquette de la matrice
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Remove array label` commande permet de supprimer une étiquette définie par l'utilisateur pour une matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique aux baies de stockage EF600 et EF300.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete storageArrayLabel label pass:quotes[_userDefinedString_]
+delete storageArrayLabel all
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userDefinedString`
+ a| 
+Permet de spécifier un libellé défini par l'utilisateur pour la matrice de stockage.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

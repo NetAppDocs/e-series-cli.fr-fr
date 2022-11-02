@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/reset-controller.html 
+sidebar: sidebar 
+keywords: reset, controller 
+summary: 'La commande reset le contrôleur réinitialise un contrôleur et entraîne une interruption des opérations d"E/S.' 
+---
+= Réinitialiser le contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `reset controller` Une commande réinitialise un contrôleur et entraîne l'interruption des opérations d'E/S.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Lorsque vous réinitialisez un contrôleur, celui-ci est retiré du chemin d'accès aux données et n'est pas disponible pour les opérations d'E/S tant que l'opération de réinitialisation est terminée. Si un hôte utilise des volumes qui appartiennent au contrôleur en cours de réinitialisation, les E/S dirigées vers le contrôleur sont rejetées. Avant de réinitialiser le contrôleur, assurez-vous que les volumes qui lui appartiennent ne sont pas utilisés ou assurez-vous qu'un pilote à chemins multiples est installé sur tous les hôtes qui utilisent ces volumes.
+
+====
+[CAUTION]
+====
+Si vous utilisez la gestion intrabande, vous ne pouvez pas contrôler le contrôleur auquel une commande est envoyée et cette commande peut avoir des résultats inattendus.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+reset controller [(a|b)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur que vous souhaitez réinitialiser. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
+
+|===
+
+
+== Remarques
+
+Le contrôleur qui reçoit la commande reset le contrôleur réinitialise. Par exemple, si la commande reset le contrôleur est envoyée au contrôleur A pour demander une réinitialisation du contrôleur A, le contrôleur A redémarre en effectuant un redémarrage logiciel. Si la commande reset le contrôleur est envoyée au contrôleur A pour demander une réinitialisation du contrôleur B, le contrôleur A contient le contrôleur B en réinitialisation, puis libère le contrôleur B de la réinitialisation, ce qui est un redémarrage dur. Un redémarrage logiciel sur certains produits réinitialise uniquement la puce IOC. Un redémarrage dur réinitialise à la fois le COI et les puces du module d'extension dans le contrôleur.
+
+
+
+== Niveau minimal de firmware
+
+5.20

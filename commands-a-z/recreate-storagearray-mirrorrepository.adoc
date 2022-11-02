@@ -1,0 +1,227 @@
+---
+permalink: commands-a-z/recreate-storagearray-mirrorrepository.html 
+sidebar: sidebar 
+keywords: recreate, synchronous, mirror, repository, volume 
+summary: 'La commande reate storageArray mirrorRepository crée un nouveau volume référentiel synchrone mis en miroir (également appelé volume de référentiel miroir) à l"aide des paramètres définis pour un volume de référentiel miroir précédent.' 
+---
+= Recréez le volume du référentiel de mise en miroir synchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recreate storageArray mirrorRepository` Cette commande crée un nouveau volume de référentiel synchrone mis en miroir (également appelé volume de référentiel miroir) à l'aide des paramètres définis pour un volume de référentiel miroir précédent.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 7.80 du micrologiciel, le `recreate storageArray mirrorRepository` la commande est obsolète. Cette commande n'est plus prise en charge dans l'interface graphique ou dans l'interface de ligne de commandes. Si vous essayez d'exécuter cette commande, un message d'erreur s'affiche indiquant que cette fonctionnalité n'est plus prise en charge et qu'aucune modification n'est apportée aux référentiels de miroir distants spécifiés.
+
+====
+La condition sous-jacente est que vous avez déjà créé un volume de référentiel en miroir. Lorsque vous utilisez cette commande, vous pouvez définir le volume du référentiel miroir de trois façons : les disques définis par l'utilisateur, le groupe de volumes défini par l'utilisateur ou le nombre de lecteurs défini par l'utilisateur pour le volume du référentiel miroir. Si vous choisissez de définir un nombre de lecteurs, le micrologiciel du contrôleur choisit les lecteurs à utiliser pour le volume de référentiel miroir.
+
+
+
+== Syntaxe (lecteurs définis par l'utilisateur)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1
+... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN_])
+[trayLossProtect=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+----
+
+
+== Syntaxe (groupe de volumes défini par l'utilisateur)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryVolumeGroup=pass:quotes[_volumeGroupName_
+[freeCapacityArea=pass:quotes[_freeCapacityIndexNumber_]]
+----
+
+
+== Syntaxe (nombre de lecteurs défini par l'utilisateur)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDriveCount=pass:quotes[_numberOfDrives_]
+(
+  [driveMediaType=(HDD | SSD | unknown | allMedia)] |
+  [driveType=(SAS | NVMe4K)]
+)
+[repositoryVolumeGroupUserLabel="userLabel"] |
+[trayLossProtect=(TRUE | FALSE)] |
+[drawerLossProtect=(true|false)] |
+[dataAssurance=(none | enabled)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`repositoryRAIDLevel`
+ a| 
+Niveau RAID pour le volume du référentiel du miroir. Les valeurs valides sont `1`, `3`, `5`, ou `6`.
+
+
+
+ a| 
+`repositoryDrives`
+ a| 
+Lecteurs que vous souhaitez utiliser pour le volume de référentiel miroir. Les valeurs d'ID de tiroir sont `1` à `5`. Les valeurs d'ID de slot sont `1` à `24`. Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]). Entrez les noms des volumes du référentiel à l'aide des règles suivantes :
+
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+* Placez toutes les valeurs d'ID du bac, les valeurs d'ID du tiroir et la valeur d'ID du logement entre crochets ([ ]).
+* Séparez la valeur d'ID de bac, la valeur d'ID de tiroir et la valeur d'ID de logement par des virgules.
+* Séparez chacune des positions d'entraînement avec un espace.
+
+
+
+
+ a| 
+`repositoryVolumeGroup`
+ a| 
+Nom du groupe de volumes où se trouve le volume du référentiel miroir.
+
+
+
+ a| 
+`repositoryVolumeGroupUserLabel`
+ a| 
+Nom que vous souhaitez attribuer au nouveau groupe de volumes dans lequel le volume du référentiel miroir sera situé. Placez le nom du groupe de volumes entre guillemets (" ").
+
+
+
+ a| 
+`freeCapacityArea`
+ a| 
+Numéro d'index de l'espace libre dans un groupe de volumes existant que vous souhaitez utiliser pour recréer le volume du référentiel miroir. La capacité libre est définie comme la capacité libre entre les volumes existants d'un groupe de volumes. Par exemple, un groupe de volumes peut disposer des éléments suivants : volume 1, capacité libre, volume 2, capacité libre, volume 3, capacité libre. Pour utiliser la capacité libre suivante volume 2, vous devez préciser :
+
+[listing]
+----
+freeCapacityArea=2
+----
+Exécutez le `show volumeGroup` commande permettant de déterminer si une zone de capacité libre existe.
+
+
+
+ a| 
+`repositoryDriveCount`
+ a| 
+Nombre de disques non assignés à utiliser pour le volume de référentiel en miroir.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Type de support de lecteur pour lequel vous souhaitez récupérer des informations. Les valeurs suivantes sont des types de support de lecteur valides :
+
+* `HDD` indique que vous avez des disques durs dans le tiroir
+* `SSD` indique que le plateau de lecteur contient des disques ssd
+* `unknown` indique que vous êtes sûr du type de support de lecteur dans le tiroir
+* `allMedia` indique que vous avez tous les types de support dans le bac d'alimentation
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Type de lecteur que vous souhaitez utiliser pour le volume de référentiel miroir. Vous ne pouvez pas combiner plusieurs types de disques.
+
+Vous devez utiliser ce paramètre lorsque vous avez plusieurs types de lecteur dans votre matrice de stockage.
+
+Les types de disques valides sont les suivants :
+
+* `SAS`
+* `NVMe4K`
+
+
+Si vous ne spécifiez pas de type de lecteur, la commande est définie par défaut sur n'importe quel type.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+Paramètre permettant d'appliquer la protection contre les pertes de plateau lorsque vous créez le volume du référentiel miroir. Pour appliquer la protection contre les pertes de bac, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+Paramètre permettant d'appliquer la protection contre les pertes de tiroirs lorsque vous créez le volume du référentiel miroir. Pour appliquer la protection contre les pertes de tiroirs, définissez ce paramètre sur `TRUE`. La valeur par défaut est `FALSE`.
+
+|===
+
+
+== Remarques
+
+Si vous saisissez une valeur pour l'espace de stockage du volume du référentiel miroir trop petit, le micrologiciel du contrôleur renvoie un message d'erreur, qui indique la quantité d'espace nécessaire pour le volume du référentiel miroir. La commande n'essaie pas de modifier le volume du référentiel miroir. Vous pouvez saisir à nouveau la commande en utilisant la valeur du message d'erreur pour la valeur de l'espace de stockage du volume du référentiel miroir.
+
+Le `repositoryDrives` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
+
+Lorsque vous affectez les lecteurs, si vous définissez le `trayLossProtect` paramètre à `TRUE` et ont sélectionné plusieurs lecteurs d'un bac, la matrice de stockage renvoie une erreur. Si vous définissez le `trayLossProtect` paramètre à `FALSE`, la matrice de stockage effectue des opérations, mais le volume de référentiel miroir que vous créez ne dispose peut-être pas d'une protection contre les pertes de plateau.
+
+Lorsque le micrologiciel du contrôleur affecte les lecteurs, si vous définissez le `trayLossProtect` paramètre à `TRUE`, la matrice de stockage renvoie une erreur si le micrologiciel du contrôleur ne peut pas fournir de lecteurs qui entraînent le nouveau volume du référentiel miroir avec protection contre la perte du plateau. Si vous définissez le `trayLossProtect` paramètre à `FALSE`, la matrice de stockage exécute l'opération même si cela signifie que le volume de référentiel miroir ne peut pas avoir de protection contre les pertes de plateau.
+
+
+
+== La gestion de la Data assurance
+
+La fonctionnalité Data assurance (DA) renforce l'intégrité des données sur l'ensemble du système de stockage. DA permet à la matrice de stockage de vérifier si des erreurs peuvent se produire lorsque des données sont déplacées entre les hôtes et les lecteurs. Lorsque cette fonctionnalité est activée, la matrice de stockage ajoute des codes de vérification des erreurs (également appelés vérifications cycliques de redondance ou CRCS) à chaque bloc de données du volume. Après le déplacement d'un bloc de données, la matrice de stockage utilise ces codes CRC pour déterminer si des erreurs se sont produites au cours de la transmission. Les données potentiellement corrompues ne sont ni écrites sur le disque ni renvoyées à l'hôte.
+
+Si vous souhaitez utiliser la fonction DA, commencez par un pool ou un groupe de volumes qui inclut uniquement les lecteurs qui prennent en charge DA. Ensuite, créez des volumes compatibles DA. Enfin, mappez ces volumes compatibles DA à l'hôte à l'aide d'une interface d'E/S capable de gérer DA. Les interfaces d'E/S qui peuvent être DA incluent Fibre Channel, SAS et iser over InfiniBand (iSCSI Extensions for RDMA/IB). DA n'est pas pris en charge par iSCSI over Ethernet ou par le SRP sur InfiniBand.
+
+[NOTE]
+====
+Lorsque tous les lecteurs sont compatibles DA, vous pouvez définir le `dataAssurance` paramètre à `enabled` Puis utiliser DA avec certaines opérations. Par exemple, vous pouvez créer un groupe de volumes comprenant des disques compatibles DA, puis créer un volume au sein de ce groupe de volumes qui est activé par DA. Les autres opérations qui utilisent un volume activé par DA peuvent prendre en charge la fonction DA.
+
+====
+Si le `dataAssurance` le paramètre est défini sur `enabled`seuls les disques compatibles avec data assurance seront pris en compte pour les candidats aux volumes. sinon, ils seront pris en compte les disques avec data assurance et non data assurance. Si seuls les disques Data assurance sont disponibles, le nouveau groupe de volumes sera créé à l'aide des disques Data assurance activés.
+
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.10 ajoute la fonctionnalité RAID de niveau 6
+
+7.75 ajoute le `dataAssurance` paramètre.
+
+8.60 ajoute le `driveMediaType`, `repositoryVolumeGroupUserLabel`, et `drawerLossProtect` paramètres.

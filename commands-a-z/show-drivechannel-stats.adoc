@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/show-drivechannel-stats.html 
+sidebar: sidebar 
+keywords: show, drive channel, statistics 
+summary: 'La commande show guideChannel stats affiche le transfert de données cumulé pour le canal du lecteur et les informations d"erreur.' 
+---
+= Affiche les statistiques des canaux de lecteur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show driveChannel stats` la commande affiche le transfert de données cumulé pour le canal du lecteur et les informations d'erreur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Si le contrôleur a automatiquement dégradé un canal de disque, cette commande affiche également les statistiques d'intervalle. Lorsque vous utilisez cette commande, vous pouvez afficher des informations sur un canal de lecteur spécifique, plusieurs canaux de lecteur ou tous les canaux de lecteur.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
+   driveChannels [1 2 3 4 5 6 7 8] |
+   allDriveChannels) stats
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`driveChannel`
+ a| 
+Numéro d'identification du canal de lecteur pour lequel vous souhaitez afficher des informations. Les valeurs valides du canal d'entraînement sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`. Placez le canal du lecteur entre crochets ([ ]).
+
+Utilisez ce paramètre pour afficher les statistiques d'un seul canal de lecteur.
+
+
+
+ a| 
+`driveChannels`
+ a| 
+Numéro d'identification de plusieurs canaux de lecteurs pour lesquels vous souhaitez afficher des informations. Les valeurs valides du canal d'entraînement sont `1`, `2`, `3`, `4`, `5`, `6`, `7`, ou `8`. Placez les canaux de lecteur entre crochets ([ ]) avec la valeur du canal de lecteur séparée par un espace.
+
+Ce paramètre permet d'afficher les statistiques de plusieurs canaux de lecteurs.
+
+
+
+ a| 
+`allDriveChannels`
+ a| 
+Identifiant qui sélectionne tous les canaux de transmission.
+
+|===
+
+
+== Remarques
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10
+
+7.15 ajoute une mise à jour à l'identificateur de canal de lecteur.

@@ -1,0 +1,99 @@
+---
+permalink: commands-a-z/delete-auditlog.html 
+sidebar: sidebar 
+keywords: delete, audit, log, records 
+summary: 'La commande delete auditlog supprime une partie ou la totalité des enregistrements du journal d"audit.' 
+---
+= Supprimer les enregistrements du journal d'audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete auditLog` la commande supprime tout ou partie des enregistrements du journal d'audit.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+delete auditLog (all | (endRecord=pass:quotes[_timestamp_ | endDate=_date_) |
+ (retentionCount=_integer_))]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`all`
+ a| 
+Permet de supprimer tous les enregistrements du journal d'audit.
+
+
+
+ a| 
+`endRecord`
+ a| 
+Permet de spécifier l'enregistrement de fin à supprimer, en commençant par l'enregistrement le plus ancien. La valeur est la valeur intégrale qui représente l'horodatage du dernier enregistrement du journal d'audit, inclus.
+
+
+
+ a| 
+`endDate`
+ a| 
+Permet de spécifier la date de fin à supprimer, en commençant par l'enregistrement le plus ancien. Le format de saisie de la date est MM:JJ:AA dans le fuseau horaire du client.
+
+[NOTE]
+====
+Les enregistrements du journal d'audit, y compris la date spécifiée, seront supprimés.
+
+====
+
+
+ a| 
+`retentionCount`
+ a| 
+Permet de spécifier le nombre d'enregistrements de journal d'audit les plus récents à conserver.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete auditLog all;"
+
+SMcli -n Array1 -c "delete auditLog endRecord=1493070393313;"
+
+SMcli -n Array1 -c "delete auditLog endDate=04:30:17;"
+
+SMcli -n Array1 -c "delete auditLog retentionCount=1000;"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

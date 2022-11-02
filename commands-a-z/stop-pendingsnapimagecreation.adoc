@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/stop-pendingsnapimagecreation.html 
+sidebar: sidebar 
+keywords: stop, snapshot, group, snapshot, images 
+summary: La commande stop pendingSnapImageCreation annule toutes les images de snapshot en attente qui doivent être créées sur un snapshot ou un groupe de cohérence de snapshot. 
+---
+= Arrêter le groupe d'instantanés en attente d'images de snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop pendingSnapImageCreation` la commande annule toutes les images de snapshot en attente qui doivent être créées sur un snapshot ou un groupe de cohérence de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Si le groupe de snapshots ne contient aucune image instantanée en attente, le micrologiciel affiche un message d'erreur et n'exécute pas la commande. Vous pouvez exécuter cette commande sur un groupe de snapshots ou sur un groupe de cohérence de snapshot.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+stop (snapGroup pass:quotes[[_snapGroupName_]] |
+consistencyGroup pass:quotes[[_snapConsistencyGroupName_]])
+pendingSnapImageCreation
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots pour lequel vous souhaitez arrêter les images de snapshot en attente. Placez le nom du groupe de snapshots entre crochets ([ ]). Si le nom du groupe de snapshots contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de snapshots entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence de snapshot pour lequel vous souhaitez arrêter les images de snapshot en attente. Placez le nom du groupe de cohérence de snapshot entre crochets ([ ]). Si le nom du groupe de cohérence de snapshot contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du groupe de snapshots entre guillemets (") entre crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83

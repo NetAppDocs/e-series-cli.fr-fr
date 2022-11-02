@@ -1,0 +1,123 @@
+---
+permalink: commands-a-z/save-auditlog.html 
+sidebar: sidebar 
+keywords: save, audit log, records 
+summary: 'La commande save auditlog récupère les enregistrements du journal d"audit.' 
+---
+= Enregistrer les enregistrements du journal d'audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save auditLog` la commande récupère les enregistrements du journal d'audit.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+save auditLog (all | (beginDate=pass:quotes[_date_ | endDate=_date_)]
+|(beginRecord=pass:quotes[_timestamp_] | endRecord=pass:quotes[_timestamp_))] file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`all`
+ a| 
+Permet de récupérer tous les enregistrements du journal d'audit.
+
+
+
+ a| 
+`beginDate`
+ a| 
+Permet de spécifier la date de début à récupérer. Le format de saisie de la date est MM:JJ:AA dans le fuseau horaire du client. Le premier enregistrement du journal d'audit récupéré sera le premier enregistrement qui a été publié le ou après la date spécifiée.
+
+[NOTE]
+====
+La plage de minuit à minuit est basée sur le fuseau horaire du client.
+
+====
+
+
+ a| 
+`endDate`
+ a| 
+Permet de spécifier la date de fin à récupérer. Si ce n'est pas le cas, le dernier enregistrement du journal sera récupéré. Le format de saisie de la date est MM:JJ:AA dans le fuseau horaire du client. Le dernier enregistrement du journal d'audit récupéré sera le dernier enregistrement qui a été publié le ou avant la date spécifiée.
+
+[NOTE]
+====
+La plage de minuit à minuit est basée sur le fuseau horaire du client.
+
+====
+
+
+ a| 
+`beginRecord`
+ a| 
+Permet de spécifier l'enregistrement de départ à récupérer. La valeur est la valeur intégrale qui représente l'horodatage du premier enregistrement du journal d'audit, inclus. S'il n'est pas spécifié, le premier enregistrement du journal sera récupéré.
+
+
+
+ a| 
+`endRecord`
+ a| 
+Permet de spécifier l'enregistrement de fin à récupérer. La valeur est la valeur intégrale qui représente l'horodatage du dernier enregistrement du journal d'audit, inclus. Si ce n'est pas le cas, le dernier enregistrement du journal sera récupéré.
+
+
+
+ a| 
+`file`
+ a| 
+Permet de spécifier le nom du fichier de sortie du journal d'audit.
+
+[NOTE]
+====
+Les enregistrements du journal d'audit sont enregistrés dans le fichier par ordre décroissant, du plus récent au plus ancien.
+
+====
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "save auditLog all file="myAuditLog.txt";"
+
+SMcli -n Array1 -c "save auditLog endRecord=1493070393313 file="myAuditLog.txt";"
+
+SMcli -n Array1 -c "save auditLog beginDate=12:12:16 endDate=04:01:17 file="myAuditLog.txt";"
+
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

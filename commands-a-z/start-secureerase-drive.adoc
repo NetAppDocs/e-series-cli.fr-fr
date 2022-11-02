@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/start-secureerase-drive.html 
+sidebar: sidebar 
+keywords: start, fde, secure, drive, erase 
+summary: 'La commande start secureErase Drive efface toutes les données d"un ou plusieurs disques FDE (Full Disk Encryption) afin qu"elles puissent être réutilisées en tant que disques FDE.' 
+---
+= Démarrer l'effacement sécurisé du disque FDE
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start secureErase drive` La commande efface toutes les données d'un ou de plusieurs disques FDE (Full Disk Encryption) afin qu'elles puissent être réutilisées en tant que disques FDE.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+Exécutez cette commande uniquement lorsque les disques FDE ne font plus partie d'un groupe de volumes ou d'un pool de disques sécurisés, ou lorsque la clé de sécurité est inconnue.
+
+[NOTE]
+====
+Pour effacer un lecteur FIPS lorsque le lecteur est verrouillé et que la clé de sécurité pour le déverrouiller n'est pas disponible, utilisez le `set drive securityID` commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+[start secureErase (drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]])
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`drive` ou `drives`
+ a| 
+Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
+
+La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800 et E5700 ont des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+
+Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+[NOTE]
+====
+La liste des lecteurs ne peut pas contenir tous les lecteurs de la matrice de stockage, sinon la commande sera rejetée. Pour sécuriser l'effacement de tous les disques, exécutez cette commande deux fois en spécifiant la liste des disques dans deux groupes distincts.
+
+====
+|===
+
+
+== Remarques
+
+Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE. Les disques FDE sont dotés d'un état appelé « Security capable ». Lorsque vous créez une clé de sécurité, l'état est défini sur sécurité activée, ce qui limite l'accès à tous les disques FDE présents dans la baie de stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.40

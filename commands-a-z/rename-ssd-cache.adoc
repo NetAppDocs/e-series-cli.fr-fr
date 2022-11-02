@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/rename-ssd-cache.html 
+sidebar: sidebar 
+keywords: rename, ssd, cache 
+summary: La commande set ssdcache change le nom du cache SSD. 
+---
+= Renommez le cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set ssdCache` Commande modifie le nom du cache SSD.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set ssdCache pass:quotes[[_old_ssdCacheName_] userLabel=pass:quotes[_"new_ssdCacheName_"]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD que vous souhaitez renommer. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères spéciaux ou se compose uniquement de nombres, vous devez également inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nouveau nom pour le cache SSD. Placez le nom entre guillemets (" ").vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour l'identificateur. Les identificateurs peuvent comporter un maximum de 30 caractères.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

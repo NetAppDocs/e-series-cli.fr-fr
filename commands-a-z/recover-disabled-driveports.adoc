@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/recover-disabled-driveports.html 
+sidebar: sidebar 
+keywords: recover, disable, drive ports 
+summary: La commande récupérer les ports de lecteur désactivés récupère les ports de lecteur désactivés. 
+---
+= Récupérer les ports de disque désactivés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `recover disabled drivePorts` la commande récupère les ports de lecteur désactivés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+recover disabled drivePorts;
+----
+
+
+== Exemples
+
+[listing]
+----
+recover disabled drivePorts;
+----

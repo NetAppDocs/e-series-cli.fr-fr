@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-snmpsystemvariables.html 
+sidebar: sidebar 
+keywords: update, snmp, mib, system, group, variables 
+summary: 'La commande set snmpSystemvariables modifie les variables système du protocole SNMP (simple Network Management Protocol).' 
+---
+= Mettre à jour les variables du groupe système MIB II SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snmpSystemVariables` Commande modifie les variables système du protocole SNMP (simple Network Management Protocol).
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Contexte
+
+Les variables système suivantes sont conservées dans une base de données MIB-II (Management information base II) :
+
+* Nom du système
+* Nom du contact système
+* Emplacement du système
+
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snmpSystemVariables
+[sysName=pass:quotes[_newSystemName_]]
+[sysContact=pass:quotes[_contactName_]]
+[sysLocation=pass:quotes[_systemLocation_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`sysName`
+ a| 
+Le nouveau nom que vous souhaitez donner au système SNMP. Utiliser les conventions SNMP et MIB standard pour le nom du système. Placez le nom du système SNMP entre crochets ([ ]).
+
+
+
+ a| 
+`sysContact`
+ a| 
+Nom de la personne à contacter pour le système géré avec des informations sur la façon de contacter cette personne. Placez le nom du contact SNMP entre crochets ([ ]).
+
+
+
+ a| 
+`sysLocation`
+ a| 
+L'emplacement physique du système, tel que « 3rd flr ». Placez l'emplacement du système SNMP entre crochets ([ ]).
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.30

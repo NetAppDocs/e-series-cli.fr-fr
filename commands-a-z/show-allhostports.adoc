@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/show-allhostports.html 
+sidebar: sidebar 
+keywords: show, host, ports 
+summary: La commande show allHostports renvoie des informations sur les ports hôtes configurés. 
+---
+= Affiche les ports hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show allHostPorts` la commande renvoie des informations sur les ports hôtes configurés.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour tous les ports hôtes connectés à une matrice de stockage, cette commande renvoie les informations suivantes :
+
+* Identifiant du port hôte
+* Nom du port hôte
+* Type d'hôte
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+show allHostPorts
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Remarques
+
+Cette commande renvoie des informations sur le port hôte HBA similaires à cet exemple.
+
+[listing]
+----
+HOST PORT IDENTIFIER     HOST PORT NAME  HOST TYPE
+12:34:56:54:33:22:22:22  Jupiter1        Solaris
+12:34:56:78:98:98:88:88  Pluto1          Windows 2000/Server 2003 Clustered
+54:32:12:34:34:55:65:66  Undefined       Undefined
+----
+
+
+== Niveau minimal de firmware
+
+5.40

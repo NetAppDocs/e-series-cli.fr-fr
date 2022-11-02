@@ -1,0 +1,105 @@
+---
+permalink: commands-a-z/clear-asyncmirrorfault.html 
+sidebar: sidebar 
+keywords: clear, asynchronous mirroring, fault 
+summary: 'La commande Clear Mirrorasynchrone efface un défaut de mise en miroir asynchrone "sticky" d"un ou de plusieurs groupes de miroirs asynchrones et d"un ou plusieurs volumes membres de groupe de miroirs asynchrones.' 
+---
+= Effacer la panne de mise en miroir asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear asyncMirrorFault` cette commande efface une panne « collante » de mise en miroir asynchrone d'un ou de plusieurs groupes de miroirs asynchrones et d'un ou plusieurs volumes membres de groupes de miroirs asynchrones.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Un groupe de miroirs asynchrone et ses volumes membres peuvent rencontrer des défaillances « collantes » de mise en miroir asynchrone, qui se produisent à un seul point dans le temps, sans affecter la fonctionnalité des miroirs. Ces types de défaut doivent être examinés, mais ne nécessitent peut-être pas de modifications de la configuration.
+
+Un groupe de miroirs asynchrone et ses volumes membres peuvent avoir ou peuvent avoir plusieurs défauts de rémanentes associés. Cette commande efface toutes les pannes associées au groupe de miroirs asynchrones et à son volume membre. Cependant, si un groupe de miroirs asynchrones a une défaillance et que l'un de ses volumes membres présente une défaillance, le fait d'effacer la défaillance sur le groupe de miroirs asynchrones n'efface pas la défaillance sur son volume membre.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+clear asyncMirrorFault(all |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName1"
+... "asyncMirrorGroupNameN"_]] |
+volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]])
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`all`
+ a| 
+Utilisez ce paramètre pour effacer toutes les défaillances de mise en miroir asynchrone de tous les groupes de miroirs asynchrones et de tous les volumes membres du groupe de miroirs asynchrone.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones à partir duquel vous souhaitez effacer la défaillance de la mise en miroir asynchrone. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Noms de plusieurs groupes de miroirs asynchrones à partir desquels vous souhaitez effacer la panne de la mise en miroir asynchrone. Entrez les noms des groupes de miroirs asynchrones à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume membre spécifique (dans un groupe de miroirs asynchrone) à partir duquel vous souhaitez effacer la défaillance de la mise en miroir asynchrone. Placez le nom du volume membre entre crochets ([ ]). Si le nom du volume contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (" ") à l'intérieur de crochets.
+
+
+
+ a| 
+`volumes`
+ a| 
+Noms de plusieurs volumes membres (dans un groupe de miroirs asynchrone) à partir desquels vous souhaitez effacer la panne de mise en miroir asynchrone. Entrez les noms des volumes membres à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

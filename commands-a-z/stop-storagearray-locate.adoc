@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-storagearray-locate.html 
+sidebar: sidebar 
+keywords: stop, storage, array, locate 
+summary: La commande stop storageArray Locate éteint les voyants de la matrice de stockage qui ont été allumés par la commande start storageArray locate. 
+---
+= Arrêter la localisation de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop storageArray locate` commande désactive les voyants de la matrice de stockage qui ont été allumés par le `start storageArray locate` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+stop storageArray locate
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10

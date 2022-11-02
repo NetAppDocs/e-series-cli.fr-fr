@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/delete-initiator.html 
+sidebar: sidebar 
+keywords: delete, initiator, command, object, supported, array, role 
+summary: 'La commande supprimer l"objet initiateur supprime celui-ci.' 
+---
+= Supprimer l'initiateur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete initiator` commande supprime l'objet initiateur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[IMPORTANT]
+====
+Cette commande remplace le document obsolète xref:delete-iscsiinitiator.adoc[Supprimer l'initiateur iSCSI] commande.
+
+====
+[NOTE]
+====
+Cette commande s'applique uniquement aux technologies iSCSI, iser, NVMe over RoCE, NVMe over InfiniBand et NVMe over Fibre Channel.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+
+delete initiator (["initiatorName"] | <"initiatorQualifiedName">)
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`initiator`
+ a| 
+Permet de spécifier l'identifiant de l'initiateur pour lequel vous souhaitez supprimer. Placez le nom entre guillemets ("` ''). Vous devez également inclure le nom entre crochets ([ ]) si la valeur est un libellé utilisateur ou des crochets d'angle ( ) si la valeur est un nom qualifié (par exemple, iqn ou nqn).
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.41

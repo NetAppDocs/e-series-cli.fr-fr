@@ -1,0 +1,87 @@
+---
+permalink: commands-category/mirroring-commands.html 
+sidebar: sidebar 
+keywords: commands, mirroring, asynchronous, synchronous, command 
+summary: Commandes de mise en miroir 
+---
+= Commandes de mise en miroir
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Commandes de mise en miroir asynchrone
+
+link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
+
+link:../commands-a-z/add-volume-asyncmirrorgroup.html["Ajout de volume à un groupe de miroirs asynchrone"]
+
+link:../commands-a-z/stop-asyncmirrorgroup-rolechange.html["Annuler l'inversion du rôle du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html["Vérifiez la cohérence du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/clear-asyncmirrorfault.html["Effacer la panne de mise en miroir asynchrone"]
+
+link:../commands-a-z/create-asyncmirrorgroup.html["Créer un groupe de miroirs asynchrone"]
+
+link:../commands-a-z/deactivate-storagearray.html["Désactiver la mise en miroir asynchrone"]
+
+link:../commands-a-z/delete-asyncmirrorgroup.html["Supprimer le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/establish-asyncmirror-volume.html["Établir une paire en miroir asynchrone"]
+
+link:../commands-a-z/remove-asyncmirrorgroup.html["Supprime la paire en miroir asynchrone incomplète du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/remove-volume-asyncmirrorgroup.html["Suppression du volume du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Réinitialise les statistiques du groupe de miroirs asynchrone"]
+
+link:../commands-a-z/reset-iscsiipaddress.html["Réinitialisez l'adresse IP iSCSI"]
+
+link:../commands-a-z/resume-asyncmirrorgroup.html["Reprendre le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Enregistrer les statistiques de groupe de miroirs asynchrones"]
+
+link:../commands-a-z/set-asyncmirrorgroup.html["Définissez le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Affiche les groupes de miroirs asynchrones"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Affiche la progression de la synchronisation des groupes de miroirs asynchrones"]
+
+link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Démarrez la synchronisation de la mise en miroir asynchrone"]
+
+link:../commands-a-z/suspend-asyncmirrorgroup.html["Suspendre le groupe de miroirs asynchrone"]
+
+link:../commands-a-z/diagnose-asyncmirrorgroup.html["Tester la connectivité avec un groupe de miroirs asynchrone"]
+
+
+
+== Commandes de mise en miroir synchrone
+
+link:../commands-a-z/activate-synchronous-mirroring.html["Activer la mise en miroir synchrone"]
+
+link:../commands-a-z/check-syncmirror.html["Vérifiez l'état de la mise en miroir synchrone"]
+
+link:../commands-a-z/create-syncmirror.html["Création d'une mise en miroir synchrone"]
+
+link:../commands-a-z/deactivate-storagearray-feature.html["Désactiver la mise en miroir synchrone"]
+
+link:../commands-a-z/diagnose-syncmirror.html["Diagnostiquez la mise en miroir synchrone"]
+
+link:../commands-a-z/recreate-storagearray-mirrorrepository.html["Recréez le volume du référentiel de mise en miroir synchrone"]
+
+link:../commands-a-z/remove-syncmirror.html["Supprimer la mise en miroir synchrone"]
+
+link:../commands-a-z/resume-syncmirror.html["Reprise de la mise en miroir synchrone"]
+
+link:../commands-a-z/set-syncmirror.html["Définissez la mise en miroir synchrone"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Affiche les candidats au volume de mise en miroir synchrone"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Affiche la progression de la synchronisation du volume de la mise en miroir synchrone"]
+
+link:../commands-a-z/start-syncmirror-primary-synchronize.html["Démarrez la synchronisation de la mise en miroir synchrone"]
+
+link:../commands-a-z/suspend-syncmirror-primaries.html["Suspendre la mise en miroir synchrone"]

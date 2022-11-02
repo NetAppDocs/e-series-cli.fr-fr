@@ -1,0 +1,175 @@
+---
+permalink: commands-a-z/start-volume-initialize.html 
+sidebar: sidebar 
+keywords: initialize, thin volume 
+summary: La commande start volume initialize initialise ou réinitialise un volume fin. 
+---
+= Initialiser le volume fin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start volume initialize` la commande initialise ou réinitialise un volume fin.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+L'action dépend des paramètres utilisés :
+
+* Utilisée sans aucun paramètre facultatif, cette commande supprime les données du volume fin. La capacité du volume de référentiel n'est pas affectée.
+* Utilisée avec l'un des paramètres facultatifs, cette commande entraîne une réinitialisation et des actions de volume de référentiel.
+
+
+[NOTE]
+====
+L'initialisation d'un volume fin lance une opération longue durée que vous ne pouvez pas arrêter.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volume [_volumeName_]] initialize
+pass:quotes[[existingRepositoryLabel=_existingRepositoryName_]]
+pass:quotes[[diskPool=_diskPoolName_ capacity=_capacityValue_]]
+[retainRepositoryMembers=(TRUE|FALSE)]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volume`
+ a| 
+Nom du volume sur lequel vous démarrez l'initialisation. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du volume entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Ce paramètre remplace le volume de référentiel par le volume de candidat spécifié.
+
+* La valeur spécifiée est une étiquette utilisateur de volume de référentiel existante. Le volume spécifié doit être un volume de référentiel non utilisé avec le nom dans le format approprié.
+* Si le nouveau volume de référentiel spécifié se trouve sur un autre pool de disques, le volume fin change de propriété pour ce pool.
+* L'ancien volume de référentiel sera supprimé par défaut.
+
+
+Si le nom du volume de référentiel existant contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques dans lequel vous souhaitez créer un nouveau volume de référentiel ayant la capacité spécifiée. Si le nom du pool de disques contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du pool de disques entre guillemets (" ").
+
+Vous devez utiliser ce paramètre avec `capacity` paramètre pour créer un nouveau volume de référentiel avec la capacité spécifiée.
+
+
+
+ a| 
+`capacity`
+ a| 
+La taille que vous souhaitez définir pour le volume de référentiel que vous créez. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+La capacité physique minimale est de 4 Go.
+
+La capacité physique maximale est de 257 To.
+
+Vous devez utiliser ce paramètre avec `diskPool` paramètre pour créer un nouveau volume de référentiel avec la capacité spécifiée.
+
+
+
+ a| 
+`retainRepositoryMembers`
+ a| 
+Si ce paramètre est défini sur `TRUE`, l'ancien référentiel est conservé. Par défaut, l'ancien référentiel est supprimé. Ce paramètre est ignoré si le référentiel existant est réutilisé.
+
+|===
+
+
+== Remarques
+
+Si vous ne spécifiez pas de volume avec le `volume` paramètre, cette commande réinitialise les métadonnées dans le référentiel et, en fait, entraîne l'affichage du volume fin vide sur l'hôte. Si vous spécifiez un volume avec le `*volume*` ce volume est remplacé par un volume nouvellement créé ou par un volume existant si vous en spécifiez un avec le `existingRepositoryLabel` paramètre. Si vous spécifiez un volume existant avec le `existingRepositoryLabel` paramètre dans un pool de disques différent, le volume fin change de propriété pour le nouveau pool de disques.
+
+Les paramètres de volume du volume fin, tels que la capacité virtuelle, le quota et le seuil d'avertissement, conservent leurs valeurs précédentes après la réinitialisation du volume fin.
+
+[NOTE]
+====
+Le format de disponibilité immédiate (IAF) ne s'applique pas aux volumes supérieurs à 64 To.
+
+====
+Le tableau suivant répertorie les limites de capacité pour un volume fin.
+
+[cols="2*"]
+|===
+| Type de capacité | Taille 
+
+
+ a| 
+Capacité virtuelle minimale
+ a| 
+32 MO
+
+
+
+ a| 
+Capacité virtuelle maximale
+ a| 
+256 TO
+
+
+
+ a| 
+Capacité physique minimale
+ a| 
+4 Go
+
+
+
+ a| 
+Capacité physique maximale
+ a| 
+257 TO
+
+|===
+Les volumes fins prennent en charge toutes les opérations réalisées par les volumes standard, à l'exception des cas suivants :
+
+* Vous ne pouvez pas modifier la taille du segment d'un volume fin.
+* Vous ne pouvez pas activer la vérification de redondance préalable à la lecture d'un volume fin.
+* Vous ne pouvez pas utiliser un volume fin comme volume cible dans une copie de volume.
+* Vous ne pouvez pas utiliser un volume fin dans une opération de mise en miroir synchrone.
+
+
+Si vous souhaitez modifier un volume fin en volume standard, utilisez l'opération de copie de volume pour créer une copie du volume fin. La cible d'une copie de volume est toujours un volume standard.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.30 augmente la capacité maximale d'un volume fin à 256 To.

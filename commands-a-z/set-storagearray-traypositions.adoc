@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/set-storagearray-traypositions.html 
+sidebar: sidebar 
+keywords: set, storage, array, tray, positions 
+summary: La commande set storageArray trayPositions définit la position des bacs dans un tableau de stockage. Vous devez inclure tous les bacs de la matrice de stockage lorsque vous entrez cette commande. 
+---
+= Définissez les positions des plateaux de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray trayPositions` commande définit la position des bacs dans une matrice de stockage. Vous devez inclure tous les bacs de la matrice de stockage lorsque vous entrez cette commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`trayPositions`
+ a| 
+Liste de tous les ID de bac. La séquence des ID de bac dans la liste définit les positions du plateau de contrôleur et des tiroirs d'unité dans une matrice de stockage. Les valeurs valides sont `0` à `99`. Entrez les valeurs d'ID de bac séparées par un espace. Placez la liste des valeurs d'ID de bac entre parenthèses. Pour les matrices de stockage dans lesquelles le plateau de contrôleur possède un identifiant prédéfini qui ne se trouve pas dans la plage de valeurs de position de bac valides, utilisez le `controller` valeur.
+
+|===
+
+
+== Remarques
+
+Cette commande définit la position d'un bac dans une matrice de stockage par la position de l'ID de bac dans `trayPositions` liste. Par exemple, si vous avez un plateau de contrôleur avec un ID défini sur 84 et des tiroirs de disques avec des ID définis sur 1, 12 et 50, le `trayPositions` séquence (`84 1 12 50`) place le plateau du contrôleur en première position, le bac d'entraînement 1 en deuxième position, le bac d'entraînement 12 en troisième position et le bac d'entraînement 50 en quatrième position. Le `trayPositions` séquence (`1 84 50 12`) place le plateau du contrôleur dans la deuxième position, le bac d'entraînement 1 en première position, le bac d'entraînement 50 en troisième position et le bac d'entraînement 12 en quatrième position.
+
+[NOTE]
+====
+Vous devez inclure tous les bacs de la matrice de stockage dans la liste définie par `trayPositions` paramètre. Si le nombre de bacs de la liste ne correspond pas au nombre total de bacs de la matrice de stockage, un message d'erreur s'affiche.
+
+====
+[NOTE]
+====
+Le logiciel de gestion montre visuellement la première position en haut et les autres positions dans l'ordre relatif en dessous avec la dernière position en bas.
+
+====
+
+
+== Niveau minimal de firmware
+
+6.10
+
+Pour 6.14 et 6.16, `controller` n'est pas une valeur valide.

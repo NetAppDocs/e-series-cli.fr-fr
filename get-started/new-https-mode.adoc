@@ -1,0 +1,154 @@
+---
+permalink: get-started/new-https-mode.html 
+sidebar: sidebar 
+keywords: new, smcli, https mode 
+summary: Le nouveau SMcli peut fonctionner en mode https qui offre des fonctionnalités de sécurité supplémentaires. 
+---
+= Mode SMcli https
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le SMcli peut fonctionner dans un `*https*` mode offrant des fonctions de sécurité supplémentaires.
+
+[NOTE]
+====
+Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous ne pouvez pas effectuer la mise à niveau vers la dernière version d'SANtricity par le biais de l'interface de ligne de commande héritée. Les mises à niveau de SANtricity 11.52 vers des versions ultérieures peuvent uniquement être effectuées via SMcli.
+
+====
+Lorsque vous utilisez la version 11.42 de la CLI, le moteur de script est créé dans l'un des modes suivants :
+
+* `*https*` -- un moteur de script REST est créé, avec des fonctions de sécurité supplémentaires.
+* `*symbol*` -- un moteur de script basé sur des symboles est créé.
+
+
+Nouvelles fonctions de sécurité disponibles dans `*https*` client :
+
+* L'authentification par certificat à l'aide de certificats de confiance est requise pour la sécurité avancée. Vous pouvez utiliser le `-k` option permettant d'utiliser un certificat auto-signé et d'exécuter des commandes en mode non sécurisé.
+* Vous pouvez utiliser la gestion de l'accès basée sur des rôles, avec différentes autorisations de sécurité attribuées à différents rôles. Utilisez le `-u` option permettant d'exécuter des commandes avec un argument de nom d'utilisateur.
+* Arguments de mot de passe précédemment disponibles dans `*symbol*` le mode peut également être utilisé dans `*https*` mode pour spécifier un mot de passe pour un rôle d'utilisateur particulier. Le `-p` permet de spécifier le mot de passe sur la ligne de commande, ou le `-P` cette option peut lire un mot de passe à partir d'un fichier ou de `stdin`.
+
+
+Cette rubrique présente plusieurs exemples qui illustrent les nouveaux paramètres de ligne de commande :
+
+
+
+== Les opérations nécessitant un mot de passe, le mode client https et le certificat approuvé sont installées sur la baie
+
+Dans l'exemple suivant, les options de nom d'utilisateur et de mot de passe sont fournies et un certificat approuvé est installé sur la baie.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Opérations nécessitant un mot de passe, en mode client https, aucun certificat approuvé n'est installé sur la baie
+
+Dans l'exemple suivant, les options de nom d'utilisateur et de mot de passe sont fournies, mais aucun certificat approuvé n'est installé sur la baie et sur `-k` cette option n'a pas été utilisée. L'exemple montre le résultat renvoyé.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Unable to establish a secure connection to the storage array as we were unable to confirm the connection is secure.
+Please configure the storage array to use a trusted security certificate. If the problem persists, contact Technical Support.
+
+SMcli failed.
+----
+
+
+== Opérations nécessitant un mot de passe, le mode client https, aucun certificat de confiance n'est installé, mais utilisant -k pour le certificat auto-signé
+
+Dans l'exemple suivant, comme dans l'exemple précédent, des options de nom d'utilisateur et de mot de passe sont fournies, mais aucun certificat approuvé n'est installé sur la baie. Toutefois, dans ce cas, le `-k` l'option a été utilisée pour utiliser un certificat auto-signé.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+----
+Dans cet exemple, en utilisant le `*symbol*` mode client, seule l'option de mot de passe est requise pour que la commande soit correctement exécutée.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -p adminPassword -c "set storageArray cacheBlockSize=4;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Opérations en lecture seule, mode client Symbol
+
+Dans cet exemple, dans `*symbol*` en mode client, ni le nom d'utilisateur ni le mot de passe ne sont fournis. Cette opération ne s'effectue qu'en lecture seule.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1  -c "show allVolumes;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+STANDARD/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Opérations en lecture seule, mode client http
+
+Dans l'exemple suivant, utiliser également une opération en lecture seule mais dans `*https*` mode client, le nom d'utilisateur et le mot de passe sont requis et fournis avec `-k` pour accepter un certificat auto-signé. Le `*https*` le mode client requiert un mot de passe même pour les opérations en lecture seule.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "show allVolumes;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+THICK/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----

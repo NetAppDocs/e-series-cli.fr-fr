@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/show-volumegroup-exportdependencies.html 
+sidebar: sidebar 
+keywords: show, volume, group, export, dependencies 
+summary: 'La commande show Volume Group exportDependencies affiche une liste des dépendances des disques d"un groupe de volumes que vous souhaitez déplacer d"une baie de stockage vers une autre baie de stockage.' 
+---
+= Afficher les dépendances d'exportation de groupe de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show volumeGroup exportDependencies` la commande affiche la liste des dépendances des lecteurs d'un groupe de volumes que vous souhaitez déplacer d'une matrice de stockage à une seconde matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[show volumeGroup [_volumeGroupName_]] exportDependencies
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Nom du groupe de volumes pour lequel vous souhaitez afficher les dépendances d'exportation. Placez le nom du groupe de volumes entre crochets ([ ]).
+
+|===
+
+
+== Remarques
+
+Cette commande fait tourner les lecteurs d'un groupe de volumes, lit le DACstore et affiche une liste des dépendances d'importation pour le groupe de volumes. Le groupe de volumes doit être à l'état exporté ou forcé.
+
+
+
+== Niveau minimal de firmware
+
+7.10

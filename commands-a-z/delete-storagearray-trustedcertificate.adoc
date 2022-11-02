@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/delete-storagearray-trustedcertificate.html 
+sidebar: sidebar 
+keywords: delete, storage, array, trusted, certificate, command, remove, specified, installed, web, servers 
+summary: 'La commande delete storageArray trustedCertificate supprime les certificats d"autorité de certification installés par l"utilisateur spécifiés des serveurs Web de la baie.' 
+---
+= Supprimer les certificats d'autorité de certification approuvés installés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete storageArray trustedCertificate` Commande supprime les certificats d'autorité de certification installés par l'utilisateur spécifiés des serveurs Web de la baie.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[delete storageArray trustedCertificate [(allUserInstalled |
+aliases=("_alias1_" ... "_aliasN_]"))]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allUserInstalled`
+ a| 
+Permet de spécifier la suppression de tous les certificats installés par l'utilisateur.
+
+
+
+ a| 
+`aliases`
+ a| 
+Permet de spécifier un ou plusieurs certificats CA à supprimer à l'aide des noms d'alias ou de spécifier tout. Les alias peuvent être depuis n'importe quel contrôleur. Placez tous les alias entre parenthèses. Si vous saisissez plusieurs alias, séparez-les par un espace.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete storageArray trustedCertificate allUserInstalled;"
+
+SMcli -n Array1 -c "delete storageArray trustedCertificate
+   aliases=("19527b38-8d26-44e5-8c7f-5bf2ca9db7cf" "04bf744c-413a-49f1-9666-88d74189591d");"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/start-ssdcache-performancemodeling.html 
+sidebar: sidebar 
+keywords: start, ssd, cache, performance, model 
+summary: La commande start ssdcache performanceModeling démarre la modélisation des performances pour le cache SSD. 
+---
+= Démarrez la modélisation des performances du cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start ssdCache performanceModeling` La commande démarre la modélisation des performances pour la mise en cache SSD.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Contexte
+
+La modélisation des performances permet de surveiller et de mesurer les activités d'E/S pendant une période donnée, puis d'estimer les performances de différentes tailles de cache SSD. Les performances sont estimées à l'aide de deux mesures : le pourcentage d'accès au cache et le temps de réponse moyen. Les données de modélisation des performances ne sont pas disponibles tant que vous n'avez pas arrêté l'opération à l'aide du `stop ssdCache performanceModeling` commande.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+start ssdCache pass:quotes[[_ssdCacheName_]] performanceModeling
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD pour lequel vous souhaitez modéliser les performances. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+|===
+
+
+== Remarques
+
+La modélisation des performances se termine et les données de modélisation des performances sont disponibles dans l'une des conditions suivantes :
+
+* Exécutez le `stop ssdCache performanceModeling` commande.
+* Récupère les données de modélisation des performances à l'aide du logiciel de gestion du stockage.
+
+
+La modélisation des performances se termine, mais aucune donnée n'est disponible dans l'une des conditions suivantes :
+
+* Vous redémarrez le contrôleur.
+* Vous pouvez modifier la configuration de la mémoire cache SSD.
+* L'état du cache SSD change.
+
+
+
+
+== Niveau minimal de firmware
+
+7.84

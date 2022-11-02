@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, group, synchronization, progress 
+summary: La commande show Mirrorasynchrone synchronizationProgress affiche la progression de la synchronisation périodique du groupe de miroirs asynchrones entre la matrice de stockage locale et la matrice de stockage distante. 
+---
+= Affiche la progression de la synchronisation des groupes de miroirs asynchrones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show asyncMirrorGroup synchronizationProgress` commande affiche la progression de la synchronisation _périodique_ du groupe de miroirs asynchrones entre la matrice de stockage locale et la matrice de stockage distante.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Cette commande renvoie la progression de la synchronisation des données sur toutes les paires mises en miroir dans le groupe miroir asynchrone. Cette commande indique la progression sous forme de pourcentage de synchronisation des données terminée.
+
+[NOTE]
+====
+Il existe deux types de synchronisation : la synchronisation initiale et la synchronisation périodique. La progression initiale de la synchronisation des groupes de miroirs asynchrones s'affiche dans la boîte de dialogue *opérations d'exécution longue* et en exécutant le `show storageArray longRunningOperations` commande.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+[synchronizationProgress]
+[summary]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom d'un groupe de miroirs asynchrones dont vous souhaitez afficher la synchronisation du groupe de miroirs asynchrones entre la matrice de stockage locale et la matrice de stockage distante. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+
+
+ a| 
+`synchronizationProgress`
+ a| 
+Ce paramètre affiche la progression de la synchronisation périodique du groupe de miroirs asynchrones.
+
+
+
+ a| 
+`summary`
+ a| 
+Ce paramètre affiche une liste concise d'informations sur la synchronisation du groupe de miroirs asynchrones entre la matrice de stockage locale et la matrice de stockage distante.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

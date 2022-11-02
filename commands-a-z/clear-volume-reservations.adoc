@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/clear-volume-reservations.html 
+sidebar: sidebar 
+keywords: clear, volume, reservations 
+summary: La commande clear volume reservations efface les réservations de volumes persistants. 
+---
+= Effacer les réservations de volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `clear volume reservations` commande efface les réservations de volume persistant.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+clear (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]]) reservations
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allVolumes`
+ a| 
+Paramètre permettant d'effacer les réservations de volume persistant sur tous les volumes de la baie de stockage.
+
+
+
+ a| 
+`volume`
+ a| 
+Nom d'un volume pour lequel vous effacez des réservations permanentes. Placez le nom du volume entre crochets ([ ]). Si le nom du volume contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (" ") à l'intérieur de crochets.
+
+
+
+ a| 
+`volumes`
+ a| 
+Les noms de plusieurs volumes pour lesquels vous effacez des réservations permanentes. Entrez les noms des volumes membres à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.

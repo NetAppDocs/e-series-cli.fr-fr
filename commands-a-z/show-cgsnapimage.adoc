@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/show-cgsnapimage.html 
+sidebar: sidebar 
+keywords: show, consistency, group, snapshot, image 
+summary: La commande show CGSnapImage affiche une ou plusieurs images de snapshot qui se trouvent dans un ou plusieurs groupes de cohérence de snapshot. 
+---
+= Affiche l'image Snapshot du groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show CGSnapImage` la commande affiche une ou plusieurs images snapshot qui se trouvent dans un ou plusieurs groupes de cohérence snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show ((CGSnapImage pass:quotes[[(_CGSnapImageName_ | _CGSnapImageSequenceNumber_)]]) |
+(CGSnapImages pass:quotes[[(_CGSnapImageNumber1_ ... _CGSnapImageNumbern_ |
+_CGSnapImageSequenceNumber1_ ... _CGSnapImageSequenceNumbern_)]]) |
+allCGSnapImages
+[summary]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`CGSnapImage` ou `CGSnapImages`
+ a| 
+Nom de l'image Snapshot dans un groupe de cohérence. Le nom d'une image instantanée se compose de deux parties :
+
+* Nom du groupe de cohérence
+* Identificateur de l'image Snapshot dans le groupe de cohérence.
+
+
+L'identifiant de l'image snapshot peut être l'un des suivants :
+
+* Valeur entière qui est le numéro de séquence du snapshot dans le groupe de cohérence.
+* `NEWEST` -- utilisez cette option pour afficher la dernière image snapshot créée dans le groupe de cohérence.
+* `OLDEST` -- utilisez cette option lorsque vous souhaitez afficher l'image snapshot la plus ancienne créée dans le groupe de cohérence.
+
+
+Placez le nom de l'image snapshot entre guillemets (" ") entre crochets ([ ]).
+
+Vous pouvez entrer plusieurs noms ou numéros de séquence d'image instantanée. Placez tous les noms d'image snapshot dans un jeu de guillemets doubles (" ") entre crochets ([ ]). Séparez chaque nom d'image snapshot par un espace.
+
+
+
+ a| 
+`allCGSnapImages`
+ a| 
+Paramètre permettant de renvoyer toutes les images de snapshot à partir des groupes de cohérence.
+
+
+
+ a| 
+`summary`
+ a| 
+Paramètre permettant de renvoyer une liste concise d'informations sur toutes les images d'instantané de la matrice de stockage.
+
+|===
+
+
+== Remarques
+
+Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
+
+* Identificateur du groupe de cohérence snapshot
+* Identifiant de l'image snapshot
+
+
+Par exemple, si vous souhaitez afficher l'image snapshot 12345 dans un groupe de cohérence snapshot portant le nom snapCGroup1, utilisez la commande suivante :
+
+[listing]
+----
+show CGsnapImage ["snapCGroup1:12345"];
+----
+Pour afficher l'image snapshot la plus récente du groupe de cohérence snapshot portant le nom snapCGroup1, utilisez la commande suivante :
+
+[listing]
+----
+show CGsnapImage ["snapCGroup1:newest"];
+----
+Pour afficher les images snapshot dans plusieurs groupes de cohérence snapshot ayant les noms snapCGroup1, snapCGroup2 et snapCGroup3, utilisez la commande suivante :
+
+[listing]
+----
+show CGsnapImages ["snapCGroup1:12345 snapCGroup2:newest snapCGroup3:oldest"];
+----
+Dans ces exemples, le nom du groupe de cohérence de snapshot est séparé de l'identificateur d'image Snapshot par deux-points (:).
+
+
+
+== Niveau minimal de firmware
+
+7.83

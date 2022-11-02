@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/getting-started-with-external-key-management.html 
+sidebar: sidebar 
+keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
+summary: 'Une clé de sécurité est une chaîne de caractères partagée entre les disques et les contrôleurs sécurisés d"une matrice de stockage. Lorsque vous utilisez la gestion externe des clés, vous créez et conservez les clés de sécurité sur un serveur de gestion des clés' 
+---
+= Mise en route avec la gestion externe des clés
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une clé de sécurité est une chaîne de caractères partagée entre les disques et les contrôleurs sécurisés d'une matrice de stockage. Lorsque vous utilisez la gestion externe des clés, vous créez et conservez les clés de sécurité sur un serveur de gestion des clés
+
+Consultez l'aide en ligne de SANtricity System Manager pour obtenir des informations conceptuelles sur l'utilisation des clés et des serveurs de gestion externes.
+
+Le workflow de base pour l'implémentation de clés de sécurité externes est le suivant :
+
+. *Générer une demande de signature de certificat*
+. *Obtenir les certificats client et serveur du serveur KMIP*
+. *Installer le certificat client*
+. *Définissez l'adresse IP et le numéro de port du serveur KMIP*
+. *Tester la communication avec le serveur KMIP*
+. *Créez une clé de sécurité de la matrice de stockage*
+. *Valider la clé de sécurité*
+
+
+
+
+== Étapes du workflow
+
+La gestion des certificats et la gestion externe des clés sont de nouvelles fonctions de sécurité avec la version SANtricity11.40. Pour commencer, suivez les étapes de base suivantes :
+
+. Générer une demande de signature de certificat à l'aide de l' `save storageArray keyManagementClientCSR` commande. Voir xref:save-storagearray-keymanagementclientcsr.adoc[Générer une demande de signature de certificat de gestion des clés].
+. Depuis le serveur KMIP, demandez un certificat de client et de serveur.
+. Installez le certificat client à l'aide de `download storageArray keyManagementCertificate` commande avec `certificateType` paramètre défini sur `client`. Voir xref:download-storagearray-keymanagementcertificate.adoc[Installation du certificat de gestion externe des clés de la baie de stockage].
+. Installez le certificat de serveur à l'aide de `download storageArray keyManagementCertificate` commande avec `certificateType` paramètre défini sur `server`. Voir xref:download-storagearray-keymanagementcertificate.adoc[Installation du certificat de gestion externe des clés de la baie de stockage].
+. Définissez l'adresse IP et le numéro de port du serveur de gestion des clés à l'aide du `set storageArray externalKeyManagement` commande. Voir xref:set-storagearray-externalkeymanagement.adoc[Définissez les paramètres externes de gestion des clés].
+. Testez la communication avec le serveur de gestion externe des clés à l'aide du `start storageArray externalKeyManagement test` commande. Voir xref:start-storagearray-externalkeymanagement-test.adoc[Tester la communication externe de gestion des clés].
+. Créez une clé de sécurité à l'aide du `create storageArray securityKey` commande. Voir xref:create-storagearray-securitykey.adoc[Créer une clé de sécurité].
+. Valider la clé de sécurité à l'aide du `validate storageArray securityKey` commande. Voir xref:validate-storagearray-securitykey.adoc[Valider la clé de sécurité interne ou externe].
+

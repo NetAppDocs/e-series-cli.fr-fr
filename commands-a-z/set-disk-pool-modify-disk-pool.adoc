@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/set-disk-pool-modify-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool, modify 
+summary: 'La commande Set DISKPOOL ajoute de la capacité à un pool de disques (Dynamic Capacity extension ou DCE) ou modifie la propriété du contrôleur pour l"ensemble du pool de disques.' 
+---
+= Définir le pool de disques (modifier le pool de disques)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set diskPool` La commande ajoute de la capacité à un pool de disques (extension dynamique de la capacité ou DCE) ou modifie la propriété du contrôleur pour le pool de disques entier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Ces deux opérations s'excluent mutuellement.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set diskPool pass:quotes[[_diskPoolName_]]
+(addDrives=pass:quotes[[_trayID1_,_drawerID1_,_slotID1_ ... _trayIDn_,_drawerIDn_,_slotIDn_]] |
+addCapacity=pass:quotes[(_diskPoolCapacity_))]
+[owner=(a| b)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques à modifier. Placez le nom du pool de disques entre crochets ([ ]). Si le nom du pool de disques comporte des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom entre guillemets (" ") à l'intérieur des crochets.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Les lecteurs que vous souhaitez ajouter au pool de disques. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement du lecteur que vous souhaitez ajouter. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement du lecteur que vous souhaitez ajouter. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`. Les valeurs d'ID de slot sont `1` à `24`. Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
+
+[NOTE]
+====
+Cette fonctionnalité est limitée à 12 disques.
+
+====
+
+
+ a| 
+`addCapacity`
+ a| 
+Capacité de stockage supplémentaire à ajouter au pool de disques. Ce paramètre sélectionne automatiquement les lecteurs qui répondent à la capacité que vous souhaitez ajouter. La capacité est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Contrôleur propriétaire du pool de disques. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Si vous ne spécifiez pas de propriétaire, le micrologiciel du contrôleur détermine le propriétaire.
+
+|===
+
+
+== Remarques
+
+Les volumes déjà présents dans le pool de disques restent en ligne et disponibles pour les opérations d'E/S pendant l'ajout de nouveaux lecteurs. Le pool de disques doit être à l'état complet avant d'ajouter de la capacité. Si le pool de disques n'est pas à l'état complet, exécutez l' `set diskPool complete` commande avant d'ajouter de nouveaux lecteurs.
+
+Pour ajouter de la capacité, spécifiez les disques individuels avec le `addDrives` ou une quantité de capacité d'entraînement avec le `addCapacity` paramètre. Si vous utilisez `addDrives`, l'hôte doit valider le jeu de lecteurs avant de permettre l'exécution de l'opération. Si vous utilisez le `addCapacity` paramètre, la capacité que vous spécifiez est prise en tant que capacité minimale à ajouter. Le candidat conduit avec la meilleure correspondance pour la qualité de service et une capacité supérieure ou égale à celle que vous avez spécifiée. Si aucun candidat n'est disponible avec une correspondance minimale, ou si la liste de lecteurs spécifiée n'est pas disponible ou si des discordances d'attributs sont détectées, l'opération échoue.
+
+Vous pouvez également utiliser cette commande pour changer la propriété d'un pool de disques d'un contrôleur de la matrice de stockage à l'autre. La commande permettant de modifier la propriété s'excluent mutuellement et permet d'ajouter des disques ou d'ajouter de la capacité.
+
+
+
+== Niveau minimal de firmware
+
+7.83

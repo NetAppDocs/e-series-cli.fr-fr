@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/resume-ssdcache.html 
+sidebar: sidebar 
+keywords: resume, ssd, cache 
+summary: La commande RESUME ssdcache redémarre la mise en cache de tous les volumes utilisant le cache SSD qui a été temporairement arrêté avec la commande suspend ssdcache. 
+---
+= Reprenez le cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `resume ssdCache` La commande redémarre la mise en cache de tous les volumes qui utilisent le cache SSD qui a été temporairement arrêté avec le `suspend ssdCache` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+resume ssdCache pass:quotes[[_ssdCacheName_]]
+----
+
+
+== Paramètre
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD dont vous souhaitez reprendre les opérations de mise en cache. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères spéciaux ou se compose uniquement de nombres, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

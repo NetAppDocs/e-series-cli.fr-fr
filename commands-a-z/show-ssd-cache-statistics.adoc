@@ -1,0 +1,166 @@
+---
+permalink: commands-a-z/show-ssd-cache-statistics.html 
+sidebar: sidebar 
+keywords: show, ssd, cache, statistics 
+summary: 'La commande show ssdcache affiche les données relatives à l"utilisation du cache SSD.' 
+---
+= Affiche les statistiques du cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show ssdCache` La commande affiche les données relatives à l'utilisation du cache SSD.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show ssdCache pass:quotes[[_ssdCacheName_]] [ssdCacheStatistics]
+[controller=(a|b|both)]
+pass:quotes[[file="_filename_"]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`ssdCache`
+ a| 
+Nom du cache SSD pour lequel vous souhaitez récupérer des informations. Placez le nom du cache SSD entre crochets ([ ]). Si le nom du cache SSD contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du cache SSD entre guillemets (") dans les crochets.
+
+
+
+ a| 
+`ssdCacheStatistics`
+ a| 
+Paramètre facultatif pour le `show ssdCache` commande indiquant que vous souhaitez récupérer les statistiques du cache.
+
+
+
+ a| 
+`controller`
+ a| 
+Chaque contrôleur stocke les métadonnées de cache SSD pour les volumes qu'il possède. Par conséquent, les statistiques de cache SSD sont conservées et affichées par contrôleur. Les identifiants de contrôleur valides sont `a`, `b`, ou `both`, où `a` Le contrôleur est-il dans le slot A , `b` Est le contrôleur dans le slot B, et `both` est-ce les deux contrôleurs. Placez l'identificateur du contrôleur entre crochets ([ ]). Si vous ne spécifiez pas de contrôleur, la valeur par défaut est `both`.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin d'accès au fichier et le nom du fichier dans lequel vous souhaitez enregistrer les statistiques du cache SSD. Des statistiques supplémentaires sont disponibles lorsque vous enregistrez les statistiques dans un fichier.
+
+Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\ssdcachestats.csv"`.
+
+Vous pouvez utiliser n'importe quel nom de fichier, mais vous devez utiliser le `.csv` extension.
+
+|===
+
+
+== Remarques
+
+Les statistiques suivantes sont affichées à l'écran :
+
+* *Reads* -- nombre total de lectures de l'hôte de volumes SSD compatibles avec le cache.
++
+Comparez les lectures relatives aux écritures. Les lectures doivent être supérieures aux écritures pour des opérations de cache SSD efficaces. Plus le rapport entre les lectures et les écritures est élevé, meilleur est le fonctionnement du cache.
+
+* *Erites* -- nombre total d'écritures de l'hôte sur des volumes SSD compatibles avec le cache.
+* *Cache Hits* -- un nombre du nombre d'accès au cache.
+* *Cache Hits (%)* -- dérivés de cache Hits/total reads.
++
+Le pourcentage de réussite dans le cache doit être supérieur à 50 % pour une opération de cache SSD efficace. Un petit nombre peut être indicatif de plusieurs éléments :
+
++
+** Le rapport entre les lectures et les écritures est trop faible.
+** Les lectures ne sont pas répétées.
+** La capacité de cache est trop faible.
++
+[NOTE]
+====
+Pour vous aider à déterminer la capacité de cache SSD idéale, vous pouvez exécuter l'outil Performance Modeling Tool à l'aide du `start ssdCache [ssdCacheName] performanceModeling` commande.
+
+====
+
+
+* *Allocation de cache (%)* -- la quantité de stockage de cache SSD allouée, exprimée en pourcentage du stockage de cache SSD disponible pour ce contrôleur. Dérivé des octets alloués/octets disponibles.
++
+Le pourcentage d'allocation du cache correspond généralement à 100 %. Si ce chiffre est inférieur à 100 %, cela signifie que le cache n'a pas été monté en charge ou que la capacité de cache SSD est supérieure à toutes les données auxquelles on accède. Dans ce dernier cas, une capacité de cache SSD réduite pourrait atteindre le même niveau de performances. Cela n'indique pas que les données en cache ont été placées dans le cache SSD. Il s'agit simplement d'une étape de préparation avant le placement des données dans le cache SSD.
+
+* *Utilisation du cache (%)* -- la quantité de stockage du cache SSD qui contient des données provenant de volumes activés, exprimée en pourcentage de stockage de cache SSD alloué. Cette valeur représente l'utilisation ou la densité du cache SSD. Dérivé des octets de données utilisateur / octets alloués.
++
+Le pourcentage d'utilisation du cache est généralement inférieur à 100 %, peut-être bien inférieur. Ce chiffre indique le pourcentage de capacité de cache SSD remplie par les données de cache. En fait, ce nombre est inférieur à 100 %, chaque unité d'allocation du cache SSD, le bloc de cache SSD, est divisée en unités plus petites appelées sous-blocs, qui sont remplis de manière indépendante. Un chiffre plus élevé est généralement meilleur, mais les gains de performances peuvent être significatifs, même avec un nombre plus faible.
+
+
+
+Ces statistiques supplémentaires sont incluses lorsque vous enregistrez les données dans un fichier :
+
+* *Read Blocks* -- nombre de blocs dans les lectures de l'hôte.
+* *Write Blocks* -- nombre de blocs dans les écritures de l'hôte.
+* *Blocs d'accès complets* -- nombre d'accès au cache de bloc.
++
+Les blocs de réussite complets indiquent le nombre de blocs qui ont été entièrement lus depuis le cache SSD. Le cache SSD n'est bénéfique que pour les opérations liées au taux d'accès complet au cache.
+
+* *Partial Hits* -- nombre de lectures d'hôte où au moins un bloc, mais pas tous les blocs, se trouvaient dans le cache SSD. Il s'agit d'un cache SSD *Mlle* où les lectures étaient satisfaites à partir du volume de base.
++
+Les accès partiels au cache et les blocs de réussite partielle dans le cache sont issus d'une opération qui ne compte qu'une partie de ses données dans le cache SSD. Dans ce cas, l'opération doit extraire les données du volume HDD mis en cache. Avec SSD cache, ce type d'accès aux résultats n'offre aucune amélioration de la performance. Si le nombre partiel de blocs de réussite du cache est supérieur aux blocs de réussite du cache complet, il est possible qu'un type différent d'E/S (système de fichiers, base de données ou serveur Web) puisse améliorer les performances.
+
+* *Contre-arguments -- blocs* -- nombre de blocs dans les contre-clics partiels.
++
+Les accès partiels au cache et les blocs de réussite partielle dans le cache sont issus d'une opération qui ne compte qu'une partie de ses données dans le cache SSD. Dans ce cas, l'opération doit extraire les données du volume HDD mis en cache. Avec SSD cache, ce type d'accès aux résultats n'offre aucune amélioration de la performance. Si le nombre partiel de blocs de réussite du cache est supérieur aux blocs de réussite du cache complet, il est possible qu'un type différent d'E/S (système de fichiers, base de données ou serveur Web) puisse améliorer les performances.
+
+* *Nocks* -- nombre de lectures de l'hôte dans lesquelles aucun des blocs ne se trouve dans le cache SSD. Il s'agit d'une mémoire SSD cache dont les lectures sont satisfaites à partir du volume de base.
+* *Échecs -- blocs* -- nombre de blocs dans échecs.
+* *Actions de remplissage (lectures de l'hôte)* -- nombre de lectures de l'hôte où les données ont été copiées à partir du volume de base vers le cache SSD.
+* *Actions de remplissage (lectures de l'hôte) -- blocs* -- nombre de blocs dans actions de remplissage (lectures de l'hôte).
+* *Actions de remplissage (écritures d'hôte)* -- nombre d'écritures d'hôte où les données ont été copiées du volume de base vers le cache SSD.
++
+Le nombre d'actions de remplissage (écritures d'hôte) peut être égal à zéro pour les paramètres de configuration du cache qui ne remplissent pas le cache suite à une opération d'écriture d'E/S.
+
+* *Actions de remplissage (écritures de l'hôte) -- blocs* -- nombre de blocs dans actions de remplissage (écritures de l'hôte).
+* *Invalider actions* -- nombre de fois que les données ont été invaliées/supprimées du cache SSD. Une opération d'invalidation du cache est effectuée pour chaque requête d'écriture de l'hôte, chaque demande de lecture de l'hôte avec accès forcé à l'unité (FUA), chaque demande de vérification et dans d'autres circonstances.
+* *Actions de recyclage* -- nombre de fois où le bloc de cache SSD a été réutilisé pour un autre volume de base et/ou une plage LBA différente.
++
+Pour un fonctionnement efficace du cache, il est important que le nombre de cycles soit faible par rapport au nombre combiné d'opérations de lecture et d'écriture. Si le nombre d'actions de recyclage est proche du nombre combiné de lectures et d'écritures, le cache SSD est en échec. Soit la capacité de cache doit être augmentée, soit la charge de travail n'est pas adaptée à une utilisation avec SSD cache.
+
+* *Octets disponibles* -- nombre d'octets disponibles dans le cache SSD pour ce contrôleur.
++
+Les octets disponibles, les octets alloués et les octets de données utilisateur sont utilisés pour calculer le % d'allocation de cache et le % d'utilisation du cache.
+
+* *Octets alloués* -- nombre d'octets alloués par ce contrôleur à partir du cache SSD. Les octets alloués au cache SSD peuvent être vides ou contenir des données des volumes de base.
++
+Les octets disponibles, les octets alloués et les octets de données utilisateur sont utilisés pour calculer le % d'allocation de cache et le % d'utilisation du cache.
+
+* *Octets de données utilisateur* -- nombre d'octets alloués dans le cache SSD contenant des données des volumes de base.
++
+Les octets disponibles, les octets alloués et les octets de données utilisateur sont utilisés pour calculer le % d'allocation de cache et le % d'utilisation du cache.
+
+
+
+
+
+== Niveau minimal de firmware
+
+7.84

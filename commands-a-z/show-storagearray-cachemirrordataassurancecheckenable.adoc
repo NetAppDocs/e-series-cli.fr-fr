@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storagearray-cachemirrordataassurancecheckenable.html 
+sidebar: sidebar 
+keywords: show, storage, array, cache, mirror, data, assurance, check, enable 
+summary: 'La commande show storageArray cacheMirrorDataAssureCheckEnable renvoie l"état d"activation de la fonction de vérification de l"assurance des données du miroir du cache.' 
+---
+= Affichez l'activation de la vérification de l'assurance de données miroir de la baie de stockage cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray cacheMirrorDataAssuranceCheckEnable` la commande renvoie l'état d'activation de la fonctionnalité de vérification de l'assurance des données en miroir du cache.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray cacheMirrorDataAssuranceCheckEnable
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+8.41 Nouveau paramètre de commande.

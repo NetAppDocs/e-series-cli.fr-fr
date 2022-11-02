@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/set-host.html 
+sidebar: sidebar 
+keywords: set, host 
+summary: 'La commande set host attribue un hôte à un groupe d"hôtes ou déplace un hôte vers un autre groupe d"hôtes.' 
+---
+= Définir l'hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set host` commande attribue un hôte à un groupe d'hôtes ou déplace un hôte vers un autre groupe d'hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez également créer un nouveau groupe d'hôtes et affecter l'hôte au nouveau groupe d'hôtes à l'aide de cette commande. Les actions effectuées par cette commande dépendent du fait que l'hôte possède des mappages individuels ou ne possède pas de mappages individuels.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set host [hostName]
+hostGroup=pass:quotes[("_hostGroupName_"] | none | defaultGroup)
+userLabel=pass:quotes["_newHostName_"]
+hostType=pass:quotes[(_hostTypeIndexLabel_ | _hostTypeIndexNumber_)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte que vous souhaitez attribuer à un groupe d'hôtes. Placez le nom d'hôte entre crochets ([ ]). Si le nom d'hôte contient des caractères spéciaux ou des chiffres, vous devez inclure le nom d'hôte entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Nom du groupe d'hôtes auquel vous souhaitez attribuer l'hôte. (Le tableau suivant définit le mode d'exécution de la commande si l'hôte possède ou n'a pas de mappages individuels.) Placez le nom du groupe d'hôtes entre guillemets (" "). Le `defaultGroup` option est le groupe hôte qui contient l'hôte sur lequel le volume est mappé.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Le nouveau nom d'hôte. Placez le nom d'hôte entre guillemets (" ").
+
+
+
+ a| 
+`hostType`
+ a| 
+Étiquette d'index ou numéro du type d'hôte pour le port hôte. Utilisez le `show storageArray hostTypeTable` commande pour générer une liste des identificateurs de type d'hôte disponibles. Si le type d'hôte comporte des caractères spéciaux, placez-le entre guillemets (" ").
+
+|===
+[cols="3*"]
+|===
+| Paramètre de groupe hôte | L'hôte a des mappages individuels | L'hôte n'a pas de mappages individuels 
+
+
+ a| 
+`_hostGroupName_`
+ a| 
+L'hôte est supprimé du groupe d'hôtes présent et placé sous le nouveau groupe d'hôtes défini par `_hostGroupName_`.
+ a| 
+L'hôte est supprimé du groupe d'hôtes présent et placé sous le nouveau groupe d'hôtes défini par `_hostGroupName_`.
+
+
+
+ a| 
+`none`
+ a| 
+L'hôte est supprimé du groupe d'hôtes en tant que partition indépendante et placé sous le nœud racine.
+ a| 
+L'hôte est supprimé du groupe d'hôtes présent et placé sous le groupe par défaut.
+
+
+
+ a| 
+`defaultGroup`
+ a| 
+Échec de la commande.
+ a| 
+L'hôte est supprimé du groupe d'hôtes présent et placé sous le groupe par défaut.
+
+|===
+
+
+== Remarques
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
+
+Pour les noms, vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement. Les noms peuvent comporter un maximum de 30 caractères.
+
+
+
+== Niveau minimal de firmware
+
+6.10

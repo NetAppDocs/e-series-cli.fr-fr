@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/delete-snmpuser-username.html 
+sidebar: sidebar 
+keywords: delete, user, name, command, simple, network, management, protocol, create, register, effective, unregister, trap, destination, associate, remove 
+summary: 'La commande delete snmpUser username supprime un utilisateur USM (simple Network Management Protocol) existant que vous avez créé et enregistré au préalable à l"aide de la commande "create snmpuser". La suppression d"un utilisateur SNMP annule efficacement l"enregistrement de l"utilisateur. Toutes les destinations d"interruption associées à cet utilisateur sont également supprimées.' 
+---
+= Annuler l'inscription de l'utilisateur SNMPv3 USM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete snmpUser userName` Commande supprime un utilisateur USM (SNMP) simple Network Management Protocol) existant que vous avez créé et enregistré à l'aide de la commande «[.code]``create snmpUser``commande. La suppression d'un utilisateur SNMP annule efficacement l'enregistrement de l'utilisateur. Toutes les destinations d'interruption associées à cet utilisateur sont également supprimées.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snmpUser userName="_snmpUserName_" [engineId=(local | engineId)]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`userName`
+ a| 
+Nom de l'utilisateur SNMP USM que vous souhaitez supprimer. Placez le nom d'utilisateur SNMP USM entre guillemets (" ")
+
+
+
+ a| 
+`engineId`
+ a| 
+ID du moteur de l'utilisateur SNMP USM que vous souhaitez mettre à jour. L'ID du moteur est requis si plusieurs utilisateurs USM ont le même nom d'utilisateur. La valeur peut être «[.code]``_local_``" Pour spécifier l'agent SNMP local est l'agent faisant autorité ou une chaîne de chiffres hexadécimal pour spécifier un ID de moteur d'agent SNMP distant.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.72

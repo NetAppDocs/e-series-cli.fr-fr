@@ -1,0 +1,130 @@
+---
+permalink: commands-a-z/save-storagearray-keymanagementclientcsr.html 
+sidebar: sidebar 
+keywords: generate, key, management, certificate, sign, request, csr 
+summary: La commande save storageArray ManagementClientCSR demande une RSC générée pour la matrice de stockage que vous pouvez enregistrer dans un fichier. 
+---
+= Générer une requête de signature de certificat de gestion des clés (CSR)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray keyManagementClientCSR` Commande demande une RSC générée pour la matrice de stockage que vous pouvez enregistrer dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Cette commande ne s'applique qu'à la gestion externe des clés.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+save storageArray keyManagementClientCSR commonName=pass:quotes["_common_name_"]
+organization=pass:quotes["_organization_"]
+locality=pass:quotes["_locality_"]
+country=pass:quotes["_country_"]
+file=pass:quotes["_file_"]
+[organizationalUnit=pass:quotes["_organizational unit_"]]
+[stateProvince=pass:quotes["_state_province_"]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`commonName`
+ a| 
+La valeur saisie pour ce paramètre doit correspondre à l'un des noms d'utilisateur définis sur le serveur KMIP.
+
+
+
+ a| 
+`organization`
+ a| 
+Permet de spécifier le nom légal complet de l'entreprise auquel appartient la baie de stockage. N'abusez pas de l'abréviation et n'incluez pas de suffixes tels que Inc, Corp ou LLC.
+
+
+
+ a| 
+`locality`
+ a| 
+Vous permet de spécifier la ville ou la localité où la matrice de stockage est située,
+
+
+
+ a| 
+`country`
+ a| 
+Permet de spécifier le code alpha-2 ISO (International Organization for Standardization) 3166-1 à deux chiffres de votre pays, tel que les États-Unis.
+
+
+
+ a| 
+`file`
+ a| 
+Vous permet de spécifier le fichier et l'emplacement du fichier dans lequel vous allez enregistrer le fichier de certificat signé du contrôleur.
+
+
+
+ a| 
+`organizationalUnit`
+ a| 
+Permet de spécifier la division de l'organisation qui gère le certificat.
+
+
+
+ a| 
+`stateProvince`
+ a| 
+Permet de spécifier l'état ou la région où la matrice de stockage est située. Ceci ne doit pas être abrégé.
+
+|===
+
+
+== Exemple
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "save storageArray keyManagementClientCSR commonName=pass:quotes["_192.0.2.1_"]
+organization=pass:quotes["_Widgets Are Us_, _Inc_."]
+locality=pass:quotes["_sedgwick_"]
+country=pass:quotes["_US_"]
+file=pass:quotes["_latestCertificate_"]
+organizationalUnit=pass:quotes["_Products Unit_"]
+stateProvince=pass:quotes["_Kansas_"];"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40

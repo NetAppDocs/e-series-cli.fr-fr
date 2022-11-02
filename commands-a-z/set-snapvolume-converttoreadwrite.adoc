@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/set-snapvolume-converttoreadwrite.html 
+sidebar: sidebar 
+keywords: set, read-only, snapshot, volume, read/write, volume 
+summary: La commande set snapVolume convertToReadWrite change un volume snapshot qui est un volume en lecture seule à un volume snapshot qui est un volume en lecture/écriture. 
+---
+= Définissez le volume Snapshot en lecture seule sur le volume en lecture/écriture
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snapVolume convertToReadWrite` commande modifie un volume snapshot qui est un volume en lecture seule pour un volume snapshot qui est un volume en lecture/écriture.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez également utiliser cette commande pour identifier un nouveau volume de référentiel pour le volume de lecture/écriture ou définir un niveau d'avertissement de limite complète pour le volume de référentiel.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapImageVolumeName_"]] convertToReadWrite
+[(repositoryVolume="repos_xxxx" |
+repositoryVolume=pass:quotes[(_volumeGroupName_] [capacity=pass:quotes[_capacityValue_]])
+repositoryVolume=pass:quotes[(_diskPoolName_] [capacity=pass:quotes[_capacityValue_]))]]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapVolume`
+ a| 
+Nom du volume snapshot que vous souhaitez passer de lecture seule à lecture/écriture. Placez l'identificateur de volume de snapshot entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Nom du volume de référentiel que vous souhaitez utiliser pour le volume de lecture/écriture.
+
+Vous disposez de deux options pour définir le nom d'un volume de référentiel :
+
+* Utiliser un volume de référentiel existant : nom
+* Créez un nouveau volume de référentiel lorsque vous exécutez cette commande
+
+
+Le nom d'un volume de référentiel existant comprend deux parties :
+
+* Le terme « repos »
+* Identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel
+
+
+Placez le nom du volume de référentiel existant entre guillemets (" ").
+
+Si vous souhaitez créer un nouveau volume de référentiel lorsque vous exécutez cette commande, vous devez entrer le nom d'un groupe de volumes ou d'un pool de disques dans lequel vous voulez que le volume de référentiel soit. Vous pouvez également définir la capacité du volume du référentiel. Si vous souhaitez définir la capacité, vous pouvez utiliser les valeurs suivantes :
+
+* Valeur entière représentant un pourcentage de la capacité du volume de base
+* Valeur décimale représentant un pourcentage de la capacité du volume de base
+* Taille spécifique du volume du référentiel. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+Si vous n'utilisez pas l'option Capacity, le logiciel de gestion du stockage définit la capacité sur 20 % de la capacité du volume de base.
+
+Lorsque vous exécutez cette commande, le logiciel de gestion du stockage crée le volume de référentiel du volume de snapshot.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Pourcentage de capacité du volume du référentiel sur lequel vous recevez un avertissement indiquant que le volume du référentiel d'images de snapshot est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. La valeur par défaut est 75.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Le nom du volume de référentiel est automatiquement créé par le logiciel de gestion du stockage et le micrologiciel lorsque vous créez un nouveau groupe de snapshots. Vous ne pouvez pas renommer le volume du référentiel car le fait de renommer le volume du référentiel rompez la liaison avec les images de snapshot.
+
+Un volume de référentiel de groupe de snapshots est un volume extensible structuré comme une collection concaténée de 16 entités de volumes standard au maximum. Dans un premier temps, un volume de référentiel extensible ne comporte qu'un seul élément. La capacité du volume de référentiel extensible est exactement celle de l'élément unique. Vous pouvez augmenter la capacité d'un volume de référentiel extensible en y ajoutant des volumes standard. La capacité du volume de référentiel extensible composite devient alors la somme des capacités de tous les volumes standard concaténés.
+
+Un volume de référentiel de groupe de snapshots doit répondre à une exigence de capacité minimale pouvant somme des éléments suivants :
+
+* 32 Mo pour la prise en charge de la surcharge fixe pour le groupe de snapshots et pour le traitement de la copie sur écriture.
+* Capacité pour le traitement de retour arrière, qui correspond à 1/5000e de la capacité du volume de base.
+
+
+La capacité minimale est respectée par le micrologiciel du contrôleur et le logiciel de gestion du stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.83

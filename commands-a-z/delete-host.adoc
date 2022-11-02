@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/delete-host.html 
+sidebar: sidebar 
+keywords: delete, host 
+summary: La commande delete host supprime un ou plusieurs hôtes. 
+---
+= Supprimer l'hôte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `delete host` la commande supprime un ou plusieurs hôtes.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+delete host pass:quotes[[_hostName_]]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`host`
+ a| 
+Nom de l'hôte que vous souhaitez supprimer. Placez le nom d'hôte entre crochets ([ ]). Si le nom d'hôte contient des caractères spéciaux, vous devez inclure le nom d'hôte entre guillemets (" ") entre crochets.
+
+|===
+
+
+== Remarques
+
+Un hôte est un ordinateur connecté à la matrice de stockage et accède aux volumes de la matrice de stockage via les ports hôte de l'hôte.
+
+
+
+== Niveau minimal de firmware
+
+5.20

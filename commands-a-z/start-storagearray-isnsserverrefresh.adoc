@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/start-storagearray-isnsserverrefresh.html 
+sidebar: sidebar 
+keywords: start, storage, array, isns, server, refresh 
+summary: 'La commande start storageArray isnsServerRefresh lance une actualisation des informations d"adresse réseau pour le serveur iSNS.' 
+---
+= Démarrez l'actualisation du serveur iSNS de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start storageArray isnsServerRefresh` Commande lance une actualisation des informations d'adresse réseau pour le serveur iSNS.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Si le serveur DHCP est marginal ou ne répond pas, l'opération de renouvellement peut prendre de deux à trois minutes.
+
+[NOTE]
+====
+Cette commande s'applique uniquement à IPv4.
+
+====
+
+
+== Syntaxe
+
+[listing]
+----
+start storageArray isnsServerRefresh
+----
+
+
+== Paramètre
+
+Aucune.
+
+
+
+== Remarques
+
+Si vous avez utilisé `set storageArray isnsIPv4ConfigurationMethod` Commande pour définir la configuration, mais n'a pas défini la configuration sur DHCP, exécutant le `start storageArray isnsServerRefresh` renvoie une erreur.
+
+
+
+== Niveau minimal de firmware
+
+7.10

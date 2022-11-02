@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storagearray-usersession.html 
+sidebar: sidebar 
+keywords: display, storage, array, user, session 
+summary: 'La commande show storageArray usersession vous permet d"afficher la période d"expiration de session pour System Manager.' 
+---
+= Affichez la session utilisateur de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray userSession` La commande vous permet d'afficher la période d'expiration de session pour System Manager.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage ou Administrateur du support ou moniteur de stockage.
+
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray userSession
+----
+
+
+== Niveau minimal de firmware
+
+8.41

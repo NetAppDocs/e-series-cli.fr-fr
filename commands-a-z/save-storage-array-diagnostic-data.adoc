@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/save-storage-array-diagnostic-data.html 
+sidebar: sidebar 
+keywords: save, storage, array, diagnostic, data 
+summary: 'La commande save storageArray diagnosticData enregistre les données de diagnostic de la baie de stockage depuis les contrôleurs ou les modules de services environnementaux (ESM) dans un fichier.' 
+---
+= Enregistrer les données de diagnostic de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray diagnosticData` La commande enregistre les données de diagnostic de la matrice de stockage des contrôleurs ou des modules de services environnementaux (ESM) dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Vous pouvez consulter le contenu du fichier ultérieurement. Vous pouvez également envoyer le fichier à l'assistance technique pour un examen plus approfondi.
+
+Une fois les données de diagnostic enregistrées, vous pouvez réinitialiser les registres NVSRAM contenant les données de diagnostic afin que les anciennes données puissent être remplacées. Utilisez le `reset storageArray diagnosticData` commande permettant de réinitialiser les registres de données de diagnostic.
+
+[NOTE]
+====
+Exécutez cette commande uniquement en collaboration avec le support technique.
+
+====
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray diagnosticData [(controller | tray)]
+file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diagnosticData`
+ a| 
+Ce paramètre vous permet de télécharger les données de diagnostic à partir des contrôleurs ou des modules de commande électronique.
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les données de diagnostic de la matrice de stockage. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\sadiag.zip"`
+
+Cette commande enregistre automatiquement les données dans un fichier compressé. Cependant, cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier le `.zip` extension lors de la saisie du nom de fichier.
+
+|===
+
+
+== Remarques
+
+Dans les versions de cette commande antérieures à 7.77, l'option utilisateur était `esm` au lieu de `tray`. À partir de 7.77, `tray` remplace `esm`. L'utilisation de `esm` est toujours pris en charge, mais pour une meilleure compatibilité avec les futures versions, remplacez `esm` avec `tray`.
+
+
+
+== Niveau minimal de firmware
+
+6.16
+
+7.77 `tray` remplace `esm`.

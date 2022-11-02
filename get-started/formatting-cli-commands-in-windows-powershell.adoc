@@ -1,0 +1,35 @@
+---
+permalink: get-started/formatting-cli-commands-in-windows-powershell.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands, windows, powershell 
+summary: 'Windows PowerShell est un shell interactif qui permet d"accéder aux outils de ligne de commande.' 
+---
+= Règles de format pour les commandes CLI dans Windows PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Windows PowerShell est un shell interactif qui permet d'accéder aux outils de ligne de commande. Windows PowerShell améliore à l'invite de commandes Windows grâce à un ensemble plus robuste de commandes et de fonctionnalités de script. Vous pouvez exécuter toutes les commandes de l'interface de ligne de commandes et de script dans Windows PowerShell, mais Windows PowerShell présente des exigences de formatage uniques. Les exigences sont les suivantes :
+
+* Démarrez toutes les commandes SMcli avec un point et une barre oblique (./)
+* SMcli wrapper doit être identifié comme une commande exécutable avec l'extension .exe (SMcli.exe).
+* Placez la commande de script entre guillemets simples (' ')
+* Les guillemets qui font partie d'un nom, d'un chemin de fichier ou d'une valeur doivent avoir une barre oblique inverse avant chaque caractère de guillemets double (\")
+
+
+Voici un exemple de commande CLI pour créer un nom de baie de stockage dans Windows PowerShell. Notez l'utilisation des guillemets simples comme délimiteurs pour la commande script et la barre oblique inverse double marque autour du nom de la matrice de stockage, identifié comme `userLabel` dans la syntaxe de commande.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’set storageArray userLabel=\"Engineering\";’
+----
+Voici un exemple de commande CLI pour activer une fonctionnalité Premium dans Windows PowerShell. Notez l'utilisation des guillemets de la barre oblique inverse avant le chemin du fichier vers la clé de fonction Premium.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’enable storageArray feature file=\"C:\licenseKey.bin\";’
+----
+Dans les exemples précédents, les lettres majuscules et minuscules sont utilisées. Cette utilisation permet d'effacer le format des commandes. Cependant, Windows PowerShell n'est pas sensible à la casse et ne requiert pas les cas spécifiques à l'utilisation.

@@ -1,0 +1,191 @@
+---
+permalink: commands-a-z/show-controller.html 
+sidebar: sidebar 
+keywords: show, controller 
+summary: La commande show Controller renvoie des informations sur un contrôleur. 
+---
+= Affiche le contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show controller` la commande renvoie les informations relatives à un contrôleur.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Pour chaque contrôleur d'une matrice de stockage, cette commande renvoie les informations suivantes :
+
+* Statut (en ligne ou hors ligne)
+* La configuration actuelle du micrologiciel et de la NVSRAM
+* La configuration du micrologiciel en attente et la configuration NVSRAM (le cas échéant)
+* L'ID de la carte
+* L'ID du produit
+* La révision du produit
+* Le numéro de série
+* Date de fabrication
+* La taille du cache ou du processeur
+* La date et l'heure auxquelles le contrôleur est réglé
+* Les volumes associés (y compris le propriétaire préféré)
+* Le port Ethernet
+* Interface du disque physique
+* L'interface hôte, qui s'applique uniquement aux interfaces hôte Fibre Channel
+
+
+
+
+== Syntaxe
+
+[listing]
+----
+show (allControllers | controller [(a|b)])
+ [summary]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allControllers`
+ a| 
+Paramètre permettant de renvoyer des informations sur les deux contrôleurs de la matrice de stockage.
+
+
+
+ a| 
+`controller`
+ a| 
+Paramètre permettant de renvoyer des informations sur un contrôleur spécifique de la matrice de stockage. Les identifiants de contrôleur valides sont `a` ou `b` , où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`summary`
+ a| 
+Paramètre permettant de renvoyer une liste concise d'informations sur les deux contrôleurs de la baie de stockage.
+
+|===
+
+
+== Remarques
+
+La liste suivante est un exemple des informations renvoyées par le `show controller` commande. Cet exemple montre uniquement la présentation des informations et ne doit pas être considérée comme la meilleure pratique pour une configuration de baie de stockage.
+
+[listing]
+----
+Controller in slot A
+
+   Status: Online
+   Current configuration
+      Firmware version: 96.10.21.00
+         Appware version: 96.10.21.00
+         Bootware version: 96.10.21.00
+      NVSRAM version: N4884-610800-001
+   Pending configuration
+      Firmware version: Not applicable
+         Appware version: Not applicable
+         Bootware version: Not applicable
+      NVSRAM version: Not applicable
+      Transferred on: Not applicable
+   Board ID: 4884
+   Product ID: INF-01-00
+   Product revision: 9610
+   Serial number: 1T14148766
+   Date of manufacture: October 14, 2006
+   Cache/processor size (MB): 1024/128
+   Date/Time: Wed Feb 18 13:55:53 MST 2008
+   Associated Volumes (* = Preferred Owner):
+      1*, 2*, CTL 0 Mirror Repository*, Mirror Repository 1*,
+      JCG_Remote_MirrorMenuTests*
+   Ethernet port: 1
+      MAC address: 00:a0:b8:0c:c3:f5
+      Host name: ausctlr9
+      Network configuration: Static
+      IP address: 172.22.4.249
+      Subnet mask: 255.255.255.0
+      Gateway: 172.22.4.1
+      Remote login: Enabled
+   Drive interface: Fibre
+      Channel: 1
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 2
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 3
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 4
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Host interface: Fibre
+      Port: 1
+      Current ID: Not applicable/0xFFFFFFFF
+      Preferred ID: 126/0x0
+      NL-Port ID: 0x011100
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+      Topology: Fabric Attach
+      World-wide port name: 20:2c:00:a0:b8:0c:c3:f6
+      World-wide node name: 20:2c:00:a0:b8:0c:c3:f5
+      Part type: HPFC-5200    revision 10
+   Host interface: Fibre
+      Port: 2
+      Current ID: Not applicable/0xFFFFFFFF
+      Preferred ID: 126/0x0
+      NL-Port ID: 0x011100
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+      Topology: Fabric Attach
+      World-wide port name: 20:2c:00:a0:b8:0c:c3:f7
+      World-wide node name: 20:2c:00:a0:b8:0c:c3:f5
+      Part type: HPFC-5200    revision 10
+----
+Lorsque vous utilisez le `summary` paramètre, la commande renvoie la liste des informations sans les informations relatives au canal du lecteur et au canal hôte.
+
+Le `show storageArray` la commande renvoie également des informations détaillées sur le contrôleur.
+
+
+
+== Niveau minimal de firmware
+
+5.43 ajoute le `summary` paramètre.

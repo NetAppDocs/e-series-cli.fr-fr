@@ -1,0 +1,151 @@
+---
+permalink: commands-a-z/show-snapgroup.html 
+sidebar: sidebar 
+keywords: show, snapshot, group 
+summary: 'La commande show snapGroup renvoie des informations sur un ou plusieurs groupes d"images de snapshot.' 
+---
+= Affiche le groupe de snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show snapGroup` la commande renvoie des informations sur un ou plusieurs groupes d'images de snapshot.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allSnapGroups | snapGroup pass:quotes[[_snapGroupName_]] |
+snapGroups pass:quotes[["_snapGroupName1_" ... "_snapGroupNamen_"]])
+[summary | schedule]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allSnapGroups`
+ a| 
+Paramètre permettant de renvoyer des informations concernant tous les groupes de snapshots de la baie de stockage.
+
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots pour lequel vous souhaitez récupérer des informations. Placez le nom du groupe de snapshots entre crochets ([ ]). Si le nom du groupe de snapshots contient des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de snapshots entre guillemets (" ") entre crochets.
+
+
+
+ a| 
+`snapGroups`
+ a| 
+Les noms de plusieurs groupes de snapshots pour lesquels vous souhaitez récupérer des informations. Entrez les noms des groupes de snapshots à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms des groupes d'instantanés comportent des caractères spéciaux ou ne sont composés que de nombres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Le paramètre pour renvoyer une liste concise d'informations concernant les groupes snapshot.
+
+
+
+ a| 
+`schedule`
+ a| 
+Le paramètre pour renvoyer une liste concise d'informations sur les planifications des opérations de copie de groupe de snapshots.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Cette commande renvoie les informations relatives au groupe d'instantanés comme indiqué dans cet exemple :
+
+[listing]
+----
+SNAPSHOT GROUP DETAILS
+
+SNAPSHOT GROUPS-----------------------------
+
+SUMMARY
+----
+[listing]
+----
+  Total Snapshot Groups: 1
+  Total Snapshot Images: 0
+  Enabled Snapshot Image Schedules: 0
+  Status: 1 Optimal, 0 Non Optimal
+
+  Name      Type       Status    Associated Base Volume
+  2_SG_01   Standard   Optimal   2
+  Total Repository Capacity  Available Repository Capacity  Snapshot Image Limit
+  10.318 GB                  10.318 GB (100%)               0
+
+  Snapshot Images   Scheduled
+  0                 No
+DETAILS
+
+  Snapshot Group "2_SG_01"
+
+   Status:  Optimal
+   Type:    Standard
+   Associated base volume: 2
+   Cluster size: 65,536 bytes
+
+   Repository
+
+    Total repository volumes: 3
+    Aggregate repository status: Optimal
+    Total repository capacity:   10.318 GB
+    Used capacity:           0.000 MB (0%)
+    Available repository capacity: 10.318 GB (100%)
+    Repository full policy:    Auto-purge Snapshot Images
+    Utilization alert threshold: 75%
+
+   Snapshot images
+
+    Total Snapshot images: 0
+    Auto-delete Snapshot images: Disabled
+    Snapshot image schedule:   Not Applicable
+----
+
+
+== Niveau minimal de firmware
+
+7.83

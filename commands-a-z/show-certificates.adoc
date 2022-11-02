@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/show-certificates.html 
+sidebar: sidebar 
+keywords: show, certificates 
+summary: 'La commande Afficher les certificats vous permet d"afficher les certificats installés sur la banque de confiance du package CLI.' 
+---
+= Afficher les certificats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `Show certificates` Commande permet d'afficher les certificats installés sur le magasin de confiance du package CLI.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique aux baies de stockage EF600.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show localCertificate all | alias alias
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`alias`
+ a| 
+Permet de spécifier un certificat via l'alias défini par l'utilisateur.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8.60

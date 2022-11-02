@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-tray-locate.html 
+sidebar: sidebar 
+keywords: stop, tray, locate 
+summary: La commande stop bac locate éteint le voyant du bac qui a été allumé par la commande Start bac Locate. 
+---
+= Arrêtez la localisation du bac
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `stop tray locate` commande éteint le voyant du bac qui a été allumé par le `start tray locate` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing]
+----
+stop tray locate
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10

@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/diagnose-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: diagnose, command, tests, possible, communication, problems, local, storage, array, remote, asynchronous, mirror, group 
+summary: La commande Diagnose asynchrones MirrorGroup teste les problèmes de communication possibles entre la matrice de stockage locale et la matrice de stockage distante associée à un groupe de miroirs asynchrone. 
+---
+= Tester la connectivité avec un groupe de miroirs asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `diagnose asyncMirrorGroup` commande teste les éventuels problèmes de communication entre la matrice de stockage locale et la matrice de stockage distante associée à un groupe de miroirs asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
+
+[NOTE]
+====
+Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+
+====
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose asyncMirrorGroup [_asyncMirrorGroupName_]]
+testID=(all | connectivity | latency | bandwidth | portConnections)
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Nom du groupe de miroirs asynchrones existant à tester. Placez le nom du groupe de miroirs asynchrone entre crochets ([ ]). Si le nom du groupe de miroirs asynchrones comporte des caractères spéciaux ou des chiffres, vous devez inclure le nom du groupe de miroirs asynchrones entre guillemets (") à l'intérieur des crochets.
+
+
+
+ a| 
+`testID`
+ a| 
+Identifiant du test de diagnostic à exécuter. L'identifiant et les tests correspondants sont les suivants :
+
+* *All* -- exécute tous les tests associés à cette commande.
+* *Connectivity* -- vérifie que les deux contrôleurs ont un chemin de communication. Le test de connectivité envoie un message d'inter-contrôleur entre les baies de stockage, puis valide l'existence du groupe de miroirs asynchrone correspondant sur la baie de stockage distante. Il valide également que les membres du volume du groupe de miroirs asynchrones du système distant correspondent aux membres du volume du groupe de miroirs asynchrones sur le système local.
+* *Latence* -- envoie une commande d'unité de test SCSI à chaque volume de la matrice de stockage distante associé au groupe de miroirs asynchrones pour tester la latence minimale, moyenne et maximale.
+* *Bandwidth* -- envoie deux messages inter-contrôleur à la matrice de stockage distante pour tester la bande passante minimale, moyenne et maximale ainsi que la vitesse de liaison négociée du port sur le contrôleur effectuant le test.
+* *Connexions de port* -- affiche le port utilisé pour la mise en miroir sur la matrice de stockage locale et le port qui reçoit les données en miroir sur la matrice de stockage distante.
+
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.84

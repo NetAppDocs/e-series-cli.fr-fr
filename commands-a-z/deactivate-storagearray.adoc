@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/deactivate-storagearray.html 
+sidebar: sidebar 
+keywords: deactivate, asynchronous, mirroring 
+summary: La fonction Désactiver le réseau de stockage désactive la fonction de mise en miroir asynchrone. 
+---
+= Désactiver la mise en miroir asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `deactivate storageArray feature` Désactive la fonction de mise en miroir asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Tous les groupes de miroirs asynchrones ou paires de miroirs asynchrones existants doivent être supprimés de la baie de stockage locale et de la baie de stockage distante avant de pouvoir désactiver la fonction de mise en miroir asynchrone.
+
+
+
+== Syntaxe
+
+[listing]
+----
+deactivate storageArray feature=asyncRemoteMirror
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+7.84

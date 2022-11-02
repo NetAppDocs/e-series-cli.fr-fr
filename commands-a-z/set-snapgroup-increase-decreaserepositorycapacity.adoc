@@ -1,0 +1,125 @@
+---
+permalink: commands-a-z/set-snapgroup-increase-decreaserepositorycapacity.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, repository, volume, capacity 
+summary: 'La commande set snapGroup augmente/decreRepositoryCapacity augmente ou diminue la capacité d"un volume de référentiel de groupe de snapshots.' 
+---
+= Définissez la capacité du volume du référentiel du groupe de snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snapGroup increase/decreaseRepositoryCapacity` la commande augmente ou diminue la capacité d'un volume de référentiel de groupe de snapshots.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe permettant d'augmenter la capacité
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]] increaseRepositoryCapacity
+(repositoryVolumes="repos_xxxx" | repositoryVolumes=pass:quotes[((_volumeGroupName_]
+pass:quotes[[capacity=_capacityValue_]])) | repositoryVolumes=pass:quotes[((_diskPoolName_]
+pass:quotes[[capacity=_capacityValue_]])))
+----
+
+
+== Syntaxe pour la réduction de la capacité
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+decreaseRepositoryCapacity
+count=pass:quotes[_numberOfVolumes_]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots pour lequel vous souhaitez augmenter la capacité ou réduire la capacité. Placez le nom du groupe de snapshots entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Nom du volume du référentiel pour lequel vous souhaitez augmenter la capacité. Un volume standard disponible est ajouté au volume du référentiel pour augmenter la capacité du volume du référentiel.
+
+Vous disposez de deux options pour définir le nom d'un volume de référentiel :
+
+* Utiliser un volume de référentiel existant : nom
+* Créez un nouveau volume de référentiel lorsque vous exécutez cette commande
+
+
+Le nom d'un volume de référentiel existant est composé de deux parties :
+
+* Le terme « repos »
+* Un identificateur numérique à quatre chiffres que le logiciel de gestion du stockage attribue au nom du volume du référentiel
+
+
+Placez le nom du volume de référentiel existant entre guillemets (" ").
+
+Si vous souhaitez créer un nouveau volume de référentiel lorsque vous exécutez cette commande, vous devez entrer le nom d'un groupe de volumes ou d'un pool de disques dans lequel vous voulez que le volume de référentiel soit. Vous pouvez également définir la capacité du volume du référentiel. Si vous souhaitez définir la capacité, vous pouvez utiliser les valeurs suivantes :
+
+* Valeur entière représentant un pourcentage de la capacité du volume de base
+* Valeur décimale représentant un pourcentage de la capacité du volume de base
+* Taille spécifique du volume du référentiel. La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`.
+
+
+Si vous n'utilisez pas l'option Capacity, le logiciel de gestion du stockage définit la capacité sur 20 % de la capacité du volume de base.
+
+Lorsque vous exécutez cette commande, le logiciel de gestion du stockage crée le volume de référentiel du volume de snapshot.
+
+
+
+ a| 
+`count`
+ a| 
+Nombre de volumes de référentiel que vous souhaitez supprimer du groupe de snapshots. Utiliser des valeurs entières.
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Le nom du volume de référentiel est automatiquement créé par le logiciel de gestion du stockage et le micrologiciel lorsque vous créez un nouveau groupe de snapshots. Vous ne pouvez pas renommer le volume du référentiel car le fait de renommer le volume du référentiel interrompt la liaison avec les images de snapshot.
+
+Un volume de référentiel de groupe de snapshots est un volume extensible structuré comme une collection concaténée de 16 entités de volumes standard au maximum. Dans un premier temps, un volume de référentiel extensible ne comporte qu'un seul élément. La capacité du volume de référentiel extensible est exactement celle de l'élément unique. Vous pouvez augmenter la capacité d'un volume de référentiel extensible en y ajoutant des volumes standard. La capacité du volume de référentiel extensible composite devient alors la somme des capacités de tous les volumes standard concaténés.
+
+Un volume de référentiel de groupe de snapshots doit répondre à une exigence de capacité minimale pouvant somme des éléments suivants :
+
+* 32 Mo pour la prise en charge de la surcharge fixe pour le groupe de snapshots et pour le traitement de la copie sur écriture.
+* Capacité pour le traitement de retour arrière, qui correspond à 1/5000e de la capacité du volume de base.
+
+
+La capacité minimale est respectée par le micrologiciel du contrôleur et le logiciel de gestion du stockage.
+
+
+
+== Niveau minimal de firmware
+
+7.83

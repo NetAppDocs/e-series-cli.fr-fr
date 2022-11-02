@@ -1,0 +1,93 @@
+---
+permalink: commands-a-z/set-storagearray-autosupportmaintenancewindow.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, maintenance, window, individual, E2800, E5700, arrays 
+summary: La commande Set storageArray autoSupportMaintenanceWindow active ou désactive la fonction de fenêtre de maintenance de AutoSupport. 
+---
+= Activation ou désactivation de la fenêtre de maintenance AutoSupport (pour les baies E2800 ou E5700 individuelles)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray autoSupportMaintenanceWindow` La commande active ou désactive la fonctionnalité de la fenêtre de maintenance AutoSupport.
+
+Utilisez une fenêtre de maintenance pour supprimer la création automatique de ticket lors d'événements d'erreur. En mode de fonctionnement normal, la baie de stockage utilise AutoSupport pour ouvrir un dossier auprès du support technique en cas de problème. Lorsque AutoSupport est placé dans une fenêtre de maintenance, cette fonction est supprimée.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing]
+----
+set storageArray autoSupportMaintenanceWindow (enable | disable)
+    emailAddresses=("emailAddress1" "emailAddress2" ...)
+    [duration=<duration_in_hours>];
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`emailAddresses`
+ a| 
+La liste des adresses e-mail pour recevoir un e-mail de confirmation que la demande de fenêtre de maintenance a été traitée. Vous pouvez indiquer jusqu'à cinq adresses électroniques.
+
+
+
+ a| 
+`duration`
+ a| 
+Facultatif. Durée (en heures) d'activation de la fenêtre de maintenance. Si omis, la durée maximale prise en charge (72 heures) est utilisée.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow enable
+      emailAddresses=\"me@company.com\" duration=5;"
+
+SMcli completed successfully.
+----
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow enable
+      emailAddresses=(\"me1@company.com\" \"me2@company.com\");"
+
+SMcli completed successfully.
+----
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow disable
+      emailAddresses=(\"me1@company.com\" \"me2@company.com\" \"me3@company.com\"
+      \"me4@company.com\" \"me5@company.com\");"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de micrologiciel
+
+8.42

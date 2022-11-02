@@ -1,0 +1,260 @@
+---
+permalink: commands-a-z/create-volume-diskpool.html 
+sidebar: sidebar 
+keywords: create, volume, disk pool 
+summary: La commande create volume DISKPOOL crée un nouveau volume RAID standard ou un volume fin dans un pool de disques existant. 
+---
+= Créez le volume dans le pool de disques
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create volume diskPool` La commande crée un nouveau volume RAID standard ou un thin volume dans un pool de disques existant.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Certains paramètres de création d'un volume RAID standard dans un groupe de volumes ne sont pas compatibles pour la création de volumes de tout type dans un pool de disques. Lorsque vous utilisez des scripts plus anciens pour créer des volumes dans des pools de disques, assurez-vous que tous les paramètres sont valides pour les pools de disques. Des paramètres non valides empêchent les scripts de s'exécuter correctement et provoquent l'affichage d'une erreur.
+
+====
+
+
+== Syntaxe de création d'un volume standard
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[raidLevel=(1 | 6)]
+[blockSize=requestedBlockSizeValue]
+----
+
+
+== Syntaxe pour la création d'un volume à provisionnement fin
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`diskPool`
+ a| 
+Nom du pool de disques dans lequel créer le nouveau volume. Placez le nom du pool de disques entre guillemets (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Nom à attribuer au nouveau volume. Placez le nom du volume entre guillemets (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+Taille du volume que vous créez.
+
+Pour un volume RAID standard, la capacité qui sera allouée au volume.
+
+Dans le cas d'un volume fin, la valeur de capacité virtuelle exposée par le volume fin.
+
+La taille est définie en unités de `bytes`, `KB`, `MB`, `GB`, ou `TB`. Voici quelques exemples de syntaxe :
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`thinProvisioned`
+ a| 
+Ce paramètre permet le provisionnement fin du nouveau volume. Pour utiliser le provisionnement fin, définissez ce paramètre sur `TRUE`. Si vous ne souhaitez pas un provisionnement fin, définissez ce paramètre sur `FALSE`.
+
+
+NOTE: Le provisionnement fin n'est pas disponible pour les volumes de niveau RAID1.
+
+
+
+ a| 
+`owner`
+ a| 
+Contrôleur qui détient le volume. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Si vous ne spécifiez pas de propriétaire, le micrologiciel du contrôleur détermine le propriétaire.
+
+
+
+ a| 
+`mapping`
+ a| 
+Ce paramètre vous permet de mapper le volume à un hôte. Si vous souhaitez mapper ultérieurement, définissez ce paramètre sur `none`. Si vous souhaitez mapper maintenant, définissez ce paramètre sur `default`. Le volume est mappé à tous les hôtes ayant accès au pool de stockage.
+
+La valeur par défaut est `none`.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Ce paramètre identifie un référentiel existant pour un volume fin. Un volume de référentiel possède la capacité physique d'un volume fin. Ce paramètre s'applique uniquement au provisionnement fin. Si vous utilisez le `existingRepositoryLabel` paramètre, vous ne devez pas utiliser le `newRepositoryCapacity` paramètre.
+
+
+
+ a| 
+`newRepositoryCapacity`
+ a| 
+Ce paramètre crée un nouveau référentiel pour un volume fin. Un volume de référentiel possède la capacité physique d'un volume fin. Utilisez ce paramètre uniquement si vous définissez la valeur de l' `thinProvisioned` paramètre à `TRUE`.
+
+La taille est définie en unités de `MB`, `GB`, ou `TB`. Voici quelques exemples de syntaxe :
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+La valeur par défaut est de 50 % de la capacité virtuelle.
+
+
+
+ a| 
+`repositoryMaxCapacity`
+ a| 
+Ce paramètre définit la capacité maximale d'un référentiel pour un volume fin. Utilisez ce paramètre uniquement si vous définissez la valeur de l' `thinProvisioned` paramètre à `TRUE`.
+
+La taille est définie en unités de `MB`, `GB`, ou `TB`. Voici quelques exemples de syntaxe :
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Pourcentage de capacité du volume fin auquel vous recevez une alerte d'avertissement indiquant que le volume fin est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %.
+
+Les valeurs valides vont de 1 à 100.
+
+Le fait de définir ce paramètre sur 100 désactive les alertes d'avertissement.
+
+
+
+ a| 
+`repositoryExpansionPolicy`
+ a| 
+Ce paramètre définit la stratégie d'extension sur `automatic` ou `manual`. Lorsque vous modifiez la police de `automatic` à `manual`, la valeur de capacité maximale (quota) change à la capacité physique du volume de référentiel.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Paramètre permettant d'activer ou de désactiver la lecture préalable du cache. Pour désactiver la lecture préalable du cache, définissez ce paramètre sur `FALSE`. Pour activer la lecture préalable du cache, définissez ce paramètre sur `TRUE`.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Définit le niveau raid du volume en cours de création dans le pool de disques. Pour spécifier RAID1, définissez sur `1`. Pour spécifier RAID6, définissez sur `6`. Si le niveau raid n'est pas défini, RAID6 est utilisé par défaut pour le pool de disques.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Ce paramètre définit la taille de bloc du volume en cours de création. Valeur de `0` ou le paramètre non défini utilise la taille de bloc par défaut.
+
+|===
+
+
+== Remarques
+
+Chaque nom de volume doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+
+Pour les volumes fins, le `capacity` paramètre spécifie la capacité virtuelle du volume, et le `repositoryCapacity` paramètre spécifie la capacité du volume créé comme volume de référentiel. Utilisez le `existingRepositoryLabel` paramètre pour spécifier un volume de référentiel existant inutilisé au lieu de créer un nouveau volume.
+
+Pour obtenir de meilleurs résultats lors de la création d'un volume fin, le volume de référentiel doit déjà exister ou être créé dans un pool de disques existant. Si vous ne spécifiez pas certains des paramètres facultatifs lors de la création de volumes fins, le logiciel de gestion du stockage tentera de créer le volume du référentiel. Le volume candidat le plus souhaitable est un volume de référentiel qui existe déjà et qui répond aux exigences de taille. Le volume candidat le plus souhaitable suivant est un nouveau volume de référentiel créé dans l'extension libre du pool de disques.
+
+Les volumes de référentiel pour les volumes fins ne peuvent pas être créés dans des groupes de volumes.
+
+
+
+== La gestion de la Data assurance
+
+La fonctionnalité Data assurance (DA) renforce l'intégrité des données sur l'ensemble du système de stockage. DA permet à la matrice de stockage de vérifier si des erreurs peuvent se produire lorsque des données sont déplacées entre les hôtes et les lecteurs. Lorsque cette fonctionnalité est activée, la matrice de stockage ajoute des codes de vérification des erreurs (également appelés vérifications cycliques de redondance ou CRCS) à chaque bloc de données du volume. Après le déplacement d'un bloc de données, la matrice de stockage utilise ces codes CRC pour déterminer si des erreurs se sont produites au cours de la transmission. Les données potentiellement corrompues ne sont ni écrites sur le disque ni renvoyées à l'hôte.
+
+Si vous souhaitez utiliser la fonction DA, commencez par un pool ou un groupe de volumes qui inclut uniquement les lecteurs qui prennent en charge DA. Ensuite, créez des volumes compatibles DA. Enfin, mappez ces volumes compatibles DA à l'hôte à l'aide d'une interface d'E/S capable de gérer DA. Les interfaces d'E/S qui peuvent être DA incluent Fibre Channel, SAS et iser over InfiniBand (iSCSI Extensions for RDMA/IB). DA n'est pas pris en charge par iSCSI over Ethernet ou par le SRP sur InfiniBand.
+
+[NOTE]
+====
+Lorsque tous les disques sont compatibles DA, vous pouvez définir le `dataAssurance` paramètre à `enabled` Puis utiliser DA avec certaines opérations. Par exemple, vous pouvez créer un groupe de volumes comprenant des disques compatibles DA, puis créer un volume au sein de ce groupe de volumes qui est activé par DA. Les autres opérations qui utilisent un volume activé par DA peuvent prendre en charge la fonction DA.
+
+====
+Si `dataAssurance` le paramètre est défini sur `enabled`seuls les disques compatibles avec data assurance seront pris en compte pour les candidats aux volumes. dans le cas contraire, ils seront pris en compte les disques compatibles avec data assurance et non compatibles avec data assurance. Si seuls les disques Data assurance sont disponibles, le nouveau volume est créé à l'aide des disques Data assurance activés.
+
+
+
+== Niveau minimal de firmware
+
+7.83
+
+8.70 ajoute le `_raidLevel_` et `_blockSize` paramètres.

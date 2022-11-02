@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/show-storagearray-unreadablesectors.html 
+sidebar: sidebar 
+keywords: show, storage, array, unreadable, sectors 
+summary: La commande show storageArray unreadableSectors renvoie une table des adresses de tous les secteurs de la matrice de stockage qui ne peuvent pas être lus. 
+---
+= Montrez les secteurs illisibles de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show storageArray unreadableSectors` commande renvoie une table des adresses de tous les secteurs de la matrice de stockage qui ne peuvent pas être lus.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+
+
+
+== Contexte
+
+Le tableau renvoyé est organisé avec des en-têtes de colonne pour les informations suivantes :
+
+* Libellé utilisateur du volume
+* Numéro d'unité logique (LUN)
+* Accessible par (hôte ou groupe d'hôtes)
+* Date/heure
+* Adresse de bloc logique relative au volume (format hexadécimal -- 0xnnnnnnnn)
+* Emplacement du disque (bac t, emplacements)
+* Adresse de bloc logique relative au lecteur (format hexadécimal -- 0xnnnnnnnn)
+* Type de panne
+
+
+Les données sont triées en premier par étiquette de l'utilisateur du volume et en second par adresse de bloc logique (LBA). Chaque entrée du tableau correspond à un seul secteur.
+
+
+
+== Syntaxe
+
+[listing]
+----
+show storageArray unreadableSectors
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+6.10

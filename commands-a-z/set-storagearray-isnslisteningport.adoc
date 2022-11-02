@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-isnslisteningport.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, listen, port 
+summary: 'La commande set storageArray isnsListeningPort définit le port d"écoute du serveur iSNS.' 
+---
+= Définissez le port d'écoute du serveur iSNS de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray isnsListeningPort` Commande définit le port d'écoute du serveur iSNS.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray isnsListeningPort=pass:quotes[_listeningPortIPAddress_]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+L'adresse IP que vous souhaitez utiliser pour le port d'écoute du serveur iSNS. La plage de valeurs du port d'écoute est `49152` à `65535`. La valeur par défaut est `53205`.
+
+Le port d'écoute réside sur le serveur et effectue les opérations suivantes :
+
+* Surveille les demandes de connexion client entrantes
+* Gère le trafic vers le serveur
+
+
+Lorsqu'un client demande une session réseau avec un serveur, l'écouteur reçoit la requête réelle. Si les informations client correspondent aux informations d'écoute, l'écouteur accorde une connexion au serveur de base de données.
+
+|===
+
+
+== Remarques
+
+Un port d'écoute réside sur le serveur de base de données et est responsable de ces activités :
+
+* Écoute (surveillance) des demandes de connexion client entrantes
+* Gestion du trafic vers le serveur
+
+
+Lorsqu'un client demande une session réseau avec un serveur, un écouteur reçoit la requête réelle. Si les informations client correspondent aux informations d'écoute, l'écouteur accorde une connexion au serveur de base de données.
+
+
+
+== Niveau minimal de firmware
+
+7.10

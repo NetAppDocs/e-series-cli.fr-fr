@@ -1,0 +1,104 @@
+---
+permalink: get-started/learn-about-volume-group-migration.html 
+sidebar: sidebar 
+keywords: volume, group, migration, learn, data, access, export, import, component 
+summary: En savoir plus sur la migration de groupes de volumes 
+---
+= En savoir plus sur la migration de groupes de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[CAUTION]
+====
+Si le groupe de volumes comprend des disques compatibles NVMe ou FIPS, la clé de sécurité et la phrase de passe devront être enregistrées/enregistrées à partir de la baie source afin de déverrouiller les disques avant que le début de la migration vers la baie cible ne puisse commencer. Si la clé de sécurité et la phrase de passe ne sont pas connues et/ou si l'intégrité des données n'est pas nécessaire, une suppression de sécurité peut être effectuée. L'association de différents disques de sécurité de chiffrement n'est pas prise en charge sur les systèmes de stockage E-Series. Pour plus d'informations sur la manière de déverrouiller les disques à l'aide d'une clé de sécurité, d'effacer les disques FIPS et de déverrouiller ou de réinitialiser les disques NVMe verrouillés, consultez l'aide en ligne de SANtricity System Manager.
+
+====
+La migration d'un groupe de volumes vous permet d'exporter un groupe de volumes pour pouvoir importer le groupe de volumes vers une autre matrice de stockage. Vous pouvez également exporter un groupe de volumes pour stocker les données hors ligne.
+
+[NOTE]
+====
+*Perte possible d'accès aux données* -- vous devez exporter un groupe de volumes avant de déplacer le groupe de volumes ou d'importer le groupe de volumes.
+
+====
+
+
+== Exporter le groupe de volumes
+
+L'opération d'exportation de groupe de volumes prépare les lecteurs du groupe de volumes à la suppression. Vous pouvez supprimer les lecteurs pour le stockage hors ligne ou importer le groupe de volumes vers une autre matrice de stockage. Une fois l'opération de groupe de volumes d'exportation terminée, tous les lecteurs sont hors ligne. Tous les volumes associés ou les nœuds de capacité libre ne sont plus affichés dans le logiciel de gestion du stockage.
+
+
+
+== Composants non exportables
+
+Vous devez supprimer tous les composants non exportables avant de pouvoir terminer la procédure de groupe de volumes d'exportation. Vous devez supprimer ces composants :
+
+* Réserves persistantes
+* Mappages
+* Paires de copies de volume
+* Paires distantes en miroir
+* Référentiels en miroir
+
+
+
+
+== Etapes d'exportation de base pour un groupe de volumes
+
+L'exportation d'un groupe de volumes comprend les étapes suivantes sur la matrice de stockage _source_.
+
+. Enregistrez la configuration de la matrice de stockage.
+. Arrête toutes les E/S.
+. Sauvegarder les données sur les volumes du groupe de volumes.
+. Démontez ou déconnectez les systèmes de fichiers des volumes du groupe de volumes.
+. Localisez le groupe de volumes et étiquetez les lecteurs avec les noms des matrices de stockage source et de destination, le nom du groupe de volumes et le nombre total de lecteurs dans le groupe de volumes.
+. Mettez le groupe de volumes hors ligne.
+. Pour maintenir un flux d'air approprié dans le tiroir, procurez-vous des boîtiers de disque vides ou de nouveaux disques de manière à pouvoir remplacer les disques après le retrait des disques associés au groupe de volumes que vous exportez.
+
+
+L'exportation d'un groupe de volumes comprend les étapes suivantes sur la matrice de stockage _target_.
+
+. Assurez-vous que la matrice de stockage cible dispose de logements de disque disponibles.
+. Assurez-vous que la matrice de stockage cible prend en charge les lecteurs que vous allez importer.
+. Assurez-vous que la matrice de stockage cible peut prendre en charge les nouveaux volumes.
+. Assurez-vous que la dernière version du firmware est installée sur le contrôleur.
+. Assurez-vous que la matrice de stockage cible prend en charge le niveau RAID 6 si vous exportez un groupe de volumes RAID de niveau 6.
+. Assurez-vous que la dernière version du logiciel de gestion du stockage est installée sur la baie de stockage cible.
+. Si vous exportez un groupe de volumes dont la sécurité du lecteur est activée, assurez-vous que la sécurité du lecteur est activée sur la matrice de stockage cible.
+
+
+
+
+== Importer un groupe de volumes
+
+L'opération d'importation de groupe de volumes ajoute le groupe de volumes importé à la matrice de stockage cible. Une fois l'opération d'importation de groupe de volumes terminée, tous les lecteurs disposent d'un état optimal. Tous les volumes ou nœuds de capacité libre associés apparaissent désormais dans le logiciel de gestion du stockage installé sur la baie de stockage cible.
+
+
+
+== Étapes d'importation de base pour un groupe de volumes
+
+[NOTE]
+====
+Vous devez insérer tous les lecteurs du groupe de volumes dans le bac avant d'importer le groupe de volumes.
+
+====
+L'importation d'un groupe de volumes comprend les étapes suivantes sur la matrice de stockage _target_ :
+
+. Insérez les disques exportés dans les emplacements disponibles.
+. Consultez le rapport d'importation pour obtenir une vue d'ensemble du groupe de volumes que vous importez.
+. Vérifier les composants non importables.
+. Confirmez que vous souhaitez poursuivre la procédure d'importation.
+
+
+
+
+== Composants non importables
+
+Certains composants ne peuvent pas être importés pendant la procédure d'importation de groupe de volumes. Ces composants sont déposés pendant la procédure :
+
+* Réserves persistantes
+* Mappages
+* Paires de copies de volume
+* Paires distantes en miroir
+* Référentiels en miroir
+

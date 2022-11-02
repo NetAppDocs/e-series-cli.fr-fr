@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/save-storagearray-firmwareinventory.html 
+sidebar: sidebar 
+keywords: save, storage, array, firmware, inventory 
+summary: 'La commande save storageArray firmwareInventory enregistre un rapport dans un fichier de l"ensemble du micrologiciel actuellement exécuté sur la matrice de stockage.' 
+---
+= Enregistrer l'inventaire du micrologiciel de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save storageArray firmwareInventory` commande enregistre un rapport dans un fichier de l'ensemble du micrologiciel actuellement exécuté sur la matrice de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Le rapport répertorie les micrologiciels de ces composants :
+
+* Contrôleurs
+* Disques
+* Tiroirs (le cas échéant)
+* Modules de services environnementaux (ESM)
+* Blocs d'alimentation
+
+
+Ces informations vous permettent d'identifier les micrologiciels ou micrologiciels obsolètes qui ne correspondent pas aux autres micrologiciels de votre baie de stockage. Vous pouvez également envoyer le rapport au support technique pour qu'il le examine.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save storageArray firmwareInventory file=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer l'inventaire du micrologiciel. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\fwinvent.txt"`
+
+Le nom par défaut du fichier contenant l'inventaire du micrologiciel est `firmware-inventory.txt`. Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.70

@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/start-storagearray-autosupport-manualdispatch.html 
+sidebar: sidebar 
+keywords: start, storage, array, autosupport, manual, dispatch 
+summary: La commande start storageArray AutoSupport manualDispatch initie un bundle de support complet et envoie ASUP pour le bundle. 
+---
+= Démarrer l'intervention manuelle du AutoSupport de la baie de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `start storageArray autoSupport manualDispatch` Une commande lance un bundle de support complet et une intervention ASUP pour le bundle.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+En raison du temps qu'il a consacré à la fin, la commande retourne avec succès s'il peut démarrer le processus.
+
+
+
+== Syntaxe
+
+[listing]
+----
+start storageArray autoSupport manualDispatch
+----
+
+
+== Paramètres
+
+Aucune
+
+
+
+== Niveau minimal de firmware
+
+8.63

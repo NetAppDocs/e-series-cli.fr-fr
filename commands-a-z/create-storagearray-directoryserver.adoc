@@ -1,0 +1,138 @@
+---
+permalink: commands-a-z/create-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: create, storage, array, directory server 
+summary: 'La commande create storageArray directoryServer vous permet d"ajouter un nouveau serveur d"annuaire à utiliser pour l"authentification et l"autorisation des utilisateurs.' 
+---
+= Créer un serveur de répertoire de matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `create storageArray directoryServer` commande permet d'ajouter un nouveau serveur d'annuaire à utiliser pour l'authentification et l'autorisation des utilisateurs.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+
+create storageArray directoryServer
+       [domainId=pass:quotes[_"domainId"_
+       domainNames=(_"domainName1"..."domainNameN"_)
+       serverUrl="_serverUrl"_]
+       [bindAccount=pass:quotes[_"username_" bindPassword="_password_"]]
+       searchBaseDN=pass:quotes[_"distinguishedName"_
+       usernameAttribute="_attributeName_"
+       groupAttributes=("_attrName1"..."attrNameN_")]
+        [skipConfigurationTest={true | false}]
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`domainId`
+ a| 
+Permet de spécifier un ID unique pour ce domaine. Si ce n'est pas spécifié, un GUID unique sera généré.
+
+
+
+ a| 
+`domainNames`
+ a| 
+Permet de spécifier un ou plusieurs noms de domaine valides pour le serveur d'annuaire. Si vous saisissez plusieurs noms, séparez les valeurs par un espace.
+
+
+
+ a| 
+`serverUrl`
+ a| 
+Permet de spécifier l'URL pour accéder au serveur LDAP sous la forme ldap[s]://hostaddress:port. Si le protocole LDAPS est utilisé, assurez-vous que le ou les certificats racine/intermédiaire pour valider le certificat signé du serveur d'annuaire sont importés à l'aide des commandes de certificat.
+
+
+
+ a| 
+`bindAccount`
+ a| 
+Permet de spécifier le nom d'utilisateur ou l'ID de liaison à utiliser comme compte de liaison.
+
+
+
+ a| 
+`bindPassword`
+ a| 
+Permet de spécifier le mot de passe à utiliser comme mot de passe de liaison.
+
+
+
+ a| 
+`searchBaseDN`
+ a| 
+Permet de spécifier le nom unique de la base de recherche pour rechercher des objets utilisateur LDAP permettant de déterminer l'appartenance au groupe.
+
+
+
+ a| 
+`usernameAttribute`
+ a| 
+Permet de spécifier l'attribut à utiliser pour rechercher des objets utilisateur pour déterminer l'appartenance à un groupe. Si elle est spécifiée, la chaîne doit contenir la variable `+{uid}+` qui sera remplacé par le nom d'utilisateur utilisé lors de la connexion. Exemple : `+sAMAccountName={uid}+`
+
+
+
+ a| 
+`groupAttributes`
+ a| 
+Permet de définir un ou plusieurs attributs de groupe à utiliser pour rechercher des noms distinctifs de groupe. Les noms distinctifs sont utilisés pour déterminer l'appartenance à un groupe pour le mappage de rôles.
+
+[NOTE]
+====
+Si vous entrez plusieurs groupes, séparez les valeurs par un espace.
+
+====
+[NOTE]
+====
+L'utilisation de ce paramètre efface les groupes existants.
+
+====
+
+
+ a| 
+`skipConfigurationTest`
+ a| 
+Vous permet d'ignorer le test de configuration avant d'enregistrer la configuration. La valeur par défaut est `false`.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+SMcli -n Array1 -c "create storageArray directoryServer
+domainNames=("company.com") serverUrl="ldap://hqldap.company.com:389"
+bindAccount="dummyBindDN" bindPassword="dummyPassword"
+searchBaseDN="OU=_Users,DC=hq, DC=company,DC=com"
+usernameAttributes="sAMAccountName={uid}" groupAttributes="memberOf";"
+
+SMcli completed successfully.
+----

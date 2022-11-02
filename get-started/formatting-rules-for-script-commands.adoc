@@ -1,0 +1,89 @@
+---
+permalink: get-started/formatting-rules-for-script-commands.html 
+sidebar: sidebar 
+keywords: format, rules, script, commands 
+summary: La syntaxe unique à une commande de script spécifique est expliquée dans la section Notes à la fin de chaque description de commande de script. 
+---
+= Règles de format pour les commandes de script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+La syntaxe unique à une commande de script spécifique est expliquée dans la section Notes à la fin de chaque description de commande de script.
+
+*Sensibilité à la casse* -- les commandes de script ne sont pas sensibles à la casse. Vous pouvez saisir les commandes de script en minuscules, en majuscules ou en majuscules. (Dans les descriptions des commandes suivantes, mixtes cas est utilisé comme aide à la lecture des noms des commandes et à la compréhension des objectifs de la commande.)
+
+*Spaces* -- vous devez entrer des espaces dans les commandes de script comme elles sont indiquées dans les descriptions de commandes.
+
+*Crochets* -- les crochets sont utilisés de deux façons:
+
+* Dans le cadre de la syntaxe de commande.
+* Pour indiquer que les paramètres sont facultatifs. La description de chaque paramètre vous indique si vous devez inclure une valeur de paramètre entre crochets.
+
+
+*Parenthèses* -- les parenthèses affichées dans la syntaxe de commande contiennent des choix spécifiques pour un paramètre. C'est-à-dire, si vous voulez utiliser le paramètre, vous devez entrer l'une des valeurs entre parenthèses. En général, vous n'incluez pas de parenthèses dans une commande de script ; cependant, dans certaines instances, lorsque vous saisissez des listes, vous devez inclure la liste entre parenthèses. Cette liste peut être une liste de valeurs d'ID de bac et de valeurs d'ID de logement. La description de chaque paramètre vous indique si vous devez inclure une valeur de paramètre entre parenthèses.
+
+*Barres verticales* -- les barres verticales dans une commande de script indiquent « ou » et séparent les valeurs valides du paramètre. Par exemple, la syntaxe de l' `raidLevel` dans la description de la commande apparaît comme suit :
+
+[listing]
+----
+ raidLevel=(0 | 1 | 3 | 5 | 6)
+----
+Pour utiliser le `raidLevel` Paramètre pour définir le niveau RAID 5, entrez la valeur suivante :
+
+[listing]
+----
+ raidLevel=5
+----
+*Emplacements de disques* -- les commandes CLI qui identifient les emplacements de disques prennent en charge à la fois les tiroirs de disques haute capacité et les tiroirs de disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, de définir l'ID du tiroir sur 0 et de spécifier l'ID de l'emplacement dans lequel réside un lecteur. Séparez les ID par une virgule. Si vous saisissez plusieurs valeurs d'ID, séparez chaque ensemble de valeurs par un espace.
+
+Deux conventions permettent d'indiquer les disques dans l'interface de ligne de commandes. La convention que vous devez utiliser est spécifiée dans chaque commande. Une convention utilise un signe et des parenthèses égaux :
+
+[listing]
+----
+
+        drive=\(trayID,[drawerID,]slotID\)
+----
+La deuxième convention n'utilise pas de signe égal, mais une paire d'accolades autour des disques spécifiés :
+
+[listing]
+----
+
+        drive \[trayID,[drawerID,]slotID\]
+----
+Voici quelques exemples utilisant des parenthèses :
+
+[listing]
+----
+(1,1 1,2 1,3 1,4 2,1 2,2 2,3 2,4)
+----
+ou, pour un plateau de disques haute capacité, cet exemple :
+
+[listing]
+----
+(1,1,1 1,2,2 1,3,3 1,4,4 2,1,1 2,2,2 2,3,3 2,4,4)
+----
+*Termes en italique* -- les termes en italique dans la commande indiquent une valeur ou des informations que vous devez fournir. Par exemple, lorsque vous rencontrez le terme en italique :
+
+[listing]
+----
+
+          *numberOfDrives*
+----
+Remplacez le terme en italique par une valeur pour le nombre de lecteurs à inclure dans la commande script.
+
+*Point-virgule* -- les commandes script doivent se terminer par un point-virgule (`;`). Vous pouvez entrer plusieurs commandes de script sur la ligne de commande ou dans un fichier de script. Par exemple, un point-virgule est utilisé pour séparer chaque commande de script dans le fichier de script suivant.
+
+[listing]
+----
+create volume drives=(0,2 0,3 1,4 1,5 2,6 2,7) raidLevel=5 userLabel=”v1” capacity=2gb owner=a;
+create volume volumeGroup=2 userLabel=”v2” capacity=1gb owner=b;
+create volume volumeGroup=2 userLabel=”v3” capacity=1gb owner=a;
+----
+[listing]
+----
+create volume drives=(0,4 0,5 1,6 1,7 2,8 2,9) raidLevel=5 userLabel=”v4” capacity=2gb owner=b;
+create volume volumeGroup=3 userLabel=”v5” capacity=1gb owner=a;
+create volume volumeGroup=3 userLabel=”v6” capacity=1gb owner=b;
+----

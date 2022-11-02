@@ -1,0 +1,56 @@
+---
+permalink: commands-a-z/activate-asynchronous-mirroring.html 
+sidebar: sidebar 
+keywords: activate, asynchronous, mirroring 
+summary: La commande Activer la fonctionnalité storageArray active la fonction de mise en miroir asynchrone. 
+---
+= Activer la mise en miroir asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `activate storageArray feature` Commande active la fonction de mise en miroir asynchrone.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+Après avoir activé la fonction de mise en miroir asynchrone, vous devez configurer un groupe de miroirs asynchrone et une paire de miroirs asynchrones.
+
+
+
+== Syntaxe
+
+[listing]
+----
+activate storageArray feature=asyncRemoteMirror
+----
+[listing]
+----
+activate storageArray feature=asyncMirror
+----
+
+
+== Paramètres
+
+Aucune.
+
+
+
+== Niveau minimal de firmware
+
+7.84

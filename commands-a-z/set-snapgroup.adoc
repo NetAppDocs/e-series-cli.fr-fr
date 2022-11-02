@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/set-snapgroup.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, attributes 
+summary: 'La commande set snapGroup définit les propriétés d"un groupe de snapshots.' 
+---
+= Définissez les attributs du groupe de snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set snapGroup` commande définit les propriétés d'un groupe de snapshots.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+[userLabel=pass:quotes["_snapGroupName_"]] |
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages) |
+[repositoryFullLimit=pass:quotes[_percentValue_] |
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]] |
+[rollbackPriority=(lowest | low | medium | high | highest)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`snapGroup`
+ a| 
+Nom du groupe de snapshots pour lequel vous définissez les propriétés. Placez le nom du groupe de snapshots entre guillemets (" ") à l'intérieur de crochets ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Le nouveau nom que vous souhaitez attribuer au groupe de snapshots. Utilisez ce paramètre lorsque vous souhaitez renommer le groupe de snapshots. Placez le nouveau nom de groupe de snapshots entre guillemets (" ").
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Comment souhaitez-vous que le traitement des images de snapshot continue si les volumes de référentiel du groupe d'images de snapshot sont pleins. Vous pouvez choisir de faire échouer les écritures dans le volume de base (`failBaseWrites`) ou supprimez (purgez) les images de snapshot  `purgeSnapImages`). L'action par défaut est `purgeSnapImages`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Pourcentage de capacité du volume du référentiel sur lequel vous recevez un avertissement indiquant que le volume du référentiel d'images de snapshot est presque plein. Utiliser des valeurs entières. Par exemple, une valeur de 70 signifie 70 %. La valeur par défaut est 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Le nombre maximum d'images instantanées que vous souhaitez supprimer automatiquement si vous avez choisi de purger les images d'un instantané pour une stratégie complète de référentiel. Utiliser des valeurs entières. La valeur par défaut est 32.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+Utilisez ce paramètre pour déterminer si les ressources système doivent être allouées à l'opération de restauration aux dépens des performances du système. Les valeurs valides sont `highest`, `high`, `medium`, `low`, ou `lowest` Valeur de `high` Indique que l'opération de restauration est prioritaire sur toutes les autres E/S hôtes Valeur de `lowest` Indique que l'opération de restauration doit être effectuée avec un impact minimal sur les E/S de l'hôte
+
+|===
+
+
+== Remarques
+
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+
+Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres. Cependant, il n'est pas nécessaire d'utiliser tous les paramètres.
+
+
+
+== Niveau minimal de firmware
+
+7.83

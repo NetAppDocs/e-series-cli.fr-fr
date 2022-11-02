@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/save-controller-nvsram-file.html 
+sidebar: sidebar 
+keywords: save, controller, nvsram 
+summary: La commande Enregistrer le fichier NVSRAM du contrôleur enregistre un ensemble sélectionné de régions NVSRAM du contrôleur dans un fichier. 
+---
+= Enregistrez la NVSRAM du contrôleur
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save controller NVSRAM file` Commande enregistre un ensemble sélectionné de régions NVSRAM de contrôleur dans un fichier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save controller [(a|b)] NVSRAM file=pass:quotes["_filename_"]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`controller`
+ a| 
+Le contrôleur avec les valeurs NVSRAM que vous souhaitez enregistrer. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Placez l'identificateur du contrôleur entre crochets ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les valeurs NVSRAM. Placez le nom du fichier NVSRAM entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\logs\nvsramb.txt"`
+
+Le nom par défaut du fichier contenant les valeurs NVSRAM est `nvsram-data.txt`. Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+|===
+
+
+== Niveau minimal de firmware
+
+6.10

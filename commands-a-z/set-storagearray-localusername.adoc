@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/set-storagearray-localusername.html 
+sidebar: sidebar 
+keywords: set, storage, array, local, user, password, symbol 
+summary: 'La commande Set storageArray localUsername et la commande Set storageArray Symbol vous permettent de définir un mot de passe de nom d"utilisateur local ou un mot de passe de symbole pour un rôle particulier.' 
+---
+= Définissez le mot de passe ou le symbole de l'utilisateur local de la matrice de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `set storageArray localUsername` commande et le `set storageArray symbol` Commande vous permet de définir un mot de passe de nom d'utilisateur local ou un mot de passe de symbole pour un rôle particulier.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage, Administrateur du support, Administrateur de sécurité ou moniteur de stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+set storageArray (localUsername=pass:quotes[{ _admin_ | _storage_ | _security_ | _support_ | _monitor_}]
+| symbol [userRole={admin | monitor}])
+password="string" adminPassword="string"
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`localUsername`
+ a| 
+Permet de spécifier l'utilisateur pour modifier le mot de passe. Les choix valides sont les suivants : `admin`, `storage`, `support`, `monitor`, et `security`.
+
+
+
+ a| 
+`symbol`
+ a| 
+Permet de modifier le mot de passe du symbole. Les choix valides sont les suivants : `admin` et `monitor`.
+
+[NOTE]
+====
+Voici la commande de remplacement pour la version obsolète `set storageArray password` commande.
+
+====
+
+
+ a| 
+`password`
+ a| 
+Permet de spécifier le mot de passe du rôle.
+
+
+
+ a| 
+`adminPassword`
+ a| 
+Vous permet de spécifier le mot de passe administrateur requis pour définir un nouveau mot de passe.
+
+|===
+
+
+== Exemples
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray localUsername=storage password="newPassword" adminPassword="theAdminPassword";"
+SMcli -n Array1 -c "set storageArray localUsername=admin password="newAdminPassword" adminPassword="theAdminPassword";"
+SMcli -n Array1 -c "set storageArray symbol userRole=admin password="newSymbolPassword" adminPassword="theAdminPassword";"
+
+SMcli completed successfully.
+----
+
+
+== Niveau minimal de firmware
+
+8.40 ajoute la commande.

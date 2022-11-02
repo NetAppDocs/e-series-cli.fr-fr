@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/save-drivechannel-faultdiagnostics-file.html 
+sidebar: sidebar 
+keywords: save, drive, channel, fault, isolation, diagnostic, status 
+summary: 'La commande save rageChannel fault Diagnostics file enregistre les données de diagnostic d"isolation de défaut du canal du lecteur qui sont renvoyées à partir de la commande start rageChannel fault Diagnostics.' 
+---
+= Enregistrer l'état de diagnostic d'isolation des défauts du canal d'entraînement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `save driveChannel faultDiagnostics file` la commande enregistre les données de diagnostic d'isolation de panne de canal de disque renvoyées par le `start driveChannel faultDiagnostics` commande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Contexte
+
+[NOTE]
+====
+Avec la version 8.10 du micrologiciel, le `save driveChannel faultDiagnostics` la commande est obsolète.
+
+====
+Vous pouvez enregistrer les données de diagnostic dans un fichier en tant que texte standard ou XML.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`file`
+ a| 
+Le chemin du fichier et le nom du fichier dans lequel vous souhaitez enregistrer les résultats du test de diagnostic d'isolation de défaut sur le canal du lecteur. Placez le nom du fichier entre guillemets (" "). Par exemple :
+
+`file="C:\Program Files\CLI\sup\fltdiag.txt"`
+
+Cette commande n'ajoute pas automatiquement une extension de fichier au fichier enregistré. Vous devez spécifier une extension de fichier lors de la saisie du nom de fichier.
+
+|===
+
+
+== Remarques
+
+Une extension de fichier n'est pas automatiquement ajoutée au fichier enregistré. Vous devez spécifier l'extension de fichier de format applicable pour le fichier. Si vous spécifiez une extension de fichier de `.txt`, la sortie sera au format de fichier texte. Si vous spécifiez une extension de fichier de `.xml` , La sortie sera au format XML.
+
+
+
+== Niveau minimal de firmware
+
+7.15 présente cette nouvelle fonctionnalité pour les anciens tiroirs de contrôleurs.

@@ -1,0 +1,374 @@
+---
+permalink: get-started/command-line-parameters.html 
+sidebar: sidebar 
+keywords: legacy, command line, parameters 
+summary: 'SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 avec des services web intégrés, la possibilité d"interagir sur la ligne de commandes à l"aide d"un protocole HTTPS sécurisé. Ces contrôleurs peuvent éventuellement utiliser le protocole de symbole pour les interactions de ligne de commande.' 
+---
+= Paramètres de ligne de commande existants
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.53 et les anciens paramètres de ligne de commande
+
+SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 avec des services web intégrés, la possibilité d'interagir sur la ligne de commandes à l'aide d'un protocole HTTPS sécurisé. Ces contrôleurs peuvent éventuellement utiliser le protocole de symbole pour les interactions de ligne de commande. Le protocole de symbole est le seul protocole pris en charge pour les contrôleurs E2700 et E5600. Pour préserver les scripts existants et réduire le temps de transition, les options et la grammaire de l'interface de ligne de commande sont préservées autant que possible. Certaines fonctionnalités des contrôleurs E2800 et E5700 sont cependant différentes, en ce qui concerne la sécurité, l'authentification, le AutoSupport et les messages d'alerte. Leur grammaire sur les contrôleurs n'est pas dépassée. Toutefois, dans certains cas, la grammaire n'est que obsolète sur les systèmes E2800 ou E5700 lorsque le nouveau protocole https est utilisé.
+
+Pour les nouveaux paramètres qui s'appliquent uniquement à l' `*https*` Type de client, il en suit que s'appliquent uniquement aux contrôleurs E2800 ou E5700.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`-clientType`
+ a| 
+Cet argument force la création d'un moteur de script approprié. Utilisez ce paramètre facultatif avec l'une des valeurs suivantes :
+
+* `*auto*` - La découverte de périphérique est automatiquement effectuée pour détecter le type de moteur de script approprié.
+* `*https*` - Un moteur de script REST est créé.
+* `*symbol*` - Un moteur de script basé sur des symboles est créé.
+
+
+
+
+ a| 
+`-u`
+ a| 
+Suivez ce paramètre avec le `_username_` variable. Le nom d'utilisateur n'est requis que pour le `*https*` type de client. Cet argument n'est pas applicable au `*symbol*` le type de client et sera ignoré silencieusement.
+
+Si l'argument username est spécifié, la découverte de périphérique est effectuée pour déterminer le type de client correct (`*https*` contre `*symbol*`).
+
+
+
+ a| 
+`-P`
+ a| 
+Cet argument requiert l'un des deux arguments suivants :
+
+* `_password_file_` - Contient le mot de passe à utiliser pour l'authentification.
+* `-` (Un tiret) - Lire le mot de passe de `stdin`.
+
+
+Notez que l'ajout de cet argument s'applique à tous les contrôleurs, que le soit ou non `*https*` type de client ou `*symbol*` le type de client est utilisé.
+
+
+
+ a| 
+`-k`
+ a| 
+Cet argument facultatif permet un `*https*` le client doit fonctionner en mode non sécurisé. Cela signifie que le certificat de la baie de stockage ne sera pas validé. Par défaut, si elle est omise, l'authentification correcte sera exécutée. Cet argument n'est pas applicable au `*symbol*` le type de client et sera ignoré silencieusement.
+
+|===
+
+
+== Les paramètres de ligne de commande ne s'appliquent qu'aux contrôleurs E2700 ou E5600
+
+Comme les contrôleurs E2700 et E5600 ne disposent pas de fonctionnalités intégrées de gestion des alertes, ces paramètres de ligne de commande sont applicables. Ces paramètres ne s'appliquent pas aux contrôleurs E2800 ou E5700.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`-a`
+ a| 
+Ajoute une destination d'interruption SNMP (simple Network Management Protocol) ou une destination d'alerte d'adresse e-mail.
+
+* Lorsque vous ajoutez une destination de trap SNMP, la communauté SNMP est automatiquement définie comme le nom de communauté de l'interruption, et le `*host*` Est l'adresse IP ou le nom d'hôte du serveur de noms de domaine (DNS) du système auquel l'interruption doit être envoyée.
+* Lorsque vous ajoutez une adresse e-mail pour une destination d'alerte, le `*email-address*` est l'adresse e-mail à laquelle vous souhaitez envoyer le message d'alerte.
+
+
+[NOTE]
+====
+Cette option de ligne de commande est obsolète pour les systèmes de stockage E2800 et E5700. Utilisez l'API RESTful, SANtricity System Manager ou les commandes curl.
+
+====
+
+
+ a| 
+`-m`
+ a| 
+Spécifie le nom d'hôte ou l'adresse IP du serveur de messagerie à partir duquel les notifications d'alerte par e-mail sont envoyées.
+
+[NOTE]
+====
+Cette option de ligne de commande est obsolète pour les systèmes de stockage E2800 et E5700. Utilisez l'API RESTful, SANtricity System Manager ou les commandes curl.
+
+====
+
+
+ a| 
+`-s` (minuscule)
+ a| 
+Affiche les paramètres d'alerte dans le fichier de configuration lorsqu'il est utilisé avec le `-d` paramètre.
+
+[NOTE]
+====
+Cette option de ligne de commande est obsolète pour les systèmes de stockage E2800 et E5700. Utilisez l'API RESTful, SANtricity System Manager ou les commandes curl.
+
+====
+
+
+ a| 
+`-x` (minuscule)
+ a| 
+Supprime une destination d'interruption SNMP ou une destination d'alerte d'adresse e-mail. Le `_community_` Est le nom de communauté SNMP pour le trap, et le `_host_` Est l'adresse IP ou le nom d'hôte DNS du système auquel vous souhaitez que l'interruption soit envoyée.
+
+[NOTE]
+====
+Cette option de ligne de commande est obsolète pour les systèmes de stockage E2800 et E5700. Utilisez l'API RESTful, SANtricity System Manager ou les commandes curl.
+
+====
+|===
+
+
+== Paramètres de ligne de commande s'appliquant à tous les contrôleurs s'exécutant avec un type de client de symbole
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`-R` (majuscules)
+ a| 
+Définit le rôle d'utilisateur pour le mot de passe. Les rôles peuvent être :
+
+* `*admin*` -- l'utilisateur a le privilège de modifier la configuration de la matrice de stockage.
+* `*monitor*` -- l'utilisateur a le privilège d'afficher la configuration de la matrice de stockage, mais ne peut pas effectuer de modifications.
+
+
+Le `*-R*` le paramètre n'est valide que lorsqu'il est utilisé avec `*–p*` paramètre, qui spécifie que vous définissez un mot de passe pour une matrice de stockage.
+
+Le `*-R*` ce paramètre est requis uniquement si la fonction de mot de passe double est activée sur la matrice de stockage. Le `*-R*` le paramètre n'est pas nécessaire dans ces conditions :
+
+* La fonction de double mot de passe n'est pas activée sur la matrice de stockage.
+* Un seul rôle d'administrateur est défini et le rôle de moniteur n'est pas défini pour la matrice de stockage.
+
+
+|===
+
+
+== Les paramètres de ligne de commande s'appliquent à tous les contrôleurs et à tous les types de clients
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Spécifie le nom d'hôte ou l'adresse IP (Internet Protocol) (`_xxx.xxx.xxx.xxx_`) d'une baie de stockage gérée sur bande ou d'une baie de stockage gérée hors bande.
+
+* Si vous gérez une matrice de stockage à l'aide d'un hôte via la gestion du stockage intrabande, vous devez utiliser le `-n` ou le `-w` paramètre si plusieurs matrices de stockage sont connectées à l'hôte.
+* Si vous gérez une matrice de stockage en utilisant la gestion du stockage hors bande via la connexion Ethernet de chaque contrôleur, vous devez spécifier le `_host-name-or-IP-address_` des contrôleurs.
+* Si vous avez déjà configuré une matrice de stockage dans la fenêtre Enterprise Management, vous pouvez spécifier la matrice de stockage par son nom fourni par l'utilisateur à l'aide de l' `-n` paramètre.
+* Si vous avez déjà configuré une matrice de stockage dans la fenêtre Enterprise Management, vous pouvez spécifier la matrice de stockage par son World Wide identifier (WWID) à l'aide de l' `-w` paramètre.
+
+
+
+
+ a| 
+`-A`
+ a| 
+Ajoute une matrice de stockage au fichier de configuration. Si vous ne suivez pas le `-A` paramètre avec un `_host-name-or-IP-address_`, la détection automatique recherche les matrices de stockage dans le sous-réseau local.
+
+
+
+ a| 
+`-c`
+ a| 
+Indique que vous entrez une ou plusieurs commandes de script à exécuter sur la matrice de stockage spécifiée. Terminez chaque commande par un point-virgule (`;`). Vous ne pouvez pas en placer plusieurs `-c` paramètre sur la même ligne de commande. Vous pouvez inclure plusieurs commandes de script après `-c` paramètre.
+
+
+
+ a| 
+`-d`
+ a| 
+Affiche le contenu du fichier de configuration du script. Le contenu du fichier a le format suivant : `_storage-system-name host-name1 host-name2_`
+
+
+
+ a| 
+`-e`
+ a| 
+Exécute les commandes sans effectuer de vérification de syntaxe en premier.
+
+
+
+ a| 
+`-F` (majuscules)
+ a| 
+Spécifie l'adresse e-mail à partir de laquelle toutes les alertes seront envoyées.
+
+
+
+ a| 
+`-f` (minuscule)
+ a| 
+Indique un nom de fichier contenant les commandes de script que vous souhaitez exécuter sur la matrice de stockage spécifiée. Le `-f` le paramètre est similaire à `-c` paramètre dans lequel les deux paramètres sont destinés à exécuter des commandes de script. Le `-c` paramètre exécute des commandes de script individuelles. Le `-f` paramètre exécute un fichier de commandes de script. Par défaut, toutes les erreurs qui se produisent lors de l'exécution des commandes de script dans un fichier sont ignorées et le fichier continue à s'exécuter. Pour modifier ce comportement, utilisez le `set session errorAction=stop` commande dans le fichier de script.
+
+
+
+ a| 
+`-g`
+ a| 
+Spécifie un fichier ASCII qui contient les informations de contact de l'expéditeur de courrier électronique qui seront incluses dans toutes les notifications d'alerte par e-mail. L'interface de ligne de commande suppose que le fichier ASCII est du texte uniquement, sans délimiteurs ni format attendu. N'utilisez pas le `-g` paramètre si un `userdata.txt` le fichier existe déjà.
+
+
+
+ a| 
+`-h`
+ a| 
+Spécifie le nom d'hôte qui exécute l'agent SNMP auquel la matrice de stockage est connectée. Utilisez le `-h` paramètre avec ces paramètres :
+
+* `-a`
+* `-x`
+
+
+
+
+ a| 
+`-I` (majuscules)
+ a| 
+Spécifie le type d'informations à inclure dans les notifications d'alerte par e-mail. Vous pouvez sélectionner ces valeurs :
+
+* `eventOnly` -- seules les informations sur l'événement sont incluses dans l'e-mail.
+* `profile` -- l'événement et les informations de profil de tableau sont inclus dans l'e-mail.
+
+
+Vous pouvez spécifier la fréquence des livraisons par e-mail à l'aide de l' `-q` paramètre.
+
+
+
+ a| 
+`-i` (minuscule)
+ a| 
+Affiche l'adresse IP des matrices de stockage connues. Utilisez le `-i` paramètre avec le `-d` paramètre. Le contenu du fichier a le format suivant : `_storage-system-name IP-address1 IPaddress2_`
+
+
+
+ a| 
+`-n`
+ a| 
+Indique le nom de la matrice de stockage sur laquelle vous souhaitez exécuter les commandes de script. Ce nom est facultatif lorsque vous utilisez un `_host-name-or-IP-address_`. Si vous utilisez la méthode In-band pour gérer la matrice de stockage, vous devez utiliser le `-n` paramètre si plusieurs matrices de stockage sont connectées à l'hôte à l'adresse spécifiée. Le nom de la matrice de stockage est requis lorsque le `_host-name-or-IP-address_` n'est pas utilisé. Le nom de la matrice de stockage configurée pour être utilisé dans la fenêtre Enterprise Management (c'est-à-dire que le nom est répertorié dans le fichier de configuration) ne doit pas être un nom en double d'une autre matrice de stockage configurée.
+
+
+
+ a| 
+`-o`
+ a| 
+Indique un nom de fichier pour tout le texte de sortie résultant de l'exécution des commandes de script. Utilisez le `-o` paramètre avec ces paramètres :
+
+* `-c`
+* `-f`
+
+
+Si vous ne spécifiez pas de fichier de sortie, le texte de sortie passe à la sortie standard (stdout). Toutes les commandes qui ne sont pas des commandes de script sont envoyées à stdout, que ce paramètre soit défini ou non.
+
+
+
+ a| 
+`-p`
+ a| 
+Définit le mot de passe de la matrice de stockage sur laquelle vous souhaitez exécuter des commandes. Un mot de passe n'est pas nécessaire dans les conditions suivantes :
+
+* Aucun mot de passe n'a été défini sur la matrice de stockage.
+* Le mot de passe est indiqué dans un fichier script que vous exécutez.
+* Vous spécifiez le mot de passe en utilisant le `-c` paramètre et cette commande :
+
+
+[listing]
+----
+set session password=password
+----
+
+
+ a| 
+`-P`
+ a| 
+Cet argument requiert l'un des deux arguments suivants :
+
+* `_password_file_` - contient le mot de passe à utiliser pour l'authentification.
+* `-`(tiret) - lire le mot de passe de `stdin`.
+
+
+Notez que l'ajout de cet argument s'applique à tous les contrôleurs, que le soit ou non `*https*` type de client ou `*symbol*` le type de client est utilisé.
+
+
+
+ a| 
+`-q`
+ a| 
+Spécifie la fréquence à laquelle vous souhaitez recevoir des notifications d'événement et le type d'informations renvoyées dans les notifications d'événement. Une notification d'alerte par e-mail contenant au moins les informations d'événement de base est toujours générée pour chaque événement critique. Ces valeurs sont valides pour le `-q` paramètre :
+
+* `everyEvent` -- les informations sont renvoyées avec chaque notification d'alerte par e-mail.
+* `2` -- l'information n'est renvoyée pas plus d'une fois toutes les deux heures.
+* `4` -- l'information n'est renvoyée pas plus d'une fois toutes les quatre heures.
+* `8` -- l'information n'est renvoyée pas plus d'une fois toutes les huit heures.
+* `12` -- l'information n'est renvoyée pas plus d'une fois toutes les 12 heures.
+* `24` -- l'information n'est renvoyée pas plus d'une fois toutes les 24 heures.
+
+
+À l'aide du `-I` paramètre vous pouvez spécifier le type d'information dans les notifications d'alerte par e-mail.
+
+* Si vous définissez le `-I` paramètre à `eventOnly` , la seule valeur valide pour l' `-q` le paramètre est `everyEvent`.
+* Si vous définissez le `-I` paramètre pour l'un ou l'autre des `profile` ou le `supportBundle` valeur, ces informations sont incluses dans les e-mails avec la fréquence spécifiée par le `-q` paramètre.
+
+
+
+
+ a| 
+`-quick`
+ a| 
+Réduit le temps nécessaire à l'exécution d'une opération à une seule ligne. Un exemple d'opération à une seule ligne est le `recreate snapshot volume` commande. Ce paramètre réduit le temps en n'exécutant pas de processus en arrière-plan pendant la durée de la commande. N'utilisez pas ce paramètre pour les opérations impliquant plusieurs opérations à une seule ligne. L'utilisation étendue de cette commande peut dépasser le nombre de commandes que le contrôleur peut traiter, ce qui entraîne une défaillance opérationnelle. Par ailleurs, les mises à jour d'état et de configuration collectées généralement à partir des processus en arrière-plan ne sont pas disponibles pour l'interface de ligne de commande. Ce paramètre provoque l'échec des opérations qui dépendent des informations en arrière-plan.
+
+
+
+ a| 
+`-S` (majuscules)
+ a| 
+Supprime les messages d'information décrivant la progression de la commande qui s'affichent lorsque vous exécutez des commandes de script. (La suppression des messages d'information est également appelée mode silencieux.) Ce paramètre supprime ces messages :
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-v`
+ a| 
+Affiche l'état global actuel des périphériques connus dans un fichier de configuration lorsqu'il est utilisé avec `-d` paramètre.
+
+
+
+ a| 
+`-w`
+ a| 
+Spécifie le WWID de la matrice de stockage. Ce paramètre est une alternative au `-n` paramètre. Utilisez le `-w` paramètre avec le `-d` Paramètre pour afficher les WWID des matrices de stockage connues. Le contenu du fichier a le format suivant : `_storage-system-name world-wide-ID IP-address1 IP-address2_`
+
+
+
+ a| 
+`-X` (majuscules)
+ a| 
+Supprime une matrice de stockage d'une configuration.
+
+
+
+ a| 
+`-?`
+ a| 
+Affiche des informations d'utilisation sur les commandes CLI.
+
+|===

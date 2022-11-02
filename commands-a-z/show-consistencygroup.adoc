@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/show-consistencygroup.html 
+sidebar: sidebar 
+keywords: show, consistency, group 
+summary: La commande show resistenceGroup renvoie des informations sur un ou plusieurs groupes de cohérence. 
+---
+= Affiche le groupe de cohérence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show consistencyGroup` la commande renvoie des informations sur un ou plusieurs groupes de cohérence.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show (allConsistencyGroups | consistencyGroup pass:quotes[[_consistencyGroupName_]] |
+consistencyGroups pass:quotes[[_consistencyGroupName1_ ... _consistencyGroupNameN_]])
+[(summary | schedule)]
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`allConsistencyGroups`
+ a| 
+Ce paramètre renvoie des informations sur tous les groupes de cohérence de la matrice de stockage.
+
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Nom du groupe de cohérence pour lequel vous récupérez les informations. Placez le nom du groupe de cohérence entre crochets ([ ]). Si le nom du groupe de cohérence contient des caractères ou des chiffres spéciaux, vous devez inclure le nom du groupe de cohérence entre guillemets (") dans les crochets.
+
+
+
+ a| 
+`consistencyGroups`
+ a| 
+Noms de plusieurs groupes de cohérence pour lesquels vous récupérez les informations. Tous les volumes auront les mêmes propriétés. Entrez les noms des volumes à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Séparez chacun des noms par un espace.
+
+
+Si les noms de volumes comportent des caractères spéciaux ou ne sont composés que de chiffres, entrez les noms à l'aide des règles suivantes :
+
+* Placez tous les noms entre crochets ([ ]).
+* Placez chacun des noms entre guillemets (" ").
+* Séparez chacun des noms par un espace.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Ce paramètre renvoie une liste concise d'informations concernant les groupes de cohérence.
+
+
+
+ a| 
+`schedule`
+ a| 
+Ce paramètre renvoie des informations concernant les planifications d'un groupe de cohérence.
+
+|===
+
+
+== Niveau minimal de firmware
+
+7.83
