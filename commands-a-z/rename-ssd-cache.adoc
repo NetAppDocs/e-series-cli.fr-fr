@@ -31,7 +31,7 @@ Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous deve
 
 [listing, subs="+macros"]
 ----
-set ssdCache pass:quotes[[_old_ssdCacheName_] userLabel=pass:quotes[_"new_ssdCacheName_"]
+set ssdCache pass:quotes[[_old_ssdCacheName_]] userLabel=pass:quotes[_"new_ssdCacheName_"]
 ----
 
 
