@@ -27,7 +27,7 @@ Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF
 
 
 
-== Ce dont vous aurez besoin
+== Ce dont vous avez besoin
 
 Les rôles suivants peuvent être mappés :
 

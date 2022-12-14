@@ -62,7 +62,7 @@ Lettre d'identification du contrôleur qui possède les ports d'hôte iSCSI. Les
 
 Pour plus d'informations, reportez-vous aux sections suivantes :
 
- an iSCSI host port label,« Identification d'une étiquette de port hôte iSCSI »
+<<Identification d'une étiquette de port hôte iSCSI,« Identification d'une étiquette de port hôte iSCSI »>>
 
 |===
 

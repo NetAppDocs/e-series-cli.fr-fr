@@ -64,7 +64,7 @@ Port hôte iSCSI sur lequel vous souhaitez exécuter les tests de diagnostic. Vo
 
 Pour plus d'informations, reportez-vous aux sections suivantes :
 
- an iSCSI host port label,« Identification d'une étiquette de port hôte iSCSI »
+<<Identification d'une étiquette de port hôte iSCSI,« Identification d'une étiquette de port hôte iSCSI »>>
 
 
 

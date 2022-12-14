@@ -104,7 +104,7 @@ Lorsque vous gérez la gestion du stockage hors bande via la connexion Ethernet 
 Cet argument facultatif permet un `*https*` le client doit fonctionner en mode non sécurisé. Cela signifie que le certificat de la baie de stockage ne sera pas validé. Par défaut, si omis, la validation correcte sera effectuée.
 
 
-NOTE: Pour plus d'informations sur la gestion des certificats de matrice de stockage, reportez-vous à la section ,Gestion des paramètres de ligne de commande des certificats stockés.
+NOTE: Pour plus d'informations sur la gestion des certificats de matrice de stockage, reportez-vous à la section <<storedcertificates,Gestion des paramètres de ligne de commande des certificats stockés>>.
 
 
 
@@ -128,7 +128,7 @@ Affiche les mentions légales pour SMcli téléchargeables.
 Indique l'étiquette stockée localement sur laquelle vous souhaitez exécuter les commandes de script. Cette option est facultative lorsque vous utilisez `_host-name-or-IP-address_`. L'étiquette stockée localement est requise lorsque l' `_host-name-or-IP-address_` n'est pas utilisé.
 
 
-NOTE: Pour plus d'informations sur l'utilisation d'étiquettes stockées localement pour gérer les matrices de stockage, reportez-vous à la section ,Gestion des paramètres de ligne de commande des matrices stockées.
+NOTE: Pour plus d'informations sur l'utilisation d'étiquettes stockées localement pour gérer les matrices de stockage, reportez-vous à la section <<managearrays,Gestion des paramètres de ligne de commande des matrices stockées>>.
 
 
 
