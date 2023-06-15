@@ -25,6 +25,12 @@ Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous 
 ====
 
 
+== SANtricity 11.70.5
+
+Il n'y a pas de modification de l'interface de ligne de commande ou de la commande de script pour la version 11.70.5.
+
+
+
 == SANtricity 11.70.4
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.4.
