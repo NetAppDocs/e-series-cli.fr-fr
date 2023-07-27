@@ -89,13 +89,15 @@ xref:./commands-a-z/check-volume-parity.adoc[Vérifier la parité du volume]
 Commande obsolète.
 
 |===
-[]
-====
-== SANtricity 11.70.5
 
-Il n'y a pas de modification de l'interface de ligne de commande ou de la commande de script pour la version 11.70.5.
 
-== SANtricity 11.70.4
+== 4d73148eba8bbf93563afef1a810a39e
+
+Il n'y a pas de modification de l'interface de ligne de commande et de la commande de script pour la version 11.70.5.
+
+
+
+== 06d2539958ee4762f25ee6e06e44b9f1
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.4.
 
@@ -110,7 +112,9 @@ xref:./get-started/downloadable-smcli-parameters.adoc[Télécharger les paramèt
 Ajouté `-t` et `-T` description des paramètres des jetons d'accès pour l'authentification multifactorielle.
 
 |===
-== SANtricity 11.70.3
+
+
+== e5b376b9bdbfe1612d578d30462ed6ff
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.3.
 
@@ -160,7 +164,9 @@ xref:./commands-a-z/create-diskpool.html[Création d'un pool de disques]
 Mise à jour `driveCount` description du paramètre.
 
 |===
-== SANtricity 11.70.2
+
+
+== 3cffe633df330392f4d88b8478c9390b
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.2.
 
@@ -217,7 +223,9 @@ xref:./commands-a-z/start-snmptrapdestination.adoc[Tester la destination de l'in
 Ajouté `userName` et `engineid` paramètres.
 
 |===
-== SANtricity 11.70.1
+
+
+== cfafd61e53ff8b90ff59654a31683d33
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.1.
 
@@ -281,7 +289,9 @@ xref:./commands-a-z/recover-volume.adoc[Récupérer un volume RAID]
 Ajouté `blockSize` paramètre.
 
 |===
-== SANtricity 11.70
+
+
+== 474034f7e02f357e3878ae2514a2b3fd
 
 Le tableau suivant répertorie les modifications apportées à la CLI et aux commandes de script pour la version 11.70.
 
@@ -324,4 +334,3 @@ xref:./commands-a-z/recover-volume.adoc[Récupérer un volume RAID]
 Ajouté `hostUnmapEnabled` paramètre.
 
 |===
-====
