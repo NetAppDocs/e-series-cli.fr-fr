@@ -31,7 +31,7 @@ Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF
 
 Cette commande renvoie les informations suivantes concernant un groupe de volumes :
 
-* Statut (en ligne ou hors ligne)
+* L'état (optimal, Degraded, Failed, Missing, par exemple, optimal, dégradé, échec, manquant)
 * La capacité
 * Le propriétaire actuel (le contrôleur dans le slot A ou le contrôleur dans le slot B )
 * Niveau RAID

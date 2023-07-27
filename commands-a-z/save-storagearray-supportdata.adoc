@@ -516,7 +516,7 @@ Ce paramètre force la collecte des données de support en cas de défaillance l
 
 == Remarques
 
-À partir du micrologiciel de niveau 7.86, l'extension du nom de fichier doit être de `.7z` Sur les systèmes exécutant Windows. Si vous exécutez une version de micrologiciel antérieure à 7.86 sur un système Windows, l'extension de fichiers doit être `.zip`. Sur les systèmes qui n'exécutent pas Windows, vous pouvez utiliser n'importe quelle extension de fichier qui fonctionne pour votre système.
+À partir du micrologiciel de niveau 7.86, l'extension du nom de fichier doit être de `.7z`. Si vous exécutez une version du micrologiciel antérieure à 7.86, l'extension des fichiers doit être `.zip`.
 
 
 

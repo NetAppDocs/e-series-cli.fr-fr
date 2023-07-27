@@ -368,6 +368,8 @@ link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Enregist
 
 link:../commands-a-z/save-auditlog.html["Enregistrer les enregistrements du journal d'audit"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Enregistrer les erreurs de parité de la tâche de contrôle de parité du volume"]
+
 link:../commands-a-z/save-controller-nvsram-file.html["Enregistrez la NVSRAM du contrôleur"]
 
 link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Enregistrer l'état de diagnostic d'isolation des défauts du canal d'entraînement"]
@@ -582,6 +584,8 @@ link:../commands-a-z/show-storagearray-revocationchecksettings.html["Affiche les
 
 link:../commands-a-z/show-array-label.html["Afficher l'étiquette de tableau"]
 
+link:../commands-a-z/show-check-vol-parity-jobs.html["Afficher les tâches de vérification de parité de volume"]
+
 link:../commands-a-z/show-consistencygroup.html["Affiche le groupe de cohérence"]
 
 link:../commands-a-z/show-cgsnapimage.html["Affiche l'image Snapshot du groupe de cohérence"]
@@ -698,6 +702,8 @@ link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Sp�
 
 link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Démarrez le test URL du serveur OCSP"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Lancer la tâche de vérification de la parité du volume"]
+
 link:../commands-a-z/start-cgsnapimage-rollback.html["Démarrer la restauration de snapshot de groupe de cohérence"]
 
 link:../commands-a-z/start-controller.html["Démarrer le suivi du contrôleur"]
@@ -755,6 +761,8 @@ link:../commands-a-z/start-volumegroup-import.html["Démarrer l'importation du g
 link:../commands-a-z/start-volumegroup-locate.html["Démarrer la recherche du groupe de volumes"]
 
 link:../commands-a-z/start-volume-initialization.html["Démarrer l'initialisation du volume"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Arrêter la tâche de vérification de la parité du volume"]
 
 link:../commands-a-z/stop-cgsnapimage-rollback.html["Arrêt de la restauration des snapshots du groupe de cohérence"]
 

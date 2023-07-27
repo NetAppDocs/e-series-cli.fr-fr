@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/show-check-vol-parity-job.html 
+sidebar: sidebar 
+keywords: show, check, volume, parity, job, 
+summary: 'La commande show check volume parity job affiche une tâche de parité de volume de contrôle spécifiée et l"état de la tâche.' 
+---
+= Affiche la tâche de vérification de la parité du volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le `show check volume parity job` affiche une tâche de parité de volume de vérification spécifiée et l'état de la tâche.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à toute baie de stockage, y compris aux baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage EF600 et EF300, vous devez disposer du rôle d'administrateur du stockage.
+
+
+
+== Syntaxe
+
+[listing, subs="+macros"]
+----
+show check volume parity job jobId=<job_id>;
+----
+
+
+== Paramètres
+
+|===
+| Paramètre | Description 
+
+
+ a| 
+`jobId`
+ a| 
+L'ID de la tâche de vérification de parité du volume Cette valeur est obligatoire.
+
+|===
+
+
+== Niveau minimal de firmware
+
+11.80

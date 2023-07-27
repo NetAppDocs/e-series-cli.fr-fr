@@ -108,3 +108,9 @@ Paramètre permettant de capturer les détails de la progression, tels que pourc
 == Remarques
 
 L'adresse de début et l'adresse de fin de bloc logique sont utiles pour des LUN ou des espaces de noms à un très grand volume. L'exécution d'un contrôle de parité du volume sur un très grand volume unique LUN ou espace de noms peut prendre longtemps. En définissant l'adresse de début et l'adresse de fin des blocs de données, vous pouvez réduire le temps nécessaire à la vérification de parité du volume.
+
+
+
+== Niveau minimal de firmware
+
+11.80 - cette commande est obsolète.

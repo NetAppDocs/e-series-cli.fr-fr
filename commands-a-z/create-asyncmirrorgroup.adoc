@@ -21,14 +21,14 @@ Cette commande s'applique à n'importe quelle baie de stockage, avec quelques re
 
 [NOTE]
 ====
-Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+Si vous exécutez la commande sur la baie E2800, E5700, EF600 ou EF300, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
 
 ====
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
 
 
 
@@ -187,3 +187,5 @@ Les paramètres de resynchronisation automatique entre les volumes primaires et 
 == Niveau minimal de firmware
 
 7.84
+
+11.80 baies EF600 et EF300 prises en charge

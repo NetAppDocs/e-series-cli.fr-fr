@@ -67,22 +67,7 @@ capacity=_volumeCapacity_]
 [(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
 [newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
 [repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
-[repositoryExpansionPolicy=(automatic|manual)]
-[cacheReadPrefetch=(TRUE | FALSE)]
-----
-[listing, subs="+macros"]
-----
-create volume diskPool=pass:quotes[_"diskPoolName"_
-userLabel="_volumeName_"
-capacity=_volumeCapacity_]
-[thinProvisioned=(TRUE | FALSE)]
-[owner=(a|b)]
-[mapping=(none|default)]
-[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
-[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
-[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[warningThresholdPercent=pass:quotes][_warningThresholdPercentValue_]
 [repositoryExpansionPolicy=(automatic|manual)]
 [cacheReadPrefetch=(TRUE | FALSE)]
 ----
@@ -235,6 +220,8 @@ Pour les volumes fins, le `capacity` paramètre spécifie la capacité virtuelle
 Pour obtenir de meilleurs résultats lors de la création d'un volume fin, le volume de référentiel doit déjà exister ou être créé dans un pool de disques existant. Si vous ne spécifiez pas certains des paramètres facultatifs lors de la création de volumes fins, le logiciel de gestion du stockage tentera de créer le volume du référentiel. Le volume candidat le plus souhaitable est un volume de référentiel qui existe déjà et qui répond aux exigences de taille. Le volume candidat le plus souhaitable suivant est un nouveau volume de référentiel créé dans l'extension libre du pool de disques.
 
 Les volumes de référentiel pour les volumes fins ne peuvent pas être créés dans des groupes de volumes.
+
+Les volumes à provisionnement fin ne sont pas pris en charge sur les baies EF300 ou EF600.
 
 
 

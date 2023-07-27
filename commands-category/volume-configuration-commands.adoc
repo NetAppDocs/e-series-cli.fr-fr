@@ -30,6 +30,8 @@ link:../commands-a-z/show-diskpool.html["Afficher le pool de disques"]
 
 link:../commands-a-z/start-diskpool-fullprovisioning.html["Démarrage du provisionnement complet du pool de disques"]
 
+link:../commands-a-z/start-diskpool-resourceprovisioning.html["Démarrer le provisionnement de ressources de pool de disques"]
+
 link:../commands-a-z/start-diskpool-locate.html["Démarrer la localisation du pool de disques"]
 
 link:../commands-a-z/stop-diskpool-locate.html["Arrêter la localisation du pool de disques"]
@@ -154,6 +156,8 @@ link:../commands-a-z/repair-volume-parity.html["Réparation de la parité du vol
 
 link:../commands-a-z/repair-data-parity.html["Réparer la parité des données"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Enregistrer les erreurs de parité de la tâche de contrôle de parité du volume"]
+
 link:../commands-a-z/set-thin-volume-attributes.html["Définir les attributs du volume fin"]
 
 link:../commands-a-z/set-volumes.html["Définir les attributs de volume d'un volume dans un pool de disques..."]
@@ -161,6 +165,8 @@ link:../commands-a-z/set-volumes.html["Définir les attributs de volume d'un vol
 link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Définir les attributs des volumes pour un volume dans un groupe de volumes..."]
 
 link:../commands-a-z/set-volume-logicalunitnumber.html["Définir le mappage de volumes"]
+
+link:../commands-a-z/show-check-vol-parity-jobs.html["Afficher les tâches de vérification de parité de volume"]
 
 link:../commands-a-z/show-volume.html["Afficher le volume fin"]
 
@@ -172,7 +178,11 @@ link:../commands-a-z/show-volume-performancestats.html["Affiche les statistiques
 
 link:../commands-a-z/show-volume-reservations.html["Afficher les réservations de volume"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Lancer la tâche de vérification de la parité du volume"]
+
 link:../commands-a-z/start-volume-initialization.html["Démarrer l'initialisation du volume"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Arrêter la tâche de vérification de la parité du volume"]
 
 
 
@@ -201,6 +211,8 @@ link:../commands-a-z/start-volumegroup-defragment.html["Démarrer le défragment
 link:../commands-a-z/start-volumegroup-export.html["Démarrer l'exportation du groupe de volumes"]
 
 link:../commands-a-z/start-volumegroup-fullprovisioning.html["Démarrer le provisionnement complet du groupe de volumes"]
+
+link:../commands-a-z/start-volumegroup-resourceprovisioning.html["Démarrer l'approvisionnement des ressources du groupe de volumes"]
 
 link:../get-started/learn-about-volume-group-migration.html["En savoir plus sur la migration de groupes de volumes (CLI uniquement)"]
 

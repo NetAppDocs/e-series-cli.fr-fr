@@ -17,13 +17,13 @@ Le `activate storageArray feature` Commande active la fonction de mise en miroir
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
 
 
 
@@ -54,3 +54,5 @@ Aucune.
 == Niveau minimal de firmware
 
 7.84
+
+11.80 baies EF600 et EF300 prises en charge

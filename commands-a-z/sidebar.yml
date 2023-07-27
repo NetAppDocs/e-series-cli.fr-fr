@@ -352,6 +352,8 @@ entries:
       url: "/commands-a-z/save-alltrays-logfile.html"
     - title: enregistrer le journal auditlog
       url: "/commands-a-z/save-auditlog.html"
+    - title: enregistrer les erreurs de parité de la tâche de vérification du volume
+      url: "/commands-a-z/save-check-vol-parity-job-errors.html"
     - title: enregistrer le contrôleur arrayationcsr
       url: "/commands-a-z/save-controller-arraymanagementcsr.html"
     - title: save arrayvirtualisationdecertificate
@@ -634,6 +636,8 @@ entries:
       url: "/commands-a-z/show-certificates.html"
     - title: affiche cgsnapimage
       url: "/commands-a-z/show-cgsnapimage.html"
+    - title: afficher les tâches de vérification de parité de volume
+      url: "/commands-a-z/show-check-vol-parity-jobs.html"
     - title: afficher le groupe de cohérence
       url: "/commands-a-z/show-consistencygroup.html"
     - title: affiche le récapitulatif du certificat arraymanagementdedirectionnécertificat
@@ -770,6 +774,8 @@ entries:
       url: "/commands-a-z/start-asyncmirrorgroup-synchronize.html"
     - title: démarrer la restauration de l'image cgsnapimage
       url: "/commands-a-z/start-cgsnapimage-rollback.html"
+    - title: lancer la tâche de vérification de la parité du volume
+      url: "/commands-a-z/start-check-vol-parity-job.html"
     - title: démarrer le contrôleur iscsihostport dhcprefresh
       url: "/commands-a-z/start-controller-iscsihostport-dhcprefresh.html"
     - title: démarrer le contrôleur
@@ -858,6 +864,8 @@ entries:
       url: "/commands-a-z/stop-cgsnapimage-rollback.html"
     - title: arrêter le volume
       url: "/commands-a-z/stop-cgsnapvolume.html"
+    - title: arrêter la vérification de la parité du volume
+      url: "/commands-a-z/stop-check-vol-parity-job.html"
     - title: arrêter la commande de groupe de cohérence
       url: "/commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html"
     - title: arrêter la localisation du pool de disques

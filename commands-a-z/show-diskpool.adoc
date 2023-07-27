@@ -31,7 +31,7 @@ Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF
 
 Cette commande renvoie ces informations sur un pool de disques :
 
-* Le statut (optimal, en ligne, hors ligne, par exemple)
+* L'état (optimal, Degraded, Failed, Missing, par exemple, optimal, dégradé, échec, manquant)
 * La capacité totale
 * La capacité de préservation, la capacité exploitable et la capacité inutilisable
 * La capacité utilisée, la capacité libre et le pourcentage de saturation
