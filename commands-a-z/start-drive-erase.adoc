@@ -17,7 +17,7 @@ Le `start drive erase` la commande efface toutes les données d'un ou de plusieu
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle s'utilise sur les baies de stockage E2700 et E5600.
+Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.
 
 
 

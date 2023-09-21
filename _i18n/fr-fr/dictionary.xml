@@ -3438,7 +3438,6 @@
   <block id="3b129c5535bfd1b293ee522199b2647b" category="summary">La commande de démarrage de l'effacement du lecteur efface toutes les données d'un ou de plusieurs lecteurs.</block>
   <block id="5e1960d53d0e67e3cd307a126a8f75ac" category="doc">Commencez à effacer le lecteur</block>
   <block id="5c7cd3a54ac60bada240ddcb36cb2b2f" category="paragraph">Le<block ref="45dd4109bf3a4de86fc0afeae5748816" prefix=" " category="inline-code"></block> la commande efface toutes les données d'un ou de plusieurs lecteurs.</block>
-  <block id="8a6ff4179a3940cccf4dc20ba85a1162" category="paragraph">Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle s'utilise sur les baies de stockage E2700 et E5600.</block>
   <block id="a40cdbeba07769d11e789eb761201ae7" category="paragraph">Exécutez cette commande uniquement si vous souhaitez supprimer définitivement toutes les données d'un lecteur. Si le lecteur est sécurisé, le<block ref="45dd4109bf3a4de86fc0afeae5748816" prefix=" " category="inline-code"></block> l'option de commande effectue une suppression cryptographique et réinitialise les attributs de sécurité du disque en mode sécurisé.</block>
   <block id="2531efef7e4f6d3357daf24da936c35a" category="paragraph">L'opération d'effacement ne peut pas être annulée. Assurez-vous de sélectionner le lecteur approprié lorsque vous utilisez cette commande.</block>
   <block id="6ae797a72c66de004194304b30f25119" category="paragraph">La liste des lecteurs ne peut pas contenir tous les lecteurs de la matrice de stockage, sinon la commande sera rejetée.</block>
@@ -7546,4 +7545,5 @@
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="f31b4701e236492b39f4226355cb1d49" category="paragraph">Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.</block>
 </blocks>
