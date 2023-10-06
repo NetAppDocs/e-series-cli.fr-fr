@@ -93,7 +93,7 @@ Ce paramètre augmente la capacité virtuelle du volume fin. La capacité virtue
 
 La capacité virtuelle minimale est de 32 Mo.
 
-La capacité virtuelle maximale est de 63 To.
+La capacité virtuelle maximale est de 256 To.
 
 
 
@@ -168,7 +168,7 @@ Capacité virtuelle minimale
  a| 
 Capacité virtuelle maximale
  a| 
-63 TO
+256 TO
 
 
 
@@ -182,7 +182,7 @@ Capacité physique minimale
  a| 
 Capacité physique maximale
  a| 
-64 TO
+257 TO
 
 |===
 Les volumes fins prennent en charge toutes les opérations réalisées par les volumes standard, à l'exception des cas suivants :
