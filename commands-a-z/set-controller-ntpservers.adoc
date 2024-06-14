@@ -48,7 +48,7 @@ Si vous configurez le protocole NTP à l'aide d'un nom de domaine complet, vous 
 [listing]
 ----
 
-set controller(a|b) NTPServers=(disabled|auto|(Address1 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()] [Address2 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()]]))
+set controller(a|b) NTPServers=(disabled|auto|(Address1 [Address2]))
 ----
 
 
@@ -99,20 +99,6 @@ Entourez le nom du serveur NTP de guillemets, comme indiqué dans la section exe
 Si un nom de domaine est spécifié, un serveur DNS doit également être configuré pour permettre au contrôleur de résoudre l'adresse IP du serveur.
 
 ====
-
-
- a| 
-`keyIdentifier` `keyType`
-
-`passPhrase`
- a| 
-Si vous le souhaitez, ces paramètres fournissent les informations d'identification clés pour l'activation de l'authentification NTP :
-
-* `key Identifier` est un entier compris entre 0 et 65535.
-* `keyType` est l'une des suivantes: aucun, sha1, sha224, sha256, sha384 ou sha512.
-* `passPhrase` Est soit un chiffre hexadécimal (0-9, avec a-f autorisé), qui est exactement 40 chiffres saisis comme stringLiteral, soit une chaîne de caractères alphanumériques jusqu'à 20 octets de long.
-
-
 |===
 
 
@@ -122,9 +108,9 @@ Si vous le souhaitez, ces paramètres fournissent les informations d'identificat
 ----
 set controller[a] NTPServers=disabled;
 set controller[a] NTPServers=auto;
-set controller[a] NTPServers=("0.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase="SomePassword1" "1.us.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
-set controller[b] NTPServers=(192.168.1.105 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1" "1.us.pool.ntp.org");
-set controller[b] NTPServers=(set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
+set controller[a] NTPServers=("0.pool.ntp.org" "1.us.pool.ntp.org");
+set controller[b] NTPServers=(192.168.1.105 "1.us.pool.ntp.org");
+set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334);
 ----
 
 

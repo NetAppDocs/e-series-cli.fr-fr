@@ -1,7 +1,7 @@
 ---
 permalink: get-started/downloadable-smcli-parameters.html 
 sidebar: sidebar 
-keywords: downloadable, smcli, command line, parameters 
+keywords: downloadable, smcli, command line, parameters, identify, devices, SAML, multifactor, authentication, https, certificate, array, 
 summary: 'La version SANtricity OS 11.60 comprenait la possibilité de télécharger et d"installer la version http de l"interface de ligne de commande (également appelée Secure CLI ou SMcli) directement via SANtricity System Manager.' 
 ---
 = Paramètres de ligne de commande SMcli téléchargeables
@@ -19,7 +19,7 @@ La version SANtricity OS 11.60 inclut la possibilité de télécharger et d'inst
 
 NOTE: Un environnement d'exécution Java (JRE), version 8 et supérieure, doit être disponible sur le système de gestion dans lequel vous prévoyez d'exécuter les commandes CLI.
 
-Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le Gestionnaire système SANtricity dispose d'un ensemble unique de paramètres. Pour plus d'informations sur l'utilisation des paramètres de ligne de commande pour SANtricity OS 11.53 et les versions antérieures, reportez-vous à la section xref:./get-started/command-line-parameters.adoc[Paramètres de ligne de commande existants]
+Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le Gestionnaire système SANtricity dispose d'un ensemble unique de paramètres. Pour plus d'informations sur l'utilisation des paramètres de ligne de commande pour SANtricity OS 11.53 et les versions antérieures, reportez-vous à la section link:https://docs.netapp.com/us-en/e-series-cli/get-started/command-line-parameters.html["Paramètres de ligne de commande existants"].
 
 
 
@@ -277,3 +277,65 @@ Supprime un certificat approuvé stocké localement avec l'alias `<ALIAS>`
 
 
 |===
+
+
+=== Identifier les périphériques
+
+Le paramètre de ligne de commande suivant vous permet d'afficher les informations relatives à tous les périphériques applicables visibles par l'hôte.
+
+
+NOTE: À partir de la version SANtricity 11.81, le SMcli `identifyDevices` Paramètre remplace la fonctionnalité précédemment disponible via l'outil SMdevices.
+
+[cols="2*"]
+|===
+| Paramètre | Définition 
+
+
+ a| 
+`identifyDevices`
+ a| 
+Recherche tous les périphériques SCSI natifs en mode bloc associés à nos baies de stockage. Pour chaque périphérique détecté, rapporte diverses informations telles que le nom de périphérique spécifique au système d'exploitation natif, la matrice de stockage associée, le nom du volume, les informations de LUN, etc
+
+|===
+
+
+==== Exemples
+
+Reportez-vous à la section suivante pour obtenir des exemples de l' `-identifyDevices` Dans les systèmes d'exploitation Linux et Windows.
+
+.Linux
+[listing]
+----
+ICTAE11S05H01:~/osean/SMcli-01.81.00.10004/bin # ./SMcli -identifyDevices
+  <n/a> (/dev/sg2) [Storage Array ictae11s05a01, Volume 1, LUN 0, Volume ID <600a098000bbd04f00001c7365426b58>, Alternate Path (Controller-A): Non owning controller - Active/Non-optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+  /dev/sdb (/dev/sg3) [Storage Array ictae11s05a01, Volume Access, LUN 7, Volume ID <600a098000bbcdd3000002005a731d29>]
+  <n/a> (/dev/sg4) [Storage Array ictae11s05a01, Volume 1, LUN 0, Volume ID <600a098000bbd04f00001c7365426b58>, Preferred Path (Controller-B): Owning controller - Active/Optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+  /dev/sdc (/dev/sg5) [Storage Array ictae11s05a01, Volume Access, LUN 7, Volume ID <600a098000bbcdd3000002005a731d29>]
+SMcli completed successfully.
+----
+.Répertoires de base
+[listing]
+----
+PS C:\Users\Administrator\Downloads\SMcli-01.81.00.0017\bin> .\SMcli -identifyDevices
+  \\.\PHYSICALDRIVE1 [Storage Array ICTAG22S08A01, Volume Vol1, LUN 1, Volume ID <600a0980006cee060000592e6564fa6a>, Preferred Path (Controller-B): Owning controller - Active/Optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+  \\.\PHYSICALDRIVE2 [Storage Array ICTAG22S08A01, Volume Vol2, LUN 2, Volume ID <600a0980006ce727000001096564f9f5>, Preferred Path (Controller-A): Owning controller - Active/Optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+  \\.\PHYSICALDRIVE3 [Storage Array ICTAG22S08A01, Volume Vol3, LUN 3, Volume ID <600a0980006cee06000059326564fa76>, Preferred Path (Controller-B): Owning controller - Active/Optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+  \\.\PHYSICALDRIVE4 [Storage Array ICTAG22S08A01, Volume Vol4, LUN 4, Volume ID <600a0980006ce7270000010a6564fa01>, Preferred Path (Controller-A): Owning controller - Active/Optimized, Preferred Path Auto Changeable: Yes, Implicit Failback: Yes]
+SMcli completed successfully.
+----
+
+
+==== Remarques supplémentaires
+
+* Compatible avec les systèmes d'exploitation Linux et Windows exécutant des plates-formes x86-64 avec des interfaces hôtes SCSI uniquement.
++
+** Les interfaces hôtes basées sur NVMe ne sont pas prises en charge.
+
+
+* Le `identifyDevices` Le paramètre ne provoque pas de nouvelle acquisition au niveau du système d'exploitation. Il effectue une itération sur les périphériques existants vus par le système d'exploitation.
+* Vous devez disposer des autorisations utilisateur suffisantes pour exécuter `identifyDevices` commande.
++
+** Cela inclut la possibilité de lire à partir des périphériques de bloc natifs du système d'exploitation et d'exécuter des commandes de requête SCSI.
+
+
+

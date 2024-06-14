@@ -25,6 +25,23 @@ Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous 
 ====
 
 
+== SANtricity 11.81
+
+Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.81.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Identifier les périphériques]
+ a| 
+Ajouté `identifyDevices` paramètre.
+
+|===
+
+
 == SANtricity 11.80
 
 Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.80.

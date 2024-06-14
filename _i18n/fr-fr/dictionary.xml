@@ -424,7 +424,6 @@
   <block id="b6c9cb32de0a61002f039efec80a465c" category="paragraph">La version SANtricity OS 11.60 inclut la possibilité de télécharger et d'installer la version http de l'interface de ligne de commande (également appelée « Secure CLI » ou SMcli) directement via SANtricity System Manager. Cette version téléchargeable du SMcli est disponible sur les systèmes EF600, EF300, E5700, EF570, E2800, Et des contrôleurs EF280. Pour télécharger le SMcli dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* &gt; *système* et *Add-ons* &gt; *interface de ligne de commande* .</block>
   <block id="75842716a65060950b20cba161cbac95" category="admonition">Un environnement d'exécution Java (JRE), version 8 et supérieure, doit être disponible sur le système de gestion dans lequel vous prévoyez d'exécuter les commandes CLI.</block>
   <block id="c3369045597873cd151e0a9b94edab23" category="inline-xref-macro">Paramètres de ligne de commande existants</block>
-  <block id="720d9a5bd635c70358cdcb41b1eaefaf" category="paragraph">Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le Gestionnaire système SANtricity dispose d'un ensemble unique de paramètres. Pour plus d'informations sur l'utilisation des paramètres de ligne de commande pour SANtricity OS 11.53 et les versions antérieures, reportez-vous à la section <block ref="55493e98e602a03e07f56f1acb2fb353" category="inline-xref-macro-rx"></block></block>
   <block id="1a98f49f191845835d6fd3e13eb29812" category="section-title">Authentification multifacteur</block>
   <block id="e228e60d948488385c1b528cc75ed77d" category="paragraph">Si le langage SAML est activé, seuls les jetons d'accès peuvent être utilisés avec l'interface de ligne de commande. Si le langage SAML n'est pas activé, vous pouvez utiliser le nom d'utilisateur/mot de passe ou les jetons d'accès. Les jetons d'accès peuvent être générés via SANtricity System Manager.</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">Paramètre</block>
@@ -1767,7 +1766,6 @@
   <block id="397fc97bb6efdad0616e29cbdbfd76e1" category="paragraph"><block ref="397fc97bb6efdad0616e29cbdbfd76e1" category="inline-link-macro-rx"></block></block>
   <block id="de042c6e9339ad5e11dbef3eba62d68f" category="inline-link-macro">Activation ou désactivation de la fonctionnalité de diagnostic à distance AutoSupport (pour des baies E2800 ou E5700 individuelles)</block>
   <block id="89b91b07adb5a3dcfb3ec3c5ceeb9d68" category="paragraph"><block ref="89b91b07adb5a3dcfb3ec3c5ceeb9d68" category="inline-link-macro-rx"></block></block>
-  <block id="2703ec3e21c52f00ef1fdb6211a17fb5" category="paragraph"><block ref="2703ec3e21c52f00ef1fdb6211a17fb5" category="inline-link-macro-rx"></block></block>
   <block id="7568cafbcf2dc358e542e2b8edbdb6eb" category="paragraph"><block ref="7568cafbcf2dc358e542e2b8edbdb6eb" category="inline-link-macro-rx"></block></block>
   <block id="f1d30742e45c732a9b780da88d3719bd" category="summary">Commandes de configuration d'alertes</block>
   <block id="e39f33589e4c9190d3dfff7da8e8cf94" category="section-title">Configuration SNMP intégrée</block>
@@ -3147,11 +3145,6 @@
   <block id="aa10cbdddfaa9b241492306fc663004c" category="paragraph"><block ref="dd7bf230fde8d4836917806aff6a6b27" prefix="" category="inline-code"></block></block>
   <block id="81467412741bcb83b3995cc18b1516d9" category="paragraph">« Domainname »|IPv4Address|IPv6Address</block>
   <block id="d0ddb28e638271963e281c74aa6164ff" category="paragraph">Si un nom de domaine est spécifié, un serveur DNS doit également être configuré pour permettre au contrôleur de résoudre l'adresse IP du serveur.</block>
-  <block id="5f13d4f79dcde55f34ef328e9338aba4" category="paragraph"><block ref="9f0dd5628b477ca3a412bd884083c065" prefix="" category="inline-code"></block><block ref="056e0360b75d77ece0ae955fe59bf15d" prefix=" " category="inline-code"></block></block>
-  <block id="764c2b587e12f15a3e09f6b9eac104d7" category="paragraph">Si vous le souhaitez, ces paramètres fournissent les informations d'identification clés pour l'activation de l'authentification NTP :</block>
-  <block id="29bb257c3542b33e69d33ea7fc33c433" category="list-text"><block ref="333be298e4b59f81f3a3b965415c97d6" prefix="" category="inline-code"></block> est un entier compris entre 0 et 65535.</block>
-  <block id="01e68e6855a7e29f6658f124c09009fd" category="list-text"><block ref="056e0360b75d77ece0ae955fe59bf15d" prefix="" category="inline-code"></block> est l'une des suivantes: aucun, sha1, sha224, sha256, sha384 ou sha512.</block>
-  <block id="f6434eb840c71208dfb72ef5c786d39e" category="list-text"><block ref="c6cec8c6caa9a579644664f0575db2f5" prefix="" category="inline-code"></block> Est soit un chiffre hexadécimal (0-9, avec a-f autorisé), qui est exactement 40 chiffres saisis comme stringLiteral, soit une chaîne de caractères alphanumériques jusqu'à 20 octets de long.</block>
   <block id="a1f3afaef8deadb0480d323937491c5a" category="paragraph">8.42 ajoute les paramètres d'informations d'identification clés pour l'authentification NTP.</block>
   <block id="2704c1d4b7e26a3cf5cc746382f4916e" category="summary">La commande start storageArray ocspResponderUrl test recherche une connexion ouverte à l'URL spécifiée du serveur OCSP (Online Certificate Status Protocol).</block>
   <block id="2e503cc44e8889a78b5b8ff6b66e968c" category="paragraph">Le<block ref="d508de27adcb6527614195692148172a" prefix=" " category="inline-code"></block> La commande recherche une connexion ouverte à l'URL spécifiée du serveur OCSP (Online Certificate Status Protocol).</block>
@@ -7545,4 +7538,23 @@
   <block id="f31b4701e236492b39f4226355cb1d49" category="paragraph">Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.</block>
   <block id="9c224ec894ababac5f928548e584eb45" category="paragraph">La capacité virtuelle maximale est de 256 To.</block>
   <block id="85e8092ad24869d134ad6af40b479c96" category="sidebar">Bienvenue dans l'assistance utilisateur de l'interface de ligne de commande intégrée du Gestionnaire système SANtricity, où vous pouvez découvrir comment configurer, contrôler et régler votre baie de stockage à l'aide de l'interface de ligne de commande.'</block>
+  <block id="c4f2e9f91e3e5a0d9fb8f8728ed63376" category="paragraph">Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le Gestionnaire système SANtricity dispose d'un ensemble unique de paramètres. Pour plus d'informations sur l'utilisation des paramètres de ligne de commande pour SANtricity OS 11.53 et les versions antérieures, reportez-vous à la section <block ref="f6644819b412d8968161178a2ccec029" category="inline-link-macro-rx"></block>.</block>
+  <block id="2115a9072c5575f3300b4b18e5722de6" category="section-title">Identifier les périphériques</block>
+  <block id="90f4cf9a1fcd3d43e57768f9bb55bbfb" category="paragraph">Le paramètre de ligne de commande suivant vous permet d'afficher les informations relatives à tous les périphériques applicables visibles par l'hôte.</block>
+  <block id="222ae10a38daa5038e857b83e1adb270" category="admonition">À partir de la version SANtricity 11.81, le SMcli<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Paramètre remplace la fonctionnalité précédemment disponible via l'outil SMdevices.</block>
+  <block id="64ce8fcd5ac05bd3132098b5581a2dcf" category="paragraph"><block ref="35d5ed698aa483d3174ea619db10c0ac" prefix="" category="inline-code"></block></block>
+  <block id="f53cecbe90c0e9f04dc66481adf123c6" category="paragraph">Recherche tous les périphériques SCSI natifs en mode bloc associés à nos baies de stockage. Pour chaque périphérique détecté, rapporte diverses informations telles que le nom de périphérique spécifique au système d'exploitation natif, la matrice de stockage associée, le nom du volume, les informations de LUN, etc</block>
+  <block id="312574efd0c8e7ddeea92ab871822aed" category="paragraph">Reportez-vous à la section suivante pour obtenir des exemples de l'<block ref="14993f95e0d6fc04f9966b0c368a7ed6" prefix=" " category="inline-code"></block> Dans les systèmes d'exploitation Linux et Windows.</block>
+  <block id="edc9f0a5a5d57797bf68e37364743831" category="listing-title">Linux</block>
+  <block id="aea23489ce3aa9b6406ebb28e0cda430" category="listing-title">Répertoires de base</block>
+  <block id="94f04537971d7a4a561c607ec55952a2" category="section-title">Remarques supplémentaires</block>
+  <block id="ba151d8fe1acd0cb9eca1b6945962e62" category="list-text">Compatible avec les systèmes d'exploitation Linux et Windows exécutant des plates-formes x86-64 avec des interfaces hôtes SCSI uniquement.</block>
+  <block id="aaeaddd5c8faa1ad9f766c53197d7ab2" category="list-text">Les interfaces hôtes basées sur NVMe ne sont pas prises en charge.</block>
+  <block id="fb52873edf9c97b7281409c640b5ed20" category="list-text">Le<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Le paramètre ne provoque pas de nouvelle acquisition au niveau du système d'exploitation. Il effectue une itération sur les périphériques existants vus par le système d'exploitation.</block>
+  <block id="9c4b22635677ff419bec86d3f3219927" category="list-text">Vous devez disposer des autorisations utilisateur suffisantes pour exécuter<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> commande.</block>
+  <block id="dbb8d2fd09a59e1ab8494de138ceffdb" category="list-text">Cela inclut la possibilité de lire à partir des périphériques de bloc natifs du système d'exploitation et d'exécuter des commandes de requête SCSI.</block>
+  <block id="5b1cc65d11915b727018c6056792dcef" category="section-title">SANtricity 11.81</block>
+  <block id="a92322756f07d387c173b27babcdad72" category="paragraph">Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.81.</block>
+  <block id="559b1de3f22ee41aed01495562ee7836" category="paragraph"><block ref="559b1de3f22ee41aed01495562ee7836" category="inline-xref-macro-rx"></block></block>
+  <block id="5fe9c86e85a56fcbfe366c1ef482deb0" category="paragraph">Ajouté<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> paramètre.</block>
 </blocks>
