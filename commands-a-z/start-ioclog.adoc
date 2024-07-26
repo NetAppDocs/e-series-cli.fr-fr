@@ -29,7 +29,7 @@ Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF
 
 == Contexte
 
-Les contrôleurs sont identifiés comme « a » ou « b ». Chaque contrôleur peut disposer de quatre canaux hôtes maximum, chaque canal étant identifié par un nombre compris entre 1 et 4.
+Les contrôleurs sont identifiés comme « a » ou « b ». Chaque contrôleur peut disposer de quatre canaux hôtes maximum, chaque canal étant identifié par un nombre compris entre 1 et 8.
 
 
 
@@ -37,7 +37,7 @@ Les contrôleurs sont identifiés comme « a » ou « b ». Chaque contrôleur p
 
 [listing]
 ----
-start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
+start IOCLog [(a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | b1 | b2 | b3 | b4 | b5 | b6 | b7 | b8)]
 [overwrite=(TRUE | FALSE)]
 ----
 
@@ -54,7 +54,7 @@ start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
  a| 
 Ce paramètre spécifie le contrôleur et le canal hôte à partir duquel produire le vidage CIO. Les identifiants de contrôleur valides sont `a` ou `b`, où `a` Est le contrôleur dans le slot A, et `b` Est le contrôleur associé au slot B. Les canaux d'hôte ont des identificateurs numériques. Placez l'identificateur du contrôleur et l'identificateur du canal hôte entre crochets ([ ]).
 
-Les valeurs d'identifiant de contrôleur et de canal hôte valides sont `a1`, `a2`, `a3`, `a4`, `b1`, `b2`, `b3`, `b4`.
+Les valeurs valides d'identifiant de contrôleur et de canal hôte sont `a1`, , `a2` `a3` `a4`, , , , `a5` `a6` `a7`, `a8`, , `b1`, `b2` `b3` `b4`, `b5`, , `b6`, `b7` `b8`ou .
 
 Si vous ne spécifiez pas de contrôleur, le logiciel de gestion du stockage renvoie une erreur de syntaxe.
 
