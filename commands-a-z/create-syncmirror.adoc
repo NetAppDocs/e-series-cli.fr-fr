@@ -21,7 +21,7 @@ Cette commande s'applique à n'importe quelle baie de stockage, avec quelques re
 
 [NOTE]
 ====
-Si vous exécutez la commande sur la baie E2800 ou E5700, le type de client doit être défini sur `symbol`. Cette commande ne s'exécute pas si le type de client est défini sur `https`.
+Cette commande n'est pas prise en charge sur les plateformes E2800, E5700, EF600 et EF300.
 
 ====
 
