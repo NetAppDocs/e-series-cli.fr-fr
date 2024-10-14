@@ -19,6 +19,11 @@ Le `activate storageArray feature` Commande active la fonction de mise en miroir
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
 
+[NOTE]
+====
+Cette commande s'applique uniquement à la mise en miroir asynchrone sur Fibre Channel.
+
+====
 
 
 == Rôles
@@ -38,10 +43,6 @@ Après avoir activé la fonction de mise en miroir asynchrone, vous devez config
 [listing]
 ----
 activate storageArray feature=asyncRemoteMirror
-----
-[listing]
-----
-activate storageArray feature=asyncMirror
 ----
 
 
