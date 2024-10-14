@@ -10,7 +10,7 @@ settings:
   pdf:
     zip-level: 1
     zip-filename: santricity-commands.zip
-  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,it-it
+  langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
   - title: Documentation sur l'interface de ligne de commandes SANtricity
