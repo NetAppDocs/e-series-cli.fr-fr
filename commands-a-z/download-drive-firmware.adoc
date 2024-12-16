@@ -7,7 +7,7 @@ summary: La commande télécharger le firmware du disque télécharge une image 
 = Téléchargez le micrologiciel du lecteur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `download drive firmware` commande télécharge une image de firmware sur un 
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
@@ -45,7 +45,7 @@ Cette commande est destinée à télécharger une image de firmware sur un seul 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
  [online|offline] firmware file="filename"

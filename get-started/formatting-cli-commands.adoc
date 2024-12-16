@@ -2,13 +2,20 @@
 permalink: get-started/formatting-cli-commands.html 
 sidebar: sidebar 
 keywords: format, rules, cli, commands 
-summary: 'Les guillemets doubles utilisés dans le cadre d"un nom ou d"une étiquette doivent être pris en compte lors de l"exécution des commandes CLI et des commandes de script sur un système d"exploitation Windows, Linux ou Solaris.' 
+summary: En fonction de la valeur ou du nom saisi, certaines règles de format sont appliquées pour les commandes CLI. 
 ---
 = Règles de format pour les commandes CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+En fonction de la valeur ou du nom saisi, certaines règles de format sont appliquées pour les commandes CLI.
+
+
+
+== Règles de format CLI
 
 Les guillemets doubles (" ") utilisés dans le cadre d'un nom ou d'un libellé nécessitent une considération particulière lorsque vous exécutez les commandes CLI et les commandes de script sur un système d'exploitation Windows, Linux ou Solaris.
 

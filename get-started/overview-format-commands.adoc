@@ -7,10 +7,13 @@ summary: 'L"interface de ligne de commande est une application logicielle qui pe
 = Présentation de l'interface de ligne de commandes
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-L'interface de ligne de commande est une application logicielle qui permet de configurer et de surveiller les matrices de stockage. À l'aide de l'interface de ligne de commande, vous pouvez exécuter des commandes à partir d'une invite du système d'exploitation, telle que DOS `C:` Invite, chemin d'accès au système d'exploitation Linux ou chemin d'accès au système d'exploitation Solaris.
+[role="lead"]
+L'interface de ligne de commande est une application logicielle qui permet de configurer et de surveiller les matrices de stockage.
+
+À l'aide de l'interface de ligne de commande, vous pouvez exécuter des commandes à partir d'une invite du système d'exploitation, telle que l'invite DOS `C:`, le chemin d'accès au système d'exploitation Linux ou le chemin d'accès au système d'exploitation Solaris.
 
 L'interface de ligne de commandes vous donne un accès direct à un moteur de script utilisé dans le logiciel de gestion du stockage. Le moteur de script exécute des commandes qui configurent et gèrent les matrices de stockage. Le moteur de script lit les commandes, soit par le biais d'un fichier script, soit directement à partir de la ligne de commande, et exécute les opérations spécifiées par les commandes.
 

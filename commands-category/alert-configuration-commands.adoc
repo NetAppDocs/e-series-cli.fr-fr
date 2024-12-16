@@ -7,8 +7,11 @@ summary: 'Commandes de configuration d"alertes'
 = Commandes de configuration d'alertes
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes de configuration d'alertes est disponible pour votre système de stockage E-Series.
 
 
 

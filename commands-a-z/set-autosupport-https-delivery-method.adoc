@@ -1,13 +1,13 @@
 ---
-permalink: commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html 
+permalink: commands-a-z/set-autosupport-https-delivery-method.html 
 sidebar: sidebar 
-keywords: 'Specify AutoSupport HTTP(S) delivery method (for individual E2800 or E5700 arrays)' 
+keywords: 'Specify AutoSupport HTTP(S) delivery method' 
 summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi des messages AutoSupport au protocole HTTP(S).' 
 ---
-= Spécification de la méthode de livraison AutoSupport HTTP(S) (pour les baies E2800 ou E5700 individuelles)
+= Spécifiez la méthode de livraison AutoSupport HTTP(S)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,25 +17,22 @@ Le `set storageArray autoSupport deliveryMethod` Commande configure la méthode 
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
-set storageArray autoSupport deliveryMethod={HTTP | HTTPS}
-   {direct | proxyConfigScript=pass:quotes["_proxyConfigScriptUrl_"] |
-proxyServer hostAddress=pass:quotes[_address_] portNumber=pass:quotes[_portNumber_]
- [userName=pass:quotes["_username_"] password=pass:quotes["_password_"]]}
+set storageArray autoSupport deliveryMethod=email mailRelayServer="mail.example.com" senderEmail="sender@example.com"
 ----
 
 
@@ -52,7 +49,6 @@ proxyServer hostAddress=pass:quotes[_address_] portNumber=pass:quotes[_portNumbe
 Permet à l'utilisateur de spécifier la méthode de livraison de la collection AutoSupport. Les choix valides sont les suivants :
 
 * e-mail
-* HTTP
 * HTTPS
 
 

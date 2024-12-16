@@ -7,7 +7,7 @@ summary: 'La commande show Controller renvoie l"état des diagnostics du contrô
 = Affiche l'état de diagnostic du contrôleur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -19,7 +19,7 @@ Si les diagnostics ont terminé, les résultats complets des tests de diagnostic
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
 ----

@@ -7,7 +7,7 @@ summary: 'La commande SMcli enable|disable autoSupportRemoteDiag active ou désa
 = Activation ou désactivation de la fonctionnalité de diagnostic à distance AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement).
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `SMcli enable|disable autoSupportRemoteDiag` Active ou désactive la fonction
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
@@ -46,7 +46,7 @@ Vous devez activer les trois fonctions dans cet ordre.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 SMcli enable|disable autoSupportRemoteDiag
 ----

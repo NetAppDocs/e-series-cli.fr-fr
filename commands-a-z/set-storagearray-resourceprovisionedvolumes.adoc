@@ -7,7 +7,7 @@ summary: La commande set storageArray resourceprovisionnédvolumes désactive la
 = Définir les volumes provisionnés des ressources de la baie de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -39,7 +39,7 @@ Les volumes provisionnés de ressource ne sont pris en charge que sur les pools 
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray resourceProvisionedVolumes=(enable|disable)
 ----

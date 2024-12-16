@@ -7,7 +7,7 @@ summary: 'La commande Import storageArray securityKey file déverrouille un ou p
 = Importer la clé de sécurité de la matrice de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `import storageArray securityKey file` Commande déverrouille un ou plusieurs
 
 == Baies prises en charge
 
-Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E2800, E5700, EF600 ou EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600 ou EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -40,7 +40,7 @@ Cette commande s'applique à la gestion interne et externe des clés.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 import storageArray securityKey file="fileName"
 passPhrase="passPhraseString"

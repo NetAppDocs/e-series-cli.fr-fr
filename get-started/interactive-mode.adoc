@@ -2,15 +2,18 @@
 permalink: get-started/interactive-mode.html 
 sidebar: sidebar 
 keywords: interactive mode 
-summary: 'Si vous saisissez `SMcli` Et un nom de matrice de stockage, mais sans spécifier les paramètres CLI, les commandes de script ou un fichier script, l"interface de ligne de commande s"exécute en mode interactif.' 
+summary: 'Le mode interactif vous permet d"exécuter des commandes individuelles sans préfixer les commandes avec `SMcli`.' 
 ---
 = Mode interactif
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Si vous saisissez `SMcli` Et un nom de matrice de stockage, mais sans spécifier les paramètres CLI, les commandes de script ou un fichier script, l'interface de ligne de commande s'exécute en mode interactif. Le mode interactif vous permet d'exécuter des commandes individuelles sans préfixer les commandes avec `SMcli`.
+[role="lead"]
+Le mode interactif vous permet d'exécuter des commandes individuelles sans préfixer les commandes avec `SMcli`.
+
+Si vous saisissez `SMcli` Et un nom de matrice de stockage, mais sans spécifier les paramètres CLI, les commandes de script ou un fichier script, l'interface de ligne de commande s'exécute en mode interactif.
 
 En mode interactif, vous pouvez saisir une seule commande, afficher les résultats et saisir la commande suivante sans saisir la commande Complete `SMcli` chaîne. Le mode interactif est utile pour déterminer les erreurs de configuration et tester rapidement les modifications de configuration.
 

@@ -7,7 +7,7 @@ summary: 'La commande save Controller arrayManagementTM génère une requête de
 = Générer une requête de signature de certificat de serveur Web (RSC)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `save controller arrayManagementCSR` Commande génère une requête de signat
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -35,7 +35,7 @@ La RSC doit être signée par une autorité de certification. Le certificat sign
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 save controller [(a|b)] arrayManagementCSR
@@ -47,6 +47,7 @@ save controller [(a|b)] arrayManagementCSR
      locality=pass:quotes["_cityOrLocality_"]
      [stateProvince=pass:quotes["_stateOrRegion_"]]
      country=pass:quotes["_string_"]
+     keySize=["2048 | 3072 | 4096 "]
      file=pass:quotes["_filename_"]
 ----
 
@@ -118,6 +119,13 @@ Permet de spécifier l'état ou la région où la matrice de stockage est situé
 `country`
  a| 
 Permet de spécifier le code ISO (International Organization for Standardization) à deux chiffres de votre pays, tel que les États-Unis.
+
+
+
+ a| 
+`keySize`
+ a| 
+Permet de spécifier une valeur de `2048`, `3072` ou `4096` pour la taille de clé du serveur. La taille de clé par défaut est 3072 si aucune taille de clé n'est sélectionnée.
 
 
 

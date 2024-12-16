@@ -7,8 +7,11 @@ summary: Commandes de configuration de volume
 = Commandes de configuration de volume
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes de configuration de volume est disponible pour votre système de stockage E-Series.
 
 
 

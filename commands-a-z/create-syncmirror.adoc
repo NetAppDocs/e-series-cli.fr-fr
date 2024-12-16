@@ -7,7 +7,7 @@ summary: 'La commande create SyncMirror crée à la fois le volume principal et 
 = Création d'une mise en miroir synchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Cette commande s'applique à n'importe quelle baie de stockage, avec quelques re
 
 [NOTE]
 ====
-Cette commande n'est pas prise en charge sur les plateformes E2800, E5700, EF600 et EF300.
+Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.
 
 ====
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez disposer du rôle d'administrateur du stockage.
+S/O
 
 
 
@@ -43,7 +43,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create syncMirror primary=pass:quotes[_"primaryVolumeName_"
 secondary="_secondaryVolumeName_"

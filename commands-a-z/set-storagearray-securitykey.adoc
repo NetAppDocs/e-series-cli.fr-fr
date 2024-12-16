@@ -7,7 +7,7 @@ summary: 'La commande Set storageArray securityKey définit la clé de sécurit�
 = Définir la clé de sécurité de la matrice de stockage interne
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set storageArray securityKey` Commande définit la clé de sécurité utilis
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -40,7 +40,7 @@ Cette commande ne s'applique qu'à la gestion interne des clés.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray securityKey
 ----

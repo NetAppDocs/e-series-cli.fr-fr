@@ -7,8 +7,11 @@ summary: Commandes du système de contrôle du stockage « personnel »
 = Commandes du système de contrôle du stockage « personnel »
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes du personnel du moniteur de stockage est disponible pour votre système de stockage E-Series.
 
 link:../commands-a-z/show-storagearray-usersession.html["Affichez la session utilisateur de la baie de stockage"]
 

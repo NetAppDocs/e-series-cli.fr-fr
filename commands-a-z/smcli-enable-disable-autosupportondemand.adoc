@@ -7,7 +7,7 @@ summary: La commande SMcli enable|disable autoSupportOnDemand active ou désacti
 = Activation ou désactivation de la fonctionnalité AutoSupport OnDemand au niveau du domaine de gestion EMW (SMcli uniquement).
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `SMcli enable|disable autoSupportOnDemand` La commande active ou désactive l
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
@@ -34,7 +34,7 @@ Avant d'activer cette fonctionnalité, vous devez d'abord activer la fonctionnal
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 SMcli enable|disable autoSupportOnDemand
 ----

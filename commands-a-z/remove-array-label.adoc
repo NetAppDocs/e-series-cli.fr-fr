@@ -7,7 +7,7 @@ summary: 'La commande Supprimer un label de tableau vous permet de supprimer un 
 = Retirez l'étiquette de la matrice
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Cette commande s'applique aux baies de stockage EF600 et EF300.
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 delete storageArrayLabel label pass:quotes[_userDefinedString_]
 delete storageArrayLabel all

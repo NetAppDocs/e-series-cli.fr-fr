@@ -7,7 +7,7 @@ summary: 'La commande set ssdcache augmente la capacité d"un cache SSD existant
 = Ajout de disques à SSD cache
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,18 +17,18 @@ Le `set ssdCache` Cette commande augmente la capacité d'un cache SSD existant e
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 [NOTE]
 ====
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
 
 ====
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[set ssdCache [_ssdCacheName_]]
 pass:quotes[addDrives=(_trayID1_,[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn_,]pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]

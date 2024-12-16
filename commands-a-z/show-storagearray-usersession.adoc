@@ -7,7 +7,7 @@ summary: 'La commande show storageArray usersession vous permet d"afficher la p�
 = Affichez la session utilisateur de la baie de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `show storageArray userSession` La commande vous permet d'afficher la périod
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Administrateur du stockage ou Administrateur du support ou moniteur de stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage, d'administrateur du support ou de moniteur de stockage.
 
 
 
@@ -35,7 +35,7 @@ Aucune.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 show storageArray userSession
 ----

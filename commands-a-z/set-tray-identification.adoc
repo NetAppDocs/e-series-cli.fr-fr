@@ -7,7 +7,7 @@ summary: 'La commande définir le bac définit l"ID du bac d"alimentation d"un t
 = Définir l'identification du bac
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Cette commande n'est valide que pour les tiroirs de contrôleur, les tiroirs de 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----

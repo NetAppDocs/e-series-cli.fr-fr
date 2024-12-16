@@ -7,7 +7,7 @@ summary: 'La commande create ssdcache crée un cache de lecture pour une matrice
 = Créez un cache SSD
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `create ssdCache` La commande crée un cache de lecture pour une matrice de s
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
 
 
 
@@ -35,7 +35,7 @@ L'utilisation de disques SSD hautes performances pour mettre en cache les donné
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create ssdCache userLabel=pass:quotes[_"ssdCacheName"_]
 drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,[drawerIDn,_]]pass:quotes[_slotIDn_)]

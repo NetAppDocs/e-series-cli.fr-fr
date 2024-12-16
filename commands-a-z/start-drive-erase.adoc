@@ -7,7 +7,7 @@ summary: 'La commande de démarrage de l"effacement du lecteur efface toutes les
 = Commencez à effacer le lecteur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `start drive erase` la commande efface toutes les données d'un ou de plusieu
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.
+Cette commande s'applique à une baie E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -40,7 +40,7 @@ L'opération d'effacement ne peut pas être annulée. Assurez-vous de sélection
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
 ----

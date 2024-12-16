@@ -7,7 +7,7 @@ summary: 'La commande définir iserTarget définit les propriétés d"une cible 
 = Définir la cible iser
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Cette commande est obsolète et est remplacée par le xref:set-target.adoc[Défi
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set iserTarget pass:quotes[["_userLabel_"]]
 authenticationMethod=(none | chap) |

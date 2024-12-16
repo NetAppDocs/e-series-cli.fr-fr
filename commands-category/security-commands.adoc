@@ -7,8 +7,11 @@ summary: Commandes de sécurité
 = Commandes de sécurité
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes de sécurité est disponible pour votre système de stockage E-Series.
 
 
 

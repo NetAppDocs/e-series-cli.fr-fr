@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-autosupport-dispatch-limit.html 
+sidebar: sidebar 
+keywords: Autosupport, bundle, dispatch, delivery type, size 
+summary: Définit la taille maximale des lots et des interventions AutoSupport pour différents types de livraison. 
+---
+= Définir la limite de taille d'intervention AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le `set storageArray autoSupport dispatchSizeLimit` définit la taille maximale des lots AutoSupport et des interventions pour différents types de livraison.
+
+Grâce à cette commande, les utilisateurs peuvent configurer la taille des e-mails en fonction de ce que leur serveur de messagerie prend en charge. Des tailles plus grandes réduisent le risque de tronquer le paquet de support.
+
+
+NOTE: Les utilisateurs ne doivent généralement pas configurer les tailles HTTPS sauf si le support NetApp le demande.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
+
+
+
+== Syntaxe
+
+[source, cli, subs="+macros"]
+----
+
+set storageArray autoSupport dispatchSizeLimit (https=(<sizeInBytes>|unlimited)|email=(<sizeInBytes>|unlimited));
+----
+
+
+== Paramètres
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`https`
+ a| 
+Taille maximale d'envoi HTTPS en octets. Si la taille maximale n'est pas configurée, la valeur par défaut est 50 Mio. La valeur « illimité » ou 0 permet de ne pas restreindre la taille. La taille minimale autorisée est de 2 Mio.
+
+
+
+ a| 
+`email`
+ a| 
+La taille maximale de livraison de courrier électronique (SMTP) en octets. Si la taille maximale n'est pas configurée, la valeur par défaut est 5 Mio. La valeur « illimité » ou 0 permet de ne pas restreindre la taille. La taille minimale autorisée est de 2 Mio.
+
+|===
+
+
+== Niveau minimal de firmware
+
+8,90

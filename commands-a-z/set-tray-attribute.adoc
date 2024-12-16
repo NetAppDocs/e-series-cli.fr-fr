@@ -7,7 +7,7 @@ summary: 'La commande définir bac définit les attributs définis par l"utilisa
 = Définir l'attribut de bac
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `set tray` commande définit les attributs définis par l'utilisateur pour un
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"]
 ----

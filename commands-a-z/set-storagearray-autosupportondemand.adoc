@@ -7,7 +7,7 @@ summary: La commande Set storageArray autoSupportOnDemand active ou désactive l
 = Activez ou désactivez la fonctionnalité AutoSupport OnDemand
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set storageArray autoSupportOnDemand` La commande active ou désactive la fo
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
@@ -35,7 +35,7 @@ Avant d'activer cette fonctionnalité, vous devez d'abord activer la fonctionnal
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray autoSupportOnDemand (enable | disable)
 ----

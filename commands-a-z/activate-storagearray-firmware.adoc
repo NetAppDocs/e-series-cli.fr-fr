@@ -7,7 +7,7 @@ summary: La commande Activer le micrologiciel du système de stockage active le 
 = Activer le micrologiciel de la matrice de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `activate storageArray firmware` la commande active le micrologiciel que vous
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 activate storageArray firmware
 [healthCheckMelOverride=(TRUE | FALSE)]

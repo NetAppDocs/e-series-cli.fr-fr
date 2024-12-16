@@ -7,7 +7,7 @@ summary: La commande set storageArray usersession vous permet de définir un dé
 = Définir la session utilisateur de la baie de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set storageArray userSession` La commande vous permet de définir une tempor
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -45,7 +45,7 @@ Aucune.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray userSession sessionTimeout=n
 ----

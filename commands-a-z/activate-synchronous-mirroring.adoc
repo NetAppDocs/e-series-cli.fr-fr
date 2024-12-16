@@ -7,7 +7,7 @@ summary: La commande Activer la fonctionnalité storageArray active la fonction 
 = Activer la mise en miroir synchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `activate storageArray feature` La commande active la fonction de mise en mir
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -47,7 +47,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 
 == Syntaxe (lecteurs définis par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 activate storageArray feature=syncMirror
 repositoryRAIDLevel=(0 |1 | 3 | 5 | 6)
@@ -59,7 +59,7 @@ repositoryDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1,_]pass:quotes[_
 [drawerLossProtect=(TRUE | FALSE)]
 [dataAssurance=(none | enabled)]
 ----
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 activate storageArray feature=syncMirror
 repositoryRAIDLevel=(0 |1 | 5 | 6)
@@ -73,7 +73,7 @@ repositoryDrives=pass:quotes[_(trayID1,_]pass:quotes[[_drawerID1_,]]pass:quotes[
 
 == Syntaxe (groupe de volumes défini par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 activate storageArray feature=syncMirror
 repositoryVolumeGroup=pass:quotes[_volumeGroupName_]
@@ -83,7 +83,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_]
 
 == Syntaxe (nombre de lecteurs défini par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 activate storageArray feature=syncMirror
 repositoryRAIDLevel=(1 | 3 | 5 | 6)
@@ -93,7 +93,7 @@ repositoryDriveCount=pass:quotes[_numberOfDrives_]
 [drawerLossProtect=(TRUE | FALSE)]
 [dataAssurance=(none | enabled)]
 ----
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 activate storageArray feature=syncMirror
 repositoryRAIDLevel=(1 | 5 | 6)

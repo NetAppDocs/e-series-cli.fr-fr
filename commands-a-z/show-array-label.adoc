@@ -7,7 +7,7 @@ summary: 'La commande Show array label renvoie des informations sur la définiti
 = Afficher l'étiquette de tableau
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `Show array label` la commande renvoie des informations sur la définition ou
 
 == Baies prises en charge
 
-Cette commande s'applique aux baies de stockage EF600.
+Cette commande s'applique aux baies de stockage EF600 et EF300.
 
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[show storageArrayLabel label _userDefinedString_]
 show storageArrayLabel all

@@ -2,19 +2,22 @@
 permalink: get-started/downloadable-smcli-parameters.html 
 sidebar: sidebar 
 keywords: downloadable, smcli, command line, parameters, identify, devices, SAML, multifactor, authentication, https, certificate, array, 
-summary: 'La version SANtricity OS 11.60 comprenait la possibilité de télécharger et d"installer la version http de l"interface de ligne de commande (également appelée Secure CLI ou SMcli) directement via SANtricity System Manager.' 
+summary: 'SANtricity OS 11.60 et les versions ultérieures permettent de télécharger et d"installer la version http de l"interface de ligne de commande (également appelée CLI sécurisée ou SMcli) directement via SANtricity System Manager.' 
 ---
 = Paramètres de ligne de commande SMcli téléchargeables
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+SANtricity OS 11.60 et les versions ultérieures permettent de télécharger et d'installer la version http de l'interface de ligne de commande (également appelée « CLI sécurisée » ou SMcli) directement via SANtricity System Manager.
 
 
 
 == 11.60 et les nouveaux paramètres de ligne de commande SMcli téléchargeables
 
-La version SANtricity OS 11.60 inclut la possibilité de télécharger et d'installer la version http de l'interface de ligne de commande (également appelée « Secure CLI » ou SMcli) directement via SANtricity System Manager. Cette version téléchargeable du SMcli est disponible sur les systèmes EF600, EF300, E5700, EF570, E2800, Et des contrôleurs EF280. Pour télécharger le SMcli dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* > *système* et *Add-ons* > *interface de ligne de commande* .
+La version téléchargeable de SMcli est disponible sur les contrôleurs E4000, EF600, EF300, E5700, EF570, E2800 et EF280. Pour télécharger le SMcli dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* *système* et *modules complémentaires* *interface de ligne de commande* .
 
 
 NOTE: Un environnement d'exécution Java (JRE), version 8 et supérieure, doit être disponible sur le système de gestion dans lequel vous prévoyez d'exécuter les commandes CLI.

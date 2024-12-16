@@ -7,7 +7,7 @@ summary: La commande add volume asynchrones MirrorGroup ajoute un volume primair
 = Ajout de volume à un groupe de miroirs asynchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Cette commande s'applique à n'importe quelle baie de stockage, avec quelques re
 
 [NOTE]
 ====
-Cette commande n'est pas prise en charge sur les plateformes E2800, E5700, EF600 et EF300.
+Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.
 
 ====
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+S/O
 
 
 
@@ -40,7 +40,7 @@ Cette commande n'est valide que sur la matrice de stockage locale qui contient l
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[add volume="_volumeName_" asyncMirrorGroup="_asyncMirrorGroupName_"
 remotePassword="_password_"

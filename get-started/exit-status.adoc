@@ -2,15 +2,20 @@
 permalink: get-started/exit-status.html 
 sidebar: sidebar 
 keywords: exit, status 
-summary: Ce tableau répertorie les États de sortie qui peuvent être renvoyés et la signification de chaque état. 
+summary: Les États de sortie sont renvoyés sur les commandes exécutées. Ce tableau répertorie les États de sortie qui peuvent être renvoyés et la signification de chaque état. 
 ---
 = Statut de sortie
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Ce tableau répertorie les États de sortie qui peuvent être renvoyés et la signification de chaque état.
+[role="lead"]
+Les États de sortie sont renvoyés sur les commandes exécutées. Le tableau suivant répertorie les États de sortie qui peuvent être renvoyés ainsi que la signification de chaque état.
+
+
+
+== Quitter les définitions d'état
 
 [cols="3*"]
 |===

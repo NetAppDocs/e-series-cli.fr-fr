@@ -7,7 +7,7 @@ summary: 'La commande Set SyncMirror définit les propriétés d"une paire symé
 = Définissez la mise en miroir synchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `set syncMirror` commande définit les propriétés d'une paire symétrique �
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
@@ -38,7 +38,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set syncMirror (localVolume pass:quotes[[_volumeName_]] |
 localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])

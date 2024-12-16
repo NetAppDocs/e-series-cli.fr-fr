@@ -7,7 +7,7 @@ summary: 'La commande Afficher les certificats vous permet d"afficher les certif
 = Afficher les certificats
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `Show certificates` Commande permet d'afficher les certificats installés sur
 
 == Baies prises en charge
 
-Cette commande s'applique aux baies de stockage EF600.
+Cette commande s'applique aux baies de stockage EF600 et EF300.
 
 
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 show localCertificate all | alias alias
 ----

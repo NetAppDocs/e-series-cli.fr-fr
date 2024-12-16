@@ -1,5 +1,5 @@
 ---
-permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+permalink: commands-a-z/set-email-smtp-delivery-method.html 
 sidebar: sidebar 
 keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
 summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi de messages AutoSupport à des e-mails (SMTP).' 
@@ -7,7 +7,7 @@ summary: 'La commande set storageArray AutoSupport livyMethod définit la métho
 = Spécifiez la méthode de livraison de l'e-mail (SMTP)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,22 +17,22 @@ Le `set storageArray autoSupport deliveryMethod` Commande configure la méthode 
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set storageArray autoSupport deliveryMethod=email
-mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"] destinationAddress="destination1@example.com" destinationAddress="destination2@example.com";
 ----
 
 
@@ -49,7 +49,6 @@ mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
 Permet à l'utilisateur de spécifier la méthode de livraison de la collection AutoSupport. Les choix valides sont les suivants :
 
 * e-mail
-* HTTP
 * HTTPS
 
 
@@ -71,6 +70,13 @@ Permet à l'utilisateur de spécifier le serveur de relais de messagerie pour la
 `senderEmail`
  a| 
 Permet à l'utilisateur de spécifier l'adresse e-mail d'envoi pour la collection AutoSupport.
+
+
+
+ a| 
+`destinationAddress`
+ a| 
+Adresse e-mail à laquelle les interventions AutoSupport seront envoyées. Ce paramètre peut être fourni plusieurs fois pour permettre l'envoi d'interventions à plusieurs adresses.
 
 |===
 

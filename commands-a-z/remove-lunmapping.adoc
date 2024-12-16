@@ -7,7 +7,7 @@ summary: 'La commande remove lunMapping supprime le mappage du numéro d"unité 
 = Supprimer le mappage de LUN de volume
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Le `remove lunMapping` La commande supprime le mappage du numéro d'unité logiq
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 (host=pass:quotes[_"hostName_" | hostGroup=(_"hostGroupName"_] | defaultGroup)
@@ -38,7 +38,7 @@ remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 
 == Syntaxe permettant de supprimer le mappage de LUN ou de NSID de plusieurs LUN de volume ou mappage de NSID
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 remove (allVolumes | volumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 lunMapping

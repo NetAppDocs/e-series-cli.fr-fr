@@ -7,7 +7,7 @@ summary: La commande SMcli -autoSupportConfig définit la méthode de transmissi
 = Spécifier la méthode de livraison AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `SMcli -autoSupportConfig` Commande configure la méthode de transmission pou
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
@@ -38,7 +38,7 @@ Vous pouvez créer deux principaux types de modes de transmission pour l'envoi d
 
 == Syntaxe pour la méthode de livraison SMTP
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig deliveryMethod=SMTP
 mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>

@@ -7,7 +7,7 @@ summary: 'La commande set emailAlert configure l"e-mail pour envoyer un e-mail �
 = Configurez les paramètres d'alerte par e-mail
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,15 +17,14 @@ Le `set emailAlert` commande configure l'e-mail pour envoyer un e-mail à une or
 
 == Baies prises en charge
 
-Cette commande s'applique aux baies de stockage E2800, E5700, EF600 et EF300. Vous pouvez cependant utiliser la commande comme commande SMcli, et non comme une commande de script, pour des baies E2700 ou E5600. Dans ce cas, la commande s'applique à toutes les baies du domaine de gestion.
+Cette commande s'applique aux baies de stockage E4000, E2800, E5700, EF600 et EF300. Vous pouvez cependant utiliser la commande comme commande SMcli, et non comme une commande de script, pour des baies E2700 ou E5600. Dans ce cas, la commande s'applique à toutes les baies du domaine de gestion.
 
 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 set emailAlert
     serverAddress=pass:quotes["_serverAddress_"] |
     serverEncryption=pass:quotes[_none_ | _smtps_ | _starttls_ |]

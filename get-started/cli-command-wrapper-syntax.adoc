@@ -7,10 +7,15 @@ summary: Les formulaires de syntaxe générale des wrappers de commande CLI sont
 = Syntaxe de l'encapsuleur de commande CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 Les formulaires de syntaxe générale des wrappers de commande CLI sont répertoriés dans cette section. Les conventions utilisées dans la syntaxe de l'encapsuleur de commande CLI sont répertoriées dans le tableau suivant.
+
+
+
+== Conventions relatives à la syntaxe de l'encapsuleur de commande CLI
 
 [cols="2*"]
 |===

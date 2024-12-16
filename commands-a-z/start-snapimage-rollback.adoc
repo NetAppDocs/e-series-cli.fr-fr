@@ -7,7 +7,7 @@ summary: 'La commande Start SnapImage rollback lance une opération de restaurat
 = Démarrer la restauration de l'image instantanée
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `start snapImage rollback` commande lance une opération de restauration pour
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -42,7 +42,7 @@ Vous ne pouvez pas utiliser cette commande pour les images Snapshot impliquées 
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[start snapImage ["_snapImageName_"]] rollback
 ----

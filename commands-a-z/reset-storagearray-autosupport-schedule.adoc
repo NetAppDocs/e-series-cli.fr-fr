@@ -4,10 +4,10 @@ sidebar: sidebar
 keywords: reset, autosupport, message, collection, schedule 
 summary: La commande reset storageArray AutoSupport schedule réinitialise les heures et jours quotidiens et hebdomadaires de la semaine auxquels les messages AutoSupport sont renvoyés vers les valeurs aléatoires générées par le logiciel de gestion. 
 ---
-= Réinitialiser le programme de collecte de messages AutoSupport (pour les baies E2800 ou E5700 individuelles)
+= Réinitialiser le planning de collecte des messages AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `reset storageArray autoSupport schedule` Commande réinitialise les heures e
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
@@ -37,7 +37,7 @@ Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 reset storageArray autoSupport schedule
 ----

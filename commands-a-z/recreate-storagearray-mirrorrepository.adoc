@@ -7,7 +7,7 @@ summary: 'La commande reate storageArray mirrorRepository crée un nouveau volum
 = Recréez le volume du référentiel de mise en miroir synchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `recreate storageArray mirrorRepository` Cette commande crée un nouveau volu
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -40,7 +40,7 @@ La condition sous-jacente est que vous avez déjà créé un volume de référen
 
 == Syntaxe (lecteurs définis par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryRAIDLevel=(1 | 3 | 5 | 6)
@@ -53,7 +53,7 @@ repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_
 
 == Syntaxe (groupe de volumes défini par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryVolumeGroup=pass:quotes[_volumeGroupName_
@@ -63,7 +63,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_
 
 == Syntaxe (nombre de lecteurs défini par l'utilisateur)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryRAIDLevel=(1 | 3 | 5 | 6)

@@ -7,10 +7,13 @@ summary: 'Les commandes CLI se présentent sous la forme d"un gestionnaire de co
 = Structure des commandes CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Les commandes CLI se présentent sous la forme d'un gestionnaire de commandes et d'éléments intégrés à l'encapsuleur. Une commande CLI comprend les éléments suivants :
+[role="lead"]
+Les commandes CLI se présentent sous la forme d'un gestionnaire de commandes et d'éléments intégrés à l'encapsuleur.
+
+Une commande CLI comprend les éléments suivants :
 
 * Un encapsuleur de commande identifié par le terme `SMcli`
 * L'identifiant de la matrice de stockage

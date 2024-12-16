@@ -7,7 +7,7 @@ summary: La commande set storageArray définit les propriétés de la matrice de
 = Définir la baie de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set storageArray` commande définit les propriétés de la matrice de stocka
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -38,7 +38,7 @@ Avec la version 8.10 du micrologiciel `cacheFlushStop` ce paramètre est obsolè
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray
 ([autoLoadBalancingEnable=(TRUE | FALSE)]|
@@ -49,7 +49,6 @@ set storageArray
 [autoSupportRemoteDiag (enable |disable)]|
 [cacheBlockSize=cacheBlockSizeValue]|
 [cacheFlushStart=cacheFlushStartSize]|
-[cacheFlushStop=cacheFlushStopSize]|
 [cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)]|
 [controllerHealthImageAllowOverWrite]|
 [defaultHostType=("hostTypeName" |"hostTypeIdentifier")] |
@@ -60,13 +59,13 @@ set storageArray
 [icmpPingResponse=(TRUE | FALSE)]|
 [isnsIPV4ConfigurationMethod isns IPv4 Config Method Parameters]|
 [isnsIPv6Address=ipAddress]|
-[isnsListeningPort=listeningPortIPAddress]]|
+[isnsListeningPort=listeningPortIPAddress]|
 [isnsRegistration=(TRUE | FALSE)]|
 [learnCycleDate learn cycle parameters]|
 [localUsername=local user name parameters]|
 [loginBanner file="path_to_login_banner"]|
 [managementInterface restOnly={true | false}]|
-[mediaScanRate=(disabled | 1-30)]|
+[mediaScanRate=(disabled | 1-210)]|
 [odxEnabled=(TRUE | FALSE)]|
 [password="password"]|
 [passwordLength=<INTEGER>]|
@@ -306,7 +305,7 @@ Modifie l'interface de gestion du contrôleur. Modifiez le type d'interface de g
  a| 
 `mediaScanRate`
  a| 
-Nombre de jours pendant lesquels l'analyse des supports s'exécute. Les valeurs valides sont `disabled` , qui éteint la numérisation du support, ou `1` jour après jour `30` jours, où `1` le jour est le taux de balayage le plus rapide, et `30` jours est la vitesse d'acquisition la plus lente. Une valeur autre que `disabled` ou `1` à `30` ne permet pas au lecteur multimédia de fonctionner.
+Nombre de jours pendant lesquels l'analyse des supports s'exécute. Les valeurs valides sont `disabled` , qui désactive la numérisation des supports, ou `1` jour à `210` jours, où `1` jour est le taux de numérisation le plus rapide et `210` jours est le taux de numérisation le plus lent. Une valeur autre que `disabled` ou `1` via ne `210` permet pas la numérisation des supports.
 
 
 

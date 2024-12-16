@@ -7,7 +7,7 @@ summary: 'La commande show guideChannel stats affiche le transfert de données c
 = Affiche les statistiques des canaux de lecteur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `show driveChannel stats` la commande affiche le transfert de données cumul�
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -35,7 +35,7 @@ Si le contrôleur a automatiquement dégradé un canal de disque, cette commande
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
    driveChannels [1 2 3 4 5 6 7 8] |

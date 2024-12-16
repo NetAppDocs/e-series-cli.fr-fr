@@ -7,7 +7,7 @@ summary: Utilisez la commande SMcli -autoSupportConfig test pour tester la confi
 = Tester la configuration AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -37,7 +37,7 @@ Le moniteur persistant doit être exécuté sur la station de gestion pour envoy
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig test reply-toEmail<address>
 ----

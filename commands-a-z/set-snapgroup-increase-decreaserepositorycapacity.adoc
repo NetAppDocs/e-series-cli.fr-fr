@@ -7,7 +7,7 @@ summary: 'La commande set snapGroup augmente/decreRepositoryCapacity augmente ou
 = Définissez la capacité du volume du référentiel du groupe de snapshots
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Le `set snapGroup increase/decreaseRepositoryCapacity` la commande augmente ou d
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, 2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packages SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
 == Syntaxe permettant d'augmenter la capacité
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set snapGroup pass:quotes[["_snapGroupName_"]] increaseRepositoryCapacity
 (repositoryVolumes="repos_xxxx" | repositoryVolumes=pass:quotes[((_volumeGroupName_]

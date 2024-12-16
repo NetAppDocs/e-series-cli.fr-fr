@@ -7,7 +7,7 @@ summary: 'La commande Save storageArray loginBanner vous permet d"enregistrer un
 = Enregistrez la bannière de connexion à la matrice de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `save storageArray loginBanner` commande vous permet d'enregistrer une banni�
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
@@ -29,7 +29,7 @@ Un utilisateur doté de n'importe quel rôle peut exécuter cette commande.
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 save storageArray loginBanner file="file_name"
 ----

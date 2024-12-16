@@ -7,7 +7,7 @@ summary: 'La commande SMcli -supportBundle schedule crée ou supprime un plannin
 = Planifiez la configuration automatique de la collecte de bundle de support
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -28,7 +28,7 @@ Vous pouvez créer deux types d'horaires :
 
 == Syntaxe permettant de créer un planning quotidien/hebdomadaire
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -42,7 +42,7 @@ pass:quotes[data=_pathName_]
 
 == Syntaxe permettant de créer un planning mensuel/annuel
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -65,7 +65,7 @@ pass:quotes[data=_pathName_]
 Cette commande supprime complètement la planification de la matrice de stockage. Pour relancer l'enregistrement des informations de bundle de support, vous devez créer un nouveau programme.
 
 ====
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule disable
 pass:quotes[(all|_storageArrayName_)]

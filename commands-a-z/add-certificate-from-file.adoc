@@ -7,7 +7,7 @@ summary: 'La commande Ajouter un certificat à partir du fichier vous permet de 
 = Ajouter un certificat à partir du fichier
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Cette commande s'applique aux baies de stockage EF600 et EF300.
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
 ----

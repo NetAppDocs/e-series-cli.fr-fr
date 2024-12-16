@@ -7,7 +7,7 @@ summary: La commande show check volume parity jobs affiche toutes les tâches de
 = Afficher les tâches de vérification de parité de volume
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -29,7 +29,7 @@ Pour exécuter cette commande sur une baie de stockage EF600 et EF300, vous deve
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show check volume parity jobs;
 ----

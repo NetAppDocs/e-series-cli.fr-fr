@@ -7,10 +7,13 @@ summary: 'Étant donné que vous pouvez utiliser les commandes script pour défi
 = Synopsis des commandes de script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Étant donné que vous pouvez utiliser les commandes script pour définir et gérer les différents aspects d'une baie de stockage (topologie hôte, configuration des lecteurs, configuration des contrôleurs, définitions de volumes et définitions de groupes de volumes, par exemple), le nombre réel de commandes est considérable. Les commandes, cependant, se divisent en catégories générales qui sont réutilisées lorsque vous appliquez les commandes pour configurer ou gérer une matrice de stockage. Le tableau suivant répertorie la forme générale des commandes de script et une définition de chaque commande.
+[role="lead"]
+Étant donné que vous pouvez utiliser les commandes script pour définir et gérer les différents aspects d'une baie de stockage (topologie hôte, configuration des lecteurs, configuration des contrôleurs, définitions de volumes et définitions de groupes de volumes, par exemple), le nombre réel de commandes est considérable.
+
+Les commandes se divisent en catégories générales réutilisées lorsque vous appliquez les commandes pour configurer ou gérer une matrice de stockage. Le tableau suivant répertorie la forme générale des commandes de script et une définition de chaque commande.
 
 [cols="2*"]
 |===

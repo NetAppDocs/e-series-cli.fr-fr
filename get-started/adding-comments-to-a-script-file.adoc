@@ -7,10 +7,15 @@ summary: Le moteur de script recherche certains caractères ou une commande pour
 = Ajoutez des commentaires à un fichier de script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Le moteur de script recherche certains caractères ou une commande pour afficher les commentaires. Vous pouvez ajouter des commentaires à un fichier de script de trois façons :
+[role="lead"]
+Le moteur de script recherche certains caractères ou une commande pour afficher les commentaires. Vous pouvez ajouter des commentaires à un fichier de script de trois façons.
+
+
+
+== Méthodes d'ajout de commentaires à un fichier de script
 
 * Ajoutez du texte après deux barres obliques (`//` ) comme commentaire jusqu'à ce qu'un caractère de fin de ligne soit atteint. Si le moteur de script ne trouve pas de caractère de fin de ligne dans le script après le traitement d'un commentaire, un message d'erreur s'affiche et l'opération de script est terminée. Cette erreur survient généralement lorsqu'un commentaire est placé à la fin d'un script et que vous avez oublié d'appuyer sur la touche *entrée*.
 +

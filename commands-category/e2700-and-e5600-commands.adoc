@@ -6,9 +6,14 @@ summary: Commandes E2700 et E5600
 ---
 = Commandes E2700 et E5600
 :allow-uri-read: 
-:icons: font
-:imagesdir: ./media/
 
+
+[role="lead"]
+La liste suivante des commandes est disponible pour vos baies E2700 et E5600.
+
+
+
+= Commandes E2700 et E5600
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
 

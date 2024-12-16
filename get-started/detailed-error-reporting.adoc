@@ -7,10 +7,13 @@ summary: 'Les données collectées suite à une erreur rencontrée par l"interfa
 = Rapports détaillés sur les erreurs
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Les données collectées suite à une erreur rencontrée par l'interface de ligne de commandes sont écrites dans un fichier. La génération de rapports d'erreurs détaillés sous l'interface de ligne de commandes fonctionne comme suit :
+[role="lead"]
+Les données collectées suite à une erreur rencontrée par l'interface de ligne de commandes sont écrites dans un fichier.
+
+La génération de rapports d'erreurs détaillés sous l'interface de ligne de commandes fonctionne comme suit :
 
 * Si l'interface de ligne de commande doit interrompre de manière anormale l'exécution des commandes CLI et des scripts, les données d'erreur sont collectées et enregistrées avant la fin de l'interface de ligne de commande.
 * L'interface de ligne de commande enregistre les données d'erreur en les écrivant dans un nom de fichier standard.

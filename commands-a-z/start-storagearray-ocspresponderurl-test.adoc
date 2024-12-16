@@ -7,7 +7,7 @@ summary: 'La commande start storageArray ocspResponderUrl test recherche une con
 = Démarrez le test URL du serveur OCSP
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `start storageArray ocspResponderUrl test` La commande recherche une connexio
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
 
 
 
@@ -49,7 +49,7 @@ Si vous ne spécifiez pas d'URL, la commande utilise l'URL du répondeur OCSP tr
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 start storageArray ocspResponderUrl test (url=stringLiteral)
 ----

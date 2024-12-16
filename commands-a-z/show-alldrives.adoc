@@ -7,7 +7,7 @@ summary: La commande show allDrives renvoie des informations sur les lecteurs de
 = Afficher le lecteur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `show allDrives` la commande renvoie des informations sur les lecteurs de la 
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -43,7 +43,7 @@ Pour chaque lecteur de la matrice de stockage, cette commande renvoie les inform
 ** Niveau du micrologiciel
 
 
-* Informations sur la durée de vie des disques SSD (ces informations sont uniquement valides pour les systèmes E2800 et E5700/EF570, et ne sont pas affichées si la baie ne contient pas de disques SSD) :
+* Informations relatives à l'usure des disques SSD (ces informations ne s'affichent pas si la baie ne contient pas de disques SSD) :
 +
 ** Nombre moyen d'effacement.
 ** Les blocs de rechange restants.
@@ -71,7 +71,7 @@ Les informations de date de fabrication ne sont pas disponibles pour les disques
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show ((allDrives
 [driveMediaType=(HDD | SSD | unknown | allMedia)] |

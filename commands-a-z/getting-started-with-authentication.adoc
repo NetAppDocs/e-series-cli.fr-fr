@@ -7,7 +7,7 @@ summary: 'L"authentification requiert que les utilisateurs accèdent au système
 = Mise en route de l'authentification
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

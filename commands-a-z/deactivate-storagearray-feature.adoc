@@ -7,7 +7,7 @@ summary: La commande Désactiver la fonction StorageArray désactive la fonction
 = Désactiver la mise en miroir synchrone
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `deactivate storageArray feature` commande désactive la fonction de mise en 
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les baies E2700, E5600, E2800 et E5700 Tant que tous les paquets SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou Administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou Administrateur du support.
 
 
 
@@ -40,7 +40,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 deactivate storageArray feature=syncMirror
 ----

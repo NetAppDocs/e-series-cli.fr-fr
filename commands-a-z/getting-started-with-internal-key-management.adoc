@@ -7,7 +7,7 @@ summary: 'Une clé de sécurité est une chaîne de caractères partagée entre 
 = Premiers pas avec la gestion interne des clés
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

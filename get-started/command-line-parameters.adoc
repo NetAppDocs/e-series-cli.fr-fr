@@ -7,14 +7,17 @@ summary: 'SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 av
 = Paramètres de ligne de commande existants
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 avec des services web intégrés, la possibilité d'interagir sur la ligne de commandes à l'aide d'un protocole HTTPS sécurisé. Ces contrôleurs peuvent éventuellement utiliser le protocole de symbole pour les interactions de ligne de commande.
 
 
 
 == 11.53 et les anciens paramètres de ligne de commande
 
-SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 avec des services web intégrés, la possibilité d'interagir sur la ligne de commandes à l'aide d'un protocole HTTPS sécurisé. Ces contrôleurs peuvent éventuellement utiliser le protocole de symbole pour les interactions de ligne de commande. Le protocole de symbole est le seul protocole pris en charge pour les contrôleurs E2700 et E5600. Pour préserver les scripts existants et réduire le temps de transition, les options et la grammaire de l'interface de ligne de commande sont préservées autant que possible. Certaines fonctionnalités des contrôleurs E2800 et E5700 sont cependant différentes, en ce qui concerne la sécurité, l'authentification, le AutoSupport et les messages d'alerte. Leur grammaire sur les contrôleurs n'est pas dépassée. Toutefois, dans certains cas, la grammaire n'est que obsolète sur les systèmes E2800 ou E5700 lorsque le nouveau protocole https est utilisé.
+Le protocole de symbole est le seul protocole pris en charge pour les contrôleurs E2700 et E5600. Pour préserver les scripts existants et réduire le temps de transition, les options et la grammaire de l'interface de ligne de commande sont préservées autant que possible. Certaines fonctionnalités des contrôleurs E2800 et E5700 sont cependant différentes, en ce qui concerne la sécurité, l'authentification, le AutoSupport et les messages d'alerte. Leur grammaire sur les contrôleurs n'est pas dépassée. Toutefois, dans certains cas, la grammaire n'est que obsolète sur les systèmes E2800 ou E5700 lorsque le nouveau protocole https est utilisé.
 
 Pour les nouveaux paramètres qui s'appliquent uniquement à l' `*https*` Type de client, il en suit que s'appliquent uniquement aux contrôleurs E2800 ou E5700.
 

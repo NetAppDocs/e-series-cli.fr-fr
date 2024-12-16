@@ -7,9 +7,10 @@ summary: 'Les éléments de syntaxe récurrente sont une catégorie générale d
 = Éléments de syntaxe récurrents
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 Les éléments de syntaxe récurrente sont une catégorie générale de paramètres et d'options que vous pouvez utiliser dans les commandes de script. Le tableau suivant répertorie les conventions utilisées dans les éléments de syntaxe récurrents.
 
 [cols="2*"]

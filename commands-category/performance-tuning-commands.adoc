@@ -7,8 +7,11 @@ summary: 'Commandes d"ajustement des performances'
 = Commandes d'ajustement des performances
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes d'ajustement des performances est disponible pour votre système de stockage E-Series.
 
 
 

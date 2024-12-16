@@ -2,13 +2,18 @@
 permalink: commands-category/e2800-e5700-ef600-and-ef300-commands.html 
 sidebar: sidebar 
 keywords: commands, cache, file, array, certificate, autoconfigure, storage array 
-summary: Commandes E2800, E5700, EF600 et EF300 
+summary: Commandes E4000, E2800, E5700, EF600 et EF300 
 ---
-= Commandes E2800, E5700, EF600 et EF300
+= Commandes E4000, E2800, E5700, EF600 et EF300
 :allow-uri-read: 
-:icons: font
-:imagesdir: ./media/
 
+
+[role="lead"]
+La liste suivante des commandes est disponible pour votre système E4000, E2800, E5700, EF600 et EF300.
+
+
+
+= Commandes E4000, E2800, E5700, EF600 et EF300
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
 
@@ -214,11 +219,11 @@ link:../commands-a-z/smcli-enable-autosupportfeature.html["Activer ou désactive
 
 link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Activer ou désactiver AutoSupport (toutes les baies individuelles)"]
 
-link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Activation ou désactivation de la fenêtre de maintenance AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Activez ou désactivez la fenêtre de maintenance AutoSupport"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Activez ou désactivez la fonctionnalité AutoSupport OnDemand sur l'EMW..."]
 
-link:../commands-a-z/set-storagearray-autosupportondemand.html["Activez ou désactivez la fonctionnalité AutoSupport OnDemand (pour les baies E2800 ou E5700 individuelles)."]
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Activez ou désactivez la fonctionnalité AutoSupport OnDemand"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Activez ou désactivez la fonctionnalité de diagnostic à distance AutoSupport OnDemand à l'adresse suivante :"]
 
@@ -306,7 +311,7 @@ link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Réinit
 
 link:../commands-a-z/smcli-autosupportschedule-reset.html["Réinitialiser le planning de collecte des messages AutoSupport"]
 
-link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Réinitialiser le programme de collecte de messages AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Réinitialiser le planning de collecte des messages AutoSupport"]
 
 link:../commands-a-z/reset-controller.html["Réinitialiser le contrôleur"]
 
@@ -346,7 +351,7 @@ link:../commands-a-z/resume-ssdcache.html["Reprenez le cache SSD"]
 
 link:../commands-a-z/resume-syncmirror.html["Reprise de la mise en miroir synchrone"]
 
-link:../commands-a-z/save-storagearray-autosupport-log.html["Récupération d'un journal AutoSupport (pour des baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/save-storagearray-autosupport-log.html["Récupère un journal AutoSupport"]
 
 link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Récupère le certificat de gestion externe des clés installé"]
 
@@ -424,7 +429,9 @@ link:../commands-a-z/set-asyncmirrorgroup.html["Définissez le groupe de miroirs
 
 link:../commands-a-z/set-auditlog.html["Définissez les paramètres du journal d'audit"]
 
-link:../commands-a-z/set-storagearray-autosupport-schedule.html["Définir le calendrier de collecte des messages AutoSupport (pour les baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/set-autosupport-dispatch-limit.html["Définir la limite de taille d'intervention AutoSupport"]
+
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Définir le planning de collecte des messages AutoSupport"]
 
 link:../commands-a-z/set-storagearray-revocationchecksettings.html["Définissez les paramètres de vérification de révocation du certificat"]
 
@@ -696,9 +703,9 @@ link:../commands-a-z/smcli-autosupportconfig.html["Spécifier la méthode de liv
 
 link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Démarrez la synchronisation de la mise en miroir asynchrone"]
 
-link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Définir la méthode de livraison du courrier électronique (SMTP) (pour les baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/set-email-smtp-delivery-method.html["Spécifiez la méthode de livraison de l'e-mail (SMTP)"]
 
-link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Spécification de la méthode de livraison AutoSupport HTTP(S) (pour les baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/set-autosupport-https-delivery-method.html["Spécifiez la méthode de livraison AutoSupport HTTP(S)"]
 
 link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Démarrez le test URL du serveur OCSP"]
 
@@ -812,7 +819,7 @@ link:../commands-a-z/suspend-syncmirror-primaries.html["Suspendre la mise en mir
 
 link:../commands-a-z/diagnose-asyncmirrorgroup.html["Tester la connectivité avec un groupe de miroirs asynchrone"]
 
-link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Test des paramètres de fourniture des AutoSupport (pour des baies E2800 ou E5700 individuelles)"]
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Tester les paramètres de livraison AutoSupport"]
 
 link:../commands-a-z/start-emailalert-test.html["Testez la configuration de l'alerte par e-mail"]
 

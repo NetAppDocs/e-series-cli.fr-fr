@@ -7,7 +7,7 @@ summary: 'La commande SMcli -autoSupportLog vous permet d"afficher un fichier jo
 = Capturez ou affichez un journal AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Le `SMcli -autoSupportLog` Commande permet d'afficher un fichier journal AutoSup
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
@@ -38,7 +38,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -autoSupportLog pass:quotes[(all|-n "_storageArrayName_" | -w "_wwID_")]
 pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]

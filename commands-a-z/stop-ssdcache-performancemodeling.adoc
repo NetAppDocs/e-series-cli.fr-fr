@@ -7,7 +7,7 @@ summary: 'La commande stop ssdcache PerformantModeling arrête l"opération de m
 = Arrêtez la modélisation des performances du cache SSD
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `stop ssdCache performanceModeling` La commande arrête l'opération de modé
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
 
 
 
@@ -35,7 +35,7 @@ Avant d'exécuter cette commande, vous devez démarrer l'opération de modélisa
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 pass:quotes[stop ssdCache [_ssdCacheName_]] performanceModeling pass:quotes[[file="_filename_"]]

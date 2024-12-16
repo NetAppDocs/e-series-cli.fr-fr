@@ -25,6 +25,51 @@ Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous 
 ====
 
 
+== SANtricity 11.90
+
+Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.90.
+
+[cols="2*"]
+|===
+| Commande | Description de la modification 
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-autosupport-dispatch-limit.html["Définir la limite de taille d'intervention AutoSupport"]
+ a| 
+Commande ajoutée
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/save-controller-arraymanagementcsr.html["Enregistrez le contrôleur arrayManagementCSR"]
+ a| 
+Paramètre ajouté `KeySize`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-email-smtp-delivery-method.html["Définissez la méthode de livraison de courrier électronique (SMTP)"]
+ a| 
+Paramètre ajouté `destinationAddress`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/show-storagearray-autosupport.html#examples["Afficher les paramètres AutoSupport"]
+ a| 
+Ajout de limites de taille d'intervention et d'adresses e-mail de destination à l'exemple de sortie pour la commande.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/download-storagearray-keymanagementcertificate.html["Téléchargez le certificat de gestion de clé de baie de stockage"]
+ a| 
+Paramètre ajouté `privateKeyFile`.
+
+|===
+
+
 == SANtricity 11.81
 
 Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.81.
@@ -35,7 +80,7 @@ Le tableau suivant répertorie les modifications apportées aux commandes CLI et
 
 
  a| 
-xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Identifier les périphériques]
+https://docs.netapp.com/us-en/e-series-cli/get-started/downloadable-smcli-parameters.html#identify-devices["Identifier les périphériques"]
  a| 
 Ajouté `identifyDevices` paramètre.
 

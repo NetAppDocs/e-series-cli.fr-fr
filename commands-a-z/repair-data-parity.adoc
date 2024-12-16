@@ -7,7 +7,7 @@ summary: La commande réparer la parité des données répare les erreurs de par
 = Réparer la parité des données
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `Repair Data Parity` la commande répare les erreurs de parité des données.
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
@@ -35,7 +35,7 @@ Avant d'utiliser cette commande, consultez la section support de NetApp pour obt
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 repair volume[volumeName] parity
    [startingLBA=LBAvalue]

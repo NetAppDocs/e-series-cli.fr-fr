@@ -7,8 +7,11 @@ summary: Commandes de configuration de la matrice
 = Commandes de configuration de la matrice
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes de configuration de baie est disponible pour votre système de stockage E-Series.
 
 
 

@@ -2,13 +2,16 @@
 permalink: get-started/usage-guidelines.html 
 sidebar: sidebar 
 keywords: script command, guidelines 
-summary: Cette liste fournit des instructions pour écrire des commandes de script sur la ligne de commande. 
+summary: 'Respectez les directives suivantes lors de l"écriture de commandes de script.' 
 ---
 = Instructions de commande de script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Respectez les directives suivantes lors de l'écriture de commandes de script.
 
 Cette liste fournit des instructions pour écrire des commandes de script sur la ligne de commande :
 

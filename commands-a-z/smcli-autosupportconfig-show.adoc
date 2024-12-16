@@ -7,7 +7,7 @@ summary: 'La commande SMcli -autoSupportConfig show affiche les paramètres de c
 = Afficher les paramètres de collection de bundle AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -52,14 +52,14 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 ====
 [NOTE]
 ====
-Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
+Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 ====
 
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig show
 ----

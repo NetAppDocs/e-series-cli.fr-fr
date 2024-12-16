@@ -7,9 +7,10 @@ summary: La syntaxe unique à une commande de script spécifique est expliquée 
 = Règles de format pour les commandes de script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 La syntaxe unique à une commande de script spécifique est expliquée dans la section Notes à la fin de chaque description de commande de script.
 
 *Sensibilité à la casse* -- les commandes de script ne sont pas sensibles à la casse. Vous pouvez saisir les commandes de script en minuscules, en majuscules ou en majuscules. (Dans les descriptions des commandes suivantes, mixtes cas est utilisé comme aide à la lecture des noms des commandes et à la compréhension des objectifs de la commande.)

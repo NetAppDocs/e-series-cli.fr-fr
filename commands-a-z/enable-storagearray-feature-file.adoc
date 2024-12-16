@@ -7,7 +7,7 @@ summary: 'La commande enable storageArray Feature file active une fonctionnalit�
 = Activer la fonctionnalité de la baie de stockage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `enable storageArray feature file` commande active une fonctionnalité pour u
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage individuelle, notamment les systèmes E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
@@ -46,7 +46,7 @@ Pour déterminer les fonctions qui sont chargées sur la matrice de stockage, ex
 
 == Syntaxe permettant d'activer une clé de fonction
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature file="_filename_"]
 ----
@@ -64,7 +64,7 @@ Vous aurez besoin d'un fichier de clé de fonction pour chaque fonction que vous
 
 == Syntaxe permettant d'activer un pack de fonctions
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray featurePack file="_filename_"]
 ----
@@ -80,7 +80,7 @@ Les noms de fichier valides pour les fichiers de clé de fonction se terminent p
 
 == Syntaxe permettant d'activer une fonction pour une période d'essai
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature=_featureAttributeList_]
 ----

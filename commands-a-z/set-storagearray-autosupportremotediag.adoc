@@ -7,7 +7,7 @@ summary: 'La commande Set storageArray autoSupportRemoteDiag active ou désactiv
 = Activez ou désactivez la fonction de diagnostic à distance AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set storageArray autoSupportRemoteDiag` La commande active ou désactive la 
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
 
 
 
@@ -42,7 +42,7 @@ Vous devez activer les trois fonctions dans l'ordre suivant :
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set storageArray autoSupportRemoteDiag (enable | disable)
 ----

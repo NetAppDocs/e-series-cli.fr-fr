@@ -7,8 +7,11 @@ summary: Commandes de mise en miroir
 = Commandes de mise en miroir
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La liste suivante des commandes de mise en miroir est disponible pour votre système de stockage E-Series.
 
 
 

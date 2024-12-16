@@ -2,15 +2,18 @@
 permalink: get-started/firmware-compatibility-levels.html 
 sidebar: sidebar 
 keywords: firmware, compatibility, levels 
-summary: 'Les commandes de script et les paramètres de commande ne s"exécutent pas sous toutes les versions du micrologiciel du contrôleur.' 
+summary: Les commandes de script des sections suivantes répertorient les niveaux de micrologiciel minimum sous lesquels les commandes de script peuvent être exécutées. 
 ---
 = Niveaux de compatibilité du micrologiciel
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Les commandes de script et les paramètres de commande ne s'exécutent pas sous toutes les versions du micrologiciel du contrôleur. Les commandes de script des sections suivantes répertorient les niveaux de micrologiciel minimum sous lesquels les commandes de script peuvent être exécutées. Dans les commandes de script, les niveaux de micrologiciel sont répertoriés sous l'en-tête "niveau de micrologiciel de Minimum". Cette liste décrit comment interpréter les informations relatives aux niveaux de micrologiciel.
+[role="lead"]
+Les commandes de script des sections suivantes répertorient les niveaux de micrologiciel minimum sous lesquels les commandes de script peuvent être exécutées.
+
+Les commandes de script et les paramètres de commande ne s'exécutent pas sous toutes les versions du micrologiciel du contrôleur. Dans les commandes de script, les niveaux de micrologiciel sont répertoriés sous l'en-tête "niveau de micrologiciel de Minimum". Cette liste décrit comment interpréter les informations relatives aux niveaux de micrologiciel.
 
 * Si une commande script ne répertorie pas un niveau minimal de micrologiciel de contrôleur, la commande script et tous les paramètres associés à cette commande de script peuvent s'exécuter sous n'importe quel niveau de micrologiciel de contrôleur.
 * Un numéro de micrologiciel de contrôleur sans aucune information explicative indique que le niveau de micrologiciel du contrôleur s'applique à l'ensemble de la commande script et à tous les paramètres de cette commande script.

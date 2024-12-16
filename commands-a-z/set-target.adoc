@@ -7,7 +7,7 @@ summary: 'La commande définir la cible modifie les propriétés d"une cible iSC
 = Définissez les propriétés de la cible
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `set target` Commande modifie les propriétés d'une cible iSCSI/iser, y comp
 
 == Baies prises en charge
 
-Cette commande s'applique à une seule baie de stockage E2800, E5700, EF600 ou EF300. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
+Cette commande s'applique à une baie de stockage E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur du stockage ou de contrôle du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle Administrateur du stockage ou moniteur de stockage.
 
 
 
@@ -38,9 +38,8 @@ Cette commande remplace le document obsolète xref:set-isertarget.adoc[Définir 
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
-
 set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod=(none | chap chapSecret="newSecurityKey") | targetAlias="newAliasName")
 ----
 

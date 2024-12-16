@@ -7,7 +7,7 @@ summary: 'La commande set Controller (définir le contrôleur) active ou désact
 = Définir le témoin d'action d'entretien autorisée du contrôleur
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Cette commande n'est valide que pour les baies E2700, E5600 ou EF560 (et d'autre
 
 == Syntaxe
 
-[listing]
+[source, cli]
 ----
 set controller [(a| b)]
 serviceAllowedIndicator=(on | off)

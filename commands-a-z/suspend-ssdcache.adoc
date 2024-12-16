@@ -7,7 +7,7 @@ summary: La commande suspend ssdcache arrête temporairement la mise en cache de
 = Suspendre le cache SSD
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Le `suspend ssdCache` La commande arrête temporairement la mise en cache de tou
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E2700, E5600, E2800, E5700, Baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du support.
 
 
 
@@ -35,9 +35,8 @@ Lorsque la mise en cache est interrompue, les lectures d'hôtes sont gérées à
 
 == Syntaxe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 pass:quotes[suspend ssdCache [_ssdCacheName_]]
 ----
 
