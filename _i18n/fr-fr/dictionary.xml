@@ -1716,7 +1716,6 @@
   <block id="00dfb4017baff9f754013bc4edb405d2" category="section-title">Commandes des administrateurs du stockage</block>
   <block id="29ccdd8e4ad7dc84c7687fa4535fbe06" category="section-title">Commandes du support administrateur</block>
   <block id="bd1c1939fd4b6d8087cb36cc4d1da962" category="section-title">Les commandes de sécurité des administrateurs</block>
-  <block id="7aa544bbf9280961acfdcfa2d71984cb" category="summary">Commandes de support automatique</block>
   <block id="788a0a0737156f6df5e8987a7fb89831" category="section-title">Commandes de collecte des bundles AutoSupport pour la baie E2700 et la baie E5600</block>
   <block id="72baddf41cff9398012aeac0d348747e" category="inline-link-macro">Activation ou désactivation de la fonctionnalité AutoSupport OnDemand au niveau du domaine de gestion EMW (SMcli uniquement).</block>
   <block id="e9d7f9c9ee1489e3f615c622c9279f50" category="paragraph"><block ref="e9d7f9c9ee1489e3f615c622c9279f50" category="inline-link-macro-rx"></block></block>
@@ -5265,7 +5264,6 @@
   <block id="393e0e962c18bb9902a7b505f4795d88" category="paragraph">Vous permet de définir un délai d'expiration dans System Manager, de sorte que les sessions inactives des utilisateurs soient déconnectées au bout d'un délai spécifié.</block>
   <block id="9cd2c4a736609c872b659ec8f0f81c17" category="paragraph">Active ou désactive VMware vStorage API Array Architecture (VAAI) pour une baie de stockage</block>
   <block id="d088930721693a65d59f92b69b7a1a65" category="paragraph">Sauf pour le<block ref="eea7089ff91928271ea047f8777b435a" prefix=" " category="inline-code"></block>, lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs des paramètres facultatifs.</block>
-  <block id="b8a27435b63207164489e175a608261a" category="section-title">Données d'AutoSupport</block>
   <block id="6fbf4b60b0cd4dd67ba1febddba8dee6" category="paragraph">Lorsque cette option est activée, le<block ref="dd3f70e6356e01b6b6fbd34512887b9f" prefix=" " category="inline-code"></block> Commande entraîne le renvoi de toutes les informations de configuration et d'état de la matrice de stockage à chaque détection d'un événement important du journal des événements majeurs (MEL). Les informations de configuration et d'état sont renvoyées sous la forme d'un graphique d'objet. Le graphique d'objets contient tous les objets logiques et physiques pertinents ainsi que leurs informations d'état associées pour la matrice de stockage.</block>
   <block id="7cf3236cfa030bb0624e61dedbe4115c" category="paragraph">Le<block ref="dd3f70e6356e01b6b6fbd34512887b9f" prefix=" " category="inline-code"></block> la commande collecte les informations de configuration et d'état de cette manière :</block>
   <block id="f5a46ee44f2a39219ad0cb7b3b8cb232" category="list-text">La collecte automatique des informations de configuration et d'état est effectuée toutes les 72 heures. Les informations de configuration et d'état sont enregistrées dans le fichier d'archive zip de la matrice de stockage. Le fichier d'archive est doté d'un horodatage qui permet de gérer les fichiers d'archive.</block>
@@ -7555,8 +7553,6 @@
   <block id="59ed469f8c0fb1e7540b9c5e0e274379" category="paragraph"><block ref="59ed469f8c0fb1e7540b9c5e0e274379" category="inline-link-macro-rx"></block></block>
   <block id="ca611b7f5b98899a7abee91397e031fa" category="paragraph">La liste suivante des commandes de configuration d'alertes est disponible pour votre système de stockage E-Series.</block>
   <block id="478f3d35dcc84bea1a78b7ac21781c63" category="paragraph">La liste suivante des commandes de configuration de baie est disponible pour votre système de stockage E-Series.</block>
-  <block id="27a16d7fcbdb2e5222cbb08871982f58" category="paragraph">La liste suivante des commandes auto-support est disponible pour votre système de stockage E-Series.</block>
-  <block id="3debeae67dbeb507c3cb1a41e3d15efe" category="section-title">Commandes AutoSupport pour les systèmes E4000, EF300, EF400, E2800 et E5700</block>
   <block id="b9aa6488935866e17a533f7cb9907f95" category="paragraph"><block ref="b9aa6488935866e17a533f7cb9907f95" category="inline-link-macro-rx"></block></block>
   <block id="48dd72449a509b862d1dbc2e5df66c1d" category="paragraph"><block ref="48dd72449a509b862d1dbc2e5df66c1d" category="inline-link-macro-rx"></block></block>
   <block id="91791fe8747c000ea0ee9806ad0b2697" category="paragraph">Voici une liste complète des commandes disponibles pour votre système de stockage E-Series.</block>
@@ -7616,4 +7612,8 @@
   <block id="d8e44ec6283b9e1b03ebe13f2b9bf377" category="sidebar">définissez la méthode de livraison smtp par e-mail</block>
   <block id="27ed3c2f0cc271f3ffd55cef1621928d" category="sidebar">Gestionnaire système SANtricity 11.9</block>
   <block id="ece14770330886bc2d41238acbfe48aa" category="sidebar">SANtricity Unified Manager 7</block>
+  <block id="d0a774826d0463e72211475dbf19c749" category="section-title">Données AutoSupport</block>
+  <block id="e12f84520db4494b5d41a3376aaf2efe" category="summary">Commandes AutoSupport</block>
+  <block id="f92f6d9fbe12679709b79badc45794e4" category="paragraph">La liste suivante des commandes AutoSupport est disponible pour votre système de stockage E-Series.</block>
+  <block id="3668b2be3ec33e7453152c010b5ad26a" category="section-title">Commandes AutoSupport pour les modèles E4000, EF300, EF400, E2800 et E5700</block>
 </blocks>

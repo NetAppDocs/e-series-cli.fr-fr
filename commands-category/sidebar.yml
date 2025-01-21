@@ -8,7 +8,7 @@ entries:
   url: "/commands-category/alert-configuration-commands.html"
 - title: Commandes de configuration de la matrice
   url: "/commands-category/array-configuration-commands.html"
-- title: Commandes de support automatique
+- title: Commandes AutoSupport
   url: "/commands-category/auto-support-commands.html"
 - title: Commandes de mise en miroir
   url: "/commands-category/mirroring-commands.html"
