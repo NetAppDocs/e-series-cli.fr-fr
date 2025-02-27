@@ -47,7 +47,7 @@ link:../commands-a-z/save-storagearray-supportdata.html["Enregistrer les donnée
 
 
 
-== Commandes AutoSupport pour les modèles E4000, EF300, EF400, E2800 et E5700
+== Commandes AutoSupport pour les modèles E4000, EF300, EF600, E2800 et E5700
 
 link:../commands-a-z/set-autosupport-dispatch-limit.html["Définir la limite de taille d'intervention AutoSupport"]
 
