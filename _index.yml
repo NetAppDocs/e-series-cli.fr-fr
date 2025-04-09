@@ -4,9 +4,9 @@ indexpage:
   summary: Décrit la syntaxe et l'utilisation des commandes SANtricity.
   keywords: santricity, syntax, commands, user assistance
   lead: Bienvenue dans l'assistance utilisateur de l'interface de ligne de commande
-    intégrée du Gestionnaire système SANtricity, où vous pouvez découvrir comment
-    configurer, contrôler et régler votre baie de stockage à l'aide de l'interface
-    de ligne de commande.'
+    intégrée de SANtricity System Manager, où vous pouvez découvrir comment configurer,
+    contrôler et régler votre baie de stockage à l'aide de l'interface de ligne de
+    commande.
   tiles:
   - title: Commencez
     links:
