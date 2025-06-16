@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, management, key, certificate, command, intall, external, support, role 
 summary: La commande download storageArray keManagementCertificate installe les certificats de gestion des clés externes sur la matrice de stockage. 
 ---
-= Installation du certificat de gestion externe des clés de la baie de stockage
+= Installer un certificat de gestion de clés externes pour la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

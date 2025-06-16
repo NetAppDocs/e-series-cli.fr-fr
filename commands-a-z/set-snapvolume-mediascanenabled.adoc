@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, media, scan 
 summary: La commande set snapVolume mediaScanEnabled exécute une analyse des supports sur les lecteurs utilisés pour un volume de snapshot. 
 ---
-= Définir le volume de capture d'écran de lecture multimédia
+= Définir l'analyse multimédia du volume d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

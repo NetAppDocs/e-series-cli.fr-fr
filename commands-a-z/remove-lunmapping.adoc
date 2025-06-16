@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, volume, lun map 
 summary: 'La commande remove lunMapping supprime le mappage du numéro d"unité logique (LUN) ou de l"ID d"espace de noms (NSID) d"un ou plusieurs volumes.' 
 ---
-= Supprimer le mappage de LUN de volume
+= Supprimer le mappage LUN du volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

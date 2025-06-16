@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, user, name, command, simple, network, management, protocol, create, register, effective, unregister, trap, destination, associate, remove 
 summary: 'La commande delete snmpUser username supprime un utilisateur USM (simple Network Management Protocol) existant que vous avez créé et enregistré au préalable à l"aide de la commande "create snmpuser". La suppression d"un utilisateur SNMP annule efficacement l"enregistrement de l"utilisateur. Toutes les destinations d"interruption associées à cet utilisateur sont également supprimées.' 
 ---
-= Annuler l'inscription de l'utilisateur SNMPv3 USM
+= Annuler l'enregistrement d'un utilisateur SNMPv3 USM - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, hot spare 
 summary: La commande définir le disque de secours attribue ou déattribue un ou plusieurs disques comme disque de secours. 
 ---
-= Configurez le disque de secours
+= Définir un disque de secours à chaud - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

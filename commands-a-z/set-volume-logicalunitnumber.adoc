@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, map 
 summary: 'La commande set volume logicalUnitNumber définit le mappage du numéro d"unité logique (LUN) ou de l"ID d"espace de noms (NSID) entre un volume et un hôte ou un groupe d"hôtes.' 
 ---
-= Définir le mappage de volumes
+= Définir le mappage des volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

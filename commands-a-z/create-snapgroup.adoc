@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, group 
 summary: La commande create snapGroup crée un nouveau groupe de snapshots et le volume de référentiel associé. 
 ---
-= Créer un groupe de snapshots
+= Créer un groupe d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: repair, volume, parity 
 summary: La commande réparer la parité du volume répare les erreurs de parité sur un volume. 
 ---
-= Réparation de la parité du volume
+= Réparer la parité des volumes – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

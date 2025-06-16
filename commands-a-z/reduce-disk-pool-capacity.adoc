@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reduce, disk pool, capacity 
 summary: La commande set DISKPOOL réduit la capacité du pool de disques en supprimant logiquement les lecteurs du pool. 
 ---
-= Réduire la capacité du pool de disques
+= Réduire la capacité du pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

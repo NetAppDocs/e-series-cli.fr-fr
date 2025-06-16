@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, controller, trace 
 summary: La commande start Controller démarre une opération qui enregistre les informations de trace de débogage dans un fichier compressé. 
 ---
-= Démarrer le suivi du contrôleur
+= Démarrer la trace du contrôleur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

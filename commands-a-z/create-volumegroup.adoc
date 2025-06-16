@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, group 
 summary: La commande create Volume Group crée un groupe de volumes à capacité libre ou un groupe de volumes avec un volume lorsque vous entrez un ensemble de disques non assignés. 
 ---
-= Créer un groupe de volumes
+= Créer un groupe de volumes – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

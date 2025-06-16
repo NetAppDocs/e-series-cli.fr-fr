@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, security, key 
 summary: 'La commande create storageArray securityKey crée ou modifie une nouvelle clé de sécurité pour une baie de stockage dotée de disques FDE (Full Disk Encryption).' 
 ---
-= Créer une clé de sécurité de la matrice de stockage
+= Créer une clé de sécurité pour une baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

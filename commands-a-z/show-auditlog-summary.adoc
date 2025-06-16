@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, audit, log, summary 
 summary: 'La commande show auditlog summary affiche les informations de synthèse du journal d"audit.' 
 ---
-= Affiche le résumé du journal d'audit
+= Afficher le résumé du journal d'audit - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

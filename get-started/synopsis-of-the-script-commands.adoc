@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: synopsis, script commands 
 summary: 'Étant donné que vous pouvez utiliser les commandes script pour définir et gérer les différents aspects d"une baie de stockage (topologie hôte, configuration des lecteurs, configuration des contrôleurs, définitions de volumes et définitions de groupes de volumes, par exemple), le nombre réel de commandes est considérable.' 
 ---
-= Synopsis des commandes de script
+= En savoir plus sur les commandes de script SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

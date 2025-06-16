@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, service, action, allowed, indicator 
 summary: 'La commande set Controller (définir le contrôleur) active ou désactive le voyant Service action autorisé (action de service autorisée) d"un contrôleur dans un tiroir de contrôleur ou d"un plateau de contrôleur' 
 ---
-= Définir le témoin d'action d'entretien autorisée du contrôleur
+= Définir l'indicateur d'action de service du contrôleur autorisée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

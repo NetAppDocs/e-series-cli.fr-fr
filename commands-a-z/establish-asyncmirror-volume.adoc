@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: establish, asynmirror, volume, asynchronous, mirrored, remote, storage, array, secondary, existing 
 summary: La commande fixer un volume asynchrone asynchrone au volume met fin à une paire asynchrone en miroir sur la matrice de stockage distante en ajoutant un volume secondaire à un groupe de miroirs asynchrone existant. 
 ---
-= Établir une paire en miroir asynchrone
+= Établir une paire miroir asynchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

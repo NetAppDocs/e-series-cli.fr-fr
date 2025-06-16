@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, lun, map 
 summary: 'La commande show storageArray lunAdressages renvoie des informations du profil de la matrice de stockage concernant les mappages de numéro d"unité logique (LUN) ou d"ID d"espace de noms (NSID) dans la matrice de stockage.' 
 ---
-= Affiche les mappages de LUN de la baie de stockage
+= Afficher les mappages LUN des baies de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

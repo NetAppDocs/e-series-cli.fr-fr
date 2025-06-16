@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, login, banner 
 summary: 'La commande set storageArray loginBanner vous permet de télécharger un fichier texte à utiliser comme bannière de connexion. Le texte de la bannière peut inclure un avis d"avertissement et un message de consentement qui sont présentés aux utilisateurs avant d"établir des sessions dans SANtricity System Manager ou avant d"exécuter des commandes.' 
 ---
-= Définir la bannière de connexion de la matrice de stockage
+= Définir la bannière de connexion à la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, media, scan 
 summary: La commande set snapGroup mediaScanEnabled exécute une analyse des supports sur un groupe de snapshots. 
 ---
-= Définir l'analyse des supports du groupe d'instantanés
+= Définir l'analyse des médias du groupe d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

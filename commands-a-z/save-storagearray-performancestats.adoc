@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, performance, statistics 
 summary: La commande save storageArray performanceStats enregistre les statistiques de performances dans un fichier. 
 ---
-= Enregistrez les statistiques de performances des baies de stockage
+= Enregistrer les statistiques de performances de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

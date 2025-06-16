@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, disk pool, modify 
 summary: 'La commande Set DISKPOOL ajoute de la capacité à un pool de disques (Dynamic Capacity extension ou DCE) ou modifie la propriété du contrôleur pour l"ensemble du pool de disques.' 
 ---
-= Définir le pool de disques (modifier le pool de disques)
+= Définir le pool de disques (modifier le pool de disques) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

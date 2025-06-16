@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, port 
 summary: 'La commande set hostPort modifie les propriétés d"un port hôte.' 
 ---
-= Définissez le port hôte
+= Définir le port hôte - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

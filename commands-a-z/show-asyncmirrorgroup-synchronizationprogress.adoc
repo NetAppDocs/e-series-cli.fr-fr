@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, asynchronous, mirror, group, synchronization, progress 
 summary: La commande show Mirrorasynchrone synchronizationProgress affiche la progression de la synchronisation périodique du groupe de miroirs asynchrones entre la matrice de stockage locale et la matrice de stockage distante. 
 ---
-= Affiche la progression de la synchronisation des groupes de miroirs asynchrones
+= Afficher la progression de la synchronisation du groupe de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

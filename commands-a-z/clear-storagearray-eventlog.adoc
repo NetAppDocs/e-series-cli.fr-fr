@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, event log 
 summary: 'La commande Effacer le journal d"événements du système de stockage efface le journal des événements de la matrice de stockage en supprimant les données dans la mémoire tampon du journal des événements.' 
 ---
-= Effacer le journal des événements de la matrice de stockage
+= Effacer le journal des événements de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

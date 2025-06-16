@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recreate, synchronous, mirror, repository, volume 
 summary: 'La commande reate storageArray mirrorRepository crée un nouveau volume référentiel synchrone mis en miroir (également appelé volume de référentiel miroir) à l"aide des paramètres définis pour un volume de référentiel miroir précédent.' 
 ---
-= Recréez le volume du référentiel de mise en miroir synchrone
+= Recréer un volume de référentiel de mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, negotiation, defaults 
 summary: La commande show storageArray iscsideNegoticationDefaults renvoie des informations sur les paramètres de niveau de connexion qui sont sujets à la négociation initiateur-cible. 
 ---
-= Affiche les valeurs par défaut de négociation de la baie de stockage
+= Afficher les paramètres par défaut de négociation de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

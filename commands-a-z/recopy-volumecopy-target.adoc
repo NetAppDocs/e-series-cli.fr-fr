@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
 summary: La commande recopy VolumeCopy target lance de nouveau une opération de copie de volume en utilisant une paire de copies de volume existante. 
 ---
-= Recopier la copie de volume
+= Copie de volume de recopie - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, export 
 summary: La commande start Volume Volume Group export déplace un groupe de volumes dans un état exporté. 
 ---
-= Démarrer l'exportation du groupe de volumes
+= Démarrer l'exportation du groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset ,storage, array, diagnostic, data 
 summary: La commande reset storageArray diagnosticData réinitialise la NVSRAM qui contient les données de diagnostic de la matrice de stockage. 
 ---
-= Réinitialiser les données de diagnostic de la matrice de stockage
+= Réinitialiser les données de diagnostic de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

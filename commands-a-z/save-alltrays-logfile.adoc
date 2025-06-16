@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, tray log 
 summary: La commande enregistrer le fichier journal allplateaux enregistre les données de détection du journal dans un fichier. 
 ---
-= Enregistrer journal bac
+= Enregistrer le journal du plateau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

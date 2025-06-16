@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, controller, health, image 
 summary: 'La commande show storageArray controllerHealthImage affiche les détails de l"image d"état du contrôleur sur le cache du contrôleur, si une image d"intégrité du contrôleur est disponible, sur les baies de stockage prenant en charge l"image d"état du contrôleur.' 
 ---
-= Affiche l'image d'état de santé du contrôleur de la baie de stockage
+= Afficher l'image d'état du contrôleur de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

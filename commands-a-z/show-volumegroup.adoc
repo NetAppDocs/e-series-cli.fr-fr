@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, group 
 summary: La commande show Volume Group renvoie des informations sur un groupe de volumes. 
 ---
-= Afficher le groupe de volumes
+= Afficher le groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

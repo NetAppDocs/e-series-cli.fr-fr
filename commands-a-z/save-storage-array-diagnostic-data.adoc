@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, diagnostic, data 
 summary: 'La commande save storageArray diagnosticData enregistre les données de diagnostic de la baie de stockage depuis les contrôleurs ou les modules de services environnementaux (ESM) dans un fichier.' 
 ---
-= Enregistrer les données de diagnostic de la matrice de stockage
+= Enregistrer les données de diagnostic de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

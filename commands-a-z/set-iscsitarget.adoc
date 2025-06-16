@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iscsi, target, properties 
 summary: 'La commande set iscsiTarget définit les propriétés d"une cible iSCSI.' 
 ---
-= Définissez les propriétés de la cible iSCSI
+= Définir les propriétés de la cible iSCSI - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

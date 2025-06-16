@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller 
 summary: La commande set contrôleur définit les attributs des contrôleurs. 
 ---
-= Définissez le contrôleur
+= Contrôleur de jeu - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

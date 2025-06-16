@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, input, output, controller, ioc, dump 
 summary: La commande start IOCLog produit un vidage du journal CIO des transmissions de données entre un hôte et un contrôleur. 
 ---
-= Démarrer le vidage du contrôleur de sortie d'entrée (IOC)
+= Démarrer le vidage du contrôleur d'entrée/sortie (IOC) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

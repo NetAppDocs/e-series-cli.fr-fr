@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, channel, status 
 summary: La commande Set driveChannel définit le fonctionnement du canal du lecteur. 
 ---
-= Définir l'état du canal d'entraînement
+= Définir l'état du canal du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

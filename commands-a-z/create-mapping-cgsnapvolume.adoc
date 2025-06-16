@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency, group, snapshot, volume, map 
 summary: 'La commande create mapping cgSnapVolume crée un mappage logique à partir d"un volume snapshot de groupe de cohérence vers un hôte ou un groupe d"hôtes.' 
 ---
-= Créer un mappage de volume Snapshot de groupe de cohérence
+= Créer un mappage de volume d'instantanés de groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

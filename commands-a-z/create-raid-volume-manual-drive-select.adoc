@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, raid, volume, manual, drive, select 
 summary: La commande create volume crée un nouveau groupe de volumes et un nouveau volume, et vous permet de spécifier les lecteurs du volume. 
 ---
-= Créer un volume RAID (sélection manuelle du lecteur)
+= Créer un volume RAID (sélection manuelle du lecteur) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, configuration, database, diagnostic 
 summary: La commande stop storageArray configDbdiagnostic arrête le test de diagnostic pour valider la base de données de configuration dans le micrologiciel du contrôleur qui a été démarré par la commande start storageArray configDbdiagnostic. 
 ---
-= Arrêter le diagnostic de la base de données de configuration de la matrice de stockage
+= Arrêter le diagnostic de la base de données de configuration de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

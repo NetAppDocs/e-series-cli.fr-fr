@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, dns 
 summary: 'La commande set Controller DNSServers met à jour les paramètres DNS (Domain Name System) d"un contrôleur. Le DNS est utilisé pour résoudre les noms de domaine complets pour les contrôleurs et un serveur NTP (Network Time Protocol).' 
 ---
-= Définissez les paramètres DNS du contrôleur
+= Définir les paramètres DNS du contrôleur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

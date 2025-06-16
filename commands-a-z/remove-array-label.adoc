@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, array, label 
 summary: 'La commande Supprimer un label de tableau vous permet de supprimer un libellé défini par l"utilisateur pour un tableau de stockage.' 
 ---
-= Retirez l'étiquette de la matrice
+= Supprimer l'étiquette du tableau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

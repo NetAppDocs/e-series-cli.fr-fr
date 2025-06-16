@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, snmpv3, usm, user 
 summary: 'La commande show allsnmpusers renvoie des informations sur les utilisateurs USM (simple Network Management) définis pour la matrice de stockage.' 
 ---
-= Afficher l'utilisateur SNMPv3 USM
+= Afficher l'utilisateur SNMPv3 USM - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

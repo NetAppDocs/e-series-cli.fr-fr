@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, trusted, certificate, command, remove, specified, installed, web, servers 
 summary: 'La commande delete storageArray trustedCertificate supprime les certificats d"autorité de certification installés par l"utilisateur spécifiés des serveurs Web de la baie.' 
 ---
-= Supprimer les certificats d'autorité de certification approuvés installés
+= Supprimer les certificats d'autorité de certification de confiance installés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

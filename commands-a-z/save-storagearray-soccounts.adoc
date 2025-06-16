@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, soc, counts 
 summary: 'La commande save storageArray SOCCounts enregistre les statistiques d"erreur SOC dans un fichier.' 
 ---
-= Économisez le nombre de SOC des baies de stockage
+= Enregistrer le nombre de SOC de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

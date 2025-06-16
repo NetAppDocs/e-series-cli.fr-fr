@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: validate, storage array, security key 
 summary: 'La commande validate storageArray securityKey valide la clé de sécurité d"une matrice de stockage dotée de disques compatibles avec la sécurité pour s"assurer que le fichier de clé de sécurité de sauvegarde n"est pas corrompu.' 
 ---
-= Validation de la clé de sécurité de la baie de stockage
+= Valider la clé de sécurité de la baie de stockage – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, image, rollback 
 summary: 'La commande stop SnapImage rollback arrête une opération de restauration d"image instantanée lancée par la commande start SnapImage rollback.' 
 ---
-= Arrêter la restauration de l'image instantanée
+= Arrêter la restauration de l'image instantanée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

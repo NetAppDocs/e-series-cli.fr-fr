@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, synchronous, mirror, synchronization 
 summary: La commande START SyncMirror primary sync démarre la synchronisation synchrone de la mise en miroir. 
 ---
-= Démarrez la synchronisation de la mise en miroir synchrone
+= Démarrer la synchronisation de mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

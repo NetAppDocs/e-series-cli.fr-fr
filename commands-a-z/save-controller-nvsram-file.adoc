@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, controller, nvsram 
 summary: La commande Enregistrer le fichier NVSRAM du contrôleur enregistre un ensemble sélectionné de régions NVSRAM du contrôleur dans un fichier. 
 ---
-= Enregistrez la NVSRAM du contrôleur
+= Contrôleur de sauvegarde NVSRAM - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: initialize, thin volume 
 summary: La commande start volume initialize initialise ou réinitialise un volume fin. 
 ---
-= Initialiser le volume fin
+= Initialiser un volume léger – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

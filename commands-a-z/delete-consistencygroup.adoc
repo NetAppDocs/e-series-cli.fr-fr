@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, consistency, group 
 summary: La commande delete constance.Group supprime un groupe de cohérence snapshot. 
 ---
-= Supprimer le groupe de cohérence
+= Supprimer le groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

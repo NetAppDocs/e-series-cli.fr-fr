@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: generate, key, management, certificate, sign, request, csr 
 summary: La commande save storageArray ManagementClientCSR demande une RSC générée pour la matrice de stockage que vous pouvez enregistrer dans un fichier. 
 ---
-= Générer une requête de signature de certificat de gestion des clés (CSR)
+= Générer une demande de signature de certificat de gestion de clés (CSR) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

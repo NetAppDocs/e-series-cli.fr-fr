@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: capture, view, autosupport, log 
 summary: 'La commande SMcli -autoSupportLog vous permet d"afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l"état, l"historique de l"activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.' 
 ---
-= Capturez ou affichez un journal AutoSupport
+= Capturer ou afficher un journal AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

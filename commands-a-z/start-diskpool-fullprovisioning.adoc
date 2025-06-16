@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, full, provision 
 summary: La commande start DISKPOOL fullProvisioning démarre une opération de provisionnement complet sur tous les volumes du pool de disques et désactive éventuellement le provisionnement des ressources sur le pool de disques. 
 ---
-= Démarrage du provisionnement complet du pool de disques
+= Démarrer le provisionnement complet du pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

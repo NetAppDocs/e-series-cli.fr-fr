@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, thin, volume, attributes 
 summary: 'La commande set volume définit les propriétés d"un volume fin.' 
 ---
-= Définir les attributs du volume fin
+= Définir les attributs d'un volume léger - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, certificates 
 summary: La commande Supprimer les certificats permet de supprimer un certificat du magasin de confiance du package CLI. 
 ---
-= Supprimer des certificats
+= Supprimer les certificats - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

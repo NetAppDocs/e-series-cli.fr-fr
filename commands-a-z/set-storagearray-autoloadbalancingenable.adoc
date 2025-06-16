@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, automatic, load, balance 
 summary: 'La commande Set storageArray autoLoadBalancingEnable active ou désactive la fonction d"équilibrage automatique de la charge.' 
 ---
-= Définissez la matrice de stockage pour activer ou désactiver l'équilibrage automatique de la charge
+= Définir une baie de stockage pour activer ou désactiver l'équilibrage de charge automatique - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, auto, configuration 
 summary: La commande show storageArray autoconfiguration affiche la configuration automatique par défaut que la matrice de stockage crée si vous exécutez la commande autoConfigure storageArray. 
 ---
-= Affiche la configuration automatique de la matrice de stockage
+= Afficher la configuration automatique de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

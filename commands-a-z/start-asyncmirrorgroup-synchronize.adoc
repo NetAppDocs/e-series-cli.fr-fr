@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, asynchronous, mirror, synchronization 
 summary: La commande start asynchrones MirrorCsynchronize démarre la synchronisation asynchrone de la mise en miroir. 
 ---
-= Démarrez la synchronisation de la mise en miroir asynchrone
+= Démarrer la synchronisation de mise en miroir asynchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

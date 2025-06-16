@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, firmware, pending, area 
 summary: La commande Effacer storageArray firmawarePendingArea supprime une image de micrologiciel ou des valeurs NVSRAM que vous avez préalablement téléchargées à partir du tampon de zone en attente. 
 ---
-= Effacez la zone en attente du micrologiciel de la matrice de stockage
+= Effacer la zone d'attente du micrologiciel de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

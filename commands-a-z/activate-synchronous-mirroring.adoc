@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: activate, synchronous mirroring, supported arrays, roles, context, syntax, parameters, data assurance management, minimum firmware level 
 summary: La commande Activer la fonctionnalité storageArray active la fonction de mise en miroir synchrone et crée le volume de référentiel miroir. 
 ---
-= Activer la mise en miroir synchrone
+= Activer la mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

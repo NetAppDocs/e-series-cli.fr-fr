@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, audit log, configuration 
 summary: 'La commande show auditlog configuration affiche les paramètres de configuration du journal d"audit de la matrice de stockage.' 
 ---
-= Affiche la configuration du journal d'audit
+= Afficher la configuration du journal d'audit - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

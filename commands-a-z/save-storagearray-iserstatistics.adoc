@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, iser, statistics 
 summary: La commande Save storageArray iserStatistics enregistre les statistiques de performance iser de la baie de stockage dans un fichier. 
 ---
-= Enregistrez les statistiques iser des baies de stockage
+= Enregistrer les statistiques iSER de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

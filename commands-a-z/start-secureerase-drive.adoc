@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, fde, secure, drive, erase 
 summary: 'La commande start secureErase Drive efface toutes les données d"un ou plusieurs disques FDE (Full Disk Encryption) afin qu"elles puissent être réutilisées en tant que disques FDE.' 
 ---
-= Démarrer l'effacement sécurisé du disque FDE
+= Démarrer l'effacement sécurisé du lecteur FDE - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

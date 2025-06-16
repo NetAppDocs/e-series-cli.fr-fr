@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, target, properties 
 summary: 'La commande définir la cible modifie les propriétés d"une cible iSCSI/iser, y compris la méthode d"authentification et le nom d"alias.' 
 ---
-= Définissez les propriétés de la cible
+= Définir les propriétés de la cible - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

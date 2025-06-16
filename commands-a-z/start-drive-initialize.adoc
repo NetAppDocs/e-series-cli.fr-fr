@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, initialize 
 summary: La commande start drive initialize démarre une initialisation de lecteur. 
 ---
-= Démarrer l'initialisation du lecteur
+= Démarrer l'initialisation du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

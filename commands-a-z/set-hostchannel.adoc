@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, channel 
 summary: 'La commande set hostChannel définit l"ID de boucle pour le canal hôte.' 
 ---
-= Définissez le canal hôte
+= Définir le canal hôte - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

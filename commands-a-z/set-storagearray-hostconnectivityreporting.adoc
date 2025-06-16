@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, host, connectivity, report 
 summary: La commande set storageArray hostConnectivtyReporting active ou désactive les rapports de connectivité hôte sur le contrôleur. 
 ---
-= Activation ou désactivation des rapports sur la connectivité des hôtes
+= Activer ou désactiver les rapports de connectivité de l'hôte - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

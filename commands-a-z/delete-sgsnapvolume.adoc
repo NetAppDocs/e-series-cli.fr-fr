@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delte, snapvolume, command, snapshot, consistency, group, optionally, repository, members 
 summary: 'La commande delete sgSnapVolume supprime le volume snapshot d"un groupe de cohérence. Vous pouvez également supprimer les membres du référentiel.' 
 ---
-= Supprimez le volume Snapshot du groupe de cohérence
+= Supprimer le volume d'instantané du groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

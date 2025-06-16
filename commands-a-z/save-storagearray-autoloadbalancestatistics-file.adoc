@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, auto-load, balance, statistics 
 summary: 'La commande save storageArray autoLoadLoadStatistics file fournit un équilibrage automatique de la charge de travail d"E/S et assure que le trafic d"E/S entrant à partir des hôtes est géré et équilibré de manière dynamique entre les deux contrôleurs.' 
 ---
-= Enregistrer les statistiques d'équilibrage de charge automatique
+= Enregistrer les statistiques d'équilibrage automatique de la charge - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

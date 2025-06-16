@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, controller, command, run, diagnostic, tests, arrays, roles, context 
 summary: La commande diagnostiquer le contrôleur exécute des tests de diagnostic sur le contrôleur. 
 ---
-= Diagnostiquer le contrôleur
+= Diagnostiquer le contrôleur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

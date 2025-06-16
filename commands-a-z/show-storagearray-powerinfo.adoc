@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, power, information 
 summary: 'La commande show storageArray powerInfo renvoie des informations sur la quantité d"énergie consommée par l"ensemble de la matrice de stockage et chaque bac de la matrice de stockage.' 
 ---
-= Affiche les informations d'alimentation de la matrice de stockage
+= Afficher les informations d'alimentation de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

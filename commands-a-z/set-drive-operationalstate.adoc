@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, state 
 summary: 'La commande définir l"état d"opérationnalState du lecteur définit un lecteur à l"état défaillant.' 
 ---
-= Définissez l'état du lecteur
+= Définir l'état du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

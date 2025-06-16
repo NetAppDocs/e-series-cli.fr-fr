@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, input, output, controller, ioc, dump 
 summary: 'La commande Save IOCLog enregistre les vidages CIO des contrôleurs d"une matrice de stockage dans un fichier d"hôte.' 
 ---
-= Sauvegarder le vidage du contrôleur de sortie d'entrée (IOC)
+= Enregistrer le vidage du contrôleur d'entrée/sortie (IOC) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

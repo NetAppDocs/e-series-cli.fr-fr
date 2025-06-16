@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, loginbanner, command, allow, login, banner, text, file, upload, save, role 
 summary: La commande delete storageArray loginBanner vous permet de supprimer le fichier texte de la bannière de connexion qui a été précédemment chargé et enregistré. 
 ---
-= Supprimez la bannière de connexion de la matrice de stockage
+= Supprimer la bannière de connexion à la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

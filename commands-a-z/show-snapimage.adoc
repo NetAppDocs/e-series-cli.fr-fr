@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, snapshot, image 
 summary: La commande show SnapImage renvoie des informations sur les images de snapshot créées précédemment par un utilisateur. 
 ---
-= Affiche l'image snapshot
+= Afficher l'image instantanée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

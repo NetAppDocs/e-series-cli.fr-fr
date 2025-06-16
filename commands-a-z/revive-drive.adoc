@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, drive 
 summary: 'La commande ressusciter disque force le disque spécifié à l"état optimal.' 
 ---
-= Ranimer la route
+= Revive Drive - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

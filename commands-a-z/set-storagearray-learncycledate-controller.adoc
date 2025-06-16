@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, controller, battery, learn, cycle 
 summary: 'La commande set storageArray learnCyclclclDate Controller définit les cycles d"apprentissage de la batterie du contrôleur.' 
 ---
-= Définir le cycle d'apprentissage de la batterie du contrôleur de la matrice de stockage
+= Définir le cycle d'apprentissage de la batterie du contrôleur de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

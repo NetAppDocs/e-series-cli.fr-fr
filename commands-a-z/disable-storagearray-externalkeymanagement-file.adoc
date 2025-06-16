@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable, storage, array, external, management, file, command, disable, security, key, full, disk, encryption, drives 
 summary: La commande disable storageArray externalKeyManagement file désactive la gestion des clés de sécurité externes pour une matrice de stockage dotée de disques Full Disk Encryption. 
 ---
-= Désactivez la gestion externe des clés de sécurité
+= Désactiver la gestion des clés de sécurité externes – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

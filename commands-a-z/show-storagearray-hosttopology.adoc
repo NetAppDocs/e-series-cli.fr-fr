@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, host, topology 
 summary: 'La commande show storageArray hostTopology renvoie la topologie de la partition de stockage, les étiquettes de type d"hôte et l"index de type d"hôte de la matrice de stockage hôte.' 
 ---
-= Affiche la topologie hôte de la baie de stockage
+= Afficher la topologie de l'hôte de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

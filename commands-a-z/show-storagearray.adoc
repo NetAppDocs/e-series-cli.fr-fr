@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array 
 summary: La commande show storageArray renvoie des informations de configuration sur la matrice de stockage. 
 ---
-= Afficher la matrice de stockage
+= Afficher la matrice de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

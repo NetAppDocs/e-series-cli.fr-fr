@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, soc, baseline 
 summary: 'La commande reset storageArray SOCBaseline réinitialise la ligne de base de tous les périphériques SOC (switch on-a-chip) auxquels on accède via les contrôleurs.' 
 ---
-= Réinitialiser la configuration de base du SOC de la baie de stockage
+= Réinitialiser la ligne de base SOC de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

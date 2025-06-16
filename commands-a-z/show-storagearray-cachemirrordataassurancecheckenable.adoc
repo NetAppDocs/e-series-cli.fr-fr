@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, cache, mirror, data, assurance, check, enable 
 summary: 'La commande show storageArray cacheMirrorDataAssureCheckEnable renvoie l"état d"activation de la fonction de vérification de l"assurance des données du miroir du cache.' 
 ---
-= Affichez l'activation de la vérification de l'assurance de données miroir de la baie de stockage cache
+= Afficher l'activation de la vérification de l'assurance des données du miroir du cache de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

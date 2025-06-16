@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, time 
 summary: 'La commande set storageArray Time définit les horloges sur les deux contrôleurs d"une matrice de stockage en synchronisant les horloges de contrôleur avec l"horloge de l"hôte à partir duquel vous exécutez cette commande.' 
 ---
-= Définir l'heure de la matrice de stockage
+= Définir l'heure de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

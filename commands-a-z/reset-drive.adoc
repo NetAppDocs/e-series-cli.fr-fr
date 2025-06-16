@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, drive 
 summary: 'La commande de réinitialisation du lecteur alimente un lecteur dans un groupe de volumes ou un pool de disques afin de faciliter la récupération d"un lecteur présentant un comportement incohérent ou non optimal.' 
 ---
-= Réinitialiser le lecteur
+= Réinitialiser le lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

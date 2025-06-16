@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, asynchronous, mirror group, statistics 
 summary: 'La commande reset storageArray arvmStats asynchrones cMirrorGroup réinitialise les statistiques de synchronisation pour un ou plusieurs volumes membres d"un groupe de miroirs asynchrone à un niveau relatif 0.' 
 ---
-= Réinitialise les statistiques du groupe de miroirs asynchrone
+= Réinitialiser les statistiques du groupe de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

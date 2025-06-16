@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: structure, script command 
 summary: 'Pour garantir la réussite de l"exécution, les commandes de script doivent être écrites dans la structure appropriée.' 
 ---
-= Structure d'une commande de script
+= En savoir plus sur la structure des commandes d'un script CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

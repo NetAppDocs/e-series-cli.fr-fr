@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, controller 
 summary: 'La commande reset le contrôleur réinitialise un contrôleur et entraîne une interruption des opérations d"E/S.' 
 ---
-= Réinitialiser le contrôleur
+= Réinitialiser le contrôleur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

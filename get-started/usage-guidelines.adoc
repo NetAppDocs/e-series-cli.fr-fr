@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: script command, guidelines 
 summary: 'Respectez les directives suivantes lors de l"écriture de commandes de script.' 
 ---
-= Instructions de commande de script
+= En savoir plus sur les instructions de commande du script CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

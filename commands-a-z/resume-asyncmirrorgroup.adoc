@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, asynchronous, mirror, group 
 summary: La commande RESUME asynchrones MirrorGroup reprend le transfert de données entre toutes les paires symétriques dans un groupe de miroirs asynchrone. 
 ---
-= Reprendre le groupe de miroirs asynchrone
+= Reprendre le groupe de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

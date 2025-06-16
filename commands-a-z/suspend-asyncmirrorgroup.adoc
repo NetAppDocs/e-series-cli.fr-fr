@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, asynchronous, mirror, group 
 summary: La commande suspendre asynchrones MirrorGroup suspend la synchronisation des données sur toutes les paires symétriques au niveau du groupe de miroirs asynchrone. 
 ---
-= Suspendre le groupe de miroirs asynchrone
+= Suspendre un groupe de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

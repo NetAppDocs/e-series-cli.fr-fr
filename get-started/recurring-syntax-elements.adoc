@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recur, syntax, elements 
 summary: 'Les éléments de syntaxe récurrente sont une catégorie générale de paramètres et d"options que vous pouvez utiliser dans les commandes de script.' 
 ---
-= Éléments de syntaxe récurrents
+= En savoir plus sur les éléments de syntaxe récurrents de SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

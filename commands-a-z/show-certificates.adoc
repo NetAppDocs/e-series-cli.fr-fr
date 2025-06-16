@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, certificates 
 summary: 'La commande Afficher les certificats vous permet d"afficher les certificats installés sur la banque de confiance du package CLI.' 
 ---
-= Afficher les certificats
+= Afficher les certificats - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

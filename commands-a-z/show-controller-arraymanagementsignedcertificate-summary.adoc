@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, signed, certificate 
 summary: La commande show Controller arrayManagementSignedCertificate Summary affiche le résumé du certificat signé en cours à partir du contrôleur spécifié. 
 ---
-= Affiche le certificat signé
+= Afficher le certificat signé - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

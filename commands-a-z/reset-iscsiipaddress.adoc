@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, iscsi, ip address 
 summary: 'La commande reset iscsiIpAddress réinitialise l"adresse IP de la matrice de stockage distante pour rétablir la connexion avec la matrice de stockage locale.' 
 ---
-= Réinitialisez l'adresse IP iSCSI
+= Réinitialiser l'adresse IP iSCSI - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

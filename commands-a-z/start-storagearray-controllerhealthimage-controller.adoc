@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, controller, health, image 
 summary: 'La commande start storageArray contrôlerHealthImage Controller génère une image d"état du contrôleur de la baie de stockage sur les systèmes de stockage qui prennent en charge la fonction d"image d"état de santé du contrôleur.' 
 ---
-= Image démarrage de l'état du contrôleur de la baie de stockage
+= Démarrer l'image d'intégrité du contrôleur de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

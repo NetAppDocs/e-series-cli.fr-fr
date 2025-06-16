@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add array label, supported, syntax, parameters, minimum firmware level 
 summary: 'La commande Ajouter un label de tableau permet d"ajouter une matrice de stockage à la configuration avec un libellé défini par l"utilisateur. Cela permet aux commandes ultérieures d"adresser la baie de stockage par le libellé défini par l"utilisateur plutôt que par l"adresse IP ou le nom d"hôte.' 
 ---
-= Ajouter une étiquette de tableau
+= Ajouter une étiquette de baie - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

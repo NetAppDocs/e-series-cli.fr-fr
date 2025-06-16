@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, syslog, command, servers, configuration, alerts, array, support, role 
 summary: 'La commande delete syslog supprime un ou plusieurs serveurs de la configuration syslog afin qu"il ne reçoive plus d"alertes.' 
 ---
-= Supprimer le serveur syslog
+= Supprimer le serveur Syslog - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

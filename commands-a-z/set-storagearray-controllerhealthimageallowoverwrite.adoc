@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, controller, health, image, allow, overwrite 
 summary: 'La commande Set storageArray contrôlerHealthImageAllowOverWrite définit un indicateur sur un contrôleur pour permettre à une nouvelle image de l"état de santé du contrôleur d"écraser une image de l"état de santé du contrôleur existante sur les baies de stockage prenant en charge la fonctionnalité d"image d"état du contrôleur.' 
 ---
-= Définir l'image d'intégrité du contrôleur de la matrice de stockage autoriser le remplacement
+= Définir l'image d'intégrité du contrôleur de baie de stockage pour autoriser l'écrasement - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

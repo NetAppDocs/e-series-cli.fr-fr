@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, repository, capacity 
 summary: 'La commande set snapVolume augmentée/decreRepositoryCapacity augmente ou diminue la capacité d"un volume de référentiel de volume de snapshot.' 
 ---
-= Définissez la capacité du volume du référentiel de volumes du snapshot
+= Définir la capacité du volume du référentiel de volumes instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

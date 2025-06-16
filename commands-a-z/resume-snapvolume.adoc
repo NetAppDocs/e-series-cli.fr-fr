@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, snapshot, volume 
 summary: La commande RESUME snapVolume reprend une opération de snapshot volume qui a été arrêtée. 
 ---
-= Reprendre le volume snapshot
+= Reprendre le volume d'instantané - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

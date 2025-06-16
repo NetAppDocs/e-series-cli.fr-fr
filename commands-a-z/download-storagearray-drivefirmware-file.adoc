@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, drive, firmware, command, images, roles, supported 
 summary: La commande download storageArray driveFirmware file télécharge les images du micrologiciel sur tous les lecteurs de la matrice de stockage. 
 ---
-= Téléchargez le micrologiciel du lecteur de la matrice de stockage
+= Télécharger le micrologiciel du lecteur de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

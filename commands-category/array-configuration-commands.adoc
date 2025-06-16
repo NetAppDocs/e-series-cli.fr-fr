@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configuration, commands, array, controller, health, image, hostport, feature, management 
 summary: Commandes de configuration de la matrice 
 ---
-= Commandes de configuration de la matrice
+= Commandes de configuration de la baie SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

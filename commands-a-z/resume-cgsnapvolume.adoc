@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, consistency, group, snapshot, volume 
 summary: 'La commande RESUME cgSnapVolume redémarre une opération de copie sur écriture pour créer un volume de snapshot de groupe de cohérence arrêté à l"aide de la commande stop cgSnapVolume.' 
 ---
-= Reprenez le volume Snapshot du groupe de cohérence
+= Reprendre le volume d'instantané du groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, emw, management, domain, level, smcli 
 summary: 'La commande SMcli enable autoSupportFeature active la fonctionnalité AutoSupport (ASUP) de toutes les baies de stockage gérées et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, toute baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l"analyse des problèmes.' 
 ---
-= Activer ou désactiver AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement).
+= Activer ou désactiver AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

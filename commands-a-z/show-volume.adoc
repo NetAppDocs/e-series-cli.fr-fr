@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, thin, volume 
 summary: 'La commande show volume renvoie l"historique d"extension ou la capacité consommée pour le ou les volumes fins spécifiés.' 
 ---
-= Afficher le volume fin
+= Afficher le volume mince - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

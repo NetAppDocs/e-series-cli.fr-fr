@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, str 
 summary: 'La commande show textstring affiche une chaîne de texte à partir d"un fichier script. Cette commande est similaire à la commande echo dans MS-DOS et UNIX.' 
 ---
-= Affiche la chaîne
+= Afficher la chaîne - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

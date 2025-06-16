@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, snapvolume, command, snapshot, volume, optionally, associate, repository, members 
 summary: 'La commande delete snapVolume supprime un volume d"instantanés et éventuellement les membres associés au référentiel d"instantanés.' 
 ---
-= Supprimez le volume snapshot
+= Supprimer le volume d'instantané - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

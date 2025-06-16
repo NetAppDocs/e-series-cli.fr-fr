@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, snmp, trap, destination 
 summary: 'La commande set snmpTrapdestination trapReceiverIP active ou désactive l"envoi de messages d"échec d"authentification pour une destination d"interruption SNMP. L"échec se produit lorsque l"agent SNMP a reçu un message d"un gestionnaire SNMP, mais que le message contenait un nom de communauté ou un nom d"utilisateur non valide.' 
 ---
-= Mettre à jour la destination du trap SNMP
+= Mettre à jour la destination des interruptions SNMP - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, controller, datatransfer, command, revive, quiesced, running, diagnostics, role, syntax, parameter, firmware level 
 summary: 'La commande enable Controller DataTransfer fait revivre un contrôleur qui est mis au repos lors de l"exécution des diagnostics.' 
 ---
-= Activer le transfert des données du contrôleur
+= Activer le transfert de données du contrôleur – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

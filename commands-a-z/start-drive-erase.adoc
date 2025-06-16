@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, erase 
 summary: 'La commande de démarrage de l"effacement du lecteur efface toutes les données d"un ou de plusieurs lecteurs.' 
 ---
-= Commencez à effacer le lecteur
+= Démarrer l'effacement du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -42,7 +42,7 @@ L'opération d'effacement ne peut pas être annulée. Assurez-vous de sélection
 
 [source, cli, subs="+macros"]
 ----
-start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
+start (drive [trayID,[drawerID,]slotID] | drives[trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn]) erase
 ----
 
 

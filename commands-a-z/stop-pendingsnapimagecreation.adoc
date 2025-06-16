@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, group, snapshot, images 
 summary: La commande stop pendingSnapImageCreation annule toutes les images de snapshot en attente qui doivent être créées sur un snapshot ou un groupe de cohérence de snapshot. 
 ---
-= Arrêter le groupe d'instantanés en attente d'images de snapshot
+= Arrêter les images instantanées en attente du groupe d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, odx 
 summary: 'La commande Set storageArray odxEnabled (définir la matrice de stockage odxEnabled) active ou désactive Offloaded Data Transfer (ODX) pour une matrice de stockage.' 
 ---
-= Activer ou désactiver ODX
+= Activer ou désactiver ODX - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

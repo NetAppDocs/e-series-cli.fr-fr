@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive 
 summary: La commande show allDrives renvoie des informations sur les lecteurs de la matrice de stockage. 
 ---
-= Afficher le lecteur
+= Afficher le lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

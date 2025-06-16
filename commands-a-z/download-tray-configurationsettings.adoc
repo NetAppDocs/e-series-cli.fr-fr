@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
 summary: 'La commande ConfigurationSettings du plateau de téléchargement télécharge les paramètres par défaut d"usine sur tous les plateaux de disques d"une matrice de stockage ou sur un plateau de lecteur spécifique d"une matrice de stockage.' 
 ---
-= Téléchargez les paramètres de configuration du bac
+= Télécharger les paramètres de configuration du plateau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

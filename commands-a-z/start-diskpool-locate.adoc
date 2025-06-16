@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, locate 
 summary: La commande start DISKPOOL Locate identifie les lecteurs qui sont regroupés logiquement ensemble pour former le pool de disques spécifié en faisant clignoter les voyants des lecteurs. 
 ---
-= Démarrer la localisation du pool de disques
+= Démarrer la localisation du pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

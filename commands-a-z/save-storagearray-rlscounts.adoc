@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, rls, counts 
 summary: 'La commande save storageArray RLSCounts enregistre les compteurs d"état de lecture de lien (RLS) dans un fichier.' 
 ---
-= Réduire le nombre de RLS des baies de stockage
+= Enregistrer le nombre de RLS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

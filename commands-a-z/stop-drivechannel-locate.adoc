@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, locate 
 summary: La commande stop driveChannel locate éteint les voyants des tiroirs de disques qui ont été allumés par la commande start driveChannel Locate. 
 ---
-= Arrêtez la localisation du canal d'entraînement
+= Arrêter la localisation du canal de lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

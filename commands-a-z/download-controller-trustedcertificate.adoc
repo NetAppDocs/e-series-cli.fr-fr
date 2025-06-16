@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, controller, trusted, certificate, command, install, web, servers, validate, array, roles, context 
 summary: La commande download Controller trustedCertificate installe les certificats d’autorité de certification approuvés sur les serveurs Web des contrôleurs pour valider le certificat signé par le serveur LDAP. 
 ---
-= Installer des certificats CA de confiance
+= Installer des certificats d'autorité de certification de confiance - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

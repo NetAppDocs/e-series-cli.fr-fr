@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage, security, support, administrator, commands, autosupport, array, volume, asynchronous, application 
 summary: Commandes pour les administrateurs du stockage, de la sécurité et du support 
 ---
-= Commandes des administrateurs
+= Commandes des administrateurs SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

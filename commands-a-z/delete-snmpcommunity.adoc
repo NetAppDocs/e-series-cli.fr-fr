@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, snmpcommunity, command, existing, simple, network, management, protocol, community, previously, create, effective, unregister, trap, destination, associate, remove 
 summary: 'La commande delete snmpCommunity supprime une communauté SNMP (simple Network Management Protocol) existante que vous avez précédemment créée et enregistrée à l"aide de la commande create snmpCommunity. La suppression d"une communauté SNMP annule efficacement l"enregistrement de la communauté. Toutes les destinations d"interruption associées à cette communauté sont également supprimées.' 
 ---
-= Annuler l'enregistrement de la communauté SNMP
+= Désinscrire la communauté SNMP - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

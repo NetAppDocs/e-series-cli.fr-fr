@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, iscsi, statistics 
 summary: La commande save storageArray iscsiStatistics enregistre les statistiques de performances iSCSI de la matrice de stockage dans un fichier. 
 ---
-= Enregistrer les statistiques iSCSI de la matrice de stockage
+= Enregistrer les statistiques iSCSI de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

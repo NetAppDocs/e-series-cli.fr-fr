@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, attribute 
 summary: 'La commande définir bac définit les attributs définis par l"utilisateur pour un bac' 
 ---
-= Définir l'attribut de bac
+= Définir l'attribut du plateau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

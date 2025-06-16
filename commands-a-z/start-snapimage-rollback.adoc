@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, snapshot, image, rollback 
 summary: 'La commande Start SnapImage rollback lance une opération de restauration pour un ensemble d"images instantanées.' 
 ---
-= Démarrer la restauration de l'image instantanée
+= Démarrer la restauration de l'image instantanée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

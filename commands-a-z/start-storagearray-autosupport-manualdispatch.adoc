@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, autosupport, manual, dispatch 
 summary: La commande start storageArray AutoSupport manualDispatch initie un bundle de support complet et envoie ASUP pour le bundle. 
 ---
-= Démarrer l'intervention manuelle du AutoSupport de la baie de stockage
+= Démarrage de l'envoi manuel d'AutoSupport de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

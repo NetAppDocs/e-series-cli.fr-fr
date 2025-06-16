@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recreate, external, security key 
 summary: La commande reate storageArray securityKey régénère une clé de sécurité de matrice de stockage à utiliser avec la fonction de gestion des clés de sécurité externe. 
 ---
-= Recréez la clé de sécurité externe
+= Recréer une clé de sécurité externe - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

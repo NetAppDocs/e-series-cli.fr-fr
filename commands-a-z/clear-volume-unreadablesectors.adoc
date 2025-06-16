@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, volume, unreadable, sectors 
 summary: La commande clear volume unreadableSectors efface les informations de secteur illisibles d’un ou de plusieurs volumes. 
 ---
-= Effacer les secteurs illisibles du volume
+= Effacer les secteurs illisibles du volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

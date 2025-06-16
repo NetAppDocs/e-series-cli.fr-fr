@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, unconfigured, initiators 
 summary: La commande show storageArray unconfigurerdInitiators renvoie une liste des initiateurs détectés par la matrice de stockage, mais qui ne sont pas encore configurés dans la topologie de la matrice de stockage. 
 ---
-= Affiche les initiateurs non configurés
+= Afficher les initiateurs non configurés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

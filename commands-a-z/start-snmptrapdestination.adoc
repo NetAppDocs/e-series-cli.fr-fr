@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, snmp, trap, destination 
 summary: 'La commande start snmpTrapDestination teste la connexion et l"identification du récepteur d"interruption pour une communauté ou un utilisateur SNMP (simple Network Management Protocol) spécifique. Cette commande teste la destination de l"interruption en envoyant un message d"interruption au récepteur d"interruption.' 
 ---
-= Tester la destination de l'interruption SNMP
+= Tester la destination des traps SNMP - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

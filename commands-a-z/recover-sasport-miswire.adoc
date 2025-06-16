@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, sas, port, mis-wire 
 summary: 'La commande de défaut de sasPort de récupération indique à un contrôleur qu"une action corrective a été entreprise pour récupérer en cas de mauvais câblage.' 
 ---
-= Récupération du câble défectueux du port SAS
+= Réparer un mauvais câblage du port SAS - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

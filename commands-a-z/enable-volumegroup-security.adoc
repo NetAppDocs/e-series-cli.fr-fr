@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, volumegroup, security, command, non secure, volume, group 
 summary: La commande activer la sécurité du groupe de volumes convertit un groupe de volumes non sécurisé en un groupe de volumes sécurisé. 
 ---
-= Activez la sécurité du groupe de volumes
+= Activer la sécurité du groupe de volumes – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

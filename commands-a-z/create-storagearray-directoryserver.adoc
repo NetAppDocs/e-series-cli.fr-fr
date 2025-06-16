@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, directory server 
 summary: 'La commande create storageArray directoryServer vous permet d"ajouter un nouveau serveur d"annuaire à utiliser pour l"authentification et l"autorisation des utilisateurs.' 
 ---
-= Créer un serveur de répertoire de matrice de stockage
+= Créer un serveur d'annuaire de baies de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

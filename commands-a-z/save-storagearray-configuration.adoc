@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, configuration 
 summary: La commande save storageArray configuration crée un fichier script que vous pouvez utiliser pour recréer la configuration actuelle du volume de la matrice de stockage. 
 ---
-= Enregistrer la configuration de la matrice de stockage
+= Enregistrer la configuration de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

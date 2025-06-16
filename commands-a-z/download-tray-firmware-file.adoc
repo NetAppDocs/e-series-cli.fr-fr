@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, firmware, file, command, environmental, service, module, array, role, context 
 summary: 'La commande de téléchargement du fichier du micrologiciel du plateau de téléchargement télécharge le micrologiciel du module de services environnementaux (ESM).' 
 ---
-= Téléchargez le micrologiciel de la carte environnementale
+= Télécharger le firmware de la carte environnementale - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

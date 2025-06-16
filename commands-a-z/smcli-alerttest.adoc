@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, alerts 
 summary: La commande SMcli alertTest envoie une alerte de test au journal des événements Windows et à tous les récepteurs syslog configurés. 
 ---
-= Testez les alertes
+= Alertes de test - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, autosupport, message, collection, schedule 
 summary: La commande SMcli -autoSupportSchedule show affiche le planning de collecte et de traitement des messages AutoSupport quotidiens et hebdomadaires. 
 ---
-= Afficher le programme de collecte des messages AutoSupport
+= Afficher le calendrier de collecte des messages AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

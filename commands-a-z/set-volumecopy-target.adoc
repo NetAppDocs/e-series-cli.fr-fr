@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, copy 
 summary: 'La commande Set VolumeCopy target définit les propriétés d"une paire de copies de volume.' 
 ---
-= Définissez la copie de volume
+= Définir la copie du volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

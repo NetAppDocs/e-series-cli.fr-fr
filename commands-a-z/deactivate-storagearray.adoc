@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deactivate, asynchronous, mirroring 
 summary: La fonction Désactiver le réseau de stockage désactive la fonction de mise en miroir asynchrone. 
 ---
-= Désactiver la mise en miroir asynchrone
+= Désactiver la mise en miroir asynchrone – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

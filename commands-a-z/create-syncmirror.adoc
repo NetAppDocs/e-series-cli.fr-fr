@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, synchronous, mirroring 
 summary: 'La commande create SyncMirror crée à la fois le volume principal et le volume secondaire pour une paire synchrone mise en miroir à distance. Cette commande définit également le mode d"écriture (mode d"écriture synchrone ou mode d"écriture asynchrone) et la priorité de synchronisation.' 
 ---
-= Création d'une mise en miroir synchrone
+= Créer une mise en miroir synchrone – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

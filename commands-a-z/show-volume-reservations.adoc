@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, reservations 
 summary: La commande show volume reservations renvoie des informations sur les volumes ayant des réservations permanentes. 
 ---
-= Afficher les réservations de volume
+= Afficher les réservations de volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, array, label 
 summary: 'La commande Show array label renvoie des informations sur la définition ou non d"une étiquette de matrice de stockage ou de toutes les étiquettes existantes de matrice de stockage.' 
 ---
-= Afficher l'étiquette de tableau
+= Afficher l'étiquette du tableau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

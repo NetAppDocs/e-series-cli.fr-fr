@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firmware, compatibility, levels 
 summary: Les commandes de script des sections suivantes répertorient les niveaux de micrologiciel minimum sous lesquels les commandes de script peuvent être exécutées. 
 ---
-= Niveaux de compatibilité du micrologiciel
+= En savoir plus sur les niveaux de compatibilité du micrologiciel SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

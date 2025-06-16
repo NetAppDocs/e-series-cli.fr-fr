@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, replace 
 summary: 'La commande stop drive replace arrête une opération de copie de données qui a été démarrée par une commande set drive ou une commande replace drive avec l"entrée utilisateur copyDrive.' 
 ---
-= Arrêter le remplacement de l'entraînement
+= Arrêter le remplacement du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

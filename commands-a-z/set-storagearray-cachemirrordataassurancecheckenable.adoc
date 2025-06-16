@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, cache, mirror, data, assurance, check 
 summary: 'La commande set storageArray cacheMirrorDataAssureCheckEnable vous permet d"activer ou de désactiver la vérification de l"assurance des données du miroir du cache.' 
 ---
-= Définissez la baie de stockage pour activer ou désactiver la vérification de l'assurance des données du miroir du cache
+= Définir la baie de stockage pour activer ou désactiver la vérification de l'assurance des données du miroir de cache - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

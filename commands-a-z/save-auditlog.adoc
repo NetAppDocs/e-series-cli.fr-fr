@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, audit log, records 
 summary: 'La commande save auditlog récupère les enregistrements du journal d"audit.' 
 ---
-= Enregistrer les enregistrements du journal d'audit
+= Enregistrer les enregistrements du journal d'audit - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

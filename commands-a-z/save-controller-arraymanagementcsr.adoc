@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: generate, web server, certificate, sign, request, csr 
 summary: 'La commande save Controller arrayManagementTM génère une requête de signature de certificat (CSR) pour le contrôleur.' 
 ---
-= Générer une requête de signature de certificat de serveur Web (RSC)
+= Générer une demande de signature de certificat (CSR) pour le serveur Web - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, login, banner 
 summary: 'La commande Save storageArray loginBanner vous permet d"enregistrer une bannière de connexion sur votre ordinateur local. Le texte de la bannière peut inclure un avis consultatif et un message de consentement qui sont présentés aux utilisateurs avant d"établir des sessions.' 
 ---
-= Enregistrez la bannière de connexion à la matrice de stockage
+= Enregistrer la bannière de connexion à la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

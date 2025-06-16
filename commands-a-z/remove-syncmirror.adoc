@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, synchronous, mirror 
 summary: 'La commande remove SyncMirror supprime la relation de miroir entre le volume primaire et le volume secondaire d"une paire mise en miroir à distance.' 
 ---
-= Supprimer la mise en miroir synchrone
+= Supprimer la mise en miroir synchrone – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

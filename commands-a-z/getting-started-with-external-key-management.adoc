@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
 summary: 'Une clé de sécurité est une chaîne de caractères partagée entre les disques et les contrôleurs sécurisés d"une matrice de stockage. Lorsque vous utilisez la gestion externe des clés, vous créez et conservez les clés de sécurité sur un serveur de gestion des clés' 
 ---
-= Mise en route avec la gestion externe des clés
+= Premiers pas avec la gestion des clés externes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

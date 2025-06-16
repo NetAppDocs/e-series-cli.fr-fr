@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, internal, storage, array, security key 
 summary: 'La commande Set storageArray securityKey définit la clé de sécurité utilisée dans l"ensemble de la matrice de stockage pour mettre en œuvre la fonction Drive Security.' 
 ---
-= Définir la clé de sécurité de la matrice de stockage interne
+= Définir la clé de sécurité de la matrice de stockage interne - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

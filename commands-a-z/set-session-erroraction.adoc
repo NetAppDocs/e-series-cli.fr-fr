@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, session 
 summary: La commande set session errorAction définit la manière dont vous souhaitez exécuter la session de moteur de script en cours. 
 ---
-= Configurez la session
+= Définir une session - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, hostgroup, command, support, role 
 summary: 'La commande delete hostGroup supprime un groupe d"hôtes.' 
 ---
-= Supprimer le groupe d'hôtes
+= Supprimer un groupe d'hôtes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

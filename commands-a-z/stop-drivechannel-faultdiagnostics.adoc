@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, fault, isolation, diagnostics 
 summary: 'La commande STOP rageChannel fault Diagnostics arrête le diagnostic d"isolation de défaut du canal d"entraînement, ce qui arrête la commande de diagnostic d"isolation de défaut du canal d"entraînement avant la fin.' 
 ---
-= Arrêter les diagnostics d'isolation des défauts du canal d'entraînement
+= Diagnostic d'isolement des défauts du canal d'arrêt du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

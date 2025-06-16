@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, disk pool 
 summary: La commande delete DISKPOOL supprime un pool de disques. 
 ---
-= Supprimer le pool de disques
+= Supprimer le pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

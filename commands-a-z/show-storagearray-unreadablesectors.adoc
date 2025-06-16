@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, unreadable, sectors 
 summary: La commande show storageArray unreadableSectors renvoie une table des adresses de tous les secteurs de la matrice de stockage qui ne peuvent pas être lus. 
 ---
-= Montrez les secteurs illisibles de la matrice de stockage
+= Afficher les secteurs illisibles de la matrice de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

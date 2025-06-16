@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, foreign, drive, native 
 summary: 'La commande set drive nativeState ajoute les disques manquants (étrangers) à leur groupe de volumes d"origine et les fait partie du groupe de volumes de la nouvelle baie de stockage.' 
 ---
-= Réglez le lecteur étranger sur natif
+= Définir le lecteur étranger comme natif - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

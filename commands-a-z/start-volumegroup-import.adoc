@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, import 
 summary: 'La commande start Volume Volume Group Import déplace un groupe de volumes dans un état complet pour qu"un groupe de volumes nouvellement introduit soit à la disposition de sa nouvelle baie de stockage.' 
 ---
-= Démarrer l'importation du groupe de volumes
+= Démarrer l'importation du groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

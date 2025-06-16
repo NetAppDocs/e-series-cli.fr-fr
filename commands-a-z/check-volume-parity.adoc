@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, volume, parity 
 summary: La commande vérifier la parité du volume vérifie un volume pour détecter les erreurs de parité et de support, puis écrit les résultats du contrôle dans un fichier. 
 ---
-= Vérifier la parité du volume
+= Vérifier la parité du volume – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

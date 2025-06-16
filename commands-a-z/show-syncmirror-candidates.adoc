@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, synchronous, mirror, volume, candidates 
 summary: La commande show SyncMirror candidate renvoie des informations sur les volumes candidats sur une matrice de stockage distante que vous pouvez utiliser comme volumes secondaires dans une configuration de mise en miroir synchrone. 
 ---
-= Affiche les candidats au volume de mise en miroir synchrone
+= Afficher les volumes candidats à la mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

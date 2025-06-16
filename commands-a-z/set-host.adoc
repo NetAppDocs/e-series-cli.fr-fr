@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host 
 summary: 'La commande set host attribue un hôte à un groupe d"hôtes ou déplace un hôte vers un autre groupe d"hôtes.' 
 ---
-= Définir l'hôte
+= Définir l'hôte - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

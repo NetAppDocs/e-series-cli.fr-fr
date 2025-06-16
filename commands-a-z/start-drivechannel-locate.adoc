@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, channel, locate 
 summary: La commande Start driveChannel Locate identifie les tiroirs de disques connectés à un canal de lecteur spécifique en allumant les voyants du plateau de lecteur connecté au canal de lecteur. 
 ---
-= Démarrer la localisation du canal d'entraînement
+= Démarrer la localisation du canal de lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

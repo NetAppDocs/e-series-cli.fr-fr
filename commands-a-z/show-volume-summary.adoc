@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume 
 summary: La commande show volume summary renvoie des informations sur un volume. 
 ---
-= Afficher le volume
+= Afficher le volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

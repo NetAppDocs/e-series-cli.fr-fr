@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, volume, group 
 summary: 'La commande ressusciter le groupe de volumes force le groupe de volumes spécifié et ses disques défectueux associés à l"état optimal.' 
 ---
-= Ressusciter le groupe de volumes
+= Réactiver le groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

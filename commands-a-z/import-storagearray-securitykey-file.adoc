@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
 summary: 'La commande Import storageArray securityKey file déverrouille un ou plusieurs lecteurs FDE (Full Disk Encryption) que vous avez déplacés d"une matrice de stockage vers une autre matrice de stockage.' 
 ---
-= Importer la clé de sécurité de la matrice de stockage
+= Importer la clé de sécurité de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

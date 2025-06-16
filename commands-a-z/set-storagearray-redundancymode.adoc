@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, redundancy, mode 
 summary: La commande Set storageArray Redundancy ancyMode définit le mode de redondance de la matrice de stockage sur simplex ou duplex. 
 ---
-= Définir le mode de redondance de la matrice de stockage
+= Définir le mode de redondance de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

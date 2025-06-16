@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive, download, progress 
 summary: 'La commande show allDrives downloadProgress renvoie l"état des téléchargements de micrologiciel pour les lecteurs ciblés par la commande download drive firmware ou la commande download storageArray driveFirmware.' 
 ---
-= Affiche la progression du téléchargement du lecteur
+= Afficher la progression du téléchargement du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

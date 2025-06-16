@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, disk pool, locate 
 summary: La commande STOP DISKPOOL Locate éteint les voyants des lecteurs qui ont été allumés par la commande start DISKPOOL Locate. 
 ---
-= Arrêter la localisation du pool de disques
+= Arrêter la localisation du pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

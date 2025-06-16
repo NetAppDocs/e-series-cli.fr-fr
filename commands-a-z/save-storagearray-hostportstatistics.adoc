@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, host, port, statistics 
 summary: La commande Save storageArray hostPortStatistics enregistre les statistiques de port hôte de la matrice de stockage. 
 ---
-= Enregistrer les statistiques de port hôte de la matrice de stockage
+= Enregistrer les statistiques du port hôte de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

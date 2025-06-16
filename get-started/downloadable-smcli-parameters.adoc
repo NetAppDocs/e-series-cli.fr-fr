@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: downloadable, smcli, command line, parameters, identify, devices, SAML, multifactor, authentication, https, certificate, array, 
 summary: 'SANtricity OS 11.60 et les versions ultérieures permettent de télécharger et d"installer la version http de l"interface de ligne de commande (également appelée CLI sécurisée ou SMcli) directement via SANtricity System Manager.' 
 ---
-= Paramètres de ligne de commande SMcli téléchargeables
+= En savoir plus sur les paramètres téléchargeables de SANtricity Secure CLI (SMcli)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

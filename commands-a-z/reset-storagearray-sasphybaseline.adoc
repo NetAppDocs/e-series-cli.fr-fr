@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, sas, phy, baseline 
 summary: 'La commande reset storageArray SASPHYBaseline réinitialise la ligne de base SAS Physical Layer (SAS PHY) pour tous les périphériques et supprime la liste des erreurs du fichier .csv.' 
 ---
-= Réinitialisez la base de la matrice de stockage SAS PHY
+= Réinitialiser la ligne de base PHY SAS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

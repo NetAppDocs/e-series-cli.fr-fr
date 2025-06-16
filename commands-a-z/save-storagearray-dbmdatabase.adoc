@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, dbm, database 
 summary: 'La commande save storageArray dbmDatabase sauvegarde les données de configuration RAID ou toutes les données dans un fichier sur l"hôte. Vous pouvez indiquer plusieurs emplacements de données et contrôleurs.' 
 ---
-= Enregistrer la base de données DBM de la matrice de stockage
+= Enregistrer la base de données DBM de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

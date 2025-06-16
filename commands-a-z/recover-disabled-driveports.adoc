@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, disable, drive ports 
 summary: La commande récupérer les ports de lecteur désactivés récupère les ports de lecteur désactivés. 
 ---
-= Récupérer les ports de disque désactivés
+= Récupérer les ports de lecteur désactivés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

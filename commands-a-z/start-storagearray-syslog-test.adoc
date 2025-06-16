@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, syslog, test 
 summary: La commande start storageArray syslog test permet de tester les communications entre la matrice de stockage et un serveur syslog. 
 ---
-= Démarrer le test syslog de la baie de stockage
+= Démarrer le test syslog de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

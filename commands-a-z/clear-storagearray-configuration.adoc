@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, configuration 
 summary: 'La commande clear storageArray configuration efface la totalité de la configuration de la matrice de stockage ou une partie d"une configuration de la matrice de stockage, ou efface uniquement le groupe de volumes et la configuration du volume.' 
 ---
-= Effacez la configuration de la matrice de stockage
+= Configuration claire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

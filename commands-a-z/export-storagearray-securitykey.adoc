@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: export, storage, array, security, key, command, save, drive, securitykey, file, context, role 
 summary: La commande export storageArray securityKey enregistre une clé de sécurité de lecteur dans un fichier. 
 ---
-= Exportation de la clé de sécurité de la baie de stockage
+= Exporter la clé de sécurité de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

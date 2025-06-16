@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, remote, diagnostics, feature, emw, management, domain, level, smcli 
 summary: 'La commande SMcli enable|disable autoSupportRemoteDiag active ou désactive la fonction de diagnostic à distance AutoSupport. Cette fonctionnalité permet au support technique de demander des données de support afin d"identifier les problèmes à distance.' 
 ---
-= Activation ou désactivation de la fonctionnalité de diagnostic à distance AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement).
+= Activer ou désactiver la fonctionnalité de diagnostic à distance AutoSupport au niveau du domaine de gestion EMW (SMcli uniquement) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

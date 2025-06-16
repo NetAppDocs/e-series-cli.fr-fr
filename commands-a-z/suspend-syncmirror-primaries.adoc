@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, synchronous, mirror 
 summary: La commande suspendre les primaires SyncMirror suspend une opération de mise en miroir synchrone. 
 ---
-= Suspendre la mise en miroir synchrone
+= Suspendre la mise en miroir synchrone – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

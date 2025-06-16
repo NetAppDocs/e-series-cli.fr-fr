@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive channel, fault, isolation, diagnostics 
 summary: 'La commande START RESULTATS fautDiagnostics exécute les diagnostics d"isolation des défauts du canal d"entraînement et enregistre les résultats.' 
 ---
-= Démarrer les diagnostics d'isolation des défauts du canal d'entraînement
+= Diagnostics d'isolation des défauts du canal de démarrage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

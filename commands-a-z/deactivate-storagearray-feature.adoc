@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deactivate, synchronous, mirror 
 summary: La commande Désactiver la fonction StorageArray désactive la fonction de mise en miroir synchrone, déassemble le volume du référentiel miroir et libère le propriétaire du contrôleur du volume secondaire. 
 ---
-= Désactiver la mise en miroir synchrone
+= Désactiver la mise en miroir synchrone – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

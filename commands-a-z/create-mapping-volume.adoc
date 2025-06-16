@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, map 
 summary: La commande create mapping volume crée un mappage logique d’un volume vers un hôte ou un groupe d’hôtes. 
 ---
-= Créer un mappage de volume
+= Créer un mappage de volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

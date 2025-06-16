@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, sas, phy, counts 
 summary: 'La commande Save storageArray SASPHYCounts enregistre les compteurs de la couche physique SAS (SAS PHY) dans un fichier.' 
 ---
-= Enregistrer le nombre de PHY SAS de la matrice de stockage
+= Enregistrer le nombre de PHY SAS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

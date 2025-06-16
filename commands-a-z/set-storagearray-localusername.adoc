@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, local, user, password, symbol 
 summary: 'La commande Set storageArray localUsername et la commande Set storageArray Symbol vous permettent de définir un mot de passe de nom d"utilisateur local ou un mot de passe de symbole pour un rôle particulier.' 
 ---
-= Définissez le mot de passe ou le symbole de l'utilisateur local de la matrice de stockage
+= Définir le mot de passe de l'utilisateur local de la baie de stockage ou le mot de passe SYMbol - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

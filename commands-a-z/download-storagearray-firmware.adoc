@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, firmware, command, downloads, optionally, values, controllers, role, context, parameter 
 summary: La commande download storageArray Firmware télécharge le micrologiciel et, éventuellement, les valeurs NVSRAM pour le contrôleur de la matrice de stockage. 
 ---
-= Téléchargez le micrologiciel de la matrice de stockage/NVSRAM
+= Télécharger le micrologiciel de la baie de stockage/NVSRAM - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

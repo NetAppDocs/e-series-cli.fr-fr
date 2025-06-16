@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, reconstruction 
 summary: La commande démarrer la reconstruction du lecteur commence à reconstruire un lecteur. 
 ---
-= Démarrer la reconstruction du disque
+= Démarrer la reconstruction du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

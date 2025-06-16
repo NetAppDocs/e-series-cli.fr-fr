@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, certificate, revocation, check, set 
 summary: 'La commande Set storageArray révocationCheckSettings permet d"activer ou de désactiver la vérification de révocation et de configurer un serveur OCSP (Online Certificate Status Protocol).' 
 ---
-= Définissez les paramètres de vérification de révocation du certificat
+= Définir les paramètres de vérification de révocation des certificats - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

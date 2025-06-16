@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency, group 
 summary: 'La commande create conceGroup crée un groupe de cohérence vide, qui peut contenir des groupes de snapshots. Vous devez ajouter les groupes de snapshots à l"aide de la commande set ConsistenceGroup addCGMember.' 
 ---
-= Créer un groupe de cohérence
+= Créer un groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

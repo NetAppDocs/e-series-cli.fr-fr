@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, cache, command, data, purged, array, support, role, parameter 
 summary: La commande delete ssdcache supprime le cache SSD. Toutes les données du cache SSD sont supprimées. 
 ---
-= Supprime le cache SSD
+= Supprimer le cache SSD - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

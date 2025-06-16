@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable, storage, array, command, storage, feature 
 summary: La commande disable storageArray désactive une fonctionnalité de matrice de stockage. 
 ---
-= Désactiver la fonction de matrice de stockage
+= Désactiver la fonctionnalité de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, service, action, allowed, indicator 
 summary: La commande Set drive serviceAllowedIndicator active ou désactive le voyant action de service autorisée sur un disque ou des disques dans des tiroirs qui prennent en charge la fonction de témoin action de service autorisée. 
 ---
-= Définir le témoin d'action d'entretien de conduite autorisée
+= Définir l'indicateur d'action de service de lecteur autorisée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

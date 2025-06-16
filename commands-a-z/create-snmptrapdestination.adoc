@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: register, snmp, trap, destination 
 summary: 'La commande create snmpTrapdestination crée une nouvelle destination de trap SNMP (simple Network Management Protocol). Une destination d"interruption est le gestionnaire SNMP pour recevoir les messages d"interruption.' 
 ---
-= Enregistrer la destination d'interruption SNMP
+= Enregistrer la destination des interruptions SNMP - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

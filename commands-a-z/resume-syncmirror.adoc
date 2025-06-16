@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, synchronous, mirroring 
 summary: La commande RESUME SyncMirror reprend une opération de mise en miroir synchrone suspendue. 
 ---
-= Reprise de la mise en miroir synchrone
+= Reprendre la mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

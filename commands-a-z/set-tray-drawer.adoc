@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drawer, service, action, allowed, indicator 
 summary: La commande définir tiroir bac active ou désactive le voyant action de service autorisée sur un tiroir qui contient des lecteurs. 
 ---
-= Définir l'indicateur d'action d'entretien du tiroir autorisé
+= Définir l'indicateur d'action de service du tiroir autorisée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

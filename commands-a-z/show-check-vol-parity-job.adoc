@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, check, volume, parity, job, 
 summary: 'La commande show check volume parity job affiche une tâche de parité de volume de contrôle spécifiée et l"état de la tâche.' 
 ---
-= Affiche la tâche de vérification de la parité du volume
+= Afficher la tâche de vérification de parité du volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

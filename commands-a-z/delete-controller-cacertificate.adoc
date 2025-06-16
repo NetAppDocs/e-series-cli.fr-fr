@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, install, root, intermediate, ca, certificates 
 summary: La commande delete Controller caCertificate supprime le certificat CA racine ou intermédiaire installé du contrôleur spécifié. 
 ---
-= Supprimer les certificats CA racine/intermédiaire installés
+= Supprimer les certificats d'autorité de certification racine/intermédiaire installés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

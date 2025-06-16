@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, volume 
 summary: 'La commande create snapVolume crée un volume snapshot avec des capacités de lecture/écriture pour les images snapshot d"un volume de base.' 
 ---
-= Créer un volume snapshot
+= Créer un volume instantané - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

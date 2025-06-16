@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, storage array, connectivity 
 summary: La commande Check storageArray Connectivity vérifie que la matrice de stockage locale et la matrice de stockage distante ont un chemin de communication et affiche les détails de connexion entre la matrice de stockage locale et distante. 
 ---
-= Vérifier la connectivité de la baie de stockage
+= Vérifier la connectivité de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

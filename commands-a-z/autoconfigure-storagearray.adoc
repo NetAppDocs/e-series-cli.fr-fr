@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autoconfigure storage array,supported, roles, syntax, parameters, minimum firmware level 
 summary: La commande autoConfigure storageArray configure automatiquement une matrice de stockage. 
 ---
-= Configurer automatiquement la matrice de stockage
+= Configuration automatique de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

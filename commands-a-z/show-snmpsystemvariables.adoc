@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, snmp, mib ii, system, group, variables 
 summary: 'La commande show snmpSystemvariables renvoie des informations sur les variables système SNMP (simple Network Management Protocol). Les variables système sont conservées dans une base de données MIB-II (Management information base II).' 
 ---
-= Afficher les variables du groupe système MIB II SNMP
+= Afficher les variables du groupe système SNMP MIB II - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

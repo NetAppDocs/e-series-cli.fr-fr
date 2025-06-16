@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, repository, consistency 
 summary: 'La commande Check remitoryConsistency génère un rapport basé sur l"analyse des données du volume de référentiel sous-jacent d"un objet spécifié.' 
 ---
-= Vérifier la cohérence du référentiel
+= Vérifier la cohérence du référentiel - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

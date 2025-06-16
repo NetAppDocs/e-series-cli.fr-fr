@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, synchronous, mirroring status 
 summary: 'La commande check SyncMirror renvoie l"état d"un volume miroir distant. Utilisez cette commande pour déterminer quand l"état du volume du miroir distant est optimal.' 
 ---
-= Vérifiez l'état de la mise en miroir synchrone
+= Vérifier l'état de la mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

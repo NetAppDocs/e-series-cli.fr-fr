@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, audit, log, records 
 summary: 'La commande delete auditlog supprime une partie ou la totalité des enregistrements du journal d"audit.' 
 ---
-= Supprimer les enregistrements du journal d'audit
+= Supprimer les enregistrements du journal d'audit - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

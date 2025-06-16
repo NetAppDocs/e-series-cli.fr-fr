@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, state, capture 
 summary: 'La commande Save storageArray State Capture enregistre l"état de la capture d"un tableau de stockage dans un fichier.' 
 ---
-= Enregistrer la capture de l'état de la matrice de stockage
+= Enregistrer la capture d'état de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

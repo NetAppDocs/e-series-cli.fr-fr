@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, locate 
 summary: La commande start Volume Volume Group Locate identifie les lecteurs qui sont regroupés de manière logique pour former le groupe de volumes spécifié en faisant clignoter les voyants des lecteurs. 
 ---
-= Démarrer la recherche du groupe de volumes
+= Démarrer la localisation du groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

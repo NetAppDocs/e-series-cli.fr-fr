@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, asynchronous, mirror group 
 summary: La commande delete asynchrones MirrorGroup supprime un ou plusieurs groupes de miroirs asynchrones de la matrice de stockage locale et de la matrice de stockage distante. 
 ---
-= Supprimer le groupe de miroirs asynchrone
+= Supprimer un groupe de miroirs asynchrones – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: format, rules, script, commands 
 summary: La syntaxe unique à une commande de script spécifique est expliquée dans la section Notes à la fin de chaque description de commande de script. 
 ---
-= Règles de format pour les commandes de script
+= Règles de format pour les commandes de script SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

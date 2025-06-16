@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, resource, provision 
 summary: 'La commande start Volume Volume Group resourceProvisioning permet le provisionnement des ressources sur un groupe de volumes donné et lance une opération asynchrone d"activation du provisionnement des ressources sur chaque volume du groupe de volumes. Le provisionnement des ressources nécessite que tous les disques du groupe de volumes prennent en charge la fonctionnalité DULBE de NVMe.' 
 ---
-= Démarrer l'approvisionnement des ressources du groupe de volumes
+= Démarrer le provisionnement des ressources du groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

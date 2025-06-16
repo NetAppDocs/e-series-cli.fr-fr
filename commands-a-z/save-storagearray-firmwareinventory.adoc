@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, firmware, inventory 
 summary: 'La commande save storageArray firmwareInventory enregistre un rapport dans un fichier de l"ensemble du micrologiciel actuellement exécuté sur la matrice de stockage.' 
 ---
-= Enregistrer l'inventaire du micrologiciel de la matrice de stockage
+= Enregistrer l'inventaire du micrologiciel de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

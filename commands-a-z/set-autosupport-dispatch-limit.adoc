@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Autosupport, bundle, dispatch, delivery type, size 
 summary: Définit la taille maximale des lots et des interventions AutoSupport pour différents types de livraison. 
 ---
-= Définir la limite de taille d'intervention AutoSupport
+= Définir la limite de taille d'expédition AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

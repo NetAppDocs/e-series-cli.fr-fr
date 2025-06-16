@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: volume, group, migration, learn, data, access, export, import, component 
 summary: 'La migration d"un groupe de volumes vous permet d"exporter un groupe de volumes pour pouvoir importer le groupe de volumes vers une autre matrice de stockage. Vous pouvez également exporter un groupe de volumes pour stocker les données hors ligne.' 
 ---
-= En savoir plus sur la migration de groupes de volumes
+= En savoir plus sur la migration de groupes de volumes dans le logiciel SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

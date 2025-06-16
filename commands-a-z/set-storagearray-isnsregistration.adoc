@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, registration 
 summary: 'La commande set storageArray isnsRegistration vous permet de lister une matrice de stockage sur un serveur IPv4 ou iSNS (Internet Storage Name Service) IPv6.' 
 ---
-= Définir l'enregistrement iSNS de la matrice de stockage
+= Définir l'enregistrement iSNS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

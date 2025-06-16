@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, locate 
 summary: La commande START Drive Locate localise un lecteur en allumant un voyant sur le lecteur. 
 ---
-= Démarrer la recherche de conduite
+= Démarrer la localisation du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

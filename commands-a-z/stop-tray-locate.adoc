@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, tray, locate 
 summary: La commande stop bac locate éteint le voyant du bac qui a été allumé par la commande Start bac Locate. 
 ---
-= Arrêtez la localisation du bac
+= Arrêter la localisation du plateau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

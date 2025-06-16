@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: commands, mirroring, asynchronous, synchronous, command 
 summary: Commandes de mise en miroir 
 ---
-= Commandes de mise en miroir
+= Commandes de mise en miroir SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add certificate array, supported, syntax, parameters, minimum firmware level 
 summary: 'La commande Ajouter un certificat à partir de la baie vous permet de prendre un certificat à partir de la baie et de l"ajouter au magasin d"approbation du package CLI. Le certificat ajouté sera utilisé uniquement par le pack de l"interface de ligne de commande.' 
 ---
-= Ajouter un certificat à partir de la matrice
+= Ajouter un certificat à partir d'un tableau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

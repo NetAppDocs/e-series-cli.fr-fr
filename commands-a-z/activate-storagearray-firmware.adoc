@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: activate, storage array, firmware, syntax, parameter, minimum, level 
 summary: La commande Activer le micrologiciel du système de stockage active le micrologiciel que vous avez déjà téléchargé dans la zone de configuration en attente sur les contrôleurs de la matrice de stockage. 
 ---
-= Activer le micrologiciel de la matrice de stockage
+= Activer le micrologiciel de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

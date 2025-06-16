@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, synchronous, mirror 
 summary: 'La commande Set SyncMirror définit les propriétés d"une paire symétrique distante.' 
 ---
-= Définissez la mise en miroir synchrone
+= Définir la mise en miroir synchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 'Specify AutoSupport HTTP(S) delivery method' 
 summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi des messages AutoSupport au protocole HTTP(S).' 
 ---
-= Spécifiez la méthode de livraison AutoSupport HTTP(S)
+= Spécifier la méthode de livraison http(s) AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

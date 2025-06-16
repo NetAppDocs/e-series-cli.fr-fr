@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, volume, group, locate 
 summary: La commande stop Volume Group Locate éteint les voyants lumineux des lecteurs qui ont été allumés par la commande start Volume, Group locate. 
 ---
-= Arrêter la localisation du groupe de volumes
+= Arrêter la localisation du groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, identification 
 summary: 'La commande définir le bac définit l"ID du bac d"alimentation d"un tiroir de contrôleur, d"un plateau de contrôleur ou d"un plateau de lecteur dans une matrice de stockage.' 
 ---
-= Définir l'identification du bac
+= Identification du plateau de jeu - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

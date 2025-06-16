@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, host 
 summary: La commande delete host supprime un ou plusieurs hôtes. 
 ---
-= Supprimer l'hôte
+= Supprimer l'hôte - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

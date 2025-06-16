@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, asynchronous, mirror, group 
 summary: La commande create asynchrones MirrorGroup crée un nouveau groupe de miroirs asynchrone vide sur la matrice de stockage locale et la matrice de stockage distante. 
 ---
-= Créer un groupe de miroirs asynchrone
+= Créer un groupe de miroirs asynchrones – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

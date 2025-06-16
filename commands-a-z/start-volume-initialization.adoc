@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, initialization 
 summary: 'La commande start volume initialize démarre le formatage d"un volume dans une matrice de stockage.' 
 ---
-= Démarrer l'initialisation du volume
+= Démarrer l'initialisation du volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

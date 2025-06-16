@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, consistency, group 
 summary: La commande show resistenceGroup renvoie des informations sur un ou plusieurs groupes de cohérence. 
 ---
-= Affiche le groupe de cohérence
+= Afficher le groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

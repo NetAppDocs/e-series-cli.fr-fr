@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, ssd, cache, locate 
 summary: La commande start ssdcache locate identifie les disques SSD regroupés logiquement pour former le cache SSD en faisant clignoter les voyants des disques SSD. 
 ---
-= Démarrer la localisation du cache SSD
+= Démarrer la localisation du cache SSD - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

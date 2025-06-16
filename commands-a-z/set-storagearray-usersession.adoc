@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, user, session 
 summary: La commande set storageArray usersession vous permet de définir un délai dans System Manager, de sorte que les sessions inactives des utilisateurs soient déconnectées après un délai spécifié. 
 ---
-= Définir la session utilisateur de la baie de stockage
+= Définir la session utilisateur de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

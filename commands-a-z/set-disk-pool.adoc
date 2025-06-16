@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, disk pool 
 summary: La commande set DISKPOOL définit les attributs associés à un pool de disques en fonction des paramètres spécifiés. 
 ---
-= Définir le pool de disques
+= Définir le pool de disques - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

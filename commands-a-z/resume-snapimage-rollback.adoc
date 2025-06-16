@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, snapshot, image, rollback 
 summary: 'La commande reprise de l"annulation SnapImage reprend une opération de retour arrière qui est entrée en pause.' 
 ---
-= Reprendre la restauration de l'image instantanée
+= Reprendre la restauration de l'image instantanée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

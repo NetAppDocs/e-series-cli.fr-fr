@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, image 
 summary: La commande create SnapImage crée une nouvelle image snapshot dans un ou plusieurs groupes de snapshots existants. 
 ---
-= Créer une image snapshot
+= Créer une image instantanée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

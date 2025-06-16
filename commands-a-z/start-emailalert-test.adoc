@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, email, alert, configuration 
 summary: 'La commande start emailAlert test vous permet de tester la configuration des alertes en envoyant un exemple d"e-mail.' 
 ---
-= Testez la configuration de l'alerte par e-mail
+= Tester la configuration des alertes par e-mail - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

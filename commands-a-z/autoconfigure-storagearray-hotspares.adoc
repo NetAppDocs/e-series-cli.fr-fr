@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autoconfigure, storage, array, hot spares, supported, roles, syntax, parameters, minimum firmware level 
 summary: La commande autoConfigure storageArray hotSpares définit et configure automatiquement les disques de secours dans une matrice de stockage. Vous pouvez exécuter cette commande à tout moment. Cette commande offre la meilleure couverture de disque de secours pour une matrice de stockage. 
 ---
-= Configurer automatiquement les disques de secours de la baie de stockage
+= Configuration automatique des disques de secours de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, email, alert, recipient 
 summary: 'La commande delete emailAlert supprime l"adresse e-mail du destinataire de la configuration d"alertes par e-mail.' 
 ---
-= Supprimer le destinataire de l'alerte par e-mail
+= Supprimer le destinataire de l'alerte par e-mail - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

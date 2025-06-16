@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, syslog, configuration 
 summary: 'La commande create storageArray syslog permet d’archiver les journaux d’audit sur un serveur syslog externe. Une fois la connexion établie entre la matrice de stockage et le serveur syslog, les journaux d"audit sont automatiquement enregistrés sur le serveur syslog.' 
 ---
-= Créer une configuration syslog de matrice de stockage
+= Créer une configuration Syslog pour une baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

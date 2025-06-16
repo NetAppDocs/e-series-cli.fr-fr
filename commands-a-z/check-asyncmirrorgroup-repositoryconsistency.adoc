@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, asynchronous mirror group, consistency 
 summary: 'La commande Check asynchrones MirrorGroup rechitorConsistency produit un rapport basé sur l"analyse des données du volume de référentiel sous-jacent du groupe de miroirs asynchrones spécifié.' 
 ---
-= Vérifiez la cohérence du groupe de miroirs asynchrone
+= Vérifier la cohérence du groupe de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

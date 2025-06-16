@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, dbm, database 
 summary: 'La commande show storageArray dbmDatabase récupère et affiche les métadonnées pour les emplacements de sauvegarde intégrés d"une matrice de stockage. Lorsque plusieurs emplacements de sauvegarde sont disponibles, les métadonnées sont affichées pour chaque emplacement.' 
 ---
-= Affiche la base de données DBM de la matrice de stockage
+= Afficher la base de données DBM de la matrice de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

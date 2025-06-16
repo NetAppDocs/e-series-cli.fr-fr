@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: command, enable, disable, autosupport, feature, storage, array, possible, transit, messages, technical, support, site, capable, automatically, prepare, collect, data, remote, troubleshooting, problem, analysis 
 summary: 'Cette commande active ou désactive la fonction AutoSupport (ASUP) pour la baie de stockage et permet de transmettre des messages au site du support technique. Une fois la fonctionnalité ASUP activé, la baie de stockage ASUP est automatiquement prête à collecter et à envoyer des données relatives au support au support technique. Les données peuvent ensuite être utilisées pour le dépannage à distance et l"analyse des problèmes.' 
 ---
-= Activer ou désactiver AutoSupport (toutes les baies individuelles)
+= Activer ou désactiver AutoSupport (toutes les baies individuelles) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

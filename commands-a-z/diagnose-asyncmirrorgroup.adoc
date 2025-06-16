@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, command, tests, possible, communication, problems, local, storage, array, remote, asynchronous, mirror, group 
 summary: La commande Diagnose asynchrones MirrorGroup teste les problèmes de communication possibles entre la matrice de stockage locale et la matrice de stockage distante associée à un groupe de miroirs asynchrone. 
 ---
-= Tester la connectivité avec un groupe de miroirs asynchrone
+= Tester la connectivité des groupes de miroirs asynchrones - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

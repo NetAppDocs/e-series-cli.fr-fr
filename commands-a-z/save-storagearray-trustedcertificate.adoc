@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, trusted, ca, certificates 
 summary: 'La commande save storageArray trustedCertificate récupère les certificats d"autorité de certification de confiance installés pour le tableau. Les certificats CA demandés des serveurs Web de la baie sont inclus dans les fichiers récupérés.' 
 ---
-= Récupérer les certificats d'autorité de certification de confiance installés
+= Récupérer les certificats d'autorité de certification de confiance installés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

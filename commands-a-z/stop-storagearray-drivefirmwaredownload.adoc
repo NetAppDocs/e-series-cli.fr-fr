@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, drive, firmware, download 
 summary: 'La commande stop storageArray driveFirmwareDownload arrête un téléchargement de micrologiciel sur les lecteurs d"une matrice de stockage qui a été lancé avec la commande download storageArray driveFirmware.' 
 ---
-= Arrêtez le téléchargement du micrologiciel du lecteur de la matrice de stockage
+= Arrêter le téléchargement du micrologiciel du lecteur de matrice de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

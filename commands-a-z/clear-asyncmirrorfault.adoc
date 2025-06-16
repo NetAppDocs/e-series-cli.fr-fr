@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, asynchronous mirroring, fault 
 summary: 'La commande Clear Mirrorasynchrone efface un défaut de mise en miroir asynchrone "sticky" d"un ou de plusieurs groupes de miroirs asynchrones et d"un ou plusieurs volumes membres de groupe de miroirs asynchrones.' 
 ---
-= Effacer la panne de mise en miroir asynchrone
+= Correction d'une erreur de mise en miroir asynchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

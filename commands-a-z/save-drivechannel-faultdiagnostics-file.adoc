@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, drive, channel, fault, isolation, diagnostic, status 
 summary: 'La commande save rageChannel fault Diagnostics file enregistre les données de diagnostic d"isolation de défaut du canal du lecteur qui sont renvoyées à partir de la commande start rageChannel fault Diagnostics.' 
 ---
-= Enregistrer l'état de diagnostic d'isolation des défauts du canal d'entraînement
+= Enregistrer l'état de diagnostic d'isolement des défauts du canal de lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

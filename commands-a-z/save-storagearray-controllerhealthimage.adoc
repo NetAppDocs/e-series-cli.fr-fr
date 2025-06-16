@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, controller, health, image 
 summary: 'La commande Save storageArray contrôlerHealthImage enregistre une image de l"état du contrôleur dans un fichier spécifié sur un hôte pour les matrices de stockage qui prennent en charge la fonctionnalité d"image d"intégrité du contrôleur.' 
 ---
-= Image sauvegarde de l'état du contrôleur de la baie de stockage
+= Enregistrer l'image d'intégrité du contrôleur de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

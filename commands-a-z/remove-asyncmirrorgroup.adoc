@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, incomplete, asynchronous, mirror, pair, group 
 summary: La commande remove asynchrones MirrorGroup supprime un volume de paires mises en miroir orphelin sur la matrice de stockage. 
 ---
-= Supprime la paire en miroir asynchrone incomplète du groupe de miroirs asynchrone
+= Supprimer une paire miroir asynchrone incomplète du groupe miroir asynchrone - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

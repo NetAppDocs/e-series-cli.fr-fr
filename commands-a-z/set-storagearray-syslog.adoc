@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, storage, array, syslog, configuration 
 summary: 'La commande set storageArray syslog permet de modifier l"adresse, le protocole ou le numéro de port du serveur syslog.' 
 ---
-= Mettre à jour la configuration syslog de la baie de stockage
+= Mettre à jour la configuration du journal système de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, tray, positions 
 summary: La commande set storageArray trayPositions définit la position des bacs dans un tableau de stockage. Vous devez inclure tous les bacs de la matrice de stockage lorsque vous entrez cette commande. 
 ---
-= Définissez les positions des plateaux de la matrice de stockage
+= Définir les positions des plateaux de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

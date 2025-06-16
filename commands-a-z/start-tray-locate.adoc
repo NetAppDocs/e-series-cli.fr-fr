@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, tray, locate 
 summary: La commande de localisation du plateau de démarrage permet de localiser un bac en allumant le voyant. 
 ---
-= Démarrer la localisation du bac
+= Démarrer la localisation du plateau - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

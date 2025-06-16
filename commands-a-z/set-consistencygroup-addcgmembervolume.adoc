@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add, member, consistency, group 
 summary: La commande set ConsistenceGroup addCGMemberVolume ajoute un nouveau volume de base comme membre à un groupe de cohérence existant. 
 ---
-= Ajoutez un membre au groupe de cohérence
+= Ajouter un membre au groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

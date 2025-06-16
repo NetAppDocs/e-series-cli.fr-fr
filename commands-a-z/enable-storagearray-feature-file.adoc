@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, storage, array, feature, file, command, permanent, upgrade, trial period 
 summary: 'La commande enable storageArray Feature file active une fonctionnalité pour une mise à niveau permanente vers la matrice de stockage ou une période d"essai.' 
 ---
-= Activer la fonctionnalité de la baie de stockage
+= Activer la fonctionnalité de baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

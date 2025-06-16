@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: increase, capacity, volume, disk pool, volume, group 
 summary: 'La commande start deVolumeCapacity volume augmente la capacité d"un volume standard ou d"un volume de référentiel dans un pool de disques ou un groupe de volumes.' 
 ---
-= Augmentez la capacité du volume dans le pool de disques ou le groupe de volumes
+= Augmenter la capacité d'un volume dans un pool de disques ou un groupe de volumes - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

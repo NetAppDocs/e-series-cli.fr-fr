@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, locate 
 summary: La commande Start storageArray Locate localise une matrice de stockage en allumant les voyants de la matrice de stockage. 
 ---
-= Démarrer la localisation de la matrice de stockage
+= Démarrer la localisation de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, service, action, allowed, indicator 
 summary: 'La commande Set plateau serviceAllowedIndicator (définir le voyant de maintenance autorisé) s"allume ou éteint sur un boîtier de ventilateur d"alimentation, un boîtier de batterie d"interconnexion ou un boîtier de module de services environnementaux (ESM).' 
 ---
-= Définir le voyant d'action d'entretien du bac autorisé
+= Définir l'indicateur d'action de service du bac autorisée - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

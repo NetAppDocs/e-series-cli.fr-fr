@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, events 
 summary: La commande Save storageArray warningEvents enregistre les événements du journal des événements majeurs dans un fichier. 
 ---
-= Enregistrer les événements de la matrice de stockage
+= Enregistrer les événements de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

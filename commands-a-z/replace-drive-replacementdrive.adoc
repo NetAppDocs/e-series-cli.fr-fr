@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace, drive 
 summary: La commande replace de lecteur remplace un lecteur dans un groupe de volumes. 
 ---
-= Remplacez le lecteur
+= Remplacer le lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

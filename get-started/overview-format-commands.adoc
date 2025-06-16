@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview, cli 
 summary: 'L"interface de ligne de commande est une application logicielle qui permet de configurer et de surveiller les matrices de stockage.' 
 ---
-= Présentation de l'interface de ligne de commandes
+= En savoir plus sur SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

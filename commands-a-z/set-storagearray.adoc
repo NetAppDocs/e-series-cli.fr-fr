@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array 
 summary: La commande set storageArray définit les propriétés de la matrice de stockage. 
 ---
-= Définir la baie de stockage
+= Définir une matrice de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure, syslog, set 
 summary: 'La commande set syslog configure les informations d"alerte syslog. Vous pouvez configurer le moniteur d"événements pour qu"il envoie des alertes au serveur syslog lorsqu"un événement alertable se produit.' 
 ---
-= Configurer les paramètres syslog
+= Configurer les paramètres Syslog - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

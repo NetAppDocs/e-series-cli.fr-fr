@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iser, target 
 summary: 'La commande définir iserTarget définit les propriétés d"une cible iser.' 
 ---
-= Définir la cible iser
+= Définir la cible iSER - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

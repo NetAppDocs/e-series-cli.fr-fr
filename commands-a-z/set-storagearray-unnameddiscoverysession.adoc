@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, unnamed, discovery, session 
 summary: La commande set storageArray unnamedDiscoverysession permet à la matrice de stockage de participer à des sessions de découverte sans nom. 
 ---
-= Définissez une session de découverte sans nom de baie de stockage
+= Définir une session de découverte sans nom pour la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

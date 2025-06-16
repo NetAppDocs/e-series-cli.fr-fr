@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, server, listen, port 
 summary: 'La commande set storageArray isnsListeningPort définit le port d"écoute du serveur iSNS.' 
 ---
-= Définissez le port d'écoute du serveur iSNS de la matrice de stockage
+= Définir le port d'écoute du serveur iSNS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, directory, server, role, map 
 summary: 'La commande set storageArray directoryServer roles permet de définir des mappages de rôles pour un serveur d"annuaire spécifié. Ces mappages de rôles sont utilisés pour authentifier les utilisateurs qui tentent d"exécuter diverses commandes SMcli.' 
 ---
-= Définir le mappage de rôle du serveur d'annuaire de la matrice de stockage
+= Définir le mappage des rôles du serveur d'annuaire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

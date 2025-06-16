@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, ntp 
 summary: 'La commande set Controller NTPServers définit les paramètres NTP du contrôleur afin que le contrôleur puisse synchroniser automatiquement les horloges avec un hôte externe à l"aide de SNTP (simple Network Time Protocol).' 
 ---
-= Définissez les paramètres NTP du contrôleur
+= Définir les paramètres NTP du contrôleur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

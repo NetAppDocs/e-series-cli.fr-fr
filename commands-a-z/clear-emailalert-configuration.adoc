@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear email, alert, configuration 
 summary: 'La commande Effacer la configuration de l"application emailAlert efface la configuration de l"alerte par e-mail sur les valeurs par défaut.' 
 ---
-= Effacez la configuration des alertes par e-mail
+= Configuration claire des alertes par e-mail - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

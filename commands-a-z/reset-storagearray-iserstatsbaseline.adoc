@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, iser, baseline 
 summary: La commande reset storageArray iserStatsBaseline réinitialise la base iser à 0 pour la baie de stockage. 
 ---
-= Réinitialiser la base iser des baies de stockage
+= Réinitialiser la ligne de base iSER de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

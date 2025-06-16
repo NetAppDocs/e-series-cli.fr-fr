@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, recovery, mode 
 summary: La commande Clear storageArray recoveryMode force une matrice de stockage à quitter le mode de récupération. 
 ---
-= Effacer le mode de restauration de la matrice de stockage
+= Effacer le mode de récupération de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

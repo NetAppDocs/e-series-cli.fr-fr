@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, drive log 
 summary: La commande Enregistrer allDrives logfile enregistre les journaux du lecteur dans un fichier. 
 ---
-= Enregistrer le journal de lecteur
+= Enregistrer le journal du lecteur - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

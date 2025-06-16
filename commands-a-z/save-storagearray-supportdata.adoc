@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, support, data 
 summary: La commande save storageArray supportData enregistre les informations relatives au support de la baie de stockage dans un fichier. 
 ---
-= Enregistrer les données de prise en charge de la matrice de stockage
+= Enregistrer les données de prise en charge de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

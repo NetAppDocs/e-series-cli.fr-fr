@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, locate 
 summary: La commande stop storageArray Locate éteint les voyants de la matrice de stockage qui ont été allumés par la commande start storageArray locate. 
 ---
-= Arrêter la localisation de la matrice de stockage
+= Arrêter la localisation de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

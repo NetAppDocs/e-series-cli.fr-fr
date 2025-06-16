@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, consistency, group, snapshot, image 
 summary: 'La commande delete cgSnapImage Consistengroup supprime les images de snapshot d"un groupe de cohérence.' 
 ---
-= Supprimez l'image Snapshot du groupe de cohérence
+= Supprimer l'image instantanée du groupe de cohérence - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

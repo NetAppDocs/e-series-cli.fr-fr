@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, snapshot, volume 
 summary: 'La commande reset snapVolume force un volume d"instantané spécifié à l"état optimal.' 
 ---
-= Restaurer le volume snapshot
+= Réactiver le volume d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

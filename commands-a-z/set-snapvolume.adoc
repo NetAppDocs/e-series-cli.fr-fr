@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename, snapshot, volume 
 summary: La commande set snapVolume renomme un instantané existant. 
 ---
-= Renommer le volume snapshot
+= Renommer le volume d'instantané - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

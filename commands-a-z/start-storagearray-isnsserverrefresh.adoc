@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, isns, server, refresh 
 summary: 'La commande start storageArray isnsServerRefresh lance une actualisation des informations d"adresse réseau pour le serveur iSNS.' 
 ---
-= Démarrez l'actualisation du serveur iSNS de la baie de stockage
+= Démarrer l'actualisation du serveur iSNS de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

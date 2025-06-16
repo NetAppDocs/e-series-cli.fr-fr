@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, snapshot, group 
 summary: 'La commande reset snapGroup force le groupe d"instantanés spécifié à l"état optimal.' 
 ---
-= Ressusciter le groupe de snapshots
+= Réactiver le groupe d'instantanés - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

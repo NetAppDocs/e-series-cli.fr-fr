@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, configuration, database, diagnostic 
 summary: La commande start storageArray configDbdiagnostic exécute une vérification de cohérence sur une base de données de configuration. 
 ---
-= Démarrer le diagnostic de la base de données de configuration de la matrice de stockage
+= Démarrer le diagnostic de la base de données de configuration de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

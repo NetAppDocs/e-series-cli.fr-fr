@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: structure, cli, commands 
 summary: 'Les commandes CLI se présentent sous la forme d"un gestionnaire de commandes et d"éléments intégrés à l"encapsuleur.' 
 ---
-= Structure des commandes CLI
+= En savoir plus sur la structure des commandes CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

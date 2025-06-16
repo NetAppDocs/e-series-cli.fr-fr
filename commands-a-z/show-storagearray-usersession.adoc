@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, storage, array, user, session 
 summary: 'La commande show storageArray usersession vous permet d"afficher la période d"expiration de session pour System Manager.' 
 ---
-= Affichez la session utilisateur de la baie de stockage
+= Afficher la session utilisateur de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
