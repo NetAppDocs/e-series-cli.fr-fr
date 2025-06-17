@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, remote, diagnostics, feature, individual, E2800, E5700, arrays 
 summary: 'La commande Set storageArray autoSupportRemoteDiag active ou désactive la fonction de diagnostic à distance AutoSupport OnDemand. Cette fonctionnalité permet au support technique de demander des données de support afin d"identifier les problèmes à distance.' 
 ---
-= Activez ou désactivez la fonction de diagnostic à distance AutoSupport
+= Activer ou désactiver la fonctionnalité de diagnostic à distance AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

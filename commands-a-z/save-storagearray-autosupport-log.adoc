@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
 summary: 'La commande Save storageArray AutoSupport log permet d"afficher un fichier journal AutoSupport. Ce fichier fournit des informations sur l"état, l"historique de l"activité de transmission et toutes les erreurs rencontrées lors de la livraison des messages AutoSupport. Il est disponible pour toutes les baies de stockage compatibles avec AutoSupport.' 
 ---
-= Récupère un journal AutoSupport
+= Récupérer un journal AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
 summary: 'La commande set storageArray AutoSupport livyMethod définit la méthode de livraison pour l"envoi de messages AutoSupport à des e-mails (SMTP).' 
 ---
-= Spécifiez la méthode de livraison de l'e-mail (SMTP)
+= Spécifier la méthode de livraison des e-mails (SMTP) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

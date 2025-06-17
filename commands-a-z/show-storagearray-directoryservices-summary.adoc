@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, directory, services, summary 
 summary: 'La commande show storageArray DirectoryServices Summary affiche le résumé de configuration des services d"annuaire.' 
 ---
-= Affiche le récapitulatif des services d'annuaire de la matrice de stockage
+= Afficher le résumé des services d'annuaire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

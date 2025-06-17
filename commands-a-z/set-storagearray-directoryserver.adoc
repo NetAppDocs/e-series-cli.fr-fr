@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, directory, server 
 summary: 'La commande set storageArray directoryServer met à jour la configuration du serveur d"annuaire.' 
 ---
-= Définir le serveur d'annuaire de la matrice de stockage
+= Définir le serveur d'annuaire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

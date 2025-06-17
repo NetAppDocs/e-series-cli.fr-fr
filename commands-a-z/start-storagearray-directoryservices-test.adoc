@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, storage, array, directory, server 
 summary: 'La commande Start storageArray DirectoryServices test vérifie la communication avec tous les serveurs d"annuaire configurés et valide les configurations de domaine de serveur.' 
 ---
-= Tester le serveur d'annuaire de la matrice de stockage
+= Tester le serveur d'annuaire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

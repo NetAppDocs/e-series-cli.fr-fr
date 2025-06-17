@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, storage array, directory, server, role, mapping 
 summary: 'La commande remove storageArray directoryServer supprime les mappages de rôles définis pour le serveur d"annuaire spécifié.' 
 ---
-= Supprimer le mappage de rôles de serveur de répertoire de la matrice de stockage
+= Supprimer le mappage des rôles du serveur d'annuaire de la baie de stockage - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
