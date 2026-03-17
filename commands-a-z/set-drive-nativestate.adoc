@@ -23,7 +23,7 @@ Cette commande s'applique à toutes les baies de stockage, y compris les baies E
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
@@ -61,7 +61,7 @@ allDrives) nativeState
  a| 
 Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
 
-La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800, E5700, EF600 et EF300 possèdent des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+Le nombre maximal d'identifiants d'emplacement est de 24. Les valeurs d'identifiant d'emplacement commencent soit à 0, soit à 1, selon le modèle de tiroir. Les tiroirs compatibles avec les contrôleurs E2800, E5700, EF600, EF300, EF50 et EF80 ont des numéros d'identifiant d'emplacement commençant à 0. Les tiroirs compatibles avec les contrôleurs E2700 et E5600 ont des numéros d'identifiant d'emplacement commençant à 1.
 
 Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de logement entre crochets ([ ]).
 

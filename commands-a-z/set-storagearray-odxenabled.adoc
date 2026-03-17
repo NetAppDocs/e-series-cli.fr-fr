@@ -17,13 +17,13 @@ Le `set storageArray odxEnabled` La commande active ou désactive le transfert d
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage ou d'administrateur du support.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
@@ -58,7 +58,7 @@ Paramètre permettant d'activer ou de désactiver ODX. Pour activer ODX, défini
 
 == Remarques
 
-ODX fournit la possibilité de transférer des données sans opérations de lecture mise en tampon et d'écriture mise en tampon. Elle ne requiert aucune implication directe de l'hôte dans l'opération de transfert de données. Lorsque ODX n'est pas activé, les données sont lues depuis le stockage source vers l'hôte, puis écrites sur le stockage cible à partir de l'hôte. Avec ODX activé, les opérations de transfert de données sont directement gérées par l'infrastructure de stockage. Les données sont déplacées directement depuis le stockage source vers le stockage cible sans passer par l'hôte.
+ODX fournit un moyen de transférer des données sans utiliser d'opérations de lecture et d'écriture mises en mémoire tampon et ne nécessite pas l'implication directe de l'hôte dans l'opération de transfert de données. Lorsque ODX n'est pas activé, les données sont lues depuis le stockage source vers l'hôte, puis écrites depuis l'hôte vers le stockage cible. Avec ODX activé, les opérations de transfert de données sont directement gérées par l'infrastructure de stockage. Les données sont déplacées directement du stockage source vers le stockage cible au sein de la même baie, en contournant l'hôte.
 
 
 

@@ -21,4 +21,4 @@ Les commandes de script permettent de configurer et de gérer une matrice de sto
 
 Il est possible que certaines fonctionnalités logicielles décrites dans ce document ne soient pas disponibles pour votre système de stockage E-Series. Pour toute question sur les fonctionnalités disponibles, contactez votre ingénieur commercial.
 
-L'interface de ligne de commandes est une fonctionnalité du gestionnaire de stockage SANtricity.
+L'interface de ligne de commande (CLI) est une fonctionnalité du logiciel SANtricity System Manager.

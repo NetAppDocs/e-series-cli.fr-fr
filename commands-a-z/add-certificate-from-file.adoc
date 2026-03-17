@@ -17,7 +17,7 @@ Le `Add certificate from file` Commande vous permet de prendre un certificat à 
 
 == Baies prises en charge
 
-Cette commande s'applique aux baies de stockage EF600 et EF300.
+Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 

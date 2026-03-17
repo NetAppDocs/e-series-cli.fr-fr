@@ -23,7 +23,7 @@ Si la gestion externe des clés est activée, cette commande s'applique uniqueme
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 

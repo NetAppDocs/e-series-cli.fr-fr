@@ -17,13 +17,13 @@ Le `create storageArray securityKey` La commande crée ou modifie une nouvelle c
 
 == Baies prises en charge
 
-Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600 et EF300. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
+Si la gestion des clés externes est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Si la gestion des clés internes est activée, la commande s'applique à toute baie de stockage individuelle, à condition que tous les packages SMcli soient installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur de sécurité.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 

@@ -17,7 +17,7 @@ Le `set emailAlert` commande configure l'e-mail pour envoyer un e-mail à une or
 
 == Baies prises en charge
 
-Cette commande s'applique aux baies de stockage E4000, E2800, E5700, EF600 et EF300. Vous pouvez cependant utiliser la commande comme commande SMcli, et non comme une commande de script, pour des baies E2700 ou E5600. Dans ce cas, la commande s'applique à toutes les baies du domaine de gestion.
+Cette commande s'applique aux baies de stockage E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Cependant, vous pouvez utiliser la commande comme commande SMcli, et non comme commande de script, pour les baies E2700 ou E5600. Dans ce cas, la commande s'applique à toutes les baies du domaine de gestion.
 
 
 

@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/set-storagearray-host-io-protocol.html 
+sidebar: sidebar 
+keywords: set, storage, array, host, io, protocol 
+summary: 'La commande set storageArray hostIoProtocol configure le protocole d"E/S hôte au niveau de la baie de stockage' 
+---
+= Configurer le protocole d'E/S de l'hôte de la baie de stockage - SANtricity CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La commande  `set storageArray hostIoProtocol` configure le protocole d'E/S hôte au niveau de la baie de stockage.
+
+
+
+== Baies prises en charge
+
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+
+
+
+== Rôles
+
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez disposer du rôle Support Admin.
+
+
+
+== Syntaxe
+
+[source, cli, subs="+macros"]
+----
+set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "SAS" | "SRP"}
+----
+
+
+== Paramètre
+
+[cols="2*"]
+|===
+| Paramètre | Description 
+
+
+ a| 
+`set storageArray hostIoProtocol`
+ a| 
+Permet de spécifier le protocole d'E/S hôte à utiliser pour votre baie de stockage. Les choix possibles sont : FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS ou SRP.
+
+|===
+
+
+== Niveau minimal de firmware
+
+12,0

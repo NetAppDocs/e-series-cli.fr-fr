@@ -17,13 +17,13 @@ Le `start volumeGroup resourceProvisioning` la commande active le provisionnemen
 
 == Baies prises en charge
 
-Cette commande s'applique à toute baie de stockage, y compris aux baies EF600 et EF300, tant que tous les packages SMcli sont installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage EF600 et EF300, vous devez disposer des rôles Administrateur stockage ou Administrateur support.
+Pour exécuter cette commande sur une baie de stockage EF600, EF300, EF50 et EF80, vous devez disposer des rôles Storage Admin ou Support Admin.
 
 
 

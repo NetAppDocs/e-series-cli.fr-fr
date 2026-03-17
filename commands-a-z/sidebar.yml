@@ -528,6 +528,8 @@ entries:
       url: "/commands-a-z/set-storagearray-externalkeymanagement.html"
     - title: définir le reporting sur la fonctionnalité storagearray hostconnectivite
       url: "/commands-a-z/set-storagearray-hostconnectivityreporting.html"
+    - title: set storageArray hostIoProtocol
+      url: "/commands-a-z/set-storagearray-host-io-protocol.html"
     - title: définir la réponse du fichier icmppingelarray
       url: "/commands-a-z/set-storagearray-icmppingresponse.html"
     - title: définissez la méthode de configuration isnsipv4darray
@@ -688,6 +690,8 @@ entries:
       url: "/commands-a-z/show-storagearray-directoryservices-summary.html"
     - title: affiche le reporting sur la fonctionnalité storagearray hostconnectivite
       url: "/commands-a-z/show-storagearray-hostconnectivityreporting.html"
+    - title: afficher storageArray hostIoProtocolInformation
+      url: "/commands-a-z/show-storage-array-host-io-protocol.html"
     - title: affiche la topologie de l'hôte du système de stockage
       url: "/commands-a-z/show-storagearray-hosttopology.html"
     - title: affiche les valeurs par défaut de la zone de stockage iscsinnégociés

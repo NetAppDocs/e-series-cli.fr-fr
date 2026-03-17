@@ -17,13 +17,13 @@ Le `create volume` commande crée un nouveau groupe de volumes et un nouveau vol
 
 == Baies prises en charge
 
-Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
@@ -170,7 +170,7 @@ Paramètre permettant de spécifier le niveau de sécurité lors de la création
  a| 
 `resourceProvisioningCapable`
  a| 
-Paramètre permettant de spécifier si les capacités de provisionnement des ressources sont activées. Pour désactiver le provisionnement de ressources, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+Si ce paramètre est défini sur `TRUE`, seuls les disques compatibles DULBE seront utilisés pour créer des pools de disques ou des groupes de volumes. Si le paramètre est défini sur `FALSE` ou n'est pas fourni, aucune vérification de la compatibilité DULBE n'est effectuée. Si tous les disques sélectionnés pour le groupe de volumes ou le pool de disques sont compatibles DULBE, alors l'indicateur au niveau de la baie de stockage détermine si le groupe de volumes ou le pool de disques est créé comme étant à ressources provisionnées.
 
 
 

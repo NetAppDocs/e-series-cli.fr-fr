@@ -23,7 +23,7 @@ Cette commande s'applique à toutes les baies de stockage, y compris les baies E
 
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez avoir le rôle d'administrateur du stockage.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
@@ -73,7 +73,7 @@ driveType=(fibre | SATA | SAS | NVMe4K))
  a| 
 Les lecteurs que vous souhaitez attribuer au pool de disques que vous souhaitez créer. Pour les tiroirs disques haute capacité, spécifiez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID du logement pour le lecteur. Pour les tiroirs disques basse capacité, spécifiez la valeur d'ID du bac et la valeur d'ID du logement pour le lecteur. Les valeurs d'ID du bac sont `0` à `99`. Les valeurs d'ID de tiroir sont `1` à `5`.
 
-La capacité maximale de tous les emplacements est de 24. Les valeurs d'ID de fente commencent à 0 ou 1, selon le modèle de bac. Les tiroirs disques compatibles avec les contrôleurs E2800, E5700, EF600 et EF300 possèdent des numéros d'ID de slot commençant à 0. Les tiroirs disques compatibles avec les contrôleurs E2700 et E5600 possèdent des numéros d'ID de slot commençant à 1.
+Le nombre maximal d'identifiants d'emplacement est de 24. La valeur de l'identifiant d'emplacement commence soit à 0, soit à 1, selon le modèle de tiroir. Les tiroirs compatibles avec les contrôleurs E2800, E5700, EF600, EF300, EF50 et EF80 ont des numéros d'identifiant d'emplacement commençant à 0. Les tiroirs compatibles avec les contrôleurs E2700 et E5600 ont des numéros d'identifiant d'emplacement commençant à 1.
 
 
 
@@ -217,7 +217,7 @@ Le firmware du contrôleur ne fonctionne pas de même `hdd` et `ssd` les support
  a| 
 `resourceProvisioningCapable`
  a| 
-Paramètre permettant de spécifier si les capacités de provisionnement des ressources sont activées. Pour désactiver le provisionnement de ressources, définissez ce paramètre sur `FALSE`. La valeur par défaut est `TRUE`.
+Si ce paramètre est défini sur `TRUE`, seuls les disques compatibles DULBE seront utilisés pour créer des pools de disques ou des groupes de volumes. Si le paramètre est défini sur `FALSE` ou n'est pas fourni, aucune vérification de la compatibilité DULBE n'est effectuée. Si tous les disques sélectionnés pour le groupe de volumes ou le pool de disques sont compatibles DULBE, alors l'indicateur au niveau de la baie de stockage détermine si le groupe de volumes ou le pool de disques est créé comme étant à ressources provisionnées.
 
 |===
 

@@ -22,7 +22,7 @@ Le `Add array label` commande permet d'ajouter une matrice de stockage à la con
 L'étiquette définie par l'utilisateur fournie n'a pas besoin de correspondre au nom de la baie de stockage tel qu'il est affiché dans System Manager. Il s'agit d'une étiquette locale utilisée uniquement pour référencer la matrice de stockage à partir de la CLI.
 
 ====
-Cette commande s'applique aux baies de stockage EF600 et EF300.
+Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 
