@@ -25,9 +25,9 @@ Si vous utilisez actuellement SANtricity 11.52 ou une version antérieure, vous 
 ====
 
 
-== SANtricity 12.0
+== SANtricity 12.00
 
-Le tableau suivant répertorie les modifications apportées aux commandes CLI et Script Commands pour la version 12.0.
+Le tableau suivant répertorie les modifications apportées aux commandes CLI et Script Commands pour la version 12.00.
 
 [cols="2*"]
 |===

@@ -14,7 +14,7 @@ summary: 'La commande set storageArray manageinterface change l"interface de ges
 Le `set storageArray managementInterface` la commande modifie l'interface de gestion du contrôleur. Modifiez le type d'interface de gestion pour appliquer la confidentialité entre la baie de stockage et son logiciel de gestion ou pour accéder à des outils externes.
 
 
-NOTE: À partir de SANtricity 12.0, cette commande est supprimée car la baie de stockage fonctionnera toujours en mode  `restOnly=true`.
+NOTE: À partir de SANtricity 12.00, cette commande est supprimée car la baie de stockage fonctionnera toujours en mode  `restOnly=true`.
 
 
 

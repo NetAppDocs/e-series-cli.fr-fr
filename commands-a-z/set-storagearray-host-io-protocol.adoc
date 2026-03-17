@@ -52,4 +52,4 @@ Permet de spécifier le protocole d'E/S hôte à utiliser pour votre baie de sto
 
 == Niveau minimal de firmware
 
-12,0
+12,00

@@ -7532,7 +7532,6 @@
   <block id="9206a3c52cc374d2c4bcd4c2435f0a4c" category="paragraph">Pour garantir la réussite de l'exécution, les commandes de script doivent être écrites dans la structure appropriée.</block>
   <block id="969c9aafd3ad326a73ec93408a332797" category="paragraph">Les commandes se divisent en catégories générales réutilisées lorsque vous appliquez les commandes pour configurer ou gérer une matrice de stockage. Le tableau suivant répertorie la forme générale des commandes de script et une définition de chaque commande.</block>
   <block id="9f83268e1b8fb56b39b289fd0b017d6d" category="summary">Respectez les directives suivantes lors de l'écriture de commandes de script.</block>
-  <block id="5e40a8e83b3a3f822534bef7faa8799b" category="paragraph"><block ref="5e40a8e83b3a3f822534bef7faa8799b" category="inline-link-rx"></block></block>
   <block id="11b408e3275d65fef594050a844c8104" category="section-title">SANtricity 11.90</block>
   <block id="bb368ace2c104ebc1936c99e46744a7d" category="paragraph">Le tableau suivant répertorie les modifications apportées aux commandes CLI et script pour la version 11.90.</block>
   <block id="277f6129cc659f62a7535c5645940126" category="paragraph"><block ref="277f6129cc659f62a7535c5645940126" category="inline-link-rx"></block></block>
@@ -8057,8 +8056,6 @@
   <block id="d13da51d358cffe624beb9300684e1e6" category="paragraph">La commande <block ref="777e8152565ada0c3a16a8b8868d3bc6" prefix=" " category="inline-code"></block> configure le protocole d'E/S hôte au niveau de la baie de stockage.</block>
   <block id="36212b3014245fb1e729ddc31e4ff763" category="paragraph"><block ref="777e8152565ada0c3a16a8b8868d3bc6" prefix="" category="inline-code"></block></block>
   <block id="aff266832a5aa34647a402c2095b347f" category="paragraph">Permet de spécifier le protocole d'E/S hôte à utiliser pour votre baie de stockage. Les choix possibles sont : FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS ou SRP.</block>
-  <block id="195863009ffa903e83ad7fd7e7db63b1" category="paragraph">12,0</block>
-  <block id="18cec728afa90cbfc8c9587fe229cdc9" category="admonition">À partir de SANtricity 12.0, cette commande est supprimée car la baie de stockage fonctionnera toujours en mode <block ref="a8172f9966e53474dd873f0dbdf427b2" prefix=" " category="inline-code"></block>.</block>
   <block id="1727ed989c7f4287136d81d78aeb960e" category="paragraph">Sans objet.</block>
   <block id="dd91b573b380dac94dc1f2ddbc34f95e" category="paragraph">ODX fournit un moyen de transférer des données sans utiliser d'opérations de lecture et d'écriture mises en mémoire tampon et ne nécessite pas l'implication directe de l'hôte dans l'opération de transfert de données. Lorsque ODX n'est pas activé, les données sont lues depuis le stockage source vers l'hôte, puis écrites depuis l'hôte vers le stockage cible. Avec ODX activé, les opérations de transfert de données sont directement gérées par l'infrastructure de stockage. Les données sont déplacées directement du stockage source vers le stockage cible au sein de la même baie, en contournant l'hôte.</block>
   <block id="f52bb2576426b38ae1623297e50f54fb" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, 2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.</block>
@@ -8076,8 +8073,6 @@
   <block id="baa909145cb669e385ef78f654ff4722" category="inline-link-macro">Afficher le protocole d'E/S de l'hôte de la baie de stockage</block>
   <block id="58530a0009c8cc999005ce98a138d938" category="paragraph"><block ref="58530a0009c8cc999005ce98a138d938" category="inline-link-macro-rx"></block></block>
   <block id="eb20bd68d51ddb7d412e8786688d5d9e" category="paragraph">L'interface de ligne de commande (CLI) est une fonctionnalité du logiciel SANtricity System Manager.</block>
-  <block id="be43ea6917c922321b76286fc855b28a" category="section-title">SANtricity 12.0</block>
-  <block id="160e51ef785e785be752dfd8326b229a" category="paragraph">Le tableau suivant répertorie les modifications apportées aux commandes CLI et Script Commands pour la version 12.0.</block>
   <block id="91211127bc342537dd67ab9a6314a5a6" category="inline-link">Définir le protocole d'E/S hôte de la baie de stockage</block>
   <block id="52655bee7facdcf1b5306b5469555402" category="paragraph"><block ref="52655bee7facdcf1b5306b5469555402" category="inline-link-rx"></block></block>
   <block id="4dec79ab819ec52648ee90d15be1f390" category="paragraph">Commande ajoutée.</block>
@@ -8091,4 +8086,9 @@
   <block id="9e0e2266a81338fbfaf354427a1629c8" category="paragraph"><block ref="9e0e2266a81338fbfaf354427a1629c8" category="inline-xref-macro-rx"></block></block>
   <block id="777e8152565ada0c3a16a8b8868d3bc6" category="sidebar">set storageArray hostIoProtocol</block>
   <block id="a308c90c11e9795c80746daf2f7fe34d" category="sidebar">afficher storageArray hostIoProtocolInformation</block>
+  <block id="91818c8862cc977fdb69af565f33e9e2" category="paragraph">12,00</block>
+  <block id="50679f564ac56d24bc5e67dce7a938f9" category="admonition">À partir de SANtricity 12.00, cette commande est supprimée car la baie de stockage fonctionnera toujours en mode <block ref="a8172f9966e53474dd873f0dbdf427b2" prefix=" " category="inline-code"></block>.</block>
+  <block id="c9f4c41100461402ef108c1e6ccc6adf" category="paragraph"><block ref="c9f4c41100461402ef108c1e6ccc6adf" category="inline-link-rx"></block></block>
+  <block id="aff9d49ee54e3ad13ffa0735d2a02e5a" category="section-title">SANtricity 12.00</block>
+  <block id="84dbef0be771e89569bcfffb6b44a589" category="paragraph">Le tableau suivant répertorie les modifications apportées aux commandes CLI et Script Commands pour la version 12.00.</block>
 </blocks>
