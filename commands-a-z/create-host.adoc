@@ -15,24 +15,28 @@ Le `create host` commande crée un hôte.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Pour les baies de stockage E2700 et E5600, si vous ne spécifiez pas de groupe d'hôtes dans lequel créer le nouvel hôte, le nouvel hôte est créé dans le groupe par défaut.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ create host userLabel=pass:quotes[_"hostName"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -71,6 +76,7 @@ Le label d'index ou le numéro d'index qui identifie le type d'hôte. Utilisez l
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -83,6 +89,7 @@ Si vous n'indiquez pas de groupe d'hôtes dans lequel placer l'hôte que vous cr
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.20

@@ -15,18 +15,21 @@ Le `set diskPool` commande définit les attributs associés à un pool de disque
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -43,6 +46,7 @@ diskPools pass:quotes[[_diskPoolName1_ ... _diskPoolNameN_]] | allDiskPools)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -154,6 +158,7 @@ Nouveau nom que vous souhaitez attribuer au pool de disques. Placez le nom du po
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -164,6 +169,7 @@ Si vous ne spécifiez pas de valeur pour un paramètre facultatif, une valeur pa
 
 
 
+[[disk-pool-alert-thresholds]]
 == Seuils d'alerte de pool de disques
 
 Chaque pool de disques comporte deux niveaux d'alertes progressivement importants pour informer les utilisateurs lorsque la capacité de stockage du pool de disques approche pleine. Le seuil d'une alerte est un pourcentage de la capacité utilisée par rapport à la capacité totale utilisable dans le pool de disques. Les alertes sont les suivantes :
@@ -176,6 +182,7 @@ Pour être effectif, la valeur d'une alerte d'avertissement doit toujours être 
 
 
 
+[[disk-pool-background-operations]]
 == Opérations en arrière-plan du pool de disques
 
 Les pools de disques prennent en charge les opérations d'arrière-plan suivantes :
@@ -198,6 +205,7 @@ Les pools de disques ne mettent pas en file d'attente des commandes d'arrière-p
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,24 +15,28 @@ Le `set storageArray autoSupportOnDemand` La commande active ou désactive la fo
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Avant d'activer cette fonctionnalité, vous devez d'abord activer la fonctionnalité AutoSupport sur la matrice de stockage. Après l'activation de cette fonction, vous pouvez ensuite activer la fonction de diagnostic à distance AutoSupport (si vous le souhaitez).
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -41,6 +45,7 @@ set storageArray autoSupportOnDemand (enable | disable)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Permet à l'utilisateur d'activer ou de désactiver la fonctionnalité AutoSuppo
 |===
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -67,6 +73,7 @@ SMcli completed successfully.
 ----
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `show storageArray autoSupport` commande pour voir si vous avez activé la fonction. Les deux premières lignes de la sortie affichée indiquent l'état d'activation de la fonctionnalité AutoSupport, suivi de la fonction AutoSupport OnDemand :
@@ -79,6 +86,7 @@ The AutoSupport Remote Diagnostics feature is enabled on this storage array.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.40

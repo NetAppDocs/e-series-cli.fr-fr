@@ -15,18 +15,21 @@ Le `show CGSnapImage` la commande affiche une ou plusieurs images snapshot qui s
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -39,6 +42,7 @@ allCGSnapImages
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -83,6 +87,7 @@ Paramètre permettant de renvoyer une liste concise d'informations sur toutes le
 |===
 
 
+[[notes]]
 == Remarques
 
 Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
@@ -113,6 +118,7 @@ Dans ces exemples, le nom du groupe de cohérence de snapshot est séparé de l'
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,18 +15,21 @@ Le `revive snapVolume` La commande force un volume de snapshot spécifié à l'�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Le volume snapshot peut être l'un des suivants :
@@ -44,6 +47,7 @@ Vous ne pouvez pas utiliser cette commande pour un volume snapshot utilisé dans
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -52,6 +56,7 @@ revive snapVolume pass:quotes[[_snapVolumeName_]]
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -66,12 +71,14 @@ Nom du volume de snapshot que vous souhaitez définir sur l'état optimal. Place
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,12 +15,14 @@ Le `SMcli autoSupportSchedule reset` La commande réinitialise les heures et jou
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +38,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -46,6 +49,7 @@ SMcli -autoSupportSchedule reset | (dailyTime=<startTime>-<endTime>
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -82,12 +86,14 @@ Réinitialise et génère de nouveaux horaires à l'aide d'un intervalle de 24 h
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25
 
 
 
+[[example]]
 == Exemple
 
 [listing]
@@ -99,6 +105,7 @@ dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am
 
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `SMcli -autoSupportSchedule show` commande pour voir la modification résultant du planning dans le domaine de gestion.

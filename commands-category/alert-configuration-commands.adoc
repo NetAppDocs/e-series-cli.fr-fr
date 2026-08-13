@@ -15,6 +15,7 @@ La liste suivante des commandes de configuration d'alertes est disponible pour v
 
 
 
+[[embedded-snmp-configuration]]
 == Configuration SNMP intégrée
 
 link:../commands-a-z/create-snmpcommunity.html["Enregistrer la communauté SNMP"]
@@ -39,6 +40,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Mettre à jour
 
 
 
+[[email-alert-configuration-e2700-or-e5600-arrays]]
 == Configuration des alertes par e-mail - baies E2700 ou E5600
 
 link:../commands-a-z/set-emailalert.html["Configurez les paramètres d'alerte par e-mail"]
@@ -51,6 +53,7 @@ link:../commands-a-z/smcli-alerttest.html["Testez les alertes"]
 
 
 
+[[ssd-cache-commands]]
 == Commandes SSD cache
 
 link:../commands-a-z/clear-emailalert-configuration.html["Effacez la configuration des alertes par e-mail"]
@@ -65,6 +68,7 @@ link:../commands-a-z/start-emailalert-test.html["Testez la configuration de l'al
 
 
 
+[[syslog-configuration]]
 == Configuration syslog
 
 link:../commands-a-z/clear-syslog-configuration.html["Effacer la configuration syslog"]

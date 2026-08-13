@@ -15,18 +15,21 @@ Le `set controller` la commande définit les attributs des contrôleurs.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -44,6 +47,7 @@ set controller [(a|b)]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -124,6 +128,7 @@ Paramètre indiquant si le voyant action de service autorisée est allumé ou é
 |===
 
 
+[[identifying-an-iscsi-host-port-label]]
 == Identification d'une étiquette de port hôte iSCSI
 
 Vous devez spécifier une étiquette pour le port hôte. Procédez comme suit pour spécifier l'étiquette du port hôte :
@@ -172,6 +177,7 @@ iscsiHostPort[3]
 ====
 
 
+[[options-for-the-ethernetport-parameter]]
 == Options du paramètre EthernetPort
 
 [listing]
@@ -212,6 +218,7 @@ portSpeed=[(autoNegotiate | 10 | 100 | 1000)]
 ----
 
 
+[[options-for-the-iscsihostport-parameter]]
 == Options du paramètre iSCSIHostPort
 
 [listing]
@@ -300,6 +307,7 @@ portSpeed=[( 10 | 25)]
 ----
 
 
+[[notes]]
 == Remarques
 
 [NOTE]
@@ -340,6 +348,7 @@ Les valeurs suivantes sont les valeurs par défaut de l' `iscsiHostOptions`:
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.15 supprime le `bootp` Et ajoute les nouvelles options de port Ethernet et les nouvelles options de port hôte iSCSI.

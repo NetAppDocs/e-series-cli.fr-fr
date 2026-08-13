@@ -15,18 +15,21 @@ Le `remove lunMapping` La commande supprime le mappage du numéro d'unité logiq
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 ----
 
 
+[[syntax-for-removing-lun-or-nsid-mapping-from-more-than-one-volume-lun-or-nsid-mapping]]
 == Syntaxe permettant de supprimer le mappage de LUN ou de NSID de plusieurs LUN de volume ou mappage de NSID
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ lunMapping
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -109,6 +114,7 @@ Ce paramètre fonctionne uniquement lorsque vous supprimez le mappage de LUN ou 
 |===
 
 
+[[notes]]
 == Remarques
 
 Le volume d'accès est le volume d'un environnement SAN utilisé pour la communication entre le logiciel de gestion du stockage et le contrôleur de la baie de stockage. Le volume d'accès utilise une adresse LUN ou NSID et utilise 20 Mo d'espace de stockage non disponible pour le stockage des données d'application. Un volume d'accès est uniquement nécessaire pour les baies de stockage gérées sur bande.
@@ -122,6 +128,7 @@ Vous devez utiliser le `host` paramètre et le `hostGroup` paramètre lorsque vo
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

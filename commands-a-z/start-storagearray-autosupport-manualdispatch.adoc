@@ -15,24 +15,28 @@ Le `start storageArray autoSupport manualDispatch` Une commande lance un bundle 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 En raison du temps qu'il a consacré à la fin, la commande retourne avec succès s'il peut démarrer le processus.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -41,12 +45,14 @@ start storageArray autoSupport manualDispatch
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.63

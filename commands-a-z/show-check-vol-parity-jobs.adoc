@@ -15,18 +15,21 @@ Le `show check volume parity jobs` affiche toutes les tâches de vérification d
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage EF600, EF300, EF50 et EF80, vous devez disposer du rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -35,12 +38,14 @@ show check volume parity jobs;
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 11.80

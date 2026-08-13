@@ -28,6 +28,7 @@ Le workflow de base pour l'implémentation de clés de sécurité externes est l
 
 
 
+[[workflow-steps]]
 == Étapes du workflow
 
 La gestion des certificats et la gestion externe des clés sont de nouvelles fonctions de sécurité avec la version SANtricity11.40. Pour commencer, suivez les étapes de base suivantes :

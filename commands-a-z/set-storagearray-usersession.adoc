@@ -15,18 +15,21 @@ Le `set storageArray userSession` La commande vous permet de définir une tempor
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 Utilisez cette commande pour effectuer l'une des opérations suivantes :
@@ -37,12 +40,14 @@ Utilisez cette commande pour effectuer l'une des opérations suivantes :
 
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -51,6 +56,7 @@ set storageArray userSession sessionTimeout=n
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41

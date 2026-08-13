@@ -15,18 +15,21 @@ Le `start increaseVolumeCapacity volume` commande augmente la capacité d'un vol
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Dans cette commande, un volume standard est également appelé « thick volume ».
@@ -38,6 +41,7 @@ Vous ne pouvez pas utiliser cette commande pour augmenter la capacité d'un volu
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ incrementalCapacity=_volumeCapacity_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -86,6 +91,7 @@ Le `addDrives` le paramètre ne peut être utilisé que pour augmenter la capaci
 |===
 
 
+[[notes]]
 == Remarques
 
 Dans certains cas un `drive` le paramètre peut apparaître en tant qu'entrée valide pour la syntaxe de commande. Cependant, vous ne pouvez pas utiliser le `drive` paramètre avec cette commande.
@@ -96,6 +102,7 @@ Le `addDrives` paramètre prend en charge à la fois les tiroirs disques haute c
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

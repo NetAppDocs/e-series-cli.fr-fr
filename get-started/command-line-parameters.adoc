@@ -15,6 +15,7 @@ SANtricity OS 11.40 introduit, pour les contrôleurs E2800 et E5700 avec des ser
 
 
 
+[[11-53-and-older-command-line-parameters]]
 == 11.53 et les anciens paramètres de ligne de commande
 
 Le protocole de symbole est le seul protocole pris en charge pour les contrôleurs E2700 et E5600. Pour préserver les scripts existants et réduire le temps de transition, les options et la grammaire de l'interface de ligne de commande sont préservées autant que possible. Certaines fonctionnalités des contrôleurs E2800 et E5700 sont cependant différentes, en ce qui concerne la sécurité, l'authentification, le AutoSupport et les messages d'alerte. Leur grammaire sur les contrôleurs n'est pas dépassée. Toutefois, dans certains cas, la grammaire n'est que obsolète sur les systèmes E2800 ou E5700 lorsque le nouveau protocole https est utilisé.
@@ -68,6 +69,7 @@ Cet argument facultatif permet un `*https*` le client doit fonctionner en mode n
 |===
 
 
+[[command-line-parameters-that-only-apply-to-e2700-or-e5600-controllers]]
 == Les paramètres de ligne de commande ne s'appliquent qu'aux contrôleurs E2700 ou E5600
 
 Comme les contrôleurs E2700 et E5600 ne disposent pas de fonctionnalités intégrées de gestion des alertes, ces paramètres de ligne de commande sont applicables. Ces paramètres ne s'appliquent pas aux contrôleurs E2800 ou E5700.
@@ -130,6 +132,7 @@ Cette option de ligne de commande est obsolète pour les systèmes de stockage E
 |===
 
 
+[[command-line-parameters-that-apply-to-all-controllers-running-with-a-symbol-client-type]]
 == Paramètres de ligne de commande s'appliquant à tous les contrôleurs s'exécutant avec un type de client de symbole
 
 [cols="2*"]
@@ -157,6 +160,7 @@ Le `*-R*` ce paramètre est requis uniquement si la fonction de mot de passe dou
 |===
 
 
+[[command-line-parameters-applicable-to-all-controllers-and-all-client-types]]
 == Les paramètres de ligne de commande s'appliquent à tous les contrôleurs et à tous les types de clients
 
 [cols="2*"]

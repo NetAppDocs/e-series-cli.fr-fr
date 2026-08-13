@@ -15,12 +15,14 @@ Le `save storageArray ibStats` La commande enregistre les statistiques de perfor
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
@@ -32,6 +34,7 @@ Cette commande est obsolète et est remplacée par le xref:save-storagearray-hos
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ file=pass:quotes["_filename_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -74,12 +78,14 @@ Le nom par défaut du fichier contenant les statistiques de performances InfiniB
 |===
 
 
+[[notes]]
 == Remarques
 
 Si vous n'avez pas réinitialisé les statistiques de base InfiniBand depuis le début de la journée du contrôleur, l'heure au début de la journée est l'heure de référence par défaut.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.32

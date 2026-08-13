@@ -15,18 +15,21 @@ Le `show controller` la commande renvoie les informations relatives à un contr�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Pour chaque contrôleur d'une matrice de stockage, cette commande renvoie les informations suivantes :
@@ -49,6 +52,7 @@ Pour chaque contrôleur d'une matrice de stockage, cette commande renvoie les in
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -58,6 +62,7 @@ show (allControllers | controller [(a|b)])
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -87,6 +92,7 @@ Paramètre permettant de renvoyer une liste concise d'informations sur les deux 
 |===
 
 
+[[notes]]
 == Remarques
 
 La liste suivante est un exemple des informations renvoyées par le `show controller` commande. Cet exemple montre uniquement la présentation des informations et ne doit pas être considérée comme la meilleure pratique pour une configuration de baie de stockage.
@@ -186,6 +192,7 @@ Le `show storageArray` la commande renvoie également des informations détaill�
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.43 ajoute le `summary` paramètre.

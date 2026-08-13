@@ -15,18 +15,21 @@ Le `show volume reservations` la commande renvoie des informations sur les volum
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Storage Monitor.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]]) reservations
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -76,6 +80,7 @@ Si les noms de volumes comportent des caractères spéciaux ou des chiffres, ent
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.40

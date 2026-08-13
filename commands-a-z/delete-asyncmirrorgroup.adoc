@@ -15,24 +15,28 @@ Le `delete asyncMirrorGroup` la commande supprime un ou plusieurs groupes de mir
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[context]]
 == Contexte
 
 Le groupe de miroirs asynchrones doit être vide avant de pouvoir être supprimé. Vous devez supprimer toutes les paires mises en miroir asynchrones du groupe de miroirs asynchrone avant d'utiliser cette commande.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName_1" ... "asyncMirrorGroupNa
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -75,6 +80,7 @@ Les noms de plusieurs groupes de miroirs asynchrones que vous souhaitez supprime
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

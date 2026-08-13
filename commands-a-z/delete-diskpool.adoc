@@ -15,18 +15,21 @@ Le `delete diskPool` commande supprime un pool de disques.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -38,6 +41,7 @@ En fonction de votre version du logiciel de gestion du stockage, cette commande 
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ delete diskPool pass:quotes[[_diskPoolName_]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -68,12 +73,14 @@ Ce paramètre force la suppression des volumes si votre logiciel de gestion du s
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union(-) et de dièse (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,6 +15,7 @@ Le `check storageArray connectivity` la commande vérifie que la matrice de stoc
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
@@ -26,12 +27,14 @@ Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700
 ====
 
 
+[[roles]]
 == Rôles
 
 S/O
 
 
 
+[[context]]
 == Contexte
 
 Avant de créer un groupe de miroirs asynchrone, vous devez vérifier si la matrice de stockage locale et la matrice de stockage distante peuvent communiquer entre elles. Lorsque vous exécutez cette commande, le système interroge la matrice de stockage distante sur tous les ports hôtes éligibles afin de déterminer quels ports sont connectés à la matrice de stockage distante. Le résultat du test est une liste de tous les ports de la matrice de stockage locale ainsi qu'une liste des adresses de port de la matrice de stockage distante accessibles via ce port.
@@ -43,6 +46,7 @@ La connectivité est testée à l'aide de tous les canaux possibles et, s'il s'a
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -74,6 +79,7 @@ Le World Wide identifier (WWID) de la matrice de stockage pour laquelle vous vé
 |===
 
 
+[[notes]]
 == Remarques
 
 Avant de pouvoir établir un miroir entre deux baies de stockage, elles doivent être connectées par une connexion Fibre Channel ou iSCSI.
@@ -84,6 +90,7 @@ Si la baie de stockage locale prend en charge iSCSI, la connectivité via iSCSI 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

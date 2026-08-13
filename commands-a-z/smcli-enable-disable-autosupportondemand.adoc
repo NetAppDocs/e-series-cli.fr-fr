@@ -15,12 +15,14 @@ Le `SMcli enable|disable autoSupportOnDemand` La commande active ou désactive l
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -32,6 +34,7 @@ Avant d'activer cette fonctionnalité, vous devez d'abord activer la fonctionnal
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -40,12 +43,14 @@ SMcli enable|disable autoSupportOnDemand
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `SMcli -autoSupportConfig show` commande pour voir si vous avez activé la fonction. Les deux premières lignes de la sortie affichée indiquent l'état d'activation de la fonctionnalité AutoSupport, suivi de la fonction AutoSupport OnDemand :
@@ -59,6 +64,7 @@ management station.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25

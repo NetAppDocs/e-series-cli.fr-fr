@@ -15,24 +15,28 @@ Le `start ssdCache performanceModeling` La commande démarre la modélisation de
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez disposer du rôle Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 La modélisation des performances permet de surveiller et de mesurer les activités d'E/S pendant une période donnée, puis d'estimer les performances de différentes tailles de cache SSD. Les performances sont estimées à l'aide de deux mesures : le pourcentage d'accès au cache et le temps de réponse moyen. Les données de modélisation des performances ne sont pas disponibles tant que vous n'avez pas arrêté l'opération à l'aide du `stop ssdCache performanceModeling` commande.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ start ssdCache pass:quotes[[_ssdCacheName_]] performanceModeling
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Nom du cache SSD pour lequel vous souhaitez modéliser les performances. Placez 
 |===
 
 
+[[notes]]
 == Remarques
 
 La modélisation des performances se termine et les données de modélisation des performances sont disponibles dans l'une des conditions suivantes :
@@ -73,6 +79,7 @@ La modélisation des performances se termine, mais aucune donnée n'est disponib
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

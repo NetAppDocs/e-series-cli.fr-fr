@@ -15,6 +15,7 @@ Le `set tray` commande définit les attributs définis par l'utilisateur pour un
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -23,6 +24,7 @@ set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -52,6 +54,7 @@ Nom ou numéro de l'étiquette d'inventaire pour donner le nouveau boîtier. Les
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.16

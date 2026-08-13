@@ -15,18 +15,21 @@ Le `validate storageArray securityKey` la commande valide la clé de sécurité 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Si la gestion externe des clés est activée, cette commande s'applique uniquement aux baies E4000, E2800 et E5700. Si la gestion interne des clés est activée, la commande s'applique à n'importe quelle baie de stockage, tant que tous les modules SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 La validation de la clé de sécurité utilise la phrase de passe utilisée pour générer le fichier afin de décrypter la clé et la faire correspondre à la valeur conservée dans la mémoire du contrôleur (pour les clés internes) ou sur le serveur externe (pour les clés externes).
@@ -38,6 +41,7 @@ Cette commande s'applique à la gestion interne et externe des clés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ pass:quotes[validate storageArray securityKey file="_fileName_" passPhrase="_pas
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Chaîne de caractères qui crypte la clé de sécurité afin que vous puissiez s
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.70

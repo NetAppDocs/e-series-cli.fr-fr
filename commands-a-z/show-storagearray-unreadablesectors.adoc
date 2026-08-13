@@ -15,18 +15,21 @@ Le `show storageArray unreadableSectors` commande renvoie une table des adresses
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 Le tableau renvoyé est organisé avec des en-têtes de colonne pour les informations suivantes :
@@ -45,6 +48,7 @@ Les données sont triées en premier par étiquette de l'utilisateur du volume e
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -53,12 +57,14 @@ show storageArray unreadableSectors
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

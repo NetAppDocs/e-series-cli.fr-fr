@@ -15,6 +15,7 @@ La liste suivante des commandes administrateur est disponible pour votre systèm
 
 
 
+[[storage-administrators-commands]]
 == Commandes des administrateurs du stockage
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
@@ -727,6 +728,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Mettre à jour
 
 
 
+[[support-administrators-commands]]
 == Commandes du support administrateur
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
@@ -851,6 +853,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Mettre à jour
 
 
 
+[[security-administrators-commands]]
 == Les commandes de sécurité des administrateurs
 
 link:../commands-a-z/create-storagearray-directoryserver.html["Créer un serveur de répertoire de matrice de stockage"]

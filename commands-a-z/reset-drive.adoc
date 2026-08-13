@@ -15,18 +15,21 @@ Le `reset drive` l'alimentation par commande effectue un cycle d'un lecteur dans
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 En mettant hors tension un lecteur, vous pouvez effacer certaines erreurs qui entraînent un comportement incohérent ou non optimal. Cela évite de remplacer un lecteur lorsqu'il ne rencontre qu'une erreur transitoire et non fatale et que le lecteur reste opérationnel. La réinitialisation d'un lecteur permet de réduire les interruptions et d'éviter le remplacement d'un lecteur.
@@ -40,6 +43,7 @@ Cette commande ne peut pas être utilisée pour les disques SSD fabriqués par p
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -48,6 +52,7 @@ reset drive([trayID,[drawerID,]slotID] | <"wwID">)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -73,6 +78,7 @@ Le World Wide identifier (WWID) du lecteur que vous souhaitez remplacer. Placez 
 |===
 
 
+[[notes]]
 == Remarques
 
 Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0` , Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
@@ -83,6 +89,7 @@ Les disques défectueux ne peuvent pas être réinitialisés après une mise hor
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.20

@@ -15,18 +15,21 @@ Le `start driveChannel faultDiagnostics` la commande exécute les diagnostics d'
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Avec la version 8.10 du micrologiciel, le `start driveChannel faultDiagnostics` 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -54,6 +58,7 @@ pass:quotes[timeout=_timeInterval_]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -128,6 +133,7 @@ Durée en minutes pendant laquelle vous souhaitez exécuter le test.
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez entrer plusieurs types de périphériques à tester et entrer plusieurs types de tests à exécuter.
@@ -140,6 +146,7 @@ Vous pouvez également arrêter cette commande à tout moment en appuyant sur `C
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.15

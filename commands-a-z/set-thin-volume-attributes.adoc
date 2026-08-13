@@ -15,24 +15,28 @@ Le `set volume` commande définit les propriétés d'un volume fin.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez utiliser les paramètres pour définir des propriétés pour un ou plusieurs volumes fins.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -147,6 +152,7 @@ Ce paramètre modifie la façon dont le volume fin est signalé à l'hôte. Les 
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
@@ -197,6 +203,7 @@ Si vous souhaitez modifier un volume fin en volume standard, utilisez l'opérati
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

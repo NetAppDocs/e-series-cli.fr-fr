@@ -15,18 +15,21 @@ Le `start storageArray externalKeyManagement test` La commande utilise les infor
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Cette commande ne s'applique qu'à la gestion externe des clés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -44,12 +48,14 @@ start storageArray externalKeyManagement test
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[notes]]
 == Remarques
 
 L'exemple suivant illustre le résultat de la commande lorsque la baie de stockage parvient à communiquer avec le serveur de gestion de clés externe. Le résultat inclut l'état du serveur de gestion de clés, le certificat client et le certificat serveur.
@@ -109,6 +115,7 @@ C:\Users\Administrator\Downloads\SMcli (1)\SMcli-02.00.00.0011\bin>
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

@@ -15,18 +15,21 @@ Le `import storageArray securityKey file` Commande déverrouille un ou plusieurs
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Si la gestion des clés externes est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600, EF300, EF50 ou EF80. Si la gestion des clés internes est activée, la commande s'applique à toute baie de stockage individuelle, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 Seuls les disques avec la clé de sécurité correspondante sont déverrouillés. Une fois débloqué, la clé de sécurité de la nouvelle baie de stockage est appliquée.
@@ -38,6 +41,7 @@ Cette commande s'applique à la gestion interne et externe des clés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -48,6 +52,7 @@ passPhrase="passPhraseString"
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -86,6 +91,7 @@ Si ce paramètre est défini sur `TRUE`, L'importation force l'écrasement de la
 |===
 
 
+[[notes]]
 == Remarques
 
 Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE. Les disques FDE sont dotés d'un état appelé « Security capable ». Lorsque vous créez une clé de sécurité, l'état est défini sur sécurité activée, ce qui limite l'accès à tous les disques FDE présents dans la baie de stockage.
@@ -106,6 +112,7 @@ Si votre phrase de passe ne répond pas à ces critères, vous recevrez un messa
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.40

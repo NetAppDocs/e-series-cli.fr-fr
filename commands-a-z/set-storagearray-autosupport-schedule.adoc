@@ -15,18 +15,21 @@ Le `set storageArray autoSupport schedule` Commande définit les heures et jours
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 * Si AutoSupport est activé, le logiciel de gestion envoie des messages AutoSupport quotidiens et des messages AutoSupport hebdomadaires.
@@ -36,6 +39,7 @@ Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF60
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ weeklyTime=pass:quotes[_startTime-endTime_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -75,6 +80,7 @@ weeklyTime=pass:quotes[_startTime-endTime_]
 |===
 
 
+[[examples]]
 === Exemples
 
 [listing]
@@ -88,12 +94,14 @@ SMcli completed successfully.
 ----
 
 
+[[verification]]
 === Vérification
 
 Utilisez le `show storageArray autoSupport` pour voir la modification résultant du planning.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.40

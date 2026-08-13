@@ -15,18 +15,21 @@ Le `download drive firmware` commande télécharge une image de firmware sur un 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 [CAUTION]
@@ -43,6 +46,7 @@ Cette commande est destinée à télécharger une image de firmware sur un seul 
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -52,6 +56,7 @@ download (drive [trayID,[drawerID,]slotID] | drives [trayID1,[drawerID1,]slotID1
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -96,6 +101,7 @@ Indique de télécharger le micrologiciel du contrôleur.
 |===
 
 
+[[notes]]
 == Remarques
 
 Avant d'essayer de télécharger le firmware du disque, prenez les précautions suivantes :
@@ -119,6 +125,7 @@ Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capac
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.60 ajoute le `drawerID` saisie utilisateur.

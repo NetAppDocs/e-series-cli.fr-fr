@@ -15,18 +15,21 @@ Le `set storageArray trayPositions` commande définit la position des bacs dans 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Liste de tous les ID de bac. La séquence des ID de bac dans la liste définit l
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande définit la position d'un bac dans une matrice de stockage par la position de l'ID de bac dans `trayPositions` liste. Par exemple, si vous avez un plateau de contrôleur avec un ID défini sur 84 et des tiroirs de disques avec des ID définis sur 1, 12 et 50, le `trayPositions` séquence (`84 1 12 50`) place le plateau du contrôleur en première position, le bac d'entraînement 1 en deuxième position, le bac d'entraînement 12 en troisième position et le bac d'entraînement 50 en quatrième position. Le `trayPositions` séquence (`1 84 50 12`) place le plateau du contrôleur dans la deuxième position, le bac d'entraînement 1 en première position, le bac d'entraînement 50 en troisième position et le bac d'entraînement 12 en quatrième position.
@@ -66,6 +71,7 @@ Le logiciel de gestion montre visuellement la première position en haut et les 
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

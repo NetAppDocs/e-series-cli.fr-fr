@@ -15,18 +15,21 @@ Le `start diskPool fullProvisioning` commande lance une opération de provisionn
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage EF600, EF300, EF50 et EF80, vous devez disposer du rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 La fonction de provisionnement des ressources améliore l'usure des disques SSD et augmente les performances d'écriture en laissant une partie plus importante des blocs de disques non alloués qu'un volume standard. Un volume provisionné en ressources est un volume lourd dans un groupe ou un pool de volume SSD, où la capacité de disque est allouée (affectée au volume), mais la désallocation des blocs de disque est effectuée (non mappée) lors de la création du volume. Les blocs de disques sont alloués selon les besoins pour finaliser les E/S d'écriture de l'hôte. Les opérations de mappage hôte peuvent renvoyer les blocs de lecteur à l'état non alloué . Le provisionnement des ressources élimine également l'initialisation en arrière-plan limitée dans le temps, ce qui permet l'initialisation rapide de grands volumes.
@@ -37,6 +40,7 @@ Le format de provisionnement complet garantit que tous les blocs nécessaires au
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -45,6 +49,7 @@ start diskPool[diskPoolName] fullProvisioning [disableResourceProvisioning=(TRUE
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -72,6 +77,7 @@ Pour réactiver le provisionnement des ressources sur un pool de stockage et sur
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 11.72

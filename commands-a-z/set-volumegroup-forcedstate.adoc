@@ -15,24 +15,28 @@ Le `set volumeGroup forcedState` Commande déplace un groupe de volumes à un é
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Utilisez cette commande si `start volumeGroup import` La commande ne déplace pas le groupe de volumes vers un état importé ou si l'opération d'importation ne fonctionne pas en raison d'erreurs matérielles. Dans un état forcé, le groupe de volumes peut être importé et vous pouvez ensuite identifier les erreurs matérielles.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set volumeGroup pass:quotes[[_volumeGroupName_]] forcedState
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Nom du groupe de volumes que vous souhaitez placer à l'état forcé. Placez le 
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez déplacer les lecteurs qui composent un groupe de volumes d'une matrice de stockage vers une autre matrice de stockage. L'interface de ligne de commande propose trois commandes qui vous permettent de déplacer les disques. Les commandes sont `start volumeGroup export`, `start volumeGroup import`, et `set volumeGroup forcedState`.
@@ -64,6 +70,7 @@ Dans l'état forcé, vous pouvez effectuer une opération d'importation sur le g
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

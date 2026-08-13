@@ -15,12 +15,14 @@ Le `create iscsiInitiator` Commande crée un objet initiateur iSCSI.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
@@ -32,6 +34,7 @@ Cette commande est obsolète et est remplacée par le xref:create-initiator.adoc
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -43,6 +46,7 @@ host="_hostName"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -78,6 +82,7 @@ Clé de sécurité que vous souhaitez utiliser pour authentifier une connexion h
 |===
 
 
+[[notes]]
 == Remarques
 
 Le protocole CHAP (Challenge Handshake Authentication Protocol) est un protocole qui authentifie l'homologue d'une connexion. CHAP est basé sur les pairs partageant un _secret_. Un secret est une clé de sécurité similaire à un mot de passe.
@@ -86,6 +91,7 @@ Utilisez le `chapSecret` paramètre pour configurer les clés de sécurité des 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

@@ -15,18 +15,21 @@ Le `start snapImage rollback` commande lance une opération de restauration pour
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Le contenu du volume de base change immédiatement pour correspondre au contenu instantané du volume d'image snapshot sélectionné. Le volume de base devient immédiatement disponible pour les demandes de lecture/écriture une fois l'opération de restauration terminée. Pour arrêter une opération de restauration d'image instantanée, utilisez le `stop rollback snapImage` commande.
@@ -40,6 +43,7 @@ Vous ne pouvez pas utiliser cette commande pour les images Snapshot impliquées 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ pass:quotes[start snapImage ["_snapImageName_"]] rollback
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -76,6 +81,7 @@ Placez le nom de l'image snapshot entre guillemets (" ") entre crochets ([ ]).
 |===
 
 
+[[notes]]
 == Remarques
 
 Le nom d'une image instantanée comporte deux parties séparées par deux points (:) :
@@ -98,6 +104,7 @@ start snapImage ["snapGroup1:newest"]rollback;
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,18 +15,21 @@ Le `show controller arrayManagementSignedCertificate summary` la commande affich
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,6 +38,7 @@ show controller [(a|b)] arrayManagementSignedCertificate summary
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Permet de spécifier le contrôleur sur lequel vous souhaitez récupérer les ce
 |===
 
 
+[[example]]
 == Exemple
 
 La sortie de l'échantillon peut être différente de celle illustrée ci-dessous.
@@ -71,6 +76,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

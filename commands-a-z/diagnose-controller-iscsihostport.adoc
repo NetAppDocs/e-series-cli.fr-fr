@@ -15,24 +15,28 @@ Le `diagnose controller iscsiHostPort` La commande exécute des tests de diagnos
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez exécuter des diagnostics sur un port sélectionné ou sur tous les ports. Les ports doivent pouvoir prendre en charge le diagnostic des câbles. Si les ports ne prennent pas en charge le diagnostic des câbles, une erreur est renvoyée.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -43,6 +47,7 @@ testID=cableDiagnostics
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -76,6 +81,7 @@ Identifiant du test de diagnostic à exécuter. Pour ce test de diagnostic, le s
 |===
 
 
+[[identifying-an-iscsi-host-port-label]]
 == Identification d'une étiquette de port hôte iSCSI
 
 Vous devez spécifier une étiquette pour le port hôte. Procédez comme suit pour spécifier l'étiquette du port hôte :
@@ -124,6 +130,7 @@ iscsiHostPort[3]
 ====
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous exécutez le test de diagnostic des câbles, le micrologiciel renvoie les informations suivantes :
@@ -156,6 +163,7 @@ Lorsque vous exécutez le test de diagnostic des câbles, le micrologiciel renvo
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.77

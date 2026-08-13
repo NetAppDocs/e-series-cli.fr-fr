@@ -15,24 +15,28 @@ Le `download storageArray firmware` La commande télécharge le micrologiciel et
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Si vous souhaitez télécharger uniquement les valeurs NVSRAM, utilisez le `downLoad storageArray NVSRAM` commande.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ healthCheckNeedsAttnOverride=(TRUE | FALSE)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -134,6 +139,7 @@ Ce paramètre force le contrôleur à télécharger le nouveau firmware. La vale
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.00

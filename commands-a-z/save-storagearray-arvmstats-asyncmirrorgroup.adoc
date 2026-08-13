@@ -15,18 +15,21 @@ Le `save storageArray arvmStats asyncMirrorGroup` commande enregistre les statis
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[context]]
 == Contexte
 
 Les statistiques collectées sont uniquement disponibles pour les volumes membres du groupe miroir asynchrone dans un rôle principal sur la matrice de stockage locale.
@@ -37,6 +40,7 @@ Un exemple collecte des données jusqu'à ce que le processus de synchronisation
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ arvmStats file=pass:quotes["_filename_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -107,6 +112,7 @@ Ce paramètre est facultatif. La valeur par défaut de la limite d'enregistremen
 |===
 
 
+[[notes]]
 == Remarques
 
 Les statistiques sont capturées pour les volumes en miroir dans le rôle principal. Les statistiques collectées incluent les données suivantes :
@@ -130,6 +136,7 @@ Les statistiques de synchronisation sont incluses dans le pack support.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

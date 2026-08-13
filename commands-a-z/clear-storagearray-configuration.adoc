@@ -15,18 +15,21 @@ Le `clear storageArray configuration` cette commande efface toute la configurati
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Utilisez cette commande pour effectuer l'une des opérations suivantes :
@@ -43,6 +46,7 @@ Utilisez cette commande pour effectuer l'une des opérations suivantes :
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -55,6 +59,7 @@ clear storageArray configuration factoryReset
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -102,6 +107,7 @@ Ce paramètre se comporte comme le `factoryReset` paramètre, mais efface égale
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande permet d'effacer la configuration de la matrice de stockage de différentes manières. Lorsque vous effacez la matrice de stockage pour les groupes de volumes, le mode de récupération démarre automatiquement. En mode de reprise, les sauvegardes intégrées (cache) (si elles existent sur la plateforme) sont conservées. Lorsque la baie de stockage est en mode de restauration, vous pouvez éventuellement restaurer la configuration de la baie de stockage à partir d'un fichier de sauvegarde basé sur l'hôte ou d'une des sauvegardes intégrées (cache).
@@ -126,6 +132,7 @@ Le `A` Est un terminal SMcli unique et doit être en majuscules.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10 ajoute ces paramètres :

@@ -15,18 +15,21 @@ Le `download storageArray driveFirmware file` commande télécharge les images d
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[[file="_filename2_"... file="_filenameN_"]]
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -55,6 +59,7 @@ Les noms de fichiers valides ont un `.dlp` extension.
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous exécutez cette commande, vous pouvez télécharger plusieurs fichiers image du micrologiciel vers les lecteurs d'une matrice de stockage. Le nombre de fichiers d'image de micrologiciel que vous pouvez télécharger dépend de la matrice de stockage. Le logiciel de gestion du stockage renvoie une erreur si vous essayez de télécharger plus de fichiers d'image de micrologiciel que la matrice de stockage ne peut accepter.
@@ -70,6 +75,7 @@ Le `download storageArray driveFirmware` La commande bloque toutes les activité
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.20

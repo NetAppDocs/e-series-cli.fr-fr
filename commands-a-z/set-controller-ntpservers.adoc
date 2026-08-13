@@ -15,18 +15,21 @@ Le `set controller NTPServers` Commande définit les paramètres NTP du contrôl
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Lorsque cette fonctionnalité est activée, le contrôleur interroge régulièrement le serveur NTP configuré, puis utilise les résultats pour mettre à jour son horloge interne de l'heure du jour. Si le protocole NTP est activé sur un seul contrôleur, l'autre contrôleur synchronise régulièrement son horloge avec le contrôleur sur lequel le protocole NTP est activé. Si le protocole NTP n'est pas activé pour aucun contrôleur, les contrôleurs synchronisent régulièrement leurs horloges entre eux.
@@ -43,6 +46,7 @@ Si vous configurez le protocole NTP à l'aide d'un nom de domaine complet, vous 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -51,6 +55,7 @@ set controller(a|b) NTPServers=(disabled|auto|(Address1 [Address2]))
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -101,6 +106,7 @@ Si un nom de domaine est spécifié, un serveur DNS doit également être config
 |===
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -113,6 +119,7 @@ set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334);
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.25

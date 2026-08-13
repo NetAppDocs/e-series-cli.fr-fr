@@ -15,18 +15,21 @@ Le `set target` Commande modifie les propriétés d'une cible iSCSI/iser, y comp
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Cette commande remplace le document obsolète xref:set-isertarget.adoc[Définir 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -44,6 +48,7 @@ set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -80,6 +85,7 @@ Permet de spécifier le nouveau nom d'alias de la cible. Placez le nom entre gui
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41

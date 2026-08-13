@@ -15,6 +15,7 @@ Les formulaires de syntaxe générale des wrappers de commande CLI sont réperto
 
 
 
+[[conventions-for-cli-command-wrapper-syntax]]
 == Conventions relatives à la syntaxe de l'encapsuleur de commande CLI
 
 [cols="2*"]
@@ -70,6 +71,7 @@ Pour exécuter toutes les commandes CLI, vous devez disposer des privilèges d'a
 ====
 
 
+[[example-in-https-client-mode]]
 == Exemple en mode client https
 
 Les exemples suivants illustrent le `https` paramètres de ligne de commande du mode client décrits dans xref:command-line-parameters.adoc[Paramètres de ligne de commande].
@@ -86,6 +88,7 @@ Si vous ne spécifiez pas de `clientType`, mais inclure le `-u` et le `username`
 ====
 
 
+[[examples-in-symbol-client-mode]]
 == Exemples en mode client Symbol
 
 Les exemples suivants illustrent le `symbol` paramètres de ligne de commande du mode client décrits dans xref:command-line-parameters.adoc[Paramètres de ligne de commande].

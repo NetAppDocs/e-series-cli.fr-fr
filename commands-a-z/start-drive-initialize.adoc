@@ -15,18 +15,21 @@ Le `start drive initialize` la commande démarre une initialisation du lecteur.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF60
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -63,12 +68,14 @@ Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de loge
 |===
 
 
+[[notes]]
 == Remarques
 
 Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

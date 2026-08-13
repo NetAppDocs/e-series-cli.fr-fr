@@ -15,18 +15,21 @@ Le `set volumeGroup` commande définit les propriétés d'un groupe de volumes.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Vous ne devez effectuer qu'une seule opération (ajout de disques, modification 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ set volumeGroup pass:quotes[[_volumeGroupName_]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -87,6 +92,7 @@ Contrôleur qui possède le groupe de volumes. Les identifiants de contrôleur v
 |===
 
 
+[[notes]]
 == Remarques
 
 Des erreurs d'E/S hôte peuvent entraîner des groupes de volumes comprenant plus de 32 volumes. Cette opération peut également entraîner le redémarrage du contrôleur interne, car la période d'expiration se termine avant que la définition du groupe de volumes ne soit définie. Si vous rencontrez ce problème, effectuez une mise au repos des opérations d'E/S de l'hôte, puis réessayez la commande.
@@ -102,6 +108,7 @@ Le `addDrives` paramètre prend en charge à la fois les tiroirs disques haute c
 
 
 
+[[troubleshooting]]
 == Dépannage
 
 Toute tentative d'extension de groupes de volumes importants par l'ajout de lecteurs, également appelés DCE (Dynamic Capacity extension), peut échouer avec le message suivant :
@@ -128,6 +135,7 @@ Si la situation ci-dessus est présente, les solutions possibles sont les suivan
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10 ajoute la fonction RAID 6.

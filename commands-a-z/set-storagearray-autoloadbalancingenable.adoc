@@ -15,18 +15,21 @@ Le `set storageArray autoLoadBalancingEnable` La commande active ou désactive l
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray autoLoadBalancingEnable=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -57,6 +61,7 @@ Ce paramètre active ou désactive l'équilibrage automatique de la charge sur l
 |===
 
 
+[[what-is-automatic-load-balancing]]
 == Qu'est-ce que l'équilibrage automatique de la charge ?
 
 La fonction d'équilibrage automatique de la charge améliore la gestion des ressources d'E/S en réagissant dynamiquement aux changements de charge dans le temps et en ajustant automatiquement la propriété du contrôleur de volume pour corriger les problèmes de déséquilibre de la charge lorsque les charges de travail sont transférées sur les contrôleurs.
@@ -71,6 +76,7 @@ Lorsque l'équilibrage automatique de la charge est activé, il exécute les fon
 
 
 
+[[enabling-and-disabling-automatic-load-balancing]]
 == Activation et désactivation de l'équilibrage automatique de la charge
 
 La fonction d'équilibrage automatique de la charge est activée par défaut sur toutes les baies de stockage fournies avec SANtricity OS (contrôleur) version 8.30 ou ultérieure. Les pilotes multipathing Linux, Windows et VMware peuvent utiliser la fonction d'équilibrage automatique de la charge. Si vous mettez à niveau votre contrôleur de SANtricity OS (logiciel du contrôleur) version 8.25 ou antérieure à 8.30 ou ultérieure, l'équilibrage automatique de la charge est désactivé par défaut sur la baie de stockage.
@@ -85,6 +91,7 @@ Dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* *système*
 
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -100,6 +107,7 @@ Une condition active « Drive Lost Primary Path » entraînera un équilibrage a
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.30

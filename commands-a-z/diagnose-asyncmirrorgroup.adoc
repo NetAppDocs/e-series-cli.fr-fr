@@ -15,23 +15,26 @@ Le `diagnose asyncMirrorGroup` commande teste les éventuels problèmes de commu
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
 
 [NOTE]
 ====
-Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600, EF300, EF50 et EF80.
+Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.
 
 ====
 
 
+[[roles]]
 == Rôles
 
 S/O
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ testID=(all | connectivity | latency | bandwidth | portConnections)
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -70,6 +74,7 @@ Identifiant du test de diagnostic à exécuter. L'identifiant et les tests corre
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

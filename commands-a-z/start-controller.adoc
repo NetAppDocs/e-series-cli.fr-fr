@@ -15,24 +15,28 @@ Le `start controller` commande lance une opération qui enregistre les informati
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Les informations de trace de débogage peuvent être utilisées par le support technique pour vous aider à analyser la qualité d'exécution d'une matrice de stockage.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[file="_fileName_]"
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -100,6 +105,7 @@ Reportez-vous à la section Notes pour plus d'informations sur la dénomination 
 |===
 
 
+[[notes]]
 == Remarques
 
 Les informations de trace DQ sont écrites dans un fichier compressé avec l'extension .zip. Le nom de fichier est une combinaison d'un nom de fichier défini par l'utilisateur et de l'identifiant de la matrice de stockage (DIT). Une constante de "dq" est également ajoutée au nom du fichier. Le nom complet du fichier a le formulaire suivant :
@@ -143,6 +149,7 @@ Fichier de description au format xml décrivant les attributs de fichier DQ pour
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.75

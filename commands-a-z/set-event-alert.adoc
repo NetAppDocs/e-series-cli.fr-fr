@@ -15,12 +15,14 @@ Le `set event alert` les commandes gèrent la notification d'événements d'aler
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -30,6 +32,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 ====
 
 
+[[context]]
 == Contexte
 
 Lorsque vous définissez votre baie de stockage, vous pouvez configurer les alertes et définir le mode de gestion des alertes d'événements. Si vous avez configuré la baie de stockage pour envoyer des alertes, une notification est envoyée à un destinataire désigné lorsqu'un événement alertable se produit. Cette notification peut être de l'un ou de l'autre des types suivants :
@@ -53,6 +56,7 @@ Les événements non alertables ne peuvent pas être créés avec cette commande
 ====
 
 
+[[syntax-to-block-an-event-alert]]
 == Syntaxe permettant de bloquer une alerte d'événement
 
 [source, cli, subs="+macros"]
@@ -61,6 +65,7 @@ set blockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[syntax-to-unblock-an-event-alert]]
 == Syntaxe pour débloquer une alerte d'événement
 
 [source, cli, subs="+macros"]
@@ -69,6 +74,7 @@ set unBlockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -86,6 +92,7 @@ Une erreur s'affiche si vous saisissez un événement non valide.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.10

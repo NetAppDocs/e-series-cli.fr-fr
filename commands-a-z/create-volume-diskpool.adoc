@@ -15,18 +15,21 @@ Le `create volume diskPool` La commande crée un nouveau volume RAID standard ou
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Certains paramètres de création d'un volume RAID standard dans un groupe de vo
 ====
 
 
+[[syntax-for-creating-a-standard-volume]]
 == Syntaxe de création d'un volume standard
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ capacity=_volumeCapacity_]
 ----
 
 
+[[syntax-for-creating-a-thin-provisioned-volume]]
 == Syntaxe pour la création d'un volume à provisionnement fin
 
 [source, cli, subs="+macros"]
@@ -73,6 +78,7 @@ capacity=_volumeCapacity_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -211,6 +217,7 @@ Ce paramètre définit la taille de bloc du volume en cours de création. Valeur
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de volume doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -225,6 +232,7 @@ Les volumes à provisionnement fin ne sont pas pris en charge sur les baies EF30
 
 
 
+[[data-assurance-management]]
 == La gestion de la Data assurance
 
 La fonctionnalité Data assurance (DA) renforce l'intégrité des données sur l'ensemble du système de stockage. DA permet à la matrice de stockage de vérifier si des erreurs peuvent se produire lorsque des données sont déplacées entre les hôtes et les lecteurs. Lorsque cette fonctionnalité est activée, la matrice de stockage ajoute des codes de vérification des erreurs (également appelés vérifications cycliques de redondance ou CRCS) à chaque bloc de données du volume. Après le déplacement d'un bloc de données, la matrice de stockage utilise ces codes CRC pour déterminer si des erreurs se sont produites au cours de la transmission. Les données potentiellement corrompues ne sont ni écrites sur le disque ni renvoyées à l'hôte.
@@ -240,6 +248,7 @@ Si `dataAssurance` le paramètre est défini sur `enabled`seuls les disques comp
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

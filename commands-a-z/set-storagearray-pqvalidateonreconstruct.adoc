@@ -15,18 +15,21 @@ Le `set storageArray pqValidateOnReconstruct` Commande définit l'état de valid
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, 2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Cette fonctionnalité s'applique aux pools de disques et aux groupes de volumes RAID 6, qui ont une double parité. Dans ce cas, la redondance du groupe de volumes ou du pool de disques reste possible lorsqu'un disque est défaillant, ce qui permet de vérifier la cohérence des données et de la parité pendant la reconstruction. Lorsque des incohérences sont détectées lors de la reconstruction et que Data assurance est activée pour le volume, il peut être possible d'identifier la source des incohérences afin de reconstruire les données en utilisant les disques restants. Si cette fonctionnalité est activée et que Data assurance n'est pas activée pour le volume, ou si l'incohérence ne peut pas être isolée sur un seul disque, le bloc en cours de reconstruction est marqué comme illisible.
@@ -35,6 +38,7 @@ La validation peut augmenter les temps de reconstruction des disques SSD ; cette
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -43,6 +47,7 @@ set storageArray pqValidateOnReconstruct (enable | disable) driveMediaType=(hdd 
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -77,6 +82,7 @@ Type de support de disque sur lequel définir la validation P/Q sur la capacité
 |===
 
 
+[[example-with-drive-media-type-specified-as-hard-disk-drives]]
 == Exemple avec le type de support de disque spécifié comme disques durs
 
 [listing]
@@ -88,6 +94,7 @@ SMcli completed successfully.
 ----
 
 
+[[example-with-drive-media-type-specified-as-solid-state-drives]]
 == Exemple avec un type de support de disque spécifié comme disques SSD
 
 [listing]
@@ -99,6 +106,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.42

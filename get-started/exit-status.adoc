@@ -15,6 +15,7 @@ Les États de sortie sont renvoyés sur les commandes exécutées. Le tableau su
 
 
 
+[[exit-status-definitions]]
 == Quitter les définitions d'état
 
 [cols="3*"]

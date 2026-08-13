@@ -15,24 +15,28 @@ Le `set storageArray odxEnabled` La commande active ou désactive le transfert d
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 ODX est activée sur la baie de stockage. Utilisez cette commande pour désactiver ODX si vous ne souhaitez pas exécuter ODX, ou si ODX cause des problèmes de la baie de stockage. La seule matrice de stockage affectée est la matrice de stockage sur laquelle la commande est exécutée.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -41,6 +45,7 @@ set storageArray odxEnabled=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -56,12 +61,14 @@ Paramètre permettant d'activer ou de désactiver ODX. Pour activer ODX, défini
 |===
 
 
+[[notes]]
 == Remarques
 
 ODX fournit un moyen de transférer des données sans utiliser d'opérations de lecture et d'écriture mises en mémoire tampon et ne nécessite pas l'implication directe de l'hôte dans l'opération de transfert de données. Lorsque ODX n'est pas activé, les données sont lues depuis le stockage source vers l'hôte, puis écrites depuis l'hôte vers le stockage cible. Avec ODX activé, les opérations de transfert de données sont directement gérées par l'infrastructure de stockage. Les données sont déplacées directement du stockage source vers le stockage cible au sein de la même baie, en contournant l'hôte.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.20

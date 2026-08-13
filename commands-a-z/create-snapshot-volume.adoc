@@ -15,18 +15,21 @@ Le `create snapVolume` la commande crée un volume snapshot avec des capacités 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez mapper le volume de snapshot à un hôte et toutes les écritures de l'hôte résident dans le volume de référentiel associé au volume de snapshot. Vous pouvez affecter le nouveau volume snapshot à un volume de référentiel existant ou créer un nouveau volume de référentiel dans un groupe de volumes ou un pool de disques.
@@ -38,6 +41,7 @@ Vous ne pouvez pas utiliser cette commande pour une image Snapshot utilisée dan
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ create snapVolume userLabel=pass:quotes[_"snapVolumeName_" snapImageID="_snapCGI
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -123,6 +128,7 @@ Pourcentage de capacité du référentiel sur lequel vous recevez un avertisseme
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -144,6 +150,7 @@ L'identifiant du volume de référentiel est automatiquement créé par le logic
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

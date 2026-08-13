@@ -15,18 +15,21 @@ Le `set driveChannel` commande définit le fonctionnement du canal de lecteur.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -36,6 +39,7 @@ status=(optimal | degraded)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -58,12 +62,14 @@ L'état du canal d'entraînement. Vous pouvez définir l'état du canal du lecte
 |===
 
 
+[[notes]]
 == Remarques
 
 Utilisez le `optimal` Permet de ramener un canal de disque dégradé à l'état optimal. Utilisez le `degraded` option lorsque le canal du lecteur rencontre des problèmes et que la matrice de stockage nécessite plus de temps pour le transfert de données.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

@@ -15,24 +15,28 @@ Le `set consistencyGroup addCGMemberVolume` commande ajoute un nouveau volume de
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez spécifier un volume de référentiel existant pour le nouveau membre du groupe de cohérence ou créer un volume de référentiel. Lorsque vous créez un nouveau volume de référentiel, vous identifiez un groupe de volumes existant ou un pool de disques existant où vous souhaitez que le volume de référentiel soit utilisé.
 
 
 
+[[syntax-for-use-with-an-existing-repository-volume]]
 == Syntaxe à utiliser avec un volume de référentiel existant
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ repositoryVolume=pass:quotes["_volumeGroupName_"]
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-volume-group]]
 == Syntaxe à utiliser lors de la création d'un volume de référentiel dans un groupe de volumes
 
 [source, cli, subs="+macros"]
@@ -55,6 +60,7 @@ repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacit
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-disk-pool]]
 == Syntaxe à utiliser lors de la création d'un volume de référentiel dans un pool de disques
 
 [source, cli, subs="+macros"]
@@ -66,6 +72,7 @@ repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityVa
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -110,6 +117,7 @@ La taille d'un nouveau volume de référentiel dans un groupe de volumes ou un p
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -155,6 +163,7 @@ Lorsque vous créez un nouveau volume de référentiel dans un groupe de volumes
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

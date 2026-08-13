@@ -25,12 +25,14 @@ Si le groupe de volumes comprend des disques compatibles NVMe ou FIPS, la clé d
 ====
 
 
+[[export-volume-group]]
 == Exporter le groupe de volumes
 
 L'opération d'exportation de groupe de volumes prépare les lecteurs du groupe de volumes à la suppression. Vous pouvez supprimer les lecteurs pour le stockage hors ligne ou importer le groupe de volumes vers une autre matrice de stockage. Une fois l'opération de groupe de volumes d'exportation terminée, tous les lecteurs sont hors ligne. Tous les volumes associés ou les nœuds de capacité libre ne sont plus affichés dans le logiciel de gestion du stockage.
 
 
 
+[[non-exportable-components]]
 == Composants non exportables
 
 Vous devez supprimer tous les composants non exportables avant de pouvoir terminer la procédure de groupe de volumes d'exportation. Vous devez supprimer ces composants :
@@ -44,6 +46,7 @@ Vous devez supprimer tous les composants non exportables avant de pouvoir termin
 
 
 
+[[basic-export-steps-for-a-volume-group]]
 == Etapes d'exportation de base pour un groupe de volumes
 
 L'exportation d'un groupe de volumes comprend les étapes suivantes sur la matrice de stockage _source_.
@@ -70,12 +73,14 @@ L'exportation d'un groupe de volumes comprend les étapes suivantes sur la matri
 
 
 
+[[import-volume-group]]
 == Importer un groupe de volumes
 
 L'opération d'importation de groupe de volumes ajoute le groupe de volumes importé à la matrice de stockage cible. Une fois l'opération d'importation de groupe de volumes terminée, tous les lecteurs disposent d'un état optimal. Tous les volumes ou nœuds de capacité libre associés apparaissent désormais dans le logiciel de gestion du stockage installé sur la baie de stockage cible.
 
 
 
+[[basic-import-steps-for-a-volume-group]]
 == Étapes d'importation de base pour un groupe de volumes
 
 [NOTE]
@@ -93,6 +98,7 @@ L'importation d'un groupe de volumes comprend les étapes suivantes sur la matri
 
 
 
+[[non-importable-components]]
 == Composants non importables
 
 Certains composants ne peuvent pas être importés pendant la procédure d'importation de groupe de volumes. Ces composants sont déposés pendant la procédure :

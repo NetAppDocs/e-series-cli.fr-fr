@@ -24,6 +24,7 @@ Le workflow de base pour l'utilisation des clés de sécurité internes est le s
 
 
 
+[[workflow-steps]]
 == Étapes du workflow
 
 Les commandes suivantes vous permettent de démarrer avec des clés de sécurité internes :

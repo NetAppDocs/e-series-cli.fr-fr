@@ -15,18 +15,21 @@ Cette commande active ou désactive la fonction AutoSupport (ASUP) pour la baie 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Après avoir activé cette fonction, vous pouvez ensuite activer la fonction AutoSupport OnDemand (si vous le souhaitez), puis activer la fonction AutoSupport Remote Diagnostics (diagnostic à distance) (si vous le souhaitez).
@@ -40,6 +43,7 @@ Vous devez activer les trois fonctions dans cet ordre :
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -48,6 +52,7 @@ set storageArray autoSupport (enable | disable)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -63,6 +68,7 @@ Permet d'activer ou de désactiver AutoSupport. Si les fonctions OnDemand et Dia
 |===
 
 
+[[examples]]
 === Exemples
 
 [listing]
@@ -74,6 +80,7 @@ Permet d'activer ou de désactiver AutoSupport. Si les fonctions OnDemand et Dia
 ----
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `show storageArray autoSupport` commande pour voir si vous avez activé la fonction. La ligne initiale de la sortie affichée indique l'état d'activation :
@@ -84,6 +91,7 @@ The AutoSupport feature is enabled on this storage array.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 7.86 - Ajout d'une commande pour toutes les baies de stockage jusqu'au modèle E2700 et E5600

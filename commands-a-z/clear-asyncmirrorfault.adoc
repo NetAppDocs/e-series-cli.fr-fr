@@ -15,18 +15,21 @@ Le `clear asyncMirrorFault` cette commande efface une panne « collante » de mi
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[context]]
 == Contexte
 
 Un groupe de miroirs asynchrone et ses volumes membres peuvent rencontrer des défaillances « collantes » de mise en miroir asynchrone, qui se produisent à un seul point dans le temps, sans affecter la fonctionnalité des miroirs. Ces types de défaut doivent être examinés, mais ne nécessitent peut-être pas de modifications de la configuration.
@@ -35,6 +38,7 @@ Un groupe de miroirs asynchrone et ses volumes membres peuvent avoir ou peuvent 
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]])
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -100,6 +105,7 @@ Noms de plusieurs volumes membres (dans un groupe de miroirs asynchrone) à part
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

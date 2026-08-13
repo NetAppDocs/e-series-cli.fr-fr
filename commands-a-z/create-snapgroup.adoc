@@ -15,18 +15,21 @@ Le `create snapGroup` commande crée un nouveau groupe de snapshots et le volume
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Un groupe d'instantanés contient une séquence d'instantanés d'un volume de base associé. Un groupe de snapshots possède un volume de référentiel utilisé pour enregistrer les données de toutes les images de snapshot faisant partie du groupe de snapshots.
@@ -38,6 +41,7 @@ Avant de créer un groupe de snapshots, assurez-vous qu'un groupe de volumes de 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -55,6 +59,7 @@ repositoryVolume=(pass:quotes[_diskPoolName_] [capacity=capacityValue]))]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -143,6 +148,7 @@ Ce paramètre permet d'activer ou de désactiver la planification d'une opérati
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de groupe de snapshots doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -1029,6 +1035,7 @@ Pour supprimer une planification, utilisez le `delete volume` commande avec `sch
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

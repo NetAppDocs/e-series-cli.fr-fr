@@ -15,24 +15,28 @@ Le `suspend asyncMirrorGroup` la commande suspend la synchronisation des donnée
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[context]]
 == Contexte
 
 C'est ça `suspend` la commande permet de réduire l'impact sur les performances de l'application hôte pouvant survenir pendant la copie des données modifiées de la baie de stockage locale sur la baie de stockage distante.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -57,12 +62,14 @@ Nom du groupe miroir asynchrone pour lequel vous souhaitez suspendre la synchron
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsqu'un groupe de miroirs asynchrone est à l'état suspendu, aucune tentative n'est effectuée pour copier les données des volumes primaires vers les volumes secondaires des paires en miroir. Toute écriture sur le côté primaire du groupe de miroirs asynchrone est enregistrée de manière persistante dans les volumes de référentiel miroir associés. Après la reprise du groupe de miroirs asynchrone, seules les régions modifiées des volumes primaires sont écrites sur les volumes secondaires.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

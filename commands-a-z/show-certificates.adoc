@@ -15,12 +15,14 @@ Le `Show certificates` Commande permet d'afficher les certificats installés sur
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -29,6 +31,7 @@ show localCertificate all | alias alias
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -44,6 +47,7 @@ Permet de spécifier un certificat via l'alias défini par l'utilisateur.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.60

@@ -15,24 +15,28 @@ Le `set host` commande attribue un hôte à un groupe d'hôtes ou déplace un h�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez également créer un nouveau groupe d'hôtes et affecter l'hôte au nouveau groupe d'hôtes à l'aide de cette commande. Les actions effectuées par cette commande dépendent du fait que l'hôte possède des mappages individuels ou ne possède pas de mappages individuels.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ hostType=pass:quotes[(_hostTypeIndexLabel_ | _hostTypeIndexNumber_)]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -111,6 +116,7 @@ L'hôte est supprimé du groupe d'hôtes présent et placé sous le groupe par d
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
@@ -119,6 +125,7 @@ Pour les noms, vous pouvez utiliser n'importe quelle combinaison de caractères 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

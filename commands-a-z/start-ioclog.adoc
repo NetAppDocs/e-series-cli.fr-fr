@@ -15,24 +15,28 @@ Le `start IOCLog` Command produit un vidage du journal CIO des transmissions de 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Les contrôleurs sont identifiés comme « a » ou « b ». Chaque contrôleur peut disposer de quatre canaux hôtes maximum, chaque canal étant identifié par un nombre compris entre 1 et 8.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -42,6 +46,7 @@ start IOCLog [(a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | b1 | b2 | b3 | b4 | b5 | 
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -68,6 +73,7 @@ Ce paramètre entraîne le remplacement du nouveau vidage du journal CIO par un 
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande génère un journal de débogage à partir de la COI du contrôleur sélectionné et stocke les données dans un format compressé dans une mémoire tampon persistante sur le contrôleur. Vous pouvez récupérer les données du journal de débogage à l'aide de l' `save IOCLog` commande. Le contrôleur renvoie une erreur dans ces conditions :
@@ -79,6 +85,7 @@ Cette commande génère un journal de débogage à partir de la COI du contrôle
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.20

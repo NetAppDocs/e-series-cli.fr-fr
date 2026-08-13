@@ -15,18 +15,21 @@ Le `check volume parity` la commande vérifie un volume pour détecter les erreu
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ check volume pass:quotes[[_volumeName_]] parity
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -105,12 +109,14 @@ Paramètre permettant de capturer les détails de la progression, tels que pourc
 |===
 
 
+[[notes]]
 == Remarques
 
 L'adresse de début et l'adresse de fin de bloc logique sont utiles pour des LUN ou des espaces de noms à un très grand volume. L'exécution d'un contrôle de parité du volume sur un très grand volume unique LUN ou espace de noms peut prendre longtemps. En définissant l'adresse de début et l'adresse de fin des blocs de données, vous pouvez réduire le temps nécessaire à la vérification de parité du volume.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 11.80 - cette commande est obsolète.

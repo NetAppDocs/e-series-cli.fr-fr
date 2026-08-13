@@ -15,18 +15,21 @@ Le `reset storageArray diagnosticData` Commande réinitialise la NVSRAM contenan
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Cette commande ne supprime pas les données de diagnostic. Cette commande remplace l'état nécessite une intervention par l'état données de diagnostic disponibles. Les anciennes données de diagnostic sont automatiquement écrites lorsque de nouvelles données sont capturées. La mémoire contenant les données de diagnostic est également effacée lors du redémarrage des contrôleurs. Avant de réinitialiser les données de diagnostic, utiliser le `save storageArray diagnosticData` commande pour enregistrer les données de diagnostic dans un fichier.
@@ -38,6 +41,7 @@ Exécutez cette commande uniquement en collaboration avec le support technique.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -46,12 +50,14 @@ reset storageArray diagnosticData
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.16

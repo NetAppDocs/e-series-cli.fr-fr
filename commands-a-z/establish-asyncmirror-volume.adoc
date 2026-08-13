@@ -15,18 +15,21 @@ Le `establish asyncMirror volume` la commande complète une paire asynchrone en 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[context]]
 == Contexte
 
 Avant d'exécuter cette commande, le groupe de miroirs asynchrone doit exister et le volume primaire doit exister dans le groupe de miroirs asynchrone. Une fois cette commande terminée, la mise en miroir asynchrone commence entre le volume primaire et le volume secondaire.
@@ -35,6 +38,7 @@ Les deux volumes qui comprennent une paire asynchrone en miroir fonctionnent com
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ pass:quotes[primaryVolume="_primaryVolumeName_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -74,6 +79,7 @@ Nom d'un volume existant sur la matrice de stockage locale que vous souhaitez ut
 |===
 
 
+[[notes]]
 == Remarques
 
 Une paire mise en miroir asynchrone comprend deux volumes, un volume primaire et un volume secondaire, qui contiennent des copies identiques des mêmes données. La paire en miroir fait partie d'un groupe de miroirs asynchrone, qui permet à la paire en miroir de se synchroniser en même temps que toute autre paire en miroir dans le groupe de miroirs asynchrones.
@@ -84,6 +90,7 @@ Lorsque vous choisissez le volume primaire et le volume secondaire, le volume se
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

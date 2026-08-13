@@ -15,12 +15,14 @@ Le `SMcli alertTest` La commande envoie une alerte de test au journal des évén
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -30,6 +32,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -38,12 +41,14 @@ SMcli -alertTest
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 7.83

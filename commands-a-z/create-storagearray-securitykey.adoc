@@ -15,18 +15,21 @@ Le `create storageArray securityKey` La commande crée ou modifie une nouvelle c
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Si la gestion des clés externes est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Si la gestion des clés internes est activée, la commande s'applique à toute baie de stockage individuelle, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 Pour la gestion interne des clés, cette commande active la fonctionnalité de gestion interne des clés et crée la clé de sécurité. Après avoir créé la clé, utilisez le `set storageArray securityKey` commande permettant de mettre la clé en service. Cette commande peut également être utilisée pour modifier la clé de sécurité.
@@ -35,6 +38,7 @@ Pour la gestion externe des clés, cette commande crée une clé différente pou
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ file=_"fileName"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -131,6 +136,7 @@ La valeur par défaut est FALSE. Si ce paramètre est défini sur FALSE, envoyez
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.40 introduit pour la gestion interne des clés

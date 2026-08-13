@@ -15,18 +15,21 @@ Le `set storageArray` commande définit les propriétés de la matrice de stocka
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Avec la version 8.10 du micrologiciel `cacheFlushStop` ce paramètre est obsolè
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -84,6 +88,7 @@ set storageArray
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -430,12 +435,14 @@ Active ou désactive VMware vStorage API Array Architecture (VAAI) pour une baie
 |===
 
 
+[[notes]]
 == Remarques
 
 Sauf pour le `isnsRegistration`, lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs des paramètres facultatifs.
 
 
 
+[[autosupport-data]]
 == Données AutoSupport
 
 [NOTE]
@@ -456,6 +463,7 @@ Vous pouvez exécuter le `set storageArray autoSupportConfig` commande sur plusi
 
 
 
+[[cache-block-size]]
 == Taille de bloc de cache
 
 Lorsque vous définissez des tailles de bloc de cache, utilisez la taille de bloc de cache de 4 Ko pour les baies de stockage nécessitant des flux d'E/S généralement de petite taille et aléatoires. Utilisez la taille de bloc de cache de 8 Ko lorsque la majorité de vos flux d'E/S dépasse 4 Ko mais est inférieure à 8 Ko. Utilisez la taille du bloc de cache de 16 Ko ou celle du bloc de cache de 32 Ko pour les baies de stockage qui requièrent des applications de transfert de données importantes, séquentielles ou à large bande passante.
@@ -464,24 +472,28 @@ Le `cacheBlockSize` paramètre définit la taille du bloc de cache pris en charg
 
 
 
+[[cache-flush-start]]
 == Démarrage de vidage du cache
 
 Lorsque vous définissez des valeurs pour démarrer un vidage du cache, une valeur trop faible augmente le risque que les données nécessaires à une lecture de l'hôte ne se trouvent pas dans le cache. Une valeur faible augmente également le nombre d'écritures sur le disque nécessaires pour maintenir le niveau de cache, ce qui augmente la surcharge du système et diminue les performances.
 
 
 
+[[default-host-type]]
 == Type d'hôte par défaut
 
 Lorsque vous définissez des types d'hôtes, si le partitionnement de stockage est activé, le type d'hôte par défaut n'affecte que les volumes qui sont mappés dans le groupe par défaut. Si le partitionnement du stockage n'est pas activé, tous les hôtes connectés à la matrice de stockage doivent exécuter le même système d'exploitation et être compatibles avec le type d'hôte par défaut.
 
 
 
+[[media-scan-rate]]
 == Vitesse de numérisation du support
 
 L'analyse des supports s'exécute sur tous les volumes de la matrice de stockage qui ont un état optimal, qui n'ont pas d'opérations de modification en cours et qui ont le `mediaScanRate` paramètre activé. Utilisez le `set volume` pour activer ou désactiver le `mediaScanRate` paramètre.
 
 
 
+[[password]]
 == Mot de passe
 
 Des mots de passe sont stockés sur chaque matrice de stockage. Pour une meilleure protection, le mot de passe doit répondre aux critères suivants :
@@ -505,6 +517,7 @@ Vous devez définir un mot de passe pour votre matrice de stockage avant de pouv
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.00 ajoute le `defaultHostType` paramètre.

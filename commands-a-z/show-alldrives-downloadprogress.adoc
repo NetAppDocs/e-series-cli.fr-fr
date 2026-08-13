@@ -15,18 +15,21 @@ Le `show allDrives downloadProgress` commande renvoie l'état des téléchargeme
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,12 +38,14 @@ show allDrives downloadProgress
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[notes]]
 == Remarques
 
 Lorsque tous les téléchargements de micrologiciel ont réussi, cette commande renvoie un état correct. En cas d'échec du téléchargement du micrologiciel, cette commande affiche l'état de téléchargement du micrologiciel de chaque lecteur ciblé. Cette commande renvoie les États affichés dans ce tableau.
@@ -79,6 +84,7 @@ Les téléchargements sont terminés avec des erreurs.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

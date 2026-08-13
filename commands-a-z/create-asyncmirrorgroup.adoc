@@ -15,23 +15,26 @@ Le `create asyncMirrorGroup` la commande crée un nouveau groupe de miroirs asyn
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
 
 [NOTE]
 ====
-Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600, EF300, EF50 et EF80.
+Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.
 
 ====
 
 
+[[roles]]
 == Rôles
 
 S/O
 
 
 
+[[context]]
 == Contexte
 
 Un groupe de miroirs asynchrone est un conteneur qui peut héberger plusieurs paires mises en miroir afin qu'elles puissent être gérées comme une seule entité. Vous créez un groupe de miroirs asynchrone pour définir les paramètres de synchronisation de toutes les paires en miroir du groupe. Chaque paire en miroir dans un groupe de miroirs asynchrones partage les mêmes paramètres de synchronisation, les mêmes rôles principal et secondaire et le même mode d'écriture.
@@ -42,6 +45,7 @@ Assurez-vous d'exécuter le `Create Asynchronous Mirror Group` commande sur la m
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -58,6 +62,7 @@ interfaceType=(FC | iSCSI)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -171,6 +176,7 @@ Les paramètres de resynchronisation automatique entre les volumes primaires et 
 |===
 
 
+[[notes]]
 == Remarques
 
 * La fonctionnalité de mise en miroir asynchrone doit être activée sur les baies de stockage locales et distantes qui seront utilisées pour les activités de mise en miroir.
@@ -184,6 +190,7 @@ Les paramètres de resynchronisation automatique entre les volumes primaires et 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

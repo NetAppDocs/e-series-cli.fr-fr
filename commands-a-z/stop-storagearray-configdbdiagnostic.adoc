@@ -15,18 +15,21 @@ Le `stop storageArray configDbDiagnostic` la commande arrête le test de diagnos
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,12 +38,14 @@ stop storageArray configDbDiagnostic
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[notes]]
 == Remarques
 
 Le micrologiciel du contrôleur renvoie une confirmation que le test de diagnostic a été annulé.
@@ -51,6 +56,7 @@ Si vous essayez d'utiliser le `stop storageArray configDbDiagnostic` commande un
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.75

@@ -15,18 +15,21 @@ Le `create mapping cgSnapVolume` la commande crée un mappage logique à partir 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ create mapping cgSnapVolume=pass:quotes[_"snapVolumeName"_
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -64,6 +68,7 @@ Nom d'un groupe d'hôtes auquel vous souhaitez créer un mappage logique. Placez
 |===
 
 
+[[notes]]
 == Remarques
 
 Un hôte est un ordinateur connecté à la matrice de stockage et accède aux volumes de la matrice de stockage via les ports d'hôte. Vous pouvez définir des mappages spécifiques à un hôte individuel. Vous pouvez également affecter l'hôte à un groupe d'hôtes qui partage l'accès à un ou plusieurs volumes.
@@ -72,6 +77,7 @@ Un groupe d'hôtes est un élément topologique facultatif que vous pouvez défi
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,18 +15,21 @@ Le `save driveChannel faultDiagnostics file` la commande enregistre les données
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -38,6 +41,7 @@ Vous pouvez enregistrer les données de diagnostic dans un fichier en tant que t
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -65,12 +70,14 @@ Cette commande n'ajoute pas automatiquement une extension de fichier au fichier 
 |===
 
 
+[[notes]]
 == Remarques
 
 Une extension de fichier n'est pas automatiquement ajoutée au fichier enregistré. Vous devez spécifier l'extension de fichier de format applicable pour le fichier. Si vous spécifiez une extension de fichier de `.txt`, la sortie sera au format de fichier texte. Si vous spécifiez une extension de fichier de `.xml` , La sortie sera au format XML.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.15 présente cette nouvelle fonctionnalité pour les anciens tiroirs de contrôleurs.

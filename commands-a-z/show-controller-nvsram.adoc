@@ -15,24 +15,28 @@ Le `show controller NVSRAM` La commande renvoie des informations sur les valeurs
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Cette commande renvoie une liste des valeurs d'octets NVSRAM pour le type d'hôte spécifié. Si vous n'entrez pas les paramètres facultatifs, cette commande renvoie une liste de toutes les valeurs d'octets NVSRAM.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ NVSRAM pass:quotes[[hostType=_hostTypeIndexLabel_ | host="_hostName_"]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Nom de l'hôte connecté aux contrôleurs. Placez le nom d'hôte entre guillemet
 |===
 
 
+[[notes]]
 == Remarques
 
 Utilisez le `show controller NVSRAM` Commande permettant d'afficher des parties de ou de la totalité de la NVSRAM avant d'utiliser le `set controller` Pour modifier les valeurs NVSRAM. Avant d'apporter des modifications à la NVSRAM, contactez le support technique pour connaître les régions de la NVSRAM que vous pouvez modifier.

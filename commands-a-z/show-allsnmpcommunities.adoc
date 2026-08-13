@@ -15,18 +15,21 @@ Le `show allSnmpCommunities` La commande renvoie des informations sur les commun
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin, Support Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 Les informations renvoyées incluent les éléments suivants :
@@ -38,6 +41,7 @@ Les informations renvoyées incluent les éléments suivants :
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ snmpCommunities pass:quotes[[_snmpCommunityName1_ ... _snmpCommunityNameN_]])
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -90,6 +95,7 @@ Ce paramètre renvoie une liste du nombre total de communautés SNMP et du nombr
 |===
 
 
+[[notes]]
 == Remarques
 
 SNMP prend en charge une ou plusieurs _communautés_ auxquelles appartiennent les gestionnaires et les périphériques gérés. Les requêtes SNMP contiennent une _communauté string_ dans les paquets de données transmis sur le réseau qui agit comme un mot de passe brut. Les agents SNMP peuvent rejeter ou DÉFINIR des requêtes GET avec une chaîne de communauté non reconnue. Une chaîne de communauté est également incluse dans les notifications DE DÉROUTEMENT envoyées par l'agent au responsable.
@@ -116,6 +122,7 @@ DETAILS
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.30

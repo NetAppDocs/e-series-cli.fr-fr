@@ -15,24 +15,28 @@ Le `create ssdCache` La commande crée un cache de lecture pour une matrice de s
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez disposer du rôle Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 L'utilisation de disques SSD hautes performances pour mettre en cache les données de lecture améliore les performances d'E/S et les temps de réponse de l'application. Ils permettent en outre d'améliorer considérablement les performances sur différentes charges de travail, en particulier celles exigeant des IOPS élevées. Le cache SSD optimise l'utilisation de disques SSD rapides et coûteux. Le cache SSD fonctionne en plus du cache principal dans la mémoire DRAM du contrôleur. Avec le cache du contrôleur, les données sont stockées dans la DRAM après une lecture de l'hôte. Avec le cache SSD, les données sont copiées à partir de volumes de base spécifiés par l'utilisateur, puis mises en cache sur des disques SSD.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 .
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -88,6 +93,7 @@ Ce paramètre facultatif spécifie le niveau de sécurité lors de la création 
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le nom. Les noms peuvent comporter un maximum de 30 caractères.
@@ -100,6 +106,7 @@ Si tous les disques SSD du cache SSD prennent en charge la fonctionnalité Data 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

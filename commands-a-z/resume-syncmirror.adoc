@@ -15,18 +15,21 @@ Le `resume syncMirror` la commande reprend une opération de mise en miroir sync
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ primaries pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -85,12 +90,14 @@ Paramètre permettant d'identifier les volumes de cette commande situés dans un
 |===
 
 
+[[notes]]
 == Remarques
 
 Si vous définissez le `writeConsistency` paramètre à `TRUE`, les volumes doivent se trouver dans un ou plusieurs groupes de cohérence d'écriture. Cette commande reprend tous les groupes de cohérence d'écriture qui contiennent les volumes. Par exemple, si les volumes A, B et C sont dans un groupe de cohérence en écriture et qu'ils ont des homologues distants A'', B', et C'', le `resume syncMirror volume ["A"] writeConsistency=TRUE` Le commandement reprend A-A'', B-B'' et C-C''.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

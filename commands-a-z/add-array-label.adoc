@@ -15,6 +15,7 @@ Le `Add array label` commande permet d'ajouter une matrice de stockage à la con
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 [NOTE]
@@ -26,6 +27,7 @@ Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -35,6 +37,7 @@ pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -61,6 +64,7 @@ Permet de spécifier une étiquette pour la matrice de stockage.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.60

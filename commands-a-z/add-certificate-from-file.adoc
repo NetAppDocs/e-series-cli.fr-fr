@@ -15,12 +15,14 @@ Le `Add certificate from file` Commande vous permet de prendre un certificat à 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -29,6 +31,7 @@ pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -50,6 +53,7 @@ Permet de spécifier un certificat via l'alias défini par l'utilisateur.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.60

@@ -15,18 +15,21 @@ Le `show volumeGroup importDependencies` la commande affiche la liste des dépen
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Storage Monitor.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[show volumeGroup [_volumeGroupName_]] importDependencies
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -58,6 +62,7 @@ Paramètre permettant de faire tourner les disques vers le bas une fois que les 
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande renvoie les dépendances d'un groupe de volumes spécifique, qui doit être à l'état exporté ou forcé. Si une décision est prise pour conserver les dépendances répertoriées, alors le `cancelImport` paramètre pouvant être appliqué pour faire reculer les disques.
@@ -66,6 +71,7 @@ Vous devez exécuter le `show volumeGroup importDependencies` avant d'exécuter 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

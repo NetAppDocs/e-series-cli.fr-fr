@@ -15,18 +15,21 @@ Le `create volumeCopy` la commande crée une copie de volume et démarre l'opér
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -51,6 +54,7 @@ Vous pouvez avoir jusqu'à huit copies de volume en cours d'exécution. Si vous 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -65,6 +69,7 @@ target="_targetName_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -134,6 +139,7 @@ Vous devez utiliser le `copyType` paramètre avec le `repositoryGroupPreference`
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de événements et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.

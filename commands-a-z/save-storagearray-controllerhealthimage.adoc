@@ -15,18 +15,21 @@ Le `save storageArray controllerHealthImage` la commande enregistre une image d'
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -38,6 +41,7 @@ Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrit
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ save storageArray controllerHealthImage file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -65,6 +70,7 @@ file="C:\Array Backups\DBMbackup_03302010.core"
 |===
 
 
+[[notes]]
 == Remarques
 
 Un fichier d'image de l'état de santé du contrôleur peut avoir une taille de 1 à 2 gigaoctets et l'enregistrement prend plusieurs minutes. En plus d'enregistrer l'image d'intégrité du contrôleur elle-même, cette commande génère un fichier descripteur XML basé sur les métadonnées des images d'état de santé du contrôleur. Ce fichier descripteur est enregistré au format de fichier ZIP au même chemin que l'image d'intégrité du contrôleur. L'exemple suivant montre le format XML du fichier descripteur.
@@ -102,6 +108,7 @@ Lorsque vous récupérez une image d'intégrité du contrôleur du cache du cont
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,24 +15,28 @@ Le `show driveChannel stats` la commande affiche le transfert de données cumul�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Si le contrôleur a automatiquement dégradé un canal de disque, cette commande affiche également les statistiques d'intervalle. Lorsque vous utilisez cette commande, vous pouvez afficher des informations sur un canal de lecteur spécifique, plusieurs canaux de lecteur ou tous les canaux de lecteur.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -43,6 +47,7 @@ show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -76,12 +81,14 @@ Identifiant qui sélectionne tous les canaux de transmission.
 |===
 
 
+[[notes]]
 == Remarques
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

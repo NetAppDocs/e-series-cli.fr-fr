@@ -15,18 +15,21 @@ Le `suspend syncMirror primaries` la commande suspend une opération de mise en 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ primaries pass:quotes[[_primaryVolumeName1_ ... _primaryVolumeNameN_])]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -87,6 +92,7 @@ Ce paramètre définit si les volumes identifiés dans cette commande se trouven
 |===
 
 
+[[notes]]
 == Remarques
 
 Si vous définissez le `writeConsistency` paramètre à `TRUE`, les volumes doivent se trouver dans un ou plusieurs groupes de cohérence d'écriture. Cette commande suspend tous les groupes de cohérence en écriture qui contiennent les volumes. Par exemple, si les volumes A, B et C sont dans un groupe de cohérence en écriture et qu'ils ont des homologues distants A', B' et C'', la commande:
@@ -105,6 +111,7 @@ suspend les deux groupes de cohérence d'écriture.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

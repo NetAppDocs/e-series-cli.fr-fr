@@ -15,18 +15,21 @@ Le `start storageArray controllerHealthImage controller` la commande génère un
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -43,6 +46,7 @@ Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrit
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -51,6 +55,7 @@ start storageArray controllerHealthImage controller [(a|b)]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -66,12 +71,14 @@ Ce paramètre spécifie le contrôleur depuis lequel produire l'image de santé 
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande force le contrôleur sélectionné à vider ses données « core » en cache. Utilisez le `save storageArray controllerHealthImage` commande pour enregistrer une copie des données de cache dans un fichier hôte.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

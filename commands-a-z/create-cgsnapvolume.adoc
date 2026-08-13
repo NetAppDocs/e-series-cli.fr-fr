@@ -15,24 +15,28 @@ Le `create cgSnapVolume` la commande crée un volume snapshot d'images spécifiq
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez sélectionner un ou plusieurs volumes de base dans le groupe de cohérence à inclure dans le volume Snapshot. Lorsque vous créez un volume Snapshot d'un groupe de cohérence, vous créez un volume dont le contenu peut être afficher.
 
 
 
+[[syntax-with-user-specified-base-volumes]]
 == Syntaxe avec des volumes de base spécifiés par l'utilisateur
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ members=pass:quotes[_(baseVolume1:repos_XXXX ... baseVolumen:repos_YYYY)_]
 ----
 
 
+[[syntax-when-setting-the-consistency-group-snapshot-volume-to-read-only]]
 == Syntaxe lors de la définition du volume de snapshot du groupe de cohérence sur lecture seule
 
 [source, cli, subs="+macros"]
@@ -53,6 +58,7 @@ readOnly
 ----
 
 
+[[syntax-when-setting-the-repository-full-limit]]
 == Syntaxe lors de la définition de la limite complète du référentiel
 
 [source, cli, subs="+macros"]
@@ -69,6 +75,7 @@ repositoryFullLimit=pass:quotes[_percentValue_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -159,6 +166,7 @@ Paramètre permettant de déterminer si vous pouvez écrire dans le volume snaps
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -224,6 +232,7 @@ cgSnapImageID="snapCG1:oldest";
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

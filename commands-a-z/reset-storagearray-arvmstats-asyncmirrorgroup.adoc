@@ -15,18 +15,21 @@ Le `reset storageArray arvmStats asyncMirrorGroup` commande réinitialise les st
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
+Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTim
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -72,6 +76,7 @@ Ce paramètre est facultatif. Valeur par défaut pour `sampleType` est `all`.
 |===
 
 
+[[notes]]
 == Remarques
 
 Les statistiques sont réinitialisées pour les volumes mis en miroir dans le rôle principal. Les statistiques à réinitialiser incluent les données suivantes :
@@ -89,6 +94,7 @@ Les statistiques sont réinitialisées pour les volumes mis en miroir dans le r�
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

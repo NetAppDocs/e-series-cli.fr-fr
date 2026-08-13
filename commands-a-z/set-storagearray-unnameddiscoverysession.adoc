@@ -15,18 +15,21 @@ Le `set storageArray unnamedDiscoverySession` la commande permet à la baie de s
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray unnamedDiscoverySession=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Ce paramètre active ou désactive les sessions de découverte sans nom. Défini
 |===
 
 
+[[notes]]
 == Remarques
 
 La découverte est le processus qui permet aux initiateurs de déterminer les cibles disponibles. La détection se produit lors de la mise sous tension/de l'initialisation et également si la topologie du bus change, par exemple, si un périphérique supplémentaire est ajouté.
@@ -58,6 +63,7 @@ Une session de découverte sans nom est une session de découverte établie sans
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

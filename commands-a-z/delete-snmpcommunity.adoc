@@ -15,18 +15,21 @@ Le `delete snmpCommunity` Commande supprime une communauté SNMP (simple Network
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ pass:quotes[delete snmpCommunity communityName="_snmpCommunityName_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Nom de la communauté SNMP que vous souhaitez supprimer. Placez le nom de la com
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.30

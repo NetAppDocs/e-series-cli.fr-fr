@@ -15,18 +15,21 @@ Le `save storageArray loginBanner` commande vous permet d'enregistrer une banni�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à une baie de stockage individuelle E4000, E2800, E5700, EF600, EF300, EF50 ou EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Un utilisateur doté de n'importe quel rôle peut exécuter cette commande.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,6 +38,7 @@ save storageArray loginBanner file="file_name"
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Nom du fichier de bannière de connexion.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41

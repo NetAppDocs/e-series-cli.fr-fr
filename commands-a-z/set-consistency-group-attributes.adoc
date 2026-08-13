@@ -15,18 +15,21 @@ Le `set consistencyGroup` commande définit les propriétés d'un groupe de coh�
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -40,6 +43,7 @@ set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -90,6 +94,7 @@ La priorité des opérations de restauration d'un groupe de cohérence alors que
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -100,12 +105,14 @@ La priorité de restauration définit la quantité de ressources système à all
 
 
 
+[[auto-delete]]
 == Suppression automatique
 
 Vous pouvez configurer chaque groupe de snapshots pour qu'il effectue la suppression automatique de ses images de snapshot afin de conserver le nombre total d'images de snapshot dans le groupe de snapshots à un nombre maximum d'images ou en dessous. Lorsque le nombre d'images de snapshot dans le groupe de snapshots est au maximum, le `autoDeleteLimit` le paramètre supprime automatiquement les images instantanées chaque fois qu'une nouvelle image instantanée est créée dans le groupe d'instantanés. Le `autoDeleteLimit` le paramètre supprime les images snapshot les plus anciennes du groupe d'instantanés jusqu'à ce que le nombre maximal d'images défini avec le paramètre soit atteint. La suppression d'images instantanées libère ainsi de la capacité de stockage et peut donc être utilisée pour satisfaire les exigences continues de copie en écriture des images snapshots restantes.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,24 +15,28 @@ Le `show storageArray` la commande renvoie les informations de configuration rel
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 Les paramètres renvoient des listes de valeurs pour les composants et les fonctions de la matrice de stockage. Vous pouvez saisir la commande avec un seul paramètre ou plusieurs paramètres. Si vous entrez la commande sans aucun paramètre, l'ensemble du profil de la matrice de stockage s'affiche (les mêmes informations que si vous avez saisi le `*profile*` paramètre).
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -47,6 +51,7 @@ cacheMirrorDataAssuranceCheckEnable | hostConnectivityReporting]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -235,6 +240,7 @@ Le paramètre permettant d'afficher le propriétaire actuel du contrôleur pour 
 |===
 
 
+[[notes]]
 == Remarques
 
 Le `profile` le paramètre affiche des informations détaillées sur la baie de stockage. Les informations s'affichent sur plusieurs écrans d'un moniteur d'affichage. Vous devrez peut-être augmenter la taille de votre mémoire tampon pour afficher toutes les informations. Comme ces informations sont si détaillées, vous pouvez enregistrer la sortie de ce paramètre dans un fichier. Pour enregistrer la sortie dans un fichier, exécutez le `show storageArray` la commande ressemble à cet exemple.
@@ -376,6 +382,7 @@ volume name: JCG_Remote_MirrorMenuTests
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.00 ajoute le `defaultHostType` paramètre.

@@ -35,6 +35,7 @@ Cette rubrique présente plusieurs exemples qui illustrent les nouveaux paramèt
 
 
 
+[[operations-requiring-a-password-https-client-mode-trusted-certificate-is-installed-on-the-array]]
 == Opérations nécessitant un mot de passe, `https` mode client, le certificat approuvé est installé sur la baie
 
 Dans l'exemple suivant, les options de nom d'utilisateur et de mot de passe sont fournies et un certificat approuvé est installé sur la baie.
@@ -53,6 +54,7 @@ SMcli completed successfully.
 ----
 
 
+[[operations-requiring-a-password-https-client-mode-no-trusted-certificate-is-installed-on-the-array]]
 == Opérations nécessitant un mot de passe, `https` mode client, aucun certificat approuvé n'est installé sur la baie
 
 Dans l'exemple suivant, les options de nom d'utilisateur et de mot de passe sont fournies, mais aucun certificat approuvé n'est installé sur la baie et sur `-k` cette option n'a pas été utilisée. L'exemple montre le résultat renvoyé.
@@ -68,6 +70,7 @@ SMcli failed.
 ----
 
 
+[[operations-requiring-a-password-https-client-mode-no-trusted-certificate-installed-but-using-k-for-self-signed-certificate]]
 == Opérations nécessitant un mot de passe, `https` mode client, aucun certificat approuvé n'est installé, mais utilisation de -k pour le certificat auto-signé
 
 Dans l'exemple suivant, comme dans l'exemple précédent, des options de nom d'utilisateur et de mot de passe sont fournies, mais aucun certificat approuvé n'est installé sur la baie. Toutefois, dans ce cas, le `-k` l'option a été utilisée pour utiliser un certificat auto-signé.
@@ -100,6 +103,7 @@ SMcli completed successfully.
 ----
 
 
+[[read-only-operations-symbol-client-mode]]
 == Opérations en lecture seule, `symbol` mode client
 
 Dans cet exemple, dans `*symbol*` en mode client, ni le nom d'utilisateur ni le mot de passe ne sont fournis. Cette opération ne s'effectue qu'en lecture seule.
@@ -127,6 +131,7 @@ SMcli completed successfully.
 ----
 
 
+[[read-only-operations-http-client-mode]]
 == Opérations en lecture seule, mode client http
 
 Dans l'exemple suivant, utiliser également une opération en lecture seule mais dans `*https*` mode client, le nom d'utilisateur et le mot de passe sont requis et fournis avec `-k` pour accepter un certificat auto-signé. Le `*https*` le mode client requiert un mot de passe même pour les opérations en lecture seule.

@@ -15,24 +15,28 @@ Le `set diskPool` La commande ajoute de la capacité à un pool de disques (exte
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Ces deux opérations s'excluent mutuellement.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ addCapacity=pass:quotes[(_diskPoolCapacity_))]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -85,6 +90,7 @@ Contrôleur propriétaire du pool de disques. Les identifiants de contrôleur va
 |===
 
 
+[[notes]]
 == Remarques
 
 Les volumes déjà présents dans le pool de disques restent en ligne et disponibles pour les opérations d'E/S pendant l'ajout de nouveaux lecteurs. Le pool de disques doit être à l'état complet avant d'ajouter de la capacité. Si le pool de disques n'est pas à l'état complet, exécutez l' `set diskPool complete` commande avant d'ajouter de nouveaux lecteurs.
@@ -95,6 +101,7 @@ Vous pouvez également utiliser cette commande pour changer la propriété d'un 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

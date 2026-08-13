@@ -15,18 +15,21 @@ Le `set storageArray controllerHealthImageAllowOverWrite` la commande définit u
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Si la matrice de stockage ne prend pas en charge la fonction d'image d'intégrité du contrôleur, la commande renvoie une erreur.
@@ -38,6 +41,7 @@ Avec la version 8.20 du micrologiciel `coreDumpAllowOverWrite` le paramètre est
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -46,18 +50,21 @@ set storageArray controllerHealthImageAllowOverWrite
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[notes]]
 == Remarques
 
 Lorsque l'image d'état du contrôleur est récupérée, le système `allow overwrite` l'indicateur est défini. Si l'image d'intégrité du contrôleur n'est pas récupérée, elle expire dans 48 heures après quoi `allow overwrite` l'indicateur est défini. Lorsque vous utilisez le `set storageArray controllerHealthImageAllowOverWrite` pour définir le `allow overwrite` drapeau : l'expiration des 48 heures est annulée comme si l'image avait été récupérée.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.86

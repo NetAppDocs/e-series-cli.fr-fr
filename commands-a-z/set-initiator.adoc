@@ -15,18 +15,21 @@ Le `set initiator` la commande met à jour l'objet initiateur.
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -41,6 +44,7 @@ Cette commande s'applique uniquement aux technologies iSCSI, iser, NVMe over RoC
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -50,6 +54,7 @@ set initiator (["initiatorName"] | <"initiatorQualifiedName">) ([userLabel="newI
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -86,6 +91,7 @@ Vous permet de saisir une nouvelle clé de sécurité que vous souhaitez utilise
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41

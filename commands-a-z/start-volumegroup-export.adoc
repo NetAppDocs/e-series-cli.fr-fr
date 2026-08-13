@@ -15,18 +15,21 @@ Le `start volumeGroup export` La commande déplace un groupe de volumes à l'ét
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez ensuite retirer les lecteurs qui composent le groupe de volumes et réinstaller les disques dans une autre matrice de stockage.
@@ -43,6 +46,7 @@ Au sein du groupe de volumes, vous ne pouvez pas déplacer les volumes associés
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] export
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -66,6 +71,7 @@ Nom du groupe de volumes à exporter. Placez le nom du groupe de volumes entre c
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque cette commande a réussi, vous pouvez exécuter le `start volumeGroup import` Commande pour terminer le déplacement du groupe de volumes vers un état complet, ce qui rend le groupe de volumes disponible pour la nouvelle matrice de stockage.
@@ -76,6 +82,7 @@ Une fois que le groupe de volumes est à l'état exporté ou forcé, vous pouvez
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

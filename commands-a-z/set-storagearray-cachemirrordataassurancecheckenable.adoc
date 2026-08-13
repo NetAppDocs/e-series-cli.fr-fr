@@ -15,18 +15,21 @@ Le `set storageArray cacheMirrorDataAssuranceCheckEnable` la commande vous perme
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à une baie de stockage individuelle E4000, E2800, E5700, EF600, EF300, EF50 ou EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,12 +38,14 @@ set storageArray cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41 Nouveau paramètre de commande.

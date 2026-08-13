@@ -8091,4 +8091,8 @@
   <block id="c9f4c41100461402ef108c1e6ccc6adf" category="paragraph"><block ref="c9f4c41100461402ef108c1e6ccc6adf" category="inline-link-rx"></block></block>
   <block id="aff9d49ee54e3ad13ffa0735d2a02e5a" category="section-title">SANtricity 12.00</block>
   <block id="84dbef0be771e89569bcfffb6b44a589" category="paragraph">Le tableau suivant répertorie les modifications apportées aux commandes CLI et Script Commands pour la version 12.00.</block>
+  <block id="761f226704fa8b9a2ea64701b36a66e1" category="paragraph">Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, à condition que tous les packages SMcli soient installés.</block>
+  <block id="fa3f8ed858d04e74dad152ab5070b1ec" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.</block>
+  <block id="0a5727fb9e4cceadd91fbb0916297759" category="paragraph">Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.</block>
+  <block id="d28f85e4921c2290b1849d9ca24381a1" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Storage Admin ou Support Admin.</block>
 </blocks>

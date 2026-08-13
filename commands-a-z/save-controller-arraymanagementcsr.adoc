@@ -15,24 +15,28 @@ Le `save controller arrayManagementCSR` Commande génère une requête de signat
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 La RSC doit être signée par une autorité de certification. Le certificat signé qui en résulte est installé sur le serveur Web du contrôleur afin que les navigateurs puissent faire automatiquement confiance au serveur Web du contrôleur lors de la tentative de gestion de la baie. Effectuer cette action pour chaque contrôleur.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -52,6 +56,7 @@ save controller [(a|b)] arrayManagementCSR
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -137,6 +142,7 @@ Permet de spécifier le fichier pour lequel enregistrer le fichier CSR du contr�
 |===
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -156,6 +162,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

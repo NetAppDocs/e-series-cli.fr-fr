@@ -15,18 +15,21 @@ Le `revive volumeGroup` La commande force le groupe de volumes spécifié et ses
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF60
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ revive volumeGroup pass:quotes[[_volumeGroupName_]]
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -58,6 +63,7 @@ Nom du groupe de volumes à définir sur l'état optimal. Placez le nom du group
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

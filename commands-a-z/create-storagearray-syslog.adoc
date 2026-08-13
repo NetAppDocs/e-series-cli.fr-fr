@@ -15,18 +15,21 @@ Le `create storageArray syslog` la commande vous permet d'archiver les journaux 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,6 +38,7 @@ create storageArray syslog serverAddress="<address>" port=<port> protocol=("udp"
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -77,6 +81,7 @@ Nom du composant ; actuellement, seul « auditlog » est pris en charge.
 |===
 
 
+[[example]]
 === Exemple
 
 [listing]
@@ -94,6 +99,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.42

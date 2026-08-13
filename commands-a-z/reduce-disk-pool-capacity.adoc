@@ -15,18 +15,21 @@ Le `set diskPool` commande réduit la capacité du pool de disques en supprimant
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Cette commande utilise la fonction de réduction dynamique de la capacité (DCR, Dynamic Capacity Reduction), qui vous permet de supprimer les lecteurs sélectionnés d'un pool de disques et de réutiliser les disques supprimés si nécessaire.
@@ -35,6 +38,7 @@ Le nombre maximum de lecteurs que vous pouvez retirer d'un pool de disques dans 
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slo
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -70,6 +75,7 @@ Placez la valeur d'ID du bac, la valeur d'ID du tiroir et la valeur d'ID de loge
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -86,6 +92,7 @@ Une opération DCR peut entraîner une capacité configurée supérieure à un o
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.10

@@ -15,12 +15,14 @@ Utilisez le `SMcli -autoSupportConfig test` Commande pour tester la configuratio
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Elle ne s'applique pas aux baies de stockage E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -35,6 +37,7 @@ Le moniteur persistant doit être exécuté sur la station de gestion pour envoy
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -43,6 +46,7 @@ SMcli -autoSupportConfig test reply-toEmail<address>
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Le tableau suivant répertorie les paramètres d'envoi d'un message de test AutoSupport.
@@ -67,12 +71,14 @@ Permet à l'utilisateur de spécifier l'adresse e-mail de réponse pour les mess
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25
 
 
 
+[[example-of-testing-using-httphttps-delivery]]
 == Exemple de test avec livraison HTTP/HTTPS
 
 Voici quelques exemples d'utilisation de cette commande lors de l'utilisation d'un type de distribution HTTP ou HTTPS, où vous ne spécifiez pas d'adresse e-mail pour la livraison.
@@ -86,6 +92,7 @@ SMcli completed successfully.
 ----
 
 
+[[example-of-testing-using-smtp-delivery]]
 == Exemple de test à l'aide de la livraison SMTP
 
 Voici quelques exemples d'utilisation de cette commande. Lorsque vous utilisez une méthode de distribution SMTP, vous pouvez utiliser le `reply-toEmail` paramètre pour spécifier l'adresse de destination.

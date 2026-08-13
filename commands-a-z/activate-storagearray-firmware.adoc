@@ -15,6 +15,7 @@ Le `activate storageArray firmware` la commande active le micrologiciel que vous
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -24,6 +25,7 @@ activate storageArray firmware
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -42,6 +44,7 @@ Ce paramètre force le contrôleur à activer le nouveau firmware. La valeur par
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.10 ajoute le `healthCheckMelOverride` paramètre.

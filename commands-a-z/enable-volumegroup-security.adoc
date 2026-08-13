@@ -15,18 +15,21 @@ Le `enable volumeGroup security` commande convertit un groupe de volumes non sé
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ pass:quotes[enable volumeGroup [_volumeGroupName_]] security
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Nom du groupe de volumes que vous souhaitez placer à l'état sécurité activé
 |===
 
 
+[[notes]]
 == Remarques
 
 Ces conditions doivent être remplies pour exécuter correctement cette commande.
@@ -64,6 +69,7 @@ Le firmware du contrôleur crée un verrou qui limite l'accès aux disques FDE. 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.40

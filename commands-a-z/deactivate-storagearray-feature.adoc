@@ -15,18 +15,21 @@ Le `deactivate storageArray feature` commande désactive la fonction de mise en 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle Administrateur du stockage ou Administrateur du support.
 
 
 
+[[context]]
 == Contexte
 
 Le port hôte du contrôleur dédié au volume secondaire est disponible pour les transferts de données de l'hôte.
@@ -38,6 +41,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -46,12 +50,14 @@ deactivate storageArray feature=syncMirror
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

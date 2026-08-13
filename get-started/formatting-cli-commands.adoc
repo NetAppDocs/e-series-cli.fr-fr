@@ -15,6 +15,7 @@ En fonction de la valeur ou du nom saisi, certaines règles de format sont appli
 
 
 
+[[cli-format-rules]]
 == Règles de format CLI
 
 Les guillemets doubles (" ") utilisés dans le cadre d'un nom ou d'un libellé nécessitent une considération particulière lorsque vous exécutez les commandes CLI et les commandes de script sur un système d'exploitation Windows, Linux ou Solaris.

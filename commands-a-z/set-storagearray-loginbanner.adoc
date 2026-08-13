@@ -15,18 +15,21 @@ Le `set storageArray loginBanner` commande vous permet de télécharger un fichi
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -35,12 +38,14 @@ set storageArray loginBanner file="path_to_login_banner"
 ----
 
 
+[[context]]
 == Contexte
 
 Une fois le fichier texte chargé, il est enregistré dans la matrice de stockage. Le texte de la bannière apparaît avant l'écran de connexion de SANtricity System Manager ou avant d'exécuter des commandes.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -61,6 +66,7 @@ Le fichier de bannière de connexion ne peut pas être vide et doit être infér
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.41

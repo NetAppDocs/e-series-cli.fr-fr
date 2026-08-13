@@ -15,18 +15,21 @@ Le `recreate storageArray securityKey` la commande régénère une clé de sécu
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Cette commande ne s'applique qu'à la gestion externe des clés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ file="_fileName"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -84,6 +89,7 @@ Définissez ce paramètre sur `TRUE` pour supprimer l'ancienne clé de sécurit�
 |===
 
 
+[[notes]]
 == Remarques
 
 Votre phrase de passe doit répondre aux critères suivants :
@@ -102,6 +108,7 @@ Si votre phrase de passe ne répond pas à ces critères, vous recevrez un messa
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.70

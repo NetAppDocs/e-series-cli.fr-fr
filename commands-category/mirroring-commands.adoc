@@ -15,6 +15,7 @@ La liste suivante des commandes de mise en miroir est disponible pour votre syst
 
 
 
+[[asynchronous-mirroring-commands]]
 == Commandes de mise en miroir asynchrone
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Activer la mise en miroir asynchrone"]
@@ -61,6 +62,7 @@ link:../commands-a-z/diagnose-asyncmirrorgroup.html["Tester la connectivité ave
 
 
 
+[[synchronous-mirroring-commands]]
 == Commandes de mise en miroir synchrone
 
 link:../commands-a-z/activate-synchronous-mirroring.html["Activer la mise en miroir synchrone"]

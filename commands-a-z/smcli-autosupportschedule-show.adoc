@@ -15,12 +15,14 @@ Le `SMcli -autoSupportSchedule show` Commande affiche le programme de collecte e
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -38,6 +40,7 @@ Remarque :
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -46,18 +49,21 @@ SMcli -autoSupportSchedule show
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25
 
 
 
+[[example]]
 == Exemple
 
 La sortie affiche les plages de temps préférées, suivies par le planning quotidien et hebdomadaire.

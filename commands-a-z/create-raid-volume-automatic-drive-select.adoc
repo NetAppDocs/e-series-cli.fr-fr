@@ -15,18 +15,21 @@ Le `create volume` la commande crée un groupe de volumes sur les disques de la 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Si vous avez des disques de différentes capacités, vous ne pouvez pas créer a
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -63,6 +67,7 @@ driveMediaType=(HDD | SSD | unknown | allMedia)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -227,6 +232,7 @@ Ce paramètre définit la taille de bloc du volume en cours de création. La val
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -239,6 +245,7 @@ Si vous ne spécifiez pas de capacité à l'aide de l' `capacity` paramètre, to
 
 
 
+[[segment-size]]
 == Taille du segment
 
 La taille d'un segment détermine le nombre de blocs de données que le contrôleur écrit sur un seul disque du volume avant d'écrire des données sur le disque suivant. Chaque bloc de données stocke 512 octets de données. Le bloc de données est la plus petite unité de stockage. La taille d'un segment détermine le nombre de blocs de données qu'il contient. Par exemple, un segment de 8 Ko contient 16 blocs de données. Un segment de 64 Ko contient 128 blocs de données.
@@ -249,6 +256,7 @@ Pour des performances optimales dans une base de données multi-utilisateurs ou 
 
 
 
+[[usage-hint]]
 == Conseils d'utilisation
 
 [NOTE]
@@ -288,12 +296,14 @@ Activé
 |===
 
 
+[[cache-read-prefetch]]
 == Préextraction de lecture du cache
 
 La lecture préalable en cache permet au contrôleur de copier des blocs de données supplémentaires dans le cache pendant que le contrôleur lit et copie les blocs de données requis par l'hôte depuis le disque vers le cache. Cette action augmente le risque d'une future demande de données à partir du cache. Le préchargement de lecture du cache est important pour les applications multimédia qui utilisent des transferts de données séquentiels. Valeurs valides pour le `cacheReadPrefetch` les paramètres sont `TRUE` ou `FALSE`. La valeur par défaut est `TRUE`.
 
 
 
+[[security-type]]
 == Type de sécurité
 
 Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
@@ -310,12 +320,14 @@ Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez c
 
 
 
+[[secure-drives]]
 == Sécuriser les disques
 
 Les disques sécurisés peuvent être des disques FDE (Full Disk Encryption) ou FIPS (Federal information Processing Standard). Utilisez le `secureDrives` paramètre pour spécifier le type de disques sécurisés à utiliser. Les valeurs que vous pouvez utiliser sont les suivantes `fips` et `fde`.
 
 
 
+[[tray-loss-protection-and-drawer-loss-protection]]
 == Protection contre les pertes de bac et protection contre les pertes de tiroir
 
 Pour activer la protection contre les pertes des tiroirs/bacs, reportez-vous aux tableaux suivants pour obtenir des critères supplémentaires :
@@ -418,6 +430,7 @@ Sans objet
 |===
 
 
+[[example-command]]
 == Exemple de commande
 
 [listing]
@@ -430,6 +443,7 @@ driveMediaType=HDD securityType=capable secureDrives=fips
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10 ajoute la fonctionnalité RAID de niveau 6 et `dssPreAllocate` paramètre.

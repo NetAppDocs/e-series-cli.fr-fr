@@ -27,6 +27,7 @@ Le niveau minimal du firmware des contrôleurs indique la prise en charge par le
 ====
 
 
+[[examples-of-firmware-compatibility-levels]]
 == Exemples de niveaux de compatibilité du micrologiciel
 
 Le `create hostGroup` la commande dispose de la section suivante.

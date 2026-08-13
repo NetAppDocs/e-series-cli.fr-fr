@@ -15,18 +15,21 @@ Le `reset storageArray autoSupport schedule` Commande réinitialise les heures e
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 * Le logiciel de gestion sélectionne de façon aléatoire une heure de la journée pour les messages quotidiens et hebdomadaires et un jour de la semaine pour les messages hebdomadaires.
@@ -35,6 +38,7 @@ Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF60
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -43,12 +47,14 @@ reset storageArray autoSupport schedule
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -60,12 +66,14 @@ SMcli completed successfully.
 ----
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `show storageArray autoSupport` pour voir la modification résultant du planning.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

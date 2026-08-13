@@ -15,12 +15,14 @@ Le `set controller` La commande active ou désactive le voyant action de service
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage, y compris les baies E2700 et E5600.
 
 
 
+[[context]]
 == Contexte
 
 Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur. (Pour allumer ou éteindre le témoin d'action de service autorisée sur le boîtier du ventilateur d'alimentation ou le boîtier interconnexion-batterie, utilisez le `set tray serviceAllowedIndicator` commande.)
@@ -32,6 +34,7 @@ Cette commande n'est valide que pour les baies E2700, E5600 ou EF560 (et d'autre
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -41,6 +44,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -63,6 +67,7 @@ Paramètre permettant d'activer ou de désactiver le voyant action de service au
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.14

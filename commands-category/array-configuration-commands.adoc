@@ -15,6 +15,7 @@ La liste suivante des commandes de configuration de baie est disponible pour vot
 
 
 
+[[cache-mirror-data-assurance-commands]]
 == Mettez en cache les commandes Data assurance
 
 link:../commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html["Définissez la matrice de stockage pour activer ou désactiver les données du miroir de cache"]
@@ -23,6 +24,7 @@ link:../commands-a-z/show-storagearray-cachemirrordataassurancecheckenable.html[
 
 
 
+[[controller-commands]]
 == Commandes du contrôleur
 
 link:../commands-a-z/clear-alldrivechannels-stats.html["Effacer les statistiques du canal de lecteur"]
@@ -73,6 +75,7 @@ link:../commands-a-z/stop-drivechannel-locate.html["Arrêtez la localisation du 
 
 
 
+[[controller-health-image-commands]]
 == Commandes d'images de santé du contrôleur
 
 link:../commands-a-z/save-storagearray-controllerhealthimage.html["Image sauvegarde de l'état du contrôleur de la baie de stockage"]
@@ -85,6 +88,7 @@ link:../commands-a-z/start-storagearray-controllerhealthimage-controller.html["I
 
 
 
+[[controller-host-port-configuration-commands]]
 == Commandes de configuration du port hôte du contrôleur
 
 link:../commands-a-z/create-hostport.html["Créer un port hôte"]
@@ -117,6 +121,7 @@ link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Affiche les 
 
 
 
+[[drive-commands]]
 == Commandes Drive
 
 link:../commands-a-z/download-drive-firmware.html["Téléchargez le micrologiciel du lecteur"]
@@ -165,6 +170,7 @@ link:../commands-a-z/stop-drive-locate.html["Arrêter la localisation de l'entra
 
 
 
+[[feature-management-commands]]
 == Commandes de gestion des fonctions
 
 link:../commands-a-z/disable-storagearray.html["Désactiver la fonction de matrice de stockage"]
@@ -177,6 +183,7 @@ link:../commands-a-z/show-storagearray.html["Afficher la matrice de stockage"]
 
 
 
+[[input-output-controller-ioc-dump-commands]]
 == Commandes de vidage du contrôleur de sortie d'entrée (IOC)
 
 link:../commands-a-z/save-ioclog.html["Sauvegarder le vidage du contrôleur de sortie d'entrée (IOC)"]
@@ -185,6 +192,7 @@ link:../commands-a-z/start-ioclog.html["Démarrer le vidage du contrôleur de so
 
 
 
+[[misbehaving-drive-mbd-commands]]
 == Commandes de disque défectueux (MBD)
 
 link:../commands-a-z/replace-drive-replacementdrive.html["Remplacez le lecteur"]
@@ -197,6 +205,7 @@ link:../commands-a-z/stop-drive-replace.html["Arrêter le remplacement de l'entr
 
 
 
+[[offloaded-data-transfer-odx-commands]]
 == Commandes Offloaded Data Transfer (ODX)
 
 link:../commands-a-z/set-storagearray-odxenabled.html["Activer ou désactiver ODX"]
@@ -207,18 +216,21 @@ link:../commands-a-z/show-storagearray-odxsetting.html["Affiche le paramètre d'
 
 
 
+[[repository-volume-analysis-commands]]
 == Commandes d'analyse du volume du référentiel
 
 link:../commands-a-z/check-repositoryconsistency.html["Vérifier la cohérence du référentiel"]
 
 
 
+[[session-commands]]
 == Commandes de session
 
 link:../commands-a-z/set-session-erroraction.html["Configurez la session"]
 
 
 
+[[storage-array-commands]]
 == Commandes de la matrice de stockage
 
 link:../commands-a-z/activate-storagearray-firmware.html["Activer le micrologiciel de la matrice de stockage"]
@@ -383,6 +395,7 @@ link:../commands-a-z/validate-storagearray-securitykey.html["Validation de la cl
 
 
 
+[[tray-commands]]
 == Commandes de bac
 
 link:../commands-a-z/download-tray-firmware-file.html["Téléchargez le micrologiciel de la carte environnementale"]
@@ -405,6 +418,7 @@ link:../commands-a-z/stop-tray-locate.html["Arrêtez la localisation du bac"]
 
 
 
+[[uncategorized-commands]]
 == Commandes non classées
 
 link:../commands-a-z/recover-sasport-miswire.html["Récupération du câble défectueux du port SAS"]

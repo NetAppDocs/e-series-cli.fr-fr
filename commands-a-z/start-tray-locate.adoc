@@ -15,24 +15,28 @@ Le `start tray locate` la commande permet de localiser un bac en allumant le voy
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Utilisez le `stop tray locate` commande pour éteindre le voyant du bac
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ pass:quotes[start tray [_trayID_]] locate
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Le bac que vous souhaitez localiser. Les valeurs d'ID du bac sont `0` à `99`. P
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

@@ -15,24 +15,28 @@ Le `create snapImage` la commande crée une nouvelle image snapshot dans un ou p
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Avant de pouvoir créer une image instantanée, vous devez d'abord avoir au moins un groupe d'instantanés dans lequel vous pouvez placer l'image instantanée. Pour créer un groupe de snapshots, utilisez le `create snapGroup` commande.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ snapGroups=("_snapGroupName1"... "snapGroupNamen_"))]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -68,6 +73,7 @@ Noms de plusieurs groupes d'instantanés contenant l'image d'instantané. Entrez
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
@@ -78,6 +84,7 @@ Le résultat de la création d'une image Snapshot d'un groupe de cohérence est 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

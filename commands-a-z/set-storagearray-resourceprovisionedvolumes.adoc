@@ -15,18 +15,21 @@ Le `set storageArray resourceProvisionedVolumes` La commande désactive la fonct
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage EF600, EF300, EF50 et EF80, vous devez disposer du rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Le provisionnement des ressources est une fonctionnalité disponible qui permet d'initialiser rapidement de grands volumes.
@@ -37,6 +40,7 @@ Les volumes provisionnés de ressource ne sont pris en charge que sur les pools 
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -45,6 +49,7 @@ set storageArray resourceProvisionedVolumes=(enable|disable)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -65,6 +70,7 @@ La modification de cette valeur s'applique uniquement aux groupes de volumes et 
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.63

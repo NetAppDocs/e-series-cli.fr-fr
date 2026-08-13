@@ -15,12 +15,14 @@ Le `SMcli -autoSupportLog` Commande permet d'afficher un fichier journal AutoSup
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 Cette commande permet d'afficher deux types de journaux :
@@ -36,6 +38,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +48,7 @@ pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Le tableau suivant répertorie les paramètres de la commande.
@@ -100,12 +104,14 @@ Ce paramètre est obligatoire.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25
 
 
 
+[[example]]
 == Exemple
 
 [listing]
@@ -114,6 +120,7 @@ SMcli -autosupportLog -n StorageArrayName inputArchive=0 outputLog=ASUPTransmiss
 ----
 
 
+[[verification]]
 == Vérification
 
 Affichez le journal AutoSupport demandé, qui se trouve dans le répertoire client sur lequel le logiciel de gestion du stockage a été installé.

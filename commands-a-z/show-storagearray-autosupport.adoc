@@ -15,18 +15,21 @@ Le `show storageArray autoSupport` Commande affiche les paramètres de collecte 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande est opérationnelle pour les baies de stockage E4000, E2800, E5700, EF600, EF300, EF50, et EF80.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin, Support Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 Le résultat de la commande depuis cette commande affiche les informations de configuration suivantes :
@@ -50,6 +53,7 @@ Le résultat de la commande depuis cette commande affiche les informations de co
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -58,12 +62,14 @@ show storageArray autoSupport
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[examples]]
 === Exemples
 
 [listing]
@@ -115,6 +121,7 @@ Aucune.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

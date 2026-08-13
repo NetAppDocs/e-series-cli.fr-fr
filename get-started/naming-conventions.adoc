@@ -45,6 +45,7 @@ Des règles spécifiques doivent être respectées pour les noms utilisés dans 
 
 
 
+[[entering-numerical-names]]
 == Saisie de noms numériques
 
 Lorsque le logiciel de gestion du stockage configure automatiquement une matrice de stockage, le logiciel de gestion du stockage attribue des noms composés de caractères numériques. Les noms composés uniquement de caractères numériques sont des noms valides. Toutefois, les noms de caractères numériques doivent être traités différemment des noms commençant par des caractères alphabétiques.

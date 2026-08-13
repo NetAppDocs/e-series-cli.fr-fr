@@ -15,24 +15,28 @@ Le `start diskPool resourceProvisioning` la commande active le provisionnement d
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les baies EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage EF600, EF300, EF50 et EF80, vous devez disposer du rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Pour désactiver le provisionnement des ressources sur un pool de disques, utilisez la commande de provisionnement complet avec l'option pour désactiver le provisionnement des ressources. Un pool de disques est provisionné en ressources lorsqu'il est créé si tous les disques sont compatibles DULBE et ceux de la baie de stockage `resourceProvisionedVolumes` le paramètre est `true`.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ start diskPoolpass:quotes[[_diskPoolName_]] resourceProvisioning
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Le pool de disques que vous souhaitez activer la fonction de provisionnement de 
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 11.73

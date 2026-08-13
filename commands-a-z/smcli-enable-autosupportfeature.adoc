@@ -15,12 +15,14 @@ Le `SMcli enable autoSupportFeature` La commande active la fonction AutoSupport 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -51,6 +53,7 @@ Vous devez activer les trois fonctions dans l'ordre suivant :
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -59,12 +62,14 @@ SMcli enable|disable autoSupportFeature
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[verification]]
 == Vérification
 
 Utilisez le `SMcli -autoSupportConfig show` commande pour voir si vous avez activé la fonction. La ligne initiale de la sortie affichée indique l'état d'activation :
@@ -75,6 +80,7 @@ The AutoSupport feature is activated on this storage management station.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 7.86

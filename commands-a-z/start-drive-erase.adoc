@@ -15,18 +15,21 @@ Le `start drive erase` la commande efface toutes les données d'un ou de plusieu
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à une baie E4000, E2800, E5700, EF600 ou EF300 individuelle. Elle ne fonctionne pas sur les baies de stockage E2700 et E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 Exécutez cette commande uniquement si vous souhaitez supprimer définitivement toutes les données d'un lecteur. Si le lecteur est sécurisé, le `start drive erase` l'option de commande effectue une suppression cryptographique et réinitialise les attributs de sécurité du disque en mode sécurisé.
@@ -38,6 +41,7 @@ L'opération d'effacement ne peut pas être annulée. Assurez-vous de sélection
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ start (drive [trayID,[drawerID,]slotID] | drives[trayID1,[drawerID1,]slotID1 ...
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -70,6 +75,7 @@ La liste des lecteurs ne peut pas contenir tous les lecteurs de la matrice de st
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 11.70.1

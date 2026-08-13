@@ -15,18 +15,21 @@ Le `enable diskPool security` commande convertit un pool de disques non sécuris
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Tous les disques qui composent le pool de disques doivent être sécurisés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[enable diskPool [_diskPoolName_]] security
 ----
 
 
+[[parameter]]
 == Paramètre
 
 [cols="2*"]
@@ -59,12 +64,14 @@ Nom du pool de disques que vous souhaitez placer à l'état sécurité activée.
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

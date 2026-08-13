@@ -15,18 +15,21 @@ Le `set drive nativeState` la commande reajoute les disques manquants (étranger
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Un disque est considéré comme natif lorsqu'il fait partie d'un groupe de volumes dans une baie de stockage. Un lecteur est considéré comme étranger lorsqu'il n'appartient pas à un groupe de volumes d'une matrice de stockage ou lorsqu'il ne peut pas être importé avec les disques d'un groupe de volumes qui sont transférés vers une nouvelle matrice de stockage. Cette dernière défaillance crée un groupe de volumes incomplet sur la nouvelle baie de stockage.
@@ -40,6 +43,7 @@ Utilisez cette opération pour la récupération d'urgence uniquement : lorsqu'u
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ allDrives) nativeState
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -75,12 +80,14 @@ Paramètre permettant de sélectionner tous les lecteurs.
 |===
 
 
+[[notes]]
 == Remarques
 
 Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capacité et les tiroirs disques basse capacité. Un tiroir de disque haute capacité est doté de tiroirs qui maintiennent les disques. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Un tiroir de lecteur de faible capacité n'est pas doté de tiroirs. Pour un plateau de lecteur haute capacité, vous devez spécifier l'identifiant (ID) du plateau de lecteur, l'ID du tiroir et l'ID du logement dans lequel se trouve un lecteur. Dans le cas d'un plateau de lecteur de faible capacité, vous devez uniquement spécifier l'ID du plateau de lecteur et l'ID de l'emplacement dans lequel se trouve un lecteur. Pour un plateau de lecteur de faible capacité, une autre méthode d'identification d'un emplacement est de spécifier l'ID du plateau de lecteur, définissez l'ID du tiroir sur `0`, Et indiquez l'ID de l'emplacement dans lequel réside un lecteur.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.10

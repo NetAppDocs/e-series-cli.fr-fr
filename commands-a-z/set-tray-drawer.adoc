@@ -15,24 +15,28 @@ Le `set tray drawer` La commande active ou désactive le voyant action de servic
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Les tiroirs sont utilisés dans des tiroirs disques haute capacité. Les tiroirs coulissent hors du tiroir du lecteur pour permettre l'accès aux lecteurs. Utilisez cette commande uniquement pour les tiroirs. Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ serviceAllowedIndicator=(on | off | forceOnWarning)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -73,6 +78,7 @@ Pour plus d'informations sur l'utilisation de `forceOnWarning`, Voir les Notes.
 |===
 
 
+[[notes]]
 == Remarques
 
 Avant de pouvoir saisir cette commande, le tiroir disque doit respecter les conditions suivantes :
@@ -96,6 +102,7 @@ Pour activer ou désactiver le voyant action de service autorisée pour l'ensemb
 
 
 
+[[use-of-the-forceonwarning-parameter]]
 == Utilisation du paramètre forceOnWarning
 
 Si vous préparez un composant pour le retrait et que vous souhaitez ignorer l'avertissement indiquant que les volumes ne sont pas protégés contre la perte de tiroir, entrez ce paramètre :
@@ -113,6 +120,7 @@ Ce paramètre indique que tous les disques du tiroir sont inaccessibles et peut 
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.60

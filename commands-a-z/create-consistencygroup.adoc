@@ -15,18 +15,21 @@ Le `create consistencyGroup` la commande crée un nouveau groupe de cohérence v
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ create consistencyGroup userLabel=pass:quotes[_"consistencyGroupName"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -90,6 +94,7 @@ Détermine si les ressources système doivent être allouées à l'opération de
 |===
 
 
+[[notes]]
 == Remarques
 
 Un groupe de cohérence est une entité logique qui vous permet de gérer toutes les images de snapshot que vous ajoutez à la collection sous forme de lots. Ce groupe de cohérence est un ensemble de groupes Snapshot ayant des exigences de cohérence mutuelle ou des dépendances pour leurs images Snapshot. Toutes les images de snapshot que vous créez et utilisez pour cette collection doivent être gérées conformément aux dépendances de cohérence.
@@ -104,12 +109,14 @@ En fonction de ce comportement, tous les membres d'un groupe de cohérence ont g
 
 
 
+[[auto-delete]]
 == Suppression automatique
 
 Vous pouvez configurer chaque groupe de snapshots de manière à supprimer automatiquement ses images de snapshot afin de conserver le nombre total d'images de snapshot dans le groupe de snapshots à un nombre maximum d'images ou en dessous. Lorsque le nombre d'images de snapshot dans le groupe de snapshots est au maximum, le `autoDeleteLimit` le paramètre supprime automatiquement les images instantanées chaque fois qu'une nouvelle image instantanée est créée dans le groupe d'instantanés. Le `autoDeleteLimit` le paramètre supprime les images snapshot les plus anciennes du groupe d'instantanés jusqu'à ce que le nombre maximal d'images défini avec le paramètre soit atteint. Cette opération a pour effet de libérer de la capacité du référentiel, de sorte qu'elle puisse être utilisée pour satisfaire les exigences de copie en écriture pour les images snapshots restantes.
 
 
 
+[[scheduling-snapshot-images-in-a-consistency-group]]
 == Planification d'images de snapshot dans un groupe de cohérence
 
 Le `enableSchedule` paramètre et le `schedule` paramètre vous permet de planifier les snapshots. Ces paramètres vous permettent de programmer des instantanés tous les jours, toutes les semaines ou tous les mois (par jour ou par date). Le `enableSchedule` paramètre active ou désactive la possibilité de planifier des snapshots. Lorsque vous activez la planification, vous utilisez le `schedule` paramètre pour définir l'heure à laquelle les snapshots doivent être effectués.
@@ -972,6 +979,7 @@ Lors de l'exécution d'une restauration dans un groupe de cohérence, l'opérati
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

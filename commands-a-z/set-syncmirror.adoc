@@ -15,18 +15,21 @@ Le `set syncMirror` commande définit les propriétés d'une paire symétrique �
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -135,6 +140,7 @@ Utilisez le `force` paramètre uniquement lors de l'utilisation du `role` param�
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
@@ -145,6 +151,7 @@ Le `writeOrder` le paramètre ne s'applique qu'aux modes d'écriture asynchrone 
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

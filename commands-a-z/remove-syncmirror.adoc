@@ -15,18 +15,21 @@ Le `remove syncMirror` cette commande supprime la relation de miroir entre le vo
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -77,6 +82,7 @@ Si les noms de volumes primaires comportent des caractères spéciaux ou ne sont
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

@@ -15,18 +15,21 @@ Le `check syncMirror` commande renvoie l'état d'un volume miroir distant. Utili
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +39,7 @@ Dans les versions précédentes de cette commande, l'identifiant de fonction ét
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=p
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -65,6 +70,7 @@ Intervalle de temps pendant lequel le logiciel peut revenir à l'état du volume
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande attend que le statut soit optimal ou que l'intervalle entre les délais expire. Utilisez cette commande lorsque vous exécutez l'utilitaire de mise en miroir synchrone asynchrone.

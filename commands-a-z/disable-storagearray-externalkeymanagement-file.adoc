@@ -15,18 +15,21 @@ Le `disable storageArray externalKeyManagement file` La commande désactive la g
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage individuelles E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Elle ne fonctionne pas sur les baies de stockage E2700 ou E5600.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -38,6 +41,7 @@ pass:quotes[saveFile=(_TRUE_ | _FALSE_)]
 ----
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -52,6 +56,7 @@ Cette commande ne s'applique qu'à la gestion externe des clés.
 ====
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -90,6 +95,7 @@ Vérifie et enregistre la clé de sécurité dans un fichier. Réglez sur `FALSE
 |===
 
 
+[[notes]]
 == Remarques
 
 Votre phrase de passe doit répondre aux critères suivants :
@@ -109,6 +115,7 @@ Si votre phrase de passe ne répond pas à ces critères, vous recevrez un messa
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.40

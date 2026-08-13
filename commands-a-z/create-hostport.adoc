@@ -15,24 +15,28 @@ Le `create hostPort` La commande crée une nouvelle identification de port hôte
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 L'identification du port hôte est une valeur logicielle représentant le port hôte HBA ou HCA physique vers le contrôleur. Sans l'identification correcte du port hôte, le contrôleur ne peut pas recevoir d'instructions ou de données du port hôte.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ userLabel="_portLabel"_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -90,6 +95,7 @@ Si vous ne spécifiez pas le type d'interface, `FC` est utilisée comme interfac
 |===
 
 
+[[notes]]
 == Remarques
 
 Un port hôte HBA ou un port hôte HCA est une connexion physique sur un adaptateur de bus hôte ou sur un adaptateur de canal hôte résidant sur un ordinateur hôte. Un port hôte HBA ou un port hôte HCA fournit un accès hôte aux volumes d'une matrice de stockage. Si le HBA ou le HCA ne dispose que d'une seule connexion physique (un seul port hôte), les termes Port hôte et adaptateur de bus hôte ou adaptateur de canal hôte sont synonymes.
@@ -98,6 +104,7 @@ Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumérique
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.20

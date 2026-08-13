@@ -15,12 +15,14 @@ Le `show blockedEventAlertList` commande renvoie une liste d'événements actuel
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique uniquement aux baies de stockage E2700 et E5600.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -30,6 +32,7 @@ Cette commande est une commande SMcli, pas une commande script. Vous devez exéc
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -38,6 +41,7 @@ show blockedEventAlertList
 ----
 
 
+[[example]]
 == Exemple
 
 La sortie comporte une ligne pour chaque événement bloqué, répertoriant le type d'événement au format hexadécimal suivi d'une description de l'événement. Voici un exemple de résultat :
@@ -51,12 +55,14 @@ Script execution complete.
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.10

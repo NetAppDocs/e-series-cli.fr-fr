@@ -15,6 +15,7 @@ La liste suivante des commandes de sécurité est disponible pour votre système
 
 
 
+[[audit-log-management-commands]]
 == Commandes de gestion du journal d'audit
 
 link:../commands-a-z/delete-auditlog.html["Supprimer les enregistrements du journal d'audit"]
@@ -29,6 +30,7 @@ link:../commands-a-z/show-auditlog-summary.html["Affiche le résumé du journal 
 
 
 
+[[authentication-commands]]
 == Commandes d'authentification
 
 link:../commands-a-z/getting-started-with-authentication.html["Mise en route de l'authentification"]
@@ -65,6 +67,7 @@ link:../commands-a-z/start-storagearray-directoryservices-test.html["Tester le s
 
 
 
+[[certificate-management-commands-for-e2800-and-e5700-controllers]]
 == Commandes de gestion des certificats pour les contrôleurs E2800 et E5700
 
 link:../commands-a-z/save-controller-arraymanagementcsr.html["Générer une requête de signature de certificat de serveur Web (RSC)"]
@@ -101,6 +104,7 @@ link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Démarrer le
 
 
 
+[[certificate-management-commands-for-ef600]]
 == Commandes de gestion des certificats pour EF600
 
 link:../commands-a-z/add-array-label.html["Ajouter une étiquette de tableau"]
@@ -111,6 +115,7 @@ link:../commands-a-z/show-array-label.html["Afficher l'étiquette de tableau"]
 
 
 
+[[database-commands]]
 == Commandes de base de données
 
 link:../commands-a-z/clear-storagearray-configuration.html["Effacez la configuration de la matrice de stockage"]
@@ -131,6 +136,7 @@ link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Arrêter le diag
 
 
 
+[[embedded-external-key-management-commands]]
 == Commandes intégrées de gestion de clés externes
 
 link:../commands-a-z/set-storagearray-externalkeymanagement.html["Mise en route avec la gestion externe des clés"]
@@ -161,6 +167,7 @@ link:../commands-a-z/validate-storagearray-securitykey.html["Validation de la cl
 
 
 
+[[external-key-management-commands-related-to-certificates]]
 == Commandes externes de gestion des clés liées aux certificats
 
 link:../commands-a-z/save-storagearray-keymanagementclientcsr.html["Récupérer la demande CSR de gestion des clés installées"]

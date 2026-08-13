@@ -15,29 +15,33 @@ Le `add volume asyncMirrorGroup` commande ajoute un volume primaire à un groupe
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage, avec quelques restrictions. Si vous exécutez la commande sur la baie E2700 ou E5600, il n'y a pas de restrictions.
 
 [NOTE]
 ====
-Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600, EF300, EF50 et EF80.
+Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.
 
 ====
 
 
+[[roles]]
 == Rôles
 
 S/O
 
 
 
+[[context]]
 == Contexte
 
 Cette commande n'est valide que sur la matrice de stockage locale qui contient le groupe de miroirs asynchrone auquel vous souhaitez ajouter le volume primaire. Un groupe de miroirs asynchrone dispose d'un volume de référentiel qui permet d'enregistrer les données de toutes les images instantanées faisant partie du groupe de miroirs asynchrone. Chaque volume primaire du groupe de miroirs asynchrone dispose d'un volume de miroir correspondant sur une baie de stockage distante.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityVal
 ----
 
 
+[[parameter]]
 == Paramètre
 
 |===
@@ -110,6 +115,7 @@ Le logiciel de gestion du stockage crée le volume du référentiel et le lie au
 |===
 
 
+[[notes]]
 == Remarques
 
 * La mise en miroir asynchrone doit être activée et activée sur les baies de stockage locales et distantes qui seront utilisées pour les activités de miroir.
@@ -119,6 +125,7 @@ Le logiciel de gestion du stockage crée le volume du référentiel et le lie au
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.84

@@ -26,6 +26,7 @@ Vous pouvez créer deux types d'horaires :
 
 
 
+[[syntax-for-creating-a-dailyweekly-schedule]]
 == Syntaxe permettant de créer un planning quotidien/hebdomadaire
 
 [source, cli, subs="+macros"]
@@ -40,6 +41,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-creating-a-monthlyyearly-schedule]]
 == Syntaxe permettant de créer un planning mensuel/annuel
 
 [source, cli, subs="+macros"]
@@ -58,6 +60,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-removing-a-schedule]]
 == Syntaxe permettant de supprimer un planning
 
 [NOTE]
@@ -72,6 +75,7 @@ pass:quotes[(all|_storageArrayName_)]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Le tableau suivant répertorie les paramètres d'un planning quotidien/hebdomadaire.
@@ -332,6 +336,7 @@ Nom d'une matrice de stockage spécifique pour laquelle vous souhaitez définir 
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous utilisez le `all` paramètre pour définir une planification commune pour toutes les matrices de stockage, les planifications pour les matrices de stockage individuelles sont supprimées. Si une planification est définie pour toutes les baies de stockage, les baies de stockage nouvellement découvertes suivront la même planification. Si une planification est définie pour toutes les baies de stockage et qu'une planification est définie pour une seule baie de stockage, les baies de stockage nouvellement découvertes n'ont pas de planification définie.
@@ -383,6 +388,7 @@ weekNumber=First dayOfWeek=Friday
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

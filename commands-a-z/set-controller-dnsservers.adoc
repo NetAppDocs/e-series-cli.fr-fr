@@ -15,18 +15,21 @@ Le `set controller DNSServers` Commande met à jour les paramètres DNS (Domain 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Avant de commencer, assurez-vous que :
@@ -47,6 +50,7 @@ Si vous avez déjà configuré les ports de gestion de la baie avec DHCP (Dynami
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -55,6 +59,7 @@ set controller[a] DNSServers=(auto|(Address1 [Address2]))
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -84,6 +89,7 @@ Adresse IPv4Address|IPv6Address
 |===
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -96,6 +102,7 @@ set controller[b] DNSServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 192.168.1.
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.25

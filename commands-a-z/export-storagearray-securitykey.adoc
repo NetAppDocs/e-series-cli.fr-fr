@@ -15,18 +15,21 @@ Le `export storageArray securityKey` la commande enregistre une clé de sécurit
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Si la gestion des clés externes est activée, cette commande s'applique uniquement aux baies E4000, E2800, E5700, EF600, EF300, EF50 et EF80. Si la gestion des clés internes est activée, la commande s'applique à toute baie de stockage individuelle, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Security Admin.
 
 
 
+[[context]]
 == Contexte
 
 Lorsque le fichier de clé est exporté d'une matrice de stockage, cette clé peut être importée dans une autre matrice de stockage. Vous pouvez ainsi déplacer des disques sécurisés d'une baie de stockage à une autre.
@@ -38,6 +41,7 @@ Cette commande s'applique à la gestion interne et externe des clés.
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ pass:quotes[file="_fileName_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -79,6 +84,7 @@ Le nom de fichier doit avoir une extension de `.slk`.
 |===
 
 
+[[notes]]
 == Remarques
 
 La matrice de stockage dans laquelle vous allez déplacer les lecteurs doit avoir une capacité égale ou supérieure aux lecteurs que vous importez.
@@ -102,6 +108,7 @@ Si votre phrase de passe ne répond pas à ces critères, vous recevrez un messa
 ====
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.40

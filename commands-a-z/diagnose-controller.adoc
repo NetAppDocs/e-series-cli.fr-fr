@@ -15,24 +15,28 @@ Le `diagnose controller` la commande exécute des tests de diagnostic sur le con
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Les tests de diagnostic consistent en des tests de bouclage dans lesquels les données sont écrites sur les disques et lues depuis les disques.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[[patternFile="_filename_"]]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -88,6 +93,7 @@ Le chemin du fichier et le nom du fichier contenant un modèle de données que v
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous exécutez un test de boucle de données, vous pouvez éventuellement spécifier un fichier contenant un modèle de données. Si vous ne spécifiez pas de fichier, le micrologiciel du contrôleur fournit un modèle par défaut.
@@ -112,6 +118,7 @@ One or more controller discrete lines failed the diagnostic test.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10 ajoute le test de lecture, le test d'écriture et le test de boucle de données.

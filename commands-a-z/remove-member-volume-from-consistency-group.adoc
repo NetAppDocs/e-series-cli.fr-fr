@@ -15,24 +15,28 @@ Le `set consistencyGroup` la commande supprime un volume membre d'un groupe de c
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Si vous le souhaitez, vous pouvez supprimer les membres du volume du référentiel du groupe de cohérence.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ removeCGMemberVolume=pass:quotes["_memberVolumeName_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -71,6 +76,7 @@ Détermine si tous les membres du référentiel doivent être supprimés du grou
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

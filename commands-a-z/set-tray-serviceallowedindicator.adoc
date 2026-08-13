@@ -15,18 +15,21 @@ Le `set tray serviceAllowedIndicator` La commande active ou désactive le témoi
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Si la matrice de stockage ne prend pas en charge la fonction de voyant action de service autorisée, cette commande renvoie une erreur. Si la matrice de stockage prend en charge la commande mais ne peut pas allumer ou éteindre le voyant, cette commande renvoie une erreur.
@@ -35,6 +38,7 @@ Pour allumer ou éteindre le témoin d'action d'entretien autorisée sur le boî
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -114,12 +119,14 @@ Paramètre permettant d'activer ou de désactiver le voyant action de service au
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande a été initialement définie pour être utilisée avec le plateau contrôleur CE6998 Cette commande n'est pas prise en charge par les tiroirs de contrôleur livrés avant l'introduction du plateau de contrôleur CE6998
 
 
 
+[[example]]
 == Exemple
 
 Cette commande active le voyant action de service autorisée pour le ESM gauche du bac 5 avec l'adresse IP 155.155.155.155.
@@ -131,6 +138,7 @@ ESM [left] serviceAllowedIndicator=on;"
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.14 ajoute ces paramètres :

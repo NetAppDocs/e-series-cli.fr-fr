@@ -15,24 +15,28 @@ Le `set session errorAction` commande définit la manière dont vous souhaitez e
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin, Support Admin, Security Admin ou Storage Monitor.
 
 
 
+[[context]]
 == Contexte
 
 Aux fins de cette commande, une session correspond à la durée de l'exécution des commandes. Cette commande ne définit pas définitivement les paramètres de la matrice de stockage.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -52,6 +56,7 @@ performanceMonitorIterations=iterationValue
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -103,6 +108,7 @@ Lorsque le type de client est défini sur `https`, ce paramètre est obsolète. 
 |===
 
 
+[[notes]]
 == Remarques
 
 Lorsque vous utilisez cette commande, vous pouvez spécifier un ou plusieurs paramètres facultatifs.
@@ -113,6 +119,7 @@ L'intervalle d'interrogation et le nombre d'itérations que vous spécifiez rest
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.20

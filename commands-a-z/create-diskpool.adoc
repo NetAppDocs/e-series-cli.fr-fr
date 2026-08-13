@@ -15,18 +15,21 @@ Le `create diskPool` la commande crée un nouveau pool de disques en fonction de
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800, E5700, EF600 et EF300, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez créer le pool de disques en entrant une liste de lecteurs ou un type de lecteur que vous souhaitez utiliser pour le pool de disques.
@@ -38,6 +41,7 @@ Si vous entrez une liste de lecteurs, assurez-vous que tous les lecteurs ont la 
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -62,6 +66,7 @@ driveType=(fibre | SATA | SAS | NVMe4K))
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -222,6 +227,7 @@ Si ce paramètre est défini sur `TRUE`, seuls les disques compatibles DULBE ser
 |===
 
 
+[[notes]]
 == Remarques
 
 Chaque nom de pool de disques doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -232,6 +238,7 @@ Si vous ne spécifiez pas de valeur pour un paramètre facultatif, une valeur pa
 
 
 
+[[drives]]
 == Disques
 
 Lorsque vous utilisez le `driveType` paramètre : tous les disques non affectés de ce type sont utilisés pour créer le pool de disques. Si vous souhaitez limiter le nombre de lecteurs trouvés par le `driveType` paramètre dans le pool de disques, vous pouvez spécifier le nombre de disques à l'aide de l' `driveCount` paramètre. Vous pouvez utiliser le `driveCount` paramètre uniquement lorsque vous utilisez le `driveType` paramètre.
@@ -242,6 +249,7 @@ Si vous entrez les spécifications d'un plateau de disque haute capacité mais q
 
 
 
+[[disk-pool-alert-thresholds]]
 == Seuils d'alerte de pool de disques
 
 Chaque pool de disques comporte deux niveaux d'alertes progressivement importants pour informer les utilisateurs lorsque la capacité de stockage du pool de disques approche pleine. Le seuil d'une alerte est un pourcentage de la capacité utilisée par rapport à la capacité totale utilisable dans le pool de disques. Les alertes sont les suivantes :
@@ -254,6 +262,7 @@ Pour être effectif, la valeur d'une alerte d'avertissement doit toujours être 
 
 
 
+[[disk-pool-background-operations]]
 == Opérations en arrière-plan du pool de disques
 
 Les pools de disques prennent en charge les opérations d'arrière-plan suivantes :
@@ -275,6 +284,7 @@ Les pools de disques ne mettent pas en file d'attente des commandes d'arrière-p
 
 
 
+[[security-type]]
 == Type de sécurité
 
 Utilisez le `securityType` paramètre pour spécifier les paramètres de sécurité de la matrice de stockage.
@@ -291,12 +301,14 @@ Avant de pouvoir régler le `securityType` paramètre à `enabled`, vous devez c
 
 
 
+[[secure-drives]]
 == Sécuriser les disques
 
 Les disques sécurisés peuvent être des disques FDE (Full Disk Encryption) ou FIPS (Federal information Processing Standard). Utilisez le `secureDrives` paramètre pour spécifier le type de disques sécurisés à utiliser. Les valeurs que vous pouvez utiliser sont les suivantes `fips` et `fde`.
 
 
 
+[[example-command]]
 == Exemple de commande
 
 [listing]
@@ -305,6 +317,7 @@ create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=c
 ----
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

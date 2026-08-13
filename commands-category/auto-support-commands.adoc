@@ -15,6 +15,7 @@ La liste suivante des commandes AutoSupport est disponible pour votre système d
 
 
 
+[[autosupport-bundle-collection-commands-for-the-e2700-and-e5600]]
 == Commandes de collecte des bundles AutoSupport pour la baie E2700 et la baie E5600
 
 link:../commands-a-z/smcli-autosupportlog.html["Capturez ou affichez un journal AutoSupport"]
@@ -39,6 +40,7 @@ link:../commands-a-z/smcli-autosupportconfig-test.html["Tester la configuration 
 
 
 
+[[autosupport-commands-for-all-storage-arrays]]
 == Commandes AutoSupport pour toutes les baies de stockage
 
 link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Activation ou désactivation du protocole AutoSupport (baies individuelles, pour les systèmes E2800 et E5700 uniquement)"]
@@ -47,6 +49,7 @@ link:../commands-a-z/save-storagearray-supportdata.html["Enregistrer les donnée
 
 
 
+[[autosupport-commands-for-the-e4000-ef300-ef600-e2800-e5700]]
 == Commandes AutoSupport pour les modèles E4000, EF300, EF600, E2800 et E5700
 
 link:../commands-a-z/set-autosupport-dispatch-limit.html["Définir la limite de taille d'intervention AutoSupport"]

@@ -15,6 +15,7 @@ La liste suivante des commandes d'ajustement des performances est disponible pou
 
 
 
+[[automatic-load-balancing-commands]]
 == Commandes d'équilibrage automatique de la charge
 
 link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Enregistrer les statistiques d'équilibrage de charge automatique"]
@@ -23,6 +24,7 @@ link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Définissez 
 
 
 
+[[ssd-cache-commands]]
 == Commandes SSD cache
 
 link:../commands-a-z/add-drives-to-ssd-cache.html["Ajout de disques à SSD cache"]

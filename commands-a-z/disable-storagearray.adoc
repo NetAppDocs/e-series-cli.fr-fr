@@ -15,24 +15,28 @@ Le `disable storageArray` commande désactive une fonctionnalité de matrice de 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Exécutez le `show storageArray` commande permettant d'afficher une liste des identificateurs de fonctionnalité pour toutes les fonctions activées de la matrice de stockage.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -46,12 +50,14 @@ Pass:quotes[The `_featureAttributeList_`] peut être une ou plusieurs de ces val
 
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.20 ajoute le `driveSecurity` attribut et supprime tous les autres attributs.

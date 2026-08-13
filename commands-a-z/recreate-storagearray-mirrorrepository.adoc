@@ -15,18 +15,21 @@ Le `recreate storageArray mirrorRepository` Cette commande crée un nouveau volu
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage, y compris les baies E4000, E2700, E5600, E2800 et E5700, tant que tous les packs SMcli sont installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800 ou E5700, vous devez avoir le rôle d'administrateur du stockage.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -38,6 +41,7 @@ La condition sous-jacente est que vous avez déjà créé un volume de référen
 
 
 
+[[syntax-user-defined-drives]]
 == Syntaxe (lecteurs définis par l'utilisateur)
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_
 ----
 
 
+[[syntax-user-defined-volume-group]]
 == Syntaxe (groupe de volumes défini par l'utilisateur)
 
 [source, cli, subs="+macros"]
@@ -61,6 +66,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_
 ----
 
 
+[[syntax-user-defined-number-of-drives]]
 == Syntaxe (nombre de lecteurs défini par l'utilisateur)
 
 [source, cli, subs="+macros"]
@@ -79,6 +85,7 @@ repositoryDriveCount=pass:quotes[_numberOfDrives_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -189,6 +196,7 @@ Paramètre permettant d'appliquer la protection contre les pertes de tiroirs lor
 |===
 
 
+[[notes]]
 == Remarques
 
 Si vous saisissez une valeur pour l'espace de stockage du volume du référentiel miroir trop petit, le micrologiciel du contrôleur renvoie un message d'erreur, qui indique la quantité d'espace nécessaire pour le volume du référentiel miroir. La commande n'essaie pas de modifier le volume du référentiel miroir. Vous pouvez saisir à nouveau la commande en utilisant la valeur du message d'erreur pour la valeur de l'espace de stockage du volume du référentiel miroir.
@@ -201,6 +209,7 @@ Lorsque le micrologiciel du contrôleur affecte les lecteurs, si vous définisse
 
 
 
+[[data-assurance-management]]
 == La gestion de la Data assurance
 
 La fonctionnalité Data assurance (DA) renforce l'intégrité des données sur l'ensemble du système de stockage. DA permet à la matrice de stockage de vérifier si des erreurs peuvent se produire lorsque des données sont déplacées entre les hôtes et les lecteurs. Lorsque cette fonctionnalité est activée, la matrice de stockage ajoute des codes de vérification des erreurs (également appelés vérifications cycliques de redondance ou CRCS) à chaque bloc de données du volume. Après le déplacement d'un bloc de données, la matrice de stockage utilise ces codes CRC pour déterminer si des erreurs se sont produites au cours de la transmission. Les données potentiellement corrompues ne sont ni écrites sur le disque ni renvoyées à l'hôte.
@@ -216,6 +225,7 @@ Si le `dataAssurance` le paramètre est défini sur `enabled`seuls les disques c
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 6.10

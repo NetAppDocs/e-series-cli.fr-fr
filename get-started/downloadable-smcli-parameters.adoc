@@ -15,6 +15,7 @@ SANtricity OS 11.60 et les versions ultérieures permettent de télécharger et 
 
 
 
+[[11-60-and-newer-downloadable-smcli-command-line-parameters]]
 == 11.60 et les nouveaux paramètres de ligne de commande SMcli téléchargeables
 
 La version téléchargeable de SMcli est disponible sur les contrôleurs E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C et EF600C. Pour télécharger le SMcli dans le Gestionnaire système SANtricity, sélectionnez *Paramètres* *système* et *modules complémentaires* *interface de ligne de commande* .
@@ -26,6 +27,7 @@ Comme pour les versions précédentes du SMcli, le SMcli téléchargeable via le
 
 
 
+[[multifactor-authentication]]
 === Authentification multifacteur
 
 Si le langage SAML est activé, seuls les jetons d'accès peuvent être utilisés avec l'interface de ligne de commande. Si le langage SAML n'est pas activé, vous pouvez utiliser le nom d'utilisateur/mot de passe ou les jetons d'accès. Les jetons d'accès peuvent être générés via SANtricity System Manager.
@@ -83,6 +85,7 @@ Cet argument requiert l'un des deux arguments suivants :
 |===
 
 
+[[general-https-mode-command-line-parameters]]
 === Paramètres généraux de ligne de commande du mode https
 
 Le SMcli téléchargeable prend uniquement en charge le mode https. Les paramètres de ligne de commande ci-dessous sont couramment utilisés pour le mode https.
@@ -177,6 +180,7 @@ Affiche des informations d'utilisation sur les commandes CLI.
 |===
 
 
+[[managing-stored-arrays]]
 === Gestion des baies stockées
 
 Les paramètres de ligne de commande suivants vous permettent de gérer les matrices stockées à l'aide de votre étiquette stockée localement.
@@ -184,6 +188,7 @@ Les paramètres de ligne de commande suivants vous permettent de gérer les matr
 
 NOTE: L'étiquette stockée localement peut ne pas correspondre au nom réel de la matrice de stockage affiché sous SANtricity System Manager.
 
+[[managearrays]]
 [cols="2*"]
 |===
 | Paramètre | Définition 
@@ -228,6 +233,7 @@ Supprime l'étiquette stockée localement nommée `<LABEL>`
 NOTE: Le SMcli n'entre pas en contact avec la matrice de stockage lors de l'ajout d'une étiquette stockée localement.
 
 |===
+[[storedcertificates]]
 [cols="2*"]
 |===
 | Paramètre | Définition 
@@ -282,6 +288,7 @@ Supprime un certificat approuvé stocké localement avec l'alias `<ALIAS>`
 |===
 
 
+[[identify-devices]]
 === Identifier les périphériques
 
 Le paramètre de ligne de commande suivant vous permet d'afficher les informations relatives à tous les périphériques applicables visibles par l'hôte.
@@ -289,6 +296,7 @@ Le paramètre de ligne de commande suivant vous permet d'afficher les informatio
 
 NOTE: À partir de la version SANtricity 11.81, le SMcli `identifyDevices` Paramètre remplace la fonctionnalité précédemment disponible via l'outil SMdevices.
 
+[[identifyDevices]]
 [cols="2*"]
 |===
 | Paramètre | Définition 

@@ -15,24 +15,28 @@ Le `set snapVolume convertToReadWrite` commande modifie un volume snapshot qui e
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Vous pouvez également utiliser cette commande pour identifier un nouveau volume de référentiel pour le volume de lecture/écriture ou définir un niveau d'avertissement de limite complète pour le volume de référentiel.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ repositoryVolume=pass:quotes[(_diskPoolName_)] [capacity=pass:quotes[_capacityVa
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -99,6 +104,7 @@ Pourcentage de capacité du volume du référentiel sur lequel vous recevez un a
 |===
 
 
+[[notes]]
 == Remarques
 
 Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
@@ -117,6 +123,7 @@ La capacité minimale est respectée par le micrologiciel du contrôleur et le l
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 7.83

@@ -15,12 +15,14 @@ Le `SMcli -autoSupportConfig` Commande configure la méthode de transmission pou
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à toutes les baies de stockage E2700 et E5600 du domaine de gestion à la fois. Il ne s'applique pas aux baies de stockage E4000, E2800 ou E5700.
 
 
 
+[[context]]
 == Contexte
 
 [NOTE]
@@ -36,6 +38,7 @@ Vous pouvez créer deux principaux types de modes de transmission pour l'envoi d
 
 
 
+[[syntax-for-smtp-delivery-method]]
 == Syntaxe pour la méthode de livraison SMTP
 
 [source, cli]
@@ -45,6 +48,7 @@ mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>
 ----
 
 
+[[parameters-for-the-smtp-delivery-method]]
 == Paramètres de la méthode de livraison SMTP
 
 [cols="2*"]
@@ -74,6 +78,7 @@ Permet de spécifier l'adresse e-mail de l'expéditeur des messages AutoSupport.
 |===
 
 
+[[syntax-for-httphttps-delivery-methods]]
 == Syntaxe pour les méthodes de livraison HTTP/HTTPS
 
 [listing]
@@ -84,6 +89,7 @@ hostAddress:<address>portNumber=<portNumber> [userName=<userName>password=<passw
 ----
 
 
+[[parameters-for-the-httphttps-delivery-methods]]
 == Paramètres des méthodes de transmission HTTP/HTTPS
 
 Le tableau suivant répertorie les paramètres des méthodes de transmission HTTP/HTTPS.
@@ -150,12 +156,14 @@ Le mot de passe d'authentification. Ce paramètre est obligatoire.
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de micrologiciel
 
 8.25
 
 
 
+[[examples]]
 == Exemples
 
 [listing]
@@ -172,6 +180,7 @@ userName=user password=0987654321
 ----
 
 
+[[verification]]
 == Vérification
 
 Envoyer un message de test à l'aide du `SMcli -autoSupportConfig test` commande pour vérifier que vos méthodes de livraison sont correctement configurées.

@@ -15,24 +15,28 @@ Le `set tray` Commande définit l'ID de bac d'un bac de contrôleur, un plateau 
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin.
 
 
 
+[[context]]
 == Contexte
 
 Cette commande n'est valide que pour les tiroirs de contrôleur, les tiroirs de disque contrôleur ou les tiroirs disques dotés d'ID de tiroir que vous pouvez définir via le micrologiciel du contrôleur. Vous ne pouvez pas utiliser cette commande pour les tiroirs de contrôleur, les tiroirs de disque contrôleur ou les tiroirs de disques dotés d'un ID de tiroir que vous avez défini à l'aide d'un commutateur.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Valeurs de bac de `00` à `09` sont rejetés par le contrôleur. Utiliser `0` à
 |===
 
 
+[[notes]]
 == Remarques
 
 Cette commande prenait à l'origine en charge le plateau contrôleur CE6998 Les tiroirs de contrôleurs de la série CE6998 peuvent se connecter à une variété de tiroirs de disques, y compris ceux dont les ID de bac sont définis par des commutateurs. Lors de la connexion d'un plateau de contrôleur série CE6998 aux plateaux de disques dont les ID de bac sont définis par des commutateurs, les valeurs valides pour les ID de bac du contrôleur sont `80` à `99`. Cette plage permet d'éviter les conflits avec les ID de bac utilisés pour les tiroirs de disques connectés.

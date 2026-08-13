@@ -15,12 +15,14 @@ Le `Remove array label` commande permet de supprimer une étiquette définie par
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique aux baies de stockage EF600, EF300, EF50 et EF80.
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -30,6 +32,7 @@ delete storageArrayLabel all
 ----
 
 
+[[parameters]]
 == Paramètres
 
 |===
@@ -44,6 +47,7 @@ Permet de spécifier un libellé défini par l'utilisateur pour la matrice de st
 |===
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.60

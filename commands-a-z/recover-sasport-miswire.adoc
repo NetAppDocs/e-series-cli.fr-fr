@@ -15,18 +15,21 @@ Le `recover sasPort miswire` la commande indique à un contrôleur qu'une action
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 Le contrôleur peut alors réactiver tous les ports SAS qui ont été désactivés car un mauvais fil a été détecté. Exécutez cette commande après avoir corrigé les problèmes de câblage SAS.
@@ -41,6 +44,7 @@ Les problèmes de câblage SAS peuvent être l'un des suivants :
 
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli]
@@ -49,12 +53,14 @@ recover sasPort miswire
 ----
 
 
+[[parameters]]
 == Paramètres
 
 Aucune.
 
 
 
+[[notes]]
 == Remarques
 
 Lorsqu'une condition de fil défectueux est détectée, le micrologiciel du contrôleur signale ce qui suit :
@@ -82,6 +88,7 @@ Dans le cas d'une condition de câblage défectueux dans laquelle le contrôleur
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 8.10

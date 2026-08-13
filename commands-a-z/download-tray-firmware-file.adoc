@@ -15,18 +15,21 @@ Le `download tray firmware file` Le firmware du module de services environnement
 
 
 
+[[supported-arrays]]
 == Baies prises en charge
 
 Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
 
 
 
+[[roles]]
 == Rôles
 
 Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez avoir le rôle Storage Admin ou Support Admin.
 
 
 
+[[context]]
 == Contexte
 
 [IMPORTANT]
@@ -36,6 +39,7 @@ Sur les systèmes duplex gérés par System Manager (par exemple, E2800), un ser
 ====
 
 
+[[syntax]]
 == Syntaxe
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ pass:quotes[firmware file="_filename_"]
 ----
 
 
+[[parameters]]
 == Paramètres
 
 [cols="2*"]
@@ -83,12 +88,14 @@ Les noms de fichiers valides ont un `.esm` extension.
 |===
 
 
+[[notes]]
 == Remarques
 
 Le `tray` le paramètre télécharge le nouveau micrologiciel vers un plateau de lecteur spécifique Si vous devez télécharger le nouveau micrologiciel dans plusieurs tiroirs disques, mais pas tous les tiroirs, vous devez entrer cette commande pour chaque tiroir disque
 
 
 
+[[minimum-firmware-level]]
 == Niveau minimal de firmware
 
 5.20
