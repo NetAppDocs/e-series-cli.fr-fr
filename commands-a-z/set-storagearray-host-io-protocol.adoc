@@ -18,14 +18,14 @@ La commande  `set storageArray hostIoProtocol` configure le protocole d'E/S hôt
 [[supported-arrays]]
 == Baies prises en charge
 
-Cette commande s'applique à n'importe quelle baie de stockage individuelle, y compris les E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 et EF80, à condition que tous les packages SMcli soient installés.
+Cette commande s'applique à une baie de stockage EF50 ou EF80 individuelle, à condition que tous les packages SMcli soient installés.
 
 
 
 [[roles]]
 == Rôles
 
-Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600, EF300, EF50 ou EF80, vous devez disposer du rôle Support Admin.
+Pour exécuter cette commande sur une baie de stockage EF50 ou EF80, vous devez disposer du rôle d'administrateur de support.
 
 
 

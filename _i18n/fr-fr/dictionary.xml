@@ -8095,4 +8095,8 @@
   <block id="fa3f8ed858d04e74dad152ab5070b1ec" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle d'administrateur de stockage.</block>
   <block id="0a5727fb9e4cceadd91fbb0916297759" category="paragraph">Cette commande n'est pas prise en charge sur les plateformes E4000, E2800, E5700, EF600 et EF300.</block>
   <block id="d28f85e4921c2290b1849d9ca24381a1" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF600 ou EF300, vous devez disposer du rôle Storage Admin ou Support Admin.</block>
+  <block id="eae2e5eb79bc312f455a69dcdb128d40" category="paragraph">Cette commande s'applique à une baie de stockage EF50 ou EF80 individuelle, à condition que tous les packages SMcli soient installés.</block>
+  <block id="c540831e3a9e23851bfed87fe9daa839" category="paragraph">Pour exécuter cette commande sur une baie de stockage EF50 ou EF80, vous devez disposer du rôle d'administrateur de support.</block>
+  <block id="3aaeeffd59a60bb91c9bd0ba462a25c0" category="paragraph">Cette commande s'applique à une baie de stockage E4000, EF50 ou EF80, à condition que tous les packages SMcli soient installés.</block>
+  <block id="2c7b4ae92e40349e885951530fef1b89" category="paragraph">Pour exécuter cette commande sur une baie de stockage E4000, EF50 ou EF80, vous devez disposer du rôle de Support Admin.</block>
 </blocks>
