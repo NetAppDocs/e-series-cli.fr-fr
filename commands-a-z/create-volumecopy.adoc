@@ -142,6 +142,6 @@ Vous devez utiliser le `copyType` paramètre avec le `repositoryGroupPreference`
 [[notes]]
 == Remarques
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de événements et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tirets et de traits de soulignement pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères.
 
 La priorité de copie définit la quantité de ressources système utilisées pour copier les données entre le volume source et le volume cible d'une paire de copies de volume. Si vous sélectionnez le niveau de priorité le plus élevé, la copie de volume utilise le plus de ressources système pour effectuer des copies de volumes, ce qui diminue les performances pour les transferts de données de l'hôte.

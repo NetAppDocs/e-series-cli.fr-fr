@@ -67,6 +67,11 @@ Paramètre permettant de spécifier si les capacités de provisionnement des res
 La modification de cette valeur s'applique uniquement aux groupes de volumes et aux pools créés ultérieurement. Elle ne modifie pas la valeur des groupes de volumes et des pools existants.
 
 ====
+[NOTE]
+====
+Vous ne pouvez pas configurer la mise en miroir sur un volume lorsque DULBE est activé. Pour utiliser la mise en miroir, définissez  `resourceProvisionedVolumes` sur  `disable`.
+
+====
 |===
 
 

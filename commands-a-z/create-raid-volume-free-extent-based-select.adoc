@@ -75,6 +75,9 @@ Ce paramètre est obligatoire.
 
 ====
 
+NOTE: La limite de caractères pour les noms de volumes standard et minces est de 60 caractères. Le nom du volume peut contenir n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#).
+
+
 
  a| 
 `freeCapacityArea`
@@ -168,7 +171,7 @@ Ce paramètre définit la taille de bloc du volume en cours de création. La val
 [[notes]]
 == Remarques
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tirets et de traits de soulignement pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères ; tous les autres noms de composants peuvent comporter jusqu'à 30 caractères.
 
 Le `owner` le paramètre définit quel contrôleur détient le volume. La propriété de contrôleur préférée d'un volume est le contrôleur qui est actuellement propriétaire du groupe de volumes.
 

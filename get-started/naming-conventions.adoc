@@ -13,7 +13,7 @@ summary: Des règles spécifiques doivent être respectées pour les noms utilis
 [role="lead"]
 Des règles spécifiques doivent être respectées pour les noms utilisés dans les commandes CLI.
 
-* Les noms peuvent comporter un maximum de 30 caractères.
+* Les noms des volumes standard et fins peuvent comporter un maximum de 60 caractères. Tous les autres noms de composants peuvent comporter un maximum de 30 caractères.
 * Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms des composants suivants :
 +
 ** Les baies de stockage

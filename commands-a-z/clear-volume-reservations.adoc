@@ -76,4 +76,4 @@ Les noms de plusieurs volumes pour lesquels vous effacez des réservations perma
 [[notes]]
 == Remarques
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits d'Union et de traits de soulignement pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tirets et de traits de soulignement pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères.

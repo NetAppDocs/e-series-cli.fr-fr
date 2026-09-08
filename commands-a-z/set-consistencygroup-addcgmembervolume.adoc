@@ -120,7 +120,7 @@ La taille d'un nouveau volume de référentiel dans un groupe de volumes ou un p
 [[notes]]
 == Remarques
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#) pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères ; tous les autres noms de composants peuvent comporter jusqu'à 30 caractères.
 
 Un groupe de cohérence est un ensemble de volumes de base qui sont les volumes source des snapshots. Vous collectez les volumes de base d'un groupe de cohérence, de sorte que vous puissiez effectuer les mêmes opérations Snapshot sur chacun des volumes de base. Dans le contexte de cette commande, le terme _member_ signifie un volume de base pour les opérations de snapshot. Vous pouvez manipuler les images de snapshot associées aux membres d'un groupe de cohérence par le biais d'opérations de type batch, tout en maintenant la cohérence entre les images de snapshot.
 

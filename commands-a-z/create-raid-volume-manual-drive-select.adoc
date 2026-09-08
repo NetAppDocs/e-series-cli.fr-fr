@@ -102,6 +102,9 @@ Ce paramètre est obligatoire.
 
 ====
 
+NOTE: La limite de caractères pour les noms de volumes standard et minces est de 60 caractères. Le nom du volume peut contenir n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#).
+
+
 
  a| 
 `capacity`
@@ -205,7 +208,7 @@ Si vous définissez le `raidLevel` Paramètre au niveau RAID 1 :
 * La seconde moitié du groupe, dans l'ordre indiqué (et dans l'ordre des bandes), correspond aux entraînements de rétroviseur correspondants
 
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#) pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères ; tous les autres noms de composants peuvent comporter jusqu'à 30 caractères.
 
 Le `owner` le paramètre définit quel contrôleur détient le volume. La propriété de contrôleur préférée d'un volume est le contrôleur qui est actuellement propriétaire du groupe de volumes.
 

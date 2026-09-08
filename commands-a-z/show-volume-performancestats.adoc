@@ -35,19 +35,19 @@ Pour exécuter cette commande sur une baie de stockage E4000, E2800, E5700, EF60
 Pour chaque volume de la matrice de stockage, cette commande renvoie les informations suivantes :
 
 * Baies de stockage
-* Nombre total d'E/S
+* Total des E/S
 * En lecture %
 * Baisse du taux de réussite par le cache de lecture primaire
 * Taux de réussite du cache d'écriture primaire : %
 * Baisse du taux de réussite SSD cache
-* Mo/s actuels
-* NB max. Mo/s
-* E/S actuelles
-* Nombre maximum d'E/S
-* Nombre minimal d'E/S
-* E/S moyennes
-* Mo/s minimum
-* Mo/s moyens
+* Débit actuel en Mo/s
+* Débit maximal en Mo/s
+* E/S actuelles/s
+* E/S max./s
+* E/S/s minimum
+* E/S moyennes par seconde
+* Débit minimum en Mo/s
+* Débit moyen en Mo/s
 * Latence d'E/S actuelle
 * Latence d'E/S maximale
 * Latence d'E/S minimale

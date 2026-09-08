@@ -119,6 +119,9 @@ userLabel="engdata"
 volumeWWN=60080E500017B4320000000049887D77
 ----
 
+NOTE: La limite de caractères pour les noms de volumes standard et minces est de 60 caractères. Le nom du volume peut contenir n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#).
+
+
 
  a| 
 `capacity`
@@ -200,7 +203,7 @@ Le `drive` paramètre prend en charge à la fois les tiroirs disques haute capac
 
 Si vous tentez de récupérer un volume à l'aide du `drive` ou le `drives` le paramètre et les disques sont dans un état non attribué, le contrôleur crée automatiquement un nouveau groupe de volumes. Utilisez le `newVolumeGroup` paramètre permettant de spécifier un nom pour le nouveau groupe de volumes.
 
-Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour les noms. Les noms peuvent comporter un maximum de 30 caractères.
+Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#) pour les noms. Les noms des volumes standard et minces peuvent comporter jusqu'à 60 caractères ; tous les autres noms de composants peuvent comporter jusqu'à 30 caractères.
 
 Le `owner` le paramètre définit quel contrôleur détient le volume. La propriété de contrôleur préférée d'un volume est le contrôleur qui est actuellement propriétaire du groupe de volumes.
 

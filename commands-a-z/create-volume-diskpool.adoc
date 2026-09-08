@@ -98,6 +98,9 @@ Nom du pool de disques dans lequel créer le nouveau volume. Placez le nom du po
 Nom à attribuer au nouveau volume. Placez le nom du volume entre guillemets (" ").
 
 
+NOTE: La limite de caractères pour les noms de volumes standard et minces est de 60 caractères. Le nom du volume peut contenir n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de trait d'union (-) et de dièse (#).
+
+
 
  a| 
 `capacity`
@@ -220,7 +223,7 @@ Ce paramètre définit la taille de bloc du volume en cours de création. Valeur
 [[notes]]
 == Remarques
 
-Chaque nom de volume doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de traits de soulignement (_), de traits d'Union (-) et de livres (#) pour le libellé de l'utilisateur. Les étiquettes utilisateur peuvent comporter un maximum de 30 caractères.
+Chaque nom de volume doit être unique. Vous pouvez utiliser n'importe quelle combinaison de caractères alphanumériques, de tiret bas (_), de tiret (-) et de dièse (#) pour l'étiquette utilisateur. Les noms de volumes standard et fins peuvent comporter jusqu'à 60 caractères.
 
 Pour les volumes fins, le `capacity` paramètre spécifie la capacité virtuelle du volume, et le `repositoryCapacity` paramètre spécifie la capacité du volume créé comme volume de référentiel. Utilisez le `existingRepositoryLabel` paramètre pour spécifier un volume de référentiel existant inutilisé au lieu de créer un nouveau volume.
 
